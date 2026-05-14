@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JYCSD - Jiangyin CheSuDi. Your gateway to expert guides on healthy living, pet care, home improvement, personal finance, technology, and travel.">
+    <meta name="keywords" content="JYCSD, Jiangyin CheSuDi, lifestyle guides, healthy living, pet care, finance, technology, travel">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="JYCSD - Your Guide to Better Living">
+    <meta property="og:description" content="Expert guides across health, pets, home, finance, tech, and travel.">
+    <meta property="og:type" content="website">
+    <title>JYCSD - Jiangyin CheSuDi | Your Guide to Better Living</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' },
+                        navy: '#0f1a3c',
+                        slate: '#334155',
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'Arial', 'Helvetica', 'sans-serif'],
+                        heading: ['Georgia', 'Times New Roman', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .site-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+        .site-card { transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
+        <nav class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-black text-navy tracking-tight">
+                JY<span class="text-primary-600">CSD</span>
+            </a>
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="index.html" class="text-primary-600">Home</a>
+                <a href="#sites" class="text-slate hover:text-primary-600">Our Sites</a>
+                <a href="about.html" class="text-slate hover:text-primary-600">About</a>
+                <a href="#contact" class="text-slate hover:text-primary-600">Contact</a>
+            </div>
+            <button class="md:hidden text-slate text-xl">&#9776;</button>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative bg-gradient-to-br from-navy via-primary-900 to-primary-800 text-white py-24 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-primary-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-primary-300 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative max-w-4xl mx-auto px-6 text-center">
+            <p class="text-primary-200 text-sm font-semibold uppercase tracking-widest mb-4">Jiangyin CheSuDi</p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tight">
+                Your Guide to <span class="text-primary-300">Better Living</span>
+            </h1>
+            <p class="text-lg md:text-xl text-primary-100 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Expert-curated guides across health, pets, home, finance, technology, and travel — all in one place.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#sites" class="inline-block bg-white text-primary-700 font-bold px-8 py-3.5 rounded-full text-base hover:bg-primary-50 transition-colors">
+                    Explore Our Sites
+                </a>
+                <a href="about.html" class="inline-block bg-white/10 text-white font-semibold px-8 py-3.5 rounded-full text-base border border-white/20 hover:bg-white/20 transition-colors">
+                    About JYCSD
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="bg-primary-50 border-b border-primary-100 py-10">
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <p class="text-3xl md:text-4xl font-black text-primary-700">6</p>
+                <p class="text-sm text-slate mt-1 font-medium">Expert Websites</p>
+            </div>
+            <div>
+                <p class="text-3xl md:text-4xl font-black text-primary-700">36+</p>
+                <p class="text-sm text-slate mt-1 font-medium">In-Depth Guides</p>
+            </div>
+            <div>
+                <p class="text-3xl md:text-4xl font-black text-primary-700">0</p>
+                <p class="text-sm text-slate mt-1 font-medium">Click to Content</p>
+            </div>
+            <div>
+                <p class="text-3xl md:text-4xl font-black text-primary-700">100%</p>
+                <p class="text-sm text-slate mt-1 font-medium">Free Content</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Sites Grid -->
+    <section id="sites" class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Explore Our Network</h2>
+            <p class="text-lg text-gray-500 max-w-xl mx-auto">Pick a topic and dive into expert-curated content designed to help you live better.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Healthy Eats -->
+            <a href="https://healthy.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-2 bg-green-500"></div>
+                <div class="p-7">
+                    <div class="text-4xl mb-4">🥗</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Healthy<span class="text-green-500">Eats</span></h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Evidence-based nutrition guides, healthy recipes, and meal plans for a better relationship with food.</p>
+                    <span class="text-green-600 font-semibold text-sm group-hover:underline">healthy.jycsd.com &rarr;</span>
+                </div>
+            </a>
+
+            <!-- PetCare Hub -->
+            <a href="https://pets.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-2 bg-orange-500"></div>
+                <div class="p-7">
+                    <div class="text-4xl mb-4">🐾</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">PetCare <span class="text-orange-500">Hub</span></h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Expert pet care advice, nutrition tips, behavior guides, and health information for all pet owners.</p>
+                    <span class="text-orange-600 font-semibold text-sm group-hover:underline">pets.jycsd.com &rarr;</span>
+                </div>
+            </a>
+
+            <!-- HomeJoy -->
+            <a href="https://home.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-2 bg-lime-500"></div>
+                <div class="p-7">
+                    <div class="text-4xl mb-4">🏡</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Home<span class="text-lime-500">Joy</span></h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">DIY home improvement, indoor gardening, decluttering, and seasonal maintenance guides.</p>
+                    <span class="text-lime-600 font-semibold text-sm group-hover:underline">home.jycsd.com &rarr;</span>
+                </div>
+            </a>
+
+            <!-- MoneyWise -->
+            <a href="https://finance.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-2 bg-blue-700"></div>
+                <div class="p-7">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Money<span class="text-blue-700">Wise</span></h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Personal finance made simple — investing, budgeting, credit tips, and retirement planning.</p>
+                    <span class="text-blue-700 font-semibold text-sm group-hover:underline">finance.jycsd.com &rarr;</span>
+                </div>
+            </a>
+
+            <!-- TechNest -->
+            <a href="https://tech.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-2 bg-slate-500"></div>
+                <div class="p-7">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Tech<span class="text-slate-500">Nest</span></h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Honest tech reviews, buying guides, productivity tools, and cybersecurity tips for everyday users.</p>
+                    <span class="text-slate-600 font-semibold text-sm group-hover:underline">tech.jycsd.com &rarr;</span>
+                </div>
+            </a>
+
+            <!-- TripRoute -->
+            <a href="https://travel.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-2 bg-cyan-600"></div>
+                <div class="p-7">
+                    <div class="text-4xl mb-4">✈️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Trip<span class="text-cyan-600">Route</span></h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Budget travel tips, destination guides, packing hacks, and digital nomad lifestyle advice.</p>
+                    <span class="text-cyan-600 font-semibold text-sm group-hover:underline">travel.jycsd.com &rarr;</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Why Choose JYCSD -->
+    <section class="bg-gray-50 py-20 md:py-28">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Why JYCSD?</h2>
+                <p class="text-lg text-gray-500">Quality content, no fluff. Every guide is researched and written for real people.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4">🔍</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Expert-Reviewed</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Every article is fact-checked and reviewed by subject matter experts before publication.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4">⚡</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Fast & Clean</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">No pop-ups, no distractions. Pages load instantly on any device, anywhere in the world.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4">🌍</div>
+                    <h3 class="font-bold text-gray-900 mb-2">Always Free</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">All our content is 100% free, supported by ads so you never have to pay for quality information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="max-w-5xl mx-auto px-6 py-20 md:py-28 text-center">
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Get In Touch</h2>
+        <p class="text-lg text-gray-500 mb-8 max-w-lg mx-auto">Have questions or feedback? We'd love to hear from you.</p>
+        <a href="mailto:30330238@qq.com" class="inline-block bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-4 rounded-full text-base transition-colors">
+            30330238@qq.com
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-10">
+                <div>
+                    <h3 class="text-white text-lg font-black mb-3">JY<span class="text-primary-400">CSD</span></h3>
+                    <p class="text-sm leading-relaxed">Jiangyin CheSuDi — Your gateway to expert lifestyle guides across multiple domains.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Our Sites</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><span class="text-gray-500">healthy.jycsd.com</span></li>
+                        <li><span class="text-gray-500">pets.jycsd.com</span></li>
+                        <li><span class="text-gray-500">home.jycsd.com</span></li>
+                        <li><span class="text-gray-500">finance.jycsd.com</span></li>
+                        <li><span class="text-gray-500">tech.jycsd.com</span></li>
+                        <li><span class="text-gray-500">travel.jycsd.com</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About JYCSD</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="mailto:30330238@qq.com" class="hover:text-white transition-colors">30330238@qq.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center text-sm">
+                <p>&copy; 2026 JYCSD — Jiangyin CheSuDi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TripRoute — Your ultimate guide to budget travel, cheap flights, solo adventures, packing tips, travel insurance, and digital nomad life.">
+    <title>TripRoute — Smart Budget Travel Guides</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {50:'#ecfeff',100:'#cffafe',200:'#a5f3fc',300:'#67e8f9',400:'#22d3ee',500:'#06b6d4',600:'#0891b2',700:'#0e7490',800:'#155e75',900:'#164e63'},
+                    },
+                    fontFamily: { sans: ['Roboto', 'system-ui', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', system-ui, sans-serif; }
+        .ad-placeholder { background: #f8fafc; border: 2px dashed #cbd5e1; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+<!-- Navigation -->
+<nav class="bg-brand-600 text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-black tracking-tight">
+                <span>✈</span><span>TripRoute</span>
+            </a>
+            <div class="hidden lg:flex items-center gap-1 text-sm font-medium">
+                <a href="index.html" class="px-3 py-2 rounded-lg bg-brand-700 transition">Home</a>
+                <a href="article-1.html" class="px-3 py-2 rounded-lg hover:bg-brand-500 transition">Budget Travel</a>
+                <a href="article-1.html" class="px-3 py-2 rounded-lg hover:bg-brand-500 transition">Destinations</a>
+                <a href="article-4.html" class="px-3 py-2 rounded-lg hover:bg-brand-500 transition">Tips</a>
+                <a href="article-6.html" class="px-3 py-2 rounded-lg hover:bg-brand-500 transition">Digital Nomad</a>
+                <a href="about.html" class="px-3 py-2 rounded-lg hover:bg-brand-500 transition">About</a>
+            </div>
+            <button class="lg:hidden text-white text-2xl" id="menuBtn">&#9776;</button>
+        </div>
+        <div class="lg:hidden hidden pb-3" id="mobileMenu">
+            <a href="index.html" class="block py-2 text-sm font-medium hover:text-brand-200">Home</a>
+            <a href="article-1.html" class="block py-2 text-sm font-medium hover:text-brand-200">Budget Travel</a>
+            <a href="article-1.html" class="block py-2 text-sm font-medium hover:text-brand-200">Destinations</a>
+            <a href="article-4.html" class="block py-2 text-sm font-medium hover:text-brand-200">Tips</a>
+            <a href="article-6.html" class="block py-2 text-sm font-medium hover:text-brand-200">Digital Nomad</a>
+            <a href="about.html" class="block py-2 text-sm font-medium hover:text-brand-200">About</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="bg-gradient-to-br from-brand-600 via-brand-500 to-brand-400 text-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">Explore the World<br class="hidden sm:block">Without Breaking the Bank</h1>
+        <p class="text-lg md:text-xl text-brand-50 max-w-2xl mx-auto mb-8">Expert budget travel guides, flight hacks, solo travel tips, and digital nomad resources — all in one place.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="article-1.html" class="inline-block bg-white text-brand-600 font-bold px-8 py-3 rounded-full hover:bg-brand-50 transition shadow-lg">Start Exploring</a>
+            <a href="article-6.html" class="inline-block border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition">Digital Nomad Guide</a>
+        </div>
+    </div>
+</section>
+
+<!-- Ad Placement 1 -->
+<div class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+    <div class="ad-placeholder rounded-xl flex items-center justify-center h-24 text-gray-400 text-sm">Advertisement</div>
+</div>
+
+<!-- Featured Articles -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+    <h2 class="text-3xl font-black text-gray-900 text-center mb-10">Latest Travel Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <article class="bg-white rounded-2xl shadow-md overflow-hidden card-hover transition duration-300 flex flex-col">
+            <div class="h-48 bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center text-white text-5xl">🌏</div>
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">Budget Travel</span>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">10 Budget Travel Destinations for 2026</h3>
+                <p class="text-sm text-gray-600 flex-grow">Discover affordable adventures across Southeast Asia, Eastern Europe, and South America with daily budgets under $50.</p>
+                <a href="article-1.html" class="inline-block mt-4 text-brand-600 font-semibold hover:text-brand-700 transition">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="bg-white rounded-2xl shadow-md overflow-hidden card-hover transition duration-300 flex flex-col">
+            <div class="h-48 bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white text-5xl">✈️</div>
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">Flight Tips</span>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">How to Find Cheap Flights: Expert Hacks</h3>
+                <p class="text-sm text-gray-600 flex-grow">Master flight search engines, timing strategies, hidden city ticketing, and mileage programs to save hundreds.</p>
+                <a href="article-2.html" class="inline-block mt-4 text-brand-600 font-semibold hover:text-brand-700 transition">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="bg-white rounded-2xl shadow-md overflow-hidden card-hover transition duration-300 flex flex-col">
+            <div class="h-48 bg-gradient-to-br from-brand-300 to-brand-500 flex items-center justify-center text-white text-5xl">🧳</div>
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">Solo Travel</span>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Solo Travel Guide: Safety Tips &amp; Best Destinations</h3>
+                <p class="text-sm text-gray-600 flex-grow">Everything you need to know about traveling alone — from safety precautions to making friends on the road.</p>
+                <a href="article-3.html" class="inline-block mt-4 text-brand-600 font-semibold hover:text-brand-700 transition">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="bg-white rounded-2xl shadow-md overflow-hidden card-hover transition duration-300 flex flex-col">
+            <div class="h-48 bg-gradient-to-br from-brand-600 to-brand-800 flex items-center justify-center text-white text-5xl">🎒</div>
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">Packing Tips</span>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Packing Light: Carry-On Only for Any Trip Length</h3>
+                <p class="text-sm text-gray-600 flex-grow">Learn the art of minimalist packing — one bag for a week, two weeks, or a month. Complete checklists included.</p>
+                <a href="article-4.html" class="inline-block mt-4 text-brand-600 font-semibold hover:text-brand-700 transition">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="bg-white rounded-2xl shadow-md overflow-hidden card-hover transition duration-300 flex flex-col">
+            <div class="h-48 bg-gradient-to-br from-brand-400 to-brand-700 flex items-center justify-center text-white text-5xl">🛡️</div>
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">Insurance</span>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Best Travel Insurance Plans Compared</h3>
+                <p class="text-sm text-gray-600 flex-grow">Comprehensive comparison of top travel insurance providers — coverage types, prices, and how to choose.</p>
+                <a href="article-5.html" class="inline-block mt-4 text-brand-600 font-semibold hover:text-brand-700 transition">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="bg-white rounded-2xl shadow-md overflow-hidden card-hover transition duration-300 flex flex-col">
+            <div class="h-48 bg-gradient-to-br from-brand-500 to-brand-800 flex items-center justify-center text-white text-5xl">💻</div>
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">Digital Nomad</span>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Digital Nomad Guide: Work from Anywhere</h3>
+                <p class="text-sm text-gray-600 flex-grow">Visa options, top cities, internet and time zone management, tax considerations, and productivity tools.</p>
+                <a href="article-6.html" class="inline-block mt-4 text-brand-600 font-semibold hover:text-brand-700 transition">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="bg-white rounded-2xl shadow-md overflow-hidden card-hover transition duration-300 flex flex-col">
+            <div class="h-48 bg-gradient-to-br from-yellow-200 to-amber-300 flex items-center justify-center text-white text-5xl">💳</div>
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">Travel Tips</span>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Best Travel Credit Cards for Points and Miles (2026)</h3>
+                <p class="text-sm text-gray-600 flex-grow">Best travel credit cards for points and miles in 2026. Compare card types, rewards programs, annual fees vs benefits, sign-up bonuses, mile redemption strategies, and application tips to maximize your travel rewards.</p>
+                <a href="article-7.html" class="inline-block mt-4 text-brand-600 font-semibold hover:text-brand-700 transition">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="bg-white rounded-2xl shadow-md overflow-hidden card-hover transition duration-300 flex flex-col">
+            <div class="h-48 bg-gradient-to-br from-green-200 to-emerald-300 flex items-center justify-center text-white text-5xl">🚗</div>
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">Road Trips</span>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">How to Plan a Road Trip on a Budget</h3>
+                <p class="text-sm text-gray-600 flex-grow">Complete guide to planning a budget road trip. Route planning, cheap accommodation strategies, affordable meals on the road, vehicle preparation tips, free entertainment ideas, and a multi-day budget template.</p>
+                <a href="article-8.html" class="inline-block mt-4 text-brand-600 font-semibold hover:text-brand-700 transition">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Card 9 -->
+        <article class="bg-white rounded-2xl shadow-md overflow-hidden card-hover transition duration-300 flex flex-col">
+            <div class="h-48 bg-gradient-to-br from-red-200 to-pink-300 flex items-center justify-center text-white text-5xl">🗼</div>
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">Destinations</span>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Top 10 Things to Do in Tokyo on a Budget</h3>
+                <p class="text-sm text-gray-600 flex-grow">Top 10 things to do in Tokyo on a budget. Free attractions, cheap eats, affordable transportation, budget accommodation, cultural experiences, and a sample one-day itinerary for under $40.</p>
+                <a href="article-9.html" class="inline-block mt-4 text-brand-600 font-semibold hover:text-brand-700 transition">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Card 10 -->
+        <article class="bg-white rounded-2xl shadow-md overflow-hidden card-hover transition duration-300 flex flex-col">
+            <div class="h-48 bg-gradient-to-br from-orange-200 to-amber-300 flex items-center justify-center text-white text-5xl">⚠️</div>
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">Travel Tips</span>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">How to Avoid Common Travel Scams Worldwide</h3>
+                <p class="text-sm text-gray-600 flex-grow">Complete guide to avoiding common travel scams worldwide. Learn about scam types by region, prevention strategies, what to do if you are scammed, how travel insurance helps, and emergency resources.</p>
+                <a href="article-10.html" class="inline-block mt-4 text-brand-600 font-semibold hover:text-brand-700 transition">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Card 11 -->
+        <article class="bg-white rounded-2xl shadow-md overflow-hidden card-hover transition duration-300 flex flex-col">
+            <div class="h-48 bg-gradient-to-br from-lime-200 to-green-300 flex items-center justify-center text-white text-5xl">🏕️</div>
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">Outdoor</span>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Camping for Beginners: Complete Gear Guide</h3>
+                <p class="text-sm text-gray-600 flex-grow">Complete camping gear guide for beginners. Essential equipment checklist, how to choose a tent, sleeping bags and pads, cooking gear, safety equipment, beginner-friendly campgrounds, and seasonal recommendations.</p>
+                <a href="article-11.html" class="inline-block mt-4 text-brand-600 font-semibold hover:text-brand-700 transition">Read More &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Card 12 -->
+        <article class="bg-white rounded-2xl shadow-md overflow-hidden card-hover transition duration-300 flex flex-col">
+            <div class="h-48 bg-gradient-to-br from-blue-200 to-indigo-300 flex items-center justify-center text-white text-5xl">🚂</div>
+            <div class="p-6 flex flex-col flex-grow">
+                <span class="text-xs font-semibold text-brand-600 uppercase tracking-wider mb-2">Destinations</span>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">How to Travel Europe by Train on a Budget</h3>
+                <p class="text-sm text-gray-600 flex-grow">Complete guide to traveling Europe by train on a budget. Compare Eurail passes vs single tickets, booking strategies for the best fares, night train tips, route planning advice, luggage recommendations, and money-saving hacks.</p>
+                <a href="article-12.html" class="inline-block mt-4 text-brand-600 font-semibold hover:text-brand-700 transition">Read More &rarr;</a>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- Ad Placement 2 -->
+<div class="max-w-4xl mx-auto px-4 sm:px-6 pb-12">
+    <div class="ad-placeholder rounded-xl flex items-center justify-center h-24 text-gray-400 text-sm">Advertisement</div>
+</div>
+
+<!-- Newsletter CTA -->
+<section class="bg-brand-600 text-white py-16">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-3xl font-black mb-4">Get the Latest Travel Tips</h2>
+        <p class="text-brand-100 mb-6">Join thousands of travelers who receive our best deals and guides straight to their inbox.</p>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-brand-300">
+            <button type="submit" class="bg-brand-800 hover:bg-brand-900 text-white font-bold px-6 py-3 rounded-lg transition">Subscribe</button>
+        </form>
+        <p class="text-xs text-brand-200 mt-3">No spam. Unsubscribe anytime.</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 pt-12 pb-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+                <h3 class="text-white text-lg font-bold mb-3">✈ TripRoute</h3>
+                <p class="text-sm text-gray-400">Smart travel guides for budget-savvy explorers. Discover the world without breaking the bank.</p>
+                <p class="text-xs text-gray-500 mt-3">Part of the <a href="https://jycsd.com" class="text-brand-400 hover:underline">JYCSD Network</a></p>
+            </div>
+            <div>
+                <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-3">Explore</h3>
+                <ul class="space-y-1.5 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+                    <li><a href="article-1.html" class="hover:text-white transition">Budget Travel</a></li>
+                    <li><a href="article-2.html" class="hover:text-white transition">Cheap Flights</a></li>
+                    <li><a href="article-3.html" class="hover:text-white transition">Solo Travel</a></li>
+                    <li><a href="article-4.html" class="hover:text-white transition">Packing Tips</a></li>
+                    <li><a href="article-5.html" class="hover:text-white transition">Travel Insurance</a></li>
+                    <li><a href="article-6.html" class="hover:text-white transition">Digital Nomad</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white text-sm font-semibold uppercase tracking-wider mb-3">Legal</h3>
+                <ul class="space-y-1.5 text-sm">
+                    <li><a href="about.html" class="hover:text-white transition">About</a></li>
+                    <li><a href="privacy-policy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html" class="hover:text-white transition">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-white transition">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 pt-6 text-center text-xs text-gray-500">
+            &copy; 2026 TripRoute. All rights reserved. TripRoute is part of the <a href="https://jycsd.com" class="text-brand-400 hover:underline">JYCSD Network</a>.
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('menuBtn').addEventListener('click', function () {
+        document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>

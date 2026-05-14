@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechNest - Honest tech reviews, in-depth guides, and practical advice on smartphones, laptops, AI tools, cybersecurity, and smart home devices.">
+    <meta name="keywords" content="tech reviews, smartphone reviews, laptop buying guide, AI tools, cybersecurity tips, smart home, technology guides">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="TechNest - Honest Tech Reviews & Practical Guides">
+    <meta property="og:description" content="Your go-to destination for honest tech reviews, in-depth guides, and practical digital advice.">
+    <meta property="og:type" content="website">
+    <title>TechNest - Honest Tech Reviews & Practical Guides</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'system-ui', '-apple-system', 'sans-serif'],
+                        heading: ['Roboto', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .ad-container {
+            background: #f9fafb;
+            border: 2px dashed #e5e7eb;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 14px;
+            min-height: 90px;
+        }
+        .article-card:hover { transform: translateY(-4px); transition: transform 0.2s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-brand-700 tracking-tight">Tech<span class="text-brand-500">Nest</span></a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-brand-600 font-medium">Home</a>
+                <a href="#" class="text-gray-600 hover:text-brand-600">Reviews</a>
+                <a href="#" class="text-gray-600 hover:text-brand-600">Guides</a>
+                <a href="#" class="text-gray-600 hover:text-brand-600">AI</a>
+                <a href="#" class="text-gray-600 hover:text-brand-600">Security</a>
+                <a href="about.html" class="text-gray-600 hover:text-brand-600">About</a>
+            </div>
+            <button class="md:hidden text-gray-600 text-2xl">&#9776;</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-brand-50 to-slate-200 py-16 md:py-24">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Tech Made <span class="text-brand-600">Simple</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+                Honest reviews, in-depth guides, and practical advice to help you navigate the world of technology with confidence.
+            </p>
+            <a href="#articles" class="inline-block bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3 rounded-full text-lg transition-colors">
+                Explore Articles
+            </a>
+        </div>
+    </section>
+
+    <!-- Top Ad Placeholder -->
+    <div class="max-w-6xl mx-auto px-4 py-6">
+        <div class="ad-container h-[90px] md:h-[100px]">
+            <!-- AdSense Ad Slot -->
+            Advertisement
+        </div>
+    </div>
+
+    <!-- Featured Articles -->
+    <section id="articles" class="max-w-6xl mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-2">Latest Articles</h2>
+        <p class="text-gray-500 mb-8">Expert reviews and practical guides for the tech you use every day</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Article 1 -->
+            <a href="article-1.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-slate-300 to-slate-400 flex items-center justify-center text-5xl">📱</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Reviews</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Best Budget Smartphones Under $300 (2026)</h3>
+                    <p class="text-gray-500 text-sm">Top 5 affordable phones that deliver flagship features without breaking the bank. Compare displays, cameras, and battery life.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 14, 2026</span><span>&middot;</span><span>10 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 2 -->
+            <a href="article-2.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-blue-200 to-slate-300 flex items-center justify-center text-5xl">🪑</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Guides</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">How to Build a Home Office Setup for Productivity</h3>
+                    <p class="text-gray-500 text-sm">From ergonomic chairs to monitor setups, everything you need to create a workspace that boosts your focus.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 12, 2026</span><span>&middot;</span><span>9 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 3 -->
+            <a href="article-3.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-purple-200 to-slate-300 flex items-center justify-center text-5xl">🤖</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">AI</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">AI Tools That Will Change Your Daily Workflow</h3>
+                    <p class="text-gray-500 text-sm">Discover AI-powered tools for writing, coding, design, and data analysis that can save you hours every week.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 9, 2026</span><span>&middot;</span><span>8 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 4 -->
+            <a href="article-4.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-slate-400 to-slate-500 flex items-center justify-center text-5xl">🔒</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Security</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Cybersecurity Basics: Protect Yourself Online</h3>
+                    <p class="text-gray-500 text-sm">Essential steps everyone should take — from password managers to VPNs — to stay safe in the digital world.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 6, 2026</span><span>&middot;</span><span>7 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 5 -->
+            <a href="article-5.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-teal-200 to-slate-300 flex items-center justify-center text-5xl">🏠</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Reviews</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Smart Home Devices Worth Buying (and Ones to Skip)</h3>
+                    <p class="text-gray-500 text-sm">Which smart speakers, lights, thermostats, and cameras actually earn their place in your home.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 3, 2026</span><span>&middot;</span><span>9 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 6 -->
+            <a href="article-6.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-slate-200 to-slate-400 flex items-center justify-center text-5xl">💻</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Guides</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Laptop Buying Guide: How to Choose the Right One</h3>
+                    <p class="text-gray-500 text-sm">Navigate processors, RAM, storage, and displays to find the perfect laptop for work, school, or gaming.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>Apr 30, 2026</span><span>&middot;</span><span>11 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 7 -->
+            <a href="article-7.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-green-200 to-emerald-300 flex items-center justify-center text-5xl">🆓</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Software</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Best Free Software Alternatives to Paid Apps</h3>
+                    <p class="text-gray-500 text-sm">Discover the best free software alternatives to paid apps in 2026. Replace Microsoft Office, Adobe Photoshop, Premiere Pro, Acrobat, and Evernote with powerful open-source and free tools.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 10, 2026</span><span>&middot;</span><span>12 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 8 -->
+            <a href="article-8.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-yellow-200 to-amber-300 flex items-center justify-center text-5xl">⚡</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Computers</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">How to Speed Up Your Old Computer: Complete Guide</h3>
+                    <p class="text-gray-500 text-sm">Learn how to speed up your old computer with practical steps: manage startup programs, upgrade to SSD, add RAM, clean your system, scan for malware, and know when it is time to buy a new machine.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 8, 2026</span><span>&middot;</span><span>11 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 9 -->
+            <a href="article-9.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-blue-200 to-indigo-300 flex items-center justify-center text-5xl">🔒</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Security</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Understanding VPNs: Do You Really Need One?</h3>
+                    <p class="text-gray-500 text-sm">What is a VPN and do you really need one? Learn how VPNs work, the differences between free and paid services, when a VPN is essential, how to choose a provider, and common VPN myths debunked.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 6, 2026</span><span>&middot;</span><span>10 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 10 -->
+            <a href="article-10.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-purple-200 to-violet-300 flex items-center justify-center text-5xl">🎧</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Reviews</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Best Wireless Earbuds Under $100 (2026)</h3>
+                    <p class="text-gray-500 text-sm">Best wireless earbuds under $100 in 2026. Our TOP 5 picks compared for sound quality, ANC, battery life, comfort, and call quality. Find the perfect budget earbuds for your needs.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 4, 2026</span><span>&middot;</span><span>11 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 11 -->
+            <a href="article-11.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-cyan-200 to-teal-300 flex items-center justify-center text-5xl">💾</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Security</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">How to Back Up Your Data Properly: The 3-2-1 Rule</h3>
+                    <p class="text-gray-500 text-sm">Learn how to back up your data properly with the 3-2-1 backup rule. Compare cloud vs local backups, automate your backup system, protect against ransomware, and learn how to test your recovery plan.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 2, 2026</span><span>&middot;</span><span>12 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 12 -->
+            <a href="article-12.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-orange-200 to-amber-300 flex items-center justify-center text-5xl">🔋</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Mobile</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Tips to Extend Your Smartphone Battery Life</h3>
+                    <p class="text-gray-500 text-sm">Proven tips to extend your smartphone battery life. Learn optimal charging habits, system settings that reduce drain, how to spot battery-hungry apps, monitor battery health, and when to replace your phone battery.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>Apr 28, 2026</span><span>&middot;</span><span>10 min read</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Middle Ad Placeholder -->
+    <div class="max-w-6xl mx-auto px-4 py-4">
+        <div class="ad-container h-[90px] md:h-[100px]">
+            <!-- AdSense Ad Slot -->
+            Advertisement
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="bg-brand-700 py-16">
+        <div class="max-w-2xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Stay Ahead of the Curve</h2>
+            <p class="text-brand-100 mb-6">Get our latest tech reviews, guides, and tips delivered straight to your inbox every week.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-lg text-gray-800 outline-none focus:ring-2 focus:ring-brand-400">
+                <button type="submit" class="bg-white text-brand-700 font-semibold px-6 py-3 rounded-lg hover:bg-brand-50 transition-colors">Subscribe</button>
+            </form>
+            <p class="text-brand-200 text-xs mt-4">No spam. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- Bottom Ad Placeholder -->
+    <div class="max-w-6xl mx-auto px-4 py-6">
+        <div class="ad-container h-[90px] md:h-[100px]">
+            <!-- AdSense Ad Slot -->
+            Advertisement
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-3">Tech<span class="text-brand-400">Nest</span></h3>
+                    <p class="text-sm">Honest tech reviews and practical guides for everyday users. Your trusted source in the world of technology.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="#" class="hover:text-white">Reviews</a></li>
+                        <li><a href="#" class="hover:text-white">Guides</a></li>
+                        <li><a href="#" class="hover:text-white">AI Tools</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html" class="hover:text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>30330238@qq.com</li>
+                        <li>Follow us on social media</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center text-sm">
+                <p>&copy; 2026 TechNest. All rights reserved. Part of the <a href="https://jycsd.com" class="hover:text-white">JYCSD Network</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

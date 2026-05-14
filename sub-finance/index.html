@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MoneyWise - Practical personal finance advice on investing, budgeting, credit, retirement, and side hustles to help you build real wealth.">
+    <meta name="keywords" content="personal finance, investing, budgeting, credit score, retirement planning, FIRE, side hustle, tax saving, money management">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="MoneyWise - Smart Personal Finance for Everyday People">
+    <meta property="og:description" content="Discover practical investing, budgeting, credit, and retirement advice to take control of your financial future.">
+    <meta property="og:type" content="website">
+    <title>MoneyWise - Smart Personal Finance for Everyday People</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            400: '#3b82f6',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'system-ui', '-apple-system', 'sans-serif'],
+                        heading: ['Georgia', 'Times New Roman', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .ad-container {
+            background: #f9fafb;
+            border: 2px dashed #e5e7eb;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 14px;
+            min-height: 90px;
+        }
+        .article-card:hover { transform: translateY(-4px); transition: transform 0.2s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-brand-700 tracking-tight">Money<span class="text-brand-500">Wise</span></a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-brand-600 font-medium">Home</a>
+                <a href="article-1.html" class="text-gray-600 hover:text-brand-600">Investing</a>
+                <a href="article-2.html" class="text-gray-600 hover:text-brand-600">Budgeting</a>
+                <a href="article-3.html" class="text-gray-600 hover:text-brand-600">Credit</a>
+                <a href="article-4.html" class="text-gray-600 hover:text-brand-600">Retirement</a>
+                <a href="about.html" class="text-gray-600 hover:text-brand-600">About</a>
+            </div>
+            <button class="md:hidden text-gray-600 text-2xl">&#9776;</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-brand-50 to-blue-200 py-16 md:py-24">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Take Control of Your <span class="text-brand-700">Financial Future</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+                Practical, no-nonsense personal finance advice on investing, budgeting, credit, and retirement — designed for real people, not Wall Street insiders.
+            </p>
+            <a href="article-1.html" class="inline-block bg-brand-700 hover:bg-brand-800 text-white font-semibold px-8 py-3 rounded-full text-lg transition-colors">
+                Start Building Wealth
+            </a>
+        </div>
+    </section>
+
+    <!-- Top Ad Placeholder -->
+    <div class="max-w-6xl mx-auto px-4 py-6">
+        <div class="ad-container h-[90px] md:h-[100px]">
+            <!-- AdSense Ad Slot -->
+            Advertisement
+        </div>
+    </div>
+
+    <!-- Featured Articles -->
+    <section class="max-w-6xl mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-2">Latest Articles</h2>
+        <p class="text-gray-500 mb-8">Expert tips and guides for smarter money management</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Article 1 -->
+            <a href="article-1.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-blue-200 to-indigo-300 flex items-center justify-center text-5xl">📈</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Investing</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">How to Start Investing with $100: Beginner's Guide</h3>
+                    <p class="text-gray-500 text-sm">Learn how even small investments can grow into significant wealth with the right strategy and patience.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 14, 2026</span><span>&middot;</span><span>10 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 2 -->
+            <a href="article-2.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-green-200 to-emerald-300 flex items-center justify-center text-5xl">🏦</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Budgeting</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Best High-Yield Savings Accounts (2026 Comparison)</h3>
+                    <p class="text-gray-500 text-sm">Compare the top high-yield savings accounts and find the best rates to grow your emergency fund faster.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 12, 2026</span><span>&middot;</span><span>7 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 3 -->
+            <a href="article-3.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-purple-200 to-violet-300 flex items-center justify-center text-5xl">💳</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Credit</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Credit Score Explained: How to Improve Yours Fast</h3>
+                    <p class="text-gray-500 text-sm">Understand what makes up your FICO score and proven strategies to boost it quickly and effectively.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 10, 2026</span><span>&middot;</span><span>8 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 4 -->
+            <a href="article-4.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-amber-200 to-yellow-300 flex items-center justify-center text-5xl">🏖️</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Retirement</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">FIRE Movement: Early Retirement Planning Guide</h3>
+                    <p class="text-gray-500 text-sm">Discover how the FIRE movement can help you achieve financial independence and retire decades early.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 8, 2026</span><span>&middot;</span><span>9 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 5 -->
+            <a href="article-5.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-orange-200 to-red-300 flex items-center justify-center text-5xl">💼</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Side Hustle</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Side Hustle Ideas That Actually Make Money in 2026</h3>
+                    <p class="text-gray-500 text-sm">Explore real side hustles with verified income data — from freelancing to passive income streams.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 6, 2026</span><span>&middot;</span><span>8 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 6 -->
+            <a href="article-6.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-teal-200 to-cyan-300 flex items-center justify-center text-5xl">📊</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Taxes</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Tax-Saving Strategies Every Employee Should Know</h3>
+                    <p class="text-gray-500 text-sm">Maximize your tax refund with strategies most employees overlook — from 401(k) to HSA tricks.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 4, 2026</span><span>&middot;</span><span>9 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 7 -->
+            <a href="article-7.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-blue-200 to-indigo-300 flex items-center justify-center text-5xl">📊</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Investing</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">ETF vs Mutual Fund: Which Is Better for You</h3>
+                    <p class="text-gray-500 text-sm">ETF vs Mutual Fund: Compare mechanisms, fees, tax efficiency, liquidity, and find out which is better for your investment goals. Includes specific product examples and scenario-based recommendations.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 5, 2026</span><span>&middot;</span><span>10 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 8 -->
+            <a href="article-8.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-green-200 to-emerald-300 flex items-center justify-center text-5xl">📋</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Budgeting</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">How to Create a Budget That Actually Works</h3>
+                    <p class="text-gray-500 text-sm">Learn how to create a budget that works: master the 50/30/20 rule, zero-based budgeting, track expenses with the best apps, and avoid common budgeting failures that derail your financial goals.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 7, 2026</span><span>&middot;</span><span>10 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 9 -->
+            <a href="article-9.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-teal-200 to-cyan-300 flex items-center justify-center text-5xl">🛡️</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Saving</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Emergency Fund: How Much You Need and Why</h3>
+                    <p class="text-gray-500 text-sm">Learn exactly how much money you need in an emergency fund, where to keep it, how to start building one from zero, when to use it, and how to replenish it. Real-life case studies included.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 9, 2026</span><span>&middot;</span><span>10 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 10 -->
+            <a href="article-10.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-purple-200 to-violet-300 flex items-center justify-center text-5xl">📈</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Investing</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Understanding Compound Interest: Your Money's Best Friend</h3>
+                    <p class="text-gray-500 text-sm">Master compound interest: understand the mathematics, the power of time, retirement account compounding, and the dramatic difference between starting early vs. late. Visual examples and calculations included.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 11, 2026</span><span>&middot;</span><span>10 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 11 -->
+            <a href="article-11.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-sky-200 to-blue-300 flex items-center justify-center text-5xl">📱</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Investing</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Best Investing Apps for Beginners in 2026</h3>
+                    <p class="text-gray-500 text-sm">Compare the best investing apps for beginners in 2026: features, fees, educational resources, safety, user experience, and which app fits your investing style.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 13, 2026</span><span>&middot;</span><span>11 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 12 -->
+            <a href="article-12.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-amber-200 to-orange-300 flex items-center justify-center text-5xl">💼</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Career</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">How to Negotiate a Higher Salary: Step-by-Step Guide</h3>
+                    <p class="text-gray-500 text-sm">Master salary negotiation: learn market research techniques, timing strategies, proven scripts, written preparation tactics, total compensation evaluation, handling rejection, and follow-up plans.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 14, 2026</span><span>&middot;</span><span>11 min read</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Middle Ad Placeholder -->
+    <div class="max-w-6xl mx-auto px-4 py-4">
+        <div class="ad-container h-[90px] md:h-[100px]">
+            <!-- AdSense Ad Slot -->
+            Advertisement
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="bg-brand-700 py-16">
+        <div class="max-w-2xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Get Weekly Money Tips</h2>
+            <p class="text-brand-100 mb-6">Join our newsletter and receive practical personal finance tips, investment insights, and money-saving strategies every week.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-lg text-gray-800 outline-none focus:ring-2 focus:ring-brand-400">
+                <button type="submit" class="bg-white text-brand-700 font-semibold px-6 py-3 rounded-lg hover:bg-brand-50 transition-colors">Subscribe</button>
+            </form>
+            <p class="text-brand-200 text-xs mt-4">No spam. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- Bottom Ad Placeholder -->
+    <div class="max-w-6xl mx-auto px-4 py-6">
+        <div class="ad-container h-[90px] md:h-[100px]">
+            <!-- AdSense Ad Slot -->
+            Advertisement
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-3">Money<span class="text-brand-400">Wise</span></h3>
+                    <p class="text-sm">Practical personal finance advice for everyday people who want to build real wealth.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="article-1.html" class="hover:text-white">Investing</a></li>
+                        <li><a href="article-2.html" class="hover:text-white">Budgeting</a></li>
+                        <li><a href="article-4.html" class="hover:text-white">Retirement</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html" class="hover:text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>30330238@qq.com</li>
+                        <li>Follow us on social media</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center text-sm">
+                <p>&copy; 2026 MoneyWise. All rights reserved. Part of the <a href="https://jycsd.com" class="hover:text-white">JYCSD Network</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

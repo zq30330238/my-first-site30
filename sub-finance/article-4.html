@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete guide to the FIRE movement — Financial Independence, Retire Early. Learn the 4% rule, FIRE variants (Lean, Coast, Fat), and step-by-step planning.">
+    <meta name="keywords" content="FIRE movement, financial independence retire early, 4 percent rule, Lean FIRE, Coast FIRE, Fat FIRE, FIRE number calculation, early retirement planning">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="FIRE Movement: Early Retirement Planning Guide - MoneyWise">
+    <meta property="og:description" content="Discover how the FIRE movement can help you achieve financial independence and retire decades early. Learn the 4% rule, FIRE variants, and actionable steps.">
+    <meta property="og:type" content="article">
+    <title>FIRE Movement: Early Retirement Planning Guide - MoneyWise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            400: '#3b82f6',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'system-ui', '-apple-system', 'sans-serif'],
+                        heading: ['Georgia', 'Times New Roman', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .ad-container {
+            background: #f9fafb;
+            border: 2px dashed #e5e7eb;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 14px;
+            min-height: 90px;
+        }
+        .article-content h2 { font-size: 1.75rem; font-weight: 700; color: #111827; margin-top: 2.5rem; margin-bottom: 1rem; }
+        .article-content h3 { font-size: 1.35rem; font-weight: 600; color: #1f2937; margin-top: 2rem; margin-bottom: 0.75rem; }
+        .article-content p { margin-bottom: 1.25rem; line-height: 1.8; font-size: 1.1rem; color: #374151; }
+        .article-content ul, .article-content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; line-height: 1.7; font-size: 1.05rem; color: #374151; }
+        .article-content blockquote {
+            border-left: 4px solid #1e40af;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            background: #eff6ff;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #374151;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-brand-700 tracking-tight">Money<span class="text-brand-500">Wise</span></a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-gray-600 hover:text-brand-600">Home</a>
+                <a href="article-1.html" class="text-gray-600 hover:text-brand-600">Investing</a>
+                <a href="article-2.html" class="text-gray-600 hover:text-brand-600">Budgeting</a>
+                <a href="article-3.html" class="text-gray-600 hover:text-brand-600">Credit</a>
+                <a href="article-4.html" class="text-brand-600 font-medium">Retirement</a>
+                <a href="about.html" class="text-gray-600 hover:text-brand-600">About</a>
+            </div>
+            <button class="md:hidden text-gray-600 text-2xl">&#9776;</button>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-10">
+
+            <main class="flex-1 min-w-0">
+
+                <nav class="text-sm text-gray-400 mb-4">
+                    <a href="index.html" class="hover:text-brand-600">Home</a> &rsaquo;
+                    <a href="#" class="hover:text-brand-600">Retirement</a> &rsaquo;
+                    <span class="text-gray-600">FIRE Movement Guide</span>
+                </nav>
+
+                <span class="inline-block text-xs font-semibold text-white bg-brand-600 px-3 py-1 rounded-full uppercase tracking-wide mb-3">Retirement</span>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">FIRE Movement: Your Complete Early Retirement Planning Guide</h1>
+                <div class="flex items-center gap-3 text-sm text-gray-500 mb-6">
+                    <div class="w-10 h-10 bg-brand-200 rounded-full flex items-center justify-center text-brand-700 font-bold">SL</div>
+                    <div>
+                        <p class="font-medium text-gray-700">Sarah Lin</p>
+                        <p>May 8, 2026 &middot; 9 min read</p>
+                    </div>
+                </div>
+
+                <div class="h-64 md:h-80 bg-gradient-to-br from-amber-200 to-yellow-300 rounded-xl flex items-center justify-center text-6xl mb-8">
+                    🏖️
+                </div>
+
+                <div class="bg-white rounded-xl p-6 md:p-10 shadow-sm border border-gray-100 article-content">
+
+                    <p>Imagine waking up at 40, 45, or 50 — not to an alarm clock demanding you commute to a job, but to a day entirely your own. You work because you want to, not because you have to. This is not a fantasy; it is the promise of the <strong>FIRE movement</strong> — Financial Independence, Retire Early.</p>
+
+                    <p>FIRE is one of the most discussed personal finance concepts of the last decade, but it is also one of the most misunderstood. In this comprehensive guide, we explain exactly what FIRE is, the math behind it, the different flavors of FIRE you can choose from, and step-by-step instructions to calculate your own FIRE number and start your journey.</p>
+
+                    <!-- In-Article Ad -->
+                    <div class="ad-container h-[100px] my-8">Advertisement</div>
+
+                    <h2>What Is the FIRE Movement?</h2>
+                    <p>At its core, FIRE is about achieving <strong>financial independence</strong> — the point at which your investments generate enough income to cover your living expenses indefinitely. Once you reach that point, working becomes optional. You can retire fully, switch to a lower-paying but more fulfilling career, start a business, volunteer, travel — the choice is yours.</p>
+
+                    <p>The movement gained mainstream traction through the 1992 book "Your Money or Your Life" by Vicki Robin and Joe Dominguez, and was supercharged by bloggers like Mr. Money Mustache in the 2010s. Today, FIRE communities thrive on Reddit (r/financialindependence, r/FIRE, r/leanfire), countless blogs, podcasts, and YouTube channels.</p>
+
+                    <p>The fundamental FIRE philosophy rests on two pillars:</p>
+                    <ul>
+                        <li><strong>Maximize your savings rate:</strong> By spending significantly less than you earn — often 50% to 70% of take-home pay — you accumulate capital far faster than the typical 5-15% savings rate.</li>
+                        <li><strong>Invest efficiently:</strong> Savings are invested in low-cost, broad-market index funds that generate long-term returns, growing your nest egg through the power of compound interest.</li>
+                    </ul>
+
+                    <h2>The 4% Rule: The Math That Makes FIRE Possible</h2>
+                    <p>The 4% rule is the mathematical engine behind FIRE. Popularized by the <strong>Trinity Study</strong> (published in 1998 by three professors at Trinity University), the rule states that if you withdraw 4% of your portfolio in the first year of retirement and adjust that dollar amount for inflation each year thereafter, your money has a very high probability (95%+) of lasting at least 30 years.</p>
+
+                    <p>This leads to a beautifully simple formula: <strong>Your FIRE number = Annual expenses x 25</strong></p>
+
+                    <p>Why 25? Because 1 divided by 4% (0.04) equals 25. If you spend $40,000 per year, your FIRE number is $1,000,000. If you spend $60,000 per year, your target is $1,500,000.</p>
+
+                    <p>The implications are profound. Every dollar you permanently reduce from your annual spending lowers your FIRE number by $25. Cut your monthly dining-out budget by $200 ($2,400 per year), and you just reduced your retirement target by $60,000. This is why FIRE advocates focus so intensely on minimizing expenses — it is a double win: you save more each month AND you need less total savings to retire.</p>
+
+                    <blockquote>
+                        <strong>The FIRE Formula Made Simple:</strong> Determine your annual expenses. Multiply by 25. That is your FIRE number. Save and invest until you hit it. Withdraw 4% per year (adjusted for inflation) to live on. That is the entire framework.
+                    </blockquote>
+
+                    <h2>The Different Flavors of FIRE</h2>
+                    <p>FIRE is not one-size-fits-all. Over the years, the community has developed several variants, each suiting different personalities and life goals:</p>
+
+                    <h3>Lean FIRE</h3>
+                    <p>Lean FIRE aims for financial independence on a minimalist budget — typically under $40,000 per year for a household, or under $25,000 for an individual. Lean FIRE adherents embrace frugality as a lifestyle, not a sacrifice. They find joy in simple living, DIY projects, and rejecting consumer culture. A Lean FIRE number might be as low as $625,000 ($25,000 x 25).</p>
+
+                    <p>The upside: you can reach financial independence much faster — potentially in 10-12 years with a moderately high income and very high savings rate. The downside: less margin for error. An unexpected medical expense or major home repair can strain a Lean FIRE budget.</p>
+
+                    <h3>Coast FIRE</h3>
+                    <p>Coast FIRE is the most accessible variant and our recommended starting point for most people. The idea: save aggressively early in your career until your investments reach a "coast number" — the amount that will grow to your full FIRE number by your desired retirement age without any additional contributions.</p>
+
+                    <p>For example, if you are 30 and want to retire at 60 with $1,000,000, assuming a 7% annual return, you need roughly $131,000 invested today. Once you hit that, you could theoretically stop saving for retirement entirely and let compound interest do the work for 30 years. In practice, most people continue saving, but knowing you have "coasted" removes enormous financial pressure.</p>
+
+                    <h3>Fat FIRE</h3>
+                    <p>Fat FIRE is for those who want financial independence without sacrificing lifestyle. Instead of a $40,000 annual budget, Fat FIRE might aim for $100,000 or $150,000 per year — requiring a nest egg of $2.5 to $3.75 million. Fat FIRE typically requires high income (tech, medicine, law, entrepreneurship) and a longer timeline.</p>
+
+                    <p>The upside: significant financial cushion and lifestyle freedom. The downside: it takes longer and requires sustained high earnings. It is also the variant most likely to lead to "one more year syndrome" — the tendency to keep working because the target keeps moving.</p>
+
+                    <h3>Barista FIRE</h3>
+                    <p>Barista FIRE combines partial financial independence with part-time or lower-stress work. You might have enough saved to cover 70-80% of your expenses, then work 15-20 hours per week at a job that provides health insurance and covers the remaining gap. The name comes from Starbucks, which famously offers health insurance even to part-time employees.</p>
+
+                    <!-- In-Article Ad -->
+                    <div class="ad-container h-[100px] my-8">Advertisement</div>
+
+                    <h2>How to Calculate Your FIRE Number: A Step-by-Step Guide</h2>
+
+                    <h3>Step 1: Track Your Actual Annual Spending</h3>
+                    <p>Not what you think you spend. Not what you wish you spent. What you actually spent over the last 12 months. Go through bank statements, credit card bills, and categorize everything. Include the annualized cost of irregular expenses like car repairs, medical bills, and home maintenance.</p>
+
+                    <h3>Step 2: Determine Your Target Retirement Spending</h3>
+                    <p>Your current spending is a baseline, but your retirement spending may differ. Some costs go down (no commuting, no work wardrobe, lower taxes). Others may go up (travel, hobbies, health insurance). Be honest — Lean FIRE on $25,000 per year sounds romantic until you face a root canal without dental insurance.</p>
+
+                    <h3>Step 3: Multiply by 25 (or Choose Your Own Multiple)</h3>
+                    <p>A traditional FIRE number uses the 25x multiple (the 4% rule). If you want extra safety, use 30x (3.33% withdrawal rate) or 33x (3% withdrawal rate). More conservative multiples require more savings but give you greater confidence.</p>
+
+                    <h3>Step 4: Account for Non-Portfolio Income</h3>
+                    <p>If you expect Social Security, a pension, rental income, or part-time work, subtract that from your annual expense target before multiplying. Example: You need $50,000 per year and expect $15,000 from Social Security starting at age 67. You only need your portfolio to provide $35,000 per year, lowering your FIRE number from $1,250,000 to $875,000.</p>
+
+                    <h3>Step 5: Determine Your Timeline</h3>
+                    <p>Use a compound interest calculator to see how long it will take to reach your number. Here is a powerful rule of thumb: at a 50% savings rate (including investment returns), you can reach financial independence in approximately 17 years, starting from zero. At 60%, it drops to about 12 years. At 70%, about 8.5 years.</p>
+
+                    <h2>Practical Steps to Start Your FIRE Journey Today</h2>
+
+                    <h3>1. Calculate Your Current Savings Rate</h3>
+                    <p>Your savings rate is the single most important number in FIRE. Divide the total amount you saved and invested last year by your take-home pay (after taxes and deductions). If you saved $20,000 and your take-home was $80,000, your savings rate is 25%. The higher this number, the faster you reach independence.</p>
+
+                    <h3>2. Optimize Your Three Largest Expenses</h3>
+                    <p>For most Americans, housing, transportation, and food consume 60-70% of spending. A 10% reduction in these three categories has a far greater impact than eliminating every latte and streaming subscription combined. Consider house-hacking (buying a multi-unit property and renting out the other units), driving a reliable used car, and learning to cook.</p>
+
+                    <h3>3. Max Out Tax-Advantaged Accounts</h3>
+                    <p>The government provides enormous tax incentives for retirement savings. In 2026, you can contribute up to $23,500 to a 401(k) ($31,000 if over 50) and $7,000 to an IRA ($8,000 if over 50). These accounts defer or eliminate taxes on your investment gains, dramatically accelerating your journey to financial independence.</p>
+
+                    <h3>4. Invest in Low-Cost Index Funds</h3>
+                    <p>FIRE investors overwhelmingly favor broad-market index funds (VTSAX, VOO, FSKAX). These provide instant diversification and have outperformed actively managed funds over the long term. Keep it simple — a total U.S. stock market fund plus a total international fund (or a single total world fund) is all most people need.</p>
+
+                    <h3>5. Avoid Lifestyle Inflation</h3>
+                    <p>As your income grows, resist the urge to upgrade your car, apartment, and restaurant habits proportionally. Every raise is an opportunity to increase your savings rate, not your spending. Many FIRE adherents aim to save 100% of every raise.</p>
+
+                    <blockquote>
+                        <strong>Powerful Truth:</strong> Your time to financial independence depends far more on your savings rate than on your income. A person earning $60,000 who saves 50% will reach FIRE faster than someone earning $200,000 who saves 10%.
+                    </blockquote>
+
+                    <!-- In-Article Ad -->
+                    <div class="ad-container h-[100px] my-8">Advertisement</div>
+
+                    <h2>Common FIRE Criticisms (and Honest Answers)</h2>
+                    <p><strong>Criticism:</strong> "FIRE is only for high-income tech workers."</p>
+                    <p><strong>Reality:</strong> While a high income helps, savings rate matters far more. A teacher earning $55,000 who saves 50% ($27,500/year) will reach FIRE before a software engineer earning $200,000 who saves 10% ($20,000/year). The math is indifferent to your salary.</p>
+
+                    <p><strong>Criticism:</strong> "The 4% rule is too risky."</p>
+                    <p><strong>Reality:</strong> This concern has merit. The 4% rule was designed for 30-year retirements, not 50-60 year retirements. Many in the FIRE community now target 3.25%-3.5% withdrawal rates for longer horizons. Additionally, most people who reach FIRE continue earning some income through hobbies or part-time work, further reducing risk.</p>
+
+                    <p><strong>Criticism:</strong> "You are wasting your youth being frugal."</p>
+                    <p><strong>Reality:</strong> FIRE is not about deprivation — it is about intentionality. The goal is to spend generously on what truly brings you joy while cutting ruthlessly on what does not. Many FIRE adherents report higher life satisfaction because they have aligned their spending with their values.</p>
+
+                    <h2>Final Thoughts</h2>
+                    <p>The FIRE movement is ultimately about freedom — the freedom to choose how you spend your time, your energy, and your life. Whether you want to retire fully at 40, switch to a passion career at 50, or simply have the security of knowing you could walk away from a job you hate, the principles of FIRE can help you get there.</p>
+
+                    <p>You do not need to adopt the most extreme version of FIRE. Start by calculating your savings rate, optimizing your major expenses, and investing the difference in low-cost index funds. Even if you never reach full financial independence, every step in that direction gives you more options, more security, and more control over your life.</p>
+
+                    <div class="flex flex-wrap gap-2 mt-10 pt-6 border-t border-gray-100">
+                        <span class="bg-brand-50 text-brand-700 text-sm px-3 py-1 rounded-full">FIRE Movement</span>
+                        <span class="bg-brand-50 text-brand-700 text-sm px-3 py-1 rounded-full">Early Retirement</span>
+                        <span class="bg-brand-50 text-brand-700 text-sm px-3 py-1 rounded-full">4% Rule</span>
+                        <span class="bg-brand-50 text-brand-700 text-sm px-3 py-1 rounded-full">Financial Independence</span>
+                    </div>
+                </div>
+
+                <div class="ad-container h-[100px] mt-8">Advertisement</div>
+
+                <section class="mt-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <a href="article-1.html" class="flex gap-4 bg-white rounded-xl p-4 border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-24 h-24 bg-gradient-to-br from-blue-200 to-indigo-300 rounded-lg flex items-center justify-center text-2xl shrink-0">📈</div>
+                            <div>
+                                <span class="text-xs text-brand-600 font-semibold">Investing</span>
+                                <h4 class="text-sm font-bold text-gray-900 mt-1">How to Start Investing with $100: Beginner's Guide</h4>
+                                <p class="text-xs text-gray-400 mt-1">May 14, 2026</p>
+                            </div>
+                        </a>
+                        <a href="article-6.html" class="flex gap-4 bg-white rounded-xl p-4 border border-gray-100 hover:shadow-md transition-shadow">
+                            <div class="w-24 h-24 bg-gradient-to-br from-teal-200 to-cyan-300 rounded-lg flex items-center justify-center text-2xl shrink-0">📊</div>
+                            <div>
+                                <span class="text-xs text-brand-600 font-semibold">Taxes</span>
+                                <h4 class="text-sm font-bold text-gray-900 mt-1">Tax-Saving Strategies Every Employee Should Know</h4>
+                                <p class="text-xs text-gray-400 mt-1">May 4, 2026</p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="w-full lg:w-80 shrink-0">
+                <div class="ad-container h-[250px] mb-6 sticky top-20">Sidebar Advertisement</div>
+
+                <div class="bg-white rounded-xl p-5 border border-gray-100 mb-6">
+                    <h4 class="font-bold text-gray-900 mb-3">About the Author</h4>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 bg-brand-200 rounded-full flex items-center justify-center text-brand-700 font-bold">SL</div>
+                        <div>
+                            <p class="font-semibold text-gray-900 text-sm">Sarah Lin</p>
+                            <p class="text-xs text-gray-500">Certified Public Accountant</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600">Sarah is a CPA specializing in retirement planning and tax strategy. She has been on her own FIRE journey for 8 years and is Coast FIRE at 37.</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-5 border border-gray-100 mb-6">
+                    <h4 class="font-bold text-gray-900 mb-4">Recent Posts</h4>
+                    <ul class="space-y-3">
+                        <li><a href="article-10.html" class="text-sm text-gray-600 hover:text-brand-600">Understanding Compound Interest</a></li>
+                        <li><a href="article-7.html" class="text-sm text-gray-600 hover:text-brand-600">ETF vs Mutual Fund: Which Is Better</a></li>
+                        <li><a href="article-11.html" class="text-sm text-gray-600 hover:text-brand-600">Best Investing Apps for Beginners 2026</a></li>
+                        <li><a href="article-9.html" class="text-sm text-gray-600 hover:text-brand-600">Emergency Fund: How Much and Why</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-5 border border-gray-100">
+                    <h4 class="font-bold text-gray-900 mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="article-1.html" class="text-sm text-gray-600 hover:text-brand-600">Investing</a></li>
+                        <li><a href="article-2.html" class="text-sm text-gray-600 hover:text-brand-600">Budgeting</a></li>
+                        <li><a href="article-3.html" class="text-sm text-gray-600 hover:text-brand-600">Credit</a></li>
+                        <li><a href="article-4.html" class="text-sm text-brand-600 hover:text-brand-700 font-medium">Retirement</a></li>
+                        <li><a href="article-12.html" class="text-sm text-gray-600 hover:text-brand-600">Career</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 mt-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-3">Money<span class="text-brand-400">Wise</span></h3>
+                    <p class="text-sm">Practical personal finance for everyday people.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="article-1.html" class="hover:text-white">Investing</a></li>
+                        <li><a href="article-2.html" class="hover:text-white">Budgeting</a></li>
+                        <li><a href="article-4.html" class="hover:text-white">Retirement</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html" class="hover:text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>30330238@qq.com</li>
+                        <li>Follow us on social media</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center text-sm">
+                <p>&copy; 2026 MoneyWise. All rights reserved. Part of the <a href="https://jycsd.com" class="hover:text-white">JYCSD Network</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

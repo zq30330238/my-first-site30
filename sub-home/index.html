@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeJoy — Fresh Home &amp; Garden Ideas for Everyday Living</title>
+  <meta name="description" content="HomeJoy brings you inspiring DIY projects, indoor gardening tips, home decor ideas, and practical guides for a happier, healthier home.">
+  <meta property="og:title" content="HomeJoy — Fresh Home &amp; Garden Ideas for Everyday Living">
+  <meta property="og:description" content="Discover DIY projects, indoor gardening tips, home decor inspiration, and practical home improvement guides from the HomeJoy team.">
+  <meta property="og:url" content="https://home.jycsd.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HomeJoy">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HomeJoy — Fresh Home &amp; Garden Ideas for Everyday Living">
+  <meta name="twitter:description" content="DIY projects, indoor gardening, home decor, and practical guides for a happier home.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Roboto', sans-serif; font-size: 16px; }
+    .brand-gradient { background: linear-gradient(135deg, #84cc16, #65a30d); }
+    .text-brand { color: #84cc16; }
+    .text-brand-dark { color: #65a30d; }
+    .bg-brand { background-color: #84cc16; }
+    .bg-brand-dark { background-color: #65a30d; }
+    .border-brand { border-color: #84cc16; }
+    .hover-brand:hover { color: #84cc16; }
+    .hover-bg-brand:hover { background-color: #65a30d; }
+    .ad-container { background: #f8fafc; border: 2px dashed #e2e8f0; border-radius: 8px; min-height: 250px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 2rem; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .card-hover { transition: all 0.3s ease; }
+  </style>
+</head>
+<body class="bg-stone-50 text-stone-800 min-h-screen flex flex-col">
+
+<!-- Header / Navigation -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center space-x-2 text-2xl font-black tracking-tight">
+        <span class="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm font-bold" style="background-color:#84cc16;">H</span>
+        <span class="text-stone-800">Home<span style="color:#84cc16;">Joy</span></span>
+      </a>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium">
+        <a href="index.html" class="text-stone-800 hover-brand border-b-2 border-transparent hover:border-[#84cc16] pb-1 transition">Home</a>
+        <a href="article-1.html" class="text-stone-600 hover:text-stone-800 border-b-2 border-transparent hover:border-[#84cc16] pb-1 transition">DIY</a>
+        <a href="article-2.html" class="text-stone-600 hover:text-stone-800 border-b-2 border-transparent hover:border-[#84cc16] pb-1 transition">Gardening</a>
+        <a href="article-3.html" class="text-stone-600 hover:text-stone-800 border-b-2 border-transparent hover:border-[#84cc16] pb-1 transition">Decor</a>
+        <a href="about.html" class="text-stone-600 hover:text-stone-800 border-b-2 border-transparent hover:border-[#84cc16] pb-1 transition">About</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="text-stone-600 p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-stone-100 bg-white">
+    <div class="px-4 py-3 space-y-2">
+      <a href="index.html" class="block py-2 text-stone-800 font-medium">Home</a>
+      <a href="article-1.html" class="block py-2 text-stone-600">DIY</a>
+      <a href="article-2.html" class="block py-2 text-stone-600">Gardening</a>
+      <a href="article-3.html" class="block py-2 text-stone-600">Decor</a>
+      <a href="about.html" class="block py-2 text-stone-600">About</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative overflow-hidden" style="background: linear-gradient(135deg, #84cc16 0%, #65a30d 40%, #1c1917 100%);">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <div class="max-w-2xl">
+      <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">Transform Your Home.<br>Naturally.</h1>
+      <p class="text-lg lg:text-xl text-stone-200 mb-8 leading-relaxed">Practical DIY guides, indoor gardening wisdom, and home decor inspiration — crafted for real homes and real people.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="article-1.html" class="inline-flex items-center px-6 py-3 bg-white text-stone-900 font-semibold rounded-full hover:bg-stone-100 transition shadow-lg">Explore DIY Projects</a>
+        <a href="article-2.html" class="inline-flex items-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded-full hover:bg-white/10 transition">Start Gardening</a>
+      </div>
+    </div>
+  </div>
+  <div class="absolute right-0 top-0 w-1/3 h-full hidden lg:block" style="background: radial-gradient(circle at center, rgba(132,204,22,0.3) 0%, transparent 70%);"></div>
+</section>
+
+<!-- Main Content -->
+<main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+  <!-- Ad Slot 1 -->
+  <div class="ad-container mb-16">
+    <span>Advertisement</span>
+  </div>
+
+  <!-- Article Grid -->
+  <section>
+    <div class="flex items-center justify-between mb-10">
+      <div>
+        <h2 class="text-3xl font-black text-stone-900">Latest Articles</h2>
+        <p class="text-stone-500 mt-1">Handpicked home &amp; garden guides for you</p>
+      </div>
+      <span class="hidden sm:inline-block text-sm text-stone-400 font-medium">12 articles</span>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md card-hover flex flex-col">
+        <div class="h-48 flex items-center justify-center text-white text-5xl font-black" style="background: linear-gradient(135deg, #84cc16, #4d7c0f);">DIY</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <span class="text-xs font-semibold uppercase tracking-wider text-lime-600 mb-2">DIY &middot; Budget</span>
+          <h3 class="text-xl font-bold text-stone-900 mb-2 leading-snug">15 DIY Home Improvement Projects Under $100</h3>
+          <p class="text-stone-500 text-sm leading-relaxed mb-4 flex-grow">Transform your space without breaking the bank. From painted cabinets to floating shelves — these 15 projects prove that big impact doesn't need a big budget.</p>
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>8 min read</span>
+            <a href="article-1.html" class="font-semibold text-lime-600 hover:text-lime-700 transition">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md card-hover flex flex-col">
+        <div class="h-48 flex items-center justify-center text-white text-5xl font-black" style="background: linear-gradient(135deg, #65a30d, #365314);">PLANT</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <span class="text-xs font-semibold uppercase tracking-wider text-lime-600 mb-2">Gardening &middot; Beginner</span>
+          <h3 class="text-xl font-bold text-stone-900 mb-2 leading-snug">Beginner's Guide to Indoor Plant Care</h3>
+          <p class="text-stone-500 text-sm leading-relaxed mb-4 flex-grow">Everything you need to know about choosing, watering, and nurturing indoor plants — even if you've never kept a plant alive before.</p>
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>10 min read</span>
+            <a href="article-2.html" class="font-semibold text-lime-600 hover:text-lime-700 transition">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md card-hover flex flex-col">
+        <div class="h-48 flex items-center justify-center text-white text-5xl font-black" style="background: linear-gradient(135deg, #84cc16, #3f6212);">CLEAN</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <span class="text-xs font-semibold uppercase tracking-wider text-lime-600 mb-2">Decor &middot; Organization</span>
+          <h3 class="text-xl font-bold text-stone-900 mb-2 leading-snug">How to Declutter Your Home: Room-by-Room Guide</h3>
+          <p class="text-stone-500 text-sm leading-relaxed mb-4 flex-grow">A practical, judgment-free guide to clearing the clutter from every room. Learn what to keep, what to donate, and how to stay organized.</p>
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>9 min read</span>
+            <a href="article-3.html" class="font-semibold text-lime-600 hover:text-lime-700 transition">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md card-hover flex flex-col">
+        <div class="h-48 flex items-center justify-center text-white text-5xl font-black" style="background: linear-gradient(135deg, #1c1917, #44403c);">ECO</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <span class="text-xs font-semibold uppercase tracking-wider text-lime-600 mb-2">Home Improvement &middot; Energy</span>
+          <h3 class="text-xl font-bold text-stone-900 mb-2 leading-snug">Energy-Efficient Home Upgrades That Pay for Themselves</h3>
+          <p class="text-stone-500 text-sm leading-relaxed mb-4 flex-grow">Smart investments that slash your utility bills and boost comfort. Calculate the ROI on LED lighting, smart thermostats, insulation, and more.</p>
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>7 min read</span>
+            <a href="article-4.html" class="font-semibold text-lime-600 hover:text-lime-700 transition">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md card-hover flex flex-col">
+        <div class="h-48 flex items-center justify-center text-white text-5xl font-black" style="background: linear-gradient(135deg, #84cc16, #166534);">GROW</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <span class="text-xs font-semibold uppercase tracking-wider text-lime-600 mb-2">Gardening &middot; Urban</span>
+          <h3 class="text-xl font-bold text-stone-900 mb-2 leading-snug">Small Space Gardening: Grow Food on Your Balcony</h3>
+          <p class="text-stone-500 text-sm leading-relaxed mb-4 flex-grow">No backyard? No problem. Learn how to grow tomatoes, herbs, and leafy greens on even the tiniest balcony or windowsill.</p>
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>8 min read</span>
+            <a href="article-5.html" class="font-semibold text-lime-600 hover:text-lime-700 transition">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md card-hover flex flex-col">
+        <div class="h-48 flex items-center justify-center text-white text-5xl font-black" style="background: linear-gradient(135deg, #65a30d, #1c1917);">CHECK</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <span class="text-xs font-semibold uppercase tracking-wider text-lime-600 mb-2">Maintenance &middot; Seasonal</span>
+          <h3 class="text-xl font-bold text-stone-900 mb-2 leading-snug">Essential Home Maintenance Checklist by Season</h3>
+          <p class="text-stone-500 text-sm leading-relaxed mb-4 flex-grow">Keep your home in peak condition year-round. Seasonal checklists, monthly tasks, and tips on when to DIY vs. call a professional.</p>
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>11 min read</span>
+            <a href="article-6.html" class="font-semibold text-lime-600 hover:text-lime-700 transition">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md card-hover flex flex-col">
+        <div class="h-48 flex items-center justify-center text-white text-5xl font-black" style="background: linear-gradient(135deg, #bbf7d0, #6ee7b7);">🌱</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <span class="text-xs font-semibold uppercase tracking-wider text-lime-600 mb-2">Gardening &middot; Beginner</span>
+          <h3 class="text-xl font-bold text-stone-900 mb-2 leading-snug">How to Start a Vegetable Garden from Scratch</h3>
+          <p class="text-stone-500 text-sm leading-relaxed mb-4 flex-grow">Learn how to start a vegetable garden from scratch: site selection, soil preparation, best beginner vegetables, planting schedules, watering, fertilizing, and organic pest control.</p>
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>13 min read</span>
+            <a href="article-7.html" class="font-semibold text-lime-600 hover:text-lime-700 transition">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md card-hover flex flex-col">
+        <div class="h-48 flex items-center justify-center text-white text-5xl font-black" style="background: linear-gradient(135deg, #fef08a, #fcd34d);">🔨</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <span class="text-xs font-semibold uppercase tracking-wider text-lime-600 mb-2">DIY &middot; Budget</span>
+          <h3 class="text-xl font-bold text-stone-900 mb-2 leading-snug">Budget Kitchen Renovation Ideas Under $500</h3>
+          <p class="text-stone-500 text-sm leading-relaxed mb-4 flex-grow">Transform your kitchen on a budget under $500: cabinet refinishing, wall treatments, lighting upgrades, hardware swaps, countertop solutions, and secondhand material sourcing.</p>
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>12 min read</span>
+            <a href="article-8.html" class="font-semibold text-lime-600 hover:text-lime-700 transition">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 9 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md card-hover flex flex-col">
+        <div class="h-48 flex items-center justify-center text-white text-5xl font-black" style="background: linear-gradient(135deg, #d6d3d1, #a8a29e);">♻️</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <span class="text-xs font-semibold uppercase tracking-wider text-lime-600 mb-2">Gardening &middot; Sustainability</span>
+          <h3 class="text-xl font-bold text-stone-900 mb-2 leading-snug">The Complete Guide to Composting at Home</h3>
+          <p class="text-stone-500 text-sm leading-relaxed mb-4 flex-grow">Master home composting: understand the science, choose the right bin, learn what to compost (and what not to), maintain your pile, harvest finished compost, and troubleshoot common issues.</p>
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>12 min read</span>
+            <a href="article-9.html" class="font-semibold text-lime-600 hover:text-lime-700 transition">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 10 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md card-hover flex flex-col">
+        <div class="h-48 flex items-center justify-center text-white text-5xl font-black" style="background: linear-gradient(135deg, #e9d5ff, #c4b5fd);">🎨</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <span class="text-xs font-semibold uppercase tracking-wider text-lime-600 mb-2">DIY &middot; Painting</span>
+          <h3 class="text-xl font-bold text-stone-900 mb-2 leading-snug">How to Paint a Room Like a Professional</h3>
+          <p class="text-stone-500 text-sm leading-relaxed mb-4 flex-grow">Achieve flawless walls with professional painting techniques: tool selection, surface preparation, cutting-in mastery, rolling techniques, multiple coats, cleanup, and color selection advice.</p>
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>13 min read</span>
+            <a href="article-10.html" class="font-semibold text-lime-600 hover:text-lime-700 transition">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 11 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md card-hover flex flex-col">
+        <div class="h-48 flex items-center justify-center text-white text-5xl font-black" style="background: linear-gradient(135deg, #a7f3d0, #86efac);">🪴</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <span class="text-xs font-semibold uppercase tracking-wider text-lime-600 mb-2">Indoor Plants &middot; Health</span>
+          <h3 class="text-xl font-bold text-stone-900 mb-2 leading-snug">Best Air-Purifying Indoor Plants for Every Room</h3>
+          <p class="text-stone-500 text-sm leading-relaxed mb-4 flex-grow">Discover the best air-purifying indoor plants for every room based on NASA research. Includes plant recommendations, care requirements, light needs, pet safety considerations, and pot selection tips.</p>
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>13 min read</span>
+            <a href="article-11.html" class="font-semibold text-lime-600 hover:text-lime-700 transition">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 12 -->
+      <article class="bg-white rounded-2xl overflow-hidden shadow-md card-hover flex flex-col">
+        <div class="h-48 flex items-center justify-center text-white text-5xl font-black" style="background: linear-gradient(135deg, #a5f3fc, #5eead4);">📦</div>
+        <div class="p-6 flex flex-col flex-grow">
+          <span class="text-xs font-semibold uppercase tracking-wider text-lime-600 mb-2">Organization &middot; Lifestyle</span>
+          <h3 class="text-xl font-bold text-stone-900 mb-2 leading-snug">Home Organization Systems That Actually Work</h3>
+          <p class="text-stone-500 text-sm leading-relaxed mb-4 flex-grow">Build a home organization system that lasts: overcome psychological barriers, follow a 5-step decluttering method, implement room-by-room storage solutions, maintain your system, and master the art of letting go.</p>
+          <div class="flex items-center justify-between text-xs text-stone-400">
+            <span>13 min read</span>
+            <a href="article-12.html" class="font-semibold text-lime-600 hover:text-lime-700 transition">Read More &rarr;</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Ad Slot 2 -->
+  <div class="ad-container mt-16">
+    <span>Advertisement</span>
+  </div>
+
+  <!-- Newsletter -->
+  <section class="mt-20 bg-white rounded-3xl p-10 lg:p-14 shadow-sm border border-stone-100 text-center">
+    <span class="inline-block px-4 py-1 bg-lime-100 text-lime-700 text-xs font-semibold uppercase tracking-wider rounded-full mb-4">Stay Inspired</span>
+    <h3 class="text-2xl lg:text-3xl font-black text-stone-900 mb-3">Get weekly home &amp; garden tips</h3>
+    <p class="text-stone-500 max-w-lg mx-auto mb-6">Practical ideas, seasonal reminders, and fresh inspiration delivered to your inbox every Saturday morning.</p>
+    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault();">
+      <input type="email" placeholder="Your email address" class="flex-grow px-5 py-3 border border-stone-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-transparent">
+      <button type="submit" class="px-6 py-3 bg-lime-500 text-white font-semibold rounded-full hover:bg-lime-600 transition text-sm">Subscribe</button>
+    </form>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-stone-900 text-stone-400 mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid md:grid-cols-3 gap-10 mb-10">
+      <div>
+        <h4 class="text-white font-bold text-lg mb-3">HomeJoy</h4>
+        <p class="text-sm leading-relaxed">Fresh ideas for a happier home. DIY projects, indoor gardening, home decor, and practical guides.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-lg mb-3">Explore</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-lime-400 transition">Home</a></li>
+          <li><a href="article-1.html" class="hover:text-lime-400 transition">DIY Projects</a></li>
+          <li><a href="article-2.html" class="hover:text-lime-400 transition">Gardening</a></li>
+          <li><a href="article-3.html" class="hover:text-lime-400 transition">Decor &amp; Organization</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold text-lg mb-3">Legal</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="about.html" class="hover:text-lime-400 transition">About</a></li>
+          <li><a href="privacy-policy.html" class="hover:text-lime-400 transition">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html" class="hover:text-lime-400 transition">Terms of Service</a></li>
+          <li><a href="cookie-policy.html" class="hover:text-lime-400 transition">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-stone-800 pt-8 text-center text-sm space-y-2">
+      <p>&copy; 2026 HomeJoy. All rights reserved.</p>
+      <p>Part of the <a href="https://jycsd.com" class="text-lime-400 hover:text-lime-300 transition underline underline-offset-2" target="_blank" rel="noopener">JYCSD Network</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
