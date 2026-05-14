@@ -1,45 +1,248 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人主页</title>
+    <meta name="description" content="Healthy Eating Guide - Discover nutrition tips, balanced diet plans, and delicious healthy recipes for a better lifestyle.">
+    <meta name="keywords" content="healthy eating, nutrition, diet plan, healthy recipes, balanced diet, wellness">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Healthy Eating Guide - Your Path to Better Nutrition">
+    <meta property="og:description" content="Discover nutrition tips, balanced diet plans, and delicious healthy recipes.">
+    <meta property="og:type" content="website">
+    <title>Healthy Eating Guide - Your Path to Better Nutrition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        heading: ['Georgia', 'Times New Roman', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "微软雅黑", sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
-        .container { max-width: 800px; margin: 50px auto; padding: 0 20px; }
-        h1 { text-align: center; color: #2c3e50; margin-bottom: 20px; }
-        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 25px; }
-        h2 { color: #3498db; margin-bottom: 15px; }
-        ul { list-style: none; }
-        li { margin: 8px 0; }
-        a { color: #e74c3c; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        .ad-container {
+            background: #f9fafb;
+            border: 2px dashed #e5e7eb;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-size: 14px;
+            min-height: 90px;
+        }
+        .article-card:hover { transform: translateY(-4px); transition: transform 0.2s ease; }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>你好，我是建站新手！👋</h1>
+<body class="bg-gray-50 text-gray-800">
 
-        <div class="card">
-            <h2>自我介绍</h2>
-            <p>我正在学习AI建站，目标是做自己的网站、靠网站赚钱。每天坚持学习，一步步把网站做起来！</p>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-brand-700 tracking-tight">Healthy<span class="text-brand-500">Eats</span></a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-brand-600 font-medium">Home</a>
+                <a href="#" class="text-gray-600 hover:text-brand-600">Recipes</a>
+                <a href="#" class="text-gray-600 hover:text-brand-600">Nutrition</a>
+                <a href="#" class="text-gray-600 hover:text-brand-600">Meal Plans</a>
+                <a href="#" class="text-gray-600 hover:text-brand-600">About</a>
+            </div>
+            <button class="md:hidden text-gray-600 text-2xl">&#9776;</button>
         </div>
+    </nav>
 
-        <div class="card">
-            <h2>我的技能</h2>
-            <ul>
-                <li>✅ 会用VS Code写代码</li>
-                <li>✅ 会用AI生成网站</li>
-                <li>✅ 会免费上线网站</li>
-            </ul>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-brand-50 to-green-100 py-16 md:py-24">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Eat Well, <span class="text-brand-600">Live Better</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+                Discover science-backed nutrition advice, easy healthy recipes, and practical meal plans to transform your eating habits.
+            </p>
+            <a href="#" class="inline-block bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3 rounded-full text-lg transition-colors">
+                Start Your Journey
+            </a>
         </div>
+    </section>
 
-        <div class="card">
-            <h2>联系方式</h2>
-            <p>邮箱：test@example.com</p>
-            <p>GitHub：<a href="https://github.com" target="_blank">我的GitHub主页</a></p>
+    <!-- Top Ad Placeholder -->
+    <div class="max-w-6xl mx-auto px-4 py-6">
+        <div class="ad-container h-[90px] md:h-[100px]">
+            <!-- AdSense Ad Slot -->
+            Advertisement
         </div>
     </div>
+
+    <!-- Featured Articles -->
+    <section class="max-w-6xl mx-auto px-4 py-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-2">Latest Articles</h2>
+        <p class="text-gray-500 mb-8">Expert tips and guides for healthy living</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Article 1 -->
+            <a href="article.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-green-200 to-emerald-300 flex items-center justify-center text-5xl">🥗</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Nutrition</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">10 Superfoods You Should Eat Every Day</h3>
+                    <p class="text-gray-500 text-sm">Discover nutrient-dense foods that boost your energy, improve immunity, and support overall health.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 14, 2026</span><span>&middot;</span><span>8 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 2 -->
+            <a href="article.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-blue-200 to-cyan-300 flex items-center justify-center text-5xl">🥑</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Meal Prep</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Beginner's Guide to Weekly Meal Prepping</h3>
+                    <p class="text-gray-500 text-sm">Save time and eat healthier with this step-by-step meal prep guide for busy people.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 10, 2026</span><span>&middot;</span><span>6 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 3 -->
+            <a href="article.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-orange-200 to-yellow-300 flex items-center justify-center text-5xl">🥕</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Diet Tips</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">How to Build a Balanced Plate at Every Meal</h3>
+                    <p class="text-gray-500 text-sm">Learn the simple formula for creating nutritious, satisfying meals without counting calories.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 8, 2026</span><span>&middot;</span><span>5 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 4 -->
+            <a href="article.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-purple-200 to-pink-300 flex items-center justify-center text-5xl">🍓</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Wellness</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">The Truth About Sugar and Your Health</h3>
+                    <p class="text-gray-500 text-sm">Understand how added sugars affect your body and simple swaps to reduce your intake.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 5, 2026</span><span>&middot;</span><span>7 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 5 -->
+            <a href="article.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-red-200 to-rose-300 flex items-center justify-center text-5xl">🥩</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Nutrition</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Plant-Based vs. Mediterranean Diet Compared</h3>
+                    <p class="text-gray-500 text-sm">Two of the healthiest eating patterns head-to-head. Which one is right for you?</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>May 2, 2026</span><span>&middot;</span><span>9 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Article 6 -->
+            <a href="article.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-gradient-to-br from-teal-200 to-green-300 flex items-center justify-center text-5xl">🥤</div>
+                <div class="p-5">
+                    <span class="text-xs font-semibold text-brand-600 uppercase tracking-wide">Recipes</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">5 Quick & Healthy Smoothie Recipes</h3>
+                    <p class="text-gray-500 text-sm">Delicious and nutritious smoothies you can make in under 5 minutes for any time of day.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>Apr 28, 2026</span><span>&middot;</span><span>4 min read</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Middle Ad Placeholder -->
+    <div class="max-w-6xl mx-auto px-4 py-4">
+        <div class="ad-container h-[90px] md:h-[100px]">
+            <!-- AdSense Ad Slot -->
+            Advertisement
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="bg-brand-700 py-16">
+        <div class="max-w-2xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Get Weekly Healthy Eating Tips</h2>
+            <p class="text-brand-100 mb-6">Join our newsletter and receive fresh recipes, nutrition advice, and meal plans every week.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-lg text-gray-800 outline-none focus:ring-2 focus:ring-brand-400">
+                <button type="submit" class="bg-white text-brand-700 font-semibold px-6 py-3 rounded-lg hover:bg-brand-50 transition-colors">Subscribe</button>
+            </form>
+            <p class="text-brand-200 text-xs mt-4">No spam. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- Bottom Ad Placeholder -->
+    <div class="max-w-6xl mx-auto px-4 py-6">
+        <div class="ad-container h-[90px] md:h-[100px]">
+            <!-- AdSense Ad Slot -->
+            Advertisement
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-3">Healthy<span class="text-brand-400">Eats</span></h3>
+                    <p class="text-sm">Your trusted source for evidence-based nutrition information and healthy living tips.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">Home</a></li>
+                        <li><a href="#" class="hover:text-white">Recipes</a></li>
+                        <li><a href="#" class="hover:text-white">Nutrition Guides</a></li>
+                        <li><a href="#" class="hover:text-white">Meal Plans</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>30330238@qq.com</li>
+                        <li>Follow us on social media</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center text-sm">
+                <p>&copy; 2026 HealthyEats. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
