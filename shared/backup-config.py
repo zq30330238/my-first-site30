@@ -26,8 +26,9 @@ def main():
 
     print("Backing up user configs...")
 
-    # Claude Code settings
-    copy_if_exists(USER_CLAUDE / "settings.json", BACKUP / "claude-settings.json")
+    # Claude Code settings (contains API keys, NOT backed up to git)
+    # Settings file is gitignored — manually copy if needed for recovery
+    print("  - settings.json skipped (contains API keys, copy manually if needed)")
 
     # Memory files (BIO system)
     copy_if_exists(PROJECT_MEMORY, BACKUP / "memory")

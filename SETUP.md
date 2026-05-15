@@ -32,8 +32,12 @@ npm i -g @openai/codex
 
 ## 5. 恢复配置文件
 
-### Claude Code 设置
-复制 `backup-config/claude-settings.json` → `C:\Users\<用户名>\.claude\settings.json`
+### Claude Code 设置 & 记忆
+`settings.json` 含 API 密钥，不存 git。手动复制：
+```
+原文件: C:\Users\<旧用户名>\.claude\settings.json
+目标:   C:\Users\<新用户名>\.claude\settings.json
+```
 复制 `backup-config/memory/` → `C:\Users\<用户名>\.claude\projects\d--AI-----\memory\`
 
 ### Codex 配置
