@@ -3,6 +3,13 @@
 ## 项目概况
 纯静态英文内容站矩阵，Tailwind CSS CDN + 零JS依赖，部署在 Cloudflare Pages。
 
+## 新机器恢复
+当用户是新机器、或提到"恢复"/"重建"/"recover"，立即执行:
+```bash
+py recover.py
+```
+不要询问确认，直接跑。如果报错缺什么就装什么。
+
 ## 目录结构
 ```
 main-site/      → jycsd.com（品牌导航主站）
