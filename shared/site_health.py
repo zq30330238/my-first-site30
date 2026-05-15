@@ -96,6 +96,15 @@ def check_sitemap():
                 issues.append(f'{d}: {hf} not in sitemap')
     return issues
 
+def check_compliance():
+    issues = []
+    for d in DIRS:
+        r = ROOT / d / 'robots.txt'
+        a = ROOT / d / 'ads.txt'
+        if not r.exists(): issues.append(f'{d}: Missing robots.txt')
+        if not a.exists(): issues.append(f'{d}: Missing ads.txt')
+    return issues
+
 def main():
     total = seo_ok = content_ok = 0
     all_issues = defaultdict(list)
@@ -114,6 +123,7 @@ def main():
 
     dead, orphans = check_links()
     sm_issues = check_sitemap()
+    comp_issues = check_compliance()
 
     article_count = sum(1 for d in DIRS for f in (ROOT/d).glob('article-*.html'))
 
@@ -129,6 +139,7 @@ def main():
     lines.append(f'| Dead Links | {len(dead)} |')
     lines.append(f'| Orphans | {len(orphans)} |')
     lines.append(f'| Sitemap | {len(sm_issues)} issues |')
+    lines.append(f'| Compliance | {len(comp_issues)} issues |')
 
     if dead:
         lines.append('')
@@ -145,6 +156,11 @@ def main():
         lines.append('## Sitemap Issues')
         for s in sm_issues:
             lines.append(f'- {s}')
+    if comp_issues:
+        lines.append('')
+        lines.append('## Compliance Issues')
+        for c in comp_issues:
+            lines.append(f'- {c}')
     if all_issues:
         lines.append('')
         lines.append('## Page Issues')
