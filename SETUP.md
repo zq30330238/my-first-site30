@@ -1,66 +1,31 @@
 # 新机器恢复指南
 
-## 1. 前置软件
-```bash
-# Python 3.10+ (系统安装)
-# Git (系统安装)
-# Node.js (Codex CLI 需要)
+只需 3 步手动操作，其余 Claude 自动完成。
+
+## 1. 安装前置软件
+```
+Python 3.10+  — https://python.org
+Git           — https://git-scm.com
+Node.js       — https://nodejs.org
+Claude Code   — 按官方文档安装
 ```
 
 ## 2. 克隆项目
 ```bash
-git clone <repo-url> d:/AI网站文件夹
-cd d:/AI网站文件夹
+git clone https://github.com/zq30330238/my-first-site30.git d:/AI网站文件夹
 ```
 
-## 3. 安装 Python 依赖
-```bash
-# Codex 代理
-pip install flask waitress requests python-dotenv
-
-# 语音系统（可选）
-pip install vosk pyaudio websockets
-
-# OCR（可选）
-pip install easyocr pillow pyautogui
-```
-
-## 4. 安装 Codex CLI
-```bash
-npm i -g @openai/codex
-```
-
-## 5. 恢复配置文件
-
-### Claude Code 设置 & 记忆
-`settings.json` 含 API 密钥，不存 git。手动复制：
-```
-原文件: C:\Users\<旧用户名>\.claude\settings.json
-目标:   C:\Users\<新用户名>\.claude\settings.json
-```
-复制 `backup-config/memory/` → `C:\Users\<用户名>\.claude\projects\d--AI-----\memory\`
-
-### Codex 配置
-复制 `backup-config/codex-config.toml` → `C:\Users\<用户名>\.codex\config.toml`
-
-## 6. 设置环境变量
+## 3. 设置 API 密钥
 ```powershell
-[System.Environment]::SetEnvironmentVariable('DEEPSEEK_API_KEY', '<你的API密钥>', 'User')
+[System.Environment]::SetEnvironmentVariable('DEEPSEEK_API_KEY', 'sk-你的密钥', 'User')
 ```
+重新打开终端使环境变量生效。
 
-## 7. 配置 Codex 代理
+## 4. 让 Claude 接管
 ```bash
-cd d:/AI网站文件夹/.claude/codex-proxy
-cp .env.example .env
-# 编辑 .env，填入 DEEPSEEK_API_KEY=sk-xxx
-```
-
-## 8. 验证
-```bash
-# 检查代理
-curl http://127.0.0.1:5000/v1/models
-
-# 检查 Codex
 cd d:/AI网站文件夹
-codex exec "echo hello"
+claude
 ```
+对 Claude 说：**"运行 recover.py 恢复项目"**
+
+Claude 会自动完成：Python 依赖安装、Codex CLI 安装、代理配置、记忆恢复、全站验证。
