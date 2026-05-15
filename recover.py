@@ -52,7 +52,7 @@ def npm_install_global(pkg, bin_name=None):
 def check_ccswitch():
     db_path = USER / ".cc-switch" / "cc-switch.db"
     if not db_path.exists():
-        return "CC-Switch not found — install and configure DeepSeek first"
+        return "CC-Switch not found -- install and configure DeepSeek first"
     import sqlite3, json
     conn = sqlite3.connect(str(db_path))
     cursor = conn.cursor()
@@ -65,25 +65,30 @@ def check_ccswitch():
         model = env.get("ANTHROPIC_MODEL", "unknown")
         base = env.get("ANTHROPIC_BASE_URL", "unknown")
         return f"CC-Switch: {row[0]} -> {model} @ {base}"
-    return "No active Claude provider in CC-Switch — configure DeepSeek first"
+    return "No active Claude provider in CC-Switch -- configure DeepSeek first"
 
 
-@step(2, "Install Python 3.10+")
+@step(2, "Install VS Code")
+def install_vscode():
+    return winget_install("VS Code", "Microsoft.VisualStudioCode", "code")
+
+
+@step(3, "Install Python 3.10+")
 def install_python():
     return winget_install("Python", "Python.Python.3.10", "python")
 
 
-@step(3, "Install Git")
+@step(4, "Install Git")
 def install_git():
     return winget_install("Git", "Git.Git", "git")
 
 
-@step(4, "Install Node.js LTS")
+@step(5, "Install Node.js LTS")
 def install_node():
     return winget_install("Node.js", "OpenJS.NodeJS.LTS", "node")
 
 
-@step(5, "Install Python dependencies")
+@step(6, "Install Python dependencies")
 def install_python_deps():
     subprocess.run([sys.executable, "-m", "pip", "install",
                     "flask", "waitress", "requests", "python-dotenv"],
@@ -91,12 +96,12 @@ def install_python_deps():
     return "flask waitress requests python-dotenv installed"
 
 
-@step(6, "Install Codex CLI")
+@step(7, "Install Codex CLI")
 def install_codex():
     return npm_install_global("@openai/codex", "codex")
 
 
-@step(7, "Setup Codex proxy .env")
+@step(8, "Setup Codex proxy .env")
 def setup_proxy_env():
     env_file = PROXY_DIR / ".env"
     if env_file.exists():
@@ -118,7 +123,7 @@ def setup_proxy_env():
     return "Created .env from CC-Switch config"
 
 
-@step(8, "Restore Codex config")
+@step(9, "Restore Codex config")
 def restore_codex_config():
     src = BACKUP / "codex-config.toml"
     dst = USER_CODEX / "config.toml"
@@ -129,7 +134,7 @@ def restore_codex_config():
     return f"Codex config restored -> {dst}"
 
 
-@step(9, "Restore memory files")
+@step(10, "Restore memory files")
 def restore_memory():
     memory_dir = USER_CLAUDE / "projects" / "d--AI-----" / "memory"
     src = BACKUP / "memory"
@@ -143,7 +148,7 @@ def restore_memory():
     return f"{count} memory files restored"
 
 
-@step(10, "Set DEEPSEEK_API_KEY env var")
+@step(11, "Set DEEPSEEK_API_KEY env var")
 def set_env_var():
     key = os.environ.get("DEEPSEEK_API_KEY", "")
     if key and key.startswith("sk-"):
@@ -166,7 +171,7 @@ def set_env_var():
     return "Could not auto-set DEEPSEEK_API_KEY"
 
 
-@step(11, "Verify Codex proxy")
+@step(12, "Verify Codex proxy")
 def verify_proxy():
     import urllib.request
     try:
@@ -176,7 +181,7 @@ def verify_proxy():
         return "Proxy not running (auto-starts on next Claude Code session)"
 
 
-@step(12, "Run SEO audit to verify project")
+@step(13, "Run SEO audit to verify project")
 def verify_project():
     audit_script = PROJECT / "shared" / "seo_audit.py"
     if not audit_script.exists():
