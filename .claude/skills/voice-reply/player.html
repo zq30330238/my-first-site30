@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>语音回复</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0f172a;display:flex;justify-content:center;align-items:center;height:100vh;font-family:system-ui}
+  .p{text-align:center}
+  .l{color:#94a3b8;font-size:12px;letter-spacing:3px;margin-bottom:18px}
+  button{w:64px;h:64px;border-radius:50%;border:none;background:#3b82f6;color:#fff;font-size:24px;cursor:pointer;box-shadow:0 8px 25px rgba(59,130,246,.35)}
+  button:hover{background:#2563eb}
+  .t{color:#64748b;font-size:11px;margin-top:14px}
+</style>
+</head>
+<body>
+<div class="p">
+  <div class="l">CLAUDE 语音</div>
+  <button id="b" onclick="toggle()">▶</button>
+  <div class="t" id="t"></div>
+</div>
+<audio id="a" src="file:///C:/Users/Administrator/AppData/Local/Temp/claude-speech.mp3" onloadedmetadata="d()" ontimeupdate="u()" onended="e()" onerror="r()"></audio>
+<script>
+var a=document.getElementById('a'),b=document.getElementById('b'),t=document.getElementById('t');
+function d(){var m=Math.floor(a.duration/60),s=Math.floor(a.duration%60);t.textContent=m+':'+String(s).padStart(2,'0')}
+function u(){if(!a.paused){var m=Math.floor(a.currentTime/60),s=Math.floor(a.currentTime%60);t.textContent=m+':'+String(s).padStart(2,'0')}}
+function e(){b.textContent='▶'}
+function r(){t.textContent='加载失败，重试刷新'}
+function toggle(){a.paused?(a.play(),b.textContent='⏸'):(a.pause(),b.textContent='▶')}
+</script>
+</body>
+</html>

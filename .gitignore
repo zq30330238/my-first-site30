@@ -1,2 +1,22 @@
 .vercel
-.claude/
+
+# Claude Code — exclude runtime state, keep config
+.claude/scheduled_tasks.lock
+.claude/settings.local.json
+.claude/backups/
+.claude/session-env/
+.claude/shell-snapshots/
+.claude/telemetry/
+.claude/plans/
+.claude/projects/
+
+# Codex proxy — exclude secrets and logs
+.claude/codex-proxy/.env
+.claude/codex-proxy/proxy_debug.log
+.claude/codex-proxy/proxy_stdout.log
+.claude/codex-proxy/__pycache__/
+
+# Python
+__pycache__/
+*.pyc
+backup-config/claude-settings.json
