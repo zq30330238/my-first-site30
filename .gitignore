@@ -16,7 +16,13 @@
 .claude/codex-proxy/proxy_stdout.log
 .claude/codex-proxy/__pycache__/
 
+# Wrangler
+.wrangler/
+
 # Python
 __pycache__/
 *.pyc
 backup-config/claude-settings.json
+backup-config/server-credentials.json
+backup-config/cloudflare-credentials.json
+backup-config/tencent-cloud-credentials.json
