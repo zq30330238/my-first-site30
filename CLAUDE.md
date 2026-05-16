@@ -37,13 +37,27 @@ shared/         → 公共资源
 - 每页预留2-3个AdSense广告位
 - 每子站独立robots.txt + sitemap.xml + ads.txt
 
-## 部署
-- 提交到git → `git push origin master` → Cloudflare Pages自动部署
-- 每个子站绑定对应子域名到Cloudflare Pages项目
+## 部署（重要：Direct Upload，非Git集成）
+- CF Pages 是 Direct Upload 模式，git push 不会触发部署！
+- 修改任何子站文件后，必须运行 wrangler 部署对应项目：
+  ```bash
+  export CLOUDFLARE_API_TOKEN="<从settings.local.json的Bash allow列表取cfat_开头的token>"
+  npx wrangler pages deploy <子站目录> --project-name=<项目名> --commit-dirty=true
+  ```
+- 项目名映射（重要——不是文件夹名！）：sub-healthy→healthy-jycsd, sub-pets→pets-jycsd, sub-home→home-jycsd, sub-finance→finance-jycsd, sub-tech→tech-jycsd, sub-travel→travel-jycsd, main-site→main-site
+- 部署完成后必须用 Chrome DevTools 或 fetch 验证线上实际内容，不能假设成功
+- 每次部署所有被修改的子站，不要遗漏
+- git push 仅用于代码备份，不等于上线
 
-## 可用技能
+## ECC 全家桶（62 Agents + 243 Skills + 75 Commands）
+- 来源: Everything Claude Code (affaan-m)，Anthropic 黑客松冠军，17万 Star
+- 本地源: `C:/Users/Administrator/.claude/plugins/marketplaces/ecc-manual/`
+- 自动更新: 每6小时 git pull + 同步到 `.claude/agents/` `.claude/skills/` `.claude/commands/`
+- 全自动换窗: 每3天自动写交接记忆 → 关旧窗 → 开新窗（cron: `37 9 */3 * *`）
+- 健康巡检: 每12小时增量检查（cron: `7 */12 * * *`）
+
+## 可用技能（原有）
 - `/voice-chat` — 语音对话（listen.py按住左Ctrl说话，server.py桥接TTS播报）
-- `douyin_parser.py` — 抖音视频解析+语音转文字（支持`--transcribe`）
 - `vosk_server.py` — Vosk常驻转录服务（端口9877，避免每次加载模型）
 - `ocr_screenshot.py` — 截图OCR识别
 - `deploy.py` — 自动git提交推送
