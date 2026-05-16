@@ -37,8 +37,15 @@ shared/         → 公共资源
 - 每页预留2-3个AdSense广告位
 - 每子站独立robots.txt + sitemap.xml + ads.txt
 
+## 部署前本地审计（强制）
+- 每次 commit 前自动运行 `shared/pre_commit_audit.py`（.git/hooks/pre-commit）
+- 检查项：坏 ad slot、ad-container 占位符、Auto Ads 脚本、必需 meta 标签
+- 审计不通过 → commit 被拦截 → 必须修复后重新提交
+- 新机器恢复后安装 hook：`cp .git/hooks/pre-commit.sample → 写入 py shared/pre_commit_audit.py`
+
 ## 部署（重要：Direct Upload，非Git集成）
 - CF Pages 是 Direct Upload 模式，git push 不会触发部署！
+- 流程：编辑 → pre-commit 审计 → commit → push → wrangler deploy → 线上验证
 - 修改任何子站文件后，必须运行 wrangler 部署对应项目：
   ```bash
   export CLOUDFLARE_API_TOKEN="<从settings.local.json的Bash allow列表取cfat_开头的token>"
