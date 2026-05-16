@@ -1,0 +1,62 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'sub-healthy/**'
+      - 'sub-pets/**'
+      - 'sub-home/**'
+      - 'sub-finance/**'
+      - 'sub-tech/**'
+      - 'sub-travel/**'
+      - 'main-site/**'
+      - 'shared/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy sub-healthy → healthy-jycsd
+        if: always()
+        run: npx wrangler pages deploy sub-healthy --project-name=healthy-jycsd --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
+      - name: Deploy sub-pets → pets-jycsd
+        if: always()
+        run: npx wrangler pages deploy sub-pets --project-name=pets-jycsd --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
+      - name: Deploy sub-home → home-jycsd
+        if: always()
+        run: npx wrangler pages deploy sub-home --project-name=home-jycsd --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
+      - name: Deploy sub-finance → finance-jycsd
+        if: always()
+        run: npx wrangler pages deploy sub-finance --project-name=finance-jycsd --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
+      - name: Deploy sub-tech → tech-jycsd
+        if: always()
+        run: npx wrangler pages deploy sub-tech --project-name=tech-jycsd --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
+      - name: Deploy sub-travel → travel-jycsd
+        if: always()
+        run: npx wrangler pages deploy sub-travel --project-name=travel-jycsd --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
+      - name: Deploy main-site
+        if: always()
+        run: npx wrangler pages deploy main-site --project-name=main-site --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
