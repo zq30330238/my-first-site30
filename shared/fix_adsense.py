@@ -9,9 +9,9 @@ SITES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-tech", "sub-
 PUB_ID = "ca-pub-2595917642864488"
 
 AD_SLOTS = {
-    "article_top": "6452093175",
-    "article_mid": "7928829977",
-    "article_bottom": "9405566373",
+    "article_top": "9112825459",
+    "article_mid": "4397738132",
+    "article_bottom": "9739511410",
 }
 
 def make_ad_unit(slot_name):
