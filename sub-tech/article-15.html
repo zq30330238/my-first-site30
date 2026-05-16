@@ -19,7 +19,24 @@
     <script>tailwind.config={theme:{extend:{colors:{brand:{50:'#f8fafc',100:'#f1f5f9',200:'#e2e8f0',400:'#94a3b8',500:'#64748b',600:'#475569',700:'#334155',800:'#1e293b'}},fontFamily:{sans:['Roboto','system-ui','-apple-system','sans-serif'],heading:['Roboto','Arial','sans-serif']}}}}</script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        .ad-container{background:#f9fafb;border:2px dashed #e5e7eb;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#9ca3af;font-size:14px;min-height:90px}
+        .ad-unit {
+    background: #f9fafb;
+    border-radius: 8px;
+    text-align: center;
+    margin: 2.5rem 0;
+    padding: 0.5rem 0 1.5rem 0;
+    overflow: hidden;
+}
+.ad-label {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
         .article-content h2{font-size:1.75rem;font-weight:700;color:#111827;margin-top:2.5rem;margin-bottom:1rem}
         .article-content h3{font-size:1.35rem;font-weight:600;color:#1f2937;margin-top:2rem;margin-bottom:.75rem}
         .article-content p{margin-bottom:1.25rem;line-height:1.8;font-size:1.1rem;color:#374151}
@@ -112,7 +129,11 @@
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">Home Wi-Fi Guide: Fix Dead Zones and Boost Speed</h1>
             <div class="flex items-center gap-3 text-sm text-gray-500 mb-6">
                 <div class="w-10 h-10 bg-brand-200 rounded-full flex items-center justify-center text-brand-700 font-bold">AT</div>
-                <div><p class="font-medium text-gray-700">Alex Turner</p><p>May 16, 2026 &middot; 11 min read</p></div>
+                <div><p class="font-medium text-gray-700">Alex Turner</p>
+<div class="ad-unit"><span class="ad-label">Advertisement</span>
+<ins class="adsbygoogle" style="display:block; min-height:280px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="6452093175" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+<p>May 16, 2026 &middot; 11 min read</p></div>
             </div>
 
             <img
@@ -156,6 +177,10 @@
 
                 <h2>Wi-Fi Extenders: Cheap Solution, Real Limitations</h2>
                 <p>Wi-Fi extenders, also called repeaters, pick up your router's signal and rebroadcast it. They cost $20-40 and can be set up in minutes by pressing a WPS button or scanning a QR code. For a small dead zone in a single room, like a back bedroom or a garage, an extender can be a perfectly adequate fix.</p>
+<div class="ad-unit"><span class="ad-label">Advertisement</span>
+<ins class="adsbygoogle" style="display:block; min-height:280px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="7928829977" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
 
                 <p>The trade-offs are real. Most extenders halve your throughput because they use the same radio to communicate with both the router and your devices. If your main router delivers 200Mbps to that area, a typical extender will deliver roughly 80-100Mbps after overhead. Extenders also often create a separate network name, so moving between the main network and the extended one requires a manual switch or causes a brief disconnection. Some newer extenders support mesh-like roaming, but the experience is less polished than a true mesh system.</p>
 
