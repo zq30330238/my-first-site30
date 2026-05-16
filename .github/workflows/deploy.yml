@@ -14,63 +14,114 @@ on:
       - 'shared/**'
 
 jobs:
-  deploy:
+  deploy-healthy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
+      - name: Publish healthy-jycsd
+        uses: cloudflare/pages-action@v1
         with:
-          node-version: '20'
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: 4e8cd083c07627f679dd86dc5b488fb0
+          projectName: healthy-jycsd
+          directory: sub-healthy
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install wrangler
-        run: npm install -g wrangler
+  deploy-pets:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish pets-jycsd
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: 4e8cd083c07627f679dd86dc5b488fb0
+          projectName: pets-jycsd
+          directory: sub-pets
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy sub-healthy -> healthy-jycsd
-        if: always()
-        run: wrangler pages deploy sub-healthy --project-name=healthy-jycsd --commit-dirty=true
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
+  deploy-home:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish home-jycsd
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: 4e8cd083c07627f679dd86dc5b488fb0
+          projectName: home-jycsd
+          directory: sub-home
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy sub-pets -> pets-jycsd
-        if: always()
-        run: wrangler pages deploy sub-pets --project-name=pets-jycsd --commit-dirty=true
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
+  deploy-finance:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish finance-jycsd
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: 4e8cd083c07627f679dd86dc5b488fb0
+          projectName: finance-jycsd
+          directory: sub-finance
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy sub-home -> home-jycsd
-        if: always()
-        run: wrangler pages deploy sub-home --project-name=home-jycsd --commit-dirty=true
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
+  deploy-tech:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish tech-jycsd
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: 4e8cd083c07627f679dd86dc5b488fb0
+          projectName: tech-jycsd
+          directory: sub-tech
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy sub-finance -> finance-jycsd
-        if: always()
-        run: wrangler pages deploy sub-finance --project-name=finance-jycsd --commit-dirty=true
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
+  deploy-travel:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish travel-jycsd
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: 4e8cd083c07627f679dd86dc5b488fb0
+          projectName: travel-jycsd
+          directory: sub-travel
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy sub-tech -> tech-jycsd
-        if: always()
-        run: wrangler pages deploy sub-tech --project-name=tech-jycsd --commit-dirty=true
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
-
-      - name: Deploy sub-travel -> travel-jycsd
-        if: always()
-        run: wrangler pages deploy sub-travel --project-name=travel-jycsd --commit-dirty=true
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
-
-      - name: Deploy main-site
-        if: always()
-        run: wrangler pages deploy main-site --project-name=main-site --commit-dirty=true
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
+  deploy-main:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish main-site
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: 4e8cd083c07627f679dd86dc5b488fb0
+          projectName: main-site
+          directory: main-site
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
