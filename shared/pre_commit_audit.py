@@ -59,16 +59,29 @@ def check_article(filepath):
     if 'rel="canonical"' not in html:
         warnings.append(f"{name}: missing canonical URL")
 
-    # 7. Word count (rough: count text in article-content div)
-    content_match = re.search(r'class="[^"]*article-content[^"]*"[^>]*>(.*?)</div>\s*(?:<!--|\n\s*<div)', html, re.DOTALL)
-    if not content_match:
-        content_match = re.search(r'class="[^"]*article-content[^"]*"[^>]*>(.*?)</(?:div|main)>', html, re.DOTALL)
-    if content_match:
-        text = re.sub(r'<[^>]+>', ' ', content_match.group(1))
-        text = re.sub(r'\s+', ' ', text).strip()
-        word_count = len(text.split())
-        if word_count < MIN_WORDS:
-            warnings.append(f"{name}: only {word_count} words (min {MIN_WORDS})")
+    # 7. Word count: track div depth to handle nested ad-unit divs
+    start = re.search(r'class="[^"]*article-content[^"]*"[^>]*>', html)
+    if start:
+        pos = start.end()
+        depth = 1
+        while depth > 0:
+            next_open = html.find('<div', pos)
+            next_close = html.find('</div>', pos)
+            if next_close == -1:
+                break
+            if next_open != -1 and next_open < next_close:
+                depth += 1
+                pos = next_open + 4
+            else:
+                depth -= 1
+                if depth == 0:
+                    inner = html[start.end():next_close]
+                    text = re.sub(r'<[^>]+>', ' ', inner)
+                    text = re.sub(r'\s+', ' ', text).strip()
+                    word_count = len(text.split())
+                    if word_count < MIN_WORDS:
+                        warnings.append(f"{name}: only {word_count} words (min {MIN_WORDS})")
+                pos = next_close + 6
 
 
 def main():
