@@ -1,16 +1,38 @@
 # SEO Audit Report
-**Generated:** 2026-05-15 21:11:45
-**Pages scanned:** 79
+**Generated:** 2026-05-16 07:54:17
+**Pages scanned:** 107
 
 ## Summary
-- Title length in 50-60 range: 51/79 X
-- Description length in 120-155 range: 69/79 X
-- Pages with OG tags: 79/79 +
-- Pages with canonical: 79/79 +
+- Title length in 50-60 range: 107/107 +
+- Description length in 120-155 range: 107/107 +
+- Pages with OG tags: 107/107 +
+- Pages with canonical: 107/107 +
 - Pages missing title: 0 +
 - Pages missing meta description: 0 +
 
 ## Per-Page Details
+
+### `main-site/about.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | About JYCSD - Jiangyin CheSuDi | Our Story & Mission | 52 chars +  |
+| Meta Description | About JYCSD - Jiangyin CheSuDi. Learn about our mission, our network of lifestyle guide websites, and the team behind our content. | 130 chars +  |
+| og:title | About JYCSD - Jiangyin CheSuDi | Our Story & Mission | |
+| og:description | Learn about JYCSD and our network of expert lifestyle guide websites. | |
+| Robots | index, follow | |
+| Canonical | https://www.jycsd.com/about.html | + |
+
+### `main-site/cookie-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Cookie Policy - JYCSD Network | Cookie Usage & Your Privacy | 59 chars +  |
+| Meta Description | Learn about JYCSD's use of essential, analytics and advertising cookies, Google AdSense tracking, and how to control your cookie preferences. | 141 chars +  |
+| og:title | Cookie Policy - JYCSD Network | Cookie Usage & Your Privacy | |
+| og:description | Learn about JYCSD's use of essential, analytics and advertising cookies, Google AdSense tracking, and how to control your cookie preferences. | |
+| Robots | noindex, follow | |
+| Canonical | https://www.jycsd.com/cookie-policy.html | + |
 
 ### `main-site/index.html`
 
@@ -23,13 +45,46 @@
 | Robots | index, follow | |
 | Canonical | https://www.jycsd.com/ | + |
 
+### `main-site/privacy-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Privacy Policy - JYCSD Network | How We Protect Your Data | 57 chars +  |
+| Meta Description | Read JYCSD's Privacy Policy to learn how we collect, use, and protect your personal data, including Google AdSense practices and your privacy rights. | 149 chars +  |
+| og:title | Privacy Policy - JYCSD Network | How We Protect Your Data | |
+| og:description | Read JYCSD's Privacy Policy to learn how we collect, use, and protect your personal data, including Google AdSense practices and your privacy rights. | |
+| Robots | noindex, follow | |
+| Canonical | https://www.jycsd.com/privacy-policy.html | + |
+
+### `main-site/terms-of-service.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Terms of Service - JYCSD Network | Usage Terms & Conditions | 59 chars +  |
+| Meta Description | Read JYCSD's Terms of Service detailing usage rules for our websites, including content disclaimers, intellectual property rights, and user obligations. | 152 chars +  |
+| og:title | Terms of Service - JYCSD Network | Usage Terms & Conditions | |
+| og:description | Read JYCSD's Terms of Service detailing usage rules for our websites, including content disclaimers, intellectual property rights, and user obligations. | |
+| Robots | noindex, follow | |
+| Canonical | https://www.jycsd.com/terms-of-service.html | + |
+
+### `sub-finance/about.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | About MoneyWise — Your Trusted Personal Finance Resource | 56 chars +  |
+| Meta Description | About MoneyWise — Learn about our mission to provide practical, evidence-based personal finance advice and money management tips for everyday people. | 149 chars +  |
+| og:title | About MoneyWise — Your Trusted Personal Finance Resource | |
+| og:description | Learn about our mission to make practical, evidence-based personal finance knowledge accessible to everyone through clear and actionable guidance. | |
+| Robots | index, follow | |
+| Canonical | https://finance.jycsd.com/about.html | + |
+
 ### `sub-finance/article-1.html`
 
 | Field | Value | Check |
 |---|---|---|
-| Title | How to Start Investing with $100: Beginner's Guide - MoneyWise | 62 chars X Too long (62 chars, want 50-60) |
+| Title | Start Investing with $100: Beginner's Guide - MoneyWise | 55 chars +  |
 | Meta Description | Learn how to start investing with just $100. A complete beginner's guide covering index funds, brokerages, dollar-cost averaging, and compound interest. | 152 chars +  |
-| og:title | How to Start Investing with $100: Beginner's Guide - MoneyWise | |
+| og:title | Start Investing with $100: Beginner's Guide - MoneyWise | |
 | og:description | Discover how even $100 can be the start of your investment journey. Learn about index funds, choosing brokers, and the power of compound growth. | |
 | Robots | index, follow | |
 | Canonical | https://finance.jycsd.com/article-1.html | + |
@@ -38,9 +93,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Understanding Compound Interest - MoneyWise | 43 chars X Too short (43 chars, want 50-60) |
+| Title | Compound Interest: How Money Grows Over Time - MoneyWise | 56 chars +  |
 | Meta Description | Master compound interest: understand the mathematics, the power of time, retirement account compounding, and the dramatic difference between starting | 149 chars +  |
-| og:title | Understanding Compound Interest - MoneyWise | |
+| og:title | Compound Interest: How Money Grows Over Time - MoneyWise | |
 | og:description | How compound interest works, why starting early matters more than you think, and how to harness the most powerful force in investing for your retirement. | |
 | Robots | index, follow | |
 | Canonical | https://finance.jycsd.com/article-10.html | + |
@@ -60,9 +115,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | How to Negotiate a Higher Salary - MoneyWise | 44 chars X Too short (44 chars, want 50-60) |
+| Title | How to Negotiate a Higher Salary with Confidence - MoneyWise | 60 chars +  |
 | Meta Description | Master salary negotiation: learn market research techniques, timing strategies, proven scripts, written preparation tactics, total compensation | 143 chars +  |
-| og:title | How to Negotiate a Higher Salary - MoneyWise | |
+| og:title | How to Negotiate a Higher Salary with Confidence - MoneyWise | |
 | og:description | Proven salary negotiation strategies: research your market value, time your ask perfectly, use effective scripts, evaluate total compensation, and handle rejection professionally. | |
 | Robots | index, follow | |
 | Canonical | https://finance.jycsd.com/article-12.html | + |
@@ -71,9 +126,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Best High-Yield Savings Accounts (2026 Comparison) - MoneyWise | 62 chars X Too long (62 chars, want 50-60) |
+| Title | Best High-Yield Savings Accounts of 2026 - MoneyWise | 52 chars +  |
 | Meta Description | Compare the best high-yield savings accounts in 2026. Find top interest rates, FDIC insurance details, and how to choose between online and traditional | 151 chars +  |
-| og:title | Best High-Yield Savings Accounts (2026 Comparison) - MoneyWise | |
+| og:title | Best High-Yield Savings Accounts of 2026 - MoneyWise | |
 | og:description | Find the best high-yield savings account rates for 2026. Compare APYs, fees, and features from top online banks. | |
 | Robots | index, follow | |
 | Canonical | https://finance.jycsd.com/article-2.html | + |
@@ -82,9 +137,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Credit Score Explained: How to Improve Yours Fast - MoneyWise | 61 chars X Too long (61 chars, want 50-60) |
+| Title | Credit Score Explained: How to Improve Yours - MoneyWise | 56 chars +  |
 | Meta Description | Understand your FICO credit score and learn proven strategies to improve it fast. Breakdown of the 5 factors, common myths debunked, and realistic | 146 chars +  |
-| og:title | Credit Score Explained: How to Improve Yours Fast - MoneyWise | |
+| og:title | Credit Score Explained: How to Improve Yours - MoneyWise | |
 | og:description | Learn exactly what makes up your credit score and the fastest ways to improve it. FICO breakdown, common myths, and realistic timelines. | |
 | Robots | index, follow | |
 | Canonical | https://finance.jycsd.com/article-3.html | + |
@@ -104,9 +159,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Side Hustle Ideas That Actually Make Money in 2026 - MoneyWise | 62 chars X Too long (62 chars, want 50-60) |
+| Title | Side Hustle Ideas That Actually Pay Off - MoneyWise | 51 chars +  |
 | Meta Description | Discover side hustle ideas that actually make money in 2026. Real income data, remote work opportunities, skill monetization, and how to choose the right | 153 chars +  |
-| og:title | Side Hustle Ideas That Actually Make Money in 2026 - MoneyWise | |
+| og:title | Side Hustle Ideas That Actually Pay Off - MoneyWise | |
 | og:description | Explore real side hustles with verified income data. From freelancing to passive income, find the right side hustle for your skills and schedule. | |
 | Robots | index, follow | |
 | Canonical | https://finance.jycsd.com/article-5.html | + |
@@ -155,6 +210,17 @@
 | Robots | index, follow | |
 | Canonical | https://finance.jycsd.com/article-9.html | + |
 
+### `sub-finance/cookie-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Cookie Policy — How MoneyWise Uses Cookies and Ad Tracking | 58 chars +  |
+| Meta Description | Cookie Policy for MoneyWise — How we use cookies and tracking technologies including Google AdSense and the DoubleClick cookie on our finance website. | 150 chars +  |
+| og:title | Cookie Policy — How MoneyWise Uses Cookies and Ad Tracking | |
+| og:description | Learn how MoneyWise uses cookies and tracking technologies, including Google AdSense and the DoubleClick cookie, on our personal finance website. | |
+| Robots | noindex, follow | |
+| Canonical | https://finance.jycsd.com/cookie-policy.html | + |
+
 ### `sub-finance/index.html`
 
 | Field | Value | Check |
@@ -166,12 +232,45 @@
 | Robots | index, follow | |
 | Canonical | https://finance.jycsd.com/ | + |
 
+### `sub-finance/privacy-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Privacy Policy — How MoneyWise Handles Your Personal Data | 57 chars +  |
+| Meta Description | Privacy Policy for MoneyWise — How we collect, use, and protect your personal information when you visit our personal finance advice website. | 141 chars +  |
+| og:title | Privacy Policy — How MoneyWise Handles Your Personal Data | |
+| og:description | Learn how MoneyWise collects, uses, and protects your personal information when you visit our personal finance advice website. | |
+| Robots | noindex, follow | |
+| Canonical | https://finance.jycsd.com/privacy-policy.html | + |
+
+### `sub-finance/terms-of-service.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Terms of Service — Rules and Guidelines for Using MoneyWise | 59 chars +  |
+| Meta Description | Terms of Service for MoneyWise — Read the terms, disclaimers, and conditions for using our personal finance education website at finance.jycsd.com. | 147 chars +  |
+| og:title | Terms of Service — Rules and Guidelines for Using MoneyWise | |
+| og:description | Read the terms, disclaimers, and conditions for using the MoneyWise personal finance education website at finance.jycsd.com. | |
+| Robots | noindex, follow | |
+| Canonical | https://finance.jycsd.com/terms-of-service.html | + |
+
+### `sub-healthy/about.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | About HealthyEats — Evidence-Based Nutrition & Wellness Tips | 60 chars +  |
+| Meta Description | Learn about HealthyEats' mission to deliver evidence-based nutrition guides, healthy eating tips, and practical meal advice grounded in science. | 144 chars +  |
+| og:title | About HealthyEats — Evidence-Based Nutrition & Wellness Tips | |
+| og:description | Learn about HealthyEats' mission to deliver evidence-based nutrition guides, healthy eating tips, and practical meal advice grounded in science. | |
+| Robots | index, follow | |
+| Canonical | https://healthy.jycsd.com/about.html | + |
+
 ### `sub-healthy/article-1.html`
 
 | Field | Value | Check |
 |---|---|---|
 | Title | 10 Superfoods You Should Eat Every Day - HealthyEats | 52 chars +  |
-| Meta Description | Discover the top 10 superfoods you should eat every day for better health, more energy, and a stronger immune system. | 117 chars X Too short (117 chars, want 120-155) |
+| Meta Description | Discover the top 10 superfoods to eat daily for better health, more energy, and a stronger immune system. Add these nutrient-packed foods to your meals. | 152 chars +  |
 | og:title | 10 Superfoods You Should Eat Every Day - HealthyEats | |
 | og:description | Discover nutrient-dense superfoods that boost energy and improve health. | |
 | Robots | index, follow | |
@@ -181,9 +280,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Gut Health Diet: Foods That Heal Your Digestive System - HealthyEats | 68 chars X Too long (68 chars, want 50-60) |
+| Title | Gut Health Diet: Foods That Heal Your Gut - HealthyEats | 55 chars +  |
 | Meta Description | Discover the gut health diet that heals your digestive system. Learn about probiotics, prebiotics, fermented foods, leaky gut, and a 7-day sample meal | 150 chars +  |
-| og:title | Gut Health Diet: Foods That Heal Your Digestive System - HealthyEats | |
+| og:title | Gut Health Diet: Foods That Heal Your Gut - HealthyEats | |
 | og:description | Heal your gut with the right foods — probiotics, prebiotics, fermented foods, and a 7-day meal plan. | |
 | Robots | index, follow | |
 | Canonical | https://healthy.jycsd.com/article-10.html | + |
@@ -203,9 +302,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Vitamin and Mineral Deficiencies: Signs and Solutions - HealthyEats | 67 chars X Too long (67 chars, want 50-60) |
+| Title | Vitamin Deficiencies: Signs and Solutions - HealthyEats | 55 chars +  |
 | Meta Description | Recognize vitamin and mineral deficiency signs. Complete guide to iron, vitamin D, B12, magnesium, and zinc deficiencies — symptoms, food sources, when to | 154 chars +  |
-| og:title | Vitamin and Mineral Deficiencies: Signs and Solutions - HealthyEats | |
+| og:title | Vitamin Deficiencies: Signs and Solutions - HealthyEats | |
 | og:description | Identify common nutrient deficiencies, their warning signs, and how to correct them through diet and supplements. | |
 | Robots | index, follow | |
 | Canonical | https://healthy.jycsd.com/article-12.html | + |
@@ -258,9 +357,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | 5 Quick & Healthy Smoothie Recipes - HealthyEats | 48 chars X Too short (48 chars, want 50-60) |
+| Title | 5 Quick and Healthy Smoothie Recipes to Try - HealthyEats | 57 chars +  |
 | Meta Description | 5 delicious and healthy smoothie recipes you can make in under 5 minutes. Perfect for breakfast, post-workout, or a nutritious snack. | 133 chars +  |
-| og:title | 5 Quick & Healthy Smoothie Recipes - HealthyEats | |
+| og:title | 5 Quick and Healthy Smoothie Recipes to Try - HealthyEats | |
 | og:description | Nutritious smoothies you can make in under 5 minutes for any time of day. | |
 | Robots | index, follow | |
 | Canonical | https://healthy.jycsd.com/article-6.html | + |
@@ -269,9 +368,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Intermittent Fasting: Complete Beginner's Guide - HealthyEats | 61 chars X Too long (61 chars, want 50-60) |
+| Title | Intermittent Fasting: Beginner's Guide - HealthyEats | 52 chars +  |
 | Meta Description | Complete beginner's guide to intermittent fasting. Learn 16:8, 5:2, and OMAD methods, scientific benefits, who should and shouldn't fast, and how to get | 152 chars +  |
-| og:title | Intermittent Fasting: Complete Beginner's Guide - HealthyEats | |
+| og:title | Intermittent Fasting: Beginner's Guide - HealthyEats | |
 | og:description | Everything you need to know about intermittent fasting — methods, science, and how to start safely. | |
 | Robots | index, follow | |
 | Canonical | https://healthy.jycsd.com/article-7.html | + |
@@ -298,6 +397,17 @@
 | Robots | index, follow | |
 | Canonical | https://healthy.jycsd.com/article-9.html | + |
 
+### `sub-healthy/cookie-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Cookie Policy - HealthyEats | How We Use Cookies & Tracking | 59 chars +  |
+| Meta Description | Read HealthyEats' Cookie Policy on essential, analytics and advertising cookies, Google AdSense tracking, and how to control your cookie settings. | 146 chars +  |
+| og:title | Cookie Policy - HealthyEats | How We Use Cookies & Tracking | |
+| og:description | Read HealthyEats' Cookie Policy on essential, analytics and advertising cookies, Google AdSense tracking, and how to control your cookie settings. | |
+| Robots | noindex, follow | |
+| Canonical | https://healthy.jycsd.com/cookie-policy.html | + |
+
 ### `sub-healthy/index.html`
 
 | Field | Value | Check |
@@ -308,6 +418,39 @@
 | og:description | Discover nutrition tips, balanced diet plans, and delicious healthy recipes. | |
 | Robots | index, follow | |
 | Canonical | https://healthy.jycsd.com/ | + |
+
+### `sub-healthy/privacy-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Privacy Policy - HealthyEats | How We Protect Your Data | 55 chars +  |
+| Meta Description | Read HealthyEats' Privacy Policy to learn how we collect, use, and protect your personal data, including Google AdSense practices and your rights. | 146 chars +  |
+| og:title | Privacy Policy - HealthyEats | How We Protect Your Data | |
+| og:description | Read HealthyEats' Privacy Policy to learn how we collect, use, and protect your personal data, including Google AdSense practices and your rights. | |
+| Robots | noindex, follow | |
+| Canonical | https://healthy.jycsd.com/privacy-policy.html | + |
+
+### `sub-healthy/terms-of-service.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Terms of Service - HealthyEats | Usage Terms & Conditions | 57 chars +  |
+| Meta Description | Read HealthyEats' Terms of Service covering usage rules, content disclaimers, IP rights, and user responsibilities on our nutrition site. | 137 chars +  |
+| og:title | Terms of Service - HealthyEats | Usage Terms & Conditions | |
+| og:description | Read HealthyEats' Terms of Service covering usage rules, content disclaimers, IP rights, and user responsibilities on our nutrition site. | |
+| Robots | noindex, follow | |
+| Canonical | https://healthy.jycsd.com/terms-of-service.html | + |
+
+### `sub-home/about.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | About HomeJoy — Practical Home and Garden Advice and Guides | 59 chars +  |
+| Meta Description | Learn about HomeJoy — your source for practical DIY guides, indoor gardening tips, home decor inspiration, and seasonal home maintenance advice. | 144 chars +  |
+| og:title | About HomeJoy — Practical Home and Garden Advice and Guides | |
+| og:description | Learn about HomeJoy — your trusted resource for DIY projects, indoor gardening tips, home decor inspiration, and seasonal home maintenance advice. | |
+| Robots | *--* | |
+| Canonical | https://home.jycsd.com/about.html | + |
 
 ### `sub-home/article-1.html`
 
@@ -324,9 +467,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | How to Paint a Room Like a Professional — HomeJoy | 49 chars X Too short (49 chars, want 50-60) |
+| Title | How to Paint a Room Like a Professional Painter — HomeJoy | 57 chars +  |
 | Meta Description | Achieve flawless walls with professional painting techniques: tool selection, surface preparation, cutting-in mastery, rolling techniques, multiple coats, | 154 chars +  |
-| og:title | How to Paint a Room Like a Professional — HomeJoy | |
+| og:title | How to Paint a Room Like a Professional Painter — HomeJoy | |
 | og:description | Get professional-quality results painting any room. Covers tools, prep work, cutting-in, rolling, multiple coats, cleanup, and expert color selection tips. | |
 | Robots | *--* | |
 | Canonical | https://home.jycsd.com/article-10.html | + |
@@ -336,7 +479,7 @@
 | Field | Value | Check |
 |---|---|---|
 | Title | Best Air-Purifying Indoor Plants for Every Room — HomeJoy | 57 chars +  |
-| Meta Description | Discover the best air-purifying indoor plants for every room based on NASA research. Includes plant recommendations, care requirements, light needs, pet safety considerations, and pot selection tips. | 199 chars X Too long (199 chars, want 120-155) |
+| Meta Description | NASA-backed guide to the best air-purifying indoor plants for every room, covering care requirements, light needs, and pet safety for each species. | 147 chars +  |
 | og:title | Best Air-Purifying Indoor Plants for Every Room — HomeJoy | |
 | og:description | NASA-backed indoor plant recommendations for every room: bedrooms, living rooms, kitchens, bathrooms. Plus care tips, light requirements, and pet-safe options. | |
 | Robots | *--* | |
@@ -357,9 +500,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Beginner's Guide to Indoor Plant Care — HomeJoy | 47 chars X Too short (47 chars, want 50-60) |
-| Meta Description | Everything you need to know about choosing, watering, and nurturing indoor plants. Learn about light, humidity, fertilizing, common pests, and the best plants for beginners. | 173 chars X Too long (173 chars, want 120-155) |
-| og:title | Beginner's Guide to Indoor Plant Care — HomeJoy | |
+| Title | Beginner's Guide to Indoor Plant Care and Growth — HomeJoy | 58 chars +  |
+| Meta Description | Learn how to choose, water, and nurture indoor plants with tips on light, humidity, fertilizing, pest control, and the best beginner-friendly varieties. | 152 chars +  |
+| og:title | Beginner's Guide to Indoor Plant Care and Growth — HomeJoy | |
 | og:description | Master indoor plant care from soil to sunlight. Covers plant selection, watering, humidity, fertilizing, pest control, and top beginner-friendly varieties. | |
 | Robots | *--* | |
 | Canonical | https://home.jycsd.com/article-2.html | + |
@@ -369,7 +512,7 @@
 | Field | Value | Check |
 |---|---|---|
 | Title | How to Declutter Your Home: Room-by-Room Guide — HomeJoy | 56 chars +  |
-| Meta Description | A practical, judgment-free room-by-room guide to decluttering your home. Learn the KonMari method, what to keep vs. donate, and daily habits that maintain a tidy space. | 168 chars X Too long (168 chars, want 120-155) |
+| Meta Description | A practical room-by-room guide to decluttering your home with KonMari basics, donation decisions, and daily habits that keep your space tidy and organized. | 155 chars +  |
 | og:title | How to Declutter Your Home: Room-by-Room Guide — HomeJoy | |
 | og:description | Declutter every room with confidence. Covers the KonMari method, room-by-room checklists, donation guidelines, and maintenance habits. | |
 | Robots | *--* | |
@@ -379,9 +522,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Energy-Efficient Home Upgrades That Pay for Themselves — HomeJoy | 64 chars X Too long (64 chars, want 50-60) |
-| Meta Description | Smart energy-efficient upgrades that reduce your utility bills and pay for themselves. Covers LED lighting, smart thermostats, insulation, water-saving devices, solar, and appliances with ROI analysis. | 201 chars X Too long (201 chars, want 120-155) |
-| og:title | Energy-Efficient Home Upgrades That Pay for Themselves — HomeJoy | |
+| Title | Energy-Efficient Home Upgrades That Save Money — HomeJoy | 56 chars +  |
+| Meta Description | Energy-efficient upgrades that pay for themselves: LED lighting, smart thermostats, insulation, and water-saving devices with ROI timelines. | 140 chars +  |
+| og:title | Energy-Efficient Home Upgrades That Save Money — HomeJoy | |
 | og:description | Invest in upgrades that slash utility bills and boost home comfort. Includes ROI timelines for LED lights, smart thermostats, insulation, water savers, and more. | |
 | Robots | *--* | |
 | Canonical | https://home.jycsd.com/article-4.html | + |
@@ -391,7 +534,7 @@
 | Field | Value | Check |
 |---|---|---|
 | Title | Small Space Gardening: Grow Food on Your Balcony — HomeJoy | 58 chars +  |
-| Meta Description | No backyard? No problem. Learn how to grow tomatoes, herbs, lettuce, and peppers on your balcony or windowsill. Container selection, soil tips, watering, and vertical planting techniques. | 187 chars X Too long (187 chars, want 120-155) |
+| Meta Description | No backyard needed — grow tomatoes, herbs, lettuce, and peppers on your balcony with this guide to containers, soil, watering, and vertical planting. | 149 chars +  |
 | og:title | Small Space Gardening: Grow Food on Your Balcony — HomeJoy | |
 | og:description | Transform your balcony into a productive mini-farm. Covers container gardening, best balcony crops, soil and fertilizer, watering hacks, and vertical growing. | |
 | Robots | *--* | |
@@ -441,6 +584,17 @@
 | Robots | *--* | |
 | Canonical | https://home.jycsd.com/article-9.html | + |
 
+### `sub-home/cookie-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Cookie Policy — How HomeJoy Uses Cookies and Ad Tracking | 56 chars +  |
+| Meta Description | HomeJoy Cookie Policy — How we use cookies and tracking technologies including Google AdSense, the DoubleClick cookie, and managing your preferences. | 149 chars +  |
+| og:title | Cookie Policy — How HomeJoy Uses Cookies and Ad Tracking | |
+| og:description | Learn how HomeJoy uses cookies including Google AdSense, the DoubleClick cookie, and how you can manage your cookie preferences on our website. | |
+| Robots | *--* | |
+| Canonical | https://home.jycsd.com/cookie-policy.html | + |
+
 ### `sub-home/index.html`
 
 | Field | Value | Check |
@@ -452,13 +606,46 @@
 | Robots | *--* | |
 | Canonical | https://home.jycsd.com/ | + |
 
+### `sub-home/privacy-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Privacy Policy — How HomeJoy Handles Your Personal Data | 55 chars +  |
+| Meta Description | HomeJoy Privacy Policy — Learn how we collect, use, and protect your personal information when you visit our home and garden advice website. | 140 chars +  |
+| og:title | Privacy Policy — How HomeJoy Handles Your Personal Data | |
+| og:description | Read HomeJoy's privacy policy to understand how your personal information is collected, used, and protected when you visit our home and garden advice website. | |
+| Robots | *--* | |
+| Canonical | https://home.jycsd.com/privacy-policy.html | + |
+
+### `sub-home/terms-of-service.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Terms of Service — Rules and Guidelines for Using HomeJoy | 57 chars +  |
+| Meta Description | HomeJoy Terms of Service — Read the rules, disclaimers, and guidelines for using our home improvement and gardening website at home.jycsd.com. | 142 chars +  |
+| og:title | Terms of Service — Rules and Guidelines for Using HomeJoy | |
+| og:description | Read the complete terms of service for HomeJoy to understand the rules, disclaimers, and guidelines for using our home improvement and gardening website. | |
+| Robots | *--* | |
+| Canonical | https://home.jycsd.com/terms-of-service.html | + |
+
+### `sub-pets/about.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | About PetCare Hub | Expert Pet Advice for Dog & Cat Owners | 58 chars +  |
+| Meta Description | About PetCare Hub - Learn about our mission to provide expert pet care advice for dog, cat, and small pet owners worldwide. | 123 chars +  |
+| og:title | About PetCare Hub | Expert Pet Advice for Dog & Cat Owners | |
+| og:description | Learn about PetCare Hub and our mission to provide expert, evidence-based pet care advice for dog, cat, and small pet owners worldwide. | |
+| Robots | index, follow | |
+| Canonical | https://pets.jycsd.com/about.html | + |
+
 ### `sub-pets/article-1.html`
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Complete Guide to Dog Nutrition: What to Feed Your Pet - PetCare Hub | 68 chars X Too long (68 chars, want 50-60) |
-| Meta Description | Complete guide to dog nutrition covering essential nutrients, how to choose the best dog food, homemade vs. commercial diets, and feeding schedules for every life stage. | 169 chars X Too long (169 chars, want 120-155) |
-| og:title | Complete Guide to Dog Nutrition: What to Feed Your Pet - PetCare Hub | |
+| Title | Dog Nutrition Guide: What to Feed Your Pet - PetCare Hub | 56 chars +  |
+| Meta Description | Complete guide to dog nutrition: essential nutrients, how to choose the best dog food, feeding by life stage, and what to look for on food labels. | 146 chars +  |
+| og:title | Dog Nutrition Guide: What to Feed Your Pet - PetCare Hub | |
 | og:description | Learn what nutrients your dog needs and how to choose the best food for every life stage. | |
 | Robots | index, follow | |
 | Canonical | https://pets.jycsd.com/article-1.html | + |
@@ -467,9 +654,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Dog Training 101: Essential Commands Every Dog Should Know - PetCare Hub | 72 chars X Too long (72 chars, want 50-60) |
-| Meta Description | Master the six essential dog commands every dog should know: sit, down, stay, come, drop it, and heel. Learn positive reinforcement techniques, training schedules, and common mistakes to avoid. | 193 chars X Too long (193 chars, want 120-155) |
-| og:title | Dog Training 101: Essential Commands Every Dog Should Know - PetCare Hub | |
+| Title | Dog Training 101: Essential Commands to Teach - PetCare Hub | 59 chars +  |
+| Meta Description | Master six essential dog commands — sit, down, stay, come, drop it, and heel — using positive reinforcement. Learn training schedules and common mistakes. | 154 chars +  |
+| og:title | Dog Training 101: Essential Commands to Teach - PetCare Hub | |
 | og:description | Train your dog in the six essential commands using positive reinforcement and proven techniques. | |
 | Robots | index, follow | |
 | Canonical | https://pets.jycsd.com/article-10.html | + |
@@ -489,9 +676,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Pet Dental Care: Why It Matters and How to Do It - PetCare Hub | 62 chars X Too long (62 chars, want 50-60) |
+| Title | Pet Dental Care: Why It Matters for Pet Health - PetCare Hub | 60 chars +  |
 | Meta Description | Complete guide to pet dental care. Learn why dental health matters, how to brush your pet's teeth, best dental chews and toys, professional cleaning | 148 chars +  |
-| og:title | Pet Dental Care: Why It Matters and How to Do It - PetCare Hub | |
+| og:title | Pet Dental Care: Why It Matters for Pet Health - PetCare Hub | |
 | og:description | Everything you need to know about pet dental health — brushing, chews, professional cleanings, and prevention. | |
 | Robots | index, follow | |
 | Canonical | https://pets.jycsd.com/article-12.html | + |
@@ -511,9 +698,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | How to Care for a New Puppy: First Month Checklist - PetCare Hub | 64 chars X Too long (64 chars, want 50-60) |
+| Title | New Puppy Care: First Month Checklist - PetCare Hub | 51 chars +  |
 | Meta Description | Complete first-month checklist for new puppy owners. Covers supplies, potty training, feeding schedules, vet visits, socialization, and common mistakes to | 154 chars +  |
-| og:title | How to Care for a New Puppy: First Month Checklist - PetCare Hub | |
+| og:title | New Puppy Care: First Month Checklist - PetCare Hub | |
 | og:description | Everything you need to survive and thrive during your puppy's critical first 30 days. | |
 | Robots | index, follow | |
 | Canonical | https://pets.jycsd.com/article-3.html | + |
@@ -544,9 +731,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Small Pets, Big Care: Rabbit, Hamster & Guinea Pig Guide - PetCare Hub | 70 chars X Too long (70 chars, want 50-60) |
+| Title | Small Pets: Rabbit, Hamster, Guinea Pig Care - PetCare Hub | 58 chars +  |
 | Meta Description | Complete care guide for small pets: rabbits, hamsters, guinea pigs, and more. Covers housing, diet, health monitoring, and common mistakes to avoid. | 148 chars +  |
-| og:title | Small Pets, Big Care: Rabbit, Hamster & Guinea Pig Guide - PetCare Hub | |
+| og:title | Small Pets: Rabbit, Hamster, Guinea Pig Care - PetCare Hub | |
 | og:description | Complete care guide for small mammals including housing, diet, and health monitoring. | |
 | Robots | index, follow | |
 | Canonical | https://pets.jycsd.com/article-6.html | + |
@@ -584,16 +771,60 @@
 | Robots | index, follow | |
 | Canonical | https://pets.jycsd.com/article-9.html | + |
 
+### `sub-pets/cookie-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Cookie Policy - PetCare Hub | How We Use Cookies & Tracking | 59 chars +  |
+| Meta Description | Cookie Policy for PetCare Hub — Learn how we use essential, analytics, and advertising cookies, and how to manage your browser cookie preferences. | 146 chars +  |
+| og:title | Cookie Policy - PetCare Hub | How We Use Cookies & Tracking | |
+| og:description | Learn how PetCare Hub uses essential, analytics, and advertising cookies, and how to manage your cookie preferences in your browser. | |
+| Robots | noindex, follow | |
+| Canonical | https://pets.jycsd.com/cookie-policy.html | + |
+
 ### `sub-pets/index.html`
 
 | Field | Value | Check |
 |---|---|---|
-| Title | PetCare Hub - Expert Pet Care Advice & Guides | 45 chars X Too short (45 chars, want 50-60) |
+| Title | PetCare Hub — Expert Pet Care Advice for Dog & Cat Owners | 57 chars +  |
 | Meta Description | PetCare Hub - Expert pet care advice, nutrition guides, behavior tips, and health information for dog, cat, and small pet owners. | 129 chars +  |
 | og:title | PetCare Hub - Expert Pet Care Advice & Guides | |
 | og:description | Expert pet care advice, nutrition guides, behavior tips, and health information for all pet owners. | |
 | Robots | index, follow | |
 | Canonical | https://pets.jycsd.com/ | + |
+
+### `sub-pets/privacy-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Privacy Policy - PetCare Hub | How We Protect Your Data | 55 chars +  |
+| Meta Description | Read PetCare Hub's Privacy Policy to learn how we collect, use, and protect your personal data, including Google AdSense practices and your data rights. | 152 chars +  |
+| og:title | Privacy Policy - PetCare Hub | How We Protect Your Data | |
+| og:description | Read PetCare Hub's Privacy Policy to learn how we collect, use, and protect your personal data, including Google AdSense practices and your data rights. | |
+| Robots | noindex, follow | |
+| Canonical | https://pets.jycsd.com/privacy-policy.html | + |
+
+### `sub-pets/terms-of-service.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Terms of Service - PetCare Hub | Usage Terms & Conditions | 57 chars +  |
+| Meta Description | Read PetCare Hub's Terms of Service covering our website usage rules, content disclaimers, intellectual property rights, and user obligations. | 142 chars +  |
+| og:title | Terms of Service - PetCare Hub | Usage Terms & Conditions | |
+| og:description | Read PetCare Hub's Terms of Service covering our website usage rules, content disclaimers, intellectual property rights, and user obligations. | |
+| Robots | noindex, follow | |
+| Canonical | https://pets.jycsd.com/terms-of-service.html | + |
+
+### `sub-tech/about.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | About TechNest - Honest Reviews, Guides & Tech Insights | 55 chars +  |
+| Meta Description | About TechNest - Your trusted source for tech reviews, guides, and insights on smartphones, laptops, AI tools, and cybersecurity. | 129 chars +  |
+| og:title | About TechNest - Honest Reviews, Guides & Tech Insights | |
+| og:description | Learn about TechNest mission to provide honest, in-depth tech reviews, practical buying guides, cybersecurity tips, and AI tool recommendations for everyday users. | |
+| Robots | index, follow | |
+| Canonical | https://tech.jycsd.com/about.html | + |
 
 ### `sub-tech/article-1.html`
 
@@ -621,9 +852,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | How to Back Up Your Data Properly - TechNest | 44 chars X Too short (44 chars, want 50-60) |
+| Title | How to Back Up Your Data Properly and Securely - TechNest | 57 chars +  |
 | Meta Description | Learn how to back up your data properly with the 3-2-1 backup rule. Compare cloud vs local backups, automate your backup system, protect against | 144 chars +  |
-| og:title | How to Back Up Your Data Properly - TechNest | |
+| og:title | How to Back Up Your Data Properly and Securely - TechNest | |
 | og:description | Protect your irreplaceable files with a proper backup strategy. Learn the 3-2-1 rule, choose between cloud and local backups, and set up automatic protection. | |
 | Robots | index, follow | |
 | Canonical | https://tech.jycsd.com/article-11.html | + |
@@ -676,9 +907,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Smart Home Devices Worth Buying (and Ones to Skip) - TechNest | 61 chars X Too long (61 chars, want 50-60) |
+| Title | Smart Home Devices Worth Buying and Skipping - TechNest | 55 chars +  |
 | Meta Description | Which smart home devices are actually worth your money in 2026? We review smart speakers, lights, thermostats, doorbells, and cameras — plus the ones you | 153 chars +  |
-| og:title | Smart Home Devices Worth Buying (and Ones to Skip) - TechNest | |
+| og:title | Smart Home Devices Worth Buying and Skipping - TechNest | |
 | og:description | Which smart speakers, lights, thermostats, and cameras actually earn their place in your home. | |
 | Robots | index, follow | |
 | Canonical | https://tech.jycsd.com/article-5.html | + |
@@ -688,7 +919,7 @@
 | Field | Value | Check |
 |---|---|---|
 | Title | Laptop Buying Guide: How to Choose the Right One - TechNest | 59 chars +  |
-| Meta Description | Complete laptop buying guide for 2026. Learn how to choose the right processor, RAM, storage, and display. Compare Windows vs Mac vs ChromeOS and find your ideal laptop for work, school, or gaming. | 197 chars X Too long (197 chars, want 120-155) |
+| Meta Description | Complete laptop buying guide for 2026. Learn how to choose the right processor, RAM, storage, and display for work, school, or gaming. | 134 chars +  |
 | og:title | Laptop Buying Guide: How to Choose the Right One - TechNest | |
 | og:description | Navigate processors, RAM, storage, and displays to find the perfect laptop for work, school, or gaming. | |
 | Robots | index, follow | |
@@ -709,9 +940,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | How to Speed Up Your Old Computer - TechNest | 44 chars X Too short (44 chars, want 50-60) |
+| Title | How to Speed Up Your Old Computer in Minutes - TechNest | 55 chars +  |
 | Meta Description | Learn how to speed up your old computer with practical steps: manage startup programs, upgrade to SSD, add RAM, clean your system, scan for malware, and | 152 chars +  |
-| og:title | How to Speed Up Your Old Computer - TechNest | |
+| og:title | How to Speed Up Your Old Computer in Minutes - TechNest | |
 | og:description | Practical, step-by-step guide to make your aging computer run faster — from free software tweaks to affordable hardware upgrades. | |
 | Robots | index, follow | |
 | Canonical | https://tech.jycsd.com/article-8.html | + |
@@ -727,16 +958,60 @@
 | Robots | index, follow | |
 | Canonical | https://tech.jycsd.com/article-9.html | + |
 
+### `sub-tech/cookie-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Cookie Policy - How We Use Cookies & Tracking - TechNest | 56 chars +  |
+| Meta Description | Learn how TechNest uses cookies for essential functions, analytics, and personalized ads through Google AdSense. Manage your cookie preferences easily. | 151 chars +  |
+| og:title | Cookie Policy - How We Use Cookies & Tracking - TechNest | |
+| og:description | Learn how TechNest uses cookies for essential functions, analytics, and personalized ads through Google AdSense. Manage your cookie preferences easily. | |
+| Robots | noindex, follow | |
+| Canonical | https://tech.jycsd.com/cookie-policy.html | + |
+
 ### `sub-tech/index.html`
 
 | Field | Value | Check |
 |---|---|---|
-| Title | TechNest - Honest Tech Reviews & Practical Guides | 49 chars X Too short (49 chars, want 50-60) |
-| Meta Description | TechNest - Honest tech reviews, in-depth guides, and practical advice on smartphones, laptops, AI tools, cybersecurity, and smart home devices. | 143 chars +  |
-| og:title | TechNest - Honest Tech Reviews & Practical Guides | |
-| og:description | Your go-to destination for honest tech reviews, in-depth guides, and practical digital advice. | |
+| Title | TechNest - Honest Tech Reviews, Guides & Practical Advice | 57 chars +  |
+| Meta Description | TechNest delivers honest tech reviews, in-depth buying guides, and practical advice on smartphones, laptops, AI tools, cybersecurity, and smart home tech. | 154 chars +  |
+| og:title | TechNest - Honest Tech Reviews, Guides & Practical Advice | |
+| og:description | Your go-to destination for honest tech reviews, in-depth buying guides, and practical digital advice for smartphones, laptops, AI tools, and cybersecurity. | |
 | Robots | index, follow | |
 | Canonical | https://tech.jycsd.com/ | + |
+
+### `sub-tech/privacy-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Privacy Policy - Data Collection & Protection - TechNest | 56 chars +  |
+| Meta Description | Learn how TechNest collects, uses, and protects your personal information. Covers Google AdSense practices, your privacy rights, and security measures. | 151 chars +  |
+| og:title | Privacy Policy - Data Collection & Protection - TechNest | |
+| og:description | Learn how TechNest collects, uses, and protects your personal information. Covers Google AdSense practices, your privacy rights, and security measures. | |
+| Robots | noindex, follow | |
+| Canonical | https://tech.jycsd.com/privacy-policy.html | + |
+
+### `sub-tech/terms-of-service.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Terms of Service - Usage Rules & Conditions - TechNest | 54 chars +  |
+| Meta Description | Read the terms and conditions for using TechNest. Covers content usage rights, user conduct, intellectual property, disclaimers, and liability limitations. | 155 chars +  |
+| og:title | Terms of Service - Usage Rules & Conditions - TechNest | |
+| og:description | Read the terms and conditions for using TechNest. Covers content usage rights, user conduct, intellectual property, disclaimers, and liability limitations. | |
+| Robots | noindex, follow | |
+| Canonical | https://tech.jycsd.com/terms-of-service.html | + |
+
+### `sub-travel/about.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | About TripRoute — Budget Travel Guides & Expert Tips | 52 chars +  |
+| Meta Description | About TripRoute — your trusted source for budget travel guides, expert tips, destination recommendations, and digital nomad resources for smarter travel. | 153 chars +  |
+| og:title | About TripRoute — Budget Travel Guides & Expert Tips | |
+| og:description | About TripRoute — your trusted source for budget travel guides, expert tips, destination recommendations, and digital nomad resources for smarter travel. | |
+| Robots | *--* | |
+| Canonical | https://travel.jycsd.com/about.html | + |
 
 ### `sub-travel/article-1.html`
 
@@ -797,9 +1072,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Solo Travel Guide: Safety Tips & Best Destinations — TripRoute | 62 chars X Too long (62 chars, want 50-60) |
+| Title | Solo Travel Guide: Safety Tips and Top Picks — TripRoute | 56 chars +  |
 | Meta Description | Complete solo travel guide covering safety tips, best destinations for solo travelers, accommodation choices, social strategies, and emergency | 142 chars +  |
-| og:title | Solo Travel Guide: Safety Tips & Best Destinations — TripRoute | |
+| og:title | Solo Travel Guide: Safety Tips and Top Picks — TripRoute | |
 | og:description | Complete solo travel guide covering safety tips, best destinations for solo travelers, accommodation choices, social strategies, and emergency preparedness. | |
 | Robots | *--* | |
 | Canonical | https://travel.jycsd.com/article-3.html | + |
@@ -819,10 +1094,10 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Best Travel Insurance Plans Compared — TripRoute | 48 chars X Too short (48 chars, want 50-60) |
-| Meta Description | Comprehensive comparison of the best travel insurance plans — coverage types, price breakdowns, primary vs. secondary coverage, pre-existing conditions, and claims process explained. | 182 chars X Too long (182 chars, want 120-155) |
-| og:title | Best Travel Insurance Plans Compared — TripRoute | |
-| og:description | Comprehensive comparison of the best travel insurance plans — coverage types, price breakdowns, primary vs. secondary coverage, pre-existing conditions, and claims process explained. | |
+| Title | Best Travel Insurance Compared and Reviewed — TripRoute | 55 chars +  |
+| Meta Description | Compare top travel insurance plans for 2026. Covers coverage types, pricing, primary vs. secondary, pre-existing conditions, and the claims process. | 148 chars +  |
+| og:title | Best Travel Insurance Compared and Reviewed — TripRoute | |
+| og:description | Compare top travel insurance plans for 2026. Covers coverage types, pricing, primary vs. secondary, pre-existing conditions, and the claims process. | |
 | Robots | *--* | |
 | Canonical | https://travel.jycsd.com/article-5.html | + |
 
@@ -841,9 +1116,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | Best Travel Credit Cards for Points and Miles (2026) — TripRoute | 64 chars X Too long (64 chars, want 50-60) |
+| Title | Best Travel Credit Cards for Miles and Points — TripRoute | 57 chars +  |
 | Meta Description | Best travel credit cards for points and miles in 2026. Compare card types, rewards programs, annual fees vs benefits, sign-up bonuses, mile redemption | 150 chars +  |
-| og:title | Best Travel Credit Cards for Points and Miles (2026) — TripRoute | |
+| og:title | Best Travel Credit Cards for Miles and Points — TripRoute | |
 | og:description | Best travel credit cards for points and miles in 2026. Compare card types, rewards programs, annual fees vs benefits, sign-up bonuses, mile redemption strategies, and application tips to maximize your travel rewards. | |
 | Robots | *--* | |
 | Canonical | https://travel.jycsd.com/article-7.html | + |
@@ -852,9 +1127,9 @@
 
 | Field | Value | Check |
 |---|---|---|
-| Title | How to Plan a Road Trip on a Budget — TripRoute | 47 chars X Too short (47 chars, want 50-60) |
+| Title | How to Plan a Road Trip on a Tight Budget — TripRoute | 53 chars +  |
 | Meta Description | Complete guide to planning a budget road trip. Route planning, cheap accommodation strategies, affordable meals on the road, vehicle preparation tips, | 150 chars +  |
-| og:title | How to Plan a Road Trip on a Budget — TripRoute | |
+| og:title | How to Plan a Road Trip on a Tight Budget — TripRoute | |
 | og:description | Complete guide to planning a budget road trip. Route planning, cheap accommodation strategies, affordable meals on the road, vehicle preparation tips, free entertainment ideas, and a multi-day budget template. | |
 | Robots | *--* | |
 | Canonical | https://travel.jycsd.com/article-8.html | + |
@@ -870,16 +1145,49 @@
 | Robots | *--* | |
 | Canonical | https://travel.jycsd.com/article-9.html | + |
 
+### `sub-travel/cookie-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Cookie Policy — How We Use Cookies & Tracking — TripRoute | 57 chars +  |
+| Meta Description | Learn how TripRoute uses cookies for analytics, ads, and site functionality. Understand cookie types, privacy options, and how to manage your preferences. | 154 chars +  |
+| og:title | Cookie Policy — How We Use Cookies & Tracking — TripRoute | |
+| og:description | Learn how TripRoute uses cookies for analytics, ads, and site functionality. Understand cookie types, privacy options, and how to manage your preferences. | |
+| Robots | *--* | |
+| Canonical | https://travel.jycsd.com/cookie-policy.html | + |
+
 ### `sub-travel/index.html`
 
 | Field | Value | Check |
 |---|---|---|
-| Title | TripRoute — Smart Budget Travel Guides | 38 chars X Too short (38 chars, want 50-60) |
+| Title | TripRoute — Smart Budget Travel Guides, Tips & Resources | 56 chars +  |
 | Meta Description | TripRoute — Your ultimate guide to budget travel, cheap flights, solo adventures, packing tips, travel insurance, and digital nomad life. | 137 chars +  |
-| og:title | TripRoute — Smart Budget Travel Guides | |
-| og:description | Your ultimate guide to budget travel, cheap flights, solo adventures, packing tips, travel insurance, and digital nomad life. | |
+| og:title | TripRoute — Smart Budget Travel Guides, Tips & Resources | |
+| og:description | Your ultimate guide to budget travel, cheap flights, solo adventures, packing tips, travel insurance, and digital nomad life — all in one place. | |
 | Robots | *--* | |
 | Canonical | https://travel.jycsd.com/ | + |
+
+### `sub-travel/privacy-policy.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Privacy Policy — How We Protect Your Privacy — TripRoute | 56 chars +  |
+| Meta Description | Learn how TripRoute collects, uses, and protects your personal data. Covers cookies, advertising partners, privacy rights, and data security practices. | 151 chars +  |
+| og:title | Privacy Policy — How We Protect Your Privacy — TripRoute | |
+| og:description | Learn how TripRoute collects, uses, and protects your personal data. Covers cookies, advertising partners, privacy rights, and data security practices. | |
+| Robots | *--* | |
+| Canonical | https://travel.jycsd.com/privacy-policy.html | + |
+
+### `sub-travel/terms-of-service.html`
+
+| Field | Value | Check |
+|---|---|---|
+| Title | Terms of Service — Usage Rules & Conditions — TripRoute | 55 chars +  |
+| Meta Description | Read the terms and conditions for using TripRoute. Covers content usage, user conduct, disclaimers, liability limits, and affiliate disclosure. | 143 chars +  |
+| og:title | Terms of Service — Usage Rules & Conditions — TripRoute | |
+| og:description | Read the terms and conditions for using TripRoute. Covers content usage, user conduct, disclaimers, liability limits, and affiliate disclosure. | |
+| Robots | *--* | |
+| Canonical | https://travel.jycsd.com/terms-of-service.html | + |
 
 ## Duplicate Content Detection
 
@@ -891,41 +1199,4 @@ No duplicate descriptions found. +
 
 ## Action Items
 
-- `sub-finance/article-1.html` -- Title Too long (62 chars, want 50-60)
-- `sub-finance/article-10.html` -- Title Too short (43 chars, want 50-60)
-- `sub-finance/article-12.html` -- Title Too short (44 chars, want 50-60)
-- `sub-finance/article-2.html` -- Title Too long (62 chars, want 50-60)
-- `sub-finance/article-3.html` -- Title Too long (61 chars, want 50-60)
-- `sub-finance/article-5.html` -- Title Too long (62 chars, want 50-60)
-- `sub-healthy/article-1.html` -- Meta description Too short (117 chars, want 120-155)
-- `sub-healthy/article-10.html` -- Title Too long (68 chars, want 50-60)
-- `sub-healthy/article-12.html` -- Title Too long (67 chars, want 50-60)
-- `sub-healthy/article-6.html` -- Title Too short (48 chars, want 50-60)
-- `sub-healthy/article-7.html` -- Title Too long (61 chars, want 50-60)
-- `sub-home/article-10.html` -- Title Too short (49 chars, want 50-60)
-- `sub-home/article-11.html` -- Meta description Too long (199 chars, want 120-155)
-- `sub-home/article-2.html` -- Title Too short (47 chars, want 50-60)
-- `sub-home/article-2.html` -- Meta description Too long (173 chars, want 120-155)
-- `sub-home/article-3.html` -- Meta description Too long (168 chars, want 120-155)
-- `sub-home/article-4.html` -- Title Too long (64 chars, want 50-60)
-- `sub-home/article-4.html` -- Meta description Too long (201 chars, want 120-155)
-- `sub-home/article-5.html` -- Meta description Too long (187 chars, want 120-155)
-- `sub-pets/article-1.html` -- Title Too long (68 chars, want 50-60)
-- `sub-pets/article-1.html` -- Meta description Too long (169 chars, want 120-155)
-- `sub-pets/article-10.html` -- Title Too long (72 chars, want 50-60)
-- `sub-pets/article-10.html` -- Meta description Too long (193 chars, want 120-155)
-- `sub-pets/article-12.html` -- Title Too long (62 chars, want 50-60)
-- `sub-pets/article-3.html` -- Title Too long (64 chars, want 50-60)
-- `sub-pets/article-6.html` -- Title Too long (70 chars, want 50-60)
-- `sub-pets/index.html` -- Title Too short (45 chars, want 50-60)
-- `sub-tech/article-11.html` -- Title Too short (44 chars, want 50-60)
-- `sub-tech/article-5.html` -- Title Too long (61 chars, want 50-60)
-- `sub-tech/article-6.html` -- Meta description Too long (197 chars, want 120-155)
-- `sub-tech/article-8.html` -- Title Too short (44 chars, want 50-60)
-- `sub-tech/index.html` -- Title Too short (49 chars, want 50-60)
-- `sub-travel/article-3.html` -- Title Too long (62 chars, want 50-60)
-- `sub-travel/article-5.html` -- Title Too short (48 chars, want 50-60)
-- `sub-travel/article-5.html` -- Meta description Too long (182 chars, want 120-155)
-- `sub-travel/article-7.html` -- Title Too long (64 chars, want 50-60)
-- `sub-travel/article-8.html` -- Title Too short (47 chars, want 50-60)
-- `sub-travel/index.html` -- Title Too short (38 chars, want 50-60)
+All checks passed! +

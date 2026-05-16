@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voice Input</title>
+<style>
+body{margin:0;padding:20px;background:#1e1e2e;color:#cdd6f4;font:16px/1.5 system-ui}
+#status{padding:15px;border-radius:8px;text-align:center;font-size:18px;margin:10px 0}
+.idle{background:#313244}.listening{background:#a6e3a1;color:#1e1e2e}
+#text{padding:15px;background:#313244;border-radius:8px;min-height:60px;margin:10px 0;white-space:pre-wrap}
+button{padding:12px 30px;font-size:16px;border:none;border-radius:8px;cursor:pointer;background:#89b4fa;color:#1e1e2e;width:100%}
+button:active{opacity:.8}
+#log{font-size:13px;color:#6c7086;margin-top:15px;max-height:200px;overflow-y:auto}
+</style>
+</head>
+<body>
+<div id="status" class="idle">Click and hold to speak</div>
+<div id="text"></div>
+<button id="btn">Hold to Talk</button>
+<div id="log"></div>
+
+<script>
+const BRIDGE = 'http://127.0.0.1:9876';
+const statusEl = document.getElementById('status');
+const textEl = document.getElementById('text');
+const btn = document.getElementById('btn');
+const logEl = document.getElementById('log');
+
+function log(msg) {
+  const d = new Date().toLocaleTimeString();
+  logEl.innerHTML += `<div>[${d}] ${msg}</div>`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+if (!SpeechRecognition) {
+  log('Speech recognition not supported. Use Chrome or Edge.');
+  btn.disabled = true;
+} else {
+  const recognition = new SpeechRecognition();
+  recognition.lang = 'zh-CN';
+  recognition.interimResults = true;
+  recognition.continuous = true;
+
+  let finalText = '';
+
+  recognition.onresult = (event) => {
+    let interim = '';
+    for (let i = event.resultIndex; i < event.results.length; i++) {
+      if (event.results[i].isFinal) {
+        finalText += event.results[i][0].transcript;
+      } else {
+        interim += event.results[i][0].transcript;
+      }
+    }
+    textEl.textContent = finalText + interim;
+  };
+
+  recognition.onerror = (e) => log('Error: ' + e.error);
+
+  recognition.onend = () => {
+    statusEl.className = 'idle';
+    statusEl.textContent = 'Released';
+    if (finalText.trim()) {
+      log('Sending: ' + finalText.trim());
+      fetch(BRIDGE + '/speech', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({text: finalText.trim()})
+      }).then(() => log('Sent'))
+        .catch((e) => log('Send failed: ' + e));
+    }
+    finalText = '';
+  };
+
+  let isRecording = false;
+
+  btn.addEventListener('mousedown', () => {
+    if (!isRecording) {
+      isRecording = true;
+      finalText = '';
+      textEl.textContent = '';
+      recognition.start();
+      statusEl.className = 'listening';
+      statusEl.textContent = 'Listening...';
+      log('Started');
+    }
+  });
+
+  btn.addEventListener('mouseup', () => {
+    if (isRecording) {
+      isRecording = false;
+      recognition.stop();
+    }
+  });
+
+  btn.addEventListener('mouseleave', () => {
+    if (isRecording) {
+      isRecording = false;
+      recognition.stop();
+    }
+  });
+}
+</script>
+</body>
+</html>

@@ -64,12 +64,13 @@ def gather_files():
     files = []
     for subdir in glob.glob(os.path.join(ROOT, "sub-*")):
         if os.path.isdir(subdir):
-            for pat in ["article-*.html", "index.html"]:
+            for pat in ["article-*.html", "index.html", "about.html", "cookie-policy.html", "privacy-policy.html", "terms-of-service.html"]:
                 for f in glob.glob(os.path.join(subdir, pat)):
                     files.append(f)
-    main_index = os.path.join(ROOT, "main-site", "index.html")
-    if os.path.isfile(main_index):
-        files.append(main_index)
+    for pat in ["index.html", "about.html", "cookie-policy.html", "privacy-policy.html", "terms-of-service.html"]:
+        for f in glob.glob(os.path.join(ROOT, "main-site", pat)):
+            if os.path.isfile(f):
+                files.append(f)
     return sorted(files)
 
 

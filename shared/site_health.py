@@ -1,11 +1,13 @@
-"""Unified site health check — SEO + links + content + sitemap in one pass"""
-import re, sys, json
+"""Unified site health check — SEO + links + content + sitemap in one pass.
+Default: incremental (git-diff changed files only). Use --full for all pages."""
+import re, sys, json, subprocess
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
 
 ROOT = Path(r'd:\AI网站文件夹')
 DIRS = ['main-site'] + [f'sub-{s}' for s in ['healthy','pets','home','finance','tech','travel']]
+STATE_FILE = ROOT / 'shared' / '.health-state.json'
 
 def strip_html(text):
     return re.sub(r'<[^>]+>', '', text).strip()
@@ -34,6 +36,8 @@ def check_seo(html):
     if not og_title: issues.append('Missing og:title')
     if not og_desc: issues.append('Missing og:description')
     if not schema: issues.append('Missing JSON-LD Schema')
+    if 'G-GGNWR1X1GV' not in html: issues.append('Missing GA4 tracking')
+    if 'ca-pub-2595917642864488' not in html: issues.append('Missing AdSense')
     return issues
 
 def check_content(html):
@@ -105,31 +109,104 @@ def check_compliance():
         if not a.exists(): issues.append(f'{d}: Missing ads.txt')
     return issues
 
+def get_changed_files():
+    """Return list of changed/new HTML files from git diff"""
+    try:
+        result = subprocess.run(
+            ['git', 'diff', '--name-only', 'HEAD'],
+            capture_output=True, text=True, cwd=str(ROOT), timeout=10
+        )
+        changed = [l.strip().replace('\\', '/') for l in result.stdout.split('\n') if l.strip().endswith('.html')]
+        result2 = subprocess.run(
+            ['git', 'ls-files', '--others', '--exclude-standard'],
+            capture_output=True, text=True, cwd=str(ROOT), timeout=10
+        )
+        untracked = [l.strip().replace('\\', '/') for l in result2.stdout.split('\n') if l.strip().endswith('.html')]
+        return changed + untracked
+    except:
+        return None
+
+def save_state(seo_ok, total, content_ok, article_count, dead, orphans, sm_issues, comp_issues):
+    state = {
+        'last_check': datetime.now().isoformat(),
+        'seo_score': f'{seo_ok}/{total}',
+        'content_score': f'{content_ok}/{article_count}',
+        'dead_links': len(dead),
+        'orphans': len(orphans),
+        'sitemap_issues': len(sm_issues),
+        'compliance_issues': len(comp_issues),
+        'total_pages': total
+    }
+    STATE_FILE.write_text(json.dumps(state, indent=2), encoding='utf-8')
+
+def load_state():
+    if STATE_FILE.exists():
+        return json.loads(STATE_FILE.read_text(encoding='utf-8'))
+    return None
+
 def main():
+    full_scan = '--full' in sys.argv or '-f' in sys.argv
+    changed_files = None if full_scan else get_changed_files()
+
+    # If incremental and no changes, skip
+    if not full_scan and changed_files is not None and len(changed_files) == 0:
+        prev = load_state()
+        ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(f'# Site Health — {ts}')
+        print('No changed pages since last check. Skipping.')
+        if prev:
+            print(f"Last full score: SEO {prev['seo_score']}, Content {prev['content_score']}")
+        return
+
     total = seo_ok = content_ok = 0
     all_issues = defaultdict(list)
 
     for d in DIRS:
         for f in sorted((ROOT / d).glob('*.html')):
+            rel = str(f.relative_to(ROOT)).replace('\\', '/')
+            if not full_scan and changed_files is not None and rel not in changed_files:
+                continue
             total += 1
             html = f.read_text(encoding='utf-8')
             seo = check_seo(html)
             if not seo: seo_ok += 1
-            else: all_issues[str(f.relative_to(ROOT))] += seo
+            else: all_issues[rel] += seo
             if 'article-' in f.name:
                 cont = check_content(html)
                 if not cont: content_ok += 1
-                else: all_issues[str(f.relative_to(ROOT))] += cont
+                else: all_issues[rel] += cont
+
+    # If no pages were checked, nothing to report
+    if total == 0:
+        print('No HTML pages to check (no changes detected).')
+        return
+
+    # Full scan fill-in: re-check everything for SEO/content counts
+    if full_scan:
+        seo_ok = content_ok = total = 0
+        all_issues.clear()
+        for d in DIRS:
+            for f in sorted((ROOT / d).glob('*.html')):
+                total += 1
+                rel = str(f.relative_to(ROOT)).replace('\\', '/')
+                html = f.read_text(encoding='utf-8')
+                seo = check_seo(html)
+                if not seo: seo_ok += 1
+                else: all_issues[rel] += seo
+                if 'article-' in f.name:
+                    cont = check_content(html)
+                    if not cont: content_ok += 1
+                    else: all_issues[rel] += cont
 
     dead, orphans = check_links()
     sm_issues = check_sitemap()
     comp_issues = check_compliance()
-
     article_count = sum(1 for d in DIRS for f in (ROOT/d).glob('article-*.html'))
 
     lines = []
     lines.append('# Site Health Report')
-    lines.append(f'**Generated:** {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+    mode = 'FULL' if full_scan else 'INCREMENTAL'
+    lines.append(f'**Generated:** {datetime.now().strftime("%Y-%m-%d %H:%M:%S")} ({mode} scan)')
     lines.append('')
     lines.append('## Summary')
     lines.append(f'| Check | Status |')
@@ -144,23 +221,19 @@ def main():
     if dead:
         lines.append('')
         lines.append('## Dead Links')
-        for dl in dead:
-            lines.append(f'- {dl}')
+        for dl in dead: lines.append(f'- {dl}')
     if orphans:
         lines.append('')
         lines.append('## Orphan Pages')
-        for o in orphans:
-            lines.append(f'- {o}')
+        for o in orphans: lines.append(f'- {o}')
     if sm_issues:
         lines.append('')
         lines.append('## Sitemap Issues')
-        for s in sm_issues:
-            lines.append(f'- {s}')
+        for s in sm_issues: lines.append(f'- {s}')
     if comp_issues:
         lines.append('')
         lines.append('## Compliance Issues')
-        for c in comp_issues:
-            lines.append(f'- {c}')
+        for c in comp_issues: lines.append(f'- {c}')
     if all_issues:
         lines.append('')
         lines.append('## Page Issues')
@@ -172,6 +245,8 @@ def main():
     out.write_text(report, encoding='utf-8')
     print(report)
     print(f'\nReport saved to {out}')
+
+    save_state(seo_ok, total, content_ok, article_count, dead, orphans, sm_issues, comp_issues)
 
 if __name__ == '__main__':
     main()

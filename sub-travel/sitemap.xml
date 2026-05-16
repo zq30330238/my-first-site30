@@ -49,6 +49,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://travel.jycsd.com/contact.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://travel.jycsd.com/privacy-policy.html</loc>
     <lastmod>2026-05-14</lastmod>
     <changefreq>yearly</changefreq>
