@@ -19,44 +19,58 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Deploy sub-healthy → healthy-jycsd
-        if: always()
-        run: npx wrangler pages deploy sub-healthy --project-name=healthy-jycsd --commit-dirty=true
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-      - name: Deploy sub-pets → pets-jycsd
-        if: always()
-        run: npx wrangler pages deploy sub-pets --project-name=pets-jycsd --commit-dirty=true
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+      - name: Install wrangler
+        run: npm install -g wrangler
 
-      - name: Deploy sub-home → home-jycsd
+      - name: Deploy sub-healthy -> healthy-jycsd
         if: always()
-        run: npx wrangler pages deploy sub-home --project-name=home-jycsd --commit-dirty=true
+        run: wrangler pages deploy sub-healthy --project-name=healthy-jycsd --commit-dirty=true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
 
-      - name: Deploy sub-finance → finance-jycsd
+      - name: Deploy sub-pets -> pets-jycsd
         if: always()
-        run: npx wrangler pages deploy sub-finance --project-name=finance-jycsd --commit-dirty=true
+        run: wrangler pages deploy sub-pets --project-name=pets-jycsd --commit-dirty=true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
 
-      - name: Deploy sub-tech → tech-jycsd
+      - name: Deploy sub-home -> home-jycsd
         if: always()
-        run: npx wrangler pages deploy sub-tech --project-name=tech-jycsd --commit-dirty=true
+        run: wrangler pages deploy sub-home --project-name=home-jycsd --commit-dirty=true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
 
-      - name: Deploy sub-travel → travel-jycsd
+      - name: Deploy sub-finance -> finance-jycsd
         if: always()
-        run: npx wrangler pages deploy sub-travel --project-name=travel-jycsd --commit-dirty=true
+        run: wrangler pages deploy sub-finance --project-name=finance-jycsd --commit-dirty=true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
+
+      - name: Deploy sub-tech -> tech-jycsd
+        if: always()
+        run: wrangler pages deploy sub-tech --project-name=tech-jycsd --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
+
+      - name: Deploy sub-travel -> travel-jycsd
+        if: always()
+        run: wrangler pages deploy sub-travel --project-name=travel-jycsd --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
 
       - name: Deploy main-site
         if: always()
-        run: npx wrangler pages deploy main-site --project-name=main-site --commit-dirty=true
+        run: wrangler pages deploy main-site --project-name=main-site --commit-dirty=true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 4e8cd083c07627f679dd86dc5b488fb0
