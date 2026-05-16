@@ -27,3 +27,8 @@ backup-config/server-credentials.json
 backup-config/cloudflare-credentials.json
 backup-config/tencent-cloud-credentials.json
 .claude/voice-tool/
+
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
