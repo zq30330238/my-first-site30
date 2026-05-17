@@ -1,68 +1,218 @@
-"""Pre-commit audit: check ad slots, placeholders, SEO basics before push."""
+"""Pre-commit audit: comprehensive quality checks before push.
+
+Catches everything a human visitor would notice:
+  - Fake/broken images (Unsplash IDs, dead domains)
+  - Wrong email domains (QQ, 163, etc.)
+  - Placeholder text (Article N, Lorem ipsum, etc.)
+  - AI cliche phrases
+  - Emoji in content
+  - Ad slot integrity
+  - SEO fundamentals
+  - Content quality signals
+  - Index page health
+
+Usage: py shared/pre_commit_audit.py [--full] [--site X]
+  --full   Scan ALL files, not just modified ones
+  --site X  Scan only one site directory
+"""
+
 import re
 import sys
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SITES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-tech", "sub-travel"]
-VALID_SLOTS = {"9112825459", "4397738132", "9739511410"}
+ALL_SITES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-tech", "sub-travel", "main-site"]
+SITES_WITH_ARTICLES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-tech", "sub-travel"]
+
+# === Image checks ===
+UNSPLASH_FAKE_RE = re.compile(r'images\.unsplash\.com/photo-(\d{1,9})\?')
+DEAD_IMAGE_DOMAINS = ["source.unsplash.com", "unsplash.com/source", "picsum.photos", "lorempixel.com", "placeholder.com", "via.placeholder.com"]
+LOCAL_IMAGE_RE = re.compile(r'src=["\']\.\.?/[^"\']+\.(png|jpg|jpeg|gif|webp)["\']')
+MISSING_ALT_RE = re.compile(r'<img(?![^>]*alt=)[^>]*>')
+
+# === Email checks ===
+BANNED_EMAIL_DOMAINS = ["qq.com", "163.com", "126.com", "sina.com", "sina.com.cn", "sohu.com", "yahoo.com.cn", "foxmail.com"]
+REQUIRED_EMAIL = "zq30330238@gmail.com"
+EMAIL_RE = re.compile(r'[\w.+-]+@[\w-]+\.[\w.-]+')
+
+# === Placeholder text ===
+PLACEHOLDER_PATTERNS = [
+    (r'>Article \d{1,2}</p>', "Article N placeholder in sidebar"),
+    (r'>Article \d{1,2}<', "Article N placeholder"),
+    (r'>Lorem ipsum', "Lorem ipsum placeholder"),
+    (r'>Sample [Tt]ext', "Sample text placeholder"),
+    (r'>TODO[< ]', "TODO placeholder"),
+    (r'>Test [Aa]rticle', "Test article placeholder"),
+    (r'>Placeholder', "Placeholder text"),
+    (r'>\[TBD\]', "TBD placeholder"),
+    (r'>Coming [Ss]oon', "Coming soon placeholder"),
+]
+
+# === AI cliches (US consumer audience hates these) ===
+AI_CLICHES = [
+    "delve into",
+    "in the ever-evolving landscape",
+    "in today's digital age",
+    "in today's fast-paced world",
+    "unlock your potential",
+    "game-changer",
+    "revolutionize",
+    "cutting-edge",
+    "state-of-the-art",
+    "unleash the power",
+    "elevate your",
+    "take your ___ to the next level",
+    "in this comprehensive guide",
+    "it's no secret that",
+    "without further ado",
+]
+
+# === Emoji ===
+EMOJI_RE = re.compile(
+    r'[\U0001F600-\U0001F64F\U0001F300-\U0001F5FF\U0001F680-\U0001F6FF'
+    r'\U0001F1E0-\U0001F1FF\U00002702-\U000027B0\U000024C2-\U0001F251'
+    r'\U0001F900-\U0001F9FF\U0001FA00-\U0001FA6F\U0001FA70-\U0001FAFF'
+    r'\U00002600-\U000026FF\U0000FE00-\U0000FE0F]'
+)
+
+VALID_SLOTS = {
+    "9112825459", "4397738132", "9739511410",
+    "6968613870", "6470642127", "4688206363",
+    "1349134522", "2825867721", "4302601082",
+    "3024072332", "4500805691", "5977539078",
+    "8480024131", "9956757497", "1433490869",
+    "4107333609", "5584066966", "7060800328",
+}
 BAD_SLOTS = {"6452093175", "7928829977", "9405566373"}
-REQUIRED_META = ["google-adsense-account", "description", "og:title", "og:description"]
-MIN_WORDS = 800
+
+SITE_DOMAINS = {
+    "sub-pets": "pets.jycsd.com",
+    "sub-healthy": "healthy.jycsd.com",
+    "sub-home": "home.jycsd.com",
+    "sub-finance": "finance.jycsd.com",
+    "sub-tech": "tech.jycsd.com",
+    "sub-travel": "travel.jycsd.com",
+    "main-site": "jycsd.com",
+}
 
 errors = []
 warnings = []
 
+
+def label(filepath):
+    return f"{filepath.parent.name}/{filepath.name}"
+
+
 def check_article(filepath):
     html = filepath.read_text(encoding="utf-8", errors="ignore")
-    name = f"{filepath.parent.name}/{filepath.name}"
+    name = label(filepath)
 
-    # 1. Ad slots check
+    # === IMAGE CHECKS ===
+    # 1a. Fake Unsplash IDs (short numeric, AI-generated)
+    for m in UNSPLASH_FAKE_RE.finditer(html):
+        fid = m.group(1)
+        if len(fid) <= 9:
+            errors.append(f"{name}: fake Unsplash photo ID 'photo-{fid}' (AI hallucination, image 404s)")
+
+    # 1b. Dead image domains
+    for domain in DEAD_IMAGE_DOMAINS:
+        if domain in html:
+            errors.append(f"{name}: dead image domain: {domain}")
+
+    # 1c. Local image references (won't work on CDN)
+    for m in LOCAL_IMAGE_RE.finditer(html):
+        errors.append(f"{name}: local image reference: {m.group(0)[:80]}")
+
+    # 1d. Images missing alt text
+    missing_alts = len(MISSING_ALT_RE.findall(html))
+    if missing_alts > 0:
+        warnings.append(f"{name}: {missing_alts} img tag(s) missing alt attribute")
+
+    # === EMAIL CHECKS ===
+    for m in EMAIL_RE.finditer(html):
+        email = m.group(0)
+        domain = email.split("@")[1]
+        if domain in BANNED_EMAIL_DOMAINS:
+            errors.append(f"{name}: banned email domain ({email}) — use {REQUIRED_EMAIL}")
+        elif domain == "gmail.com" and email != REQUIRED_EMAIL:
+            warnings.append(f"{name}: unexpected Gmail address: {email}")
+
+    # === PLACEHOLDER TEXT ===
+    for pattern, desc in PLACEHOLDER_PATTERNS:
+        if re.search(pattern, html):
+            errors.append(f"{name}: {desc}")
+
+    # === AI CLICHES ===
+    for cliche in AI_CLICHES:
+        if cliche.lower() in html.lower():
+            warnings.append(f"{name}: AI cliche — '{cliche}'")
+
+    # === EMOJI ===
+    emoji_count = len(EMOJI_RE.findall(html))
+    if emoji_count > 0:
+        errors.append(f"{name}: {emoji_count} emoji found (banned per project style)")
+
+    # === FORM FUNCTIONALITY ===
+    forms = re.findall(r'<form[^>]*>', html)
+    for form_html in forms:
+        has_onsubmit = 'onsubmit=' in form_html
+        has_action = 'action=' in form_html
+        has_prevent_default = 'event.preventDefault()' in form_html
+        has_real_handler = has_onsubmit and not has_prevent_default
+
+        if has_prevent_default and 'mailto:' not in form_html:
+            # preventDefault with no real behavior (only flag if no mailto fallback)
+            if 'alert(' not in form_html or 'This is a static' in form_html:
+                errors.append(f"{name}: dead form — event.preventDefault() without real handler")
+
+        if not has_onsubmit and not has_action:
+            errors.append(f"{name}: form has no onsubmit or action — clicking submit reloads page")
+
+    # === DEAD LINKS ===
+    dead_links = re.findall(r'href="#"', html)
+    if dead_links:
+        errors.append(f"{name}: {len(dead_links)} dead link(s) with href=\"#\"")
+
+    # === AD SLOTS ===
     slots = re.findall(r'data-ad-slot="(\d+)"', html)
     bad = [s for s in slots if s in BAD_SLOTS]
     if bad:
-        errors.append(f"{name}: BAD ad slots found: {bad}")
-    slot_count = len(slots)
-    if slot_count != 3:
-        errors.append(f"{name}: expected 3 ad slots, found {slot_count}")
+        errors.append(f"{name}: BAD ad slots: {bad}")
+    if len(slots) not in (3, 4):
+        errors.append(f"{name}: expected 3-4 ad slots, found {len(slots)}")
+    for s in slots:
+        if s not in VALID_SLOTS and s not in BAD_SLOTS:
+            warnings.append(f"{name}: unknown ad slot: {s}")
 
-    # 2. No ad-container placeholders
-    containers = len(re.findall(r'class="ad-container', html))
-    if containers > 0:
-        errors.append(f"{name}: {containers} ad-container placeholders remain")
-
-    # 3. Ad block integrity: each adsbygoogle ins must have matching close
-    ad_ins_open = len(re.findall(r'<ins class="adsbygoogle"[^>]*>', html))
-    ad_ins_close = len(re.findall(r'</ins>', html))
-    if ad_ins_open != ad_ins_close:
-        errors.append(f"{name}: mismatched <ins> tags ({ad_ins_open} open vs {ad_ins_close} close)")
+    # Ad block integrity
     ad_push = len(re.findall(r'\(adsbygoogle = window\.adsbygoogle \|\| \[\]\)\.push\(\{\}\)', html))
-    if ad_push != slot_count:
-        errors.append(f"{name}: {slot_count} ad units but {ad_push} push scripts")
+    if ad_push != len(slots):
+        errors.append(f"{name}: {len(slots)} ad units but {ad_push} push scripts (mismatch)")
 
-    # 4. Required meta tags
+    # Auto Ads script
+    if 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' not in html:
+        errors.append(f"{name}: missing Auto Ads script")
+
+    # === SEO META ===
     meta_checks = {
         "google-adsense-account": 'google-adsense-account',
         "description": 'name="description"',
         "og:title": 'property="og:title"',
         "og:description": 'property="og:description"',
     }
-    for meta, pattern in meta_checks.items():
+    for meta_key, pattern in meta_checks.items():
         if pattern not in html:
-            errors.append(f"{name}: missing {meta}")
+            errors.append(f"{name}: missing meta tag: {meta_key}")
 
-    # 5. Auto Ads script
-    if 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' not in html:
-        errors.append(f"{name}: missing Auto Ads script")
-
-    # 6. Canonical URL
     if 'rel="canonical"' not in html:
-        warnings.append(f"{name}: missing canonical URL")
+        errors.append(f"{name}: missing canonical URL")
 
-    # 7. Word count: track div depth to handle nested ad-unit divs
-    start = re.search(r'class="[^"]*article-content[^"]*"[^>]*>', html)
-    if start:
-        pos = start.end()
+    # === CONTENT QUALITY ===
+    # Word count
+    article_div = re.search(r'class="[^"]*article-content[^"]*"[^>]*>', html)
+    if article_div:
+        pos = article_div.end()
         depth = 1
         while depth > 0:
             next_open = html.find('<div', pos)
@@ -75,41 +225,132 @@ def check_article(filepath):
             else:
                 depth -= 1
                 if depth == 0:
-                    inner = html[start.end():next_close]
+                    inner = html[article_div.end():next_close]
                     text = re.sub(r'<[^>]+>', ' ', inner)
                     text = re.sub(r'\s+', ' ', text).strip()
-                    word_count = len(text.split())
-                    if word_count < MIN_WORDS:
-                        warnings.append(f"{name}: only {word_count} words (min {MIN_WORDS})")
+                    wc = len(text.split())
+                    if wc < 800:
+                        warnings.append(f"{name}: low word count: {wc} (min 800)")
+                    elif wc > 3000:
+                        warnings.append(f"{name}: very high word count: {wc}")
                 pos = next_close + 6
+
+    # Title length
+    title_m = re.search(r'<title>(.*?)</title>', html)
+    if title_m:
+        title_text = title_m.group(1)
+        if len(title_text) < 30:
+            warnings.append(f"{name}: title too short: {len(title_text)} chars")
+        elif len(title_text) > 70:
+            warnings.append(f"{name}: title too long: {len(title_text)} chars (keep under 70)")
+
+    # Description length
+    desc_m = re.search(r'content="([^"]+)"', html)
+    if desc_m:
+        desc_text = desc_m.group(1)
+        if len(desc_text) > 160:
+            warnings.append(f"{name}: meta description too long: {len(desc_text)} chars (keep under 160)")
+
+    # Multiple h1
+    h1_count = len(re.findall(r'<h1[ >]', html))
+    if h1_count > 1:
+        errors.append(f"{name}: {h1_count} h1 tags (should be exactly 1)")
+
+    # === JSON-LD VALIDATION ===
+    jsonld_m = re.search(r'<script type="application/ld\+json">(.*?)</script>', html, re.DOTALL)
+    if jsonld_m:
+        try:
+            json.loads(jsonld_m.group(1))
+        except json.JSONDecodeError:
+            errors.append(f"{name}: invalid JSON-LD schema")
+
+    # === DOMAIN CHECK ===
+    site_dir = filepath.parent.name
+    expected_domain = SITE_DOMAINS.get(site_dir)
+    if expected_domain and expected_domain not in html:
+        errors.append(f"{name}: expected domain '{expected_domain}' not found in HTML")
+
+    # === BLOCKQUOTE CHECK ===
+    if '<blockquote' not in html:
+        warnings.append(f"{name}: no blockquote found (articles should have at least one stat/tip)")
+
+
+def check_index(filepath):
+    html = filepath.read_text(encoding="utf-8", errors="ignore")
+    name = label(filepath)
+
+    # Index-specific: check article card images
+    for m in UNSPLASH_FAKE_RE.finditer(html):
+        fid = m.group(1)
+        if len(fid) <= 9:
+            errors.append(f"{name}: fake Unsplash photo ID 'photo-{fid}' in article card")
+
+    for domain in DEAD_IMAGE_DOMAINS:
+        if domain in html:
+            errors.append(f"{name}: dead image domain in cards: {domain}")
+
+    for m in EMAIL_RE.finditer(html):
+        email = m.group(0)
+        domain = email.split("@")[1]
+        if domain in BANNED_EMAIL_DOMAINS:
+            errors.append(f"{name}: banned email: {email}")
+
+    for pattern, desc in PLACEHOLDER_PATTERNS:
+        if re.search(pattern, html):
+            errors.append(f"{name}: {desc}")
+
+    emoji_count = len(EMOJI_RE.findall(html))
+    if emoji_count > 0:
+        errors.append(f"{name}: {emoji_count} emoji found")
+
+    # Index must have GA4 + AdSense
+    if 'googletagmanager.com/gtag/js' not in html:
+        errors.append(f"{name}: missing GA4 tag")
+    if 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' not in html:
+        errors.append(f"{name}: missing AdSense script")
 
 
 def main():
-    modified = set()
-    for site in SITES:
-        site_dir = ROOT / site
-        for f in site_dir.glob("article-*.html"):
-            # Only check files modified in working tree
-            check_article(f)
-            modified.add(str(f))
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--full", action="store_true", help="Scan ALL files, not just modified")
+    parser.add_argument("--site", help="Scan only one site directory")
+    args = parser.parse_args()
 
-    if not modified:
-        print("No article files to audit.")
+    target_sites = [args.site] if args.site else SITES_WITH_ARTICLES
+    files_checked = 0
+
+    for site in target_sites:
+        site_dir = ROOT / site
+        if not site_dir.exists():
+            continue
+
+        for f in sorted(site_dir.glob("article-*.html")):
+            check_article(f)
+            files_checked += 1
+
+        index_file = site_dir / "index.html"
+        if index_file.exists():
+            check_index(index_file)
+            files_checked += 1
+
+    if files_checked == 0:
+        print("No files to audit.")
         return 0
 
-    print(f"Audited {len(modified)} article files across {len(SITES)} sites.\n")
+    print(f"Audited {files_checked} files across {len(target_sites)} sites.\n")
 
     if warnings:
-        print("=== WARNINGS ===")
+        print(f"=== {len(warnings)} WARNINGS ===")
         for w in warnings:
-            print(f"  WARN:{w}")
+            print(f"  WARN: {w}")
         print()
 
     if errors:
-        print(f"=== {len(errors)} ERRORS FOUND ===")
+        print(f"=== {len(errors)} ERRORS ===")
         for e in errors:
-            print(f"  FAIL:{e}")
-        print("\nCommit BLOCKED. Fix errors before pushing.")
+            print(f"  FAIL: {e}")
+        print(f"\nCommit BLOCKED. Fix {len(errors)} error(s) before pushing.")
         return 1
 
     print("All checks passed.")

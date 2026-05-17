@@ -142,7 +142,7 @@
         <div class="md:col-span-2">
             <div class="bg-white rounded-2xl p-6 md:p-8 shadow-md">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-                <form class="space-y-5">
+                <form class="space-y-5" onsubmit="var n=this.querySelector('[name=name]').value.trim();var e=this.querySelector('[name=email]').value.trim();var s=this.querySelector('[name=subject]').value.trim();var m=this.querySelector('[name=message]').value.trim();if(!n||!e||!m){alert('Please fill in your name, email, and message.');return false;}window.location.href='mailto:contact@jycsd.com?subject='+encodeURIComponent(s||'Contact Form')+'&body='+encodeURIComponent('From: '+n+' ('+e+')\n\n'+m);return false;">
                     <div class="grid sm:grid-cols-2 gap-5">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
@@ -161,9 +161,7 @@
                         <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
                         <textarea id="message" name="message" rows="5" placeholder="Tell us what is on your mind..." class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-800 outline-none focus:ring-2 focus:ring-brand-400 focus:border-brand-400 transition resize-y"></textarea>
                     </div>
-                    <button type="submit" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">Send Message</button>
-                    <p class="text-xs text-gray-400 mt-2">This is a static form for display purposes. To reach us directly, please email contact@jycsd.com.</p>
-                </form>
+                    <button type="submit" class="bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">Send Message</button>                </form>
             </div>
         </div>
 

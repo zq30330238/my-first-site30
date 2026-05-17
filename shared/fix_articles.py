@@ -122,7 +122,6 @@ def fix_broken_images(html, site_dir):
     def replace_url(match):
         nonlocal changes
         keyword = match.group(1) if match.group(1) else "general"
-        # Try to pick a photo based on keyword hash for consistency
         idx = hash(keyword) % len(photos)
         photo_id = photos[idx]
         new_url = f"https://images.unsplash.com/photo-{photo_id}?w=1200&h=630&fit=crop"
@@ -144,6 +143,87 @@ def fix_broken_images(html, site_dir):
     return html, changes
 
 
+def fix_fake_unsplash_ids(html, site_dir):
+    """Replace AI-generated fake Unsplash photo IDs (short numeric) with real ones."""
+    category = SITE_CATEGORY.get(site_dir, "pets")
+    photos = CATEGORY_PHOTOS.get(category, CATEGORY_PHOTOS["pets"])
+    changes = 0
+    used_indices = {}
+
+    def replace_fake(match):
+        nonlocal changes
+        fake_id = match.group(1)
+        # Only match short numeric IDs (1-6 digits) — real Unsplash IDs are 10-11 chars alphanumeric
+        if len(fake_id) > 6:
+            return match.group(0)
+        width = match.group(2) or "1200"
+        height = match.group(3) or "630"
+        # Consistent replacement per fake ID
+        idx = used_indices.get(fake_id, len(used_indices) % len(photos))
+        used_indices[fake_id] = idx
+        photo_id = photos[idx]
+        new_url = f"https://images.unsplash.com/photo-{photo_id}?w={width}&h={height}&fit=crop"
+        changes += 1
+        print(f"  Replaced fake photo-{fake_id} → photo-{photo_id}")
+        return new_url
+
+    html = re.sub(
+        r'https://images\.unsplash\.com/photo-(\d{1,6})\?w=(\d+)&h=(\d+)&fit=crop',
+        replace_fake,
+        html
+    )
+    return html, changes
+
+
+def fix_emoji(html, site_dir):
+    """Strip all emoji characters from HTML."""
+    import re as re_mod
+    emoji_re = re_mod.compile(
+        r'[\U0001F600-\U0001F64F\U0001F300-\U0001F5FF\U0001F680-\U0001F6FF'
+        r'\U0001F1E0-\U0001F1FF\U00002702-\U000027B0\U000024C2-\U0001F251'
+        r'\U0001F900-\U0001F9FF\U0001FA00-\U0001FA6F\U0001FA70-\U0001FAFF'
+        r'\U00002600-\U000026FF\U0000FE00-\U0000FE0F]'
+    )
+    new_html = emoji_re.sub('', html)
+    changes = 1 if new_html != html else 0
+    if changes:
+        print(f"  Stripped emoji from {site_dir}")
+    return new_html, changes
+
+
+def fix_dead_links(html, site_dir):
+    """Replace href='#' and href=\"#\" with href='index.html'."""
+    count = html.count('href="#"') + html.count("href='#'")
+    if count == 0:
+        return html, 0
+    html = html.replace('href="#"', 'href="index.html"')
+    html = html.replace("href='#'", "href='index.html'")
+    print(f"  Fixed {count} dead link(s) (href=\"#\")")
+    return html, count
+
+
+def fix_duplicate_h1(html, site_dir):
+    """Ensure only one h1 tag — convert extras to h2."""
+    h1_matches = list(re.finditer(r'<h1[\s>]', html))
+    if len(h1_matches) <= 1:
+        return html, 0
+
+    changes = 0
+    for m in h1_matches[1:]:
+        html = html[:m.start()] + '<h2' + html[m.start() + 3:]
+        changes += 1
+
+    # Close tags
+    extra_h1_close = list(re.finditer(r'</h1>', html))
+    if len(extra_h1_close) > 1:
+        for m in extra_h1_close[1:]:
+            html = html[:m.start()] + '</h2>' + html[m.start() + 5:]
+
+    if changes:
+        print(f"  Fixed {changes} duplicate h1 tag(s) → h2")
+    return html, changes
+
+
 def fix_one_file(filepath, site_dir):
     html = filepath.read_text(encoding="utf-8")
     total_changes = 0
@@ -152,8 +232,24 @@ def fix_one_file(filepath, site_dir):
     html, changes = fix_related_articles(html, site_dir)
     total_changes += changes
 
-    # Fix 2: Broken images
+    # Fix 2: source.unsplash.com broken images
     html, changes = fix_broken_images(html, site_dir)
+    total_changes += changes
+
+    # Fix 3: Fake AI-generated Unsplash photo IDs (short numeric)
+    html, changes = fix_fake_unsplash_ids(html, site_dir)
+    total_changes += changes
+
+    # Fix 4: Emoji
+    html, changes = fix_emoji(html, site_dir)
+    total_changes += changes
+
+    # Fix 5: Dead links (href="#")
+    html, changes = fix_dead_links(html, site_dir)
+    total_changes += changes
+
+    # Fix 6: Duplicate h1 tags
+    html, changes = fix_duplicate_h1(html, site_dir)
     total_changes += changes
 
     if total_changes > 0:
@@ -172,15 +268,17 @@ def main():
             continue
 
         articles = sorted(site_path.glob("article-*.html"))
-        if not articles:
+        index_file = site_path / "index.html"
+        files = articles + ([index_file] if index_file.exists() else [])
+        if not files:
             continue
 
         print(f"\n{'='*60}")
-        print(f"Site: {site_dir} ({len(articles)} articles)")
+        print(f"Site: {site_dir} ({len(files)} files)")
         print(f"{'='*60}")
 
-        for article_path in articles:
-            changes = fix_one_file(article_path, site_dir)
+        for filepath in files:
+            changes = fix_one_file(filepath, site_dir)
             total_fixes += changes
 
     if dry_run:
