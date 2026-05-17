@@ -1,131 +1,50 @@
 ---
 name: content-engine
-description: Create platform-native content systems for X, LinkedIn, TikTok, YouTube, newsletters, and repurposed multi-platform campaigns. Use when the user wants social posts, threads, scripts, content calendars, or one source asset adapted cleanly across platforms.
-origin: ECC
+description: Jycsd 矩阵站内容管线 — 新文章批量生成、审计、部署全流程自动化
+origin: ECC (定制版)
 ---
 
-# Content Engine
+# 内容引擎
 
-Build platform-native content without flattening the author's real voice into platform slop.
+为 6 个 AdSense 子站批量生成文章，全流程自动化。
 
-## When to Activate
+## 管线流程
+```
+生成新文章 → pre-commit audit → git commit → git push → GitHub Actions 自动部署 CF Pages
+```
 
-- writing X posts or threads
-- drafting LinkedIn posts or launch updates
-- scripting short-form video or YouTube explainers
-- repurposing articles, podcasts, demos, docs, or internal notes into public content
-- building a launch sequence or ongoing content system around a product, insight, or narrative
+## 生成新文章
 
-## Non-Negotiables
+当需要为一个或多个子站生成新文章时:
 
-1. Start from source material, not generic post formulas.
-2. Adapt the format for the platform, not the persona.
-3. One post should carry one actual claim.
-4. Specificity beats adjectives.
-5. No engagement bait unless the user explicitly asks for it.
+1. 确定目标子站和文章数量
+2. 检查已有文章编号，确定下一个可用编号
+3. 根据 `article-writing` skill 的模板生成 HTML
+4. 确保每篇: 3 个 ad-unit + NewsArticle Schema + GA4 + 1000-1500字
+5. 运行审计: `python d:/AI网站文件夹/shared/pre_commit_audit.py`
 
-## Source-First Workflow
+## 发布流程
+1. 更新 index.html 侧边栏 Recent Posts (包含所有文章)
+2. 更新 sitemap.xml (添加新文章 URL)
+3. git add + commit + push
+4. GitHub Actions 自动部署到 CF Pages
+5. 验证线上: `curl -s https://<子域名>.jycsd.com/article-N.html`
 
-Before drafting, identify the source set:
-- published articles
-- notes or internal memos
-- product demos
-- docs or changelogs
-- transcripts
-- screenshots
-- prior posts from the same author
+## 恒创服务器 24h 管线
+```
+ssh root@206.119.168.150
+cd /root/my-first-site30
+python3 -u shared/expand_articles.py
+```
+服务器上 `expand_articles.py` 自动: 扩充短文章 → 审计 → commit → push
 
-If the user wants a specific voice, build a voice profile from real examples before writing.
-Use `brand-voice` as the canonical workflow when voice consistency matters across more than one output.
+## 批量生成命令
+为指定子站生成 N 篇新文章:
+```
+/claude "为 sub-healthy 生成 5 篇新文章，主题覆盖饮食计划、营养科学、健康食谱"
+```
 
-## Voice Handling
-
-`brand-voice` is the canonical voice layer.
-
-Run it first when:
-
-- there are multiple downstream outputs
-- the user explicitly cares about writing style
-- the content is launch, outreach, or reputation-sensitive
-
-Reuse the resulting `VOICE PROFILE` here instead of rebuilding a second voice model.
-If the user wants Affaan / ECC voice specifically, still treat `brand-voice` as the source of truth and feed it the best live or source-derived material available.
-
-## Hard Bans
-
-Delete and rewrite any of these:
-- "In today's rapidly evolving landscape"
-- "game-changer", "revolutionary", "cutting-edge"
-- "here's why this matters" unless it is followed immediately by something concrete
-- ending with a LinkedIn-style question just to farm replies
-- forced casualness on LinkedIn
-- fake engagement padding that was not present in the source material
-
-## Platform Adaptation Rules
-
-### X
-
-- open with the strongest claim, artifact, or tension
-- keep the compression if the source voice is compressed
-- if writing a thread, each post must advance the argument
-- do not pad with context the audience does not need
-
-### LinkedIn
-
-- expand only enough for people outside the immediate niche to follow
-- do not turn it into a fake lesson post unless the source material actually is reflective
-- no corporate inspiration cadence
-- no praise-stacking, no "journey" filler
-
-### Short Video
-
-- script around the visual sequence and proof points
-- first seconds should show the result, problem, or punch
-- do not write narration that sounds better on paper than on screen
-
-### YouTube
-
-- show the result or tension early
-- organize by argument or progression, not filler sections
-- use chaptering only when it helps clarity
-
-### Newsletter
-
-- open with the point, conflict, or artifact
-- do not spend the first paragraph warming up
-- every section needs to add something new
-
-## Repurposing Flow
-
-1. Pick the anchor asset.
-2. Extract 3 to 7 atomic claims or scenes.
-3. Rank them by sharpness, novelty, and proof.
-4. Assign one strong idea per output.
-5. Adapt structure for each platform.
-6. Strip platform-shaped filler.
-7. Run the quality gate.
-
-## Deliverables
-
-When asked for a campaign, return:
-- a short voice profile if voice matching matters
-- the core angle
-- platform-native drafts
-- posting order only if it helps execution
-- gaps that must be filled before publishing
-
-## Quality Gate
-
-Before delivering:
-- every draft sounds like the intended author, not the platform stereotype
-- every draft contains a real claim, proof point, or concrete observation
-- no generic hype language remains
-- no fake engagement bait remains
-- no duplicated copy across platforms unless requested
-- any CTA is earned and user-approved
-
-## Related Skills
-
-- `brand-voice` for source-derived voice profiles
-- `crosspost` for platform-specific distribution
-- `x-api` for sourcing recent posts and publishing approved X output
+## 质量门禁
+- pre_commit_audit 必须 0 error
+- 每篇 1000-1500 词
+- 3 个 ad unit + 全部 meta + Schema 完整

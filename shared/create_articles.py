@@ -1,6 +1,9 @@
-"""Batch generate NEW articles for 6 sites via DeepSeek API. Runs unattended on Hengchuang server.
+"""Batch generate NEW articles for 6 sites via DeepSeek API + template injection.
 
-Usage: python3 shared/create_articles.py [--per-site N] [--dry-run]
+DeepSeek outputs article CONTENT only (JSON) — Python wraps it in site template.
+Result: ~50% fewer tokens per article, global values in one place.
+
+Usage: py shared/create_articles.py [--per-site N] [--dry-run]
 """
 
 import re
@@ -14,43 +17,43 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
+from site_templates import (
+    SITE_CONFIG, GLOBALS, TEMPLATE_SKELETON,
+    render_article_html, quick_validate, get_content_generation_prompt,
+)
+
 ROOT = Path(__file__).resolve().parent.parent
 API_URL = "https://api.deepseek.com/anthropic/v1/messages"
 API_TOKEN = "sk-07777fe5f4554dbcaeddce87c7ccb950"
 
-SITES = {
-    "sub-healthy": {"domain": "healthy.jycsd.com", "brand": "HealthyEats", "category": "健康饮食", "color": "green", "brandColor": "green-600", "brandHex": "#16a34a"},
-    "sub-pets": {"domain": "pets.jycsd.com", "brand": "PetCareGuide", "category": "宠物护理", "color": "orange", "brandColor": "orange-600", "brandHex": "#ea580c"},
-    "sub-home": {"domain": "home.jycsd.com", "brand": "HomeNest", "category": "家居园艺", "color": "emerald", "brandColor": "emerald-700", "brandHex": "#047857"},
-    "sub-finance": {"domain": "finance.jycsd.com", "brand": "MoneyWise", "category": "个人理财", "color": "blue", "brandColor": "blue-700", "brandHex": "#1d4ed8"},
-    "sub-tech": {"domain": "tech.jycsd.com", "brand": "TechPulse", "category": "科技数码", "color": "slate", "brandColor": "slate-700", "brandHex": "#334155"},
-    "sub-travel": {"domain": "travel.jycsd.com", "brand": "TravelScope", "category": "旅行攻略", "color": "cyan", "brandColor": "cyan-700", "brandHex": "#0e7490"},
-}
-
 SYSTEM_PROMPT = """You are a professional English SEO content writer for US consumer websites.
-Your task: write a COMPLETE HTML article file by replacing ONLY the content areas in a provided template.
+Output a JSON object with the article content fields listed below. Do NOT output HTML wrapper, header, footer, or sidebars — the Python pipeline handles template injection.
 
 CRITICAL RULES:
-1. OUTPUT THE COMPLETE HTML FILE — from <!DOCTYPE html> to </html>. No truncation, no markdown wrapping.
-2. Keep everything outside the article content area IDENTICAL — EXCEPT the sidebar "Related Articles" section: replace hardcoded "Article 1/2/3" placeholder text with the real article titles from the linked .html files. Read the linked article's <h1> or <title> to get the correct title.
-3. The ad units MUST stay in the exact same positions within the article body — after the 1st, 3rd, and 5th <h2> sections respectively. Do not move or remove them.
-4. Replace these content areas:
-   - <title> and <meta name="description"> and <meta name="keywords">
-   - <meta property="og:title">, <meta property="og:description">, <meta property="og:url">
-   - <link rel="canonical">
-   - <h1> article title
-   - Breadcrumb text
-   - <img> cover image (MUST use https://images.unsplash.com/photo-XXXXX?w=1200&h=630&fit=crop format with a real photo ID. NEVER use source.unsplash.com — that domain is dead and returns broken images.)
-   - All text inside <div class="article-content">: <h2> headings, <p> paragraphs, <ul>/<ol> lists, <blockquote> callouts
-   - Tag spans at the bottom of the article
-   - <time datetime=""> date
-   - JSON-LD NewsArticle: headline, description, datePublished, dateModified, mainEntityOfPage @id
-5. Article structure: 1 h1 title → cover img → 5-6 h2 sections with 2-3 paragraphs each → ad units after h2 #1, #3, #5 → some h2s may have h3 subsections → 1 blockquote with key stat/tip → tags
-6. Word count: 1000-1500 words for article body (inside article-content div)
-7. Writing style: authoritative, practical, data-backed advice for US consumers. Use specific numbers, research findings, actionable steps. No emoji, no fluff, no AI phrases like "in today's world" or "it's important to note".
-8. Target audience: everyday Americans looking for practical information.
-9. URL format: https://<domain>/article-N.html (the script will provide the exact URL)
-10. Date: use today's date provided in the prompt."""
+1. Output ONLY valid JSON. No markdown wrapping, no ```json fence.
+2. Cover image: MUST use a REAL 11-char Unsplash photo ID like a1b2c3d4e5f6-g7h8i9j0k1l2. NEVER use short numeric IDs (those are fake). NEVER use source.unsplash.com (dead domain).
+3. Article body: 5-6 h2 sections, each with 2-3 <p> paragraphs. 1000-1500 words total. Include one <blockquote> with a key stat/tip.
+4. Ad units go after h2 #1, #3, #5. Use the ad slot IDs provided.
+5. Writing: authoritative, data-backed, actionable. US consumer audience. Specific numbers and research. No emoji, no fluff, no AI cliche phrases.
+
+JSON STRUCTURE (exact keys):
+{
+  "title": "SEO title (60 chars max) — includes brand name",
+  "description": "Meta description (150-160 chars)",
+  "keywords": "5-8 comma-separated SEO keywords",
+  "h1_title": "H1 article title (without brand name)",
+  "breadcrumb": "Short breadcrumb text for nav",
+  "cover_img_html": "<img src='https://images.unsplash.com/photo-REAL_ID?w=1200&h=630&fit=crop' alt='description' class='rounded-2xl mb-10 w-full'>",
+  "article_body_html": "<h2>First Section</h2><div class='ad-unit'>...ad code...</div><p>Paragraph text...</p><h2>Second Section</h2>...",
+  "tag_spans": "<span class='px-3 py-1 bg-brand-50 text-brand-700 text-sm rounded-full'>Tag1</span><span ...>Tag2</span>... (5-6 tags)",
+  "json_ld": "{full JSON-LD NewsArticle schema object, string-escaped}",
+  "read_time": "number as string e.g. '7'",
+  "date_iso": "YYYY-MM-DD",
+  "date_display": "Month DD, YYYY"
+}
+
+For article_body_html: include ad-unit divs exactly like this template between h2 sections:
+<div class='ad-unit'><span class='ad-label'>Advertisement</span><ins class='adsbygoogle' style='display:block; min-height:280px' data-ad-client='<pub-id>' data-ad-slot='<slot-id>' data-ad-format='auto' data-full-width-responsive='true'></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>"""
 
 
 def get_next_article_num(site_dir):
@@ -62,51 +65,28 @@ def get_next_article_num(site_dir):
     return max(nums) + 1 if nums else 1
 
 
-def get_template_html(site_dir):
-    """Read the latest article as template."""
-    nums = []
-    for f in (ROOT / site_dir).glob("article-*.html"):
-        m = re.search(r'article-(\d+)', f.name)
-        if m:
-            nums.append((int(m.group(1)), f))
-
-    if not nums:
-        return None, 1
-
-    latest = max(nums, key=lambda x: x[0])
-    return latest[1].read_text(encoding="utf-8"), latest[0] + 1
-
-
-def call_api(template_html, article_path, site_info, article_num):
-    domain = site_info["domain"]
-    brand = site_info["brand"]
-    category = site_info["category"]
-    url = f"https://{domain}/article-{article_num}.html"
+def call_api(site_dir, article_num):
+    """Ask DeepSeek to generate article content as JSON."""
+    ctx = get_content_generation_prompt(site_dir, article_num)
     today = datetime.now().strftime("%Y-%m-%d")
 
-    user_msg = f"""TEMPLATE HTML FILE (use as structural template):
-{template_html}
+    user_msg = f"""Generate a new SEO article for {ctx['brand']} ({ctx['category']}).
 
-SITE INFO:
-- Brand: {brand}
-- Category: {category}
-- Domain: {domain}
-- Article URL: {url}
-- Article number: {article_num}
+Site details:
+- Brand: {ctx['brand']}
+- Domain: {ctx['domain']}
+- Article URL: {ctx['article_url']}
 - Date: {today}
+- AdSense pub ID: {GLOBALS['adsense_pub']}
+- Ad slot 1: {ctx['adsense_slot_1']}
+- Ad slot 2: {ctx['adsense_slot_2']}
+- Ad slot 3: {ctx['adsense_slot_3']}
 
-INSTRUCTIONS:
-1. Write a COMPLETELY NEW article on a fresh topic within the {category} niche.
-2. Replace the title, meta tags, h1, breadcrumb, cover image URL, all article body content (h2s, paragraphs, lists, blockquotes), tags, and JSON-LD schema.
-3. Keep ALL scripts, styles, header, footer, sidebar, and ad units IDENTICAL to the template.
-4. Output the COMPLETE HTML file — every single line from <!DOCTYPE html> to </html>.
-5. Word count: 1000-1500 words in the article-content div.
-
-Make the new article topic different from the template's topic."""
+Write a fresh article on a topic in the {ctx['category']} niche. Output the JSON object as specified."""
 
     payload = {
         "model": "deepseek-v4-pro",
-        "max_tokens": 16384,
+        "max_tokens": 8192,
         "temperature": 0.8,
         "system": SYSTEM_PROMPT,
         "messages": [{"role": "user", "content": user_msg}],
@@ -127,151 +107,172 @@ Make the new article topic different from the template's topic."""
             data = json.loads(resp.read().decode())
             text_blocks = [b["text"] for b in data["content"] if b["type"] == "text"]
             content = "\n".join(text_blocks)
-            # Extract HTML
-            if content.startswith("```html"):
+
+            # Extract JSON
+            if content.startswith("```json"):
                 content = content[7:]
             if content.startswith("```"):
                 content = content[3:]
             if content.endswith("```"):
                 content = content[:-3]
-            doctype_idx = content.find("<!DOCTYPE html>")
-            if doctype_idx > 0:
-                content = content[doctype_idx:]
-            html_end = content.rfind("</html>")
-            if html_end > 0:
-                content = content[:html_end + 7]
-            return content.strip()
+
+            brace_idx = content.find("{")
+            if brace_idx > 0:
+                content = content[brace_idx:]
+            brace_end = content.rfind("}")
+            if brace_end > 0:
+                content = content[:brace_end + 1]
+
+            return json.loads(content)
+        except json.JSONDecodeError as e:
+            print(f"  Attempt {attempt+1} JSON parse failed: {e}", flush=True)
+            time.sleep(3)
         except (URLError, HTTPError) as e:
-            print(f"  Attempt {attempt+1} failed (HTTP): {e}", flush=True)
+            print(f"  Attempt {attempt+1} HTTP failed: {e}", flush=True)
             time.sleep(5)
         except Exception as e:
             print(f"  Attempt {attempt+1} failed ({type(e).__name__}): {e}", flush=True)
-            time.sleep(10)
+            time.sleep(5)
     return None
 
 
 def count_words(html):
-    start = re.search(r'class="[^"]*article-content[^"]*"[^>]*>', html)
-    if not start:
-        return 0
-    pos = start.end()
-    depth = 1
-    while depth > 0 and pos < len(html):
-        next_open = html.find('<div', pos)
-        next_close = html.find('</div>', pos)
-        if next_close == -1:
-            break
-        if next_open != -1 and next_open < next_close:
-            depth += 1
-            pos = next_open + 4
-        else:
-            depth -= 1
-            if depth == 0:
-                inner = html[start.end():next_close]
-                text = re.sub(r'<[^>]+>', ' ', inner)
-                text = re.sub(r'\s+', ' ', text).strip()
-                return len(text.split())
-            pos = next_close + 6
-    return 0
+    text = re.sub(r'<[^>]+>', ' ', html)
+    text = re.sub(r'\s+', ' ', text).strip()
+    return len(text.split())
 
 
-def validate_article(html, expected_num):
-    errors = []
-    if not html.startswith("<!DOCTYPE html>") or not html.strip().endswith("</html>"):
-        errors.append("Missing DOCTYPE or </html>")
-    if f"article-{expected_num}" not in html:
-        errors.append(f"Wrong article number in URL (expected {expected_num})")
-    ad_count = len(re.findall(r'class="ad-unit"', html))
-    if ad_count != 3:
-        errors.append(f"Wrong ad unit count: {ad_count} (expected 3)")
-    wc = count_words(html)
-    if wc < 800:
-        errors.append(f"Word count too low: {wc} (need 800+)")
-    if "adsbygoogle" not in html:
-        errors.append("Missing AdSense script")
-    if "G-GGNWR1X1GV" not in html:
-        errors.append("Missing GA4 tag")
-    if 'application/ld+json' not in html:
-        errors.append("Missing JSON-LD schema")
-    if "source.unsplash.com" in html:
-        errors.append("Contains dead source.unsplash.com URLs — use images.unsplash.com/photo-XXXXX")
-    if re.search(r'<p class="text-gray-700 text-sm mt-1">Article \d</p>', html):
-        errors.append("Contains hardcoded 'Article N' placeholder in sidebar — replace with real titles")
-    return errors, wc
+def extract_title(html):
+    m = re.search(r'<h1[^>]*>(.*?)</h1>', html)
+    if m:
+        return re.sub(r'<[^>]+>', '', m.group(1)).strip()
+    return "Untitled"
 
 
-def auto_fix_generated(html, site_dir):
-    """Fix common AI generation mistakes before saving."""
-    fixes = 0
+UNSPLASH_FAKE_RE = re.compile(r'photo-(\d{1,6})\?')
 
-    # Fix 1: source.unsplash.com → real Unsplash photo
-    if "source.unsplash.com" in html:
-        # Use a generic high-quality photo from the right domain based on category
-        fallback = {
-            "sub-pets": "1548199973-03cce0bbc87b",
-            "sub-healthy": "1490645935967-10de6ba17071",
-            "sub-home": "1484154218962-a197022b5858",
-            "sub-finance": "1579621970563-ebec7560ff3e",
-            "sub-tech": "1531297484001-80022131f5a1",
-            "sub-travel": "1506192209153-aff2f5e6cf42",
-        }
-        photo_id = fallback.get(site_dir, "1548199973-03cce0bbc87b")
-        new_url = f"https://images.unsplash.com/photo-{photo_id}?w=1200&h=630&fit=crop"
-        html = re.sub(r'https://source\.unsplash\.com/[^"\s]+', new_url, html)
-        fixes += 1
+CATEGORY_PHOTOS = {
+    "sub-pets": [
+        "1552053831-3a2e697e8eea", "1514888286974-6c03e2ca1dba", "1548199973-03cce0bbc87b",
+        "1601758228041-f3b2795255f1", "1583337130417-3346a1be6dee", "1587300003388-59208cc962cb",
+        "1583511666407-5f2d7c5b5c46", "1522069169874-c58ec4b76be5", "1606567595334-d39972c85dbe",
+    ],
+    "sub-healthy": [
+        "1490645935967-10de6ba17071", "1512621776951-a57141f2eefd", "1505576399279-565b52d4ac71",
+        "1498837167922-ddd27525d352",
+    ],
+    "sub-home": [
+        "1484154218962-a197022b5858", "1502672260266-1c1ef2d93688", "1558618666-83b2f28bea8f",
+        "1564013799919-ab600027f443",
+    ],
+    "sub-finance": [
+        "1554226655-67b1a2f2b5c5", "1579621970563-ebec7560ff3e", "1551839091-fb60f3b9d9a5",
+        "1450101499163-8feaec89286c",
+    ],
+    "sub-tech": [
+        "1518770660439-4636190af475", "1531297484001-80022131f5a1", "1496181133206-80ce9b88a853",
+        "1504639725590-34d0984388bd",
+    ],
+    "sub-travel": [
+        "1488646953014-3064f3b6b7a0", "1476514525535-e2521697c7c2", "1506192209153-aff2f5e6cf42",
+        "1502920917128-1aa500764cbd",
+    ],
+}
 
-    # Fix 2: Replace hardcoded "Article N" in sidebar with real titles
-    def replace_article_placeholder(m):
-        num = m.group(1)
-        linked = ROOT / site_dir / f"article-{num}.html"
-        title = extract_title(linked) if linked.exists() else f"Article {num}"
-        return f'<p class="text-gray-700 text-sm mt-1">{title}</p>'
 
-    new_html, n = re.subn(
-        r'<p class="text-gray-700 text-sm mt-1">Article (\d+)</p>',
-        replace_article_placeholder,
-        html
-    )
-    if n > 0:
-        html = new_html
-        fixes += n
+def is_real_unsplash_url(url):
+    m = UNSPLASH_FAKE_RE.search(url)
+    if not m:
+        return True
+    return len(m.group(1)) > 9
 
-    return html, fixes
+
+def fix_cover_image_url(content, site_dir):
+    """Replace AI-faked Unsplash photo IDs with real ones."""
+    cover_html = content.get("cover_img_html", "")
+    m = re.search(r'https://images\.unsplash\.com/photo-([^?]+)\?', cover_html)
+    if not m:
+        return content
+    photo_id = m.group(1)
+    if len(photo_id) > 9:
+        return content
+    photos = CATEGORY_PHOTOS.get(site_dir, CATEGORY_PHOTOS["sub-pets"])
+    real_id = photos[hash(photo_id) % len(photos)]
+    content["cover_img_html"] = cover_html.replace(photo_id, real_id)
+    print(f"  Fixed fake Unsplash ID: {photo_id} → {real_id}")
+    return content
+
+
+def insert_index_card(site_dir, article_num, content):
+    idx_path = ROOT / site_dir / "index.html"
+    if not idx_path.exists():
+        return
+    html = idx_path.read_text(encoding="utf-8")
+    grid_marker = 'class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"'
+    grid_pos = html.find(grid_marker)
+    if grid_pos == -1:
+        return
+
+    first_card = html.find("<a href=", grid_pos)
+    if first_card == -1:
+        return
+
+    cover_html = content.get("cover_img_html", "")
+    cover_url = ""
+    cover_m = re.search(r'src=[\'"]([^\'"]+)[\'"]', cover_html)
+    if cover_m:
+        cover_url = cover_m.group(1)
+        cover_url = re.sub(r'w=\d+', 'w=400', cover_url)
+        cover_url = re.sub(r'h=\d+', 'h=250', cover_url)
+        cover_url = re.sub(r'(fit=crop)', r'\1', cover_url)
+        if 'fit=crop' not in cover_url:
+            cover_url += '&fit=crop'
+
+    h1_title = content.get("h1_title", "")
+    desc = content.get("description", "")
+    if len(desc) > 100:
+        desc = desc[:97] + "..."
+    read_time = content.get("read_time", "7")
+    date_display = content.get("date_display", datetime.now().strftime("%B %d, %Y"))
+
+    new_card = f"""
+            <a href="article-{article_num}.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-cover bg-center" style="background-image:url({cover_url})"></div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">{h1_title}</h3>
+                    <p class="text-gray-500 text-sm">{desc}</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>{date_display}</span><span>&middot;</span><span>{read_time} min read</span>
+                    </div>
+                </div>
+            </a>
+"""
+    html = html[:first_card] + new_card + html[first_card:]
+    idx_path.write_text(html, encoding="utf-8")
 
 
 def update_index_sidebar(site_dir, article_num, title):
-    """Add new article to index.html Recent Posts sidebar (top of list, max 12)."""
     idx_path = ROOT / site_dir / "index.html"
     if not idx_path.exists():
         return
 
     html = idx_path.read_text(encoding="utf-8")
-    domain = SITES[site_dir]["domain"]
-    url = f"https://{domain}/article-{article_num}.html"
-
-    # Find the Recent Posts section
     sidebar_marker = 'Recent Posts'
     if sidebar_marker not in html:
         return
 
-    # Short title for sidebar
     short_title = title[:60] + "..." if len(title) > 60 else title
-
     new_item = f'<li><a href="article-{article_num}.html" class="text-gray-700 hover:text-brand-600 transition text-sm">{short_title}</a></li>\n'
 
-    # Find insertion point: right after the first <li> in Recent Posts area, or after the opening <ul>
     recent_pos = html.find(sidebar_marker)
     ul_start = html.find("<ul", recent_pos)
     ul_end = html.find(">", ul_start) + 1
-
     html = html[:ul_end] + "\n" + new_item + html[ul_end:]
 
-    # Keep max 12 items
     ul_end_new = html.find("</ul>", recent_pos)
     ul_content = html[html.find("<ul", recent_pos):ul_end_new]
     items = re.findall(r'<li>.*?</li>', ul_content, re.DOTALL)
     if len(items) > 12:
-        # Find and remove the last excess items
         for item in items[12:]:
             html = html.replace(item, "", 1)
 
@@ -279,12 +280,11 @@ def update_index_sidebar(site_dir, article_num, title):
 
 
 def update_sitemap(site_dir, article_num):
-    """Add new article URL to sitemap.xml."""
     sm_path = ROOT / site_dir / "sitemap.xml"
     if not sm_path.exists():
         return
 
-    domain = SITES[site_dir]["domain"]
+    domain = SITE_CONFIG[site_dir]["domain"]
     url = f"https://{domain}/article-{article_num}.html"
     today = datetime.now().strftime("%Y-%m-%d")
 
@@ -301,19 +301,8 @@ def update_sitemap(site_dir, article_num):
     if insert_pos == -1:
         return
     insert_pos = xml.find("\n", insert_pos) + 1
-
     xml = xml[:insert_pos] + new_entry + xml[insert_pos:]
     sm_path.write_text(xml, encoding="utf-8")
-
-
-def extract_title(html):
-    m = re.search(r'<h1[^>]*>(.*?)</h1>', html)
-    if m:
-        return re.sub(r'<[^>]+>', '', m.group(1)).strip()
-    m2 = re.search(r'<title>(.*?)</title>', html)
-    if m2:
-        return m2.group(1).strip()
-    return "Untitled"
 
 
 def main():
@@ -323,28 +312,22 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Show what would be done without doing it")
     args = parser.parse_args()
 
-    target_sites = args.sites if args.sites else list(SITES.keys())
+    target_sites = args.sites if args.sites else list(SITE_CONFIG.keys())
     total = 0
     results = []
 
     for site_dir in target_sites:
-        if site_dir not in SITES:
+        if site_dir not in SITE_CONFIG:
             print(f"Unknown site: {site_dir}")
             continue
 
-        info = SITES[site_dir]
+        cfg = SITE_CONFIG[site_dir]
         print(f"\n{'='*60}")
-        print(f"Site: {site_dir} ({info['domain']}) - {info['category']}")
+        print(f"Site: {site_dir} ({cfg['domain']}) - {cfg['category']}")
         print(f"{'='*60}")
 
         for i in range(args.per_site):
             article_num = get_next_article_num(site_dir)
-            template, _ = get_template_html(site_dir)
-
-            if not template:
-                print(f"  SKIP: No template found for {site_dir}")
-                continue
-
             print(f"  Generating article-{article_num}.html...", flush=True)
 
             if args.dry_run:
@@ -352,38 +335,65 @@ def main():
                 results.append((site_dir, article_num, "[dry run]", 0))
                 continue
 
-            html = call_api(template, f"{site_dir}/article-{article_num}.html", info, article_num)
-
-            if not html:
+            # 1. Get content JSON from DeepSeek
+            content = call_api(site_dir, article_num)
+            if not content:
                 print(f"    FAIL: API call failed after 3 attempts")
                 continue
 
-            # Auto-fix common AI generation mistakes
-            html, auto_fixes = auto_fix_generated(html, site_dir)
-            if auto_fixes > 0:
-                print(f"    Auto-fixed {auto_fixes} issue(s) in generated HTML")
-
-            errors, wc = validate_article(html, article_num)
-            if errors:
-                print(f"    FAIL: {'; '.join(errors)}")
+            # 2. Check required fields
+            required = ["title", "h1_title", "article_body_html"]
+            missing = [k for k in required if k not in content]
+            if missing:
+                print(f"    FAIL: Missing fields in AI output: {missing}")
                 continue
 
-            # Save article
+            # 3. Fix AI-faked Unsplash photo IDs before rendering
+            content = fix_cover_image_url(content, site_dir)
+
+            # 4. Inject ad slot IDs if AI forgot them
+            slots = cfg["adsense_slots"]
+            for j, slot in enumerate(slots):
+                placeholder = f"<slot-{j+1}>"
+                if placeholder in content.get("article_body_html", ""):
+                    content["article_body_html"] = content["article_body_html"].replace(
+                        placeholder, slot
+                    )
+
+            # 5. Render full HTML via template
+            content["article_url"] = f"https://{cfg['domain']}/article-{article_num}.html"
+            html, _ = render_article_html(site_dir, content)
+
+            # 6. Validate
+            issues = quick_validate(html, site_dir)
+            wc = count_words(content.get("article_body_html", ""))
+            if wc < 800:
+                issues.append(f"Word count too low: {wc} (need 800+)")
+            # Check for fake Unsplash IDs in rendered HTML
+            for fake_m in UNSPLASH_FAKE_RE.finditer(html):
+                fid = fake_m.group(1)
+                if len(fid) <= 9:
+                    issues.append(f"Fake Unsplash photo ID: photo-{fid}")
+
+            if issues:
+                print(f"    FAIL: {'; '.join(issues)}")
+                continue
+
+            # 7. Save article
             out_path = ROOT / site_dir / f"article-{article_num}.html"
             out_path.write_text(html, encoding="utf-8")
 
-            title = extract_title(html)
-            print(f"    OK: article-{article_num}.html — {wc} words — \"{title[:60]}...\"")
+            title = content.get("h1_title", extract_title(html))
+            print(f"    OK: article-{article_num}.html — {wc} words — \"{title[:60]}\"")
 
-            # Update sidebar and sitemap
+            # 8. Update index + sitemap
+            insert_index_card(site_dir, article_num, content)
             update_index_sidebar(site_dir, article_num, title)
             update_sitemap(site_dir, article_num)
-
             results.append((site_dir, article_num, title, wc))
             total += 1
-            time.sleep(3)  # Rate limit
+            time.sleep(3)
 
-    # Summary
     print(f"\n{'='*60}")
     print(f"Generated {total} new articles across {len(target_sites)} sites")
     print(f"{'='*60}")
@@ -398,7 +408,7 @@ def main():
     print("Running pre-commit audit...")
     print(f"{'='*60}")
     audit = subprocess.run(
-        ["python3", str(ROOT / "shared" / "pre_commit_audit.py")],
+        ["py", str(ROOT / "shared" / "pre_commit_audit.py")],
         capture_output=True, text=True, cwd=str(ROOT)
     )
     print(audit.stdout)

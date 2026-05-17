@@ -1,0 +1,10 @@
+name = "jycsd-api"
+main = "workers/subscribe.js"
+compatibility_date = "2025-01-01"
+
+[[kv_namespaces]]
+binding = "SUBSCRIBERS"
+id = "fca3abb734e345da8b1efb7f77f4ade4"
+
+[env.production]
+vars = { API_KEY = "7d62d9a2dc60713829cafb68474723b696e0d8758ddf83c6ae6e8c84b83e08ca" }

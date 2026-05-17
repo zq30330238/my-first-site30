@@ -28,6 +28,7 @@ shared/         → 公共资源
 - **禁止添加emoji到页面内容** — 欧美极简风，不用表情符号
 - **禁止写超过2行的注释** — 代码自解释
 - **禁止创建README/文档** — 除非用户明确要求
+- **绝对禁止在页面中出现任何中国身份标识** — 不得出现 江阴/车速递/CheSuDi/Jiangyin/China/founded in China/JYCSD Network。对外品牌统一为 Myers Media，创始人 Jordan Myers。中文注册名"江阴迈尔斯文化传媒有限公司"仅限工商后台，永不对外
 
 ## 技术规范
 - Tailwind CSS via CDN (`https://cdn.tailwindcss.com`)

@@ -1,0 +1,10 @@
+{
+  "source": "https://v.douyin.com/mWp29gMruLM/",
+  "video_info": {
+    "title": "强烈推荐6个自用skill",
+    "author": "阿森编程日记（AI自动化）",
+    "duration": "80s",
+    "video_id": "7627063419945979188"
+  },
+  "analysis": "推荐的6个skill：\n1. skill-creator (Workflow Compiler) — 将通用工作流封装为可安装的skill，自动分析工作流程、提取可复用模式、生成标准skill文档。\n2. Document-skills (Document OS) — AI驱动的文档工具，自动填写Docs、批量处理Excel、一键生成PPT、智能阅读PDF。\n3. Find-skill (Skill Match Engine) — 从几万个skill中精准匹配需求场景，支持语义匹配、高分筛选、相似对比、最佳推荐。\n4. frontend-design (Frontend Aesthetics) — 专业UI设计工具，一键生成高质量前端界面，支持响应式布局。\n5. Code-Simplifier (Refactor Engine) — 代码简化优化工具，清理冗余代码、重构优化结构、提高可读性。\n6. Ralph-Loop (Autonomous Loop) — 自动化循环执行工具，持续迭代执行任务直到完成，支持长时间无人值守运行。"
+}

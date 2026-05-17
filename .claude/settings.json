@@ -1,6 +1,7 @@
 {
   "enableAllProjectMcpServers": true,
   "permissions": {
+    "defaultMode": "bypassPermissions",
     "allow": [
       "WebSearch(*)",
       "WebFetch(*)",
@@ -66,7 +67,18 @@
       "Bash(whoami *)",
       "Bash(file *)",
       "Bash(stat *)",
-      "Agent(*)"
+      "Agent(*)",
+      "Bash(cd *)",
+      "Bash(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "Edit(*)",
+      "Write(*)",
+      "Skill(*)",
+      "TodoWrite",
+      "TaskOutput",
+      "CronCreate",
+      "CronDelete"
     ]
   }
 }

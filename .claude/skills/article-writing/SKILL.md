@@ -1,79 +1,71 @@
 ---
 name: article-writing
-description: Write articles, guides, blog posts, tutorials, newsletter issues, and other long-form content in a distinctive voice derived from supplied examples or brand guidance. Use when the user wants polished written content longer than a paragraph, especially when voice consistency, structure, and credibility matter.
-origin: ECC
+description: AdSense英文矩阵站文章生成 — 1000-1500字，三段式，Tailwind HTML，3广告位
+origin: ECC (定制版)
 ---
 
-# Article Writing
+# Jycsd 矩阵站文章生成
 
-Write long-form content that sounds like an actual person with a point of view, not an LLM smoothing itself into paste.
+为 6 个 AdSense 子站生成纯静态 HTML 英文文章，每篇 1000-1500 字，Tailwind CSS CDN。
 
-## When to Activate
+## 站点主题
+| 子站 | 目录 | 主题 | 品牌色 |
+|------|------|------|--------|
+| healthy-jycsd | sub-healthy | 健康饮食 | 绿 green-600 |
+| pets-jycsd | sub-pets | 宠物护理 | 橙 orange-600 |
+| home-jycsd | sub-home | 家居园艺 | 鼠尾草绿 emerald-700 |
+| finance-jycsd | sub-finance | 个人理财 | 蓝 blue-700 |
+| tech-jycsd | sub-tech | 科技数码 | 灰蓝 slate-700 |
+| travel-jycsd | sub-travel | 旅行攻略 | 青 cyan-700 |
 
-- drafting blog posts, essays, launch posts, guides, tutorials, or newsletter issues
-- turning notes, transcripts, or research into polished articles
-- matching an existing founder, operator, or brand voice from examples
-- tightening structure, pacing, and evidence in already-written long-form copy
+## 文章结构（三段式）
+1. **核心要点** (2-3段落): 问题/场景引入 + 文章价值概述
+2. **细分讲解** (4-6个h2段落): 每个要点深入展开
+3. **场景应用** (1-2段落): 实际场景 + 总结建议
 
-## Core Rules
+## HTML 模板要求
+- `<head>` 必须包含:
+  - AdSense Auto Ads script (`pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`)
+  - `<meta name="google-adsense-account" content="ca-pub-2595917642864488">`
+  - `<meta name="description">` (120-155字符)
+  - `<meta property="og:title">` and `<meta property="og:description">`
+  - `<link rel="canonical">` with full URL
+  - GA4 script (`G-GGNWR1X1GV`)
+  - Tailwind CDN + Roboto font
+  - NewsArticle + BreadcrumbList JSON-LD Schema
+- `<body>` 必须包含:
+  - 站点头部 nav (品牌名 + 导航链接)
+  - 文章标题 h1 + 作者信息 + 日期 + 封面图
+  - `<div class="article-content">` 内: 3 个 ad-unit + h2 标题 + 内容
+  - 侧边栏 "Recent Posts" (链接其他文章)
+  - 站点头部 footer (版权 + 导航)
 
-1. Lead with the concrete thing: artifact, example, output, anecdote, number, screenshot, or code.
-2. Explain after the example, not before.
-3. Keep sentences tight unless the source voice is intentionally expansive.
-4. Use proof instead of adjectives.
-5. Never invent facts, credibility, or customer evidence.
+## 广告位格式（3个，按顺序插入h2后）
+```html
+<div class="ad-unit">
+<span class="ad-label">Advertisement</span>
+<ins class="adsbygoogle" style="display:block; min-height:280px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9112825459" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+```
+Slot 顺序: 9112825459 (top), 4397738132 (mid), 9739511410 (bottom)
 
-## Voice Handling
+## 写作要求
+- 字数: 1000-1500 英文单词
+- 段落: 每段 3-5 句话，行间距 1.8
+- 标题: h2 至少 4 个，可加 h3 子标题
+- 列表: 用 `<ul>` / `<ol>` 增加可读性
+- 引用: 用 `<blockquote>` 突出关键数据/建议
+- 风格: 专业权威，有数据支撑，实用建议
+- 禁止: emoji、虚词、废话、AI味
+- 目标受众: 美国普通消费者
 
-If the user wants a specific voice, run `brand-voice` first and reuse its `VOICE PROFILE`.
-Do not duplicate a second style-analysis pass here unless the user explicitly asks for one.
+## 文件命名
+- 格式: `article-N.html`（N 为下一个可用编号）
+- URL: `https://<子域名>.jycsd.com/article-N.html`
 
-If no voice references are given, default to a sharp operator voice: concrete, unsentimental, useful.
-
-## Banned Patterns
-
-Delete and rewrite any of these:
-- "In today's rapidly evolving landscape"
-- "game-changer", "cutting-edge", "revolutionary"
-- "here's why this matters" as a standalone bridge
-- fake vulnerability arcs
-- a closing question added only to juice engagement
-- biography padding that does not move the argument
-- generic AI throat-clearing that delays the point
-
-## Writing Process
-
-1. Clarify the audience and purpose.
-2. Build a hard outline with one job per section.
-3. Start sections with proof, artifact, conflict, or example.
-4. Expand only where the next sentence earns space.
-5. Cut anything that sounds templated, overexplained, or self-congratulatory.
-
-## Structure Guidance
-
-### Technical Guides
-
-- open with what the reader gets
-- use code, commands, screenshots, or concrete output in major sections
-- end with actionable takeaways, not a soft recap
-
-### Essays / Opinion
-
-- start with tension, contradiction, or a specific observation
-- keep one argument thread per section
-- make opinions answer to evidence
-
-### Newsletters
-
-- keep the first screen doing real work
-- do not front-load diary filler
-- use section labels only when they improve scanability
-
-## Quality Gate
-
-Before delivering:
-- factual claims are backed by provided sources
-- generic AI transitions are gone
-- the voice matches the supplied examples or the agreed `VOICE PROFILE`
-- every section adds something new
-- formatting matches the intended medium
+## 新文章 checklist
+- [ ] 审核通过: `python d:/AI网站文件夹/shared/pre_commit_audit.py`
+- [ ] 更新 index.html 侧边栏 Recent Posts
+- [ ] 更新 sitemap.xml
+- [ ] 更新首页文章列表（如有）
