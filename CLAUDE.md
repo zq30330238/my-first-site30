@@ -63,11 +63,14 @@ shared/         → 公共资源
 - 全自动换窗: 每3天自动写交接记忆 → 关旧窗 → 开新窗（cron: `37 9 */3 * *`）
 - 健康巡检: 每12小时增量检查（cron: `7 */12 * * *`）
 
-## 可用技能（原有）
+## 可用技能
 - `/voice-chat` — 语音对话（listen.py按住左Ctrl说话，server.py桥接TTS播报）
 - `vosk_server.py` — Vosk常驻转录服务（端口9877，避免每次加载模型）
-- `ocr_screenshot.py` — 截图OCR识别
+- `shared/doubao_vision.py` — 豆包全模态解析（图/截图/视频），已替代OCR
+- `shared/douyin_parser.py` — 抖音短链→真实mp4→豆包解析，复刻豆包聊天端链路
 - `deploy.py` — 自动git提交推送
+- `article-generation` skill — 文章批量生成→审计→部署全流程
+- `multimedia-parsing` skill — 图/视频/抖音链接解析全套工具链
 
 ## 语音对话系统（重要）
 - 桥接服务: `http://127.0.0.1:9876`（server.py 常驻运行）
