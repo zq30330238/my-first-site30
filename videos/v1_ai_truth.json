@@ -1,0 +1,14 @@
+{
+    "title": "AI真相",
+    "scenes": [
+        {"text": "大多数人不知道的AI真相", "duration": 2.0, "animate": false},
+        {"text": "你看到的AI聊天和绘画", "duration": 2.5, "animate": true},
+        {"text": "只是冰山浮在水面上的十分之一", "duration": 3.0, "animate": true},
+        {"text": "水面下那90%", "duration": 2.0, "animate": true},
+        {"text": "才是真正改变世界的力量", "duration": 2.5, "animate": true}
+    ],
+    "font_size": 48,
+    "bg_color": [10, 12, 20],
+    "text_color": [240, 240, 255],
+    "cta": "关注我，带你看见冰山下的世界"
+}

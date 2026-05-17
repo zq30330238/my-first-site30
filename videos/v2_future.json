@@ -1,0 +1,14 @@
+{
+    "title": "未来淘汰",
+    "scenes": [
+        {"text": "未来3年", "duration": 1.5, "animate": false},
+        {"text": "不懂AI的人会被淘汰吗？", "duration": 2.5, "animate": true},
+        {"text": "答案是：会的", "duration": 2.0, "animate": true},
+        {"text": "但不是因为你不会用工具", "duration": 2.5, "animate": true},
+        {"text": "而是因为你没有看见趋势的眼睛", "duration": 3.0, "animate": true}
+    ],
+    "font_size": 48,
+    "bg_color": [15, 10, 18],
+    "text_color": [255, 245, 230],
+    "cta": "关注我，比别人早看三步"
+}

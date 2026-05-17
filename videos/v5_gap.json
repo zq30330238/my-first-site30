@@ -1,0 +1,14 @@
+{
+    "title": "认知差距",
+    "scenes": [
+        {"text": "人与人最大的差距是什么？", "duration": 2.0, "animate": false},
+        {"text": "不是钱、不是资源、不是学历", "duration": 2.5, "animate": true},
+        {"text": "而是对新事物的敏感度", "duration": 2.5, "animate": true},
+        {"text": "有人在观望、有人在嘲笑", "duration": 2.5, "animate": true},
+        {"text": "有人已经悄悄完成了布局", "duration": 2.5, "animate": true}
+    ],
+    "font_size": 48,
+    "bg_color": [10, 15, 15],
+    "text_color": [245, 255, 245],
+    "cta": "你在哪一个阶段？评论区说说"
+}

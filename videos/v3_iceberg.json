@@ -1,0 +1,14 @@
+{
+    "title": "冰山一角",
+    "scenes": [
+        {"text": "你以为AI只是聊天机器人？", "duration": 2.0, "animate": false},
+        {"text": "有人已经用AI同时管理60家公司", "duration": 2.5, "animate": true},
+        {"text": "有人用AI一周干完一年的活", "duration": 2.5, "animate": true},
+        {"text": "而大多数人还在问", "duration": 2.0, "animate": true},
+        {"text": "AI到底是什么", "duration": 2.0, "animate": true}
+    ],
+    "font_size": 48,
+    "bg_color": [8, 15, 20],
+    "text_color": [230, 245, 255],
+    "cta": "你觉得AI是什么？评论区告诉我"
+}

@@ -1,0 +1,14 @@
+{
+    "title": "AI时代",
+    "scenes": [
+        {"text": "一个新的时代已经来了", "duration": 2.0, "animate": false},
+        {"text": "不是工业革命那种慢悠悠的节奏", "duration": 2.5, "animate": true},
+        {"text": "而是几个月就换一个天地", "duration": 2.5, "animate": true},
+        {"text": "今天你看到的机会", "duration": 2.0, "animate": true},
+        {"text": "明天可能就挤满了人", "duration": 2.5, "animate": true}
+    ],
+    "font_size": 48,
+    "bg_color": [12, 10, 22],
+    "text_color": [255, 250, 240],
+    "cta": "关注我，走在时代前面"
+}
