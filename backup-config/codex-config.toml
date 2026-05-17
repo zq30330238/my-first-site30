@@ -1,9 +1,0 @@
-model = "deepseek-v4-pro"
-model_provider = "deepseek_proxy"
-personality = "pragmatic"
-
-[model_providers.deepseek_proxy]
-name = "DeepSeek Proxy"
-base_url = "http://localhost:5000/v1"
-env_key = "DEEPSEEK_API_KEY"
-wire_api = "responses"

@@ -27,3 +27,5 @@ backup-config/server-credentials.json
 backup-config/cloudflare-credentials.json
 backup-config/tencent-cloud-credentials.json
 .claude/voice-tool/
+backup-config/
+shared/add_subdomain.py
