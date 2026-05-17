@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Have a question about investing, budgeting, or retirement planning? Contact the MoneyWise team for personal finance guidance and website inquiries.">
+    <meta name="keywords" content="">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Contact MoneyWise — Reach Our Personal Finance Team">
     <meta property="og:description" content="Have a question about investing, budgeting, or retirement planning? Reach out to the MoneyWise team for guidance and website inquiries.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://finance.jycsd.com/contact.html">
     <meta property="og:site_name" content="MoneyWise">
-    <meta property="og:locale" content="en_US">
     <title>Contact MoneyWise — Reach Our Personal Finance Team</title>
     <link rel="canonical" href="https://finance.jycsd.com/contact.html">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,52 +19,34 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            400: '#3b82f6',
-                            500: '#2563eb',
-                            600: '#1d4ed8',
-                            700: '#1e40af',
-                            800: '#1e3a8a',
-                        }
-                    },
+                    colors: { 'brand': { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af' } },
                     fontFamily: {
-                        sans: ['Roboto', 'system-ui', '-apple-system', 'sans-serif'],
-                        heading: ['Georgia', 'Times New Roman', 'serif'],
+                        sans: ['Roboto','Arial','Helvetica','sans-serif']
                     }
                 }
             }
         }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        .ad-container {
-            background: #f9fafb;
-            border: 2px dashed #e5e7eb;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9ca3af;
-            font-size: 14px;
-            min-height: 90px;
-        }
-    </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "MoneyWise",
   "url": "https://finance.jycsd.com",
-  "logo": "https://finance.jycsd.com/favicon.ico",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "contact@jycsd.com",
-    "contactType": "customer support",
-    "availableLanguage": "English"
+  "logo": "https://finance.jycsd.com/favicon.ico"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MoneyWise",
+  "url": "https://finance.jycsd.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://finance.jycsd.com/?s={{search_term_string}}",
+    "query-input": "required name=search_term_string"
   }
 }
 </script>
@@ -77,12 +59,12 @@
   gtag('config', 'G-GGNWR1X1GV');
 </script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold text-brand-700 tracking-tight">Money<span class="text-brand-500">Wise</span></a>
-            <div class="hidden md:flex items-center gap-8">
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="index.html" class="text-2xl font-black text-gray-900 tracking-tight">Money<span class="text-brand-600">Wise</span></a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="index.html" class="text-gray-600 hover:text-brand-600">Home</a>
                 <a href="article-1.html" class="text-gray-600 hover:text-brand-600">Investing</a>
                 <a href="article-2.html" class="text-gray-600 hover:text-brand-600">Budgeting</a>
@@ -90,11 +72,10 @@
                 <a href="article-4.html" class="text-gray-600 hover:text-brand-600">Retirement</a>
                 <a href="about.html" class="text-gray-600 hover:text-brand-600">About</a>
                 <a href="contact.html" class="text-brand-600 font-medium">Contact</a>
-            </div>
-            <button class="md:hidden text-gray-600 text-2xl">&#9776;</button>
         </div>
-    </nav>
-
+        <button class="md:hidden text-gray-600 text-2xl">&#9776;</button>
+    </div>
+</nav>
     <section class="bg-gradient-to-br from-brand-50 to-blue-100 py-16">
         <div class="max-w-3xl mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Contact <span class="text-brand-700">MoneyWise</span></h1>
@@ -113,7 +94,7 @@
             <div class="md:col-span-3">
                 <div class="bg-white rounded-xl p-6 md:p-10 shadow-sm border border-gray-100">
                     <h2 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-                    <form class="space-y-5" onsubmit="var n=this.querySelector('[name=name]').value.trim();var e=this.querySelector('[name=email]').value.trim();var s=this.querySelector('[name=subject]').value.trim();var m=this.querySelector('[name=message]').value.trim();if(!n||!e||!m){alert('Please fill in your name, email, and message.');return false;}window.location.href='mailto:contact@jycsd.com?subject='+encodeURIComponent(s||'Contact Form')+'&body='+encodeURIComponent('From: '+n+' ('+e+')\n\n'+m);return false;">
+                    <form class="space-y-5" action="https://formsubmit.co/contact@jycsd.com" method="POST">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
                             <input type="text" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent" name="name" placeholder="Enter your name">
@@ -131,7 +112,9 @@
                             <textarea rows="5" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent" name="message" placeholder="Tell us how we can help..."></textarea>
                         </div>
                         <button type="submit" class="bg-brand-700 hover:bg-brand-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm">Send Message</button>
-                    </form>
+                    <input type="hidden" name="_next" value="https://finance.jycsd.com/contact.html?success=1">
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
                 </div>
             </div>
             <div class="md:col-span-2 space-y-6">
@@ -144,7 +127,7 @@
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="text-brand-600 font-semibold shrink-0">Network:</span>
-                            <span><a href="https://jycsd.com" class="text-brand-600 hover:underline" target="_blank" rel="noopener">JYCSD Network</a></span>
+                            
                         </li>
                     </ul>
                 </div>
@@ -162,45 +145,39 @@
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h3 class="text-white text-lg font-bold mb-3">Money<span class="text-brand-400">Wise</span></h3>
-                    <p class="text-sm">Practical personal finance advice for everyday people who want to build real wealth.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-3">Quick Links</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="index.html" class="hover:text-white">Home</a></li>
-                        <li><a href="article-1.html" class="hover:text-white">Investing</a></li>
-                        <li><a href="article-2.html" class="hover:text-white">Budgeting</a></li>
-                        <li><a href="article-4.html" class="hover:text-white">Retirement</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-3">Legal</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="about.html" class="hover:text-white">About</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
-                        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="hover:text-white">Terms of Service</a></li>
-                        <li><a href="cookie-policy.html" class="hover:text-white">Cookie Policy</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-3">Connect</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="mailto:contact@jycsd.com" class="hover:text-white">contact@jycsd.com</a></li>
-                        <li><a href="https://jycsd.com" class="hover:text-white">JYCSD Network</a></li>
-                    </ul>
-                </div>
+    
+
+
+
+
+
+<footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h3 class="text-white text-lg font-black mb-3">MoneyWise</h3>
+                <p class="text-sm leading-relaxed">Personal finance made simple — investing, budgeting, credit tips, and retirement planning.</p>
             </div>
-            <div class="border-t border-gray-800 pt-6 text-center text-sm">
-                <p>&copy; 2026 MoneyWise. All rights reserved. .</p>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:contact@jycsd.com" class="hover:text-white transition-colors">contact@jycsd.com</a></li>
+                </ul>
             </div>
         </div>
-    </footer>
-
+        <div class="border-t border-gray-800 pt-6 text-center text-sm">
+            <p>&copy; 2026 MoneyWise. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

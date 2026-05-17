@@ -4,40 +4,57 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Myers Media — the team behind the JYCSD network. Learn about our decade-long mission to deliver expert lifestyle guides across health, pets, home, finance, tech, and travel.">
-    <meta name="keywords" content="about Myers Media, JYCSD, lifestyle network, content team">
+    <meta name="description" content="About Myers Media — the team behind our lifestyle guide network. Learn about our decade-long mission to deliver expert lifestyle guides across health, pets, home, finance, tech, and travel.">
+    <meta name="keywords" content="about Myers Media, lifestyle network, content team">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="About Myers Media — Our Story & Mission | JYCSD">
+    <meta property="og:title" content="About Myers Media — Our Story & Mission">
     <meta property="og:description" content="Learn about Myers Media and our network of expert lifestyle guide websites.">
     <meta property="og:type" content="website">
-    <title>About Myers Media — Our Story & Mission | JYCSD</title>
+    <meta property="og:url" content="https://www.jycsd.com/">
+    <meta property="og:site_name" content="Myers Media">
+    <title>About Myers Media — Our Story & Mission</title>
+    <link rel="canonical" href="https://www.jycsd.com/about.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'primary': { 50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' }, 'navy': '#0f1a3c', 'slate': '#334155' },
+                    fontFamily: {
+                        sans: ['Roboto','Arial','Helvetica','sans-serif'],
+                        heading: ['Georgia','Times New Roman','serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .site-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+        .site-card { transition: all 0.3s ease; }
+    </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "JYCSD",
+  "name": "Myers Media",
   "url": "https://www.jycsd.com",
-  "logo": "https://www.jycsd.com/favicon.ico",
-  "description": "JYCSD — a network of expert-curated lifestyle websites covering nutrition, pets, home, finance, tech, and travel."
+  "logo": "https://www.jycsd.com/favicon.ico"
 }
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "JYCSD",
+  "name": "Myers Media",
   "url": "https://www.jycsd.com",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://www.jycsd.com/?s={search_term_string}",
+    "target": "https://www.jycsd.com/?s={{search_term_string}}",
     "query-input": "required name=search_term_string"
   }
 }
 </script>
-    <link rel="canonical" href="https://www.jycsd.com/about.html">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{colors:{primary:{50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a'},navy:'#0f1a3c',slate:'#334155'},fontFamily:{sans:['Roboto','Arial','Helvetica','sans-serif'],heading:['Georgia','Times New Roman','serif']}}}}</script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
 <script>
@@ -49,16 +66,18 @@
 </head>
 <body class="bg-white text-gray-800 font-sans">
 
-<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-100">
-    <nav class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="index.html" class="text-2xl font-black text-navy tracking-tight">JY<span class="text-primary-600">CSD</span></a>
-        <div class="hidden md:flex items-center gap-10 text-sm font-medium">
-            <a href="index.html" class="text-slate hover:text-primary-600">Home</a>
-            <a href="index.html#sites" class="text-slate hover:text-primary-600">Our Sites</a>
-            <a href="about.html" class="text-primary-600">About</a>
-            <a href="contact.html" class="text-slate hover:text-primary-600">Contact</a>
+<nav class="bg-white/95 backdrop-blur border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="index.html" class="text-2xl font-black text-gray-900 tracking-tight">Myers<span class="text-primary-600">Media</span></a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="text-gray-600 hover:text-primary-600">Home</a>
+                <a href="#sites" class="text-gray-600 hover:text-primary-600">Our Sites</a>
+                <a href="about.html" class="text-primary-600 font-medium">About</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary-600">Contact</a>
         </div>
-    </nav>
+        <button class="md:hidden text-gray-600 text-2xl">&#9776;</button>
+    </div>
+</nav>
 </header>
 
 <section class="bg-gradient-to-br from-navy via-primary-900 to-primary-800 text-white py-16 md:py-20">
@@ -120,11 +139,39 @@
     </div>
 </main>
 
-<footer class="bg-navy text-gray-400 py-12">
-    <div class="max-w-7xl mx-auto px-6 text-center text-sm">
-        <p>&copy; 2026 JYCSD. All rights reserved. | <a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a> | <a href="terms.html" class="hover:text-white">Terms of Service</a> | <a href="contact.html" class="hover:text-white">Contact</a></p>
+
+
+
+
+
+
+<footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h3 class="text-white text-lg font-black mb-3">Myers Media</h3>
+                <p class="text-sm leading-relaxed">Your gateway to expert lifestyle guides across multiple domains.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:contact@jycsd.com" class="hover:text-white transition-colors">contact@jycsd.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-6 text-center text-sm">
+            <p>&copy; 2026 Myers Media. All rights reserved.</p>
+        </div>
     </div>
 </footer>
-
 </body>
 </html>

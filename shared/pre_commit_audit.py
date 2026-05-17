@@ -22,8 +22,12 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-ALL_SITES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-tech", "sub-travel", "main-site"]
-SITES_WITH_ARTICLES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-tech", "sub-travel"]
+ALL_SITES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-tech", "sub-travel", "main-site",
+    "minecraft-site", "eldenring-site", "lol-site", "fortnite-site", "valorant-site",
+    "games-site", "anime-site", "dragonball-site", "onepiece-site", "naruto-site"]
+SITES_WITH_ARTICLES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-tech", "sub-travel",
+    "minecraft-site", "eldenring-site", "lol-site", "fortnite-site", "valorant-site",
+    "dragonball-site", "onepiece-site", "naruto-site"]
 
 # === Image checks ===
 UNSPLASH_FAKE_RE = re.compile(r'images\.unsplash\.com/photo-(\d{1,9})\?')
@@ -94,6 +98,16 @@ SITE_DOMAINS = {
     "sub-tech": "tech.jycsd.com",
     "sub-travel": "travel.jycsd.com",
     "main-site": "jycsd.com",
+    "minecraft-site": "minecraft.jycsd.com",
+    "eldenring-site": "eldenring.jycsd.com",
+    "lol-site": "lol.jycsd.com",
+    "fortnite-site": "fortnite.jycsd.com",
+    "valorant-site": "valorant.jycsd.com",
+    "games-site": "games.jycsd.com",
+    "anime-site": "anime.jycsd.com",
+    "dragonball-site": "dragonball.jycsd.com",
+    "onepiece-site": "onepiece.jycsd.com",
+    "naruto-site": "naruto.jycsd.com",
 }
 
 errors = []
@@ -173,6 +187,29 @@ def check_article(filepath):
     dead_links = re.findall(r'href="#"', html)
     if dead_links:
         errors.append(f"{name}: {len(dead_links)} dead link(s) with href=\"#\"")
+
+    # === REAL LINK VALIDATION ===
+    hrefs = re.findall(r'href="([^"]+)"', html)
+    file_dir = filepath.parent
+    for href in hrefs:
+        if href.startswith('#') or href.startswith('javascript:') or href.startswith('mailto:') or href.startswith('tel:'):
+            continue
+        if href.startswith('http'):
+            for site_dir_key, domain in SITE_DOMAINS.items():
+                if domain in href:
+                    rel_path = href.split(domain, 1)[1]
+                    if rel_path and not rel_path.startswith('//'):
+                        target = ROOT / site_dir_key / rel_path.lstrip('/')
+                        if not target.exists():
+                            errors.append(f"{name}: cross-site broken link: {href} (file missing: {target.relative_to(ROOT)})")
+                    break
+            continue
+        if href.startswith('/'):
+            target = file_dir / href.lstrip('/')
+        else:
+            target = file_dir / href
+        if not target.exists() and '.' in target.name:
+            errors.append(f"{name}: broken internal link: {href} → {target.relative_to(ROOT)} (file not found)")
 
     # === AD SLOTS ===
     slots = re.findall(r'data-ad-slot="(\d+)"', html)

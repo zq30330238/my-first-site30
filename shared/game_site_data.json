@@ -1,0 +1,144 @@
+{
+  "minecraft": {
+    "site_name": "MineGuide",
+    "domain": "minecraft.jycsd.com",
+    "accent": "#4ade80",
+    "accent_dark": "#166534",
+    "tagline": "Master Minecraft with expert guides",
+    "hero_title": "Master Minecraft 1.21",
+    "hero_subtitle": "Complete Tricky Trials update guides — trial chambers, breeze, mace weapon, new copper blocks, and every crafting recipe added.",
+    "quick_facts": {
+      "Developer": "Mojang Studios",
+      "First Release": "2011",
+      "Platforms": "PC, Console, Mobile",
+      "Game Genre": "Sandbox / Survival",
+      "Latest Update": "1.21 Tricky Trials"
+    },
+    "characters": [
+      {"name": "Steve", "role": "Default Player", "desc": "The iconic player character. Our guides cover every survival strategy from first night to endgame dragon fight.", "image": "steve.png", "link": "/guides/crafting/", "color": "#4ade80"},
+      {"name": "Creeper", "role": "Hostile Mob", "desc": "The most iconic Minecraft mob. Learn spawn conditions, detection ranges, and how to defuse before it explodes.", "image": "creeper.png", "link": "/guides/mobs/", "color": "#4ade80"},
+      {"name": "Enderman", "role": "Neutral Mob", "desc": "The tall dark wanderer from the End. How to avoid triggering aggression and farm ender pearls efficiently.", "image": "enderman.png", "link": "/guides/mobs/", "color": "#a78bfa"},
+      {"name": "Alex", "role": "Alternate Player", "desc": "Creative mode tips, block palettes, and architectural styles from medieval castles to modern skyscrapers.", "image": "alex.png", "link": "/guides/building/", "color": "#fbbf24"}
+    ],
+    "categories": [
+      {"name": "Crafting", "slug": "crafting", "color": "#4ade80", "character_img": "alex.png", "count": "15+"},
+      {"name": "Mobs", "slug": "mobs", "color": "#ef4444", "character_img": "creeper.png", "count": "20+"},
+      {"name": "Building", "slug": "building", "color": "#fbbf24", "character_img": "steve.png", "count": "10+"},
+      {"name": "Redstone", "slug": "redstone", "color": "#ef4444", "character_img": "enderman.png", "count": "15+"},
+      {"name": "Enchanting", "slug": "enchanting", "color": "#a855f7", "character_img": "alex.png", "count": "8+"},
+      {"name": "Biomes", "slug": "biomes", "color": "#06b6d4", "character_img": "enderman.png", "count": "12+"}
+    ],
+    "hot_topics": [
+      {"title": "1.21 Tricky Trials Update: Every New Item, Mob & Block", "desc": "Complete coverage of trial chambers, breeze mob, mace weapon, copper bulbs, and new tuff blocks.", "image": "steve.png", "link": "/guides/crafting/"},
+      {"title": "Best Weapon Enchantments Tier List (2026 Meta)", "desc": "Sword vs Axe vs Trident vs Mace — which weapon type dominates?", "image": "alex.png", "link": "/guides/enchanting/"},
+      {"title": "Ultimate Iron Farm: 400+ Ingots Per Hour Design", "desc": "Stackable villager-based iron farm producing massive amounts of iron.", "image": "creeper.png", "link": "/guides/mobs/"}
+    ],
+    "guide_cards": [
+      {"title": "How to Get Netherite: Complete Upgrade Guide", "category": "Crafting", "cat_color": "#4ade80", "date": "May 17, 2026", "image": "steve.png", "image_bg": "from-emerald-900 to-green-950", "link": "/guides/crafting/netherite-upgrade-guide.html"},
+      {"title": "Warden Guide: Survive the Deep Dark Biome", "category": "Mobs", "cat_color": "#a78bfa", "date": "May 16, 2026", "image": "enderman.png", "image_bg": "from-purple-900 to-indigo-950", "link": "/guides/mobs/"},
+      {"title": "10 Starter House Designs for Every Biome", "category": "Building", "cat_color": "#fbbf24", "date": "May 15, 2026", "image": "alex.png", "image_bg": "from-amber-900 to-yellow-950", "link": "/guides/building/"},
+      {"title": "Automatic Storage System Tutorial", "category": "Redstone", "cat_color": "#ef4444", "date": "May 14, 2026", "image": "creeper.png", "image_bg": "from-red-950 to-orange-950", "link": "/guides/redstone/"}
+    ],
+    "footer_links": [
+      {"text": "Elden Ring", "url": "https://eldenring.jycsd.com"},
+      {"text": "League of Legends", "url": "https://lol.jycsd.com"},
+      {"text": "Fortnite", "url": "https://fortnite.jycsd.com"},
+      {"text": "All Games", "url": "https://games.jycsd.com"}
+    ]
+  },
+  "fortnite": {
+    "site_name": "FortGuide",
+    "domain": "fortnite.jycsd.com",
+    "accent": "#a78bfa",
+    "accent_dark": "#7c3aed",
+    "tagline": "Dominate the Island",
+    "hero_title": "Chapter 6 Meta",
+    "hero_subtitle": "Every new weapon, POI change, and meta shift covered within 24 hours of each update. Build better, aim sharper.",
+    "quick_facts": {
+      "Developer": "Epic Games",
+      "First Release": "2017",
+      "Platforms": "PC, Console, Mobile",
+      "Game Genre": "Battle Royale",
+      "Latest Season": "Chapter 6 Season 3"
+    },
+    "characters": [],
+    "categories": [
+      {"name": "Weapons", "slug": "weapons", "color": "#a78bfa", "count": "20+"},
+      {"name": "Map", "slug": "map", "color": "#22d3ee", "count": "15+"},
+      {"name": "Building", "slug": "building", "color": "#fbbf24", "count": "12+"},
+      {"name": "Seasons", "slug": "seasons", "color": "#4ade80", "count": "30+"}
+    ],
+    "hot_topics": [],
+    "guide_cards": [],
+    "footer_links": [
+      {"text": "Minecraft", "url": "https://minecraft.jycsd.com"},
+      {"text": "Elden Ring", "url": "https://eldenring.jycsd.com"},
+      {"text": "Valorant", "url": "https://valorant.jycsd.com"},
+      {"text": "All Games", "url": "https://games.jycsd.com"}
+    ]
+  },
+  "valorant": {
+    "site_name": "ValGuide",
+    "domain": "valorant.jycsd.com",
+    "accent": "#ef4444",
+    "accent_dark": "#dc2626",
+    "tagline": "Outplay. Outaim.",
+    "hero_title": "Agent Mastery",
+    "hero_subtitle": "Master every Valorant agent, map, and weapon. Sova lineups, Jett movement tech, Viper setups.",
+    "quick_facts": {
+      "Developer": "Riot Games",
+      "First Release": "2020",
+      "Platforms": "PC",
+      "Game Genre": "Tactical FPS",
+      "Total Agents": "24+"
+    },
+    "characters": [],
+    "categories": [
+      {"name": "Agents", "slug": "agents", "color": "#ef4444", "count": "24"},
+      {"name": "Maps", "slug": "maps", "color": "#3b82f6", "count": "10+"},
+      {"name": "Weapons", "slug": "weapons", "color": "#a855f7", "count": "18"},
+      {"name": "Ranked", "slug": "ranked", "color": "#fbbf24", "count": "15+"},
+      {"name": "Lineups", "slug": "lineups", "color": "#22d3ee", "count": "30+"}
+    ],
+    "hot_topics": [],
+    "guide_cards": [],
+    "footer_links": [
+      {"text": "Fortnite", "url": "https://fortnite.jycsd.com"},
+      {"text": "League of Legends", "url": "https://lol.jycsd.com"},
+      {"text": "CS2", "url": "https://cs2.jycsd.com"},
+      {"text": "All Games", "url": "https://games.jycsd.com"}
+    ]
+  },
+  "eldenring": {
+    "site_name": "TarnishedGuide",
+    "domain": "eldenring.jycsd.com",
+    "accent": "#fbbf24",
+    "accent_dark": "#d97706",
+    "tagline": "Rise, Tarnished",
+    "hero_title": "Conquer the Lands Between",
+    "hero_subtitle": "Complete boss strategies, build guides, weapon locations, and quest walkthroughs for every region.",
+    "quick_facts": {
+      "Developer": "FromSoftware",
+      "First Release": "2022",
+      "Platforms": "PC, PS5, Xbox Series X",
+      "Game Genre": "Action RPG",
+      "Total Bosses": "165+"
+    },
+    "characters": [],
+    "categories": [
+      {"name": "Bosses", "slug": "bosses", "color": "#ef4444", "count": "165+"},
+      {"name": "Builds", "slug": "builds", "color": "#fbbf24", "count": "40+"},
+      {"name": "Weapons", "slug": "weapons", "color": "#3b82f6", "count": "300+"},
+      {"name": "Quests", "slug": "quests", "color": "#a78bfa", "count": "30+"},
+      {"name": "Map", "slug": "map", "color": "#4ade80", "count": "15"}
+    ],
+    "hot_topics": [],
+    "guide_cards": [],
+    "footer_links": [
+      {"text": "Minecraft", "url": "https://minecraft.jycsd.com"},
+      {"text": "League of Legends", "url": "https://lol.jycsd.com"},
+      {"text": "Fortnite", "url": "https://fortnite.jycsd.com"},
+      {"text": "All Games", "url": "https://games.jycsd.com"}
+    ]
+  }
+}

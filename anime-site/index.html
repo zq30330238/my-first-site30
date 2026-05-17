@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AnimeWiki — Anime Character Database & Episode Guides</title>
+<meta name="description" content="Complete anime encyclopedia — character databases, episode guides, ability rankings, and voice actor info for Dragon Ball, One Piece, Naruto, Demon Slayer, and more.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://anime.jycsd.com/">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0a0a1a',bgSecondary:'#12122a',bgCard:'#1a1a3e',textPrimary:'#f0f0ff',textSecondary:'#8888aa',orange:'#ff6b35',gold:'#ffd700',pink:'#ff4081',blue:'#4ea8de'},fontFamily:{sans:['Poppins','Noto Sans','sans-serif']}}}}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
+<script>function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
+<style>
+  body{font-family:'Poppins','Noto Sans',sans-serif;background:#0a0a1a;color:#f0f0ff;font-size:16px;line-height:1.6}
+  ins.adsbygoogle{display:block}.ad-label{text-align:center;color:#8888aa;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
+  .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease-in-out;pointer-events:none}
+  .carousel-slide.active{opacity:1;pointer-events:auto}
+  .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer}
+  .carousel-dot.active{background:#ff6b35}
+  .anime-card:hover{transform:translateY(-3px);transition:all 0.3s ease}
+  @keyframes glow{0%,100%{box-shadow:0 0 20px rgba(255,107,53,0.2)}50%{box-shadow:0 0 40px rgba(255,107,53,0.4)}}
+  .glow-anim{animation:glow 2s ease-in-out infinite}
+</style>
+</head>
+<body>
+
+<nav class="fixed top-0 w-full z-50 bg-bgPrimary/95 backdrop-blur-md border-b border-purple-900/30">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5">
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-orange to-pink flex items-center justify-center text-lg font-black text-white">A</div>
+      <span class="text-xl font-bold">Anime<span class="text-orange">Wiki</span></span>
+    </a>
+    <div class="hidden md:flex gap-6 text-sm font-medium">
+      <a href="https://dragonball.jycsd.com" class="text-orange hover:underline">Dragon Ball</a>
+      <a href="https://onepiece.jycsd.com" class="text-textSecondary hover:text-gold">One Piece</a>
+      <a href="https://naruto.jycsd.com" class="text-textSecondary hover:text-orange">Naruto</a>
+      <a href="https://demonslayer.jycsd.com" class="text-textSecondary hover:text-pink">Demon Slayer</a>
+      <a href="https://jujutsukaisen.jycsd.com" class="text-textSecondary hover:text-blue">JJK</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="relative w-full overflow-hidden pt-16" style="height:500px">
+  <div class="carousel-slide active">
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-950 via-orange-950 to-gray-950"></div>
+    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 30% 50%, #ff6b35 0%, transparent 60%)"></div>
+    <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+      <div class="max-w-2xl">
+        <span class="text-xs font-bold uppercase tracking-wider text-orange bg-orange/10 px-3 py-1 rounded-full">14 Series & Growing</span>
+        <h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight">Your <span class="text-orange">Anime</span> Encyclopedia</h1>
+        <p class="text-lg text-textSecondary mt-4 max-w-lg">Character databases, episode guides, ability rankings, and voice actor information for the world's most popular anime. 14 dedicated wiki sites built by fans.</p>
+        <div class="flex gap-3 mt-6">
+          <a href="#series" class="bg-orange text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-500 transition-all">Browse Series</a>
+          <a href="#featured" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-orange transition-all">Featured Characters</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-slide">
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-950 via-pink-950 to-gray-950"></div>
+    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 70% 50%, #ff4081 0%, transparent 60%)"></div>
+    <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+      <div class="max-w-2xl ml-auto text-right">
+        <span class="text-xs font-bold uppercase tracking-wider text-pink bg-pink/10 px-3 py-1 rounded-full">New This Week</span>
+        <h2 class="text-4xl md:text-6xl font-black mt-4 leading-tight"><span class="text-pink">Demon Slayer</span> Wiki Live</h2>
+        <p class="text-lg text-textSecondary mt-4">Every Hashira profiled. Every breathing style explained. Every demon ranked. The most comprehensive Kimetsu no Yaiba database.</p>
+        <a href="https://demonslayer.jycsd.com" class="inline-block mt-6 bg-pink text-white px-6 py-3 rounded-lg font-bold hover:bg-pink-500 transition-all">Explore Demon Slayer Wiki &#8594;</a>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10"><div class="carousel-dot active" data-slide="0"></div><div class="carousel-dot" data-slide="1"></div></div>
+</section>
+
+<!-- Ad: 728x90 -->
+<div class="max-w-[728px] mx-auto px-4 mt-6"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="LEADERBOARD_ANIME"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+
+<!-- Series Grid -->
+<section id="series" class="max-w-7xl mx-auto px-4 py-16">
+  <h2 class="text-3xl font-black mb-2">14 <span class="text-orange">Anime</span> Wikis</h2>
+  <p class="text-textSecondary mb-8">Deep character profiles, episode guides, and fan resources for every series.</p>
+
+  <div class="mb-10">
+    <h3 class="text-lg font-bold mb-4 text-orange">&#8226; Shonen & Action</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a href="https://dragonball.jycsd.com" class="anime-card bg-bgCard rounded-xl p-5 border border-purple-900/30 hover:border-orange/50 block">
+        <div class="w-12 h-12 rounded-xl bg-orange/10 flex items-center justify-center mb-3 text-2xl">&#128009;</div>
+        <h4 class="font-bold">Dragon Ball Wiki</h4><p class="text-sm text-textSecondary">Saiyans, Fusions, Power Levels</p>
+        <span class="text-xs text-orange mt-2 inline-block">Coming Soon</span>
+      </a>
+      <a href="https://onepiece.jycsd.com" class="anime-card bg-bgCard rounded-xl p-5 border border-purple-900/30 hover:border-gold/50 block">
+        <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mb-3 text-2xl">&#9875;</div>
+        <h4 class="font-bold">One Piece Wiki</h4><p class="text-sm text-textSecondary">Devil Fruits, Haki, Pirate Crews</p>
+        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
+      </a>
+      <a href="https://naruto.jycsd.com" class="anime-card bg-bgCard rounded-xl p-5 border border-purple-900/30 hover:border-orange/50 block">
+        <div class="w-12 h-12 rounded-xl bg-orange/10 flex items-center justify-center mb-3 text-2xl">&#127760;</div>
+        <h4 class="font-bold">Naruto Wiki</h4><p class="text-sm text-textSecondary">Jutsu, Kekkei Genkai, Clans</p>
+        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
+      </a>
+      <a href="https://demonslayer.jycsd.com" class="anime-card bg-bgCard rounded-xl p-5 border border-purple-900/30 hover:border-pink/50 block">
+        <div class="w-12 h-12 rounded-xl bg-pink/10 flex items-center justify-center mb-3 text-2xl">&#127481;</div>
+        <h4 class="font-bold">Demon Slayer Wiki</h4><p class="text-sm text-textSecondary">Breathing Styles, Hashira, Demons</p>
+        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="mb-10">
+    <h3 class="text-lg font-bold mb-4 text-blue">&#8226; Current Season Hits</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <a href="https://jujutsukaisen.jycsd.com" class="anime-card bg-bgCard rounded-xl p-5 border border-purple-900/30 hover:border-blue/50 block">
+        <div class="w-12 h-12 rounded-xl bg-blue/10 flex items-center justify-center mb-3 text-2xl">&#128293;</div>
+        <h4 class="font-bold">Jujutsu Kaisen Wiki</h4><p class="text-sm text-textSecondary">Cursed Techniques, Domain Expansion</p>
+        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
+      </a>
+      <a href="https://sololeveling.jycsd.com" class="anime-card bg-bgCard rounded-xl p-5 border border-purple-900/30 hover:border-blue/50 block">
+        <div class="w-12 h-12 rounded-xl bg-blue/10 flex items-center justify-center mb-3 text-2xl">&#128170;</div>
+        <h4 class="font-bold">Solo Leveling Wiki</h4><p class="text-sm text-textSecondary">Shadows, Gates, Hunters</p>
+        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
+      </a>
+      <a href="https://chainsawman.jycsd.com" class="anime-card bg-bgCard rounded-xl p-5 border border-purple-900/30 hover:border-red-500/50 block">
+        <div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-3 text-2xl">&#128298;</div>
+        <h4 class="font-bold">Chainsaw Man Wiki</h4><p class="text-sm text-textSecondary">Devils, Contracts, Public Safety</p>
+        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="mb-10">
+    <h3 class="text-lg font-bold mb-4 text-purple-400">&#8226; Classic Masterpieces</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a href="https://aot.jycsd.com" class="anime-card bg-bgCard rounded-xl p-5 border border-purple-900/30 hover:border-purple-400/50 block">
+        <div class="w-12 h-12 rounded-xl bg-purple-400/10 flex items-center justify-center mb-3 text-2xl">&#127756;</div>
+        <h4 class="font-bold">Attack on Titan Wiki</h4><p class="text-sm text-textSecondary">Titans, Survey Corps, Founding</p>
+        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
+      </a>
+      <a href="https://eva.jycsd.com" class="anime-card bg-bgCard rounded-xl p-5 border border-purple-900/30 hover:border-purple-400/50 block">
+        <div class="w-12 h-12 rounded-xl bg-purple-400/10 flex items-center justify-center mb-3 text-2xl">&#129302;</div>
+        <h4 class="font-bold">Evangelion Wiki</h4><p class="text-sm text-textSecondary">Eva Units, Angels, Instrumentality</p>
+        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
+      </a>
+      <a href="https://deathnote.jycsd.com" class="anime-card bg-bgCard rounded-xl p-5 border border-purple-900/30 hover:border-purple-400/50 block">
+        <div class="w-12 h-12 rounded-xl bg-purple-400/10 flex items-center justify-center mb-3 text-2xl">&#128211;</div>
+        <h4 class="font-bold">Death Note Wiki</h4><p class="text-sm text-textSecondary">Shinigami, Rules, Investigations</p>
+        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
+      </a>
+      <a href="https://fma.jycsd.com" class="anime-card bg-bgCard rounded-xl p-5 border border-purple-900/30 hover:border-purple-400/50 block">
+        <div class="w-12 h-12 rounded-xl bg-purple-400/10 flex items-center justify-center mb-3 text-2xl">&#9889;</div>
+        <h4 class="font-bold">Fullmetal Alchemist Wiki</h4><p class="text-sm text-textSecondary">Alchemy, Homunculi, Philosopher's Stone</p>
+        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Character -->
+<section id="featured" class="max-w-7xl mx-auto px-4 pb-16">
+  <div class="grid lg:grid-cols-3 gap-8">
+    <div class="lg:col-span-2">
+      <h2 class="text-2xl font-black mb-6">Featured <span class="text-orange">Character</span> Profile</h2>
+      <div class="bg-bgCard rounded-2xl overflow-hidden border border-purple-900/30 glow-anim">
+        <div class="grid md:grid-cols-3">
+          <div class="bg-gradient-to-br from-orange to-red-600 flex items-center justify-center p-8 text-8xl">&#128009;</div>
+          <div class="md:col-span-2 p-6">
+            <span class="text-xs text-orange font-bold uppercase tracking-wider">Dragon Ball</span>
+            <h3 class="text-2xl font-black mt-2">Son Goku</h3>
+            <p class="text-sm text-textSecondary mt-1">Race: Saiyan | Alias: Kakarot</p>
+            <p class="text-textSecondary mt-3 text-sm">The legendary Super Saiyan who has defended Earth countless times. From his humble beginnings as a boy with a tail to mastering Ultra Instinct, Goku's journey spans the entire Dragon Ball universe.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="text-xs bg-orange/10 text-orange px-2 py-0.5 rounded">Super Saiyan</span>
+              <span class="text-xs bg-orange/10 text-orange px-2 py-0.5 rounded">Ultra Instinct</span>
+              <span class="text-xs bg-orange/10 text-orange px-2 py-0.5 rounded">Kamehameha</span>
+              <span class="text-xs bg-orange/10 text-orange px-2 py-0.5 rounded">Z-Fighter</span>
+            </div>
+            <a href="https://dragonball.jycsd.com" class="inline-block mt-4 text-sm text-orange font-semibold hover:underline">Full Character Database &#8594;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hidden lg:block"><div class="sticky top-24"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="HALFPAGE_ANIME"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
+  </div>
+</section>
+
+<!-- Ad: 970x250 -->
+<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="BILLBOARD_ANIME"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+
+<footer class="bg-bgSecondary border-t border-purple-900/30 py-16 px-4 mt-8">
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div>
+      <div class="flex items-center gap-2.5 mb-4"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-orange to-pink flex items-center justify-center text-lg font-black text-white">A</div><span class="text-xl font-bold">Anime<span class="text-orange">Wiki</span></span></div>
+      <p class="text-sm text-textSecondary">Fan-built anime encyclopedia. Not affiliated with any anime studio or publisher. All character images belong to their respective copyright holders.</p>
+      <p class="text-xs text-textSecondary mt-3">Contact: <a href="mailto:zq30330238@gmail.com" class="text-orange hover:underline">zq30330238@gmail.com</a></p>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Active Wikis</h4>
+      <ul class="space-y-1.5 text-sm text-textSecondary">
+        <li><a href="https://dragonball.jycsd.com" class="text-orange hover:underline">Dragon Ball</a></li>
+        <li><a href="https://onepiece.jycsd.com" class="hover:text-gold">One Piece</a></li>
+        <li><a href="https://naruto.jycsd.com" class="hover:text-orange">Naruto</a></li>
+        <li><a href="https://demonslayer.jycsd.com" class="hover:text-pink">Demon Slayer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-3">Network</h4>
+      <ul class="space-y-1.5 text-sm text-textSecondary">
+        <li><a href="https://games.jycsd.com" class="hover:text-orange">GameGuide &#8594;</a></li>
+        <li><a href="https://tools.jycsd.com" class="hover:text-orange">AI Tools &#8594;</a></li>
+        <li><a href="https://www.jycsd.com" class="hover:text-orange">Myers Media &#8594;</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-purple-900/30 text-center text-sm text-textSecondary">
+    <p>&copy; 2026 AnimeWiki by <a href="https://www.jycsd.com" class="text-orange hover:underline">Myers Media</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var s=document.querySelectorAll('.carousel-slide'),d=document.querySelectorAll('.carousel-dot'),c=0;
+  function go(i){s[c].classList.remove('active');d[c].classList.remove('active');c=i;s[c].classList.add('active');d[c].classList.add('active')}
+  d.forEach(function(dt){dt.addEventListener('click',function(){go(parseInt(this.dataset.slide))})});
+  setInterval(function(){go((c+1)%s.length)},5000);
+})();
+</script>
+</body>
+</html>

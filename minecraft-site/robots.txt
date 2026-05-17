@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://minecraft.jycsd.com/sitemap.xml

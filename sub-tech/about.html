@@ -19,21 +19,10 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        brand: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                        }
-                    },
+                    colors: { 'brand': { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b' } },
                     fontFamily: {
-                        sans: ['Roboto', 'system-ui', '-apple-system', 'sans-serif'],
-                        heading: ['Roboto', 'Arial', 'sans-serif'],
+                        sans: ['Roboto','system-ui','-apple-system','sans-serif'],
+                        heading: ['Roboto','Arial','sans-serif']
                     }
                 }
             }
@@ -46,11 +35,7 @@
   "@type": "Organization",
   "name": "TechNest",
   "url": "https://tech.jycsd.com",
-  "description": "Honest tech reviews, in-depth guides, and practical advice on smartphones, laptops, AI tools, and cybersecurity.",
-  "logo": "https://tech.jycsd.com/favicon.ico",
-  "sameAs": [
-    "https://tech.jycsd.com/"
-  ]
+  "logo": "https://tech.jycsd.com/favicon.ico"
 }
 </script>
 <script type="application/ld+json">
@@ -61,7 +46,7 @@
   "url": "https://tech.jycsd.com",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://tech.jycsd.com/?s={search_term_string}",
+    "target": "https://tech.jycsd.com/?s={{search_term_string}}",
     "query-input": "required name=search_term_string"
   }
 }
@@ -75,23 +60,23 @@
   gtag('config', 'G-GGNWR1X1GV');
 </script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold text-brand-700 tracking-tight">Tech<span class="text-brand-500">Nest</span></a>
-            <div class="hidden md:flex items-center gap-8">
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="index.html" class="text-2xl font-black text-gray-900 tracking-tight">Tech<span class="text-brand-600">Nest</span></a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="index.html" class="text-gray-600 hover:text-brand-600">Home</a>
-                <a href="#" class="text-gray-600 hover:text-brand-600">Reviews</a>
-                <a href="#" class="text-gray-600 hover:text-brand-600">Guides</a>
-                <a href="#" class="text-gray-600 hover:text-brand-600">AI</a>
-                <a href="#" class="text-gray-600 hover:text-brand-600">Security</a>
+                <a href="category-reviews.html" class="text-gray-600 hover:text-brand-600">Reviews</a>
+                <a href="category-guides.html" class="text-gray-600 hover:text-brand-600">Guides</a>
+                <a href="category-ai.html" class="text-gray-600 hover:text-brand-600">AI</a>
+                <a href="category-security.html" class="text-gray-600 hover:text-brand-600">Security</a>
                 <a href="about.html" class="text-brand-600 font-medium">About</a>
                 <a href="contact.html" class="text-gray-600 hover:text-brand-600">Contact</a>
-            </div>
         </div>
-    </nav>
-
+        <button class="md:hidden text-gray-600 text-2xl">&#9776;</button>
+    </div>
+</nav>
     <!-- Hero -->
     <section class="bg-gradient-to-br from-brand-50 to-slate-200 py-16">
         <div class="max-w-3xl mx-auto px-4 text-center">
@@ -187,36 +172,39 @@
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="text-white text-lg font-bold mb-3">Tech<span class="text-brand-400">Nest</span></h3>
-                    <p class="text-sm">Honest tech reviews and practical guides for everyday users.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-3">Quick Links</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="index.html" class="hover:text-white">Home</a></li>
-                        <li><a href="about.html" class="hover:text-white">About</a></li>
-                        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-3">Legal</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="hover:text-white">Terms of Service</a></li>
-                        <li><a href="cookie-policy.html" class="hover:text-white">Cookie Policy</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
+    
+
+
+
+
+
+<footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h3 class="text-white text-lg font-black mb-3">TechNest</h3>
+                <p class="text-sm leading-relaxed">Honest tech reviews, buying guides, productivity tools, and cybersecurity tips.</p>
             </div>
-            <div class="border-t border-gray-800 pt-6 text-center text-sm">
-                <p>&copy; 2026 TechNest. All rights reserved. .</p>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:contact@jycsd.com" class="hover:text-white transition-colors">contact@jycsd.com</a></li>
+                </ul>
             </div>
         </div>
-    </footer>
-
+        <div class="border-t border-gray-800 pt-6 text-center text-sm">
+            <p>&copy; 2026 TechNest. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

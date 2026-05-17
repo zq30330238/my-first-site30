@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
@@ -10,15 +10,32 @@
     <meta property="og:title" content="About HealthyEats — Evidence-Based Nutrition & Wellness Tips">
     <meta property="og:description" content="Learn about HealthyEats' mission to deliver evidence-based nutrition guides, healthy eating tips, and practical meal advice grounded in science.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://healthy.jycsd.com/">
+    <meta property="og:site_name" content="HealthyEats">
     <title>About HealthyEats — Evidence-Based Nutrition & Wellness Tips</title>
+    <link rel="canonical" href="https://healthy.jycsd.com/about.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'brand': { 50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534' } },
+                    fontFamily: {
+                        sans: ['Inter','system-ui','-apple-system','sans-serif'],
+                        heading: ['Georgia','Times New Roman','serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "HealthyEats",
   "url": "https://healthy.jycsd.com",
-  "logo": "https://healthy.jycsd.com/favicon.ico",
-  "description": "Evidence-based nutrition and healthy eating information — recipes, meal plans, and expert dietary guidance from HealthyEats."
+  "logo": "https://healthy.jycsd.com/favicon.ico"
 }
 </script>
 <script type="application/ld+json">
@@ -29,37 +46,11 @@
   "url": "https://healthy.jycsd.com",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://healthy.jycsd.com/?s={search_term_string}",
+    "target": "https://healthy.jycsd.com/?s={{search_term_string}}",
     "query-input": "required name=search_term_string"
   }
 }
 </script>
-    <link rel="canonical" href="https://healthy.jycsd.com/about.html">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            200: '#bbf7d0',
-                            400: '#4ade80',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            800: '#166534',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                        heading: ['Georgia', 'Times New Roman', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
 <script>
@@ -71,20 +62,20 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold text-brand-700 tracking-tight">Healthy<span class="text-brand-500">Eats</span></a>
-            <div class="hidden md:flex items-center gap-8">
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="index.html" class="text-2xl font-black text-gray-900 tracking-tight">Healthy<span class="text-brand-600">Eats</span></a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="index.html" class="text-gray-600 hover:text-brand-600">Home</a>
-                <a href="#" class="text-gray-600 hover:text-brand-600">Recipes</a>
-                <a href="#" class="text-gray-600 hover:text-brand-600">Nutrition</a>
-                <a href="#" class="text-gray-600 hover:text-brand-600">Meal Plans</a>
+                <a href="category-recipes.html" class="text-gray-600 hover:text-brand-600">Recipes</a>
+                <a href="category-nutrition.html" class="text-gray-600 hover:text-brand-600">Nutrition</a>
+                <a href="category-meal-plans.html" class="text-gray-600 hover:text-brand-600">Meal Plans</a>
                 <a href="about.html" class="text-brand-600 font-medium">About</a>
                 <a href="contact.html" class="text-gray-600 hover:text-brand-600">Contact</a>
-            </div>
         </div>
-    </nav>
-
+        <button class="md:hidden text-gray-600 text-2xl">&#9776;</button>
+    </div>
+</nav>
     <!-- Hero -->
     <section class="bg-gradient-to-br from-brand-50 to-green-100 py-16">
         <div class="max-w-3xl mx-auto px-4 text-center">
@@ -180,36 +171,39 @@
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="text-white text-lg font-bold mb-3">Healthy<span class="text-brand-400">Eats</span></h3>
-                    <p class="text-sm">Evidence-based nutrition for a healthier you.</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-3">Quick Links</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="index.html" class="hover:text-white">Home</a></li>
-                        <li><a href="about.html" class="hover:text-white">About</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
-                        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-3">Legal</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="hover:text-white">Terms of Service</a></li>
-                        <li><a href="cookie-policy.html" class="hover:text-white">Cookie Policy</a></li>
-                    </ul>
-                </div>
+    
+
+
+
+
+
+<footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h3 class="text-white text-lg font-black mb-3">HealthyEats</h3>
+                <p class="text-sm leading-relaxed">Evidence-based nutrition guides, healthy recipes, and meal plans.</p>
             </div>
-            <div class="border-t border-gray-800 pt-6 text-center text-sm">
-                <p>&copy; 2026 HealthyEats. All rights reserved.</p>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:contact@jycsd.com" class="hover:text-white transition-colors">contact@jycsd.com</a></li>
+                </ul>
             </div>
         </div>
-    </footer>
-
+        <div class="border-t border-gray-800 pt-6 text-center text-sm">
+            <p>&copy; 2026 HealthyEats. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

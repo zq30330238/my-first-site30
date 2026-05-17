@@ -12,7 +12,6 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pets.jycsd.com/">
     <meta property="og:site_name" content="PetCare Hub">
-    <meta property="og:locale" content="en_US">
     <title>PetCare Hub — Expert Pet Care Advice for Dog & Cat Owners</title>
     <link rel="canonical" href="https://pets.jycsd.com/">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,11 +19,10 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        brand: { 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 800: '#9a3412' },
-                        dark: '#1c1917',
-                    },
-                    fontFamily: { sans: ['Roboto','Arial','Helvetica','sans-serif'] }
+                    colors: { 'brand': { 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 800: '#9a3412' }, 'dark': '#1c1917' },
+                    fontFamily: {
+                        sans: ['Roboto','Arial','Helvetica','sans-serif']
+                    }
                 }
             }
         }
@@ -52,7 +50,7 @@
   "url": "https://pets.jycsd.com",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://pets.jycsd.com/?s={search_term_string}",
+    "target": "https://pets.jycsd.com/?s={{search_term_string}}",
     "query-input": "required name=search_term_string"
   }
 }
@@ -70,18 +68,18 @@
 
 <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <a href="index.html" class="text-2xl font-black text-dark tracking-tight">PetCare <span class="text-brand-500">Hub</span></a>
+        <a href="index.html" class="text-2xl font-black text-gray-900 tracking-tight">PetCare <span class="text-brand-600">Hub</span></a>
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="index.html" class="text-brand-600">Home</a>
-            <a href="index.html" class="text-stone-600 hover:text-brand-600">Dogs</a>
-            <a href="index.html" class="text-stone-600 hover:text-brand-600">Cats</a>
-            <a href="index.html" class="text-stone-600 hover:text-brand-600">Small Pets</a>
-            <a href="about.html" class="text-stone-600 hover:text-brand-600">About</a>
-            <a href="contact.html" class="text-stone-600 hover:text-brand-600">Contact</a>
+                <a href="index.html" class="text-brand-600 font-medium">Home</a>
+                <a href="category-dogs.html" class="text-gray-600 hover:text-brand-600">Dogs</a>
+                <a href="category-cats.html" class="text-gray-600 hover:text-brand-600">Cats</a>
+                <a href="category-small-pets.html" class="text-gray-600 hover:text-brand-600">Small Pets</a>
+                <a href="about.html" class="text-gray-600 hover:text-brand-600">About</a>
+                <a href="contact.html" class="text-gray-600 hover:text-brand-600">Contact</a>
         </div>
+        <button class="md:hidden text-gray-600 text-2xl">&#9776;</button>
     </div>
 </nav>
-
 <section class="bg-gradient-to-br from-brand-50 to-orange-100 py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-4 text-center">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-dark mb-6 leading-tight">Expert Pet Care <span class="text-brand-500">Made Simple</span></h1>
@@ -237,17 +235,43 @@
     <div class="ad-container h-[90px] md:h-[100px]">Advertisement</div>
 </div>
 
-<footer class="bg-dark text-stone-400 py-12 mt-8">
+
+
+
+
+
+
+
+
+
+
+<footer class="bg-gray-900 text-gray-400 py-12">
     <div class="max-w-6xl mx-auto px-4">
-        <div class="grid md:grid-cols-4 gap-8 mb-8">
-            <div><h3 class="text-white text-lg font-bold mb-3">PetCare <span class="text-brand-400">Hub</span></h3><p class="text-sm">Expert pet care advice for happy, healthy companions.</p></div>
-            <div><h4 class="text-white font-semibold mb-3">Topics</h4><ul class="space-y-2 text-sm"><li><span class="text-stone-500">Dog Care</span></li><li><span class="text-stone-500">Cat Behavior</span></li><li><span class="text-stone-500">Small Pets</span></li></ul></div>
-            <div><h4 class="text-white font-semibold mb-3">Legal</h4><ul class="space-y-2 text-sm"><li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li><li><a href="terms.html" class="hover:text-white">Terms of Service</a></li><li><a href="cookie-policy.html" class="hover:text-white">Cookie Policy</a></li><li><a href="contact.html" class="hover:text-white">Contact</a></li></ul></div>
-            <div><h4 class="text-white font-semibold mb-3">Contact</h4><ul class="space-y-2 text-sm"><li>contact@jycsd.com</li></ul></div>
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h3 class="text-white text-lg font-black mb-3">PetCare Hub</h3>
+                <p class="text-sm leading-relaxed">Expert pet care advice for happy, healthy companions.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:contact@jycsd.com" class="hover:text-white transition-colors">contact@jycsd.com</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="border-t border-stone-800 pt-6 text-center text-sm"><p>&copy; 2026 PetCare Hub. All rights reserved. .</p></div>
+        <div class="border-t border-gray-800 pt-6 text-center text-sm">
+            <p>&copy; 2026 PetCare Hub. All rights reserved.</p>
+        </div>
     </div>
 </footer>
-
 </body>
 </html>

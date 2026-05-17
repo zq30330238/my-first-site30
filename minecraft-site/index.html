@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MineGuide — Minecraft Guides, Crafting Recipes & Build Tutorials</title>
+<meta name="description" content="Expert Minecraft guides covering every crafting recipe, mob, building design, redstone contraption, enchantment combo, and biome. 120+ in-depth guides.">
+<meta property="og:title" content="MineGuide — Expert Minecraft Guides & Wiki">
+<meta property="og:description" content="Complete Minecraft guide database: crafting, mobs, building plans, redstone tech, and more.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://minecraft.jycsd.com/">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',mc:'#4ade80',mcDark:'#166534'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
+<script>function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',Arial,sans-serif; background:#0d1117; color:#e6edf3; font-size:16px; line-height:1.6; }
+  ins.adsbygoogle { display:block; }
+  .ad-label { text-align:center; color:#6b7280; font-size:10px; text-transform:uppercase; letter-spacing:1px; padding:4px 0; }
+  .carousel-slide { position:absolute; inset:0; opacity:0; transition:opacity 0.8s ease-in-out; pointer-events:none; }
+  .carousel-slide.active { opacity:1; pointer-events:auto; }
+  .carousel-dot { width:10px; height:10px; border-radius:50%; background:rgba(255,255,255,0.3); cursor:pointer; transition:background 0.3s; }
+  .carousel-dot.active { background:#4ade80; }
+  .card-hover:hover { transform:translateY(-2px); box-shadow:0 8px 30px rgba(74,222,128,0.15); transition:all 0.3s ease; }
+  @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-10px); } }
+  .float-anim { animation:float 3s ease-in-out infinite; }
+  .char-img { filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5)); }
+</style>
+</head>
+<body>
+
+<nav class="fixed top-0 w-full z-50 bg-bgPrimary/95 backdrop-blur-md border-b border-gray-800/50">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5">
+      <img src="images/creeper.png" alt="MineGuide" class="w-9 h-9 object-contain">
+      <span class="text-xl font-bold tracking-tight">Mine<span class="text-mc">Guide</span></span>
+    </a>
+    <div class="hidden lg:flex items-center gap-8 text-sm font-medium">
+      <a href="https://games.jycsd.com" class="text-textSecondary hover:text-mc transition-colors">GameGuide</a>
+      <a href="/guides/crafting/" class="text-textSecondary hover:text-mc transition-colors">Crafting</a>
+      <a href="/guides/mobs/" class="text-textSecondary hover:text-mc transition-colors">Mobs</a>
+      <a href="/guides/building/" class="text-textSecondary hover:text-mc transition-colors">Building</a>
+      <a href="/guides/redstone/" class="text-textSecondary hover:text-mc transition-colors">Redstone</a>
+      <a href="/guides/enchanting/" class="text-textSecondary hover:text-mc transition-colors">Enchanting</a>
+      <a href="/guides/biomes/" class="text-textSecondary hover:text-mc transition-colors">Biomes</a>
+    </div>
+    <button class="lg:hidden text-textSecondary text-2xl" id="menuBtn" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<div id="mobileMenu" class="fixed top-16 inset-x-0 bg-bgPrimary/98 backdrop-blur-md border-b border-gray-800 z-40 hidden lg:hidden">
+  <div class="flex flex-col px-4 py-3 gap-1 text-sm font-medium">
+    <a href="https://games.jycsd.com" class="py-2.5 text-textSecondary hover:text-mc border-b border-gray-800/50">GameGuide Network</a>
+    <a href="/guides/crafting/" class="py-2.5 text-textSecondary hover:text-mc border-b border-gray-800/50">Crafting Recipes</a>
+    <a href="/guides/mobs/" class="py-2.5 text-textSecondary hover:text-mc border-b border-gray-800/50">Mobs Guide</a>
+    <a href="/guides/building/" class="py-2.5 text-textSecondary hover:text-mc border-b border-gray-800/50">Building Ideas</a>
+    <a href="/guides/redstone/" class="py-2.5 text-textSecondary hover:text-mc border-b border-gray-800/50">Redstone Tech</a>
+    <a href="/guides/enchanting/" class="py-2.5 text-textSecondary hover:text-mc border-b border-gray-800/50">Enchanting</a>
+    <a href="/guides/biomes/" class="py-2.5 text-textSecondary hover:text-mc">Biomes Explorer</a>
+  </div>
+</div>
+
+<!-- Hero Carousel -->
+<section class="relative w-full overflow-hidden" style="height:520px">
+  <!-- Slide 1: Steve + Main Guide -->
+  <div class="carousel-slide active">
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-emerald-950 to-gray-900"></div>
+    <div class="absolute inset-0 opacity-30" style="background:radial-gradient(ellipse at 30% 50%, #4ade80 0%, transparent 60%);"></div>
+    <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+      <div class="grid md:grid-cols-2 gap-8 items-center w-full">
+        <div class="pt-10">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-mc bg-mc/10 px-3 py-1 rounded-full mb-4">Trending Now</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4">Master <span class="text-mc">Minecraft</span> 1.21</h1>
+          <p class="text-lg text-textSecondary mb-6 max-w-lg">Complete Tricky Trials update guides — trial chambers, breeze, mace weapon, new copper blocks, and every crafting recipe added.</p>
+          <div class="flex gap-3">
+            <a href="/guides/crafting/" class="bg-mc text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-green-300 transition-all">Browse Guides</a>
+            <a href="/guides/mobs/" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-mc transition-all">Mob Guide</a>
+          </div>
+        </div>
+        <div class="hidden md:flex justify-center items-end">
+          <img src="images/steve.png" alt="Steve" class="char-img float-anim h-96 w-auto object-contain">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Slide 2: Enderman + Deep Dark -->
+  <div class="carousel-slide">
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-950 via-slate-900 to-gray-950"></div>
+    <div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 70% 40%, #64748b 0%, transparent 60%);"></div>
+    <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+      <div class="grid md:grid-cols-2 gap-8 items-center w-full">
+        <div class="pt-10">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-purple-400 bg-purple-400/10 px-3 py-1 rounded-full mb-4">Deep Dive</span>
+          <h2 class="text-4xl md:text-5xl font-black leading-tight mb-4">Survive the <span class="text-purple-400">Deep Dark</span></h2>
+          <p class="text-lg text-textSecondary mb-6 max-w-lg">Complete Warden guide — detection mechanics, combat strategies, and how to loot Ancient Cities without summoning the beast.</p>
+          <div class="flex gap-3">
+            <a href="/guides/mobs/" class="bg-purple-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-purple-400 transition-all">Mob Guides</a>
+            <a href="/guides/biomes/" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-purple-400 transition-all">Biomes</a>
+          </div>
+        </div>
+        <div class="hidden md:flex justify-center items-end">
+          <img src="images/enderman.png" alt="Enderman" class="char-img float-anim h-96 w-auto object-contain" style="animation-delay:0.5s">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Slide 3: Creeper + Ad -->
+  <div class="carousel-slide">
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-green-950 to-gray-900"></div>
+    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 60% 50%, #4ade80 0%, transparent 60%);"></div>
+    <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+      <div class="grid md:grid-cols-2 gap-8 items-center w-full">
+        <div class="pt-10">
+          <span class="inline-block text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full mb-4">Essential</span>
+          <h2 class="text-4xl md:text-5xl font-black leading-tight mb-4">Every <span class="text-mc">Mob</span> Explained</h2>
+          <p class="text-lg text-textSecondary mb-6 max-w-lg">From Creepers to the Ender Dragon — complete bestiary with spawn conditions, drops, combat tactics, and farming strategies.</p>
+          <div class="flex gap-3">
+            <a href="/guides/mobs/" class="bg-mc text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-green-300 transition-all">All Mobs</a>
+            <a href="/guides/crafting/" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-mc transition-all">Crafting</a>
+          </div>
+        </div>
+        <div class="hidden md:flex justify-center items-end">
+          <img src="images/creeper.png" alt="Creeper" class="char-img float-anim h-80 w-auto object-contain" style="animation-delay:1s">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+    <div class="carousel-dot active" data-slide="0"></div>
+    <div class="carousel-dot" data-slide="1"></div>
+    <div class="carousel-dot" data-slide="2"></div>
+  </div>
+</section>
+
+<!-- Quick Nav Cards -->
+<section class="max-w-7xl mx-auto px-4 -mt-6 relative z-20">
+  <div class="grid grid-cols-3 md:grid-cols-6 gap-3">
+    <a href="/guides/crafting/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-mc/50 group">
+      <img src="images/alex.png" alt="Crafting" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform">
+      <div class="text-xs font-semibold">Crafting</div>
+    </a>
+    <a href="/guides/mobs/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-red-500/50 group">
+      <img src="images/creeper.png" alt="Mobs" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform">
+      <div class="text-xs font-semibold">Mobs</div>
+    </a>
+    <a href="/guides/building/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-amber-500/50 group">
+      <img src="images/steve.png" alt="Building" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform">
+      <div class="text-xs font-semibold">Building</div>
+    </a>
+    <a href="/guides/redstone/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-red-600/50 group">
+      <img src="images/enderman.png" alt="Redstone" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform">
+      <div class="text-xs font-semibold">Redstone</div>
+    </a>
+    <a href="/guides/enchanting/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-purple-500/50 group">
+      <img src="images/alex.png" alt="Enchanting" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform">
+      <div class="text-xs font-semibold">Enchanting</div>
+    </a>
+    <a href="/guides/biomes/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-cyan-500/50 group">
+      <img src="images/enderman.png" alt="Biomes" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform">
+      <div class="text-xs font-semibold">Biomes</div>
+    </a>
+  </div>
+</section>
+
+<!-- Ad: 728x90 -->
+<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="LEADERBOARD1"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+<!-- Latest Guides -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+  <div class="flex items-end justify-between mb-8">
+    <div>
+      <p class="text-mc text-sm font-semibold uppercase tracking-wider mb-1">Fresh Content</p>
+      <h2 class="text-3xl font-black">Latest Guides</h2>
+    </div>
+    <a href="/guides/crafting/" class="text-mc text-sm font-medium hover:underline hidden sm:block">View All</a>
+  </div>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+      <div class="h-44 bg-gradient-to-br from-emerald-900 to-green-950 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #4ade80, transparent);"></div>
+        <img src="images/steve.png" alt="Netherite" class="relative h-36 w-auto object-contain char-img">
+      </div>
+      <div class="p-4">
+        <span class="text-xs text-mc font-semibold bg-mc/10 px-2 py-0.5 rounded">Crafting</span>
+        <h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/crafting/netherite-upgrade-guide.html" class="hover:text-mc transition-colors">How to Get Netherite: Complete Upgrade Guide (2026)</a></h3>
+        <time class="text-xs text-textSecondary mt-3 block">May 17, 2026</time>
+      </div>
+    </article>
+    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+      <div class="h-44 bg-gradient-to-br from-purple-900 to-indigo-950 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #a78bfa, transparent);"></div>
+        <img src="images/enderman.png" alt="Warden" class="relative h-32 w-auto object-contain char-img">
+      </div>
+      <div class="p-4">
+        <span class="text-xs text-purple-400 font-semibold bg-purple-400/10 px-2 py-0.5 rounded">Mobs</span>
+        <h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/mobs/" class="hover:text-purple-400 transition-colors">Warden Guide: Survive the Deep Dark Biome</a></h3>
+        <time class="text-xs text-textSecondary mt-3 block">May 16, 2026</time>
+      </div>
+    </article>
+    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+      <div class="h-44 bg-gradient-to-br from-amber-900 to-yellow-950 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #fbbf24, transparent);"></div>
+        <img src="images/alex.png" alt="Building" class="relative h-36 w-auto object-contain char-img">
+      </div>
+      <div class="p-4">
+        <span class="text-xs text-amber-400 font-semibold bg-amber-400/10 px-2 py-0.5 rounded">Building</span>
+        <h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/building/" class="hover:text-amber-400 transition-colors">10 Starter House Designs for Every Biome</a></h3>
+        <time class="text-xs text-textSecondary mt-3 block">May 15, 2026</time>
+      </div>
+    </article>
+    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+      <div class="h-44 bg-gradient-to-br from-red-950 to-orange-950 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ef4444, transparent);"></div>
+        <img src="images/creeper.png" alt="Redstone" class="relative h-32 w-auto object-contain char-img">
+      </div>
+      <div class="p-4">
+        <span class="text-xs text-red-400 font-semibold bg-red-400/10 px-2 py-0.5 rounded">Redstone</span>
+        <h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/redstone/" class="hover:text-red-400 transition-colors">Automatic Storage System Tutorial (Easy)</a></h3>
+        <time class="text-xs text-textSecondary mt-3 block">May 14, 2026</time>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Hot Topics + Sidebar Ad -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+  <div class="grid lg:grid-cols-3 gap-8">
+    <div class="lg:col-span-2">
+      <p class="text-mc text-sm font-semibold uppercase tracking-wider mb-1">Trending</p>
+      <h2 class="text-2xl font-black mb-6">Hot Topics This Month</h2>
+      <div class="space-y-3">
+        <a href="/guides/crafting/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+          <img src="images/steve.png" alt="Update" class="w-14 h-14 object-contain flex-shrink-0 char-img">
+          <div>
+            <h3 class="font-bold">1.21 Tricky Trials Update: Every New Item, Mob & Block</h3>
+            <p class="text-sm text-textSecondary mt-1">Complete coverage of trial chambers, breeze mob, mace weapon, copper bulbs, and new tuff blocks.</p>
+            <span class="text-xs text-mc mt-2 inline-block">Read Guide</span>
+          </div>
+        </a>
+        <a href="/guides/enchanting/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+          <img src="images/alex.png" alt="Enchanting" class="w-14 h-14 object-contain flex-shrink-0 char-img">
+          <div>
+            <h3 class="font-bold">Best Weapon Enchantments Tier List (2026 Meta)</h3>
+            <p class="text-sm text-textSecondary mt-1">Sword vs Axe vs Trident vs Mace — which weapon type dominates? Complete enchantment guide for PvP and PvE.</p>
+            <span class="text-xs text-mc mt-2 inline-block">Read Guide</span>
+          </div>
+        </a>
+        <a href="/guides/mobs/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+          <img src="images/creeper.png" alt="Farm" class="w-14 h-14 object-contain flex-shrink-0 char-img">
+          <div>
+            <h3 class="font-bold">Ultimate Iron Farm: 400+ Ingots Per Hour Design</h3>
+            <p class="text-sm text-textSecondary mt-1">Stackable villager-based iron farm. Full tutorial with spawn mechanics explained and troubleshooting guide.</p>
+            <span class="text-xs text-mc mt-2 inline-block">Read Guide</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="hidden lg:block">
+      <div class="sticky top-24">
+        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="HALFPAGE"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ad: 970x250 -->
+<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="BILLBOARD2"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+
+<!-- Character Spotlight -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+  <p class="text-mc text-sm font-semibold uppercase tracking-wider mb-1">Character Spotlight</p>
+  <h2 class="text-3xl font-black mb-8">Meet the <span class="text-mc">Mobs</span></h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+    <div class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800 text-center p-6">
+      <img src="images/creeper.png" alt="Creeper" class="char-img h-32 w-auto object-contain mx-auto mb-3">
+      <h3 class="font-bold text-lg">Creeper</h3>
+      <p class="text-xs text-textSecondary">The iconic explosive mob. Learn spawn conditions, detection ranges, and how to defuse.</p>
+      <a href="/guides/mobs/" class="text-mc text-xs font-semibold mt-3 inline-block hover:underline">Creeper Guide</a>
+    </div>
+    <div class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800 text-center p-6">
+      <img src="images/enderman.png" alt="Enderman" class="char-img h-32 w-auto object-contain mx-auto mb-3">
+      <h3 class="font-bold text-lg">Enderman</h3>
+      <p class="text-xs text-textSecondary">The tall dark wanderer. How to avoid triggering aggression and farm ender pearls efficiently.</p>
+      <a href="/guides/mobs/" class="text-purple-400 text-xs font-semibold mt-3 inline-block hover:underline">Enderman Guide</a>
+    </div>
+    <div class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800 text-center p-6">
+      <img src="images/steve.png" alt="Steve" class="char-img h-32 w-auto object-contain mx-auto mb-3">
+      <h3 class="font-bold text-lg">Player Survival</h3>
+      <p class="text-xs text-textSecondary">From first night to endgame. Complete survival progression for new and returning players.</p>
+      <a href="/guides/crafting/" class="text-mc text-xs font-semibold mt-3 inline-block hover:underline">Survival Guide</a>
+    </div>
+    <div class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800 text-center p-6">
+      <img src="images/alex.png" alt="Alex" class="char-img h-32 w-auto object-contain mx-auto mb-3">
+      <h3 class="font-bold text-lg">Building Master</h3>
+      <p class="text-xs text-textSecondary">Creative mode tips, block palettes, and architectural styles from medieval to modern.</p>
+      <a href="/guides/building/" class="text-amber-400 text-xs font-semibold mt-3 inline-block hover:underline">Build Guides</a>
+    </div>
+  </div>
+</section>
+
+<!-- Category Index -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+  <h2 class="text-3xl font-black mb-8">Every Guide Category</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-mc/30 transition-all">
+      <div class="flex items-center gap-3 mb-4">
+        <img src="images/steve.png" alt="Crafting" class="w-10 h-10 object-contain">
+        <h3 class="font-bold text-lg"><a href="/guides/crafting/" class="hover:text-mc transition-colors">Crafting Recipes</a></h3>
+      </div>
+      <ul class="space-y-2 text-sm text-textSecondary">
+        <li><a href="/guides/crafting/netherite-upgrade-guide.html" class="hover:text-mc transition-colors">Netherite Upgrade Guide</a></li>
+        <li><a href="/guides/crafting/" class="hover:text-mc transition-colors">Beacon Setup & Pyramids</a></li>
+        <li><a href="/guides/crafting/" class="hover:text-mc transition-colors">Level 30 Enchanting Setup</a></li>
+        <li><a href="/guides/crafting/" class="hover:text-mc transition-colors">Shulker Box Guide</a></li>
+      </ul>
+      <a href="/guides/crafting/" class="text-mc text-xs font-semibold mt-3 inline-block hover:underline">15+ guides</a>
+    </div>
+    <div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-red-500/30 transition-all">
+      <div class="flex items-center gap-3 mb-4">
+        <img src="images/creeper.png" alt="Mobs" class="w-10 h-10 object-contain">
+        <h3 class="font-bold text-lg"><a href="/guides/mobs/" class="hover:text-red-400 transition-colors">Mobs Bestiary</a></h3>
+      </div>
+      <ul class="space-y-2 text-sm text-textSecondary">
+        <li><a href="/guides/mobs/" class="hover:text-red-400 transition-colors">Warden — Deep Dark Guardian</a></li>
+        <li><a href="/guides/mobs/" class="hover:text-red-400 transition-colors">Ender Dragon Boss Fight</a></li>
+        <li><a href="/guides/mobs/" class="hover:text-red-400 transition-colors">Wither Boss Strategy</a></li>
+        <li><a href="/guides/mobs/" class="hover:text-red-400 transition-colors">Allay Finder & Duplication</a></li>
+      </ul>
+      <a href="/guides/mobs/" class="text-red-400 text-xs font-semibold mt-3 inline-block hover:underline">20+ guides</a>
+    </div>
+    <div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-amber-500/30 transition-all">
+      <div class="flex items-center gap-3 mb-4">
+        <img src="images/alex.png" alt="Building" class="w-10 h-10 object-contain">
+        <h3 class="font-bold text-lg"><a href="/guides/building/" class="hover:text-amber-400 transition-colors">Building Ideas</a></h3>
+      </div>
+      <ul class="space-y-2 text-sm text-textSecondary">
+        <li><a href="/guides/building/" class="hover:text-amber-400 transition-colors">10 Starter Houses by Biome</a></li>
+        <li><a href="/guides/building/" class="hover:text-amber-400 transition-colors">Villager Trading Hall Design</a></li>
+        <li><a href="/guides/building/" class="hover:text-amber-400 transition-colors">Iron Farm Build Tutorial</a></li>
+        <li><a href="/guides/building/" class="hover:text-amber-400 transition-colors">Medieval Castle Blueprint</a></li>
+      </ul>
+      <a href="/guides/building/" class="text-amber-400 text-xs font-semibold mt-3 inline-block hover:underline">10+ guides</a>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="bg-bgSecondary border-y border-gray-800 py-16 px-4 mt-8">
+  <div class="max-w-xl mx-auto text-center">
+    <img src="images/creeper.png" alt="Newsletter" class="w-16 h-16 object-contain mx-auto mb-5 char-img">
+    <h2 class="text-2xl font-black mb-3">New Guides Every Week</h2>
+    <p class="text-textSecondary mb-6">Get the latest Minecraft tutorials, patch note breakdowns, and exclusive build designs.</p>
+    <form class="flex gap-2 max-w-md mx-auto">
+      <input type="email" placeholder="you@email.com" required class="flex-1 bg-bgCard border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-mc text-sm">
+      <button type="submit" class="bg-mc text-gray-900 px-6 py-3 rounded-lg font-bold text-sm hover:bg-green-300 transition-all whitespace-nowrap">Get Updates</button>
+    </form>
+  </div>
+</section>
+
+<footer class="bg-bgSecondary border-t border-gray-800 py-16 px-4">
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-2.5 mb-4">
+        <img src="images/creeper.png" alt="MineGuide" class="w-9 h-9 object-contain">
+        <span class="text-xl font-bold">Mine<span class="text-mc">Guide</span></span>
+      </div>
+      <p class="text-sm text-textSecondary leading-relaxed">Master Minecraft with expert guides. Part of the GameGuide Network.</p>
+    </div>
+    <div>
+      <h4 class="font-bold mb-4">Categories</h4>
+      <ul class="space-y-2 text-sm text-textSecondary">
+        <li><a href="/guides/crafting/" class="hover:text-mc transition-colors">Crafting Recipes</a></li>
+        <li><a href="/guides/mobs/" class="hover:text-mc transition-colors">Mobs Guide</a></li>
+        <li><a href="/guides/building/" class="hover:text-mc transition-colors">Building Ideas</a></li>
+        <li><a href="/guides/redstone/" class="hover:text-mc transition-colors">Redstone Tech</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-4">More Game Guides</h4>
+      <ul class="space-y-2 text-sm text-textSecondary">
+        <li><a href="https://eldenring.jycsd.com" class="hover:text-mc transition-colors">Elden Ring</a></li>
+        <li><a href="https://lol.jycsd.com" class="hover:text-mc transition-colors">League of Legends</a></li>
+        <li><a href="https://fortnite.jycsd.com" class="hover:text-mc transition-colors">Fortnite</a></li>
+        <li><a href="https://games.jycsd.com" class="text-mc hover:underline">All Games</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-bold mb-4">About</h4>
+      <ul class="space-y-2 text-sm text-textSecondary">
+        <li><a href="/about.html" class="hover:text-mc transition-colors">About</a></li>
+        <li><a href="/contact.html" class="hover:text-mc transition-colors">Contact</a></li>
+        <li><a href="/sitemap.xml" class="hover:text-mc transition-colors">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-gray-800 text-center text-sm text-textSecondary">
+    <p>&copy; 2026 MineGuide by <a href="https://www.jycsd.com" class="text-mc hover:underline">Myers Media</a>. Minecraft is a trademark of Mojang Studios.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var slides = document.querySelectorAll('.carousel-slide');
+  var dots = document.querySelectorAll('.carousel-dot');
+  var current = 0;
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = idx;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() { goTo(parseInt(this.dataset.slide)); });
+  });
+  setInterval(function() { goTo((current + 1) % slides.length); }, 5000);
+  document.getElementById('menuBtn').addEventListener('click', function() {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+})();
+</script>
+</body>
+</html>

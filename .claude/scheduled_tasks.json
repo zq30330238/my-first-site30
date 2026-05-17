@@ -24,7 +24,7 @@
       "cron": "23 */6 * * *",
       "prompt": "ECC auto-update: cd \"C:/Users/Administrator/.claude/plugins/marketplaces/ecc-manual\" && git pull --ff-only 2>&1. If updated, copy new/changed agents/skills/commands to d:/AI网站文件夹/.claude/ accordingly. Report: what was updated, new agents/skills added.",
       "createdAt": 1778906350696,
-      "lastFiredAt": 1778994158300,
+      "lastFiredAt": 1779016951665,
       "recurring": true,
       "createdBySessionId": "383cc0a6-234a-4cf9-9fb9-28dc32798109",
       "createdByPid": 2812

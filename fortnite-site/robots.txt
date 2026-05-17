@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fortnite.jycsd.com/sitemap.xml
