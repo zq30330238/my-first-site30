@@ -1,6 +1,7 @@
 {
   "dragonball": {
     "site_type": "anime",
+    "theme": "light",
     "site_name": "Dragon Ball Wiki",
     "domain": "dragonball.jycsd.com",
     "accent": "#ff6b35",
