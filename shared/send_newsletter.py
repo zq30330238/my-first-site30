@@ -6,6 +6,7 @@ Usage:
 Requires: Tencent Exmail password (stored in SENDER_PASSWORD)
 """
 
+import os
 import re
 import json
 import sys
@@ -22,10 +23,10 @@ ROOT = Path(__file__).resolve().parent.parent
 SUBSCRIBERS_FILE = ROOT / "shared" / "subscribers.json"
 
 SENDER_EMAIL = "contact@jycsd.com"
-SENDER_PASSWORD = "3CGLkS88AcUUsrL6"
+SENDER_PASSWORD = os.environ.get("SENDER_EMAIL_PASSWORD", "")
 
 DEEPSEEK_URL = "https://api.deepseek.com/anthropic/v1/messages"
-DEEPSEEK_KEY = "sk-07777fe5f4554dbcaeddce87c7ccb950"
+DEEPSEEK_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 
 SITE_INFO = {
     "pets": {"brand": "PetCareHub", "domain": "pets.jycsd.com", "category": "Pet Care"},

@@ -6,6 +6,7 @@ Result: ~50% fewer tokens per article, global values in one place.
 Usage: py shared/create_articles.py [--per-site N] [--dry-run]
 """
 
+import os
 import re
 import json
 import sys
@@ -24,7 +25,7 @@ from site_templates import (
 
 ROOT = Path(__file__).resolve().parent.parent
 API_URL = "https://api.deepseek.com/anthropic/v1/messages"
-API_TOKEN = "sk-07777fe5f4554dbcaeddce87c7ccb950"
+API_TOKEN = os.environ.get("DEEPSEEK_API_KEY", "")
 
 SYSTEM_PROMPT = """You are a professional English SEO content writer for US consumer websites.
 Output a JSON object with the article content fields listed below. Do NOT output HTML wrapper, header, footer, or sidebars — the Python pipeline handles template injection.

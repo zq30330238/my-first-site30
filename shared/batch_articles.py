@@ -6,7 +6,7 @@ import sys, os, json, re, time
 from pathlib import Path
 
 ROOT = Path(r'd:\AI网站文件夹')
-API_KEY = os.environ.get('ANTHROPIC_AUTH_TOKEN', 'sk-07777fe5f4554dbcaeddce87c7ccb950')
+API_KEY = os.environ.get('ANTHROPIC_AUTH_TOKEN') or os.environ.get('DEEPSEEK_API_KEY', '')
 BASE_URL = 'https://api.deepseek.com/anthropic'
 MODEL = os.environ.get('ANTHROPIC_MODEL', 'deepseek-v4-pro')
 

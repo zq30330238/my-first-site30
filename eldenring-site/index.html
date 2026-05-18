@@ -3,169 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TarnishedGuide — Elden Ring Bosses, Builds & Walkthroughs</title>
-<meta name="description" content="Expert Elden Ring guides — every boss strategy, character build, weapon location, NPC quest walkthrough, and map guide for The Lands Between.">
+<title>TarnishedGuide — Rise, Tarnished</title>
+<meta name="description" content="Complete boss strategies, build guides, weapon locations, and quest walkthroughs for every region.">
+<meta property="og:title" content="TarnishedGuide — Game Guides & Wiki">
+<meta property="og:description" content="Complete boss strategies, build guides, weapon locations, and quest walkthroughs for every region.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://eldenring.jycsd.com/">
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',gold:'#fbbf24'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
+<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#fbbf24',accentDark:'#d97706'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
 <script>function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
 <style>
-  body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
-  ins.adsbygoogle{display:block}.ad-label{text-align:center;color:#6b7280;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
-  .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease-in-out;pointer-events:none}
-  .carousel-slide.active{opacity:1;pointer-events:auto}
-  .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer}
-  .carousel-dot.active{background:#fbbf24}
-  .card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(251,191,36,0.15);transition:all 0.3s ease}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-  .float-anim{animation:float 3s ease-in-out infinite}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
+ins.adsbygoogle{display:block}
+.ad-label{text-align:center;color:#6b7280;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
+.carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
+.carousel-slide.active{opacity:1;pointer-events:auto}
+.carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
+.carousel-dot.active{background:#fbbf24}
+.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px #fbbf2426;transition:all .3s ease}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.float-anim{animation:float 3s ease-in-out infinite}
+.char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
 </style>
 </head>
 <body>
 
 <nav class="fixed top-0 w-full z-50 bg-bgPrimary/95 backdrop-blur-md border-b border-gray-800/50">
-  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2.5">
-      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-gold to-amber-600 flex items-center justify-center text-lg font-black text-gray-900">T</div>
-      <span class="text-xl font-bold">Tarnished<span class="text-gold">Guide</span></span>
-    </a>
-    <div class="hidden md:flex gap-6 text-sm font-medium">
-      <a href="https://games.jycsd.com" class="text-textSecondary hover:text-gold">&#8592; GameGuide</a>
-      <a href="#" class="text-gold font-semibold">Bosses</a>
-      <a href="#" class="text-textSecondary hover:text-gold">Builds</a>
-      <a href="#" class="text-textSecondary hover:text-gold">Weapons</a>
-      <a href="#" class="text-textSecondary hover:text-gold">Quests</a>
-      <a href="#" class="text-textSecondary hover:text-gold">Map</a>
-    </div>
-    <button class="md:hidden text-textSecondary text-2xl" id="menuBtn">&#9776;</button>
-  </div>
+<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+<a href="/" class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">T</div>
+<span class="text-xl font-bold tracking-tight">Tarnished<span class="text-accent">Guide</span></span>
+</a>
+<div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+<a href="https://games.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">GameGuide</a>
+<a href="/guides/bosses/" class="text-textSecondary hover:text-accent transition-colors">Bosses</a>
+<a href="/guides/builds/" class="text-textSecondary hover:text-accent transition-colors">Builds</a>
+<a href="/guides/weapons/" class="text-textSecondary hover:text-accent transition-colors">Weapons</a>
+<a href="/guides/quests/" class="text-textSecondary hover:text-accent transition-colors">Quests</a>
+<a href="/guides/map/" class="text-textSecondary hover:text-accent transition-colors">Map</a>
+</div>
+<button class="lg:hidden text-textSecondary text-2xl" id="menuBtn" aria-label="Menu">&#9776;</button>
+</div>
 </nav>
 
-<div id="mobileMenu" class="fixed top-16 inset-x-0 bg-bgPrimary/98 backdrop-blur-md border-b border-gray-800 z-40 hidden md:hidden">
-  <div class="flex flex-col px-4 py-3 gap-1 text-sm font-medium">
-    <a href="#" class="py-2.5 text-gold">Boss Guides</a>
-    <a href="#" class="py-2.5 text-textSecondary">Character Builds</a>
-    <a href="#" class="py-2.5 text-textSecondary">Weapons & Armor</a>
-    <a href="#" class="py-2.5 text-textSecondary">NPC Quests</a>
-    <a href="#" class="py-2.5 text-textSecondary">Map & Locations</a>
-  </div>
-</div>
+<!-- Hero Carousel -->
+<section class="relative w-full overflow-hidden" style="height:520px">
+<div class="carousel-slide active"><div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div><div class="relative max-w-7xl mx-auto px-4 h-full flex items-center"><div class="pt-10"><h1 class="text-4xl md:text-6xl font-black mb-4">Conquer the Lands Between</h1><p class="text-lg text-textSecondary mb-6 max-w-lg">Complete boss strategies, build guides, weapon locations, and quest walkthroughs for every region.</p><div class="flex gap-3"><a href="/guides/bosses/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Browse Guides</a><a href="#" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Learn More</a></div></div></div></div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
 
-<!-- Hero -->
-<section class="relative w-full overflow-hidden pt-16" style="height:500px">
-  <div class="absolute inset-0 bg-gradient-to-br from-gray-950 via-amber-950 to-gray-950"></div>
-  <div class="absolute inset-0 opacity-30" style="background:radial-gradient(ellipse at 40% 50%, #fbbf24 0%, transparent 60%)"></div>
-  <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-    <div class="grid md:grid-cols-2 gap-8 items-center w-full">
-      <div>
-        <span class="text-xs font-bold uppercase tracking-wider text-gold bg-gold/10 px-3 py-1 rounded-full">Open World RPG</span>
-        <h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight">Conquer the <span class="text-gold">Lands Between</span></h1>
-        <p class="text-lg text-textSecondary mt-4 max-w-lg">Complete Elden Ring guides — every boss strategy, character build, weapon location, and NPC questline. Master the game that defined a generation.</p>
-        <div class="flex gap-3 mt-6">
-          <a href="#" class="bg-gold text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-amber-300 transition-all">Boss Guides</a>
-          <a href="#" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-gold transition-all">Character Builds</a>
-        </div>
-      </div>
-      <div class="hidden md:flex justify-center">
-        <div class="w-72 h-72 rounded-2xl bg-gradient-to-br from-gold/20 to-amber-800/30 border border-gold/20 flex items-center justify-center float-anim">
-          <div class="text-center"><div class="text-8xl mb-2">&#128128;</div><div class="text-gold font-bold text-lg">100+ Boss Guides</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
 </section>
 
-<!-- Quick Nav -->
+<!-- Category Cards -->
 <section class="max-w-7xl mx-auto px-4 -mt-6 relative z-20">
-  <div class="grid grid-cols-3 md:grid-cols-5 gap-3">
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-gold/50"><div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#128128;</div><div class="text-xs font-semibold">Bosses</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-red-500/50"><div class="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9876;</div><div class="text-xs font-semibold">Builds</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-blue-500/50"><div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#128481;</div><div class="text-xs font-semibold">Weapons</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-purple-500/50"><div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#128220;</div><div class="text-xs font-semibold">Quests</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-cyan-500/50"><div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#128506;</div><div class="text-xs font-semibold">Map</div></a>
-  </div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+<a href="/guides/bosses/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Bosses</div></a>
+<a href="/guides/builds/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Builds</div></a>
+<a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Weapons</div></a>
+<a href="/guides/quests/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Quests</div></a>
+<a href="/guides/map/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Map</div></a>
+</div>
 </section>
 
 <!-- Ad: 728x90 -->
-<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="LEADERBOARD_ELDEN"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="LEADERBOARD1"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
-<!-- Featured Guides -->
+<!-- Guide Cards -->
 <section class="max-w-7xl mx-auto px-4 py-16">
-  <h2 class="text-3xl font-black mb-8">Top <span class="text-gold">Elden Ring</span> Guides</h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
-      <div class="h-40 bg-gradient-to-br from-red-950 to-rose-950 flex items-center justify-center text-4xl">&#127775;</div>
-      <div class="p-4"><span class="text-xs text-gold font-semibold bg-gold/10 px-2 py-0.5 rounded">Boss</span><h3 class="font-bold mt-2">Malenia, Blade of Miquella Guide</h3><p class="text-xs text-textSecondary mt-1">Waterfowl Dance dodge patterns, bleed build strategy, spirit ash recommendations.</p></div>
-    </article>
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
-      <div class="h-40 bg-gradient-to-br from-purple-950 to-indigo-950 flex items-center justify-center text-4xl">&#128302;</div>
-      <div class="p-4"><span class="text-xs text-gold font-semibold bg-gold/10 px-2 py-0.5 rounded">Build</span><h3 class="font-bold mt-2">Rivers of Blood Samurai Build</h3><p class="text-xs text-textSecondary mt-1">Arcane/Dex bleed build — stats, talismans, armor, and Corpse Piler spam strategy.</p></div>
-    </article>
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
-      <div class="h-40 bg-gradient-to-br from-amber-950 to-yellow-950 flex items-center justify-center text-4xl">&#128220;</div>
-      <div class="p-4"><span class="text-xs text-gold font-semibold bg-gold/10 px-2 py-0.5 rounded">Quest</span><h3 class="font-bold mt-2">Ranni Full Questline Walkthrough</h3><p class="text-xs text-textSecondary mt-1">Age of Stars ending — every step from Church of Elleh to Moonlight Altar.</p></div>
-    </article>
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
-      <div class="h-40 bg-gradient-to-br from-slate-800 to-gray-900 flex items-center justify-center text-4xl">&#128506;</div>
-      <div class="p-4"><span class="text-xs text-gold font-semibold bg-gold/10 px-2 py-0.5 rounded">Location</span><h3 class="font-bold mt-2">All Somber Ancient Dragon Smithing Stones</h3><p class="text-xs text-textSecondary mt-1">Every max-upgrade stone location in the base game and Shadow of the Erdtree DLC.</p></div>
-    </article>
-  </div>
-</section>
+<div class="flex items-end justify-between mb-8">
+<div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Fresh Content</p><h2 class="text-3xl font-black">Latest Guides</h2></div>
+<a href="/guides/bosses/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All</a>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+<article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-red-950 to-rose-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ef4444, transparent);"></div>
+<img src="images/" alt="Malenia Boss Guide: How to Dodge Waterfowl Dance" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#ef4444;background:#ef44441a">Bosses</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/bosses/" class="hover:text-accent transition-colors">Malenia Boss Guide: How to Dodge Waterfowl Dance</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 17, 2026</time>
+</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-purple-900 to-indigo-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #a78bfa, transparent);"></div>
+<img src="images/" alt="Ranni Questline: Age of Stars Ending Walkthrough" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#a78bfa;background:#a78bfa1a">Quests</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/quests/" class="hover:text-accent transition-colors">Ranni Questline: Age of Stars Ending Walkthrough</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 16, 2026</time>
+</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-amber-900 to-yellow-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #fbbf24, transparent);"></div>
+<img src="images/" alt="Top 10 Bleed Builds That Melt Bosses in Seconds" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#fbbf24;background:#fbbf241a">Builds</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/builds/" class="hover:text-accent transition-colors">Top 10 Bleed Builds That Melt Bosses in Seconds</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 15, 2026</time>
+</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-blue-900 to-sky-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #3b82f6, transparent);"></div>
+<img src="images/" alt="Every Somber Ancient Dragon Smithing Stone Location" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#3b82f6;background:#3b82f61a">Weapons</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/weapons/" class="hover:text-accent transition-colors">Every Somber Ancient Dragon Smithing Stone Location</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 14, 2026</time>
+</div></article>
+</div></section>
 
-<!-- Ad: 300x600 Sidebar + More Content -->
-<section class="max-w-7xl mx-auto px-4 pb-16">
-  <div class="grid lg:grid-cols-3 gap-8">
-    <div class="lg:col-span-2 space-y-4">
-      <h3 class="text-xl font-bold mb-4">Latest Boss Strategies</h3>
-      <a href="#" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/20 to-amber-800/20 flex items-center justify-center flex-shrink-0 text-2xl">&#128009;</div>
-        <div><h4 class="font-bold">Radahn, Consort of Miquella — DLC Final Boss Guide</h4><p class="text-sm text-textSecondary mt-1">Phase 2 light speed attacks explained. Best shield, dodge timing, and summon strategy for the hardest boss in Elden Ring history.</p></div>
-      </a>
-      <a href="#" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/20 to-amber-800/20 flex items-center justify-center flex-shrink-0 text-2xl">&#128123;</div>
-        <div><h4 class="font-bold">Messmer the Impaler — Complete Strategy</h4><p class="text-sm text-textSecondary mt-1">How to handle Messmer's fire combos, phase 2 serpent transformation, and best builds for this brutal DLC boss.</p></div>
-      </a>
-      <a href="#" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/20 to-amber-800/20 flex items-center justify-center flex-shrink-0 text-2xl">&#128165;</div>
-        <div><h4 class="font-bold">Elden Beast + Radagon — Endgame Boss Guide</h4><p class="text-sm text-textSecondary mt-1">Holy resistance stacking, best spirit ashes for Radagon, and how to close distance on Elden Beast's teleport spam.</p></div>
-      </a>
-    </div>
-    <div class="hidden lg:block">
-      <div class="sticky top-24"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="HALFPAGE_ELDEN"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
-    </div>
-  </div>
-</section>
+<!-- Hot Topics + Sidebar -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+<div class="grid lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2">
+<p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Trending</p>
+<h2 class="text-2xl font-black mb-6">Hot Topics This Month</h2>
+<div class="space-y-3"><a href="/guides/bosses/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
 
-<footer class="bg-bgSecondary border-t border-gray-800 py-12 px-4 mt-8">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-    <div>
-      <div class="flex items-center gap-2.5 mb-3"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-gold to-amber-600 flex items-center justify-center text-lg font-black text-gray-900">T</div><span class="text-xl font-bold">Tarnished<span class="text-gold">Guide</span></span></div>
-      <p class="text-sm text-textSecondary">Part of the <a href="https://games.jycsd.com" class="text-gold hover:underline">GameGuide Network</a>. Not affiliated with FromSoftware or Bandai Namco.</p>
-    </div>
-    <div>
-      <h4 class="font-bold mb-3">Categories</h4>
-      <ul class="space-y-1.5 text-sm text-textSecondary">
-        <li><a href="#" class="hover:text-gold">Boss Guides</a></li><li><a href="#" class="hover:text-gold">Character Builds</a></li><li><a href="#" class="hover:text-gold">Weapons & Armor</a></li><li><a href="#" class="hover:text-gold">NPC Quests</a></li><li><a href="#" class="hover:text-gold">Map & Locations</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="font-bold mb-3">Other Game Guides</h4>
-      <ul class="space-y-1.5 text-sm text-textSecondary">
-        <li><a href="https://minecraft.jycsd.com" class="text-mc hover:underline">Minecraft</a></li>
-        <li><a href="https://lol.jycsd.com" class="text-lol hover:underline">League of Legends</a></li>
-        <li><a href="https://gta6.jycsd.com" class="text-gta6 hover:underline">GTA 6</a></li>
-        <li><a href="https://games.jycsd.com" class="text-gold hover:underline">All Games &#8594;</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-sm text-textSecondary">
-    <p>&copy; 2026 TarnishedGuide by <a href="https://www.jycsd.com" class="text-gold hover:underline">Myers Media</a>. Elden Ring is a trademark of FromSoftware / Bandai Namco.</p>
-  </div>
+<div><h3 class="font-bold">Shadow of the Erdtree: Complete DLC Boss Guide</h3><p class="text-sm text-textSecondary mt-1">Every remembrance boss in the Land of Shadow — movesets, weaknesses, summon strategies, and reward breakdown.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
+</a><a href="/guides/builds/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+
+<div><h3 class="font-bold">Best Builds for NG+7: One-Shot Boss Killers</h3><p class="text-sm text-textSecondary mt-1">The most broken PvE builds that still work at max scaling — bleed, magic, and faith builds ranked.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
+</a><a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+
+<div><h3 class="font-bold">All Legendary Armaments & Where to Find Them</h3><p class="text-sm text-textSecondary mt-1">Complete locations for every legendary weapon including the Dark Moon Greatsword and Ruins Greatsword.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
+</a></div>
+</div>
+<div class="hidden lg:block"><div class="sticky top-24"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="HALFPAGE"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
+</div></section>
+
+<!-- Ad: 970x250 -->
+<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="BILLBOARD2"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+
+<!-- Character Spotlight -->
+
+
+<!-- Category Index -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+<h2 class="text-3xl font-black mb-8">Every Guide Category</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
+<div class="flex items-center gap-3 mb-4"><h3 class="font-bold text-lg"><a href="/guides/bosses/" class="hover:text-accent transition-colors">Bosses</a></h3></div>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/bosses/" class="hover:text-accent transition-colors">Bosses — Complete Guide</a></li>
+</ul>
+<a href="/guides/bosses/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">165+ guides</a>
+</div><div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
+<div class="flex items-center gap-3 mb-4"><h3 class="font-bold text-lg"><a href="/guides/builds/" class="hover:text-accent transition-colors">Builds</a></h3></div>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/builds/" class="hover:text-accent transition-colors">Builds — Complete Guide</a></li>
+</ul>
+<a href="/guides/builds/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">40+ guides</a>
+</div><div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
+<div class="flex items-center gap-3 mb-4"><h3 class="font-bold text-lg"><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons</a></h3></div>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons — Complete Guide</a></li>
+</ul>
+<a href="/guides/weapons/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">300+ guides</a>
+</div>
+</div></section>
+
+<footer class="bg-bgSecondary border-t border-gray-800 py-16 px-4">
+<div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+<div>
+<div class="flex items-center gap-2.5 mb-4">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">T</div>
+<span class="text-xl font-bold">Tarnished<span class="text-accent">Guide</span></span>
+</div>
+<p class="text-sm text-textSecondary leading-relaxed">Expert game guides. Part of the GameGuide Network.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Categories</h4>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/bosses/" class="hover:text-accent transition-colors">Bosses</a></li>
+<li><a href="/guides/builds/" class="hover:text-accent transition-colors">Builds</a></li>
+<li><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons</a></li>
+<li><a href="/guides/quests/" class="hover:text-accent transition-colors">Quests</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">More Game Guides</h4>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="https://minecraft.jycsd.com" class="hover:text-accent transition-colors">Minecraft</a></li>
+<li><a href="https://lol.jycsd.com" class="hover:text-accent transition-colors">League of Legends</a></li>
+<li><a href="https://fortnite.jycsd.com" class="hover:text-accent transition-colors">Fortnite</a></li>
+<li><a href="https://games.jycsd.com" class="hover:text-accent transition-colors">All Games</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">About</h4>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/about.html" class="hover:text-accent transition-colors">About</a></li>
+<li><a href="/contact.html" class="hover:text-accent transition-colors">Contact</a></li>
+<li><a href="/sitemap.xml" class="hover:text-accent transition-colors">Sitemap</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-gray-800 text-center text-sm text-textSecondary">
+<p>&copy; 2026 TarnishedGuide by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All game trademarks belong to their respective owners.</p>
+</div>
 </footer>
 
-<script>document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')})</script>
+<script>
+(function(){
+var slides=document.querySelectorAll('.carousel-slide');
+var dots=document.querySelectorAll('.carousel-dot');
+var current=0;
+function goTo(idx){slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
+dots.forEach(function(dot){dot.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
+setInterval(function(){goTo((current+1)%slides.length)},5000);
+document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
+})();
+</script>
 </body>
 </html>

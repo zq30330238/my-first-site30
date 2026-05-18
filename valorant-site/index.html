@@ -2,85 +2,305 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ValGuide — Valorant Agent Guides, Map Lineups & Weapon Stats</title>
-<meta name="description" content="Master Valorant — every agent ability guide, map lineup, weapon stats comparison, and team composition strategy. Climb the ranks with expert tactical shooter knowledge.">
-<meta name="robots" content="index,follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ValGuide — Outplay. Outaim.</title>
+<meta name="description" content="Master every Valorant agent, map, and weapon. Sova lineups, Jett movement tech, Viper setups.">
+<meta property="og:title" content="ValGuide — Game Guides & Wiki">
+<meta property="og:description" content="Master every Valorant agent, map, and weapon. Sova lineups, Jett movement tech, Viper setups.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://valorant.jycsd.com/">
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',val:'#ef4444',blue:'#3b82f6',purple:'#a855f7'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
+<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#ef4444',accentDark:'#dc2626'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
 <script>function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
-<style>body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}ins.adsbygoogle{display:block}.ad-label{text-align:center;color:#6b7280;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}.carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease-in-out;pointer-events:none}.carousel-slide.active{opacity:1;pointer-events:auto}.carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer}.carousel-dot.active{background:#ef4444}.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(239,68,68,0.15);transition:all 0.3s ease}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}.float-anim{animation:float 3s ease-in-out infinite}</style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
+ins.adsbygoogle{display:block}
+.ad-label{text-align:center;color:#6b7280;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
+.carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
+.carousel-slide.active{opacity:1;pointer-events:auto}
+.carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
+.carousel-dot.active{background:#ef4444}
+.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px #ef444426;transition:all .3s ease}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.float-anim{animation:float 3s ease-in-out infinite}
+.char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
+</style>
 </head>
 <body>
 
 <nav class="fixed top-0 w-full z-50 bg-bgPrimary/95 backdrop-blur-md border-b border-gray-800/50">
-  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2.5"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-val to-rose-600 flex items-center justify-center text-lg font-black text-white">V</div><span class="text-xl font-bold">Val<span class="text-val">Guide</span></span></a>
-    <div class="hidden md:flex gap-6 text-sm font-medium">
-      <a href="https://games.jycsd.com" class="text-textSecondary hover:text-val">&#8592; GameGuide</a>
-      <a href="#" class="text-val font-semibold">Agents</a>
-      <a href="#" class="text-textSecondary hover:text-val">Maps</a>
-      <a href="#" class="text-textSecondary hover:text-val">Weapons</a>
-      <a href="#" class="text-textSecondary hover:text-val">Lineups</a>
-      <a href="#" class="text-textSecondary hover:text-val">Ranked</a>
-    </div>
-  </div>
+<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+<a href="/" class="flex items-center gap-2.5">
+<img src="images/jett.png" alt="ValGuide" class="w-9 h-9 object-contain">
+<span class="text-xl font-bold tracking-tight">Val<span class="text-accent">Guide</span></span>
+</a>
+<div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+<a href="https://games.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">GameGuide</a>
+<a href="/guides/agents/" class="text-textSecondary hover:text-accent transition-colors">Agents</a>
+<a href="/guides/maps/" class="text-textSecondary hover:text-accent transition-colors">Maps</a>
+<a href="/guides/weapons/" class="text-textSecondary hover:text-accent transition-colors">Weapons</a>
+<a href="/guides/ranked/" class="text-textSecondary hover:text-accent transition-colors">Ranked</a>
+<a href="/guides/lineups/" class="text-textSecondary hover:text-accent transition-colors">Lineups</a>
+</div>
+<button class="lg:hidden text-textSecondary text-2xl" id="menuBtn" aria-label="Menu">&#9776;</button>
+</div>
 </nav>
 
-<section class="relative w-full overflow-hidden pt-16" style="height:500px">
-  <div class="carousel-slide active"><div class="absolute inset-0 bg-gradient-to-br from-red-950 via-gray-950 to-rose-950"></div><div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 30% 50%,#ef4444 0%,transparent 60%)"></div>
-    <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center"><div class="grid md:grid-cols-2 gap-8 items-center w-full"><div>
-      <span class="text-xs font-bold uppercase tracking-wider text-val bg-val/10 px-3 py-1 rounded-full">Tactical FPS</span>
-      <h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight">Outplay. <span class="text-val">Outaim.</span></h1>
-      <p class="text-lg text-textSecondary mt-4 max-w-lg">Master every Valorant agent, map, and weapon. Sova lineups, Jett movement tech, Viper setups — climb from Iron to Radiant.</p>
-      <div class="flex gap-3 mt-6"><a href="#" class="bg-val text-white px-6 py-3 rounded-lg font-bold hover:bg-red-500">Agent Guides</a><a href="#" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-val">Map Callouts</a></div>
-    </div><div class="hidden md:flex justify-center"><div class="w-72 h-72 rounded-2xl bg-gradient-to-br from-val/20 to-rose-800/30 border border-val/20 flex items-center justify-center float-anim"><div class="text-center"><div class="text-8xl mb-2">&#127919;</div><div class="text-val font-bold text-lg">All 24 Agents</div></div></div></div>
-  </div></div></div>
-  <div class="carousel-slide"><div class="absolute inset-0 bg-gradient-to-br from-blue-950 via-gray-950 to-indigo-950"></div><div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 70% 40%,#3b82f6 0%,transparent 60%)"></div>
-    <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center"><div class="max-w-2xl ml-auto text-right">
-      <span class="text-xs font-bold uppercase tracking-wider text-blue bg-blue/10 px-3 py-1 rounded-full">Ranked Grind</span>
-      <h2 class="text-4xl md:text-5xl font-black mt-4 leading-tight"><span class="text-blue">Episode 10</span> Meta</h2>
-      <p class="text-lg text-textSecondary mt-4">Best team comps, map-specific agent picks, and the weapons dominating the current ranked meta.</p>
-      <a href="#" class="inline-block mt-6 bg-blue text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-500">Tier List &#8594;</a>
-    </div></div>
-  </div>
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10"><div class="carousel-dot active" data-slide="0"></div><div class="carousel-dot" data-slide="1"></div></div>
+<!-- Hero Carousel -->
+<section class="relative w-full overflow-hidden" style="height:520px">
+<div class="carousel-slide active">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 30% 50%, #7dd3fc, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Trending Now</span>
+<h1 class="text-4xl md:text-5xl font-black leading-tight mb-4">Agent Mastery</h1>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">Master every Valorant agent, map, and weapon. Sova lineups, Jett movement tech, Viper setups.</p>
+<div class="flex gap-3">
+<a href="/guides/agents/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Jett Guides</a>
+<a href="/guides/agents/" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">All Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<img src="images/jett.png" alt="Jett" class="char-img float-anim h-96 w-auto object-contain">
+</div>
+</div></div></div>
+<div class="carousel-slide">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 65% 50%, #fb923c, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Deep Dive</span>
+<h2 class="text-4xl md:text-5xl font-black leading-tight mb-4">Phoenix Guide</h2>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">UK fire duelist with self-heal. Learn Hot Hands positioning, Curveball flashes, and Run It Back entry tactics.</p>
+<div class="flex gap-3">
+<a href="/guides/agents/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Phoenix Guides</a>
+<a href="/guides/agents/" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">All Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<img src="images/phoenix.png" alt="Phoenix" class="char-img float-anim h-96 w-auto object-contain" style="animation-delay:0.5s">
+</div>
+</div></div></div>
+<div class="carousel-slide">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 100% 50%, #c084fc, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Essential</span>
+<h2 class="text-4xl md:text-5xl font-black leading-tight mb-4">Reyna Guide</h2>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">Mexican soul-devouring duelist. How to chain Dismiss invulnerability, Leer placement, and Empress snowball rounds.</p>
+<div class="flex gap-3">
+<a href="/guides/agents/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Reyna Guides</a>
+<a href="/guides/agents/" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">All Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<img src="images/reyna.png" alt="Reyna" class="char-img float-anim h-96 w-auto object-contain" style="animation-delay:0.5s">
+</div>
+</div></div></div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+<div class="carousel-dot active" data-slide="0"></div>
+<div class="carousel-dot" data-slide="1"></div>
+<div class="carousel-dot" data-slide="2"></div>
+</div>
 </section>
 
+<!-- Category Cards -->
 <section class="max-w-7xl mx-auto px-4 -mt-6 relative z-20">
-  <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-val/50"><div class="w-12 h-12 rounded-xl bg-val/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#128100;</div><div class="text-xs font-semibold">Agents</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-blue/50"><div class="w-12 h-12 rounded-xl bg-blue/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#128506;</div><div class="text-xs font-semibold">Maps</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-purple/50"><div class="w-12 h-12 rounded-xl bg-purple/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#128299;</div><div class="text-xs font-semibold">Weapons</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-amber-500/50"><div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#127942;</div><div class="text-xs font-semibold">Ranked</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-cyan-500/50"><div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#127919;</div><div class="text-xs font-semibold">Lineups</div></a>
-  </div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+<a href="/guides/agents/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><img src="images/jett.png" alt="Agents" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform"><div class="text-xs font-semibold">Agents</div></a>
+<a href="/guides/maps/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><img src="images/sage.png" alt="Maps" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform"><div class="text-xs font-semibold">Maps</div></a>
+<a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><img src="images/reyna.png" alt="Weapons" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform"><div class="text-xs font-semibold">Weapons</div></a>
+<a href="/guides/ranked/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><img src="images/phoenix.png" alt="Ranked" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform"><div class="text-xs font-semibold">Ranked</div></a>
+<a href="/guides/lineups/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><img src="images/jett.png" alt="Lineups" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform"><div class="text-xs font-semibold">Lineups</div></a>
+</div>
 </section>
 
-<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="LEADERBOARD_VAL"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+<!-- Ad: 728x90 -->
+<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="LEADERBOARD1"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
+<!-- Guide Cards -->
 <section class="max-w-7xl mx-auto px-4 py-16">
-  <h2 class="text-3xl font-black mb-8">Agent <span class="text-val">Spotlight</span></h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800"><div class="h-40 bg-gradient-to-br from-blue-900 to-cyan-950 flex items-center justify-center text-4xl">&#127754;</div><div class="p-4"><span class="text-xs text-blue font-semibold bg-blue/10 px-2 py-0.5 rounded">Controller</span><h3 class="font-bold mt-2">Omen Guide: Smokes & Outplay Tech</h3><p class="text-xs text-textSecondary mt-1">One-way smokes on every map, blind paranoia lineups, and teleport mind games.</p></div></article>
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800"><div class="h-40 bg-gradient-to-br from-red-900 to-orange-950 flex items-center justify-center text-4xl">&#128165;</div><div class="p-4"><span class="text-xs text-val font-semibold bg-val/10 px-2 py-0.5 rounded">Duelist</span><h3 class="font-bold mt-2">Jett: Movement Master Class</h3><p class="text-xs text-textSecondary mt-1">Dash cancel mechanics, updraft knife combos, and how to entry with Jett on every map.</p></div></article>
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800"><div class="h-40 bg-gradient-to-br from-green-900 to-emerald-950 flex items-center justify-center text-4xl">&#128065;</div><div class="p-4"><span class="text-xs text-green-400 font-semibold bg-green-400/10 px-2 py-0.5 rounded">Initiator</span><h3 class="font-bold mt-2">Sova: Recon & Shock Dart Lineups</h3><p class="text-xs text-textSecondary mt-1">Every Sova arrow lineup for Ascent, Haven, Bind — double shock dart kill combos included.</p></div></article>
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800"><div class="h-40 bg-gradient-to-br from-purple-900 to-violet-950 flex items-center justify-center text-4xl">&#128737;</div><div class="p-4"><span class="text-xs text-purple font-semibold bg-purple/10 px-2 py-0.5 rounded">Sentinel</span><h3 class="font-bold mt-2">Killjoy: Ultimate Site Defense</h3><p class="text-xs text-textSecondary mt-1">Turret + alarmbot + nanoswarm setups for every bombsite. Post-plant lineups included.</p></div></article>
-  </div>
-  <div class="grid lg:grid-cols-3 gap-8 mt-8"><div class="lg:col-span-2 space-y-4">
-    <h3 class="text-xl font-bold mb-4">Weapon Economy Guide</h3>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block"><div class="w-12 h-12 rounded-xl bg-val/10 flex items-center justify-center flex-shrink-0 text-2xl">&#128176;</div><div><h4 class="font-bold">Full Buy vs Eco vs Force Buy: When & Why</h4><p class="text-sm text-textSecondary mt-1">Complete economy management guide — credit thresholds, loss bonuses, and how to coordinate team buys.</p></div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block"><div class="w-12 h-12 rounded-xl bg-val/10 flex items-center justify-center flex-shrink-0 text-2xl">&#9876;</div><div><h4 class="font-bold">Vandal vs Phantom: Which Rifle Wins?</h4><p class="text-sm text-textSecondary mt-1">Damage drop-off charts, spray pattern analysis, and map-specific recommendations for both rifles.</p></div></a>
-  </div><div class="hidden lg:block"><div class="sticky top-24"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="HALFPAGE_VAL"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div></div>
-</section>
+<div class="flex items-end justify-between mb-8">
+<div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Fresh Content</p><h2 class="text-3xl font-black">Latest Guides</h2></div>
+<a href="/guides/agents/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All</a>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+<article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-sky-900 to-blue-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ef4444, transparent);"></div>
+<img src="images/jett.png" alt="Jett Main Guide: Movement Tech & Knife Tricks" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#ef4444;background:#ef44441a">Agents</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/agents/" class="hover:text-accent transition-colors">Jett Main Guide: Movement Tech & Knife Tricks</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 17, 2026</time>
+</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-orange-900 to-red-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #22d3ee, transparent);"></div>
+<img src="images/phoenix.png" alt="Phoenix Flash Lineups on Every Map" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#22d3ee;background:#22d3ee1a">Lineups</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/lineups/" class="hover:text-accent transition-colors">Phoenix Flash Lineups on Every Map</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 16, 2026</time>
+</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-emerald-900 to-green-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ef4444, transparent);"></div>
+<img src="images/sage.png" alt="Sage Wall Boosts: 50+ Off-Angle Spots" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#ef4444;background:#ef44441a">Agents</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/agents/" class="hover:text-accent transition-colors">Sage Wall Boosts: 50+ Off-Angle Spots</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 15, 2026</time>
+</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-purple-900 to-fuchsia-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #fbbf24, transparent);"></div>
+<img src="images/reyna.png" alt="Ranked Climb Guide: Silver to Diamond in 30 Days" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#fbbf24;background:#fbbf241a">Ranked</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/ranked/" class="hover:text-accent transition-colors">Ranked Climb Guide: Silver to Diamond in 30 Days</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 14, 2026</time>
+</div></article>
+</div></section>
 
-<footer class="bg-bgSecondary border-t border-gray-800 py-12 px-4 mt-8"><div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-  <div><div class="flex items-center gap-2.5 mb-3"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-val to-rose-600 flex items-center justify-center text-lg font-black text-white">V</div><span class="text-xl font-bold">Val<span class="text-val">Guide</span></span></div><p class="text-sm text-textSecondary">Part of <a href="https://games.jycsd.com" class="text-val hover:underline">GameGuide Network</a>. Not affiliated with Riot Games.</p></div>
-  <div><h4 class="font-bold mb-3">More Games</h4><ul class="space-y-1.5 text-sm text-textSecondary"><li><a href="https://fortnite.jycsd.com" class="hover:text-val">Fortnite</a></li><li><a href="https://lol.jycsd.com" class="hover:text-val">League of Legends</a></li><li><a href="https://cs2.jycsd.com" class="hover:text-val">CS2</a></li></ul></div>
-  <div><h4 class="font-bold mb-3">Network</h4><ul class="space-y-1.5 text-sm text-textSecondary"><li><a href="https://anime.jycsd.com" class="hover:text-val">AnimeWiki</a></li><li><a href="https://www.jycsd.com" class="hover:text-val">Myers Media</a></li></ul></div>
-</div><div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-sm text-textSecondary"><p>&copy; 2026 ValGuide by <a href="https://www.jycsd.com" class="text-val hover:underline">Myers Media</a>. Valorant is a trademark of Riot Games.</p></div></footer>
-<script>(function(){var s=document.querySelectorAll('.carousel-slide'),d=document.querySelectorAll('.carousel-dot'),c=0;function go(i){s[c].classList.remove('active');d[c].classList.remove('active');c=i;s[c].classList.add('active');d[c].classList.add('active')}d.forEach(function(dt){dt.addEventListener('click',function(){go(parseInt(this.dataset.slide))})});setInterval(function(){go((c+1)%s.length)},5000)})();</script>
-</body></html>
+<!-- Hot Topics + Sidebar -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+<div class="grid lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2">
+<p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Trending</p>
+<h2 class="text-2xl font-black mb-6">Hot Topics This Month</h2>
+<div class="space-y-3"><a href="/guides/agents/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+<img src="images/jett.png" alt="Best Agent Comps for Every Map (Patch 10.04)" class="w-14 h-14 object-contain flex-shrink-0 char-img">
+<div><h3 class="font-bold">Best Agent Comps for Every Map (Patch 10.04)</h3><p class="text-sm text-textSecondary mt-1">Which agents dominate each map in the current meta — complete breakdown with win rate data.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
+</a><a href="/guides/ranked/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+<img src="images/phoenix.png" alt="Ultimate Aim Training Routine: Bronze to Radiant" class="w-14 h-14 object-contain flex-shrink-0 char-img">
+<div><h3 class="font-bold">Ultimate Aim Training Routine: Bronze to Radiant</h3><p class="text-sm text-textSecondary mt-1">30-minute daily aim routine that improved over 10,000 players' headshot percentage by 15%.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
+</a><a href="/guides/maps/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+<img src="images/reyna.png" alt="Every Map Callout You Need to Know" class="w-14 h-14 object-contain flex-shrink-0 char-img">
+<div><h3 class="font-bold">Every Map Callout You Need to Know</h3><p class="text-sm text-textSecondary mt-1">Complete callout guides for all 10 maps — communicate like a pro with your team.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
+</a></div>
+</div>
+<div class="hidden lg:block"><div class="sticky top-24"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="HALFPAGE"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
+</div></section>
+
+<!-- Ad: 970x250 -->
+<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="BILLBOARD2"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+
+<!-- Character Spotlight -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+<p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Character Spotlight</p>
+<h2 class="text-3xl font-black mb-8">Meet the <span class="text-accent">Characters</span></h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+<div class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800 text-center p-6">
+<img src="images/jett.png" alt="Jett" class="char-img h-32 w-auto object-contain mx-auto mb-3">
+<h3 class="font-bold text-lg">Jett</h3>
+<p class="text-xs text-textSecondary">South Korean wind assassin. Master Jett dash mechanics, Cloudburst lineups, and Blade Storm ace strategies.</p>
+<a href="/guides/agents/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Jett Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800 text-center p-6">
+<img src="images/phoenix.png" alt="Phoenix" class="char-img h-32 w-auto object-contain mx-auto mb-3">
+<h3 class="font-bold text-lg">Phoenix</h3>
+<p class="text-xs text-textSecondary">UK fire duelist with self-heal. Learn Hot Hands positioning, Curveball flashes, and Run It Back entry tactics.</p>
+<a href="/guides/agents/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Phoenix Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800 text-center p-6">
+<img src="images/reyna.png" alt="Reyna" class="char-img h-32 w-auto object-contain mx-auto mb-3">
+<h3 class="font-bold text-lg">Reyna</h3>
+<p class="text-xs text-textSecondary">Mexican soul-devouring duelist. How to chain Dismiss invulnerability, Leer placement, and Empress snowball rounds.</p>
+<a href="/guides/agents/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Reyna Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800 text-center p-6">
+<img src="images/sage.png" alt="Sage" class="char-img h-32 w-auto object-contain mx-auto mb-3">
+<h3 class="font-bold text-lg">Sage</h3>
+<p class="text-xs text-textSecondary">Chinese healer and controller. Wall boost spots, Slow Orb lineups, and Resurrection timing for maximum round impact.</p>
+<a href="/guides/agents/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Sage Guides</a>
+</div>
+</div></section>
+
+<!-- Category Index -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+<h2 class="text-3xl font-black mb-8">Every Guide Category</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
+<div class="flex items-center gap-3 mb-4"><img src="images/jett.png" alt="Agents" class="w-10 h-10 object-contain"><h3 class="font-bold text-lg"><a href="/guides/agents/" class="hover:text-accent transition-colors">Agents</a></h3></div>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/agents/" class="hover:text-accent transition-colors">Agents — Complete Guide</a></li>
+</ul>
+<a href="/guides/agents/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">24 guides</a>
+</div><div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
+<div class="flex items-center gap-3 mb-4"><img src="images/sage.png" alt="Maps" class="w-10 h-10 object-contain"><h3 class="font-bold text-lg"><a href="/guides/maps/" class="hover:text-accent transition-colors">Maps</a></h3></div>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/maps/" class="hover:text-accent transition-colors">Maps — Complete Guide</a></li>
+</ul>
+<a href="/guides/maps/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">10+ guides</a>
+</div><div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
+<div class="flex items-center gap-3 mb-4"><img src="images/reyna.png" alt="Weapons" class="w-10 h-10 object-contain"><h3 class="font-bold text-lg"><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons</a></h3></div>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons — Complete Guide</a></li>
+</ul>
+<a href="/guides/weapons/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">18 guides</a>
+</div>
+</div></section>
+
+<footer class="bg-bgSecondary border-t border-gray-800 py-16 px-4">
+<div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+<div>
+<div class="flex items-center gap-2.5 mb-4">
+<img src="images/jett.png" alt="ValGuide" class="w-9 h-9 object-contain">
+<span class="text-xl font-bold">Val<span class="text-accent">Guide</span></span>
+</div>
+<p class="text-sm text-textSecondary leading-relaxed">Expert game guides. Part of the GameGuide Network.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Categories</h4>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/agents/" class="hover:text-accent transition-colors">Agents</a></li>
+<li><a href="/guides/maps/" class="hover:text-accent transition-colors">Maps</a></li>
+<li><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons</a></li>
+<li><a href="/guides/ranked/" class="hover:text-accent transition-colors">Ranked</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">More Game Guides</h4>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="https://fortnite.jycsd.com" class="hover:text-accent transition-colors">Fortnite</a></li>
+<li><a href="https://lol.jycsd.com" class="hover:text-accent transition-colors">League of Legends</a></li>
+<li><a href="https://cs2.jycsd.com" class="hover:text-accent transition-colors">CS2</a></li>
+<li><a href="https://games.jycsd.com" class="hover:text-accent transition-colors">All Games</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">About</h4>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/about.html" class="hover:text-accent transition-colors">About</a></li>
+<li><a href="/contact.html" class="hover:text-accent transition-colors">Contact</a></li>
+<li><a href="/sitemap.xml" class="hover:text-accent transition-colors">Sitemap</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-gray-800 text-center text-sm text-textSecondary">
+<p>&copy; 2026 ValGuide by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All game trademarks belong to their respective owners.</p>
+</div>
+</footer>
+
+<script>
+(function(){
+var slides=document.querySelectorAll('.carousel-slide');
+var dots=document.querySelectorAll('.carousel-dot');
+var current=0;
+function goTo(idx){slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
+dots.forEach(function(dot){dot.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
+setInterval(function(){goTo((current+1)%slides.length)},5000);
+document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
+})();
+</script>
+</body>
+</html>

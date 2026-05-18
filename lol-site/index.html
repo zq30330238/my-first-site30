@@ -3,89 +3,304 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LoLGuide — League of Legends Champion Builds & Tier Lists</title>
-<meta name="description" content="Expert League of Legends guides — 160+ champion builds, rune pages, tier lists, jungle pathing, and item analysis for every role.">
+<title>LoLGuide — Dominate the Rift</title>
+<meta name="description" content="Complete champion guides, item builds, jungle pathing, and laning strategies for every role. Updated for the latest patch.">
+<meta property="og:title" content="LoLGuide — Game Guides & Wiki">
+<meta property="og:description" content="Complete champion guides, item builds, jungle pathing, and laning strategies for every role. Updated for the latest patch.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://lol.jycsd.com/">
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',lol:'#3b82f6',gold:'#fbbf24'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
+<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#fbbf24',accentDark:'#d97706'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
 <script>function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
-<style>body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}ins.adsbygoogle{display:block}.ad-label{text-align:center;color:#6b7280;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(59,130,246,0.15);transition:all 0.3s ease}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}.float-anim{animation:float 3s ease-in-out infinite}</style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
+ins.adsbygoogle{display:block}
+.ad-label{text-align:center;color:#6b7280;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
+.carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
+.carousel-slide.active{opacity:1;pointer-events:auto}
+.carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
+.carousel-dot.active{background:#fbbf24}
+.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px #fbbf2426;transition:all .3s ease}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.float-anim{animation:float 3s ease-in-out infinite}
+.char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
+</style>
 </head>
 <body>
 
 <nav class="fixed top-0 w-full z-50 bg-bgPrimary/95 backdrop-blur-md border-b border-gray-800/50">
-  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2.5"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-lol to-blue-600 flex items-center justify-center text-lg font-black text-white">L</div><span class="text-xl font-bold">LoL<span class="text-lol">Guide</span></span></a>
-    <div class="hidden md:flex gap-6 text-sm font-medium">
-      <a href="https://games.jycsd.com" class="text-textSecondary hover:text-lol">&#8592; GameGuide</a>
-      <a href="#" class="text-lol font-semibold">Champions</a>
-      <a href="#" class="text-textSecondary hover:text-lol">Tier Lists</a>
-      <a href="#" class="text-textSecondary hover:text-lol">Jungle</a>
-      <a href="#" class="text-textSecondary hover:text-lol">Items</a>
-      <a href="#" class="text-textSecondary hover:text-lol">Runes</a>
-    </div>
-  </div>
+<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+<a href="/" class="flex items-center gap-2.5">
+<img src="images/ahri.png" alt="LoLGuide" class="w-9 h-9 object-contain">
+<span class="text-xl font-bold tracking-tight">LoL<span class="text-accent">Guide</span></span>
+</a>
+<div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+<a href="https://games.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">GameGuide</a>
+<a href="/guides/champions/" class="text-textSecondary hover:text-accent transition-colors">Champions</a>
+<a href="/guides/items/" class="text-textSecondary hover:text-accent transition-colors">Items</a>
+<a href="/guides/jungle/" class="text-textSecondary hover:text-accent transition-colors">Jungle</a>
+<a href="/guides/laning/" class="text-textSecondary hover:text-accent transition-colors">Laning</a>
+<a href="/guides/teamfights/" class="text-textSecondary hover:text-accent transition-colors">Teamfights</a>
+</div>
+<button class="lg:hidden text-textSecondary text-2xl" id="menuBtn" aria-label="Menu">&#9776;</button>
+</div>
 </nav>
 
-<section class="relative w-full overflow-hidden pt-16" style="height:500px">
-  <div class="absolute inset-0 bg-gradient-to-br from-blue-950 via-gray-950 to-indigo-950"></div>
-  <div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 50% 40%, #3b82f6 0%, transparent 60%)"></div>
-  <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-    <div class="grid md:grid-cols-2 gap-8 items-center w-full">
-      <div>
-        <span class="text-xs font-bold uppercase tracking-wider text-lol bg-lol/10 px-3 py-1 rounded-full">160+ Champions</span>
-        <h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight">Climb the <span class="text-lol">Rift</span></h1>
-        <p class="text-lg text-textSecondary mt-4 max-w-lg">Expert League of Legends guides — champion builds, tier lists, jungle pathing, and item analysis for every position. Updated for Season 15.</p>
-        <div class="flex gap-3 mt-6"><a href="#" class="bg-lol text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-500">Champion Guides</a><a href="#" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-lol">Tier Lists</a></div>
-      </div>
-      <div class="hidden md:flex justify-center">
-        <div class="w-72 h-72 rounded-2xl bg-gradient-to-br from-lol/20 to-blue-800/30 border border-lol/20 flex items-center justify-center float-anim">
-          <div class="text-center"><div class="text-8xl mb-2">&#127922;</div><div class="text-lol font-bold text-lg">200+ Guides</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- Hero Carousel -->
+<section class="relative w-full overflow-hidden" style="height:520px">
+<div class="carousel-slide active">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 30% 50%, #c084fc, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Trending Now</span>
+<h1 class="text-4xl md:text-5xl font-black leading-tight mb-4">Season 2026 Meta</h1>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">Complete champion guides, item builds, jungle pathing, and laning strategies for every role. Updated for the latest patch.</p>
+<div class="flex gap-3">
+<a href="/guides/champions/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Ahri Guides</a>
+<a href="/guides/champions/" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">All Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<img src="images/ahri.png" alt="Ahri" class="char-img float-anim h-96 w-auto object-contain">
+</div>
+</div></div></div>
+<div class="carousel-slide">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 65% 50%, #60a5fa, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Deep Dive</span>
+<h2 class="text-4xl md:text-5xl font-black leading-tight mb-4">Yasuo Guide</h2>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">The Unforgiven samurai. Steel Tempest mechanics, Wind Wall timing, and Last Breath knockup combos for solo carry potential.</p>
+<div class="flex gap-3">
+<a href="/guides/champions/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Yasuo Guides</a>
+<a href="/guides/champions/" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">All Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<img src="images/yasuo.png" alt="Yasuo" class="char-img float-anim h-96 w-auto object-contain" style="animation-delay:0.5s">
+</div>
+</div></div></div>
+<div class="carousel-slide">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-slate-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 100% 50%, #fbbf24, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Essential</span>
+<h2 class="text-4xl md:text-5xl font-black leading-tight mb-4">Lux Guide</h2>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">The Lady of Luminosity. Light binding picks, Prismatic Barrier teamfight tech, and Final Spark laser snipes from fog of war.</p>
+<div class="flex gap-3">
+<a href="/guides/champions/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Lux Guides</a>
+<a href="/guides/champions/" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">All Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<img src="images/lux.png" alt="Lux" class="char-img float-anim h-96 w-auto object-contain" style="animation-delay:0.5s">
+</div>
+</div></div></div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+<div class="carousel-dot active" data-slide="0"></div>
+<div class="carousel-dot" data-slide="1"></div>
+<div class="carousel-dot" data-slide="2"></div>
+</div>
 </section>
 
+<!-- Category Cards -->
 <section class="max-w-7xl mx-auto px-4 -mt-6 relative z-20">
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-lol/50"><div class="w-12 h-12 rounded-xl bg-lol/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#127918;</div><div class="text-xs font-semibold">Champions</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-gold/50"><div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#127942;</div><div class="text-xs font-semibold">Tier Lists</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-green-500/50"><div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#127794;</div><div class="text-xs font-semibold">Jungle Paths</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-purple-500/50"><div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#128737;</div><div class="text-xs font-semibold">Items</div></a>
-  </div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+<a href="/guides/champions/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><img src="images/ahri.png" alt="Champions" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform"><div class="text-xs font-semibold">Champions</div></a>
+<a href="/guides/items/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><img src="images/yasuo.png" alt="Items" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform"><div class="text-xs font-semibold">Items</div></a>
+<a href="/guides/jungle/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><img src="images/jinx.png" alt="Jungle" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform"><div class="text-xs font-semibold">Jungle</div></a>
+<a href="/guides/laning/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><img src="images/lux.png" alt="Laning" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform"><div class="text-xs font-semibold">Laning</div></a>
+<a href="/guides/teamfights/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><img src="images/yasuo.png" alt="Teamfights" class="w-14 h-14 object-contain mx-auto mb-2 char-img group-hover:scale-110 transition-transform"><div class="text-xs font-semibold">Teamfights</div></a>
+</div>
 </section>
 
-<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="LEADERBOARD_LOL"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+<!-- Ad: 728x90 -->
+<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="LEADERBOARD1"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
+<!-- Guide Cards -->
 <section class="max-w-7xl mx-auto px-4 py-16">
-  <h2 class="text-3xl font-black mb-8">Top <span class="text-lol">Champion</span> Guides</h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800"><div class="h-40 bg-gradient-to-br from-blue-900 to-indigo-950 flex items-center justify-center text-4xl">&#9876;</div><div class="p-4"><span class="text-xs text-lol font-semibold bg-lol/10 px-2 py-0.5 rounded">Top</span><h3 class="font-bold mt-2">Aatrox Guide: Runes, Build & Combo</h3><p class="text-xs text-textSecondary mt-1">Season 15 toplane domination — conqueror setup, items, and trading patterns.</p></div></article>
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800"><div class="h-40 bg-gradient-to-br from-green-900 to-emerald-950 flex items-center justify-center text-4xl">&#127794;</div><div class="p-4"><span class="text-xs text-lol font-semibold bg-lol/10 px-2 py-0.5 rounded">Jungle</span><h3 class="font-bold mt-2">Lee Sin Jungle: Pathing & Gank Guide</h3><p class="text-xs text-textSecondary mt-1">Optimal clear path, ward hop mechanics, and Insec combo tutorial.</p></div></article>
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800"><div class="h-40 bg-gradient-to-br from-purple-900 to-violet-950 flex items-center justify-center text-4xl">&#10024;</div><div class="p-4"><span class="text-xs text-lol font-semibold bg-lol/10 px-2 py-0.5 rounded">Mid</span><h3 class="font-bold mt-2">Ahri Guide: Build, Runes & Matchups</h3><p class="text-xs text-textSecondary mt-1">Electrocute vs Aery — when to pick each, plus wave management for roaming.</p></div></article>
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800"><div class="h-40 bg-gradient-to-br from-red-900 to-rose-950 flex items-center justify-center text-4xl">&#127919;</div><div class="p-4"><span class="text-xs text-lol font-semibold bg-lol/10 px-2 py-0.5 rounded">ADC</span><h3 class="font-bold mt-2">Kai'Sa Build Guide: Evolve Fast</h3><p class="text-xs text-textSecondary mt-1">Hybrid vs On-Hit builds, Q/W/E evolve timing, and support synergies.</p></div></article>
-  </div>
-  <div class="grid lg:grid-cols-3 gap-8 mt-8">
-    <div class="lg:col-span-2 space-y-4">
-      <h3 class="text-xl font-bold mb-4">Patch 15.10 Meta Analysis</h3>
-      <a href="#" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block"><div class="w-12 h-12 rounded-xl bg-lol/10 flex items-center justify-center flex-shrink-0 text-2xl">&#128293;</div><div><h4 class="font-bold">Top Lane Tier List — Patch 15.10</h4><p class="text-sm text-textSecondary mt-1">S-tier picks: Aatrox, K'Sante, Jax. Complete matchup table and ban recommendations.</p></div></a>
-      <a href="#" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block"><div class="w-12 h-12 rounded-xl bg-lol/10 flex items-center justify-center flex-shrink-0 text-2xl">&#127794;</div><div><h4 class="font-bold">Jungle Meta: Best Champions for Solo Queue</h4><p class="text-sm text-textSecondary mt-1">Early game gankers dominate — Lee Sin, Elise, Jarvan IV jungle tier rankings.</p></div></a>
-    </div>
-    <div class="hidden lg:block"><div class="sticky top-24"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="HALFPAGE_LOL"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
-  </div>
-</section>
+<div class="flex items-end justify-between mb-8">
+<div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Fresh Content</p><h2 class="text-3xl font-black">Latest Guides</h2></div>
+<a href="/guides/champions/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All</a>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+<article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-purple-900 to-pink-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #fbbf24, transparent);"></div>
+<img src="images/ahri.png" alt="Ahri Mid Guide: Runes, Builds & Matchup Spreadsheet" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#fbbf24;background:#fbbf241a">Champions</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/champions/" class="hover:text-accent transition-colors">Ahri Mid Guide: Runes, Builds & Matchup Spreadsheet</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 17, 2026</time>
+</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-blue-900 to-cyan-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #fbbf24, transparent);"></div>
+<img src="images/yasuo.png" alt="Yasuo Mechanics: Airblade, Keyblade & Wall Dash" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#fbbf24;background:#fbbf241a">Champions</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/champions/" class="hover:text-accent transition-colors">Yasuo Mechanics: Airblade, Keyblade & Wall Dash</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 16, 2026</time>
+</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-pink-900 to-rose-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ef4444, transparent);"></div>
+<img src="images/jinx.png" alt="ADC Positioning: Teamfight Survival Guide" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#ef4444;background:#ef44441a">Teamfights</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/teamfights/" class="hover:text-accent transition-colors">ADC Positioning: Teamfight Survival Guide</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 15, 2026</time>
+</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-amber-900 to-yellow-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #a855f7, transparent);"></div>
+<img src="images/lux.png" alt="Support Vision Control: Ward Score 100+ Every Game" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#a855f7;background:#a855f71a">Laning</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/laning/" class="hover:text-accent transition-colors">Support Vision Control: Ward Score 100+ Every Game</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 14, 2026</time>
+</div></article>
+</div></section>
 
-<footer class="bg-bgSecondary border-t border-gray-800 py-12 px-4 mt-8">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-    <div><div class="flex items-center gap-2.5 mb-3"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-lol to-blue-600 flex items-center justify-center text-lg font-black text-white">L</div><span class="text-xl font-bold">LoL<span class="text-lol">Guide</span></span></div><p class="text-sm text-textSecondary">Part of <a href="https://games.jycsd.com" class="text-lol hover:underline">GameGuide Network</a>. Not affiliated with Riot Games.</p></div>
-    <div><h4 class="font-bold mb-3">More Games</h4><ul class="space-y-1.5 text-sm text-textSecondary"><li><a href="https://minecraft.jycsd.com" class="hover:text-lol">Minecraft</a></li><li><a href="https://eldenring.jycsd.com" class="hover:text-lol">Elden Ring</a></li><li><a href="https://gta6.jycsd.com" class="hover:text-lol">GTA 6</a></li></ul></div>
-    <div><h4 class="font-bold mb-3">Network</h4><ul class="space-y-1.5 text-sm text-textSecondary"><li><a href="https://anime.jycsd.com" class="hover:text-lol">AnimeWiki</a></li><li><a href="https://www.jycsd.com" class="hover:text-lol">Myers Media</a></li></ul></div>
-  </div>
-  <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-sm text-textSecondary"><p>&copy; 2026 LoLGuide by <a href="https://www.jycsd.com" class="text-lol hover:underline">Myers Media</a>. League of Legends is a trademark of Riot Games.</p></div>
+<!-- Hot Topics + Sidebar -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+<div class="grid lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2">
+<p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Trending</p>
+<h2 class="text-2xl font-black mb-6">Hot Topics This Month</h2>
+<div class="space-y-3"><a href="/guides/champions/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+<img src="images/ahri.png" alt="Best Champions to Climb in Season 2026 (Patch 14.9)" class="w-14 h-14 object-contain flex-shrink-0 char-img">
+<div><h3 class="font-bold">Best Champions to Climb in Season 2026 (Patch 14.9)</h3><p class="text-sm text-textSecondary mt-1">Win rate and pick rate analysis for every role — which champions give you the best LP gains right now.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
+</a><a href="/guides/jungle/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+<img src="images/jinx.png" alt="Complete Jungle Pathing Guide: Every Camp Clear" class="w-14 h-14 object-contain flex-shrink-0 char-img">
+<div><h3 class="font-bold">Complete Jungle Pathing Guide: Every Camp Clear</h3><p class="text-sm text-textSecondary mt-1">Fastest level 3 and full clear routes for every meta jungler with leash and leashless starts.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
+</a><a href="/guides/laning/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+<img src="images/yasuo.png" alt="When to Roam vs Stay in Lane: A Data-Driven Guide" class="w-14 h-14 object-contain flex-shrink-0 char-img">
+<div><h3 class="font-bold">When to Roam vs Stay in Lane: A Data-Driven Guide</h3><p class="text-sm text-textSecondary mt-1">Learn the exact wave states and timers that justify roaming — stop guessing and start climbing.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
+</a></div>
+</div>
+<div class="hidden lg:block"><div class="sticky top-24"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="HALFPAGE"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
+</div></section>
+
+<!-- Ad: 970x250 -->
+<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="BILLBOARD2"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+
+<!-- Character Spotlight -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+<p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Character Spotlight</p>
+<h2 class="text-3xl font-black mb-8">Meet the <span class="text-accent">Characters</span></h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+<div class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800 text-center p-6">
+<img src="images/ahri.png" alt="Ahri" class="char-img h-32 w-auto object-contain mx-auto mb-3">
+<h3 class="font-bold text-lg">Ahri</h3>
+<p class="text-xs text-textSecondary">The nine-tailed fox. Charm combo sequences, Orb of Deception waveclear, and Spirit Rush roaming tactics for mid lane dominance.</p>
+<a href="/guides/champions/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Ahri Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800 text-center p-6">
+<img src="images/yasuo.png" alt="Yasuo" class="char-img h-32 w-auto object-contain mx-auto mb-3">
+<h3 class="font-bold text-lg">Yasuo</h3>
+<p class="text-xs text-textSecondary">The Unforgiven samurai. Steel Tempest mechanics, Wind Wall timing, and Last Breath knockup combos for solo carry potential.</p>
+<a href="/guides/champions/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Yasuo Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800 text-center p-6">
+<img src="images/lux.png" alt="Lux" class="char-img h-32 w-auto object-contain mx-auto mb-3">
+<h3 class="font-bold text-lg">Lux</h3>
+<p class="text-xs text-textSecondary">The Lady of Luminosity. Light binding picks, Prismatic Barrier teamfight tech, and Final Spark laser snipes from fog of war.</p>
+<a href="/guides/champions/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Lux Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800 text-center p-6">
+<img src="images/jinx.png" alt="Jinx" class="char-img h-32 w-auto object-contain mx-auto mb-3">
+<h3 class="font-bold text-lg">Jinx</h3>
+<p class="text-xs text-textSecondary">The Loose Cannon. Fishbones rocket form kiting, Zap root prediction, and Super Mega Death Rocket cross-map snipes.</p>
+<a href="/guides/champions/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Jinx Guides</a>
+</div>
+</div></section>
+
+<!-- Category Index -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+<h2 class="text-3xl font-black mb-8">Every Guide Category</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
+<div class="flex items-center gap-3 mb-4"><img src="images/ahri.png" alt="Champions" class="w-10 h-10 object-contain"><h3 class="font-bold text-lg"><a href="/guides/champions/" class="hover:text-accent transition-colors">Champions</a></h3></div>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/champions/" class="hover:text-accent transition-colors">Champions — Complete Guide</a></li>
+</ul>
+<a href="/guides/champions/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">170+ guides</a>
+</div><div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
+<div class="flex items-center gap-3 mb-4"><img src="images/yasuo.png" alt="Items" class="w-10 h-10 object-contain"><h3 class="font-bold text-lg"><a href="/guides/items/" class="hover:text-accent transition-colors">Items</a></h3></div>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/items/" class="hover:text-accent transition-colors">Items — Complete Guide</a></li>
+</ul>
+<a href="/guides/items/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">200+ guides</a>
+</div><div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
+<div class="flex items-center gap-3 mb-4"><img src="images/jinx.png" alt="Jungle" class="w-10 h-10 object-contain"><h3 class="font-bold text-lg"><a href="/guides/jungle/" class="hover:text-accent transition-colors">Jungle</a></h3></div>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/jungle/" class="hover:text-accent transition-colors">Jungle — Complete Guide</a></li>
+</ul>
+<a href="/guides/jungle/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">15+ guides</a>
+</div>
+</div></section>
+
+<footer class="bg-bgSecondary border-t border-gray-800 py-16 px-4">
+<div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+<div>
+<div class="flex items-center gap-2.5 mb-4">
+<img src="images/ahri.png" alt="LoLGuide" class="w-9 h-9 object-contain">
+<span class="text-xl font-bold">LoL<span class="text-accent">Guide</span></span>
+</div>
+<p class="text-sm text-textSecondary leading-relaxed">Expert game guides. Part of the GameGuide Network.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Categories</h4>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/champions/" class="hover:text-accent transition-colors">Champions</a></li>
+<li><a href="/guides/items/" class="hover:text-accent transition-colors">Items</a></li>
+<li><a href="/guides/jungle/" class="hover:text-accent transition-colors">Jungle</a></li>
+<li><a href="/guides/laning/" class="hover:text-accent transition-colors">Laning</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">More Game Guides</h4>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="https://valorant.jycsd.com" class="hover:text-accent transition-colors">Valorant</a></li>
+<li><a href="https://fortnite.jycsd.com" class="hover:text-accent transition-colors">Fortnite</a></li>
+<li><a href="https://minecraft.jycsd.com" class="hover:text-accent transition-colors">Minecraft</a></li>
+<li><a href="https://games.jycsd.com" class="hover:text-accent transition-colors">All Games</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">About</h4>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/about.html" class="hover:text-accent transition-colors">About</a></li>
+<li><a href="/contact.html" class="hover:text-accent transition-colors">Contact</a></li>
+<li><a href="/sitemap.xml" class="hover:text-accent transition-colors">Sitemap</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-gray-800 text-center text-sm text-textSecondary">
+<p>&copy; 2026 LoLGuide by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All game trademarks belong to their respective owners.</p>
+</div>
 </footer>
+
+<script>
+(function(){
+var slides=document.querySelectorAll('.carousel-slide');
+var dots=document.querySelectorAll('.carousel-dot');
+var current=0;
+function goTo(idx){slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
+dots.forEach(function(dot){dot.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
+setInterval(function(){goTo((current+1)%slides.length)},5000);
+document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
+})();
+</script>
 </body>
 </html>

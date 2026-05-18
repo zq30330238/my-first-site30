@@ -110,6 +110,17 @@ SITE_DOMAINS = {
     "naruto-site": "naruto.jycsd.com",
 }
 
+STOP_WORDS = {'the', 'a', 'an', 'in', 'on', 'to', 'for', 'of', 'and', 'or', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'shall', 'should', 'can', 'could', 'may', 'might', 'must', 'this', 'that', 'these', 'those', 'it', 'its'}
+SKIP_LINK_TEXTS = {'about', 'contact', 'privacy', 'policy', 'home', 'terms', 'categories', 'guides',
+    'read more', 'learn more', 'view all', 'back to home', 'subscribe', 'follow us',
+    'share', 'tweet', 'pin', 'email', 'print', 'previous', 'next', 'see all',
+    'explore more', 'discover more', 'get started', 'click here', 'here', 'more',
+    'all articles', 'latest posts', 'popular posts', 'related posts', 'hot topics'}
+
+def extract_keywords(text):
+    words = re.findall(r'[a-z]{3,}', text.lower())
+    return {w for w in words if w not in STOP_WORDS}
+
 errors = []
 warnings = []
 
@@ -201,15 +212,55 @@ def check_article(filepath):
                     if rel_path and not rel_path.startswith('//'):
                         target = ROOT / site_dir_key / rel_path.lstrip('/')
                         if not target.exists():
-                            errors.append(f"{name}: cross-site broken link: {href} (file missing: {target.relative_to(ROOT)})")
+                            if rel_path.endswith('/') and (target / 'index.html').exists():
+                                pass
+                            else:
+                                errors.append(f"{name}: cross-site broken link: {href} (file missing: {target.relative_to(ROOT)})")
                     break
             continue
         if href.startswith('/'):
             target = file_dir / href.lstrip('/')
         else:
             target = file_dir / href
-        if not target.exists() and '.' in target.name:
+        if href.endswith('/'):
+            index_target = target / 'index.html'
+            if not index_target.exists():
+                errors.append(f"{name}: directory link broken: {href} → {index_target.relative_to(ROOT)} (index.html not found)")
+        elif not target.exists() and '.' in target.name:
             errors.append(f"{name}: broken internal link: {href} → {target.relative_to(ROOT)} (file not found)")
+
+    # === SEMANTIC LINK MATCHING (article pages only, WARNING not ERROR) ===
+    a_tags = re.findall(r'<a\s[^>]*?href="([^"]+)"[^>]*?>(.*?)</a>', html, re.IGNORECASE | re.DOTALL)
+    for href, raw_text in a_tags:
+        link_text = re.sub(r'<[^>]+>', '', raw_text).strip().lower()
+        link_text = re.sub(r'[^a-z\s]', '', link_text).strip()
+        if len(link_text) < 3:
+            continue
+        if link_text in SKIP_LINK_TEXTS:
+            continue
+        if href.startswith('#') or href.startswith('javascript:') or href.startswith('mailto:') or href.startswith('tel:') or href.startswith('http'):
+            continue
+        if href.startswith('/'):
+            target = file_dir / href.lstrip('/')
+        else:
+            target = file_dir / href
+        if href.endswith('/'):
+            target = target / 'index.html'
+        if not target.exists() or not target.suffix == '.html':
+            continue
+        try:
+            target_html = target.read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+        title_m = re.search(r'<title>(.*?)</title>', target_html)
+        h1_m = re.search(r'<h1[^>]*>(.*?)</h1>', target_html)
+        title_h1 = (title_m.group(1) if title_m else '') + ' ' + (h1_m.group(1) if h1_m else '')
+        link_kw = extract_keywords(link_text)
+        target_kw = extract_keywords(title_h1)
+        if not link_kw:
+            continue
+        if not (link_kw & target_kw):
+            warnings.append(f"{name}: semantic mismatch — \"{link_text[:60]}\" links to {href} (title: \"{title_h1.strip()[:80]}\")")
 
     # === AD SLOTS ===
     slots = re.findall(r'data-ad-slot="(\d+)"', html)

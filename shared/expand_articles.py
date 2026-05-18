@@ -1,4 +1,5 @@
 """Expand short articles via DeepSeek API. Runs on Hengchuang server overnight."""
+import os
 import re
 import json
 import sys
@@ -9,7 +10,7 @@ from urllib.error import URLError, HTTPError
 
 ROOT = Path(__file__).resolve().parent.parent
 API_URL = "https://api.deepseek.com/anthropic/v1/messages"
-API_TOKEN = "sk-07777fe5f4554dbcaeddce87c7ccb950"
+API_TOKEN = os.environ.get("DEEPSEEK_API_KEY", "")
 
 SHORT_ARTICLES = [
     "sub-healthy/article-2.html",

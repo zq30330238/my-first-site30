@@ -2,83 +2,223 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>FortGuide — Fortnite Weapons, Map Guides & Building Tips</title>
-<meta name="description" content="Master Fortnite Battle Royale — every weapon stats, map drop guide, building technique, and season meta analysis. Build better, aim sharper, win more.">
-<meta name="robots" content="index,follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FortGuide — Dominate the Island</title>
+<meta name="description" content="Every new weapon, POI change, and meta shift covered within 24 hours of each update. Build better, aim sharper.">
+<meta property="og:title" content="FortGuide — Game Guides & Wiki">
+<meta property="og:description" content="Every new weapon, POI change, and meta shift covered within 24 hours of each update. Build better, aim sharper.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://fortnite.jycsd.com/">
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',fn:'#a78bfa',yellow:'#fbbf24',cyan:'#22d3ee'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
+<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#a78bfa',accentDark:'#7c3aed'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
 <script>function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
-<style>body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}ins.adsbygoogle{display:block}.ad-label{text-align:center;color:#6b7280;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}.carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease-in-out;pointer-events:none}.carousel-slide.active{opacity:1;pointer-events:auto}.carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer}.carousel-dot.active{background:#a78bfa}.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(167,139,250,0.15);transition:all 0.3s ease}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}.float-anim{animation:float 3s ease-in-out infinite}</style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
+ins.adsbygoogle{display:block}
+.ad-label{text-align:center;color:#6b7280;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
+.carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
+.carousel-slide.active{opacity:1;pointer-events:auto}
+.carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
+.carousel-dot.active{background:#a78bfa}
+.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px #a78bfa26;transition:all .3s ease}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.float-anim{animation:float 3s ease-in-out infinite}
+.char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
+</style>
 </head>
 <body>
 
 <nav class="fixed top-0 w-full z-50 bg-bgPrimary/95 backdrop-blur-md border-b border-gray-800/50">
-  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2.5"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-fn to-purple-600 flex items-center justify-center text-lg font-black text-white">F</div><span class="text-xl font-bold">Fort<span class="text-fn">Guide</span></span></a>
-    <div class="hidden md:flex gap-6 text-sm font-medium">
-      <a href="https://games.jycsd.com" class="text-textSecondary hover:text-fn">&#8592; GameGuide</a>
-      <a href="#" class="text-fn font-semibold">Weapons</a>
-      <a href="#" class="text-textSecondary hover:text-fn">Map</a>
-      <a href="#" class="text-textSecondary hover:text-fn">Building</a>
-      <a href="#" class="text-textSecondary hover:text-fn">Seasons</a>
-      <a href="#" class="text-textSecondary hover:text-fn">Skins</a>
-    </div>
-  </div>
+<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+<a href="/" class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">F</div>
+<span class="text-xl font-bold tracking-tight">Fort<span class="text-accent">Guide</span></span>
+</a>
+<div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+<a href="https://games.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">GameGuide</a>
+<a href="/guides/weapons/" class="text-textSecondary hover:text-accent transition-colors">Weapons</a>
+<a href="/guides/map/" class="text-textSecondary hover:text-accent transition-colors">Map</a>
+<a href="/guides/building/" class="text-textSecondary hover:text-accent transition-colors">Building</a>
+<a href="/guides/seasons/" class="text-textSecondary hover:text-accent transition-colors">Seasons</a>
+</div>
+<button class="lg:hidden text-textSecondary text-2xl" id="menuBtn" aria-label="Menu">&#9776;</button>
+</div>
 </nav>
 
-<section class="relative w-full overflow-hidden pt-16" style="height:500px">
-  <div class="carousel-slide active"><div class="absolute inset-0 bg-gradient-to-br from-purple-950 via-gray-950 to-violet-950"></div><div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 40% 50%,#a78bfa 0%,transparent 60%)"></div>
-    <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center"><div class="grid md:grid-cols-2 gap-8 items-center w-full"><div>
-      <span class="text-xs font-bold uppercase tracking-wider text-fn bg-fn/10 px-3 py-1 rounded-full">Battle Royale</span>
-      <h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight">Dominate the <span class="text-fn">Island</span></h1>
-      <p class="text-lg text-textSecondary mt-4 max-w-lg">Expert Fortnite guides — weapon stats, map drop strategies, building techniques, and season meta analysis. Zero build and Battle Royale covered.</p>
-      <div class="flex gap-3 mt-6"><a href="#" class="bg-fn text-white px-6 py-3 rounded-lg font-bold hover:bg-purple-500">Weapon Stats</a><a href="#" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-fn">Map Guide</a></div>
-    </div><div class="hidden md:flex justify-center"><div class="w-72 h-72 rounded-2xl bg-gradient-to-br from-fn/20 to-purple-800/30 border border-fn/20 flex items-center justify-center float-anim"><div class="text-center"><div class="text-8xl mb-2">&#127963;</div><div class="text-fn font-bold text-lg">Chapter 6 Ready</div></div></div></div>
-  </div></div></div>
-  <div class="carousel-slide"><div class="absolute inset-0 bg-gradient-to-br from-cyan-950 via-gray-950 to-blue-950"></div><div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 70% 40%,#22d3ee 0%,transparent 60%)"></div>
-    <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center"><div class="max-w-2xl ml-auto text-right">
-      <span class="text-xs font-bold uppercase tracking-wider text-cyan bg-cyan/10 px-3 py-1 rounded-full">Ad Placement</span>
-      <h2 class="text-4xl md:text-5xl font-black mt-4 leading-tight">Latest <span class="text-cyan">Season</span> Meta</h2>
-      <p class="text-lg text-textSecondary mt-4">Every new weapon, POI change, and meta shift covered within 24 hours of each update.</p>
-      <a href="#" class="inline-block mt-6 bg-cyan text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-cyan-400">Season Guide &#8594;</a>
-    </div></div>
-  </div>
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10"><div class="carousel-dot active" data-slide="0"></div><div class="carousel-dot" data-slide="1"></div></div>
+<!-- Hero Carousel -->
+<section class="relative w-full overflow-hidden" style="height:520px">
+<div class="carousel-slide active"><div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div><div class="relative max-w-7xl mx-auto px-4 h-full flex items-center"><div class="pt-10"><h1 class="text-4xl md:text-6xl font-black mb-4">Chapter 6 Meta</h1><p class="text-lg text-textSecondary mb-6 max-w-lg">Every new weapon, POI change, and meta shift covered within 24 hours of each update. Build better, aim sharper.</p><div class="flex gap-3"><a href="/guides/weapons/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Browse Guides</a><a href="#" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Learn More</a></div></div></div></div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+
+</div>
 </section>
 
+<!-- Category Cards -->
 <section class="max-w-7xl mx-auto px-4 -mt-6 relative z-20">
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-fn/50"><div class="w-12 h-12 rounded-xl bg-fn/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#128299;</div><div class="text-xs font-semibold">Weapons</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-cyan/50"><div class="w-12 h-12 rounded-xl bg-cyan/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#128506;</div><div class="text-xs font-semibold">Map Drops</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-yellow/50"><div class="w-12 h-12 rounded-xl bg-yellow/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#127959;</div><div class="text-xs font-semibold">Building</div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-green-500/50"><div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#127942;</div><div class="text-xs font-semibold">Seasons</div></a>
-  </div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Weapons</div></a>
+<a href="/guides/map/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Map</div></a>
+<a href="/guides/building/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Building</div></a>
+<a href="/guides/seasons/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Seasons</div></a>
+</div>
 </section>
 
-<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="LEADERBOARD_FN"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+<!-- Ad: 728x90 -->
+<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="LEADERBOARD1"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
+<!-- Guide Cards -->
 <section class="max-w-7xl mx-auto px-4 py-16">
-  <h2 class="text-3xl font-black mb-8"><span class="text-fn">Top Guides</span> This Season</h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800"><div class="h-40 bg-gradient-to-br from-purple-900 to-violet-950 flex items-center justify-center text-4xl">&#128299;</div><div class="p-4"><span class="text-xs text-fn font-semibold bg-fn/10 px-2 py-0.5 rounded">Weapons</span><h3 class="font-bold mt-2">Best Weapons Tier List — Chapter 6 Season 3</h3><p class="text-xs text-textSecondary mt-1">Assault rifles, shotguns, SMGs, snipers — every weapon ranked with DPS stats and recoil patterns.</p></div></article>
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800"><div class="h-40 bg-gradient-to-br from-cyan-900 to-blue-950 flex items-center justify-center text-4xl">&#128506;</div><div class="p-4"><span class="text-xs text-cyan font-semibold bg-cyan/10 px-2 py-0.5 rounded">Map</span><h3 class="font-bold mt-2">Best Landing Spots: High Loot & Low Risk</h3><p class="text-xs text-textSecondary mt-1">Every POI ranked by loot density, rotation options, and survival rate for solo/duo/squad.</p></div></article>
-    <article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800"><div class="h-40 bg-gradient-to-br from-amber-900 to-yellow-950 flex items-center justify-center text-4xl">&#127959;</div><div class="p-4"><span class="text-xs text-yellow font-semibold bg-yellow/10 px-2 py-0.5 rounded">Building</span><h3 class="font-bold mt-2">Advanced Building: Piece Control in 2026</h3><p class="text-xs text-textSecondary mt-1">Master cone jumps, side jumps, and retakes — complete piece control tutorial with practice drills.</p></div></article>
-  </div>
-  <div class="grid lg:grid-cols-3 gap-8 mt-8"><div class="lg:col-span-2 space-y-4">
-    <h3 class="text-xl font-bold mb-4">Zero Build Strategy</h3>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block"><div class="w-12 h-12 rounded-xl bg-fn/10 flex items-center justify-center flex-shrink-0 text-2xl">&#128663;</div><div><h4 class="font-bold">Vehicle Meta: Best Cars & Rotation Routes</h4><p class="text-sm text-textSecondary mt-1">Every vehicle ranked — Whiplash, Bear, Rogue Bike — with fuel efficiency and off-road handling data.</p></div></a>
-    <a href="#" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block"><div class="w-12 h-12 rounded-xl bg-fn/10 flex items-center justify-center flex-shrink-0 text-2xl">&#127919;</div><div><h4 class="font-bold">Overshield Mechanics Explained</h4><p class="text-sm text-textSecondary mt-1">How overshield works in Zero Build, recharge timing, and how to play around it for maximum advantage.</p></div></a>
-  </div><div class="hidden lg:block"><div class="sticky top-24"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="HALFPAGE_FN"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div></div>
-</section>
+<div class="flex items-end justify-between mb-8">
+<div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Fresh Content</p><h2 class="text-3xl font-black">Latest Guides</h2></div>
+<a href="/guides/weapons/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All</a>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+<article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-purple-900 to-indigo-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #a78bfa, transparent);"></div>
+<img src="images/" alt="All Weapons Ranked: DPS Tier List Chapter 6 S3" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#a78bfa;background:#a78bfa1a">Weapons</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/weapons/" class="hover:text-accent transition-colors">All Weapons Ranked: DPS Tier List Chapter 6 S3</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 17, 2026</time>
+</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-emerald-900 to-green-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #4ade80, transparent);"></div>
+<img src="images/" alt="How to Get the Mythic Loot Pool: Full Quest Guide" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#4ade80;background:#4ade801a">Seasons</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/seasons/" class="hover:text-accent transition-colors">How to Get the Mythic Loot Pool: Full Quest Guide</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 16, 2026</time>
+</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-amber-900 to-yellow-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #fbbf24, transparent);"></div>
+<img src="images/" alt="Pro Builder Edit Course: Master Piece Control" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#fbbf24;background:#fbbf241a">Building</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/building/" class="hover:text-accent transition-colors">Pro Builder Edit Course: Master Piece Control</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 15, 2026</time>
+</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
+<div class="h-44 bg-gradient-to-br from-cyan-900 to-sky-950 flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #22d3ee, transparent);"></div>
+<img src="images/" alt="Every Vault Location & How to Open Them" class="relative h-36 w-auto object-contain char-img">
+</div>
+<div class="p-4">
+<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#22d3ee;background:#22d3ee1a">Map</span>
+<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/map/" class="hover:text-accent transition-colors">Every Vault Location & How to Open Them</a></h3>
+<time class="text-xs text-textSecondary mt-3 block">May 14, 2026</time>
+</div></article>
+</div></section>
 
-<footer class="bg-bgSecondary border-t border-gray-800 py-12 px-4 mt-8"><div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-  <div><div class="flex items-center gap-2.5 mb-3"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-fn to-purple-600 flex items-center justify-center text-lg font-black text-white">F</div><span class="text-xl font-bold">Fort<span class="text-fn">Guide</span></span></div><p class="text-sm text-textSecondary">Part of <a href="https://games.jycsd.com" class="text-fn hover:underline">GameGuide Network</a>. Not affiliated with Epic Games.</p></div>
-  <div><h4 class="font-bold mb-3">More Games</h4><ul class="space-y-1.5 text-sm text-textSecondary"><li><a href="https://minecraft.jycsd.com" class="hover:text-fn">Minecraft</a></li><li><a href="https://eldenring.jycsd.com" class="hover:text-fn">Elden Ring</a></li><li><a href="https://lol.jycsd.com" class="hover:text-fn">League of Legends</a></li></ul></div>
-  <div><h4 class="font-bold mb-3">Network</h4><ul class="space-y-1.5 text-sm text-textSecondary"><li><a href="https://anime.jycsd.com" class="hover:text-fn">AnimeWiki</a></li><li><a href="https://www.jycsd.com" class="hover:text-fn">Myers Media</a></li></ul></div>
-</div><div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-gray-800 text-center text-sm text-textSecondary"><p>&copy; 2026 FortGuide by <a href="https://www.jycsd.com" class="text-fn hover:underline">Myers Media</a>. Fortnite is a trademark of Epic Games.</p></div></footer>
-<script>(function(){var s=document.querySelectorAll('.carousel-slide'),d=document.querySelectorAll('.carousel-dot'),c=0;function go(i){s[c].classList.remove('active');d[c].classList.remove('active');c=i;s[c].classList.add('active');d[c].classList.add('active')}d.forEach(function(dt){dt.addEventListener('click',function(){go(parseInt(this.dataset.slide))})});setInterval(function(){go((c+1)%s.length)},5000)})();</script>
-</body></html>
+<!-- Hot Topics + Sidebar -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+<div class="grid lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2">
+<p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Trending</p>
+<h2 class="text-2xl font-black mb-6">Hot Topics This Month</h2>
+<div class="space-y-3"><a href="/guides/seasons/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+
+<div><h3 class="font-bold">Chapter 6 Season 3: Every New Weapon & POI</h3><p class="text-sm text-textSecondary mt-1">Full breakdown of the new season — weapons, map changes, battle pass skins, and gameplay mechanics.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
+</a><a href="/guides/map/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+
+<div><h3 class="font-bold">Best Landing Spots for High Kills (Chapter 6 Map)</h3><p class="text-sm text-textSecondary mt-1">Where to land for the best loot, most eliminations, and highest survival rate in Chapter 6.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
+</a><a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
+
+<div><h3 class="font-bold">Zero Build Mode: Complete Strategy Guide</h3><p class="text-sm text-textSecondary mt-1">How to win without building — positioning, rotation paths, and loadout priorities for Zero Build mode.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
+</a></div>
+</div>
+<div class="hidden lg:block"><div class="sticky top-24"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="HALFPAGE"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
+</div></section>
+
+<!-- Ad: 970x250 -->
+<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="BILLBOARD2"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+
+<!-- Character Spotlight -->
+
+
+<!-- Category Index -->
+<section class="max-w-7xl mx-auto px-4 py-8">
+<h2 class="text-3xl font-black mb-8">Every Guide Category</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
+<div class="flex items-center gap-3 mb-4"><h3 class="font-bold text-lg"><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons</a></h3></div>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons — Complete Guide</a></li>
+</ul>
+<a href="/guides/weapons/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">20+ guides</a>
+</div><div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
+<div class="flex items-center gap-3 mb-4"><h3 class="font-bold text-lg"><a href="/guides/map/" class="hover:text-accent transition-colors">Map</a></h3></div>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/map/" class="hover:text-accent transition-colors">Map — Complete Guide</a></li>
+</ul>
+<a href="/guides/map/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">15+ guides</a>
+</div><div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
+<div class="flex items-center gap-3 mb-4"><h3 class="font-bold text-lg"><a href="/guides/building/" class="hover:text-accent transition-colors">Building</a></h3></div>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/building/" class="hover:text-accent transition-colors">Building — Complete Guide</a></li>
+</ul>
+<a href="/guides/building/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">12+ guides</a>
+</div>
+</div></section>
+
+<footer class="bg-bgSecondary border-t border-gray-800 py-16 px-4">
+<div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+<div>
+<div class="flex items-center gap-2.5 mb-4">
+<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">F</div>
+<span class="text-xl font-bold">Fort<span class="text-accent">Guide</span></span>
+</div>
+<p class="text-sm text-textSecondary leading-relaxed">Expert game guides. Part of the GameGuide Network.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4">Categories</h4>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons</a></li>
+<li><a href="/guides/map/" class="hover:text-accent transition-colors">Map</a></li>
+<li><a href="/guides/building/" class="hover:text-accent transition-colors">Building</a></li>
+<li><a href="/guides/seasons/" class="hover:text-accent transition-colors">Seasons</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">More Game Guides</h4>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="https://minecraft.jycsd.com" class="hover:text-accent transition-colors">Minecraft</a></li>
+<li><a href="https://eldenring.jycsd.com" class="hover:text-accent transition-colors">Elden Ring</a></li>
+<li><a href="https://valorant.jycsd.com" class="hover:text-accent transition-colors">Valorant</a></li>
+<li><a href="https://games.jycsd.com" class="hover:text-accent transition-colors">All Games</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">About</h4>
+<ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/about.html" class="hover:text-accent transition-colors">About</a></li>
+<li><a href="/contact.html" class="hover:text-accent transition-colors">Contact</a></li>
+<li><a href="/sitemap.xml" class="hover:text-accent transition-colors">Sitemap</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-gray-800 text-center text-sm text-textSecondary">
+<p>&copy; 2026 FortGuide by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All game trademarks belong to their respective owners.</p>
+</div>
+</footer>
+
+<script>
+(function(){
+var slides=document.querySelectorAll('.carousel-slide');
+var dots=document.querySelectorAll('.carousel-dot');
+var current=0;
+function goTo(idx){slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
+dots.forEach(function(dot){dot.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
+setInterval(function(){goTo((current+1)%slides.length)},5000);
+document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
+})();
+</script>
+</body>
+</html>

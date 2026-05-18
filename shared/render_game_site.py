@@ -10,11 +10,11 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "shared" / "game_site_data.json"
 
 GA4_ID = "G-GGNWR1X1GV"
-ADSENSE_PUB = "ca-pub-XXXXXXXXXXXX"
+ADSENSE_PUB = "ca-pub-2595917642864488"
 AD_SLOTS = {
-    "leaderboard": "LEADERBOARD1",
-    "halfpage": "HALFPAGE",
-    "billboard": "BILLBOARD2",
+    "leaderboard": "9112825459",
+    "halfpage": "4397738132",
+    "billboard": "9739511410",
 }
 
 HTML_TEMPLATE = '''<!DOCTYPE html>
@@ -174,7 +174,7 @@ def render_carousel(data):
     if not chars:
         return '<div class="carousel-slide active"><div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div><div class="relative max-w-7xl mx-auto px-4 h-full flex items-center"><div class="pt-10"><h1 class="text-4xl md:text-6xl font-black mb-4">{hero_title}</h1><p class="text-lg text-textSecondary mb-6 max-w-lg">{hero_subtitle}</p><div class="flex gap-3">{hero_buttons}</div></div></div></div>'.format(
             hero_title=data["hero_title"], hero_subtitle=data["hero_subtitle"],
-            hero_buttons=f'<a href="/guides/{data["categories"][0]["slug"]}/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Browse Guides</a><a href="#" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Learn More</a>'
+            hero_buttons=f'<a href="/guides/{data["categories"][0]["slug"]}/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Browse Guides</a><a href="/guides/{data["categories"][1]["slug"] if len(data["categories"])>1 else data["categories"][0]["slug"]}/" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Explore More</a>'
         ), ""
 
     slides = []
@@ -258,8 +258,8 @@ def render_hot_topics(data):
 <h2 class="text-2xl font-black mb-6">Hot Topics This Month</h2>
 <div class="space-y-3">{''.join(items)}</div>
 </div>
-<div class="hidden lg:block"><div class="sticky top-24"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="{adsense_pub}" data-ad-slot="{ad_halfpage}"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({{}})</script></div></div>
-</div></section>'''.format(adsense_pub=ADSENSE_PUB, ad_halfpage=AD_SLOTS["halfpage"])
+<div class="hidden lg:block"><div class="sticky top-24"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="{ADSENSE_PUB}" data-ad-slot="{AD_SLOTS["halfpage"]}"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({{}})</script></div></div>
+</div></section>'''
 
 
 def render_character_section(data):
