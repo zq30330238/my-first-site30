@@ -29,3 +29,6 @@ backup-config/tencent-cloud-credentials.json
 .claude/voice-tool/
 backup-config/
 shared/add_subdomain.py
+*.png
+*.jpg
+*.webp
