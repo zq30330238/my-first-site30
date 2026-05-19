@@ -11,16 +11,17 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://eldenring.jycsd.com/">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#fbbf24',accentDark:'#d97706'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
 <script>function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
 ins.adsbygoogle{display:block}
-.ad-label{text-align:center;color:#6b7280;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
+.ad-label{text-align:center;color:#9ca3af;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
 .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
 .carousel-slide.active{opacity:1;pointer-events:auto}
 .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
@@ -29,155 +30,254 @@ ins.adsbygoogle{display:block}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .float-anim{animation:float 3s ease-in-out infinite}
 .char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
+img[src$=".png"]{mix-blend-mode:normal}
+.bg-transparent-img img{mix-blend-mode:normal}
+.transparent-bg{background:transparent!important}
+.search-dropdown{position:absolute;top:100%;left:0;right:0;background:#1a1f2e;border:1px solid #374151;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.search-dropdown.active{display:block}
+.search-result{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .15s;border-bottom:1px solid rgba(75,85,99,.15)}
+.search-result:hover,.search-result.focused{background:rgba(255,255,255,.05)}
+.search-result:last-child{border-bottom:none}
+.search-result .sr-type{font-size:10px;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:999px;flex-shrink:0}
+.search-empty{padding:20px;text-align:center;color:#8b949e;font-size:14px}
 </style>
 </head>
 <body>
 
-<nav class="fixed top-0 w-full z-50 bg-bgPrimary/95 backdrop-blur-md border-b border-gray-800/50">
-<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-<a href="/" class="flex items-center gap-2.5">
-<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">T</div>
+<nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(13,17,23,0.95);border-color:#374151">
+<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
+<a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">T</div>
 <span class="text-xl font-bold tracking-tight">Tarnished<span class="text-accent">Guide</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
-<a href="https://games.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">GameGuide</a>
+<a href="https://games.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">Game Hub</a>
 <a href="/guides/bosses/" class="text-textSecondary hover:text-accent transition-colors">Bosses</a>
 <a href="/guides/builds/" class="text-textSecondary hover:text-accent transition-colors">Builds</a>
 <a href="/guides/weapons/" class="text-textSecondary hover:text-accent transition-colors">Weapons</a>
 <a href="/guides/quests/" class="text-textSecondary hover:text-accent transition-colors">Quests</a>
 <a href="/guides/map/" class="text-textSecondary hover:text-accent transition-colors">Map</a>
 </div>
+<div class="hidden lg:flex items-center relative flex-1 max-w-xs ml-2" id="searchWrap">
+<input type="text" id="searchInput" placeholder="Search..." autocomplete="off"
+ class="w-full bg-bgSecondary text-textPrimary text-sm px-3 py-2 rounded-lg border focus:outline-none focus:border-accent transition-colors"
+ style="border-color:#374151">
+<div class="search-dropdown" id="searchDropdown"></div>
+</div>
 <button class="lg:hidden text-textSecondary text-2xl" id="menuBtn" aria-label="Menu">&#9776;</button>
+</div>
+<div id="mobileMenu" class="hidden lg:hidden bg-bgPrimary border-t border-gray-800 px-4 py-4 space-y-3 text-sm font-medium">
+<div class="relative mb-2">
+<input type="text" id="searchInputMobile" placeholder="Search..." autocomplete="off"
+ class="w-full bg-bgSecondary text-textPrimary text-sm px-3 py-2 rounded-lg border focus:outline-none focus:border-accent transition-colors"
+ style="border-color:#374151">
+<div class="search-dropdown" id="searchDropdownMobile"></div>
+</div>
+<a href="https://games.jycsd.com" class="block text-textSecondary hover:text-accent transition-colors">Game Hub</a>
+<a href="/guides/bosses/" class="block text-textSecondary hover:text-accent transition-colors">Bosses</a>
+<a href="/guides/builds/" class="block text-textSecondary hover:text-accent transition-colors">Builds</a>
+<a href="/guides/weapons/" class="block text-textSecondary hover:text-accent transition-colors">Weapons</a>
+<a href="/guides/quests/" class="block text-textSecondary hover:text-accent transition-colors">Quests</a>
+<a href="/guides/map/" class="block text-textSecondary hover:text-accent transition-colors">Map</a>
 </div>
 </nav>
 
 <!-- Hero Carousel -->
-<section class="relative w-full overflow-hidden" style="height:520px">
-<div class="carousel-slide active"><div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div><div class="relative max-w-7xl mx-auto px-4 h-full flex items-center"><div class="pt-10"><h1 class="text-4xl md:text-6xl font-black mb-4">Conquer the Lands Between</h1><p class="text-lg text-textSecondary mb-6 max-w-lg">Complete boss strategies, build guides, weapon locations, and quest walkthroughs for every region.</p><div class="flex gap-3"><a href="/guides/bosses/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Browse Guides</a><a href="#" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Learn More</a></div></div></div></div>
+<section class="relative w-full overflow-hidden pt-16" style="height:520px">
+<div class="carousel-slide active">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="pt-10">
+<h1 class="text-4xl md:text-6xl font-black mb-4">Conquer the Lands Between</h1>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">Complete boss strategies, build guides, weapon locations, and quest walkthroughs for every region.</p>
+<div class="flex gap-3">
+<a href="/guides/bosses/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Browse Bosses</a>
+<a href="/guides/builds/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Explore Builds</a>
+</div>
+</div></div></div>
 <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
 
 </div>
 </section>
 
-<!-- Category Cards -->
-<section class="max-w-7xl mx-auto px-4 -mt-6 relative z-20">
-<div class="grid grid-cols-2 md:grid-cols-5 gap-3">
-<a href="/guides/bosses/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Bosses</div></a>
-<a href="/guides/builds/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Builds</div></a>
-<a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Weapons</div></a>
-<a href="/guides/quests/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Quests</div></a>
-<a href="/guides/map/" class="card-hover bg-bgCard rounded-xl p-4 text-center border border-gray-800 hover:border-accent/50 group"><div class="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-2 text-2xl">&#9733;</div><div class="text-xs font-semibold">Map</div></a>
+
+
+<a href="/guides/bosses/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#ef4444">&#9670;</div></div>
+<div class="flex-1 min-w-0">
+<div class="font-bold text-lg md:text-xl">Bosses</div>
+<div class="text-sm text-textSecondary mt-1">165+ guides</div>
 </div>
-</section>
+</a>
+<a href="/guides/builds/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#fbbf24">&#9670;</div></div>
+<div class="flex-1 min-w-0">
+<div class="font-bold text-lg md:text-xl">Builds</div>
+<div class="text-sm text-textSecondary mt-1">40+ guides</div>
+</div>
+</a>
+<a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#3b82f6">&#9670;</div></div>
+<div class="flex-1 min-w-0">
+<div class="font-bold text-lg md:text-xl">Weapons</div>
+<div class="text-sm text-textSecondary mt-1">300+ guides</div>
+</div>
+</a>
+<a href="/guides/quests/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#a78bfa">&#9670;</div></div>
+<div class="flex-1 min-w-0">
+<div class="font-bold text-lg md:text-xl">Quests</div>
+<div class="text-sm text-textSecondary mt-1">30+ guides</div>
+</div>
+</a>
+<a href="/guides/map/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#4ade80">&#9670;</div></div>
+<div class="flex-1 min-w-0">
+<div class="font-bold text-lg md:text-xl">Map</div>
+<div class="text-sm text-textSecondary mt-1">15 guides</div>
+</div>
+</a>
 
 <!-- Ad: 728x90 -->
-<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="LEADERBOARD1"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9112825459"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
-<!-- Guide Cards -->
 <section class="max-w-7xl mx-auto px-4 py-16">
 <div class="flex items-end justify-between mb-8">
 <div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Fresh Content</p><h2 class="text-3xl font-black">Latest Guides</h2></div>
-<a href="/guides/bosses/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All</a>
+<a href="/guides/bosses/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
 </div>
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-<article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
-<div class="h-44 bg-gradient-to-br from-red-950 to-rose-950 flex items-center justify-center relative overflow-hidden">
+<div class="grid lg:grid-cols-2 gap-5">
+<a href="/guides/bosses/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-red-950 to-rose-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ef4444, transparent);"></div>
-<img src="images/" alt="Malenia Boss Guide: How to Dodge Waterfowl Dance" class="relative h-36 w-auto object-contain char-img">
+<div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
 </div>
-<div class="p-4">
-<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#ef4444;background:#ef44441a">Bosses</span>
-<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/bosses/" class="hover:text-accent transition-colors">Malenia Boss Guide: How to Dodge Waterfowl Dance</a></h3>
-<time class="text-xs text-textSecondary mt-3 block">May 17, 2026</time>
-</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
-<div class="h-44 bg-gradient-to-br from-purple-900 to-indigo-950 flex items-center justify-center relative overflow-hidden">
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#ef4444;background:#ef44441a">Bosses</span>
+<h3 class="font-bold text-lg mt-2 mb-1 leading-snug group-hover:text-accent transition-colors">Malenia Boss Guide: How to Dodge Waterfowl Dance</h3>
+<time class="text-sm text-textSecondary mt-2 block">May 17, 2026</time>
+</div>
+</a><a href="/guides/quests/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-purple-900 to-indigo-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #a78bfa, transparent);"></div>
-<img src="images/" alt="Ranni Questline: Age of Stars Ending Walkthrough" class="relative h-36 w-auto object-contain char-img">
+<div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
 </div>
-<div class="p-4">
-<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#a78bfa;background:#a78bfa1a">Quests</span>
-<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/quests/" class="hover:text-accent transition-colors">Ranni Questline: Age of Stars Ending Walkthrough</a></h3>
-<time class="text-xs text-textSecondary mt-3 block">May 16, 2026</time>
-</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
-<div class="h-44 bg-gradient-to-br from-amber-900 to-yellow-950 flex items-center justify-center relative overflow-hidden">
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#a78bfa;background:#a78bfa1a">Quests</span>
+<h3 class="font-bold text-lg mt-2 mb-1 leading-snug group-hover:text-accent transition-colors">Ranni Questline: Age of Stars Ending Walkthrough</h3>
+<time class="text-sm text-textSecondary mt-2 block">May 16, 2026</time>
+</div>
+</a><a href="/guides/builds/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-amber-900 to-yellow-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #fbbf24, transparent);"></div>
-<img src="images/" alt="Top 10 Bleed Builds That Melt Bosses in Seconds" class="relative h-36 w-auto object-contain char-img">
+<div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
 </div>
-<div class="p-4">
-<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#fbbf24;background:#fbbf241a">Builds</span>
-<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/builds/" class="hover:text-accent transition-colors">Top 10 Bleed Builds That Melt Bosses in Seconds</a></h3>
-<time class="text-xs text-textSecondary mt-3 block">May 15, 2026</time>
-</div></article><article class="card-hover bg-bgCard rounded-xl overflow-hidden border border-gray-800">
-<div class="h-44 bg-gradient-to-br from-blue-900 to-sky-950 flex items-center justify-center relative overflow-hidden">
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#fbbf24;background:#fbbf241a">Builds</span>
+<h3 class="font-bold text-lg mt-2 mb-1 leading-snug group-hover:text-accent transition-colors">Top 10 Bleed Builds That Melt Bosses in Seconds</h3>
+<time class="text-sm text-textSecondary mt-2 block">May 15, 2026</time>
+</div>
+</a><a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-blue-900 to-sky-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #3b82f6, transparent);"></div>
-<img src="images/" alt="Every Somber Ancient Dragon Smithing Stone Location" class="relative h-36 w-auto object-contain char-img">
+<div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
 </div>
-<div class="p-4">
-<span class="text-xs font-semibold px-2 py-0.5 rounded" style="color:#3b82f6;background:#3b82f61a">Weapons</span>
-<h3 class="font-bold mt-2 mb-1 leading-snug"><a href="/guides/weapons/" class="hover:text-accent transition-colors">Every Somber Ancient Dragon Smithing Stone Location</a></h3>
-<time class="text-xs text-textSecondary mt-3 block">May 14, 2026</time>
-</div></article>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#3b82f6;background:#3b82f61a">Weapons</span>
+<h3 class="font-bold text-lg mt-2 mb-1 leading-snug group-hover:text-accent transition-colors">Every Somber Ancient Dragon Smithing Stone Location</h3>
+<time class="text-sm text-textSecondary mt-2 block">May 14, 2026</time>
+</div>
+</a>
 </div></section>
-
-<!-- Hot Topics + Sidebar -->
 <section class="max-w-7xl mx-auto px-4 py-8">
-<div class="grid lg:grid-cols-3 gap-8">
-<div class="lg:col-span-2">
-<p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Trending</p>
-<h2 class="text-2xl font-black mb-6">Hot Topics This Month</h2>
-<div class="space-y-3"><a href="/guides/bosses/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
-
-<div><h3 class="font-bold">Shadow of the Erdtree: Complete DLC Boss Guide</h3><p class="text-sm text-textSecondary mt-1">Every remembrance boss in the Land of Shadow — movesets, weaknesses, summon strategies, and reward breakdown.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
-</a><a href="/guides/builds/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
-
-<div><h3 class="font-bold">Best Builds for NG+7: One-Shot Boss Killers</h3><p class="text-sm text-textSecondary mt-1">The most broken PvE builds that still work at max scaling — bleed, magic, and faith builds ranked.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
-</a><a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl p-5 flex gap-4 border border-gray-800 block">
-
-<div><h3 class="font-bold">All Legendary Armaments & Where to Find Them</h3><p class="text-sm text-textSecondary mt-1">Complete locations for every legendary weapon including the Dark Moon Greatsword and Ruins Greatsword.</p><span class="text-xs text-accent mt-2 inline-block">Read Guide</span></div>
-</a></div>
+<div class="flex items-end justify-between mb-6">
+<div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Trending</p><h2 class="text-2xl font-black">Hot Topics This Month</h2></div>
+<a href="/guides/bosses/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
 </div>
-<div class="hidden lg:block"><div class="sticky top-24"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="HALFPAGE"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
+<div class="grid lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2"><div class="space-y-3"><a href="/guides/bosses/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<h3 class="font-bold text-lg group-hover:text-accent transition-colors">Shadow of the Erdtree: Complete DLC Boss Guide</h3>
+<p class="text-base text-textSecondary mt-1.5">Every remembrance boss in the Land of Shadow — movesets, weaknesses, summon strategies, and reward breakdown.</p>
+<span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
+</div>
+</a><a href="/guides/builds/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<h3 class="font-bold text-lg group-hover:text-accent transition-colors">Best Builds for NG+7: One-Shot Boss Killers</h3>
+<p class="text-base text-textSecondary mt-1.5">The most broken PvE builds that still work at max scaling — bleed, magic, and faith builds ranked.</p>
+<span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
+</div>
+</a><a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<h3 class="font-bold text-lg group-hover:text-accent transition-colors">All Legendary Armaments & Where to Find Them</h3>
+<p class="text-base text-textSecondary mt-1.5">Complete locations for every legendary weapon including the Dark Moon Greatsword and Ruins Greatsword.</p>
+<span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
+</div>
+</a></div></div>
+<div class="hidden lg:block"><div class="sticky top-24"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="4397738132"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
 </div></section>
+
 
 <!-- Ad: 970x250 -->
-<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="BILLBOARD2"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9739511410"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
-<!-- Character Spotlight -->
-
-
-<!-- Category Index -->
 <section class="max-w-7xl mx-auto px-4 py-8">
-<h2 class="text-3xl font-black mb-8">Every Guide Category</h2>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
-<div class="flex items-center gap-3 mb-4"><h3 class="font-bold text-lg"><a href="/guides/bosses/" class="hover:text-accent transition-colors">Bosses</a></h3></div>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="/guides/bosses/" class="hover:text-accent transition-colors">Bosses — Complete Guide</a></li>
-</ul>
-<a href="/guides/bosses/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">165+ guides</a>
-</div><div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
-<div class="flex items-center gap-3 mb-4"><h3 class="font-bold text-lg"><a href="/guides/builds/" class="hover:text-accent transition-colors">Builds</a></h3></div>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="/guides/builds/" class="hover:text-accent transition-colors">Builds — Complete Guide</a></li>
-</ul>
-<a href="/guides/builds/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">40+ guides</a>
-</div><div class="bg-bgCard rounded-xl p-6 border border-gray-800 hover:border-accent/30 transition-all">
-<div class="flex items-center gap-3 mb-4"><h3 class="font-bold text-lg"><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons</a></h3></div>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons — Complete Guide</a></li>
-</ul>
-<a href="/guides/weapons/" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">300+ guides</a>
+<div class="flex items-end justify-between mb-8">
+<h2 class="text-3xl font-black">Every Guide Category</h2>
+<a href="/guides/bosses/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
 </div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<a href="/guides/bosses/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ef4444">&#9670;</div></div>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Bosses</h3>
+<p class="text-base text-textSecondary mt-1">Bosses &mdash; Complete Guide</p>
+<span class="text-sm text-accent mt-2 inline-block font-semibold">165+ guides</span>
+</div>
+</a><a href="/guides/builds/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#fbbf24">&#9670;</div></div>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Builds</h3>
+<p class="text-base text-textSecondary mt-1">Builds &mdash; Complete Guide</p>
+<span class="text-sm text-accent mt-2 inline-block font-semibold">40+ guides</span>
+</div>
+</a><a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#3b82f6">&#9670;</div></div>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Weapons</h3>
+<p class="text-base text-textSecondary mt-1">Weapons &mdash; Complete Guide</p>
+<span class="text-sm text-accent mt-2 inline-block font-semibold">300+ guides</span>
+</div>
+</a><a href="/guides/quests/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#a78bfa">&#9670;</div></div>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Quests</h3>
+<p class="text-base text-textSecondary mt-1">Quests &mdash; Complete Guide</p>
+<span class="text-sm text-accent mt-2 inline-block font-semibold">30+ guides</span>
+</div>
+</a><a href="/guides/map/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#4ade80">&#9670;</div></div>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Map</h3>
+<p class="text-base text-textSecondary mt-1">Map &mdash; Complete Guide</p>
+<span class="text-sm text-accent mt-2 inline-block font-semibold">15 guides</span>
+</div>
+</a>
 </div></section>
 
-<footer class="bg-bgSecondary border-t border-gray-800 py-16 px-4">
+
+
+<footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#374151">
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
-<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">T</div>
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">T</div>
 <span class="text-xl font-bold">Tarnished<span class="text-accent">Guide</span></span>
 </div>
-<p class="text-sm text-textSecondary leading-relaxed">Expert game guides. Part of the GameGuide Network.</p>
+<p class="text-sm text-textSecondary leading-relaxed">Expert game guides, tier lists, and walkthroughs. Part of the Game Hub Network.</p>
 </div>
 <div>
 <h4 class="font-bold mb-4">Categories</h4>
@@ -186,6 +286,7 @@ ins.adsbygoogle{display:block}
 <li><a href="/guides/builds/" class="hover:text-accent transition-colors">Builds</a></li>
 <li><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons</a></li>
 <li><a href="/guides/quests/" class="hover:text-accent transition-colors">Quests</a></li>
+<li><a href="/guides/map/" class="hover:text-accent transition-colors">Map</a></li>
 </ul>
 </div>
 <div>
@@ -206,7 +307,7 @@ ins.adsbygoogle{display:block}
 </ul>
 </div>
 </div>
-<div class="max-w-7xl mx-auto mt-12 pt-6 border-t border-gray-800 text-center text-sm text-textSecondary">
+<div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#374151">
 <p>&copy; 2026 TarnishedGuide by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All game trademarks belong to their respective owners.</p>
 </div>
 </footer>
@@ -216,10 +317,25 @@ ins.adsbygoogle{display:block}
 var slides=document.querySelectorAll('.carousel-slide');
 var dots=document.querySelectorAll('.carousel-dot');
 var current=0;
-function goTo(idx){slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
+function goTo(idx){if(!slides.length)return;slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
 dots.forEach(function(dot){dot.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
-setInterval(function(){goTo((current+1)%slides.length)},5000);
+if(slides.length>1)setInterval(function(){goTo((current+1)%slides.length)},5000);
 document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
+
+var searchData=[];
+(function(){var si=document.getElementById('searchInput');var sim=document.getElementById('searchInputMobile');var dd=document.getElementById('searchDropdown');var ddm=document.getElementById('searchDropdownMobile');var focusIdx=-1;
+function loadIdx(){var xhr=new XMLHttpRequest();xhr.open('GET','/search-index.json',true);xhr.onload=function(){if(xhr.status===200){try{searchData=JSON.parse(xhr.responseText)}catch(e){}}};xhr.send()}
+function filter(q,ddEl){focusIdx=-1;ddEl.innerHTML='';if(!q||q.length<2){ddEl.classList.remove('active');return}
+q=q.toLowerCase();var matches=[];for(var i=0;i<searchData.length;i++){var s=searchData[i];if(s.name.toLowerCase().indexOf(q)!==-1||s.desc.toLowerCase().indexOf(q)!==-1){matches.push(s);if(matches.length>=8)break}}
+if(!matches.length){ddEl.innerHTML='<div class="search-empty">No results found</div>';ddEl.classList.add('active');return}
+for(var i=0;i<matches.length;i++){var m=matches[i];var typeColors={character:'rgba(255,107,53,.2)',category:'rgba(100,180,255,.2)',guide:'rgba(100,200,100,.2)',hot_topic:'rgba(255,180,50,.2)'};var tc=m.color||'#888';var div=document.createElement('div');div.className='search-result';div.setAttribute('data-url',m.url);div.innerHTML='<span class="sr-type" style="color:'+tc+';background:'+(typeColors[m.type]||'rgba(150,150,150,.2)')+'">'+m.type.replace('_',' ')+'</span><span style="flex:1;min-width:0"><strong style="display:block;font-size:14px">'+m.name+'</strong><small style="color:#8b949e;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(m.desc||'')+'</small></span>';div.addEventListener('click',function(){{window.location.href=this.getAttribute('data-url')}});ddEl.appendChild(div)}ddEl.classList.add('active')}
+function navigate(ddEl,dir){var items=ddEl.querySelectorAll('.search-result');if(!items.length)return;focusIdx+=dir;if(focusIdx<0)focusIdx=items.length-1;if(focusIdx>=items.length)focusIdx=0;for(var i=0;i<items.length;i++)items[i].classList.toggle('focused',i===focusIdx)}
+function selectFocused(ddEl){var items=ddEl.querySelectorAll('.search-result');if(focusIdx>=0&&focusIdx<items.length)window.location.href=items[focusIdx].getAttribute('data-url')}
+if(si){si.addEventListener('input',function(){{filter(this.value,dd)}});si.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(dd,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(dd,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(dd)}else if(e.key==='Escape'){dd.classList.remove('active')}}});si.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,dd)}});si.addEventListener('blur',function(){{setTimeout(function(){{dd.classList.remove('active')}},200)}})}
+if(sim){sim.addEventListener('input',function(){{filter(this.value,ddm)}});sim.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(ddm,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(ddm,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(ddm)}else if(e.key==='Escape'){ddm.classList.remove('active')}}});sim.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,ddm)}});sim.addEventListener('blur',function(){{setTimeout(function(){{ddm.classList.remove('active')}},200)}})}
+loadIdx();
+})();
+
 })();
 </script>
 </body>

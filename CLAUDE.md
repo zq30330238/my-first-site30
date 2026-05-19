@@ -62,6 +62,12 @@ shared/         → 公共资源
 - 本地源: `C:/Users/Administrator/.claude/plugins/marketplaces/ecc-manual/`
 - 自动更新: 每6小时 git pull + 同步到 `.claude/agents/` `.claude/skills/` `.claude/commands/`
 - 全自动换窗: 每3天自动写交接记忆 → 关旧窗 → 开新窗（cron: `37 9 */3 * *`）
+
+## 自建专用Agent（项目定制，Flash模型执行）
+- **image-pipeline** — 批量下载游戏/动漫角色HD图片，pngwing详情页原图，MD5去重，RGBA转换
+- **site-auditor** — 全站审计：死链/坏图/广告位/SEO/Schema/搜索索引，递归扫描所有HTML
+- 路径: `C:/Users/Administrator/.claude/agents/`
+- 原则: ECC没有就自建，建一次用50站，一劳永逸
 - 健康巡检: 每12小时增量检查（cron: `7 */12 * * *`）
 
 ## 可用技能
@@ -120,6 +126,47 @@ shared/         → 公共资源
   ```
 - 强的成功标准让你能独立循环推进。弱标准（"把它做出来"）需要不断追问。
 - **部署后必须验证线上** — fetch 或浏览器检查实际内容，不能假设成功。
+
+## gstack 虚拟工程团队（Garry Tan, YC President）
+
+gstack 将 Claude Code 变成一支完整的虚拟工程团队，23个专家角色覆盖产品全生命周期。
+
+### 角色分工体系
+
+| 层级 | 角色 | 命令 | 职责 |
+|------|------|------|------|
+| **决策层** | CEO | `/plan-ceo-review` | 扩展视野、挑战假设、找10星产品方案 |
+| | CTO/架构师 | `/plan-eng-review` | 技术选型、架构决策、锁定技术方向 |
+| | 设计师 | `/plan-design-review` `/design-shotgun` | UI/UX审查、反AI味、多方案快速出图 |
+| **质量层** | CSO | `/cso` | OWASP Top 10、STRIDE威胁建模、密钥扫描、供应链审计 |
+| | QA | `/qa` `/browse` | 浏览器实测、响应式检查、交互验证 |
+| | Reviewer | `/review` | 代码审查、逻辑正确性、边界条件 |
+| **执行层** | Planner | `/autoplan` | 一键串联CEO+Eng+Design+DX四审，自动决策 |
+| | Shipper | `/ship` | 合并→测试→版本号→CHANGELOG→PR |
+| | Guard | `/guard` `/careful` | 拦截危险命令、目录保护、prod安全模式 |
+
+### 集成时机（强制执行）
+
+```
+新站启动 → /office-hours（需求挖掘）→ /autoplan（四审自动决策）
+代码完成 → /review（代码审查）
+部署前   → /cso（安全审计）
+部署后   → /qa <URL>（浏览器级线上验证）
+上线后   → /browse（交互走查）+ /retro（回顾）
+```
+
+### 角色对应（绝不越权）
+
+- **强哥** → CEO/产品决策（`/plan-ceo-review`、`/office-hours`）
+- **Claude** → CTO+COO（架构决策、`/plan-eng-review`、`/review`、`/cso`、`/qa`）
+- **Codex/Agent** → 执行层（代码编写、文件修改、渲染生成、批量操作）
+- **Server Cron** → 运维层（nightly_worker、trend_scout、ad_monitor）
+
+### 强制规则
+- **Claude 绝不写执行代码** — 代码类任务统一走 Codex CLI 或后台 Agent（Flash 模型）
+- **每次部署前后必须 `/cso` + `/qa`** — 安全审计通过 + 线上验证通过才算部署完成
+- **新站启动必须先 `/office-hours`** — 不跳过需求挖掘直接建站
+- `/guard` 模式在操作 prod 数据或做危险操作时强制开启
 
 ## 多Agent编排规范（Ralph模式）
 - **并行优先** — 独立子任务用Agent工具并行启动多个Agent，不串行排队

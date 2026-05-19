@@ -28,6 +28,8 @@ ALL_SITES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-tech", "
 SITES_WITH_ARTICLES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-tech", "sub-travel",
     "minecraft-site", "eldenring-site", "lol-site", "fortnite-site", "valorant-site",
     "dragonball-site", "onepiece-site", "naruto-site"]
+GAME_SITES = {"minecraft-site", "eldenring-site", "lol-site", "fortnite-site", "valorant-site",
+    "games-site", "anime-site", "dragonball-site", "onepiece-site", "naruto-site"}
 
 # === Image checks ===
 UNSPLASH_FAKE_RE = re.compile(r'images\.unsplash\.com/photo-(\d{1,9})\?')
@@ -108,9 +110,11 @@ SITE_DOMAINS = {
     "dragonball-site": "dragonball.jycsd.com",
     "onepiece-site": "onepiece.jycsd.com",
     "naruto-site": "naruto.jycsd.com",
+    "anime-site": "anime.jycsd.com",
 }
 
 STOP_WORDS = {'the', 'a', 'an', 'in', 'on', 'to', 'for', 'of', 'and', 'or', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'shall', 'should', 'can', 'could', 'may', 'might', 'must', 'this', 'that', 'these', 'those', 'it', 'its'}
+UTILITY_PAGES = {'about', 'contact', 'cookie-policy', 'privacy-policy', 'terms', 'category-meal-plans', 'category-nutrition', 'category-recipes', 'category-cats', 'category-dogs', 'category-small-pets', 'category-gardening', 'category-interior', 'category-diy', 'category-budgeting', 'category-investing', 'category-credit', 'category-ai', 'category-guides', 'category-reviews', 'category-security', 'category-budget-travel', 'category-destinations', 'category-digital-nomad', 'category-tips', 'category-home', 'category-tech'}
 SKIP_LINK_TEXTS = {'about', 'contact', 'privacy', 'policy', 'home', 'terms', 'categories', 'guides',
     'read more', 'learn more', 'view all', 'back to home', 'subscribe', 'follow us',
     'share', 'tweet', 'pin', 'email', 'print', 'previous', 'next', 'see all',
@@ -129,9 +133,22 @@ def label(filepath):
     return f"{filepath.parent.name}/{filepath.name}"
 
 
-def check_article(filepath):
+def is_utility_page(filepath):
+    """Utility pages don't need ad slots or blockquotes."""
+    stem = filepath.stem
+    if stem in UTILITY_PAGES:
+        return True
+    if stem.startswith('category-'):
+        return True
+    if '-site/' in str(filepath) and stem in ('about', 'contact', 'cookie-policy', 'privacy-policy', 'terms'):
+        return True
+    return False
+
+
+def check_article(filepath, site_dir):
     html = filepath.read_text(encoding="utf-8", errors="ignore")
     name = label(filepath)
+    utility = is_utility_page(filepath)
 
     # === IMAGE CHECKS ===
     # 1a. Fake Unsplash IDs (short numeric, AI-generated)
@@ -206,7 +223,7 @@ def check_article(filepath):
         if href.startswith('#') or href.startswith('javascript:') or href.startswith('mailto:') or href.startswith('tel:'):
             continue
         if href.startswith('http'):
-            for site_dir_key, domain in SITE_DOMAINS.items():
+            for site_dir_key, domain in sorted(SITE_DOMAINS.items(), key=lambda x: -len(x[1])):
                 if domain in href:
                     rel_path = href.split(domain, 1)[1]
                     if rel_path and not rel_path.startswith('//'):
@@ -219,7 +236,7 @@ def check_article(filepath):
                     break
             continue
         if href.startswith('/'):
-            target = file_dir / href.lstrip('/')
+            target = site_dir / href.lstrip('/')
         else:
             target = file_dir / href
         if href.endswith('/'):
@@ -241,7 +258,7 @@ def check_article(filepath):
         if href.startswith('#') or href.startswith('javascript:') or href.startswith('mailto:') or href.startswith('tel:') or href.startswith('http'):
             continue
         if href.startswith('/'):
-            target = file_dir / href.lstrip('/')
+            target = site_dir / href.lstrip('/')
         else:
             target = file_dir / href
         if href.endswith('/'):
@@ -267,34 +284,40 @@ def check_article(filepath):
     bad = [s for s in slots if s in BAD_SLOTS]
     if bad:
         errors.append(f"{name}: BAD ad slots: {bad}")
-    if len(slots) not in (3, 4):
-        errors.append(f"{name}: expected 3-4 ad slots, found {len(slots)}")
+    # Game/anime sites use render_game_site.py with Auto Ads only, no manual ad slots
+    is_game_site = site_dir.name in GAME_SITES
+
+    if not is_game_site:
+        if not utility and len(slots) not in (3, 4):
+            errors.append(f"{name}: expected 3-4 ad slots, found {len(slots)}")
     for s in slots:
         if s not in VALID_SLOTS and s not in BAD_SLOTS:
             warnings.append(f"{name}: unknown ad slot: {s}")
 
     # Ad block integrity
-    ad_push = len(re.findall(r'\(adsbygoogle = window\.adsbygoogle \|\| \[\]\)\.push\(\{\}\)', html))
-    if ad_push != len(slots):
-        errors.append(f"{name}: {len(slots)} ad units but {ad_push} push scripts (mismatch)")
+    if not is_game_site:
+        ad_push = len(re.findall(r'\(adsbygoogle = window\.adsbygoogle \|\| \[\]\)\.push\(\{\}\)', html))
+        if not utility and ad_push != len(slots):
+            errors.append(f"{name}: {len(slots)} ad units but {ad_push} push scripts (mismatch)")
 
-    # Auto Ads script
-    if 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' not in html:
+    # Auto Ads script — check for ALL sites including game sites
+    if not utility and 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' not in html:
         errors.append(f"{name}: missing Auto Ads script")
 
-    # === SEO META ===
-    meta_checks = {
-        "google-adsense-account": 'google-adsense-account',
-        "description": 'name="description"',
-        "og:title": 'property="og:title"',
-        "og:description": 'property="og:description"',
-    }
-    for meta_key, pattern in meta_checks.items():
-        if pattern not in html:
-            errors.append(f"{name}: missing meta tag: {meta_key}")
+    # === SEO META (skip for utility pages)
+    if not utility:
+        meta_checks = {
+            "google-adsense-account": 'google-adsense-account',
+            "description": 'name="description"',
+            "og:title": 'property="og:title"',
+            "og:description": 'property="og:description"',
+        }
+        for meta_key, pattern in meta_checks.items():
+            if pattern not in html:
+                errors.append(f"{name}: missing meta tag: {meta_key}")
 
-    if 'rel="canonical"' not in html:
-        errors.append(f"{name}: missing canonical URL")
+        if 'rel="canonical"' not in html:
+            errors.append(f"{name}: missing canonical URL")
 
     # === CONTENT QUALITY ===
     # Word count
@@ -352,18 +375,19 @@ def check_article(filepath):
         except json.JSONDecodeError:
             errors.append(f"{name}: invalid JSON-LD schema")
 
-    # === DOMAIN CHECK ===
-    site_dir = filepath.parent.name
-    expected_domain = SITE_DOMAINS.get(site_dir)
-    if expected_domain and expected_domain not in html:
-        errors.append(f"{name}: expected domain '{expected_domain}' not found in HTML")
+    # === DOMAIN CHECK (skip utility pages)
+    if not utility:
+        site_dir = filepath.parent.name
+        expected_domain = SITE_DOMAINS.get(site_dir)
+        if expected_domain and expected_domain not in html:
+            errors.append(f"{name}: expected domain '{expected_domain}' not found in HTML")
 
     # === BLOCKQUOTE CHECK ===
-    if '<blockquote' not in html:
+    if not utility and '<blockquote' not in html:
         warnings.append(f"{name}: no blockquote found (articles should have at least one stat/tip)")
 
 
-def check_index(filepath):
+def check_index(filepath, site_dir):
     html = filepath.read_text(encoding="utf-8", errors="ignore")
     name = label(filepath)
 
@@ -413,13 +437,12 @@ def main():
         if not site_dir.exists():
             continue
 
-        for f in sorted(site_dir.glob("article-*.html")):
-            check_article(f)
-            files_checked += 1
-
-        index_file = site_dir / "index.html"
-        if index_file.exists():
-            check_index(index_file)
+        # Scan ALL HTML files recursively (catches sub-pages like guides/*/index.html)
+        for f in sorted(site_dir.glob("**/*.html")):
+            if f.name == "index.html":
+                check_index(f, site_dir)
+            else:
+                check_article(f, site_dir)
             files_checked += 1
 
     if files_checked == 0:

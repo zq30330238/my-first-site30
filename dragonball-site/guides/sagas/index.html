@@ -11,6 +11,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://dragonball.jycsd.com/guides/sagas/">
+<meta name="google-adsense-account" content="ca-pub-2595917642864488">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#ff6b35',accentDark:'#e55a2b'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
@@ -20,8 +21,6 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
-ins.adsbygoogle{display:block}
-.ad-label{text-align:center;color:#9ca3af;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
 .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
 .carousel-slide.active{opacity:1;pointer-events:auto}
 .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
@@ -38,6 +37,23 @@ img[src$=".png"]{mix-blend-mode:normal}
 .search-result:last-child{border-bottom:none}
 .search-result .sr-type{font-size:10px;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:999px;flex-shrink:0}
 .search-empty{padding:20px;text-align:center;color:#8b949e;font-size:14px}
+.masonry-grid{columns:2;column-gap:1rem}
+.masonry-grid>*{break-inside:avoid;margin-bottom:1rem}
+@media(min-width:768px){.masonry-grid{columns:3}}
+@media(min-width:1024px){.masonry-grid{columns:4}}
+@media(min-width:1280px){.masonry-grid{columns:5}}
+.scroll-snap-x{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1rem;scrollbar-width:none;padding-bottom:4px}
+.scroll-snap-x::-webkit-scrollbar{display:none}
+.scroll-snap-x>*{scroll-snap-align:start;flex-shrink:0}
+.gradient-overlay{background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.3) 50%,transparent 100%)}
+.text-shadow{text-shadow:0 2px 8px rgba(0,0,0,0.6)}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.2);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;transition:all .3s;opacity:0}
+.carousel-arrow:hover{background:rgba(255,255,255,0.3)}
+.carousel:hover .carousel-arrow{opacity:1}
+.back-to-top{position:fixed;bottom:32px;right:32px;z-index:999;width:44px;height:44px;border-radius:50%;background:#ff6b35;color:#111;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;opacity:0.35;transition:all .3s;box-shadow:0 4px 15px rgba(255,107,53,.4);border:none}.back-to-top.visible{opacity:1}.back-to-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(255,107,53,.6)}
+.show-more-wrap{text-align:center;margin-top:1.5rem}
+.show-more-btn{display:inline-block;padding:10px 32px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;transition:all .2s;border:2px solid;background:transparent}
+.show-more-btn:hover{transform:translateY(-2px)}
 </style>
 </head>
 <body>
@@ -45,7 +61,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(13,17,23,0.95);border-color:#374151">
 <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
 <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-<img src="/images/goku.png" alt="Dragon Ball Wiki" class="w-10 h-10 object-cover rounded-lg">
+<img src="/images/bulma.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold tracking-tight">Dragon <span class="text-accent">Ball Wiki</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
@@ -93,7 +109,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 </div>
 <div class="hidden md:flex justify-center items-end">
-<img src="/images/goku.png" alt="Sagas — category overview" title="Sagas category" class="char-img h-[380px] max-h-[380px] w-auto object-contain" loading="lazy">
+
 </div>
 </div>
 </div>
@@ -103,263 +119,258 @@ img[src$=".png"]{mix-blend-mode:normal}
 
 
 
-<!-- Ad: 728x90 -->
-<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9112825459"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
 
 
 
-
-<!-- Ad: 970x250 -->
-<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9739511410"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
-
-<a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/goku.png" alt="Characters — 150+ guides" title="Characters category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
+<section class="max-w-7xl mx-auto px-4 py-8">
+<h2 class="text-2xl font-black mb-6">All Categories</h2>
+<div class="flex flex-wrap gap-4 justify-center items-stretch">
+<a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/goku.png" alt="Characters — 114+ guides" title="Characters category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Characters</div>
-<div class="text-sm text-textSecondary mt-1">150+ guides</div>
+<div class="font-bold text-base md:text-lg">Characters</div>
+<div class="text-sm text-textSecondary mt-1">114+ guides</div>
 </div>
-</a>
-<a href="/guides/transformations/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/broly.png" alt="Transformations — 20+ guides" title="Transformations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
+</a><a href="/guides/transformations/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/broly.png" alt="Transformations — 20+ guides" title="Transformations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Transformations</div>
+<div class="font-bold text-base md:text-lg">Transformations</div>
 <div class="text-sm text-textSecondary mt-1">20+ guides</div>
 </div>
-</a>
-<a href="/guides/techniques/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Techniques — 40+ guides" title="Techniques category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
+</a><a href="/guides/techniques/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Techniques — 40+ guides" title="Techniques category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Techniques</div>
+<div class="font-bold text-base md:text-lg">Techniques</div>
 <div class="text-sm text-textSecondary mt-1">40+ guides</div>
 </div>
-</a>
-<a href="/guides/sagas/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/frieza.png" alt="Sagas — 25+ guides" title="Sagas category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
+</a><a href="/guides/sagas/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/frieza.png" alt="Sagas — 25+ guides" title="Sagas category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Sagas</div>
+<div class="font-bold text-base md:text-lg">Sagas</div>
 <div class="text-sm text-textSecondary mt-1">25+ guides</div>
 </div>
-</a>
-<a href="/guides/races/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#ff6b35">&#9670;</div></div>
+</a><a href="/guides/races/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Races & Organizations — 16+ guides" title="Races & Organizations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Races & Organizations</div>
+<div class="font-bold text-base md:text-lg">Races & Organizations</div>
 <div class="text-sm text-textSecondary mt-1">16+ guides</div>
 </div>
-</a><section class="max-w-7xl mx-auto px-4 py-12">
+</a>
+</div></section><section class="max-w-7xl mx-auto px-4 py-12">
 <div class="mb-8"><h2 class="text-3xl font-black">All Sagas</h2><p class="text-textSecondary mt-2">30 saga guides</p></div>
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"><a href="/guides/sagas/tournament-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Tournament Saga" title="Tournament Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Tournament Saga" title="Tournament Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Tournament Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The first Dragon Ball saga. Young Goku meets Bulma, Yamcha, and Master Roshi. Introduces the Tenkaichi Budokai tournament format and the legendary Muten Roshi training.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/red-ribbon-army-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Red Ribbon Army Saga" title="Red Ribbon Army Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/commander-red.png" alt="Red Ribbon Army Saga" title="Red Ribbon Army Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Red Ribbon Army Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Goku battles the Red Ribbon Army across the world to retrieve the Dragon Balls. Introduces Korin Tower, the Sacred Water, and Android 8.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/demon-king-piccolo-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Demon King Piccolo Saga" title="Demon King Piccolo Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Demon King Piccolo Saga" title="Demon King Piccolo Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Demon King Piccolo Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">King Piccolo is released and conquers Earth. Goku drinks the Ultra Divine Water and defeats him with an Oozaru punch through the chest. Krillin's first death.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/23rd-world-tournament-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="23rd World Tournament Saga" title="23rd World Tournament Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="23rd World Tournament Saga" title="23rd World Tournament Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">23rd World Tournament Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Goku vs Piccolo Jr. in the tournament finals. Goku reveals flight and wins the tournament before marrying Chi-Chi. End of original Dragon Ball.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/saiyan-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Saiyan Saga" title="Saiyan Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Saiyan Saga" title="Saiyan Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Saiyan Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Raditz arrives on Earth revealing Goku's Saiyan heritage. Goku sacrifices himself, trains with King Kai, and returns to defeat Nappa and Vegeta in an epic beam clash.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/frieza-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Frieza Saga" title="Frieza Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Frieza Saga" title="Frieza Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Frieza Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Goku and the Z-Fighters travel to Namek. Goku awakens Super Saiyan after Krillin's death and defeats Frieza in the series' most iconic and longest battle.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/cell-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/cell.png" alt="Cell Saga" title="Cell Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/cell.png" alt="Cell Saga" title="Cell Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Cell Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Dr. Gero's ultimate android absorbs Androids 17 and 18 to achieve perfection. Gohan's SSJ2 Father-Son Kamehameha defeats Cell and saves Earth.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/buu-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/buu.png" alt="Buu Saga" title="Buu Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/buu.png" alt="Buu Saga" title="Buu Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Buu Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Majin Buu is unleashed on Earth. From Fat Buu to Kid Buu, the Z-Fighters face an immortal regenerating threat that requires the Spirit Bomb to finally destroy.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/other-world-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Other World Saga" title="Other World Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/king-kai.png" alt="Other World Saga" title="Other World Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Other World Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Goku competes in the Other World Tournament after his death. Faces Pikkon in the finals and learns Super Saiyan 2 and 3 during his time in the afterlife.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/battle-of-gods-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/beerus.png" alt="Battle of Gods Saga" title="Battle of Gods Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/beerus.png" alt="Battle of Gods Saga" title="Battle of Gods Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Battle of Gods Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Beerus awakens seeking the Super Saiyan God. Goku achieves SSJ God through a ritual and earns Beerus' respect in an Earth-shattering battle above the clouds.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/resurrection-f-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Resurrection F Saga" title="Resurrection F Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Resurrection F Saga" title="Resurrection F Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Resurrection F Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Frieza is resurrected and achieves Golden Frieza. Vegeta and Goku unveil Super Saiyan Blue and Whis rewinds time to let Goku finish the battle.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/universe-6-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Universe 6 Saga" title="Universe 6 Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/champa.png" alt="Universe 6 Saga" title="Universe 6 Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Universe 6 Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">A tournament between Universe 7 and 6 introduces Hit, Cabba, Frost, and the Super Dragon Balls. Goku debuts SSJ Blue Kaioken against Hit's Time-Skip.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/sagas/future-trunks-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="Future Trunks Saga" title="Future Trunks Saga" class="w-full h-full object-cover" loading="lazy"></div>
+</a></div><div id="moreAnime" style="display:none"><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"><a href="/guides/sagas/future-trunks-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="Future Trunks Saga" title="Future Trunks Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Future Trunks Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Zamasu steals Goku's body and destroys the future. Vegito Blue faces Fused Zamasu before Future Zeno erases the entire corrupted timeline with absolute power.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/tournament-of-power-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/jiren.png" alt="Tournament of Power Saga" title="Tournament of Power Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/jiren.png" alt="Tournament of Power Saga" title="Tournament of Power Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Tournament of Power Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">8 universes fight for survival in Zeno's tournament. Goku awakens Ultra Instinct, Frieza and Goku team up against Jiren, and Android 17 wins MVP.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/moro-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Moro Saga" title="Moro Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/moro.png" alt="Moro Saga" title="Moro Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Moro Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The planet-eating sorcerer Moro escapes Galactic Prison. Goku masters Ultra Instinct Sign while Merus sacrifices himself to teach the final lesson.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/granolah-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Granolah Saga" title="Granolah Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/granolah.png" alt="Granolah Saga" title="Granolah Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Granolah Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The Cerealian sniper Granolah wishes to become the strongest. Bardock's past is revealed, Black Frieza debuts, and Goku discovers True Ultra Instinct.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/baby-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Baby Saga" title="Baby Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Baby Saga" title="Baby Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Baby Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The Tuffle parasite Baby infests Earth and Vegeta's body. Goku achieves Super Saiyan 4 and defeats Baby Vegeta to restore Earth from Tuffle domination.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/super-17-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/android18.png" alt="Super 17 Saga" title="Super 17 Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/android18.png" alt="Super 17 Saga" title="Super 17 Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Super 17 Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Android 17 from Hell merges with Earth's 17 to form Super 17. Goku's Dragon Fist pierces through the ultimate machine mutant to save the day.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/shadow-dragon-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Shadow Dragon Saga" title="Shadow Dragon Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/omega-shenron.png" alt="Shadow Dragon Saga" title="Shadow Dragon Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Shadow Dragon Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Overuse of Dragon Balls creates seven evil dragons. Goku faces each shadow dragon, culminating in Omega Shenron defeated by the Universal Spirit Bomb.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/super-hero-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/gohan.png" alt="Super Hero Saga" title="Super Hero Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/gohan.png" alt="Super Hero Saga" title="Super Hero Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Super Hero Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The Red Ribbon Army returns with Gamma 1 and 2. Gohan awakens Beast Form and Piccolo achieves Orange form to defeat the resurrected Cell Max.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/fortuneteller-baba-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Fortuneteller Baba Saga" title="Fortuneteller Baba Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/fortuneteller-baba.png" alt="Fortuneteller Baba Saga" title="Fortuneteller Baba Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Fortuneteller Baba Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Goku and friends compete in Baba's tournament to learn the last Dragon Ball's location. Features Goku's emotional reunion with Grandpa Gohan for one night. Introduces Devilman, Spike the Devil Man, and Baba's five supernatural fighters. Episodes 68-78 of original Dragon Ball.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/tien-shinhan-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/tien.png" alt="Tien Shinhan Saga" title="Tien Shinhan Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/tien.png" alt="Tien Shinhan Saga" title="Tien Shinhan Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Tien Shinhan Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The 22nd Tenkaichi Budokai introduces Tien Shinhan and Chiaotzu as Crane School rivals. Master Roshi competes as Jackie Chun while Tien's brutal fighting style shocks the audience. Krillin's first death at the hands of Tambourine kicks off the King Piccolo conflict. Episodes 82-101 of Dragon Ball.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/garlic-jr-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Garlic Jr. Saga" title="Garlic Jr. Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Garlic Jr. Saga" title="Garlic Jr. Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Garlic Jr. Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">A DBZ filler saga set after Frieza's defeat. Garlic Jr. escapes the Dead Zone using the Makyo Star's power and infects Earth's population with the Black Water Mist. Gohan, Krillin, and Piccolo must stop him without Goku's help. Introduces the concept of the Lookout's guardian legacy. Episodes 195-199 of Dragon Ball Z.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/trunks-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="Trunks Saga" title="Trunks Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="Trunks Saga" title="Trunks Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Trunks Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">A mysterious youth arrives and defeats Mecha Frieza with a single sword strike. Trunks reveals the impending Android threat and Goku's fatal heart virus, setting the Z-Fighters on a three-year training race against time. The saga that bridges Frieza's return and the Android apocalypse.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/androids-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/android18.png" alt="Androids Saga" title="Androids Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/android18.png" alt="Androids Saga" title="Androids Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Androids Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Androids 19 and 20 (Dr. Gero) attack, forcing the Z-Fighters to defend Earth. Vegeta reveals Super Saiyan to destroy Android 19. Androids 16, 17, and 18 awaken, defeating the Z-Fighters effortlessly. Cell emerges from the future, beginning his hunt to absorb the androids.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/fusion-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Fusion Saga" title="Fusion Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Fusion Saga" title="Fusion Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Fusion Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Super Buu emerges after absorbing Gotenks and Piccolo, eventually absorbing Ultimate Gohan to become Buuhan. Goku and Vegeta fuse into Vegito to counter Buu's overwhelming power. The saga showcases every fusion method and Buu's most dangerous forms.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/kid-buu-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/buu.png" alt="Kid Buu Saga" title="Kid Buu Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/buu.png" alt="Kid Buu Saga" title="Kid Buu Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Kid Buu Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The final DBZ saga. Kid Buu destroys Earth, forcing Goku and Vegeta to fight on the Sacred World of the Kais. Vegeta's speech acknowledging Goku as the best, Mr. Satan's crucial role, and the massive Spirit Bomb powered by Earth's entire population bring DBZ to its climactic finale.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/broly-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/broly.png" alt="Broly Saga" title="Broly Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/broly.png" alt="Broly Saga" title="Broly Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Broly Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The canon reintroduction of Broly in Dragon Ball Super. Paragus brings Broly to Earth seeking revenge on Vegeta's family. Broly's rage-fueled power growth forces Goku and Vegeta to fuse into Gogeta. A visual spectacle of escalating Saiyan combat with Cheelai and Lemo providing Broly's redemption arc. DBS: Broly movie (2018).</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/black-star-dragon-ball-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Black Star Dragon Ball Saga" title="Black Star Dragon Ball Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/syn_shenron.png" alt="Black Star Dragon Ball Saga" title="Black Star Dragon Ball Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Black Star Dragon Ball Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The opening saga of Dragon Ball GT. Pilaf accidentally turns Goku back into a child using the Black Star Dragon Balls. Goku, Trunks, and Pan embark on a universal quest to recover the balls before Earth explodes from the Black Star energy buildup. Introduces the Grand Tour format and GT's unique premise.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
 </a><a href="/guides/sagas/daima-saga.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Daima Saga" title="Daima Saga" class="w-full h-full object-cover" loading="lazy"></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Daima Saga" title="Daima Saga" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Daima Saga</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">A conspiracy turns Goku and all his friends into children through the Demon Realm Dragon Balls. Goku ventures into the Demon Realm with Supreme Kai (Shin), Glorio, and Panzy to confront King Gomah. Features new lore about Namekian origins, Majin Buu's creation, and Super Saiyan 3 Vegeta.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a></div></section>
+</a></div></div>
+<div class="show-more-wrap"><button class="show-more-btn" style="color:#ff6b35;border-color:#ff6b35" onclick="var el=document.getElementById('moreAnime'),btn=this;el.style.display=el.style.display==='none'?'block':'none';btn.textContent=el.style.display==='none'?'Show All':'Show Less'">Show All (18 more)</button></div></section>
 
 
 
@@ -367,7 +378,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
-<img src="/images/goku.png" alt="Dragon Ball Wiki" class="w-10 h-10 object-cover rounded-lg">
+<img src="/images/bulma.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold">Dragon <span class="text-accent">Ball Wiki</span></span>
 </div>
 <p class="text-sm text-textSecondary leading-relaxed">Expert anime character guides, power system breakdowns, and arc analyses. Part of the Anime Hub Network.</p>
@@ -396,7 +407,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <ul class="space-y-2 text-sm text-textSecondary">
 <li><a href="/about.html" class="hover:text-accent transition-colors">About</a></li>
 <li><a href="/contact.html" class="hover:text-accent transition-colors">Contact</a></li>
-<li><a href="/sitemap.xml" class="hover:text-accent transition-colors">Sitemap</a></li>
+<li><a href="/sitemap.html" class="hover:text-accent transition-colors">Sitemap</a></li>
 </ul>
 </div>
 </div>
@@ -406,14 +417,18 @@ img[src$=".png"]{mix-blend-mode:normal}
 </footer>
 
 <script>
+function toggleReadMore(){var s=document.getElementById('descShort');var f=document.getElementById('descFull');var t=document.getElementById('descToggle');if(!f)return;if(f.style.display==='none'||!f.style.display){f.style.display='inline';s.style.display='none';t.textContent=' Read less';}else{f.style.display='none';s.style.display='inline';t.textContent='... Read more';}}
 (function(){
 var slides=document.querySelectorAll('.carousel-slide');
 var dots=document.querySelectorAll('.carousel-dot');
 var current=0;
 function goTo(idx){if(!slides.length)return;slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
 dots.forEach(function(dot){dot.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
+document.getElementById('carouselPrev')?.addEventListener('click',function(){goTo((current-1+slides.length)%slides.length)});
+document.getElementById('carouselNext')?.addEventListener('click',function(){goTo((current+1)%slides.length)});
 if(slides.length>1)setInterval(function(){goTo((current+1)%slides.length)},5000);
 document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
+var btt=document.getElementById('backToTop');if(btt){window.addEventListener('scroll',function(){if(window.scrollY>300){btt.classList.add('visible')}else{btt.classList.remove('visible')}});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})}
 
 var searchData=[];
 (function(){var si=document.getElementById('searchInput');var sim=document.getElementById('searchInputMobile');var dd=document.getElementById('searchDropdown');var ddm=document.getElementById('searchDropdownMobile');var focusIdx=-1;
@@ -424,12 +439,13 @@ if(!matches.length){ddEl.innerHTML='<div class="search-empty">No results found</
 for(var i=0;i<matches.length;i++){var m=matches[i];var typeColors={character:'rgba(255,107,53,.2)',category:'rgba(100,180,255,.2)',guide:'rgba(100,200,100,.2)',hot_topic:'rgba(255,180,50,.2)'};var tc=m.color||'#888';var div=document.createElement('div');div.className='search-result';div.setAttribute('data-url',m.url);div.innerHTML='<span class="sr-type" style="color:'+tc+';background:'+(typeColors[m.type]||'rgba(150,150,150,.2)')+'">'+m.type.replace('_',' ')+'</span><span style="flex:1;min-width:0"><strong style="display:block;font-size:14px">'+m.name+'</strong><small style="color:#8b949e;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(m.desc||'')+'</small></span>';div.addEventListener('click',function(){{window.location.href=this.getAttribute('data-url')}});ddEl.appendChild(div)}ddEl.classList.add('active')}
 function navigate(ddEl,dir){var items=ddEl.querySelectorAll('.search-result');if(!items.length)return;focusIdx+=dir;if(focusIdx<0)focusIdx=items.length-1;if(focusIdx>=items.length)focusIdx=0;for(var i=0;i<items.length;i++)items[i].classList.toggle('focused',i===focusIdx)}
 function selectFocused(ddEl){var items=ddEl.querySelectorAll('.search-result');if(focusIdx>=0&&focusIdx<items.length)window.location.href=items[focusIdx].getAttribute('data-url')}
-if(si){si.addEventListener('input',function(){{filter(this.value,dd)}});si.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(dd,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(dd,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(dd)}else if(e.key==='Escape'){dd.classList.remove('active')}}});si.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,dd)}});si.addEventListener('blur',function(){{setTimeout(function(){{dd.classList.remove('active')}},200)}})}
-if(sim){sim.addEventListener('input',function(){{filter(this.value,ddm)}});sim.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(ddm,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(ddm,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(ddm)}else if(e.key==='Escape'){ddm.classList.remove('active')}}});sim.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,ddm)}});sim.addEventListener('blur',function(){{setTimeout(function(){{ddm.classList.remove('active')}},200)}})}
+if(si){si.addEventListener('input',function(){{filter(this.value,dd)}});si.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(dd,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(dd,-1)}else if(e.key==='Enter'){e.preventDefault();if(focusIdx<0){focusIdx=0;var fi=dd.querySelectorAll('.search-result');if(fi.length>0)window.location.href=fi[0].getAttribute('data-url')}else{selectFocused(dd)}}else if(e.key==='Escape'){dd.classList.remove('active')}}});si.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,dd)}});si.addEventListener('blur',function(){{setTimeout(function(){{dd.classList.remove('active')}},200)}})}
+if(sim){sim.addEventListener('input',function(){{filter(this.value,ddm)}});sim.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(ddm,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(ddm,-1)}else if(e.key==='Enter'){e.preventDefault();if(focusIdx<0){focusIdx=0;var fi=ddm.querySelectorAll('.search-result');if(fi.length>0)window.location.href=fi[0].getAttribute('data-url')}else{selectFocused(ddm)}}else if(e.key==='Escape'){ddm.classList.remove('active')}}});sim.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,ddm)}});sim.addEventListener('blur',function(){{setTimeout(function(){{ddm.classList.remove('active')}},200)}})}
 loadIdx();
 })();
 
 })();
 </script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
 </body>
 </html>

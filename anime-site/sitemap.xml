@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://anime.jycsd.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://anime.jycsd.com/guides/dragonball/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://anime.jycsd.com/guides/onepiece/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://anime.jycsd.com/guides/naruto/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://anime.jycsd.com/guides/demonslayer/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://anime.jycsd.com/guides/jjk/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://anime.jycsd.com/guides/aot/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+</urlset>

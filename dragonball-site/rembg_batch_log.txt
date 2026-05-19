@@ -1,0 +1,147 @@
+
+========================================
+REMBG Batch Summary
+========================================
+Total PNGs: 132
+Success:   131
+Failed:    1
+Poor edge: 0
+Time:      151.2s (2.5min)
+Speed:     0.9 img/s
+Input:     43.2MB
+Output:    39.8MB
+========================================
+
+Detail Log:
+[OK]   android-16.png: (920, 1227) -> (920, 1227), removed=0.0%, 0.9s
+[FAIL] android-17.png: image file is truncated
+[OK]   android-19.png: (920, 1707) -> (920, 1707), removed=0.0%, 1.5s
+[OK]   android18.png: (920, 949) -> (920, 949), removed=0.0%, 0.8s
+[OK]   android_13.png: (900, 1216) -> (900, 1216), removed=0.0%, 1.0s
+[OK]   android_15.png: (900, 775) -> (900, 775), removed=0.0%, 1.0s
+[OK]   anilaza.png: (900, 555) -> (900, 555), removed=0.0%, 0.9s
+[OK]   babidi.png: (920, 1067) -> (920, 1067), removed=0.0%, 1.3s
+[OK]   baby.png: (920, 1032) -> (920, 1032), removed=0.0%, 1.1s
+[OK]   bardock-dbs.png: (900, 497) -> (900, 497), removed=0.0%, 0.9s
+[OK]   bardock.png: (920, 604) -> (920, 604), removed=0.0%, 1.2s
+[OK]   beerus.png: (920, 3045) -> (920, 3045), removed=0.0%, 1.0s
+[OK]   bojack.png: (920, 902) -> (920, 902), removed=0.0%, 1.1s
+[OK]   botamo.png: (900, 1350) -> (900, 1350), removed=0.0%, 0.9s
+[OK]   broly.png: (920, 734) -> (920, 734), removed=0.0%, 0.8s
+[OK]   bulma.png: (920, 864) -> (920, 864), removed=0.0%, 1.2s
+[OK]   burter.png: (920, 1519) -> (920, 1519), removed=0.0%, 1.0s
+[OK]   buu.png: (920, 2819) -> (920, 2819), removed=0.0%, 1.0s
+[OK]   cabba.png: (920, 920) -> (920, 920), removed=0.0%, 1.2s
+[OK]   captain-ginyu.png: (920, 640) -> (920, 640), removed=0.0%, 0.8s
+[OK]   caulifla.png: (920, 1200) -> (920, 1200), removed=0.0%, 1.0s
+[OK]   cell-juniors.png: (920, 782) -> (920, 782), removed=0.0%, 1.0s
+[OK]   cell.png: (920, 1257) -> (920, 1257), removed=0.0%, 1.0s
+[OK]   champa.png: (900, 1064) -> (900, 1064), removed=0.0%, 1.2s
+[OK]   chiaotzu.png: (900, 2239) -> (900, 2239), removed=0.0%, 1.3s
+[OK]   chichi.png: (920, 1139) -> (920, 1139), removed=0.0%, 1.1s
+[OK]   cooler.png: (920, 1095) -> (920, 1095), removed=0.0%, 1.4s
+[OK]   dabura.png: (920, 1567) -> (920, 1567), removed=0.0%, 1.1s
+[OK]   degesu.png: (900, 720) -> (900, 720), removed=0.0%, 1.5s
+[OK]   demon-king-piccolo.png: (920, 1007) -> (920, 1007), removed=0.0%, 1.5s
+[OK]   dende.png: (900, 1081) -> (900, 1081), removed=0.0%, 1.4s
+[OK]   dodoria.png: (920, 1409) -> (920, 1409), removed=0.0%, 1.2s
+[OK]   dr-gero.png: (920, 920) -> (920, 920), removed=0.0%, 1.3s
+[OK]   dr-wheelo.png: (920, 920) -> (920, 920), removed=0.0%, 1.3s
+[OK]   emperor-pilaf.png: (920, 830) -> (920, 830), removed=0.0%, 1.1s
+[OK]   frieza.png: (920, 955) -> (920, 955), removed=0.0%, 1.1s
+[OK]   future-gohan.png: (900, 1264) -> (900, 1264), removed=0.0%, 1.2s
+[OK]   future-trunks.png: (920, 2150) -> (920, 2150), removed=0.0%, 1.0s
+[OK]   garlic-jr.png: (920, 1221) -> (920, 1221), removed=0.0%, 1.5s
+[OK]   gas.png: (920, 900) -> (920, 900), removed=0.0%, 1.5s
+[OK]   general-blue.png: (900, 900) -> (900, 900), removed=0.0%, 1.5s
+[OK]   general-rilldo.png: (920, 1073) -> (920, 1073), removed=0.0%, 1.1s
+[OK]   gine.png: (920, 990) -> (920, 990), removed=0.0%, 1.7s
+[OK]   giru.png: (920, 931) -> (920, 931), removed=0.0%, 1.4s
+[OK]   glorio.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.9s
+[OK]   gogeta.png: (900, 1023) -> (900, 1023), removed=0.0%, 0.7s
+[OK]   gohan.png: (920, 1734) -> (920, 1734), removed=0.0%, 0.9s
+[OK]   goku-black.png: (900, 1096) -> (900, 1096), removed=0.0%, 0.7s
+[OK]   goku.png: (920, 1613) -> (920, 1613), removed=0.0%, 0.7s
+[OK]   goten.png: (920, 1214) -> (920, 1214), removed=0.0%, 0.7s
+[OK]   grand-kai.png: (920, 928) -> (920, 928), removed=0.0%, 0.9s
+[OK]   grandpa-gohan.png: (900, 564) -> (900, 564), removed=0.0%, 0.6s
+[OK]   granolah.png: (920, 918) -> (920, 918), removed=0.0%, 1.0s
+[OK]   guldo.png: (920, 1264) -> (920, 1264), removed=0.0%, 0.8s
+[OK]   hatchiyack.png: (920, 920) -> (920, 920), removed=0.0%, 0.8s
+[OK]   hirudegarn.png: (920, 767) -> (920, 767), removed=0.0%, 1.0s
+[OK]   hit.png: (920, 1059) -> (920, 1059), removed=0.0%, 0.8s
+[OK]   jaco.png: (920, 523) -> (920, 523), removed=0.0%, 0.8s
+[OK]   janemba.png: (920, 1227) -> (920, 1227), removed=0.0%, 0.7s
+[OK]   jeice.png: (920, 1037) -> (920, 1037), removed=0.0%, 0.6s
+[OK]   jiren.png: (920, 915) -> (920, 915), removed=0.0%, 0.7s
+[OK]   kale.png: (920, 793) -> (920, 793), removed=0.0%, 0.5s
+[OK]   kami.png: (920, 1580) -> (920, 1580), removed=0.0%, 0.6s
+[OK]   kefla.png: (920, 1917) -> (920, 1917), removed=0.0%, 0.4s
+[OK]   kibito.png: (920, 1122) -> (920, 1122), removed=0.0%, 0.5s
+[OK]   kid-buu.png: (900, 718) -> (900, 718), removed=0.0%, 0.6s
+[OK]   kid-trunks.png: (920, 2819) -> (920, 2819), removed=0.0%, 1.0s
+[OK]   king-cold.png: (920, 1200) -> (920, 1200), removed=0.0%, 0.6s
+[OK]   king-gomah.png: (920, 868) -> (920, 868), removed=0.0%, 1.4s
+[OK]   king-kai.png: (900, 1129) -> (900, 1129), removed=0.0%, 2.4s
+[OK]   king-vegeta.png: (920, 1793) -> (920, 1793), removed=0.0%, 1.2s
+[OK]   king-yemma.png: (920, 815) -> (920, 815), removed=0.0%, 0.9s
+[OK]   korin.png: (920, 1023) -> (920, 1023), removed=0.0%, 1.8s
+[OK]   krillin.png: (920, 1873) -> (920, 1873), removed=0.0%, 1.1s
+[OK]   lavender.png: (900, 1355) -> (900, 1355), removed=0.0%, 1.4s
+[OK]   lord-slug.png: (920, 438) -> (920, 438), removed=0.0%, 0.6s
+[OK]   mai.png: (920, 682) -> (920, 682), removed=0.0%, 0.5s
+[OK]   merus.png: (920, 954) -> (920, 954), removed=0.0%, 0.6s
+[OK]   moro.png: (920, 902) -> (920, 902), removed=0.0%, 0.5s
+[OK]   mr-popo.png: (920, 691) -> (920, 691), removed=0.0%, 0.5s
+[OK]   mr-satan.png: (920, 1313) -> (920, 1313), removed=0.0%, 0.5s
+[OK]   mr.-satan.png: (900, 806) -> (900, 806), removed=0.0%, 0.6s
+[OK]   nail.png: (900, 768) -> (900, 768), removed=0.0%, 0.6s
+[OK]   nappa.png: (920, 1333) -> (920, 1333), removed=0.0%, 0.5s
+[OK]   omega-shenron.png: (920, 894) -> (920, 894), removed=0.0%, 0.5s
+[OK]   oolong.png: (920, 1035) -> (920, 1035), removed=0.0%, 0.6s
+[OK]   pan-gt.png: (920, 3239) -> (920, 3239), removed=0.0%, 0.7s
+[OK]   pan.png: (900, 683) -> (900, 683), removed=0.0%, 1.3s
+[OK]   panzy.png: (920, 833) -> (920, 833), removed=0.0%, 0.6s
+[OK]   paragus.png: (920, 586) -> (920, 586), removed=0.0%, 0.4s
+[OK]   piccolo.png: (920, 1349) -> (920, 1349), removed=0.0%, 1.0s
+[OK]   piccolo_jr.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.7s
+[OK]   pikkon.png: (920, 1227) -> (920, 1227), removed=0.0%, 0.7s
+[OK]   pilina.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.5s
+[OK]   puar.png: (920, 800) -> (920, 800), removed=0.0%, 0.6s
+[OK]   raditz.png: (920, 1349) -> (920, 1349), removed=0.0%, 0.6s
+[OK]   ranfan.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.6s
+[OK]   recoome.png: (920, 1741) -> (920, 1741), removed=0.0%, 0.6s
+[OK]   roshi.png: (920, 920) -> (920, 920), removed=0.0%, 0.7s
+[OK]   saonel.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.5s
+[OK]   seven-three.png: (920, 920) -> (920, 920), removed=0.0%, 1.3s
+[OK]   shen_hero.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.6s
+[OK]   shenron.png: (900, 425) -> (900, 425), removed=0.0%, 0.6s
+[OK]   shin.png: (900, 640) -> (900, 640), removed=0.0%, 0.9s
+[OK]   shu.png: (920, 739) -> (920, 739), removed=0.0%, 0.5s
+[OK]   south_kai.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.6s
+[OK]   spike.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.7s
+[OK]   staff_officer_black.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.7s
+[OK]   suno.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.5s
+[OK]   super-17.png: (920, 1527) -> (920, 1527), removed=0.0%, 0.7s
+[OK]   supreme-kai.png: (920, 785) -> (920, 785), removed=0.0%, 0.8s
+[OK]   syn_shenron.png: (900, 1024) -> (900, 1024), removed=0.0%, 0.9s
+[OK]   tambourine.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.7s
+[OK]   tao_pai_pai.png: (900, 1355) -> (900, 1355), removed=0.0%, 1.0s
+[OK]   tapion.png: (920, 690) -> (920, 690), removed=0.0%, 0.7s
+[OK]   tarble.png: (920, 1200) -> (920, 1200), removed=0.0%, 0.6s
+[OK]   tien.png: (920, 1600) -> (920, 1600), removed=0.0%, 0.6s
+[OK]   toppo.png: (920, 1257) -> (920, 1257), removed=0.0%, 0.7s
+[OK]   trunks.png: (920, 1219) -> (920, 1219), removed=0.0%, 0.6s
+[OK]   turles.png: (920, 996) -> (920, 996), removed=0.0%, 0.7s
+[OK]   upa.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.6s
+[OK]   uub.png: (900, 1043) -> (900, 1043), removed=0.0%, 0.8s
+[OK]   vados.png: (900, 679) -> (900, 679), removed=0.0%, 0.5s
+[OK]   vegeta.png: (900, 1269) -> (900, 1269), removed=0.0%, 0.7s
+[OK]   videl.png: (920, 2613) -> (920, 2613), removed=0.0%, 0.6s
+[OK]   west_kai.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.8s
+[OK]   whis.png: (920, 1129) -> (920, 1129), removed=0.0%, 0.7s
+[OK]   yajirobe.png: (920, 1159) -> (920, 1159), removed=0.0%, 0.6s
+[OK]   yamcha.png: (900, 1412) -> (900, 1412), removed=0.0%, 0.5s
+[OK]   zamasu.png: (900, 1080) -> (900, 1080), removed=0.0%, 0.7s
+[OK]   zarbon.png: (920, 1451) -> (920, 1451), removed=0.0%, 0.7s
+[OK]   zuno.png: (900, 1355) -> (900, 1355), removed=0.0%, 0.6s

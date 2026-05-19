@@ -90,7 +90,7 @@
         ],
         "color": "#FF6B35",
         "image": "goku.png",
-        "link": "characters/son-goku",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Team Universe 7",
@@ -167,7 +167,7 @@
         ],
         "color": "#4EA8DE",
         "image": "vegeta.png",
-        "link": "characters/vegeta",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Team Universe 7",
@@ -235,7 +235,7 @@
         ],
         "color": "#C084FC",
         "image": "gohan.png",
-        "link": "characters/gohan",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Team Universe 7",
@@ -304,7 +304,7 @@
         ],
         "color": "#4ADE80",
         "image": "piccolo.png",
-        "link": "characters/piccolo",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Team Universe 7",
@@ -372,7 +372,7 @@
         ],
         "color": "#A855F7",
         "image": "frieza.png",
-        "link": "characters/frieza",
+        "link": "/guides/characters/",
         "affiliations": [
           "Frieza Force (supreme leader)",
           "Team Universe 7 (temporary)",
@@ -436,7 +436,7 @@
         ],
         "color": "#22D3EE",
         "image": "cell.png",
-        "link": "characters/cell",
+        "link": "/guides/characters/",
         "affiliations": [
           "Red Ribbon Army (created by)",
           "Cell Juniors (creator of)"
@@ -494,7 +494,7 @@
         ],
         "color": "#F472B6",
         "image": "buu.png",
-        "link": "characters/majin-buu",
+        "link": "/guides/characters/",
         "affiliations": [
           "Babidi's Forces (formerly controlled)",
           "Z-Fighter Allies (Fat Buu)"
@@ -555,7 +555,7 @@
         ],
         "color": "#FBBF24",
         "image": "trunks.png",
-        "link": "characters/trunks",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Team Universe 7",
@@ -622,7 +622,7 @@
         ],
         "color": "#3B82F6",
         "image": "bulma.png",
-        "link": "characters/bulma",
+        "link": "/guides/characters/",
         "affiliations": [
           "Capsule Corporation (heir/CEO)",
           "Z-Fighters (support/logistics)",
@@ -686,7 +686,7 @@
         ],
         "color": "#EF4444",
         "image": "krillin.png",
-        "link": "characters/krillin",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Team Universe 7",
@@ -748,7 +748,7 @@
         ],
         "color": "#A855F7",
         "image": "beerus.png",
-        "link": "characters/beerus",
+        "link": "/guides/characters/",
         "affiliations": [
           "God of Destruction of Universe 7",
           "Divine Hierarchy",
@@ -809,7 +809,7 @@
         ],
         "color": "#818CF8",
         "image": "whis.png",
-        "link": "characters/whis",
+        "link": "/guides/characters/",
         "affiliations": [
           "Divine Hierarchy",
           "Angel Corps",
@@ -865,7 +865,7 @@
         ],
         "color": "#4ADE80",
         "image": "broly.png",
-        "link": "characters/broly",
+        "link": "/guides/characters/",
         "affiliations": [
           "Beerus's Planet (training)",
           "Z-Fighter Allies",
@@ -919,7 +919,7 @@
         ],
         "color": "#EF4444",
         "image": "jiren.png",
-        "link": "characters/jiren",
+        "link": "/guides/characters/",
         "affiliations": [
           "Pride Troopers",
           "Team Universe 11"
@@ -978,7 +978,7 @@
         ],
         "color": "#22D3EE",
         "image": "tien.png",
-        "link": "characters/tien-shinhan",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Team Universe 7",
@@ -1033,7 +1033,7 @@
         ],
         "color": "#FBBF24",
         "image": "yamcha.png",
-        "link": "characters/yamcha",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Kame School (former)",
@@ -1093,7 +1093,7 @@
         ],
         "color": "#6B7280",
         "image": "roshi.png",
-        "link": "characters/master-roshi",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Team Universe 7",
@@ -1151,7 +1151,7 @@
         ],
         "color": "#F472B6",
         "image": "android18.png",
-        "link": "characters/android-18",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Team Universe 7",
@@ -1210,7 +1210,7 @@
         ],
         "color": "#F97316",
         "image": "goten.png",
-        "link": "characters/goten",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Son Family"
@@ -1271,7 +1271,7 @@
         ],
         "color": "#F43F5E",
         "image": "chichi.png",
-        "link": "characters/chi-chi",
+        "link": "/guides/characters/",
         "affiliations": [
           "Son Family",
           "Ox-King Family",
@@ -1330,8 +1330,8 @@
           }
         ],
         "color": "#10B981",
-        "image": "__missing__",
-        "link": "characters/android-17",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Team Universe 7",
           "Z-Fighter Allies",
@@ -1384,8 +1384,8 @@
           }
         ],
         "color": "#FE5BAC",
-        "image": "__missing__",
-        "link": "characters/kid-buu",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "None (pure independent chaos)"
         ]
@@ -1436,8 +1436,8 @@
           }
         ],
         "color": "#EC4899",
-        "image": "__missing__",
-        "link": "characters/videl",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighter Allies",
           "Great Saiyaman Duo",
@@ -1495,8 +1495,8 @@
           }
         ],
         "color": "#FB7185",
-        "image": "__missing__",
-        "link": "characters/pan",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Son Family",
           "Z-Fighter Next Generation"
@@ -1545,8 +1545,8 @@
           }
         ],
         "color": "#F472B6",
-        "image": "__missing__",
-        "link": "characters/uub",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Son Family Training Lineage"
@@ -1601,8 +1601,8 @@
           }
         ],
         "color": "#93C5FD",
-        "image": "__missing__",
-        "link": "characters/future-trunks",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Time Patrol (unofficial)",
           "Z-Fighter Allies",
@@ -1653,8 +1653,8 @@
           }
         ],
         "color": "#E879F9",
-        "image": "__missing__",
-        "link": "characters/chiaotzu",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighters",
           "Tien-Shin Dojo",
@@ -1701,8 +1701,8 @@
           }
         ],
         "color": "#FDA4AF",
-        "image": "__missing__",
-        "link": "characters/future-gohan",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Future Earth Resistance",
           "Z-Fighters (last survivor)"
@@ -1755,8 +1755,8 @@
           }
         ],
         "color": "#A16207",
-        "image": "__missing__",
-        "link": "characters/mr-satan",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Satan Family",
           "World Martial Arts Tournament (reigning champion)",
@@ -1805,8 +1805,8 @@
           }
         ],
         "color": "#78716C",
-        "image": "__missing__",
-        "link": "characters/yajirobe",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighter Allies",
           "Korin Tower (resident)",
@@ -1857,8 +1857,8 @@
           }
         ],
         "color": "#F5F5F4",
-        "image": "__missing__",
-        "link": "characters/korin",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Korin Tower (Guardian)",
           "Earth's Divine Hierarchy"
@@ -1910,8 +1910,8 @@
           }
         ],
         "color": "#16A34A",
-        "image": "__missing__",
-        "link": "characters/shenron",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Earth's Dragon Balls (bound to)",
           "Divine Constructs"
@@ -1962,8 +1962,8 @@
           }
         ],
         "color": "#334155",
-        "image": "__missing__",
-        "link": "characters/raditz",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Frieza Force",
           "Saiyan Army (former)",
@@ -2015,8 +2015,8 @@
           }
         ],
         "color": "#D97706",
-        "image": "__missing__",
-        "link": "characters/nappa",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Frieza Force",
           "Saiyan Army (former)",
@@ -2069,8 +2069,8 @@
           }
         ],
         "color": "#B91C1C",
-        "image": "__missing__",
-        "link": "characters/bardock",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Saiyan Army (former)",
           "Bardock's Squad (leader)"
@@ -2125,8 +2125,8 @@
           }
         ],
         "color": "#7C3AED",
-        "image": "__missing__",
-        "link": "characters/captain-ginyu",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Ginyu Force (captain)",
           "Frieza Force"
@@ -2180,8 +2180,8 @@
           }
         ],
         "color": "#F59E0B",
-        "image": "__missing__",
-        "link": "characters/recoome",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Ginyu Force",
           "Frieza Force"
@@ -2232,8 +2232,8 @@
           }
         ],
         "color": "#2563EB",
-        "image": "__missing__",
-        "link": "characters/burter",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Ginyu Force",
           "Frieza Force"
@@ -2283,8 +2283,8 @@
           }
         ],
         "color": "#EF4444",
-        "image": "__missing__",
-        "link": "characters/jeice",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Ginyu Force",
           "Frieza Force"
@@ -2339,8 +2339,8 @@
           }
         ],
         "color": "#4ADE80",
-        "image": "__missing__",
-        "link": "characters/guldo",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Ginyu Force",
           "Frieza Force"
@@ -2387,8 +2387,8 @@
           }
         ],
         "color": "#10B981",
-        "image": "__missing__",
-        "link": "characters/zarbon",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Frieza Force (Senior Command)"
         ]
@@ -2434,8 +2434,8 @@
           }
         ],
         "color": "#F43F5E",
-        "image": "__missing__",
-        "link": "characters/dodoria",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Frieza Force (Senior Command)"
         ]
@@ -2472,8 +2472,8 @@
           }
         ],
         "color": "#A855F7",
-        "image": "__missing__",
-        "link": "characters/cui",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Frieza Force"
         ]
@@ -2518,8 +2518,8 @@
           }
         ],
         "color": "#475569",
-        "image": "__missing__",
-        "link": "characters/king-cold",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Planet Trade Organization (former emperor)",
           "Cold Family"
@@ -2575,8 +2575,8 @@
           }
         ],
         "color": "#6B7280",
-        "image": "__missing__",
-        "link": "characters/dr-gero",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Red Ribbon Army (chief scientist)",
           "Android Corps (creator)"
@@ -2622,8 +2622,8 @@
           }
         ],
         "color": "#F8FAFC",
-        "image": "__missing__",
-        "link": "characters/android-19",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Red Ribbon Army (created by)",
           "Dr. Gero's Android Corps"
@@ -2670,8 +2670,8 @@
           }
         ],
         "color": "#9333EA",
-        "image": "__missing__",
-        "link": "characters/babidi",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Babidi's Forces (leader)",
           "Dark Magic Users"
@@ -2719,8 +2719,8 @@
           }
         ],
         "color": "#DC2626",
-        "image": "__missing__",
-        "link": "characters/dabura",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Demon Realm (King)",
           "Babidi's Forces (controlled servant)"
@@ -2778,8 +2778,8 @@
           }
         ],
         "color": "#1E40AF",
-        "image": "__missing__",
-        "link": "characters/king-kai",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Kai Hierarchy (North Kai)",
           "Other World"
@@ -2833,8 +2833,8 @@
           }
         ],
         "color": "#D8B4FE",
-        "image": "__missing__",
-        "link": "characters/shin",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Supreme Kai of Universe 7",
           "Divine Hierarchy",
@@ -2883,8 +2883,8 @@
           }
         ],
         "color": "#FDA4AF",
-        "image": "__missing__",
-        "link": "characters/old-kai",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Supreme Kai of Universe 7 (Ancient)",
           "Divine Hierarchy",
@@ -2929,8 +2929,8 @@
           }
         ],
         "color": "#E2E8F0",
-        "image": "__missing__",
-        "link": "characters/kibito",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Supreme Kai's Attendant",
           "Divine Hierarchy",
@@ -2982,8 +2982,8 @@
           }
         ],
         "color": "#F59E0B",
-        "image": "__missing__",
-        "link": "characters/champa",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "God of Destruction of Universe 6",
           "Divine Hierarchy"
@@ -3035,8 +3035,8 @@
           }
         ],
         "color": "#C084FC",
-        "image": "__missing__",
-        "link": "characters/vados",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Angel Corps",
           "Champa's Attendant",
@@ -3084,8 +3084,8 @@
           }
         ],
         "color": "#3B82F6",
-        "image": "__missing__",
-        "link": "characters/zeno",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Omni-King (Supreme Ruler of All)",
           "Divine Hierarchy (Apex)"
@@ -3137,8 +3137,8 @@
           }
         ],
         "color": "#818CF8",
-        "image": "__missing__",
-        "link": "characters/grand-priest",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Angel Corps (patriarch)",
           "Divine Hierarchy (Second Only to Zeno)"
@@ -3196,8 +3196,8 @@
           }
         ],
         "color": "#4ADE80",
-        "image": "__missing__",
-        "link": "characters/dende",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Earth's Guardian (Kami)",
           "Dragon Clan Namekians",
@@ -3248,8 +3248,8 @@
           }
         ],
         "color": "#166534",
-        "image": "__missing__",
-        "link": "characters/guru",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Namekian Dragon Clan (Grand Elder)",
           "Planet Namek (leader)"
@@ -3297,8 +3297,8 @@
           }
         ],
         "color": "#7C3AED",
-        "image": "__missing__",
-        "link": "characters/hit",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Team Universe 6",
           "Assassin's Guild (self-employed)"
@@ -3345,8 +3345,8 @@
           }
         ],
         "color": "#3B82F6",
-        "image": "__missing__",
-        "link": "characters/cabba",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Team Universe 6",
           "Saiyan Protectors of Planet Sadala"
@@ -3388,8 +3388,8 @@
           }
         ],
         "color": "#EF4444",
-        "image": "__missing__",
-        "link": "characters/caulifla",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Team Universe 6",
           "Saiyan Protectors of Planet Sadala",
@@ -3433,8 +3433,8 @@
           }
         ],
         "color": "#4ADE80",
-        "image": "__missing__",
-        "link": "characters/kale",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Team Universe 6",
           "Saiyan Protectors of Planet Sadala"
@@ -3477,8 +3477,8 @@
           }
         ],
         "color": "#22D3EE",
-        "image": "__missing__",
-        "link": "characters/kefla",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Team Universe 6 (fusion representative)"
         ]
@@ -3525,8 +3525,8 @@
           }
         ],
         "color": "#93C5FD",
-        "image": "__missing__",
-        "link": "characters/frost",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Team Universe 6",
           "Frost's Intergalactic Peacekeeping (fraudulent)"
@@ -3569,8 +3569,8 @@
           }
         ],
         "color": "#FBBF24",
-        "image": "__missing__",
-        "link": "characters/botamo",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Team Universe 6"
         ]
@@ -3613,8 +3613,8 @@
           }
         ],
         "color": "#D97706",
-        "image": "__missing__",
-        "link": "characters/magetta",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Team Universe 6",
           "Metal Man Race"
@@ -3661,8 +3661,8 @@
           }
         ],
         "color": "#DC2626",
-        "image": "__missing__",
-        "link": "characters/toppo",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Pride Troopers (leader)",
           "Team Universe 11",
@@ -3710,8 +3710,8 @@
           }
         ],
         "color": "#FBBF24",
-        "image": "__missing__",
-        "link": "characters/dyspo",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Pride Troopers",
           "Team Universe 11"
@@ -3766,8 +3766,8 @@
           }
         ],
         "color": "#166534",
-        "image": "__missing__",
-        "link": "characters/demon-king-piccolo",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Demon Clan (founder and king)",
           "Earth's Conqueror (briefly)"
@@ -3815,8 +3815,8 @@
           }
         ],
         "color": "#E11D48",
-        "image": "__missing__",
-        "link": "characters/mercenary-tao",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Red Ribbon Army (mercenary contractor)",
           "Crane School (associated)",
@@ -3863,8 +3863,8 @@
           }
         ],
         "color": "#991B1B",
-        "image": "__missing__",
-        "link": "characters/commander-red",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Red Ribbon Army (supreme commander)"
         ]
@@ -3910,8 +3910,8 @@
           }
         ],
         "color": "#2563EB",
-        "image": "__missing__",
-        "link": "characters/general-blue",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Red Ribbon Army (Elite General)"
         ]
@@ -3959,8 +3959,8 @@
           }
         ],
         "color": "#3B82F6",
-        "image": "__missing__",
-        "link": "characters/emperor-pilaf",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Pilaf Gang (leader)",
           "Capsule Corporation (grudging residents)"
@@ -4005,8 +4005,8 @@
           }
         ],
         "color": "#D97706",
-        "image": "__missing__",
-        "link": "characters/shu",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Pilaf Gang"
         ]
@@ -4054,8 +4054,8 @@
           }
         ],
         "color": "#EC4899",
-        "image": "__missing__",
-        "link": "characters/mai",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Pilaf Gang (former adult member)",
           "Future Earth Resistance",
@@ -4100,8 +4100,8 @@
           }
         ],
         "color": "#14B8A6",
-        "image": "__missing__",
-        "link": "characters/giru",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Machine Mutants (former)",
           "Goku's GT Crew"
@@ -4148,8 +4148,8 @@
           }
         ],
         "color": "#9333EA",
-        "image": "__missing__",
-        "link": "characters/baby",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Tuffle Race (created by)",
           "Machine Mutants (allied)"
@@ -4196,8 +4196,8 @@
           }
         ],
         "color": "#A1A1AA",
-        "image": "__missing__",
-        "link": "characters/zamasu",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Divine Hierarchy (former Supreme Kai apprentice)",
           "Zero Mortals Plan (founder)"
@@ -4245,8 +4245,8 @@
           }
         ],
         "color": "#F472B6",
-        "image": "__missing__",
-        "link": "characters/goku-black",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Zero Mortals Plan (co-founder)"
         ]
@@ -4296,8 +4296,8 @@
           }
         ],
         "color": "#475569",
-        "image": "__missing__",
-        "link": "characters/moro",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "None (independent cosmic predator)"
         ]
@@ -4347,8 +4347,8 @@
           }
         ],
         "color": "#B45309",
-        "image": "__missing__",
-        "link": "characters/granolah",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Cerealian Race (last survivor)",
           "Bounty Hunter (freelance)"
@@ -4397,8 +4397,8 @@
           }
         ],
         "color": "#7C3AED",
-        "image": "__missing__",
-        "link": "characters/cooler",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Cooler's Armored Squadron (leader)",
           "Big Gete Star (fused)",
@@ -4442,8 +4442,8 @@
           }
         ],
         "color": "#166534",
-        "image": "__missing__",
-        "link": "characters/turles",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Turles Crusher Corps (leader)",
           "Saiyan Army (former)"
@@ -4494,8 +4494,8 @@
           }
         ],
         "color": "#10B981",
-        "image": "__missing__",
-        "link": "characters/bojack",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Bojack's Galactic Pirates (leader)",
           "Hera-seijin Race"
@@ -4538,8 +4538,8 @@
           }
         ],
         "color": "#DC2626",
-        "image": "__missing__",
-        "link": "characters/janemba",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Hell's Purified Evil (spawn of)",
           "Demonic Entities"
@@ -4587,8 +4587,8 @@
           }
         ],
         "color": "#1C1917",
-        "image": "__missing__",
-        "link": "characters/omega-shenron",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Shadow Dragons (fusion of all seven)"
         ]
@@ -4635,8 +4635,8 @@
           }
         ],
         "color": "#4B5563",
-        "image": "__missing__",
-        "link": "characters/super-17",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Dr. Gero's Hell Forces (created by)",
           "Machine Mutants (associated)"
@@ -4689,8 +4689,8 @@
           }
         ],
         "color": "#22C55E",
-        "image": "__missing__",
-        "link": "characters/kami",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Earth's Guardian (former)",
           "Divine Hierarchy (Earth)",
@@ -4741,8 +4741,8 @@
           }
         ],
         "color": "#1C1917",
-        "image": "__missing__",
-        "link": "characters/mr-popo",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "The Lookout (Eternal Attendant)",
           "Earth's Divine Hierarchy"
@@ -4785,8 +4785,8 @@
           }
         ],
         "color": "#16A34A",
-        "image": "__missing__",
-        "link": "characters/nail",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Namekian Warrior Clan",
           "Guru's Guard"
@@ -4842,8 +4842,8 @@
           }
         ],
         "color": "#166534",
-        "image": "__missing__",
-        "link": "characters/android-16",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Red Ribbon Army (created by)",
           "Android Corps (reluctant)"
@@ -4892,8 +4892,8 @@
           }
         ],
         "color": "#7C3AED",
-        "image": "__missing__",
-        "link": "characters/jaco",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Galactic Patrol (Officer)",
           "Universe 7"
@@ -4942,8 +4942,8 @@
           }
         ],
         "color": "#F472B6",
-        "image": "__missing__",
-        "link": "characters/oolong",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Dragon Team (founding member)",
           "Capsule Corp Associates"
@@ -4988,8 +4988,8 @@
           }
         ],
         "color": "#93C5FD",
-        "image": "__missing__",
-        "link": "characters/puar",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Dragon Team",
           "Yamcha's Household"
@@ -5034,8 +5034,8 @@
           }
         ],
         "color": "#FBBF24",
-        "image": "__missing__",
-        "link": "characters/launch",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Kame House",
           "Tien-Shin Dojo (pursuer)"
@@ -5087,8 +5087,8 @@
           }
         ],
         "color": "#B45309",
-        "image": "__missing__",
-        "link": "characters/ox-king",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Son Family",
           "Fire Mountain Kingdom",
@@ -5137,8 +5137,8 @@
           }
         ],
         "color": "#D97706",
-        "image": "__missing__",
-        "link": "characters/grandpa-gohan",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Turtle School (student)",
           "Baba Uranai's Champions (afterlife)"
@@ -5186,8 +5186,8 @@
           }
         ],
         "color": "#3B82F6",
-        "image": "__missing__",
-        "link": "characters/vegito",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighter Fusions (Potara)"
         ]
@@ -5234,8 +5234,8 @@
           }
         ],
         "color": "#FBBF24",
-        "image": "__missing__",
-        "link": "characters/gogeta",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Z-Fighter Fusions (Metamoran Fusion Dance)"
         ]
@@ -5277,8 +5277,8 @@
           }
         ],
         "color": "#F97316",
-        "image": "__missing__",
-        "link": "characters/nuova-shenron",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Shadow Dragons (Four-Star Ball)"
         ]
@@ -5316,8 +5316,8 @@
           }
         ],
         "color": "#93C5FD",
-        "image": "__missing__",
-        "link": "characters/eis-shenron",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Shadow Dragons (Three-Star Ball)"
         ]
@@ -5363,8 +5363,8 @@
           }
         ],
         "color": "#6B7280",
-        "image": "__missing__",
-        "link": "characters/general-rilldo",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Machine Mutant Army (General)",
           "Planet M-2 Supremacy"
@@ -5407,8 +5407,8 @@
           }
         ],
         "color": "#EC4899",
-        "image": "__missing__",
-        "link": "characters/ribrianne",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Kamikaze Fireballs (leader)",
           "Team Universe 2"
@@ -5459,8 +5459,8 @@
           }
         ],
         "color": "#22D3EE",
-        "image": "__missing__",
-        "link": "characters/anilaza",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Team Universe 3 (Fusion Entity)"
         ]
@@ -5511,8 +5511,8 @@
           }
         ],
         "color": "#B91C1C",
-        "image": "__missing__",
-        "link": "characters/bardock-dbs",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Saiyan Army (low-class warrior)",
           "Bardock's Squad (leader)"
@@ -5554,8 +5554,8 @@
           }
         ],
         "color": "#F43F5E",
-        "image": "__missing__",
-        "link": "characters/gine",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Saiyan Army (meat distribution, low-status)",
           "Bardock's Household"
@@ -5601,8 +5601,8 @@
           }
         ],
         "color": "#FED7AA",
-        "image": "__missing__",
-        "link": "characters/tarble",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Saiyan Royal Family (exiled)",
           "Briefs Family (extended)"
@@ -5653,8 +5653,8 @@
           }
         ],
         "color": "#003049",
-        "image": "__missing__",
-        "link": "characters/king-vegeta",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Saiyan Royal Family (last king)",
           "Planet Vegeta (monarch)"
@@ -5700,8 +5700,8 @@
           }
         ],
         "color": "#475569",
-        "image": "__missing__",
-        "link": "characters/paragus",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Saiyan Army (former colonel)",
           "Frieza Force (temporarily allied)"
@@ -5747,8 +5747,8 @@
           }
         ],
         "color": "#4ADE80",
-        "image": "__missing__",
-        "link": "characters/cheelai",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Frieza Force (deserter)",
           "Broly's Companions"
@@ -5790,8 +5790,8 @@
           }
         ],
         "color": "#F472B6",
-        "image": "__missing__",
-        "link": "characters/monaka",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Team Universe 7 (unwitting participant)",
           "Intergalactic Package Delivery"
@@ -5835,8 +5835,8 @@
           }
         ],
         "color": "#7C3AED",
-        "image": "__missing__",
-        "link": "characters/fortuneteller-baba",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Baba's Palace (owner)",
           "Afterlife Intermediaries",
@@ -5879,8 +5879,8 @@
           }
         ],
         "color": "#CA8A04",
-        "image": "__missing__",
-        "link": "characters/nam",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "Nam's Village (protector)",
           "21st Tenkaichi Budokai Participant"
@@ -5920,8 +5920,8 @@
           }
         ],
         "color": "#D97706",
-        "image": "__missing__",
-        "link": "characters/king-chappa",
+        "image": "",
+        "link": "/guides/characters/",
         "affiliations": [
           "World Martial Arts Tournament (former champion)",
           "Earth's Traditional Martial Artists"

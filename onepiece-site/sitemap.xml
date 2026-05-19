@@ -1,4 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://onepiece.jycsd.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://onepiece.jycsd.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/devil-fruits/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/haki/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/crews/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/arcs/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/monkey-d-luffy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/roronoa-zoro.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/nami.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/usopp.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/sanji.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/tony-tony-chopper.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/nico-robin.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/franky.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/brook.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/jinbe.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/shanks.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/blackbeard.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/big-mom.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/kaido.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/whitebeard.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/dracule-mihawk.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/sir-crocodile.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/donquixote-doflamingo.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/boa-hancock.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/bartholomew-kuma.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/trafalgar-law.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/portgas-d-ace.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/sabo.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/monkey-d-garp.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/monkey-d-dragon.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/silvers-rayleigh.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/eustass-kid.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/killer.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/yamato.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/carrot.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://onepiece.jycsd.com/guides/characters/nefertari-vivi.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
