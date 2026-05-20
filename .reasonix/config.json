@@ -1,0 +1,5 @@
+{
+  "model": "deepseek-v4-flash",
+  "systemPrompt": "You are a helpful AI assistant.",
+  "silent": true
+}

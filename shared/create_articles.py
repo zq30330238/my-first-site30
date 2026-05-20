@@ -15,30 +15,96 @@ import argparse
 import subprocess
 from datetime import datetime
 from pathlib import Path
-from urllib.request import Request, urlopen
-from urllib.error import URLError, HTTPError
+
+from reasonix_helper import reasonix_call_json, reasonix_call
 
 from site_templates import (
     SITE_CONFIG, GLOBALS, TEMPLATE_SKELETON,
     render_article_html, quick_validate, get_content_generation_prompt,
 )
 
-ROOT = Path(__file__).resolve().parent.parent
-API_URL = "https://api.deepseek.com/anthropic/v1/messages"
-API_TOKEN = os.environ.get("DEEPSEEK_API_KEY", "")
+import random
 
-SYSTEM_PROMPT = """You are a professional English SEO content writer for US consumer websites.
+TITLE_STARTERS = [
+    "How to", "The Complete Guide to", "Why", "What",
+    "Top", "Best", "Essential", "Simple",
+]
+
+ARTICLE_TEMPLATES = {
+    "A": {
+        "description": "List-style with deep analysis of each item. Each list item has its own mini-section with detailed explanation.",
+        "h2_sections": "4-5 h2 sections (each covering one list item in depth)",
+        "paragraphs_per_section": "2-4 paragraphs per section",
+        "word_count": "800-1200 words total",
+        "ad_positions": "One ad unit after h2 #1 only",
+        "title_style": "How-to / List",
+        "tone": "Direct, instructional, bullet-point friendly",
+    },
+    "B": {
+        "description": "Narrative storytelling format. Opens with a relatable scenario/anecdote, then transitions into analysis, ends with key takeaways summary section.",
+        "h2_sections": "5-7 h2 sections (intro context → body analysis → summary)",
+        "paragraphs_per_section": "2-5 paragraphs per section",
+        "word_count": "1200-1800 words total",
+        "ad_positions": "One ad unit after h2 #2 only",
+        "title_style": "Why / Story-driven",
+        "tone": "Conversational, engaging, builds curiosity",
+    },
+    "C": {
+        "description": "Problem-driven Q&A format. Each h2 poses a question and the paragraphs answer it. Real reader pain points addressed directly.",
+        "h2_sections": "5-6 h2 sections (each is a reader question)",
+        "paragraphs_per_section": "2-3 paragraphs per section (answer each question thoroughly)",
+        "word_count": "1000-1500 words total",
+        "ad_positions": "Ad units after h2 #1 and after h2 #4",
+        "title_style": "Question-driven / What",
+        "tone": "Empathetic, authoritative, problem-solving",
+    },
+    "D": {
+        "description": "Comparison or ranked listicle format. Ranks items/n options with pros/cons, comparison table in prose, detailed breakdown of each.",
+        "h2_sections": "6-8 h2 sections (introduction + each option ranked + verdict)",
+        "paragraphs_per_section": "1-3 paragraphs per section (concise, data-heavy)",
+        "word_count": "1500-2200 words total",
+        "ad_positions": "One ad unit after h2 #3 only",
+        "title_style": "Best / Top / Comparison",
+        "tone": "Data-backed, comparative, decisive",
+    },
+    "E": {
+        "description": "Step-by-step tutorial/guide format. Each h2 is a sequential step. Practical tips, common mistakes, pro advice inline.",
+        "h2_sections": "4-6 h2 sections (each is a numbered step in sequence)",
+        "paragraphs_per_section": "3-5 paragraphs per step (detailed instructions)",
+        "word_count": "900-1400 words total",
+        "ad_positions": "Ad units after h2 #1, #3, and #5 (if they exist)",
+        "title_style": "Step-by-step / Guide",
+        "tone": "Patient, thorough, beginner-friendly",
+    },
+}
+
+ROOT = Path(__file__).resolve().parent.parent
+
+def build_system_prompt():
+    """Randomly select an article template and build a tailored SYSTEM_PROMPT."""
+    template_key = random.choice(list(ARTICLE_TEMPLATES.keys()))
+    tmpl = ARTICLE_TEMPLATES[template_key]
+
+    prompt = f"""You are a professional English SEO content writer for US consumer websites.
 Output a JSON object with the article content fields listed below. Do NOT output HTML wrapper, header, footer, or sidebars — the Python pipeline handles template injection.
 
 CRITICAL RULES:
 1. Output ONLY valid JSON. No markdown wrapping, no ```json fence.
 2. Cover image: MUST use a REAL 11-char Unsplash photo ID like a1b2c3d4e5f6-g7h8i9j0k1l2. NEVER use short numeric IDs (those are fake). NEVER use source.unsplash.com (dead domain).
-3. Article body: 5-6 h2 sections, each with 2-3 <p> paragraphs. 1000-1500 words total. Include one <blockquote> with a key stat/tip.
-4. Ad units go after h2 #1, #3, #5. Use the ad slot IDs provided.
-5. Writing: authoritative, data-backed, actionable. US consumer audience. Specific numbers and research. No emoji, no fluff, no AI cliche phrases.
+
+ARTICLE STRUCTURE — FORMAT {template_key}: {tmpl['description']}
+- Sections: {tmpl['h2_sections']}
+- Paragraphs: {tmpl['paragraphs_per_section']}
+- Word count: {tmpl['word_count']}
+- Ad positions: {tmpl['ad_positions']}
+- Tone: {tmpl['tone']}
+
+3. Always include one <blockquote> with a key stat or expert tip.
+4. Writing: authoritative, data-backed, actionable. US consumer audience. Specific numbers and research. No emoji, no fluff, no AI cliche phrases.
+5. Title should be compelling and natural — {tmpl['title_style']} style preferred. Avoid formulaic patterns.
 
 JSON STRUCTURE (exact keys):
-{
+{{
   "title": "SEO title (60 chars max) — includes brand name",
   "description": "Meta description (150-160 chars)",
   "keywords": "5-8 comma-separated SEO keywords",
@@ -47,14 +113,16 @@ JSON STRUCTURE (exact keys):
   "cover_img_html": "<img src='https://images.unsplash.com/photo-REAL_ID?w=1200&h=630&fit=crop' alt='description' class='rounded-2xl mb-10 w-full'>",
   "article_body_html": "<h2>First Section</h2><div class='ad-unit'>...ad code...</div><p>Paragraph text...</p><h2>Second Section</h2>...",
   "tag_spans": "<span class='px-3 py-1 bg-brand-50 text-brand-700 text-sm rounded-full'>Tag1</span><span ...>Tag2</span>... (5-6 tags)",
-  "json_ld": "{full JSON-LD NewsArticle schema object, string-escaped}",
+  "json_ld": "{{full JSON-LD NewsArticle schema object, string-escaped}}",
   "read_time": "number as string e.g. '7'",
   "date_iso": "YYYY-MM-DD",
   "date_display": "Month DD, YYYY"
-}
+}}
 
-For article_body_html: include ad-unit divs exactly like this template between h2 sections:
-<div class='ad-unit'><span class='ad-label'>Advertisement</span><ins class='adsbygoogle' style='display:block; min-height:280px' data-ad-client='<pub-id>' data-ad-slot='<slot-id>' data-ad-format='auto' data-full-width-responsive='true'></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>"""
+For article_body_html: include ad-unit divs exactly like this template at the specified positions:
+<div class='ad-unit'><span class='ad-label'>Advertisement</span><ins class='adsbygoogle' style='display:block; min-height:280px' data-ad-client='<pub-id>' data-ad-slot='<slot-id>' data-ad-format='auto' data-full-width-responsive='true'></ins><script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script></div>"""
+
+    return prompt, template_key
 
 
 def get_next_article_num(site_dir):
@@ -68,6 +136,7 @@ def get_next_article_num(site_dir):
 
 def call_api(site_dir, article_num):
     """Ask DeepSeek to generate article content as JSON."""
+    system_prompt, template_key = build_system_prompt()
     ctx = get_content_generation_prompt(site_dir, article_num)
     today = datetime.now().strftime("%Y-%m-%d")
 
@@ -85,58 +154,19 @@ Site details:
 
 Write a fresh article on a topic in the {ctx['category']} niche. Output the JSON object as specified."""
 
-    payload = {
-        "model": "deepseek-v4-pro",
-        "max_tokens": 8192,
-        "temperature": 0.8,
-        "system": SYSTEM_PROMPT,
-        "messages": [{"role": "user", "content": user_msg}],
-    }
-
-    req = Request(
-        API_URL,
-        data=json.dumps(payload).encode(),
-        headers={
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {API_TOKEN}",
-        },
-    )
+    print(f"  Template: {template_key}", flush=True)
 
     for attempt in range(3):
         try:
-            resp = urlopen(req, timeout=300)
-            data = json.loads(resp.read().decode())
-            text_blocks = [b["text"] for b in data["content"] if b["type"] == "text"]
-            content = "\n".join(text_blocks)
+            content = reasonix_call_json(system_prompt, user_msg)
+            return content
+        except (json.JSONDecodeError, RuntimeError, TimeoutError) as e:
+            print(f"  Attempt {attempt+1} failed: {e}", flush=True)
+            if attempt < 2:
+                import time
+                time.sleep(3)
 
-            # Extract JSON
-            if content.startswith("```json"):
-                content = content[7:]
-            if content.startswith("```"):
-                content = content[3:]
-            if content.endswith("```"):
-                content = content[:-3]
-
-            brace_idx = content.find("{")
-            if brace_idx > 0:
-                content = content[brace_idx:]
-            brace_end = content.rfind("}")
-            if brace_end > 0:
-                content = content[:brace_end + 1]
-
-            return json.loads(content)
-        except json.JSONDecodeError as e:
-            print(f"  Attempt {attempt+1} JSON parse failed: {e}", flush=True)
-            time.sleep(3)
-        except (URLError, HTTPError) as e:
-            print(f"  Attempt {attempt+1} HTTP failed: {e}", flush=True)
-            time.sleep(5)
-        except Exception as e:
-            print(f"  Attempt {attempt+1} failed ({type(e).__name__}): {e}", flush=True)
-            time.sleep(5)
     return None
-
-
 def count_words(html):
     text = re.sub(r'<[^>]+>', ' ', html)
     text = re.sub(r'\s+', ' ', text).strip()

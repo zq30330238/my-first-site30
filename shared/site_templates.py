@@ -12,7 +12,7 @@ TEMPLATES_DIR = ROOT / "shared" / "templates"
 
 # Global values used across all sites
 GLOBALS = {
-    "email": "zq30330238@gmail.com",
+    "email": "contact@jycsd.com",
     "ga4_id": "G-GGNWR1X1GV",
     "adsense_pub": "ca-pub-2595917642864488",
     "year": str(datetime.now().year),
@@ -243,6 +243,7 @@ tailwind.config = {
         <div class="flex flex-wrap justify-between items-center">
             <p class="text-sm text-gray-500">&copy; {{year}} {{brand}}. All rights reserved.</p>
             <div class="flex space-x-6 text-sm">
+                <a href="https://www.jycsd.com" target="_blank" rel="noopener" class="text-gray-500 hover:text-{{brand_color}} transition">Visit jycsd.com</a>
                 <a href="about.html" class="text-gray-500 hover:text-{{brand_color}} transition">About</a>
                 <a href="contact.html" class="text-gray-500 hover:text-{{brand_color}} transition">Contact</a>
                 <a href="privacy-policy.html" class="text-gray-500 hover:text-{{brand_color}} transition">Privacy Policy</a>

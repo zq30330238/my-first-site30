@@ -32,6 +32,10 @@
     <style>
         .site-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
         .site-card { transition: all 0.3s ease; }
+        .article-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+        .article-card { transition: all 0.3s ease; }
+        .article-card .category-badge { transition: all 0.2s ease; }
+        .article-card:hover .category-badge { opacity: 1; }
     </style>
 <script type="application/ld+json">
 {
@@ -72,187 +76,627 @@
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="index.html" class="text-primary-600 font-medium">Home</a>
                 <a href="#sites" class="text-gray-600 hover:text-primary-600">Our Sites</a>
+                <a href="#articles" class="text-gray-600 hover:text-primary-600">Articles</a>
+                <a href="#games" class="text-gray-600 hover:text-primary-600">Games</a>
+                <a href="#anime" class="text-gray-600 hover:text-primary-600">Anime</a>
                 <a href="about.html" class="text-gray-600 hover:text-primary-600">About</a>
                 <a href="contact.html" class="text-gray-600 hover:text-primary-600">Contact</a>
         </div>
         <button class="md:hidden text-gray-600 text-2xl">&#9776;</button>
     </div>
 </nav>
-    </header>
 
-    <!-- Hero -->
-    <section class="relative bg-gradient-to-br from-navy via-primary-900 to-primary-800 text-white py-24 md:py-32 overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-10 left-10 w-72 h-72 bg-primary-400 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-10 right-10 w-96 h-96 bg-primary-300 rounded-full blur-3xl"></div>
+<!-- Hero -->
+<section class="relative bg-gradient-to-br from-navy via-primary-900 to-primary-800 text-white py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-10 left-10 w-72 h-72 bg-primary-400 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-primary-300 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-6 text-center">
+        <p class="text-primary-200 text-sm font-semibold uppercase tracking-widest mb-4">Your Lifestyle Network</p>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tight">
+            Your Guide to <span class="text-primary-300">Better Living</span>
+        </h1>
+        <p class="text-lg md:text-xl text-primary-100 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Expert-curated guides across health, pets, home, finance, technology, and travel — all in one place.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#sites" class="inline-block bg-white text-primary-700 font-bold px-8 py-3.5 rounded-full text-base hover:bg-primary-50 transition-colors">
+                Explore Our Sites
+            </a>
+            <a href="about.html" class="inline-block bg-white/10 text-white font-semibold px-8 py-3.5 rounded-full text-base border border-white/20 hover:bg-white/20 transition-colors">
+                About Myers Media
+            </a>
         </div>
-        <div class="relative max-w-4xl mx-auto px-6 text-center">
-            <p class="text-primary-200 text-sm font-semibold uppercase tracking-widest mb-4">Your Lifestyle Network</p>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tight">
-                Your Guide to <span class="text-primary-300">Better Living</span>
-            </h1>
-            <p class="text-lg md:text-xl text-primary-100 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Expert-curated guides across health, pets, home, finance, technology, and travel — all in one place.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#sites" class="inline-block bg-white text-primary-700 font-bold px-8 py-3.5 rounded-full text-base hover:bg-primary-50 transition-colors">
-                    Explore Our Sites
-                </a>
-                <a href="about.html" class="inline-block bg-white/10 text-white font-semibold px-8 py-3.5 rounded-full text-base border border-white/20 hover:bg-white/20 transition-colors">
-                    About Myers Media
-                </a>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Stats Bar -->
-    <section class="bg-primary-50 border-b border-primary-100 py-10">
-        <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <p class="text-3xl md:text-4xl font-black text-primary-700">6</p>
-                <p class="text-sm text-slate mt-1 font-medium">Expert Websites</p>
-            </div>
-            <div>
-                <p class="text-3xl md:text-4xl font-black text-primary-700">200+</p>
-                <p class="text-sm text-slate mt-1 font-medium">In-Depth Guides</p>
-            </div>
-            <div>
-                <p class="text-3xl md:text-4xl font-black text-primary-700">0</p>
-                <p class="text-sm text-slate mt-1 font-medium">Click to Content</p>
-            </div>
-            <div>
-                <p class="text-3xl md:text-4xl font-black text-primary-700">100%</p>
-                <p class="text-sm text-slate mt-1 font-medium">Free Content</p>
-            </div>
+<!-- Stats Bar -->
+<section class="bg-primary-50 border-b border-primary-100 py-10">
+    <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+            <p class="text-3xl md:text-4xl font-black text-primary-700">6</p>
+            <p class="text-sm text-slate mt-1 font-medium">Expert Websites</p>
         </div>
-    </section>
+        <div>
+            <p class="text-3xl md:text-4xl font-black text-primary-700">200+</p>
+            <p class="text-sm text-slate mt-1 font-medium">In-Depth Guides</p>
+        </div>
+        <div>
+            <p class="text-3xl md:text-4xl font-black text-primary-700">0</p>
+            <p class="text-sm text-slate mt-1 font-medium">Click to Content</p>
+        </div>
+        <div>
+            <p class="text-3xl md:text-4xl font-black text-primary-700">100%</p>
+            <p class="text-sm text-slate mt-1 font-medium">Free Content</p>
+        </div>
+    </div>
+</section>
 
-    <!-- Our Sites Grid -->
-    <section id="sites" class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+<!-- Our Sites Grid -->
+<section id="sites" class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Explore Our Network</h2>
+        <p class="text-lg text-gray-500 max-w-xl mx-auto">Pick a topic and dive into expert-curated content designed to help you live better.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Healthy Eats -->
+        <a href="https://healthy.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <div class="h-2 bg-green-500"></div>
+            <div class="p-7">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Healthy<span class="text-green-500">Eats</span></h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Evidence-based nutrition guides, healthy recipes, and meal plans for a better relationship with food.</p>
+                <span class="text-green-600 font-semibold text-sm group-hover:underline">healthy.jycsd.com &rarr;</span>
+            </div>
+        </a>
+
+        <!-- PetCare Hub -->
+        <a href="https://pets.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <div class="h-2 bg-orange-500"></div>
+            <div class="p-7">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">PetCare <span class="text-orange-500">Hub</span></h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Expert pet care advice, nutrition tips, behavior guides, and health information for all pet owners.</p>
+                <span class="text-orange-600 font-semibold text-sm group-hover:underline">pets.jycsd.com &rarr;</span>
+            </div>
+        </a>
+
+        <!-- HomeJoy -->
+        <a href="https://home.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <div class="h-2 bg-lime-500"></div>
+            <div class="p-7">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Home<span class="text-lime-500">Joy</span></h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">DIY home improvement, indoor gardening, decluttering, and seasonal maintenance guides.</p>
+                <span class="text-lime-600 font-semibold text-sm group-hover:underline">home.jycsd.com &rarr;</span>
+            </div>
+        </a>
+
+        <!-- MoneyWise -->
+        <a href="https://finance.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <div class="h-2 bg-blue-700"></div>
+            <div class="p-7">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Money<span class="text-blue-700">Wise</span></h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Personal finance made simple — investing, budgeting, credit tips, and retirement planning.</p>
+                <span class="text-blue-700 font-semibold text-sm group-hover:underline">finance.jycsd.com &rarr;</span>
+            </div>
+        </a>
+
+        <!-- TechNest -->
+        <a href="https://tech.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <div class="h-2 bg-slate-500"></div>
+            <div class="p-7">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Tech<span class="text-slate-500">Nest</span></h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Honest tech reviews, buying guides, productivity tools, and cybersecurity tips for everyday users.</p>
+                <span class="text-slate-600 font-semibold text-sm group-hover:underline">tech.jycsd.com &rarr;</span>
+            </div>
+        </a>
+
+        <!-- TripRoute -->
+        <a href="https://travel.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <div class="h-2 bg-cyan-600"></div>
+            <div class="p-7">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Trip<span class="text-cyan-600">Route</span></h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Budget travel tips, destination guides, packing hacks, and digital nomad lifestyle advice.</p>
+                <span class="text-cyan-600 font-semibold text-sm group-hover:underline">travel.jycsd.com &rarr;</span>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+<!-- Featured Articles -->
+<section id="articles" class="bg-gray-50 py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Explore Our Network</h2>
-            <p class="text-lg text-gray-500 max-w-xl mx-auto">Pick a topic and dive into expert-curated content designed to help you live better.</p>
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Featured Articles</h2>
+            <p class="text-lg text-gray-500 max-w-xl mx-auto">In-depth guides and expert resources across all six of our lifestyle categories.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <!-- Healthy Eats -->
-            <a href="https://healthy.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
-                <div class="h-2 bg-green-500"></div>
-                <div class="p-7">
-                    <div class="text-4xl mb-4">🥗</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Healthy<span class="text-green-500">Eats</span></h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Evidence-based nutrition guides, healthy recipes, and meal plans for a better relationship with food.</p>
-                    <span class="text-green-600 font-semibold text-sm group-hover:underline">healthy.jycsd.com &rarr;</span>
+            <!-- Article Card: Healthy Eating -->
+            <a href="article/article-healthy-eating.html" class="article-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-48 bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17071?w=600&h=400&fit=crop" alt="Healthy eating ingredients" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <span class="category-badge inline-block bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full mb-3">Healthy Eating</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">The Complete Guide to Healthy Eating: Nutrition Fundamentals for Every Lifestyle</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-4">Learn how to build a balanced diet that works for your schedule, preferences, and health goals — no fads, no gimmicks.</p>
+                    <span class="text-green-600 font-semibold text-sm group-hover:underline">Read More &rarr;</span>
                 </div>
             </a>
 
-            <!-- PetCare Hub -->
-            <a href="https://pets.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <!-- Article Card: Pet Care -->
+            <a href="article/article-pet-care.html" class="article-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-48 bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&h=400&fit=crop" alt="Happy dog and cat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <span class="category-badge inline-block bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full mb-3">Pet Care</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">Pet Care 101: Everything New Owners Need to Know</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-4">From feeding schedules to training basics, this comprehensive guide covers everything first-time pet owners need to succeed.</p>
+                    <span class="text-orange-600 font-semibold text-sm group-hover:underline">Read More &rarr;</span>
+                </div>
+            </a>
+
+            <!-- Article Card: Home & Garden -->
+            <a href="article/article-home-garden.html" class="article-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-48 bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=400&fit=crop" alt="Indoor plants and home decor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <span class="category-badge inline-block bg-lime-100 text-lime-700 text-xs font-bold px-3 py-1 rounded-full mb-3">Home & Garden</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">The Ultimate Home Garden Guide: Growing Your Way to Greener Living</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-4">Transform your living space with indoor plants, container gardens, and simple DIY projects that anyone can master.</p>
+                    <span class="text-lime-600 font-semibold text-sm group-hover:underline">Read More &rarr;</span>
+                </div>
+            </a>
+
+            <!-- Article Card: Personal Finance -->
+            <a href="article/article-personal-finance.html" class="article-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-48 bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1554226655-67b1a2f2b5c5?w=600&h=400&fit=crop" alt="Personal finance planning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <span class="category-badge inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-3">Personal Finance</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">Personal Finance for Beginners: Building Wealth One Step at a Time</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-4">Master the essentials of budgeting, saving, and investing — no finance degree required, just practical steps that work.</p>
+                    <span class="text-blue-700 font-semibold text-sm group-hover:underline">Read More &rarr;</span>
+                </div>
+            </a>
+
+            <!-- Article Card: Technology -->
+            <a href="article/article-technology.html" class="article-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-48 bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop" alt="Technology circuit board" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <span class="category-badge inline-block bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1 rounded-full mb-3">Technology</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">Technology Trends 2026: What Every User Should Know</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-4">Stay ahead with our breakdown of the year's most important tech developments, from AI tools to smart home innovations.</p>
+                    <span class="text-slate-600 font-semibold text-sm group-hover:underline">Read More &rarr;</span>
+                </div>
+            </a>
+
+            <!-- Article Card: Travel -->
+            <a href="article/article-travel.html" class="article-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-48 bg-gray-200 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1488646953014-3064f3b6b7a0?w=600&h=400&fit=crop" alt="Travel adventure" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <span class="category-badge inline-block bg-cyan-100 text-cyan-700 text-xs font-bold px-3 py-1 rounded-full mb-3">Travel</span>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 leading-snug">The Smart Traveler's Handbook: Tips for Affordable Adventures</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-4">Discover budget-friendly strategies for planning unforgettable trips, from finding cheap flights to packing like a pro.</p>
+                    <span class="text-cyan-600 font-semibold text-sm group-hover:underline">Read More &rarr;</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- Latest from Our Network -->
+<section class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Latest from Our Network</h2>
+        <p class="text-lg text-gray-500 max-w-xl mx-auto">Fresh articles and expert guides published across all of our sites.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14">
+
+        <!-- HealthyEats -->
+        <div>
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-green-500 rounded-full"></div>
+                <h3 class="text-lg font-bold text-gray-900">HealthyEats</h3>
+            </div>
+            <ul class="space-y-4">
+                <li>
+                    <a href="https://healthy.jycsd.com/article-1.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-green-600 transition-colors">10 Superfoods You Should Eat Every Day</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Boost your nutrition with these everyday powerhouses.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://healthy.jycsd.com/article-2.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-green-600 transition-colors">Beginner's Guide to Weekly Meal Prepping</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Save time and eat better with a simple meal prep routine.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://healthy.jycsd.com/article-3.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-green-600 transition-colors">How to Build a Balanced Plate at Every Meal</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Simple principles for nutritious, satisfying meals.</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- PetCare Hub -->
+        <div>
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-orange-500 rounded-full"></div>
+                <h3 class="text-lg font-bold text-gray-900">PetCare Hub</h3>
+            </div>
+            <ul class="space-y-4">
+                <li>
+                    <a href="https://pets.jycsd.com/article-1.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">Dog Nutrition Guide: What to Feed Your Pet</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Essential nutrition tips for a healthy, happy dog.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://pets.jycsd.com/article-2.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">10 Cat Behavior Problems Solved: Expert Tips</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Understand and fix common feline behavior issues.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://pets.jycsd.com/article-3.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">New Puppy Care: First Month Checklist</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Everything you need for a smooth first month at home.</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- HomeJoy -->
+        <div>
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-lime-500 rounded-full"></div>
+                <h3 class="text-lg font-bold text-gray-900">HomeJoy</h3>
+            </div>
+            <ul class="space-y-4">
+                <li>
+                    <a href="https://home.jycsd.com/article-1.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-lime-600 transition-colors">15 DIY Home Improvement Projects Under $100</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Affordable upgrades that make a big difference.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://home.jycsd.com/article-2.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-lime-600 transition-colors">Beginner's Guide to Indoor Plant Care and Growth</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Keep your plants thriving with these simple tips.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://home.jycsd.com/article-3.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-lime-600 transition-colors">How to Declutter Your Home: Room-by-Room Guide</p>
+                        <p class="text-xs text-gray-400 mt-0.5">A systematic approach to a cleaner, calmer home.</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MoneyWise -->
+        <div>
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-blue-700 rounded-full"></div>
+                <h3 class="text-lg font-bold text-gray-900">MoneyWise</h3>
+            </div>
+            <ul class="space-y-4">
+                <li>
+                    <a href="https://finance.jycsd.com/article-1.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">Start Investing with $100: Beginner's Guide</p>
+                        <p class="text-xs text-gray-400 mt-0.5">You don't need a fortune to start building wealth.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://finance.jycsd.com/article-2.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">Best High-Yield Savings Accounts of 2026</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Compare top rates and find the best account for your savings.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://finance.jycsd.com/article-3.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">Credit Score Explained: How to Improve Yours</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Practical steps to build and maintain excellent credit.</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- TechNest -->
+        <div>
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-slate-500 rounded-full"></div>
+                <h3 class="text-lg font-bold text-gray-900">TechNest</h3>
+            </div>
+            <ul class="space-y-4">
+                <li>
+                    <a href="https://tech.jycsd.com/article-1.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-slate-600 transition-colors">Best Budget Smartphones Under $300 (2026)</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Top picks that deliver great value without breaking the bank.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://tech.jycsd.com/article-2.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-slate-600 transition-colors">How to Build a Home Office Setup for Productivity</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Create a workspace that helps you focus and perform.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://tech.jycsd.com/article-3.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-slate-600 transition-colors">AI Tools That Will Change Your Daily Workflow</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Practical AI applications for everyday productivity.</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- TripRoute -->
+        <div>
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-8 bg-cyan-600 rounded-full"></div>
+                <h3 class="text-lg font-bold text-gray-900">TripRoute</h3>
+            </div>
+            <ul class="space-y-4">
+                <li>
+                    <a href="https://travel.jycsd.com/article-1.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-cyan-600 transition-colors">10 Budget Travel Destinations for 2026</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Amazing places that won't empty your wallet.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://travel.jycsd.com/article-2.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-cyan-600 transition-colors">How to Find Cheap Flights: Expert Hacks</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Pro strategies for scoring the best airfare deals.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://travel.jycsd.com/article-3.html" target="_blank" rel="noopener" class="block group">
+                        <p class="text-sm font-semibold text-gray-900 group-hover:text-cyan-600 transition-colors">Solo Travel Guide: Safety Tips and Top Picks</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Everything you need to know for a safe solo adventure.</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- Game Guides -->
+<section id="games" class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Game Guides</h2>
+        <p class="text-lg text-gray-500 max-w-xl mx-auto">Expert攻略 for your favorite games — from building in Minecraft to climbing ranked in Valorant.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Minecraft -->
+        <a href="https://minecraft.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <div class="h-2 bg-green-500"></div>
+            <div class="p-7">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Mine<span class="text-green-500">Guide</span></h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Complete Minecraft guides — crafting, building, redstone, biomes, and survival tips.</p>
+                <span class="text-green-600 font-semibold text-sm group-hover:underline">minecraft.jycsd.com &rarr;</span>
+            </div>
+        </a>
+
+        <!-- Fortnite -->
+        <a href="https://fortnite.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <div class="h-2 bg-purple-500"></div>
+            <div class="p-7">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Fort<span class="text-purple-500">Guide</span></h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Fortnite strategies, weapon stats, building techniques, and battle royale guides.</p>
+                <span class="text-purple-600 font-semibold text-sm group-hover:underline">fortnite.jycsd.com &rarr;</span>
+            </div>
+        </a>
+
+        <!-- Valorant -->
+        <a href="https://valorant.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <div class="h-2 bg-red-500"></div>
+            <div class="p-7">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Val<span class="text-red-500">Guide</span></h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Valorant agent guides, weapon stats, lineups, and ranked climbing tips.</p>
+                <span class="text-red-600 font-semibold text-sm group-hover:underline">valorant.jycsd.com &rarr;</span>
+            </div>
+        </a>
+
+        <!-- Elden Ring -->
+        <a href="https://eldenring.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <div class="h-2 bg-amber-600"></div>
+            <div class="p-7">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Tarnished<span class="text-amber-600">Guide</span></h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Elden Ring walkthroughs, boss strategies, build guides, and lore deep dives.</p>
+                <span class="text-amber-600 font-semibold text-sm group-hover:underline">eldenring.jycsd.com &rarr;</span>
+            </div>
+        </a>
+
+        <!-- League of Legends -->
+        <a href="https://lol.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <div class="h-2 bg-blue-600"></div>
+            <div class="p-7">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">LoL<span class="text-blue-600">Guide</span></h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">League of Legends champion guides, builds, runes, and macro strategy.</p>
+                <span class="text-blue-600 font-semibold text-sm group-hover:underline">lol.jycsd.com &rarr;</span>
+            </div>
+        </a>
+
+        <!-- CS2 -->
+        <a href="https://cs2.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+            <div class="h-2 bg-orange-600"></div>
+            <div class="p-7">
+                <h3 class="text-xl font-bold text-gray-900 mb-2">CS2<span class="text-orange-600">Guide</span></h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Counter-Strike 2 guides — smoke lineups, map callouts, and pro tactics.</p>
+                <span class="text-orange-600 font-semibold text-sm group-hover:underline">cs2.jycsd.com &rarr;</span>
+            </div>
+        </a>
+
+    </div>
+
+    <div class="text-center mt-12">
+        <a href="https://games.jycsd.com" target="_blank" rel="noopener" class="inline-block bg-primary-700 hover:bg-primary-800 text-white font-bold px-8 py-3.5 rounded-full text-base transition-colors">
+            Browse All Game Guides &rarr;
+        </a>
+    </div>
+</section>
+
+<!-- Anime & Manga -->
+<section id="anime" class="bg-gray-50 py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Anime &amp; Manga</h2>
+            <p class="text-lg text-gray-500 max-w-xl mx-auto">Deep dives into the most popular anime series — character guides, arc breakdowns, and universe lore.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Dragon Ball -->
+            <a href="https://dragonball-jycsd.pages.dev" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
                 <div class="h-2 bg-orange-500"></div>
                 <div class="p-7">
-                    <div class="text-4xl mb-4">🐾</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">PetCare <span class="text-orange-500">Hub</span></h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Expert pet care advice, nutrition tips, behavior guides, and health information for all pet owners.</p>
-                    <span class="text-orange-600 font-semibold text-sm group-hover:underline">pets.jycsd.com &rarr;</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Dragon Ball</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">The definitive Dragon Ball wiki — 114+ characters, transformations, techniques, and saga guides.</p>
+                    <span class="text-orange-600 font-semibold text-sm group-hover:underline">Explore &rarr;</span>
                 </div>
             </a>
 
-            <!-- HomeJoy -->
-            <a href="https://home.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
-                <div class="h-2 bg-lime-500"></div>
+            <!-- One Piece -->
+            <a href="https://onepiece-jycsd.pages.dev" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-2 bg-red-500"></div>
                 <div class="p-7">
-                    <div class="text-4xl mb-4">🏡</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Home<span class="text-lime-500">Joy</span></h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">DIY home improvement, indoor gardening, decluttering, and seasonal maintenance guides.</p>
-                    <span class="text-lime-600 font-semibold text-sm group-hover:underline">home.jycsd.com &rarr;</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">One Piece</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Straw Hat crew guides, devil fruit encyclopedia, arc summaries, and marine lore.</p>
+                    <span class="text-red-600 font-semibold text-sm group-hover:underline">Explore &rarr;</span>
                 </div>
             </a>
 
-            <!-- MoneyWise -->
-            <a href="https://finance.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
-                <div class="h-2 bg-blue-700"></div>
+            <!-- Naruto -->
+            <a href="https://naruto-jycsd.pages.dev" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-2 bg-blue-600"></div>
                 <div class="p-7">
-                    <div class="text-4xl mb-4">💰</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Money<span class="text-blue-700">Wise</span></h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Personal finance made simple — investing, budgeting, credit tips, and retirement planning.</p>
-                    <span class="text-blue-700 font-semibold text-sm group-hover:underline">finance.jycsd.com &rarr;</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Naruto</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Complete Naruto & Boruto guides — jutsu catalog, character profiles, and village histories.</p>
+                    <span class="text-blue-600 font-semibold text-sm group-hover:underline">Explore &rarr;</span>
                 </div>
             </a>
 
-            <!-- TechNest -->
-            <a href="https://tech.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
-                <div class="h-2 bg-slate-500"></div>
+            <!-- Demon Slayer -->
+            <a href="https://demonslayer-jycsd.pages.dev" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-2 bg-green-600"></div>
                 <div class="p-7">
-                    <div class="text-4xl mb-4">💻</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Tech<span class="text-slate-500">Nest</span></h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Honest tech reviews, buying guides, productivity tools, and cybersecurity tips for everyday users.</p>
-                    <span class="text-slate-600 font-semibold text-sm group-hover:underline">tech.jycsd.com &rarr;</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Demon Slayer</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Hashira guides, breathing styles, demon ranks, and season-by-season breakdowns.</p>
+                    <span class="text-green-600 font-semibold text-sm group-hover:underline">Explore &rarr;</span>
                 </div>
             </a>
 
-            <!-- TripRoute -->
-            <a href="https://travel.jycsd.com" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
-                <div class="h-2 bg-cyan-600"></div>
+            <!-- Jujutsu Kaisen -->
+            <a href="https://jjk-jycsd.pages.dev" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-2 bg-purple-600"></div>
                 <div class="p-7">
-                    <div class="text-4xl mb-4">✈️</div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Trip<span class="text-cyan-600">Route</span></h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Budget travel tips, destination guides, packing hacks, and digital nomad lifestyle advice.</p>
-                    <span class="text-cyan-600 font-semibold text-sm group-hover:underline">travel.jycsd.com &rarr;</span>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Jujutsu Kaisen</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Cursed technique catalog, sorcerer profiles, shibuya arc analysis, and domain expansions.</p>
+                    <span class="text-purple-600 font-semibold text-sm group-hover:underline">Explore &rarr;</span>
+                </div>
+            </a>
+
+            <!-- Attack on Titan -->
+            <a href="https://aot-jycsd.pages.dev" target="_blank" rel="noopener" class="site-card block bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden group">
+                <div class="h-2 bg-gray-800"></div>
+                <div class="p-7">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Attack on Titan</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Titan shifters, Scout Regiment guides, wall lore, and episode-by-episode breakdowns.</p>
+                    <span class="text-gray-800 font-semibold text-sm group-hover:underline">Explore &rarr;</span>
                 </div>
             </a>
 
         </div>
-    </section>
 
-    <section class="bg-gray-50 py-20 md:py-28">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="text-center mb-14">
-                <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Why Myers Media?</h2>
-                <p class="text-lg text-gray-500">Quality content, no fluff. Every guide is researched and written for real people.</p>
+        <div class="text-center mt-12">
+            <a href="https://anime.jycsd.com" target="_blank" rel="noopener" class="inline-block bg-primary-700 hover:bg-primary-800 text-white font-bold px-8 py-3.5 rounded-full text-base transition-colors">
+                Browse All Anime Wikis &rarr;
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Myers Media -->
+<section class="bg-gray-50 py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Why Myers Media?</h2>
+            <p class="text-lg text-gray-500">Quality content, no fluff. Every guide is researched and written for real people.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="text-center">
+                <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Expert-Reviewed</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">Every article is fact-checked and reviewed by subject matter experts before publication.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="text-center">
-                    <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4">🔍</div>
-                    <h3 class="font-bold text-gray-900 mb-2">Expert-Reviewed</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">Every article is fact-checked and reviewed by subject matter experts before publication.</p>
+            <div class="text-center">
+                <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 </div>
-                <div class="text-center">
-                    <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4">⚡</div>
-                    <h3 class="font-bold text-gray-900 mb-2">Fast & Clean</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">No pop-ups, no distractions. Pages load instantly on any device, anywhere in the world.</p>
+                <h3 class="font-bold text-gray-900 mb-2">Fast & Clean</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">No pop-ups, no distractions. Pages load instantly on any device, anywhere in the world.</p>
+            </div>
+            <div class="text-center">
+                <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
-                <div class="text-center">
-                    <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4">🌍</div>
-                    <h3 class="font-bold text-gray-900 mb-2">Always Free</h3>
-                    <p class="text-sm text-gray-500 leading-relaxed">All our content is 100% free, supported by ads so you never have to pay for quality information.</p>
-                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Always Free</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">All our content is 100% free, supported by ads so you never have to pay for quality information.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact -->
-    <section id="contact" class="max-w-5xl mx-auto px-6 py-20 md:py-28 text-center">
-        <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Get In Touch</h2>
-        <p class="text-lg text-gray-500 mb-8 max-w-lg mx-auto">Have questions or feedback? We'd love to hear from you.</p>
-        <a href="mailto:contact@jycsd.com" class="inline-block bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-4 rounded-full text-base transition-colors">
-            contact@jycsd.com
-        </a>
-    </section>
+<!-- Contact -->
+<section id="contact" class="max-w-5xl mx-auto px-6 py-20 md:py-28 text-center">
+    <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-4">Get In Touch</h2>
+    <p class="text-lg text-gray-500 mb-8 max-w-lg mx-auto">Have questions or feedback? We'd love to hear from you.</p>
+    <a href="mailto:contact@jycsd.com" class="inline-block bg-primary-700 hover:bg-primary-800 text-white font-bold px-10 py-4 rounded-full text-base transition-colors">
+        contact@jycsd.com
+    </a>
+</section>
 
-    <!-- Footer -->
-    
-
-
-
-
-
+<!-- Footer -->
 <footer class="bg-gray-900 text-gray-400 py-12">
     <div class="max-w-6xl mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-8 mb-10">
             <div>
                 <h3 class="text-white text-lg font-black mb-3">Myers Media</h3>
                 <p class="text-sm leading-relaxed">Your gateway to expert lifestyle guides across multiple domains.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Our Sites</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="https://healthy.jycsd.com" class="hover:text-white transition-colors">HealthyEats</a></li>
+                    <li><a href="https://pets.jycsd.com" class="hover:text-white transition-colors">PetCare Hub</a></li>
+                    <li><a href="https://home.jycsd.com" class="hover:text-white transition-colors">HomeJoy</a></li>
+                    <li><a href="https://finance.jycsd.com" class="hover:text-white transition-colors">MoneyWise</a></li>
+                    <li><a href="https://tech.jycsd.com" class="hover:text-white transition-colors">TechNest</a></li>
+                    <li><a href="https://travel.jycsd.com" class="hover:text-white transition-colors">TripRoute</a></li>
+                    <li class="pt-2 border-t border-gray-800"><a href="https://games.jycsd.com" class="hover:text-white transition-colors font-medium">Game Guides</a></li>
+                    <li><a href="https://anime.jycsd.com" class="hover:text-white transition-colors font-medium">Anime &amp; Manga</a></li>
+                </ul>
             </div>
             <div>
                 <h4 class="text-white font-semibold mb-3">Legal</h4>
