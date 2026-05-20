@@ -11,7 +11,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://anime.jycsd.com/">
-
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#a855f7',accentDark:'#9333ea'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
@@ -21,18 +20,13 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
 ins.adsbygoogle{display:block}
-.ad-label{text-align:center;color:#9ca3af;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
+.ad-label{text-align:center;color:#6b7280;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
 .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
 .carousel-slide.active{opacity:1;pointer-events:auto}
 .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
 .carousel-dot.active{background:#a855f7}
+.game-card:hover{transform:translateY(-3px);transition:all 0.3s ease}
 .card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px #a855f726;transition:all .3s ease}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.float-anim{animation:float 3s ease-in-out infinite}
-.char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
-img[src$=".png"]{mix-blend-mode:normal}
-.bg-transparent-img img{mix-blend-mode:normal}
-.transparent-bg{background:transparent!important}
 .search-dropdown{position:absolute;top:100%;left:0;right:0;background:#1a1f2e;border:1px solid #374151;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
 .search-dropdown.active{display:block}
 .search-result{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .15s;border-bottom:1px solid rgba(75,85,99,.15)}
@@ -44,13 +38,13 @@ img[src$=".png"]{mix-blend-mode:normal}
 </head>
 <body>
 
-<nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(13,17,23,0.95);border-color:#374151">
+<nav class="fixed top-0 w-full z-50 bg-bgPrimary/95 backdrop-blur-md border-b border-gray-800/50">
 <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
 <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">A</div>
-<span class="text-xl font-bold tracking-tight">Anime <span class="text-accent">Wiki Hub</span></span>
+<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">A</div>
+<span class="text-xl font-bold">Anime <span class="text-accent">Wiki Hub</span></span>
 </a>
-<div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+<div class="hidden lg:flex items-center gap-5 text-sm font-medium">
 <a href="https://anime.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">Anime Hub</a>
 <a href="/guides/dragonball/" class="text-textSecondary hover:text-accent transition-colors">Dragon Ball</a>
 <a href="/guides/onepiece/" class="text-textSecondary hover:text-accent transition-colors">One Piece</a>
@@ -59,7 +53,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <a href="/guides/jjk/" class="text-textSecondary hover:text-accent transition-colors">Jujutsu Kaisen</a>
 <a href="/guides/aot/" class="text-textSecondary hover:text-accent transition-colors">Attack on Titan</a>
 </div>
-<div class="hidden lg:flex items-center relative flex-1 max-w-xs ml-2" id="searchWrap">
+<div class="hidden lg:flex items-center relative flex-1 max-w-xs" id="searchWrap">
 <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"
  class="w-full bg-bgSecondary text-textPrimary text-sm px-3 py-2 rounded-lg border focus:outline-none focus:border-accent transition-colors"
  style="border-color:#374151">
@@ -85,71 +79,117 @@ img[src$=".png"]{mix-blend-mode:normal}
 </nav>
 
 <!-- Hero Carousel -->
-<section class="relative w-full overflow-hidden pt-16" style="height:520px">
+<section class="relative w-full overflow-hidden pt-16" style="height:480px">
 <div class="carousel-slide active">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
+<div class="absolute inset-0 bg-gradient-to-br from-purple-950 via-gray-950 to-gray-950"></div>
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 30% 50%, #a855f7 0%, transparent 60%)"></div>
 <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="pt-10">
-<h1 class="text-4xl md:text-6xl font-black mb-4">Explore Every Anime World</h1>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Comprehensive guides across Dragon Ball, One Piece, Naruto, Demon Slayer, and more. Character databases, power systems, and arc breakdowns.</p>
-<div class="flex gap-3">
-<a href="/guides/dragonball/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Browse Dragon Ball</a>
-<a href="/guides/onepiece/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Explore One Piece</a>
+<div class="max-w-2xl">
+<span class="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full">6 Anime Universes & Growing</span>
+<h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight">Explore Every <span class="text-accent">Anime World</span></h1>
+<p class="text-lg text-textSecondary mt-4 max-w-lg">Comprehensive guides across Dragon Ball, One Piece, Naruto, Demon Slayer, and more. Character databases, power systems, and arc breakdowns.</p>
+<div class="flex gap-3 mt-6">
+<a href="/guides/dragonball/" class="bg-accent text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Browse Dragon Ball</a>
+<a href="/guides/onepiece/" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Explore One Piece</a>
 </div>
-</div></div></div>
+</div>
+</div>
+</div>
+<div class="carousel-slide">
+<div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-cyan-900 to-gray-950"></div>
+<div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 70% 50%, #4ea8de 0%, transparent 60%)"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="max-w-2xl ml-auto text-right">
+<span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full" style="color:#4ea8de;background:#4ea8de1a">Just Launched</span>
+<h2 class="text-4xl md:text-6xl font-black mt-4 leading-tight"><span style="color:#4ea8de">Demon Slayer</span> Complete Guide</h2>
+<p class="text-lg text-textSecondary mt-4">30+ in-depth guides covering all Breathing Styles, Hashira profiles, demon rankings, and every arc from Mount Natagumo to Infinity Castle.</p>
+<a href="/guides/demonslayer/" class="inline-block mt-6 text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all" style="background:#4ea8de">Browse Demon Slayer &#8594;</a>
+</div>
+</div>
+</div>
+</div>
 <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-
+<div class="carousel-dot active" data-slide="0"></div>
+<div class="carousel-dot" data-slide="1"></div>
 </div>
 </section>
 
+<!-- Series Grid -->
+<section class="max-w-7xl mx-auto px-4 py-16">
+<p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Browse by Series</p>
+<h2 class="text-3xl font-black mb-8">6 Anime Universes</h2>
 
+<div class="mb-10">
+<h3 class="text-lg font-bold mb-4" style="color:#ff6b35">&#8226; Shonen Legends</h3>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<a href="/guides/dragonball/" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-[#ff6b35]/50 block">
+<div class="flex items-start justify-between mb-3">
+<div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:#ff6b351a;color:#ff6b35">&#9670;</div>
+<span class="text-xs px-2 py-0.5 rounded-full font-semibold" style="background:#ff6b351a;color:#ff6b35">Classic</span>
+</div>
+<h4 class="font-bold text-lg">Dragon Ball</h4>
+<p class="text-sm text-textSecondary">50+ guides</p>
+<span class="text-xs font-semibold mt-3 inline-block" style="color:#ff6b35">Live &#8594;</span>
+</a>
+<a href="/guides/onepiece/" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-[#ffd700]/50 block">
+<div class="flex items-start justify-between mb-3">
+<div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:#ffd7001a;color:#ffd700">&#9670;</div>
+<span class="text-xs px-2 py-0.5 rounded-full font-semibold" style="background:#ffd7001a;color:#ffd700">Shonen</span>
+</div>
+<h4 class="font-bold text-lg">One Piece</h4>
+<p class="text-sm text-textSecondary">50+ guides</p>
+<span class="text-xs font-semibold mt-3 inline-block" style="color:#ffd700">Live &#8594;</span>
+</a>
+<a href="/guides/naruto/" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-[#f97316]/50 block">
+<div class="flex items-start justify-between mb-3">
+<div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:#f973161a;color:#f97316">&#9670;</div>
+<span class="text-xs px-2 py-0.5 rounded-full font-semibold" style="background:#f973161a;color:#f97316">Shonen</span>
+</div>
+<h4 class="font-bold text-lg">Naruto</h4>
+<p class="text-sm text-textSecondary">50+ guides</p>
+<span class="text-xs font-semibold mt-3 inline-block" style="color:#f97316">Live &#8594;</span>
+</a>
+</div>
+</div>
 
-<a href="/guides/dragonball/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#ff6b35">&#9670;</div></div>
-<div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Dragon Ball</div>
-<div class="text-sm text-textSecondary mt-1">50+ guides</div>
+<div class="mb-10">
+<h3 class="text-lg font-bold mb-4" style="color:#4ea8de">&#8226; Modern Hits</h3>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<a href="/guides/demonslayer/" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-[#4ea8de]/50 block">
+<div class="flex items-start justify-between mb-3">
+<div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:#4ea8de1a;color:#4ea8de">&#9670;</div>
+<span class="text-xs px-2 py-0.5 rounded-full font-semibold" style="background:#4ea8de1a;color:#4ea8de">Modern</span>
 </div>
+<h4 class="font-bold text-lg">Demon Slayer</h4>
+<p class="text-sm text-textSecondary">30+ guides</p>
+<span class="text-xs font-semibold mt-3 inline-block" style="color:#4ea8de">Live &#8594;</span>
 </a>
-<a href="/guides/onepiece/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#ffd700">&#9670;</div></div>
-<div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">One Piece</div>
-<div class="text-sm text-textSecondary mt-1">50+ guides</div>
+<a href="/guides/jjk/" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-[#ef4444]/50 block">
+<div class="flex items-start justify-between mb-3">
+<div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:#ef44441a;color:#ef4444">&#9670;</div>
+<span class="text-xs px-2 py-0.5 rounded-full font-semibold" style="background:#ef44441a;color:#ef4444">Modern</span>
 </div>
+<h4 class="font-bold text-lg">Jujutsu Kaisen</h4>
+<p class="text-sm text-textSecondary">25+ guides</p>
+<span class="text-xs font-semibold mt-3 inline-block" style="color:#ef4444">Live &#8594;</span>
 </a>
-<a href="/guides/naruto/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#f97316">&#9670;</div></div>
-<div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Naruto</div>
-<div class="text-sm text-textSecondary mt-1">50+ guides</div>
+<a href="/guides/aot/" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-[#6b7280]/50 block">
+<div class="flex items-start justify-between mb-3">
+<div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style="background:#6b72801a;color:#6b7280">&#9670;</div>
+<span class="text-xs px-2 py-0.5 rounded-full font-semibold" style="background:#6b72801a;color:#6b7280">Dark Fantasy</span>
 </div>
+<h4 class="font-bold text-lg">Attack on Titan</h4>
+<p class="text-sm text-textSecondary">20+ guides</p>
+<span class="text-xs font-semibold mt-3 inline-block" style="color:#6b7280">Live &#8594;</span>
 </a>
-<a href="/guides/demonslayer/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#4ea8de">&#9670;</div></div>
-<div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Demon Slayer</div>
-<div class="text-sm text-textSecondary mt-1">30+ guides</div>
 </div>
-</a>
-<a href="/guides/jjk/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#ef4444">&#9670;</div></div>
-<div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Jujutsu Kaisen</div>
-<div class="text-sm text-textSecondary mt-1">25+ guides</div>
 </div>
-</a>
-<a href="/guides/aot/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#6b7280">&#9670;</div></div>
-<div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Attack on Titan</div>
-<div class="text-sm text-textSecondary mt-1">20+ guides</div>
-</div>
-</a>
+</section>
 
-<!-- Ad: 728x90 -->
-<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9112825459"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+<!-- Ad: 970x250 Billboard -->
+<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9739511410"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
+<!-- Latest Guides -->
 <section class="max-w-7xl mx-auto px-4 py-16">
 <div class="flex items-end justify-between mb-8">
 <div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Fresh Content</p><h2 class="text-3xl font-black">Latest Guides</h2></div>
@@ -157,7 +197,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 <div class="grid lg:grid-cols-2 gap-5">
 <a href="/guides/dragonball/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-orange-900 to-red-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-orange-900 to-red-950 flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ff6b35, transparent);"></div>
 <div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
 </div>
@@ -167,7 +207,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 17, 2026</time>
 </div>
 </a><a href="/guides/onepiece/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-amber-900 to-yellow-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-amber-900 to-yellow-950 flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ffd700, transparent);"></div>
 <div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
 </div>
@@ -177,7 +217,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 16, 2026</time>
 </div>
 </a><a href="/guides/naruto/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-orange-900 to-orange-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-orange-900 to-orange-950 flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #f97316, transparent);"></div>
 <div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
 </div>
@@ -187,7 +227,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 15, 2026</time>
 </div>
 </a><a href="/guides/demonslayer/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-blue-900 to-cyan-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-blue-900 to-cyan-950 flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #4ea8de, transparent);"></div>
 <div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
 </div>
@@ -197,7 +237,10 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 14, 2026</time>
 </div>
 </a>
-</div></section>
+</div>
+</section>
+
+<!-- Hot Topics + Sticky Ad -->
 <section class="max-w-7xl mx-auto px-4 py-8">
 <div class="flex items-end justify-between mb-6">
 <div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Trending</p><h2 class="text-2xl font-black">Hot Topics This Month</h2></div>
@@ -205,21 +248,21 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 <div class="grid lg:grid-cols-3 gap-8">
 <div class="lg:col-span-2"><div class="space-y-3"><a href="/guides/dragonball/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Best Anime of 2026: What's Worth Watching This Season</h3>
 <p class="text-base text-textSecondary mt-1.5">Our curated list of must-watch anime — from shonen epics to slice-of-life hidden gems.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a><a href="/guides/naruto/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Anime Power Systems Compared: Ki vs Haki vs Chakra vs Nen</h3>
 <p class="text-base text-textSecondary mt-1.5">How each universe's power system works and which one is the most versatile in combat.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a><a href="/guides/onepiece/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Ultimate Shonen Guide: Where to Start & What to Watch</h3>
 <p class="text-base text-textSecondary mt-1.5">New to anime? Start here — the definitive guide to the best entry points for every major series.</p>
@@ -227,12 +270,13 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 </a></div></div>
 <div class="hidden lg:block"><div class="sticky top-24"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="4397738132"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
-</div></section>
+</div>
+</section>
 
+<!-- Ad: 728x90 -->
+<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9112825459"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
-<!-- Ad: 970x250 -->
-<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9739511410"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
-
+<!-- Every Guide Category -->
 <section class="max-w-7xl mx-auto px-4 py-8">
 <div class="flex items-end justify-between mb-8">
 <h2 class="text-3xl font-black">Every Guide Category</h2>
@@ -240,91 +284,89 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 <a href="/guides/dragonball/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ff6b35">&#9670;</div></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ff6b35">&#9670;</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Dragon Ball</h3>
 <p class="text-base text-textSecondary mt-1">Dragon Ball &mdash; Complete Guide</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">50+ guides</span>
 </div>
 </a><a href="/guides/onepiece/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ffd700">&#9670;</div></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ffd700">&#9670;</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">One Piece</h3>
 <p class="text-base text-textSecondary mt-1">One Piece &mdash; Complete Guide</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">50+ guides</span>
 </div>
 </a><a href="/guides/naruto/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#f97316">&#9670;</div></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#f97316">&#9670;</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Naruto</h3>
 <p class="text-base text-textSecondary mt-1">Naruto &mdash; Complete Guide</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">50+ guides</span>
 </div>
 </a><a href="/guides/demonslayer/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#4ea8de">&#9670;</div></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#4ea8de">&#9670;</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Demon Slayer</h3>
 <p class="text-base text-textSecondary mt-1">Demon Slayer &mdash; Complete Guide</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">30+ guides</span>
 </div>
 </a><a href="/guides/jjk/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ef4444">&#9670;</div></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ef4444">&#9670;</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Jujutsu Kaisen</h3>
 <p class="text-base text-textSecondary mt-1">Jujutsu Kaisen &mdash; Complete Guide</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">25+ guides</span>
 </div>
 </a><a href="/guides/aot/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#6b7280">&#9670;</div></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#6b7280">&#9670;</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Attack on Titan</h3>
 <p class="text-base text-textSecondary mt-1">Attack on Titan &mdash; Complete Guide</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">20+ guides</span>
 </div>
 </a>
-</div></section>
+</div>
+</section>
 
-
-
-<footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#374151">
-<div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+<!-- Footer -->
+<footer class="bg-bgSecondary border-t border-gray-800 py-16 px-4 mt-8">
+<div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
-<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">A</div>
+<div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">A</div>
 <span class="text-xl font-bold">Anime <span class="text-accent">Wiki Hub</span></span>
 </div>
 <p class="text-sm text-textSecondary leading-relaxed">Expert anime character guides, power system breakdowns, and arc analyses. Part of the Anime Hub Network.</p>
 </div>
 <div>
-<h4 class="font-bold mb-4">Categories</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="/guides/dragonball/" class="hover:text-accent transition-colors">Dragon Ball</a></li>
-<li><a href="/guides/onepiece/" class="hover:text-accent transition-colors">One Piece</a></li>
-<li><a href="/guides/naruto/" class="hover:text-accent transition-colors">Naruto</a></li>
-<li><a href="/guides/demonslayer/" class="hover:text-accent transition-colors">Demon Slayer</a></li>
-<li><a href="/guides/jjk/" class="hover:text-accent transition-colors">Jujutsu Kaisen</a></li>
+<h4 class="font-bold mb-3">Categories</h4>
+<ul class="space-y-1.5 text-sm text-textSecondary">
+<li><a href="/guides/dragonball/" class="hover:text-accent transition-colors">Dragon Ball &#8594;</a></li>
+<li><a href="/guides/onepiece/" class="hover:text-accent transition-colors">One Piece &#8594;</a></li>
+<li><a href="/guides/naruto/" class="hover:text-accent transition-colors">Naruto &#8594;</a></li>
+<li><a href="/guides/demonslayer/" class="hover:text-accent transition-colors">Demon Slayer &#8594;</a></li>
+<li><a href="/guides/jjk/" class="hover:text-accent transition-colors">Jujutsu Kaisen &#8594;</a></li>
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-4">More Anime Wikis</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="https://dragonball.jycsd.com" class="hover:text-accent transition-colors">Dragon Ball</a></li>
-<li><a href="https://onepiece.jycsd.com" class="hover:text-accent transition-colors">One Piece</a></li>
-<li><a href="https://naruto.jycsd.com" class="hover:text-accent transition-colors">Naruto</a></li>
-<li><a href="https://demonslayer.jycsd.com" class="hover:text-accent transition-colors">Demon Slayer</a></li>
+<h4 class="font-bold mb-3">More Anime Wikis</h4>
+<ul class="space-y-1.5 text-sm text-textSecondary">
+<li><a href="https://dragonball.jycsd.com" class="hover:text-accent transition-colors">Dragon Ball Wiki &#8594;</a></li>
+<li><a href="https://onepiece.jycsd.com" class="hover:text-accent transition-colors">One Piece Wiki &#8594;</a></li>
+<li><a href="https://naruto.jycsd.com" class="hover:text-accent transition-colors">Naruto Wiki &#8594;</a></li>
+<li><a href="https://demonslayer.jycsd.com" class="hover:text-accent transition-colors">Demon Slayer Wiki &#8594;</a></li>
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-4">About</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="/about.html" class="hover:text-accent transition-colors">About</a></li>
-<li><a href="/contact.html" class="hover:text-accent transition-colors">Contact</a></li>
-<li><a href="/sitemap.xml" class="hover:text-accent transition-colors">Sitemap</a></li>
+<h4 class="font-bold mb-3">About</h4>
+<ul class="space-y-1.5 text-sm text-textSecondary">
+<li><a href="/about.html" class="hover:text-accent transition-colors">About &#8594;</a></li>
+<li><a href="/contact.html" class="hover:text-accent transition-colors">Contact &#8594;</a></li>
+<li><a href="/sitemap.xml" class="hover:text-accent transition-colors">Sitemap &#8594;</a></li>
 </ul>
+<p class="text-xs text-textSecondary mt-4">&copy; 2026 Anime Wiki Hub by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All anime characters belong to their respective owners.</p>
 </div>
-</div>
-<div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#374151">
-<p>&copy; 2026 Anime Wiki Hub by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All anime characters and trademarks belong to their respective owners.</p>
 </div>
 </footer>
 
