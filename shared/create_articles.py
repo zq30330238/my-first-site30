@@ -439,7 +439,7 @@ def main():
     print("Running pre-commit audit...")
     print(f"{'='*60}")
     audit = subprocess.run(
-        ["py", str(ROOT / "shared" / "pre_commit_audit.py")],
+        ["python3", str(ROOT / "shared" / "pre_commit_audit.py")],
         capture_output=True, text=True, cwd=str(ROOT)
     )
     print(audit.stdout)
