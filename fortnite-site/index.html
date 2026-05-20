@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="google-adsense-account" content="ca-pub-2595917642864488">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FortGuide — Dominate the Island</title>
 <meta name="description" content="Every new weapon, POI change, and meta shift covered within 24 hours of each update. Build better, aim sharper.">
@@ -20,8 +21,6 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',Arial,sans-serif;background:#ffffff;color:#111827;font-size:16px;line-height:1.6}
-ins.adsbygoogle{display:block}
-.ad-label{text-align:center;color:#9ca3af;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
 .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
 .carousel-slide.active{opacity:1;pointer-events:auto}
 .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
@@ -40,6 +39,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 .search-result:last-child{border-bottom:none}
 .search-result .sr-type{font-size:10px;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:999px;flex-shrink:0}
 .search-empty{padding:20px;text-align:center;color:#4b5563;font-size:14px}
+.back-to-top{position:fixed;bottom:32px;right:32px;z-index:999;width:44px;height:44px;border-radius:50%;background:#a78bfa;color:#111;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;opacity:0;transition:all .3s;box-shadow:0 4px 15px rgba(167,139,250,.4);border:none}.back-to-top.visible{opacity:1}.back-to-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(167,139,250,.6)}
 </style>
 </head>
 <body>
@@ -51,11 +51,14 @@ img[src$=".png"]{mix-blend-mode:normal}
 <span class="text-xl font-bold tracking-tight">Fort<span class="text-accent">Guide</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+<a href="https://jycsd.com" class="text-textSecondary hover:text-accent transition-colors">Main Site</a>
+<a href="https://anime.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">Anime Hub</a>
 <a href="https://games.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">Game Hub</a>
 <a href="/guides/weapons/" class="text-textSecondary hover:text-accent transition-colors">Weapons</a>
 <a href="/guides/map/" class="text-textSecondary hover:text-accent transition-colors">Map</a>
 <a href="/guides/building/" class="text-textSecondary hover:text-accent transition-colors">Building</a>
 <a href="/guides/seasons/" class="text-textSecondary hover:text-accent transition-colors">Seasons</a>
+<a href="/play/" class="text-accent font-semibold hover:text-accentDark transition-colors">Play Games</a>
 </div>
 <div class="hidden lg:flex items-center relative flex-1 max-w-xs ml-2" id="searchWrap">
 <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"
@@ -72,11 +75,14 @@ img[src$=".png"]{mix-blend-mode:normal}
  style="border-color:#e5e7eb">
 <div class="search-dropdown" id="searchDropdownMobile"></div>
 </div>
+<a href="https://jycsd.com" class="block text-textSecondary hover:text-accent transition-colors">Main Site</a>
+<a href="https://anime.jycsd.com" class="block text-textSecondary hover:text-accent transition-colors">Anime Hub</a>
 <a href="https://games.jycsd.com" class="block text-textSecondary hover:text-accent transition-colors">Game Hub</a>
 <a href="/guides/weapons/" class="block text-textSecondary hover:text-accent transition-colors">Weapons</a>
 <a href="/guides/map/" class="block text-textSecondary hover:text-accent transition-colors">Map</a>
 <a href="/guides/building/" class="block text-textSecondary hover:text-accent transition-colors">Building</a>
 <a href="/guides/seasons/" class="block text-textSecondary hover:text-accent transition-colors">Seasons</a>
+<a href="/play/" class="block text-accent font-semibold hover:text-accentDark transition-colors">Play Games</a>
 </div>
 </nav>
 
@@ -97,40 +103,39 @@ img[src$=".png"]{mix-blend-mode:normal}
 
 </div>
 </section>
-
-
-
+<section class="max-w-7xl mx-auto px-4 py-8"><h2 class="text-2xl font-black mb-6">All Categories</h2><div class="flex flex-wrap gap-4 justify-center items-stretch">
 <a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#e5e7eb">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#a78bfa">&#9670;</div></div>
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/jonesy.png" alt="Weapons" class="w-full h-full object-contain p-3 rounded-xl"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-lg md:text-xl">Weapons</div>
 <div class="text-sm text-textSecondary mt-1">20+ guides</div>
 </div>
 </a>
 <a href="/guides/map/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#e5e7eb">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#22d3ee">&#9670;</div></div>
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/drift.png" alt="Map" class="w-full h-full object-contain p-3 rounded-xl"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-lg md:text-xl">Map</div>
 <div class="text-sm text-textSecondary mt-1">15+ guides</div>
 </div>
 </a>
 <a href="/guides/building/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#e5e7eb">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#fbbf24">&#9670;</div></div>
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/black-knight.png" alt="Building" class="w-full h-full object-contain p-3 rounded-xl"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-lg md:text-xl">Building</div>
 <div class="text-sm text-textSecondary mt-1">12+ guides</div>
 </div>
 </a>
 <a href="/guides/seasons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#e5e7eb">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#4ade80">&#9670;</div></div>
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/midas.png" alt="Seasons" class="w-full h-full object-contain p-3 rounded-xl"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-lg md:text-xl">Seasons</div>
 <div class="text-sm text-textSecondary mt-1">30+ guides</div>
 </div>
 </a>
+</div></section>
 
 <!-- Ad: 728x90 -->
-<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9112825459"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+<div class="max-w-[728px] mx-auto px-4 mt-10"><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
 <section class="max-w-7xl mx-auto px-4 py-16">
 <div class="flex items-end justify-between mb-8">
@@ -141,7 +146,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#e5e7eb">
 <div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-purple-900 to-indigo-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #a78bfa, transparent);"></div>
-<div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
+<img src="/images/raven.png" alt="Weapons" class="w-full h-full object-contain p-3 rounded-xl">
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#a78bfa;background:#a78bfa1a">Weapons</span>
@@ -151,7 +156,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a><a href="/guides/seasons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#e5e7eb">
 <div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-emerald-900 to-green-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #4ade80, transparent);"></div>
-<div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
+<img src="/images/peely.png" alt="Seasons" class="w-full h-full object-contain p-3 rounded-xl">
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#4ade80;background:#4ade801a">Seasons</span>
@@ -161,7 +166,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a><a href="/guides/building/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#e5e7eb">
 <div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-amber-900 to-yellow-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #fbbf24, transparent);"></div>
-<div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
+<img src="/images/omega.png" alt="Building" class="w-full h-full object-contain p-3 rounded-xl">
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#fbbf24;background:#fbbf241a">Building</span>
@@ -171,7 +176,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a><a href="/guides/map/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#e5e7eb">
 <div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-cyan-900 to-sky-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #22d3ee, transparent);"></div>
-<div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
+<img src="/images/fishstick.png" alt="Map" class="w-full h-full object-contain p-3 rounded-xl">
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#22d3ee;background:#22d3ee1a">Map</span>
@@ -187,33 +192,32 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 <div class="grid lg:grid-cols-3 gap-8">
 <div class="lg:col-span-2"><div class="space-y-3"><a href="/guides/seasons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#e5e7eb">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/brite-bomber.png" alt="Seasons" class="w-full h-full object-contain p-3 rounded-xl"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Chapter 6 Season 3: Every New Weapon & POI</h3>
 <p class="text-base text-textSecondary mt-1.5">Full breakdown of the new season — weapons, map changes, battle pass skins, and gameplay mechanics.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a><a href="/guides/map/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#e5e7eb">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/skull-trooper.png" alt="Map" class="w-full h-full object-contain p-3 rounded-xl"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Best Landing Spots for High Kills (Chapter 6 Map)</h3>
 <p class="text-base text-textSecondary mt-1.5">Where to land for the best loot, most eliminations, and highest survival rate in Chapter 6.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a><a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#e5e7eb">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/renegade-raider.png" alt="Weapons" class="w-full h-full object-contain p-3 rounded-xl"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Zero Build Mode: Complete Strategy Guide</h3>
 <p class="text-base text-textSecondary mt-1.5">How to win without building — positioning, rotation paths, and loadout priorities for Zero Build mode.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a></div></div>
-<div class="hidden lg:block"><div class="sticky top-24"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="4397738132"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
+<div class="hidden lg:block"><div class="sticky top-24"><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
 </div></section>
 
-
 <!-- Ad: 970x250 -->
-<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9739511410"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+<div class="max-w-[970px] mx-auto px-4"><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
 <section class="max-w-7xl mx-auto px-4 py-8">
 <div class="flex items-end justify-between mb-8">
@@ -222,28 +226,28 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 <a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#a78bfa">&#9670;</div></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/the-reaper.png" alt="Weapons" class="w-full h-full object-contain p-3 rounded-xl"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Weapons</h3>
 <p class="text-base text-textSecondary mt-1">Weapons &mdash; Complete Guide</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">20+ guides</span>
 </div>
 </a><a href="/guides/map/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#22d3ee">&#9670;</div></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/lynx.png" alt="Map" class="w-full h-full object-contain p-3 rounded-xl"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Map</h3>
 <p class="text-base text-textSecondary mt-1">Map &mdash; Complete Guide</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">15+ guides</span>
 </div>
 </a><a href="/guides/building/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#fbbf24">&#9670;</div></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/rust-lord.png" alt="Building" class="w-full h-full object-contain p-3 rounded-xl"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Building</h3>
 <p class="text-base text-textSecondary mt-1">Building &mdash; Complete Guide</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">12+ guides</span>
 </div>
 </a><a href="/guides/seasons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#4ade80">&#9670;</div></div>
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/skye.png" alt="Seasons" class="w-full h-full object-contain p-3 rounded-xl"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Seasons</h3>
 <p class="text-base text-textSecondary mt-1">Seasons &mdash; Complete Guide</p>
@@ -251,8 +255,6 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 </a>
 </div></section>
-
-
 
 <footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#e5e7eb">
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -293,6 +295,26 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#e5e7eb">
 <p>&copy; 2026 FortGuide by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All game trademarks belong to their respective owners.</p>
 </div>
+<div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-gray-700/30" style="border-color:#e5e7eb">
+  <p class="text-center text-xs text-textSecondary mb-3 font-semibold uppercase tracking-widest">Our Network</p>
+  <div class="flex justify-center gap-x-4 gap-y-1 flex-wrap text-xs text-textSecondary">
+    <a href="https://jycsd.com" class="hover:text-accent transition-colors">Main Site</a>
+    <a href="https://games.jycsd.com" class="hover:text-accent transition-colors">Game Hub</a>
+    <a href="https://anime.jycsd.com" class="hover:text-accent transition-colors">Anime Hub</a>
+    <a href="https://minecraft.jycsd.com" class="hover:text-accent transition-colors">Minecraft</a>
+    <a href="https://fortnite.jycsd.com" class="hover:text-accent transition-colors">Fortnite</a>
+    <a href="https://eldenring.jycsd.com" class="hover:text-accent transition-colors">Elden Ring</a>
+    <a href="https://dragonball.jycsd.com" class="hover:text-accent transition-colors">Dragon Ball</a>
+    <a href="https://valorant.jycsd.com" class="hover:text-accent transition-colors">Valorant</a>
+    <a href="https://lol.jycsd.com" class="hover:text-accent transition-colors">League of Legends</a>
+    <a href="https://healthy.jycsd.com" class="hover:text-accent transition-colors">HealthyEats</a>
+    <a href="https://pets.jycsd.com" class="hover:text-accent transition-colors">PetCare</a>
+    <a href="https://home.jycsd.com" class="hover:text-accent transition-colors">HomeJoy</a>
+    <a href="https://finance.jycsd.com" class="hover:text-accent transition-colors">MoneyWise</a>
+    <a href="https://tech.jycsd.com" class="hover:text-accent transition-colors">TechNest</a>
+    <a href="https://travel.jycsd.com" class="hover:text-accent transition-colors">TripRoute</a>
+  </div>
+</div>
 </footer>
 
 <script>
@@ -321,5 +343,9 @@ loadIdx();
 
 })();
 </script>
+<script>
+(function(){var btn=document.getElementById('backToTop');if(!btn)return;window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>600)});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+</script>
+<button id="backToTop" class="back-to-top" aria-label="Back to top">&#8593;</button>
 </body>
 </html>
