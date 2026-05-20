@@ -15,9 +15,10 @@ LOG = Path('/tmp/anime_nightly.log')
 def log(msg):
     t = time.strftime('%H:%M:%S')
     line = f'[{t}] {msg}'
-    print(line)
+    print(line, flush=True)
     with open(LOG, 'a') as f:
         f.write(line + '\n')
+        f.flush()
 
 def verify_image(path, char_name):
     """Use doubao to verify image is correct character"""
