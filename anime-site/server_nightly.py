@@ -171,7 +171,8 @@ def main():
 
     log('\n' + '=' * 50)
     log(f'RESULT: {ok} OK, {fail} failed')
-    log(f'Total images in anime-site/images/: {len(list(ANIME_IMG.glob(\"*.png\")))}')
+    count = len(list(ANIME_IMG.glob('*.png')))
+    log(f'Total images in anime-site/images/: {count}')
     log('=' * 50)
 
 if __name__ == '__main__':
