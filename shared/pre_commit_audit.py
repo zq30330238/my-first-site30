@@ -55,6 +55,13 @@ PLACEHOLDER_PATTERNS = [
     (r'>Coming [Ss]oon', "Coming soon placeholder"),
 ]
 
+# === Image placeholder patterns ===
+IMAGE_PLACEHOLDER_PATTERNS = [
+    (r"&#9670;", "Diamond image placeholder (should be real image)"),
+    (r"&#128214;", "Book emoji image placeholder (should be real image)"),
+    (r"&#128293;", "Fire emoji image placeholder (should be real image)"),
+]
+
 # === AI cliches (US consumer audience hates these) ===
 AI_CLICHES = [
     "delve into",
@@ -185,6 +192,11 @@ def check_article(filepath, site_dir):
         if re.search(pattern, html):
             errors.append(f"{name}: {desc}")
 
+    # === IMAGE PLACEHOLDER CHECK ===
+    for pattern, desc in IMAGE_PLACEHOLDER_PATTERNS:
+        if re.search(pattern, html):
+            errors.append(f"{name}: {desc}")
+
     # === AI CLICHES ===
     for cliche in AI_CLICHES:
         if cliche.lower() in html.lower():
@@ -285,9 +297,11 @@ def check_article(filepath, site_dir):
     if bad:
         errors.append(f"{name}: BAD ad slots: {bad}")
     # Game/anime sites use render_game_site.py with Auto Ads only, no manual ad slots
+    # Content sites with Auto Ads script also skip manual ad slot requirement
     is_game_site = site_dir.name in GAME_SITES
+    has_auto_ads = 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' in html
 
-    if not is_game_site:
+    if not is_game_site and not has_auto_ads:
         if not utility and len(slots) not in (3, 4):
             errors.append(f"{name}: expected 3-4 ad slots, found {len(slots)}")
     for s in slots:
@@ -295,7 +309,7 @@ def check_article(filepath, site_dir):
             warnings.append(f"{name}: unknown ad slot: {s}")
 
     # Ad block integrity
-    if not is_game_site:
+    if not is_game_site and not has_auto_ads:
         ad_push = len(re.findall(r'\(adsbygoogle = window\.adsbygoogle \|\| \[\]\)\.push\(\{\}\)', html))
         if not utility and ad_push != len(slots):
             errors.append(f"{name}: {len(slots)} ad units but {ad_push} push scripts (mismatch)")
@@ -439,6 +453,8 @@ def main():
 
         # Scan ALL HTML files recursively (catches sub-pages like guides/*/index.html)
         for f in sorted(site_dir.glob("**/*.html")):
+            if "\\play\\" in str(f) or "/play/" in str(f):
+                continue  # standalone HTML5 games don't need SEO/ad meta
             if f.name == "index.html":
                 check_index(f, site_dir)
             else:

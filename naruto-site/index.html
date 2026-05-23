@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="google-adsense-account" content="ca-pub-2595917642864488">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naruto Wiki — Jutsu, Characters & Ninja Clan Database</title>
 <meta name="description" content="Every jutsu technique, character profile, Kekkei Genkai, ninja clan, and village guide. From the Academy to the Fourth Great Ninja War.">
@@ -12,6 +11,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://naruto.jycsd.com/">
+<meta name="google-adsense-account" content="ca-pub-2595917642864488">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#f97316',accentDark:'#ea580c'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
@@ -30,8 +30,6 @@ body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-
 .float-anim{animation:float 3s ease-in-out infinite}
 .char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
 img[src$=".png"]{mix-blend-mode:normal}
-.bg-transparent-img img{mix-blend-mode:normal}
-.transparent-bg{background:transparent!important}
 .search-dropdown{position:absolute;top:100%;left:0;right:0;background:#1a1f2e;border:1px solid #374151;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
 .search-dropdown.active{display:block}
 .search-result{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .15s;border-bottom:1px solid rgba(75,85,99,.15)}
@@ -39,6 +37,23 @@ img[src$=".png"]{mix-blend-mode:normal}
 .search-result:last-child{border-bottom:none}
 .search-result .sr-type{font-size:10px;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:999px;flex-shrink:0}
 .search-empty{padding:20px;text-align:center;color:#8b949e;font-size:14px}
+.masonry-grid{columns:2;column-gap:1rem}
+.masonry-grid>*{break-inside:avoid;margin-bottom:1rem}
+@media(min-width:768px){.masonry-grid{columns:3}}
+@media(min-width:1024px){.masonry-grid{columns:4}}
+@media(min-width:1280px){.masonry-grid{columns:5}}
+.scroll-snap-x{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1rem;scrollbar-width:none;padding-bottom:4px}
+.scroll-snap-x::-webkit-scrollbar{display:none}
+.scroll-snap-x>*{scroll-snap-align:start;flex-shrink:0}
+.gradient-overlay{background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.3) 50%,transparent 100%)}
+.text-shadow{text-shadow:0 2px 8px rgba(0,0,0,0.6)}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.2);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;transition:all .3s;opacity:0}
+.carousel-arrow:hover{background:rgba(255,255,255,0.3)}
+.carousel:hover .carousel-arrow{opacity:1}
+.back-to-top{position:fixed;bottom:32px;right:32px;z-index:999;width:44px;height:44px;border-radius:50%;background:#ff6b35;color:#111;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;opacity:0.35;transition:all .3s;box-shadow:0 4px 15px rgba(255,107,53,.4);border:none}.back-to-top.visible{opacity:1}.back-to-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(255,107,53,.6)}
+.show-more-wrap{text-align:center;margin-top:1.5rem}
+.show-more-btn{display:inline-block;padding:10px 32px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;transition:all .2s;border:2px solid;background:transparent}
+.show-more-btn:hover{transform:translateY(-2px)}
 </style>
 </head>
 <body>
@@ -46,7 +61,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(13,17,23,0.95);border-color:#374151">
 <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
 <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">N</div>
+<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-2xl font-black text-white">N</div>
 <span class="text-xl font-bold tracking-tight">Naruto <span class="text-accent">Wiki</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
@@ -82,152 +97,90 @@ img[src$=".png"]{mix-blend-mode:normal}
 </nav>
 
 <!-- Hero Carousel -->
-<section class="relative w-full overflow-hidden pt-16" style="height:520px">
+<section class="relative w-full h-[75vh] overflow-hidden carousel">
 <div class="carousel-slide active">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 30% 50%, #f97316, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Featured</span>
-<h1 class="text-4xl md:text-5xl font-black leading-tight mb-4">Naruto Encyclopedia</h1>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Every jutsu technique, character profile, Kekkei Genkai, ninja clan, and village guide. From the Academy to the Fourth Great Ninja War.</p>
-<div class="flex gap-3">
-<a href="/guides/characters/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Characters Guides</a>
-<a href="/guides/jutsu/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Jutsu Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/characters/naruto-uzumaki.html"><img src="/images/naruto-uzumaki.png" alt="Naruto Uzumaki" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h1 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Naruto Uzumaki</h1>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Seventh Hokage / Jinchuriki</p>
+<a href="/guides/characters/naruto-uzumaki.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/characters/naruto-uzumaki.html" class="block"><img src="/images/" alt="Naruto Uzumaki — Seventh Hokage / Jinchuriki" title="Naruto Uzumaki — Seventh Hokage / Jinchuriki" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 37% 50%, #a855f7, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Trending Now</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Sasuke Uchiha Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Last surviving Uchiha with Rinnegan and Eternal Mangekyo Sharingan. Master of Chidori, Amaterasu, Susanoo, and Space-Time ninjutsu.</p>
-<div class="flex gap-3">
-<a href="/guides/jutsu/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Jutsu Guides</a>
-<a href="/guides/clans/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Clans Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/characters/sasuke-uchiha.html"><img src="/images/sasuke-uchiha.png" alt="Sasuke Uchiha" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Sasuke Uchiha</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Shadow Hokage</p>
+<a href="/guides/characters/sasuke-uchiha.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/characters/sasuke-uchiha.html" class="block"><img src="/images/" alt="Sasuke Uchiha — Shadow Hokage" title="Sasuke Uchiha — Shadow Hokage" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 44% 50%, #f472b6, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Deep Dive</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Sakura Haruno Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Student of Tsunade with Byakugo Seal. Pinnacle of medical ninjutsu and superhuman strength through precise chakra control.</p>
-<div class="flex gap-3">
-<a href="/guides/clans/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Clans Guides</a>
-<a href="/guides/villages/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Villages Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/characters/sakura-haruno.html"><img src="/images/sakura-haruno.png" alt="Sakura Haruno" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Sakura Haruno</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Medical Ninja</p>
+<a href="/guides/characters/sakura-haruno.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/characters/sakura-haruno.html" class="block"><img src="/images/" alt="Sakura Haruno — Medical Ninja" title="Sakura Haruno — Medical Ninja" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 51% 50%, #6b7280, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Essential</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Kakashi Hatake Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Former Hokage who mastered over 1000 jutsu with the Sharingan. Creator of Chidori and Raikiri lightning blade techniques.</p>
-<div class="flex gap-3">
-<a href="/guides/villages/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Villages Guides</a>
-<a href="/guides/arcs/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Arcs Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/characters/kakashi-hatake.html"><img src="/images/kakashi-hatake.png" alt="Kakashi Hatake" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Kakashi Hatake</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Sixth Hokage / Copy Ninja</p>
+<a href="/guides/characters/kakashi-hatake.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/characters/kakashi-hatake.html" class="block"><img src="/images/" alt="Kakashi Hatake — Sixth Hokage / Copy Ninja" title="Kakashi Hatake — Sixth Hokage / Copy Ninja" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 58% 50%, #c084fc, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Popular</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Hinata Hyuga Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Heiress of the Hyuga clan and Naruto's wife. Gentle Fist master with Byakugan — gentle but fiercely protective of those she loves.</p>
-<div class="flex gap-3">
-<a href="/guides/arcs/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Arcs Guides</a>
-<a href="/guides/characters/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Characters Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/characters/hinata-hyuga.html"><img src="/images/hinata-hyuga.png" alt="Hinata Hyuga" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Hinata Hyuga</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Heiress / Byakugan User</p>
+<a href="/guides/characters/hinata-hyuga.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/characters/hinata-hyuga.html" class="block"><img src="/images/" alt="Hinata Hyuga — Heiress / Byakugan User" title="Hinata Hyuga — Heiress / Byakugan User" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 65% 50%, #22d3ee, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Hot Pick</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Shikamaru Nara Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Laziest genius in Konoha with a 200 IQ. Shadow Possession jutsu master who became the Hokage's right hand after the war.</p>
-<div class="flex gap-3">
-<a href="/guides/characters/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Characters Guides</a>
-<a href="/guides/jutsu/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Jutsu Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/characters/shikamaru-nara.html"><img src="/images/shikamaru-nara.png" alt="Shikamaru Nara" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Shikamaru Nara</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Hokage Advisor / Strategist</p>
+<a href="/guides/characters/shikamaru-nara.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/characters/shikamaru-nara.html" class="block"><img src="/images/" alt="Shikamaru Nara — Hokage Advisor / Strategist" title="Shikamaru Nara — Hokage Advisor / Strategist" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 32% 50%, #c084fc, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Must Read</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Ino Yamanaka Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Mind Transfer jutsu specialist and head of the Yamanaka clan. Runs Konoha's sensory barrier alongside her family's flower shop.</p>
-<div class="flex gap-3">
-<a href="/guides/jutsu/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Jutsu Guides</a>
-<a href="/guides/clans/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Clans Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/characters/ino-yamanaka.html"><img src="/images/ino-yamanaka.png" alt="Ino Yamanaka" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Ino Yamanaka</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Sensory Ninja / Florist</p>
+<a href="/guides/characters/ino-yamanaka.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/characters/ino-yamanaka.html" class="block"><img src="/images/" alt="Ino Yamanaka — Sensory Ninja / Florist" title="Ino Yamanaka — Sensory Ninja / Florist" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 39% 50%, #ef4444, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Top Guide</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Choji Akimichi Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Calorie-powered Akimichi clan heir. Multi-Size technique allows partial or full-body expansion — Butterfly Mode unleashes all stored energy.</p>
-<div class="flex gap-3">
-<a href="/guides/clans/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Clans Guides</a>
-<a href="/guides/villages/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Villages Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/characters/choji-akimichi.html"><img src="/images/choji-akimichi.png" alt="Choji Akimichi" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Choji Akimichi</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Akimichi Heir / Expansion Jutsu</p>
+<a href="/guides/characters/choji-akimichi.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/characters/choji-akimichi.html" class="block"><img src="/images/" alt="Choji Akimichi — Akimichi Heir / Expansion Jutsu" title="Choji Akimichi — Akimichi Heir / Expansion Jutsu" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
-<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+<button id="carouselPrev" class="carousel-arrow left-4" aria-label="Previous slide">&#10094;</button>
+<button id="carouselNext" class="carousel-arrow right-4" aria-label="Next slide">&#10095;</button>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10">
 <div class="carousel-dot active" data-slide="0"></div>
 <div class="carousel-dot" data-slide="1"></div>
 <div class="carousel-dot" data-slide="2"></div>
@@ -238,57 +191,44 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="carousel-dot" data-slide="7"></div>
 </div>
 </section>
-<section class="max-w-7xl mx-auto px-4 py-8"><h2 class="text-2xl font-black mb-6">All Categories</h2><div class="flex flex-wrap gap-4 justify-center items-stretch">
+
+
+
+<section class="max-w-7xl mx-auto px-4 py-8">
+<h2 class="text-2xl font-black mb-6">All Categories</h2>
+<div class="flex flex-wrap gap-4 justify-center items-stretch">
 <a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden">
-<img src="/images/naruto-uzumaki.png" alt="Characters — guides" title="Characters category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy">
-</div>
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><span style="font-size:24px;font-weight:bold;color:#f97316">C</span></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Characters</div>
+<div class="font-bold text-base md:text-lg">Characters</div>
 <div class="text-sm text-textSecondary mt-1">100+ guides</div>
 </div>
-</a>
-<a href="/guides/jutsu/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden">
-<img src="/images/sasuke-uchiha.png" alt="Jutsu — guides" title="Jutsu category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy">
-</div>
+</a><a href="/guides/jutsu/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><span style="font-size:24px;font-weight:bold;color:#3b82f6">J</span></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Jutsu</div>
+<div class="font-bold text-base md:text-lg">Jutsu</div>
 <div class="text-sm text-textSecondary mt-1">100+ guides</div>
 </div>
-</a>
-<a href="/guides/clans/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden">
-<img src="/images/itachi-uchiha.png" alt="Clans — guides" title="Clans category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy">
-</div>
+</a><a href="/guides/clans/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><span style="font-size:24px;font-weight:bold;color:#a855f7">C</span></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Clans</div>
+<div class="font-bold text-base md:text-lg">Clans</div>
 <div class="text-sm text-textSecondary mt-1">25+ guides</div>
 </div>
-</a>
-<a href="/guides/villages/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden">
-<img src="/images/kakashi-hatake.png" alt="Villages — guides" title="Villages category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy">
-</div>
+</a><a href="/guides/villages/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><span style="font-size:24px;font-weight:bold;color:#22d3ee">V</span></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Villages</div>
+<div class="font-bold text-base md:text-lg">Villages</div>
 <div class="text-sm text-textSecondary mt-1">10+ guides</div>
 </div>
-</a>
-<a href="/guides/arcs/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden">
-<img src="/images/madara-uchiha.png" alt="Arcs — guides" title="Arcs category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy">
-</div>
+</a><a href="/guides/arcs/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><span style="font-size:24px;font-weight:bold;color:#4ade80">A</span></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Arcs</div>
+<div class="font-bold text-base md:text-lg">Arcs</div>
 <div class="text-sm text-textSecondary mt-1">30+ guides</div>
 </div>
 </a>
 </div></section>
-
-<!-- Ad: 728x90 -->
-<div class="max-w-[728px] mx-auto px-4 mt-10"><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
-
 <section class="max-w-7xl mx-auto px-4 py-16">
 <div class="flex items-end justify-between mb-8">
 <div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Fresh Content</p><h2 class="text-3xl font-black">Latest Guides</h2></div>
@@ -296,9 +236,9 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 <div class="grid lg:grid-cols-2 gap-5">
 <a href="/guides/jutsu/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-blue-900 to-cyan-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #3b82f6, transparent);"></div>
-<div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
+<span style="font-size:24px;font-weight:bold;color:#3b82f6">S</span>
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#3b82f6;background:#3b82f61a">Jutsu</span>
@@ -306,9 +246,9 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 17, 2026</time>
 </div>
 </a><a href="/guides/clans/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-purple-900 to-violet-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #a855f7, transparent);"></div>
-<div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
+<span style="font-size:24px;font-weight:bold;color:#a855f7">U</span>
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#a855f7;background:#a855f71a">Clans</span>
@@ -316,9 +256,9 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 16, 2026</time>
 </div>
 </a><a href="/guides/arcs/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-emerald-900 to-green-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #4ade80, transparent);"></div>
-<div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
+<span style="font-size:24px;font-weight:bold;color:#4ade80">P</span>
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#4ade80;background:#4ade801a">Arcs</span>
@@ -326,9 +266,9 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 15, 2026</time>
 </div>
 </a><a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-red-900 to-orange-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #f97316, transparent);"></div>
-<div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128214;</div>
+<span style="font-size:24px;font-weight:bold;color:#f97316">E</span>
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#f97316;background:#f973161a">Characters</span>
@@ -342,326 +282,398 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Trending</p><h2 class="text-2xl font-black">Hot Topics This Month</h2></div>
 <a href="/guides/characters/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
 </div>
-<div class="grid lg:grid-cols-3 gap-8">
-<div class="lg:col-span-2"><div class="space-y-3"><a href="/guides/clans/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="space-y-3"><a href="/guides/clans/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:#f97316;background:#f9731615">A</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">All Kekkei Genkai Explained: Sharingan, Byakugan & More</h3>
 <p class="text-base text-textSecondary mt-1.5">Complete guide to every bloodline limit in Naruto — abilities, users, strengths, and weaknesses across all shinobi clans.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a><a href="/guides/jutsu/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:#f97316;background:#f9731615">S</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Strongest Jutsu Tier List: From E-Rank to S-Rank</h3>
 <p class="text-base text-textSecondary mt-1.5">Every major jutsu ranked — Rasenshuriken, Chidori, Edo Tensei, and the most powerful techniques in the entire series.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a><a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:#f97316;background:#f9731615">N</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Naruto vs Sasuke: Every Fight Ranked & Analyzed</h3>
 <p class="text-base text-textSecondary mt-1.5">The complete history of anime's greatest rivalry — from the Academy rooftop to the Final Valley.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a><a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:#f97316;background:#f9731615">A</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Akatsuki Members Power Ranking: Strongest to Weakest</h3>
 <p class="text-base text-textSecondary mt-1.5">Every Akatsuki member placed by combat ability — from Pain's Six Paths to Hidan's immortal curse ritual.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a><a href="/guides/villages/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl">&#128293;</div></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:#f97316;background:#f9731615">A</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">All Five Kage Summits: Decisions That Changed Shinobi History</h3>
 <p class="text-base text-textSecondary mt-1.5">Every Kage summit from Hashirama's founding to the Allied Shinobi Forces formation — how the five villages shaped the world.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
-</a></div></div>
-<div class="hidden lg:block"><div class="sticky top-24"><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
-</div></section>
+</a></div></section>
 <section class="max-w-7xl mx-auto px-4 py-16">
 <div class="flex items-end justify-between mb-8">
-<div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Character Spotlight</p><h2 class="text-3xl font-black">Meet the <span class="text-accent">Characters</span></h2></div>
+<div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Characters</p><h2 class="text-3xl font-black">Meet the <span class="text-accent">Characters</span></h2></div>
 <a href="/guides/characters/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-<div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/naruto-uzumaki.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#f97316">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Naruto Uzumaki</h3>
-<p class="text-xs text-textSecondary mt-1">Seventh Hokage of Konoha. Jinchuriki of Kurama with mastery of Sage Mode, Rasengan variants, and Six Paths Sage power.</p>
-<a href="/guides/characters/naruto-uzumaki.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Naruto Uzumaki Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/sasuke-uchiha.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#a855f7">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Sasuke Uchiha</h3>
-<p class="text-xs text-textSecondary mt-1">Last surviving Uchiha with Rinnegan and Eternal Mangekyo Sharingan. Master of Chidori, Amaterasu, Susanoo, and Space-Time ninjutsu.</p>
-<a href="/guides/characters/sasuke-uchiha.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Sasuke Uchiha Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/sakura-haruno.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#f472b6">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Sakura Haruno</h3>
-<p class="text-xs text-textSecondary mt-1">Student of Tsunade with Byakugo Seal. Pinnacle of medical ninjutsu and superhuman strength through precise chakra control.</p>
-<a href="/guides/characters/sakura-haruno.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Sakura Haruno Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/kakashi-hatake.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#6b7280">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Kakashi Hatake</h3>
-<p class="text-xs text-textSecondary mt-1">Former Hokage who mastered over 1000 jutsu with the Sharingan. Creator of Chidori and Raikiri lightning blade techniques.</p>
-<a href="/guides/characters/kakashi-hatake.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Kakashi Hatake Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/hinata-hyuga.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#c084fc">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Hinata Hyuga</h3>
-<p class="text-xs text-textSecondary mt-1">Heiress of the Hyuga clan and Naruto's wife. Gentle Fist master with Byakugan — gentle but fiercely protective of those she loves.</p>
-<a href="/guides/characters/hinata-hyuga.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Hinata Hyuga Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/shikamaru-nara.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#22d3ee">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Shikamaru Nara</h3>
-<p class="text-xs text-textSecondary mt-1">Laziest genius in Konoha with a 200 IQ. Shadow Possession jutsu master who became the Hokage's right hand after the war.</p>
-<a href="/guides/characters/shikamaru-nara.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Shikamaru Nara Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/ino-yamanaka.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#c084fc">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Ino Yamanaka</h3>
-<p class="text-xs text-textSecondary mt-1">Mind Transfer jutsu specialist and head of the Yamanaka clan. Runs Konoha's sensory barrier alongside her family's flower shop.</p>
-<a href="/guides/characters/ino-yamanaka.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Ino Yamanaka Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/choji-akimichi.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ef4444">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Choji Akimichi</h3>
-<p class="text-xs text-textSecondary mt-1">Calorie-powered Akimichi clan heir. Multi-Size technique allows partial or full-body expansion — Butterfly Mode unleashes all stored energy.</p>
-<a href="/guides/characters/choji-akimichi.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Choji Akimichi Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/neji-hyuga.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#e2e8f0">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Neji Hyuga</h3>
-<p class="text-xs text-textSecondary mt-1">Branch family prodigy who mastered Eight Trigrams Palm Rotation without training. The only Genin promoted to Jonin during the Chunin Exams.</p>
-<a href="/guides/characters/neji-hyuga.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Neji Hyuga Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/rock-lee.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#4ade80">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Rock Lee</h3>
-<p class="text-xs text-textSecondary mt-1">Cannot use ninjutsu or genjutsu but mastered taijutsu beyond Jonin level. Unlocks the Eight Inner Gates — a feat even Guy found extraordinary.</p>
-<a href="/guides/characters/rock-lee.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Rock Lee Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/tenten.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#fbbf24">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Tenten</h3>
-<p class="text-xs text-textSecondary mt-1">Summons hundreds of weapons through scrolls with pinpoint accuracy. Wields the Treasured Tools of the Sage of Six Paths — Bashosen fan.</p>
-<a href="/guides/characters/tenten.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Tenten Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/kiba-inuzuka.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#f97316">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Kiba Inuzuka</h3>
-<p class="text-xs text-textSecondary mt-1">Ninken partner Akamaru. Fang Over Fang rotation attacks and Three-Headed Wolf transformation — loyal member of the Sasuke Retrieval team.</p>
-<a href="/guides/characters/kiba-inuzuka.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Kiba Inuzuka Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/shino-aburame.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#1e293b">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Shino Aburame</h3>
-<p class="text-xs text-textSecondary mt-1">Hosts destruction beetles within his body. Silent, analytical fighter whose kikaichu drain chakra and can track targets across miles.</p>
-<a href="/guides/characters/shino-aburame.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Shino Aburame Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/jiraiya.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ef4444">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Jiraiya</h3>
-<p class="text-xs text-textSecondary mt-1">One of the Legendary Sannin. Toad Sage who trained Minato, Nagato, and Naruto. Master of Sage Mode and Rasengan — died a hero.</p>
-<a href="/guides/characters/jiraiya.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Jiraiya Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/tsunade.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#4ade80">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Tsunade</h3>
-<p class="text-xs text-textSecondary mt-1">Fifth Hokage and greatest medical ninja in history. Byakugo Seal grants instant regeneration — legendary for her monstrous strength.</p>
-<a href="/guides/characters/tsunade.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Tsunade Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/orochimaru.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#c084fc">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Orochimaru</h3>
-<p class="text-xs text-textSecondary mt-1">Third Sannin who dedicated his life to mastering every jutsu. Immortal body-hopping snake sage now operating in the shadows of Konoha.</p>
-<a href="/guides/characters/orochimaru.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Orochimaru Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/pain.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#f97316">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Pain</h3>
-<p class="text-xs text-textSecondary mt-1">Nagato's Six Paths of Pain controlled through black receivers. Rinnegan allows shared vision, gravity manipulation, and Planetary Devastation.</p>
-<a href="/guides/characters/pain.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Pain Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/itachi-uchiha.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ef4444">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Itachi Uchiha</h3>
-<p class="text-xs text-textSecondary mt-1">Sasuke's brother who sacrificed his entire clan to prevent a coup. Master of Tsukuyomi, Amaterasu, and the invincible Susanoo with Totsuka Blade.</p>
-<a href="/guides/characters/itachi-uchiha.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Itachi Uchiha Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/kisame-hoshigaki.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#3b82f6">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Kisame Hoshigaki</h3>
-<p class="text-xs text-textSecondary mt-1">Monster of the Hidden Mist. Samehada absorbs chakra and fuses with Kisame for a shark transformation — a tailed beast without a tail.</p>
-<a href="/guides/characters/kisame-hoshigaki.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Kisame Hoshigaki Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/deidara.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#fbbf24">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Deidara</h3>
-<p class="text-xs text-textSecondary mt-1">Art is an explosion. Mouth-palms mold explosive clay into C1 through C4 nanobombs — died in a self-destruct blast he called ultimate art.</p>
-<a href="/guides/characters/deidara.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Deidara Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/konan.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#3b82f6">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Konan</h3>
-<p class="text-xs text-textSecondary mt-1">Origami master who can turn her entire body into paper. Prepared 600 billion paper bombs to kill Tobi — the most devastating trap in the series.</p>
-<a href="/guides/characters/konan.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Konan Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/hidan.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#6b7280">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Hidan</h3>
-<p class="text-xs text-textSecondary mt-1">Immortal follower of Jashin whose ritual links his body to victims. Any damage he takes after completing the curse circle kills his target.</p>
-<a href="/guides/characters/hidan.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Hidan Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/kakuzu.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#1e293b">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Kakuzu</h3>
-<p class="text-xs text-textSecondary mt-1">Five-hearted immortal who stitches stolen organs into his body. Earth Grudge Fear threads grant all five chakra natures and near-immortality.</p>
-<a href="/guides/characters/kakuzu.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Kakuzu Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/sasori.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ef4444">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Sasori</h3>
-<p class="text-xs text-textSecondary mt-1">Red Sand Sasori of the Hidden Sand. Turned himself into a heart-core puppet controlling 100+ puppets simultaneously — art is eternal.</p>
-<a href="/guides/characters/sasori.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Sasori Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/tobi.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#f97316">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Tobi</h3>
-<p class="text-xs text-textSecondary mt-1">Obito's masked persona who manipulated the Akatsuki from the shadows. Kamui intangibility made him virtually untouchable in combat.</p>
-<a href="/guides/characters/tobi.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Tobi Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/black-zetsu-white-zetsu.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#4ade80">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Black Zetsu / White Zetsu</h3>
-<p class="text-xs text-textSecondary mt-1">Black Zetsu is Kaguya Otsutsuki's manifested will — the true mastermind behind centuries of shinobi history. White Zetsu are Hashirama clones.</p>
-<a href="/guides/characters/black-zetsu-white-zetsu.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Black Zetsu / White Zetsu Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/minato-namikaze.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#fbbf24">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Minato Namikaze</h3>
-<p class="text-xs text-textSecondary mt-1">Father of Naruto and inventor of the Rasengan. Flying Thunder God teleport made him the fastest shinobi in history.</p>
-<a href="/guides/characters/minato-namikaze.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Minato Namikaze Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/hashirama-senju.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#4ade80">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Hashirama Senju</h3>
-<p class="text-xs text-textSecondary mt-1">Founder of Konoha. Wood Release and natural Sage Mode made him the strongest ninja of his era — cells coveted by every future villain.</p>
-<a href="/guides/characters/hashirama-senju.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Hashirama Senju Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/tobirama-senju.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#3b82f6">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Tobirama Senju</h3>
-<p class="text-xs text-textSecondary mt-1">Creator of the Flying Thunder God, Shadow Clone, and Edo Tensei. Brilliant tactician whose inventions shaped the entire shinobi world.</p>
-<a href="/guides/characters/tobirama-senju.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Tobirama Senju Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/hiruzen-sarutobi.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#6b7280">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Hiruzen Sarutobi</h3>
-<p class="text-xs text-textSecondary mt-1">The Professor who mastered every Konoha jutsu. Ruled longer than any Hokage and trained the three Legendary Sannin.</p>
-<a href="/guides/characters/hiruzen-sarutobi.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Hiruzen Sarutobi Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/gaara.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ef4444">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Gaara</h3>
-<p class="text-xs text-textSecondary mt-1">Former One-Tail Jinchuriki turned beloved Kazekage. Sand manipulation and absolute defense — from monster child to the Suna's greatest leader.</p>
-<a href="/guides/characters/gaara.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Gaara Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/fourth-raikage-a.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#fbbf24">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Fourth Raikage A</h3>
-<p class="text-xs text-textSecondary mt-1">Lightning Armor grants speed rivaling Minato. Berserker combat style and the strongest Raikage — lost his left arm in battle against Sasuke.</p>
-<a href="/guides/characters/fourth-raikage-a.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Fourth Raikage A Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/onoki.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ef4444">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Onoki</h3>
-<p class="text-xs text-textSecondary mt-1">Shortest Kage with the biggest arsenal. Dust Release disintegrates matter at a molecular level — fought from Madara's era into the Fourth War.</p>
-<a href="/guides/characters/onoki.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Onoki Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/mei-terumi.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#3b82f6">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Mei Terumi</h3>
-<p class="text-xs text-textSecondary mt-1">Ended the Bloody Mist era. Lava Release and Boil Release Kekkei Genkai user — a powerful diplomat who rebuilt Kiri's reputation.</p>
-<a href="/guides/characters/mei-terumi.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Mei Terumi Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/madara-uchiha.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ef4444">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Madara Uchiha</h3>
-<p class="text-xs text-textSecondary mt-1">Co-founder of Konoha who awakened the Rinnegan. The strongest Uchiha of all time — fought the entire Allied Shinobi Forces alone.</p>
-<a href="/guides/characters/madara-uchiha.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Madara Uchiha Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/obito-uchiha.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#f97316">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Obito Uchiha</h3>
-<p class="text-xs text-textSecondary mt-1">Kakashi's teammate presumed dead. Became the Ten-Tails Jinchuriki after orchestrating the Fourth Great Ninja War behind the mask as Tobi.</p>
-<a href="/guides/characters/obito-uchiha.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Obito Uchiha Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/kaguya-otsutsuki.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#e2e8f0">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Kaguya Otsutsuki</h3>
-<p class="text-xs text-textSecondary mt-1">The progenitor of all chakra on Earth. Ate the Divine Tree fruit — became the primal godlike being sealed by her sons Hagoromo and Hamura.</p>
-<a href="/guides/characters/kaguya-otsutsuki.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Kaguya Otsutsuki Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/might-guy.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#4ade80">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Might Guy</h3>
-<p class="text-xs text-textSecondary mt-1">Konoha's Sublime Green Beast. Opening all Eight Inner Gates nearly killed Madara in the strongest taijutsu attack ever seen.</p>
-<a href="/guides/characters/might-guy.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Might Guy Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/iruka-umino.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#3b82f6">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Iruka Umino</h3>
-<p class="text-xs text-textSecondary mt-1">The first person to acknowledge Naruto as a person, not a monster. Academy instructor who shaped the boy who would become Hokage.</p>
-<a href="/guides/characters/iruka-umino.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Iruka Umino Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/yamato.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#4ade80">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Yamato</h3>
-<p class="text-xs text-textSecondary mt-1">Orochimaru's experiment infused with Hashirama cells. Only Wood Release user after Hashirama — assigned to Team 7 to suppress Naruto's Nine-Tails.</p>
-<a href="/guides/characters/yamato.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Yamato Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/sai.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#e2e8f0">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Sai</h3>
-<p class="text-xs text-textSecondary mt-1">Former Danzo Root operative with no emotions. Super Beast Scroll ink jutsu artist who learned what friendship means through Team 7.</p>
-<a href="/guides/characters/sai.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Sai Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/characters/kabuto-yakushi.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#c084fc">&#9733;</div></div></a>
-<h3 class="font-bold text-lg">Kabuto Yakushi</h3>
-<p class="text-xs text-textSecondary mt-1">Triple-agent spy who absorbed Orochimaru's remains. Achieved perfect Sage Mode with snake powers and mastered Edo Tensei on a massive scale.</p>
-<a href="/guides/characters/kabuto-yakushi.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Kabuto Yakushi Guides</a>
-</div>
-</div></section>
-
-<!-- Ad: 970x250 -->
-<div class="max-w-[970px] mx-auto px-4"><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
-
-<section class="max-w-7xl mx-auto px-4 py-8">
-<div class="flex items-end justify-between mb-8">
-<h2 class="text-3xl font-black">Every Guide Category</h2>
-<a href="/guides/characters/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-<a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center overflow-hidden">
-<img src="/images/naruto-uzumaki.png" alt="Characters — guides" title="Characters category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy">
-</div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Characters</h3>
-<p class="text-base text-textSecondary mt-1">Characters &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">100+ guides</span>
-</div>
-</a><a href="/guides/jutsu/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center overflow-hidden">
-<img src="/images/sasuke-uchiha.png" alt="Jutsu — guides" title="Jutsu category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy">
-</div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Jutsu</h3>
-<p class="text-base text-textSecondary mt-1">Jutsu &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">100+ guides</span>
-</div>
-</a><a href="/guides/clans/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center overflow-hidden">
-<img src="/images/itachi-uchiha.png" alt="Clans — guides" title="Clans category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy">
-</div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Clans</h3>
-<p class="text-base text-textSecondary mt-1">Clans &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">25+ guides</span>
-</div>
-</a><a href="/guides/villages/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center overflow-hidden">
-<img src="/images/kakashi-hatake.png" alt="Villages — guides" title="Villages category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy">
-</div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Villages</h3>
-<p class="text-base text-textSecondary mt-1">Villages &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">10+ guides</span>
-</div>
-</a><a href="/guides/arcs/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center overflow-hidden">
-<img src="/images/madara-uchiha.png" alt="Arcs — guides" title="Arcs category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy">
-</div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Arcs</h3>
-<p class="text-base text-textSecondary mt-1">Arcs &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">30+ guides</span>
+<div class="masonry-grid">
+<div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/naruto-uzumaki.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/naruto-uzumaki.png" alt="Naruto Uzumaki — Seventh Hokage / Jinchuriki" title="Naruto Uzumaki — Seventh Hokage / Jinchuriki" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Naruto Uzumaki</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Seventh Hokage / Jinchuriki</p>
 </div>
 </a>
-</div></section>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/sasuke-uchiha.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/sasuke-uchiha.png" alt="Sasuke Uchiha — Shadow Hokage" title="Sasuke Uchiha — Shadow Hokage" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Sasuke Uchiha</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Shadow Hokage</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/sakura-haruno.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/sakura-haruno.png" alt="Sakura Haruno — Medical Ninja" title="Sakura Haruno — Medical Ninja" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Sakura Haruno</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Medical Ninja</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/kakashi-hatake.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/kakashi-hatake.png" alt="Kakashi Hatake — Sixth Hokage / Copy Ninja" title="Kakashi Hatake — Sixth Hokage / Copy Ninja" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Kakashi Hatake</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Sixth Hokage / Copy Ninja</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/hinata-hyuga.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/hinata-hyuga.png" alt="Hinata Hyuga — Heiress / Byakugan User" title="Hinata Hyuga — Heiress / Byakugan User" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Hinata Hyuga</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Heiress / Byakugan User</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/shikamaru-nara.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/shikamaru-nara.png" alt="Shikamaru Nara — Hokage Advisor / Strategist" title="Shikamaru Nara — Hokage Advisor / Strategist" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Shikamaru Nara</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Hokage Advisor / Strategist</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/ino-yamanaka.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/ino-yamanaka.png" alt="Ino Yamanaka — Sensory Ninja / Florist" title="Ino Yamanaka — Sensory Ninja / Florist" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Ino Yamanaka</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Sensory Ninja / Florist</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/choji-akimichi.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/choji-akimichi.png" alt="Choji Akimichi — Akimichi Heir / Expansion Jutsu" title="Choji Akimichi — Akimichi Heir / Expansion Jutsu" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Choji Akimichi</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Akimichi Heir / Expansion Jutsu</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/neji-hyuga.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/neji-hyuga.png" alt="Neji Hyuga — Byakugan Prodigy" title="Neji Hyuga — Byakugan Prodigy" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Neji Hyuga</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Byakugan Prodigy</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/rock-lee.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/rock-lee.png" alt="Rock Lee — Taijutsu Master" title="Rock Lee — Taijutsu Master" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Rock Lee</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Taijutsu Master</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/tenten.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/tenten.png" alt="Tenten — Weapons Specialist" title="Tenten — Weapons Specialist" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Tenten</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Weapons Specialist</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/kiba-inuzuka.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/kiba-inuzuka.png" alt="Kiba Inuzuka — Inuzuka Clan / Fang User" title="Kiba Inuzuka — Inuzuka Clan / Fang User" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Kiba Inuzuka</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Inuzuka Clan / Fang User</p>
+</div>
+</a>
+</div>
+</div><div id="moreChars" style="display:none"><div class="masonry-grid"><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/shino-aburame.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/shino-aburame.png" alt="Shino Aburame — Insect User / Aburame Clan" title="Shino Aburame — Insect User / Aburame Clan" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Shino Aburame</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Insect User / Aburame Clan</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/jiraiya.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/jiraiya.png" alt="Jiraiya — Toad Sage / Sannin" title="Jiraiya — Toad Sage / Sannin" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Jiraiya</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Toad Sage / Sannin</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/tsunade.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/tsunade.png" alt="Tsunade — Fifth Hokage / Sannin" title="Tsunade — Fifth Hokage / Sannin" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Tsunade</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Fifth Hokage / Sannin</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/orochimaru.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/orochimaru.png" alt="Orochimaru — Sannin / Forbidden Jutsu Master" title="Orochimaru — Sannin / Forbidden Jutsu Master" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Orochimaru</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Sannin / Forbidden Jutsu Master</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/pain.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/pain-nagato.png" alt="Pain — Akatsuki Leader / Rinnegan User" title="Pain — Akatsuki Leader / Rinnegan User" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Pain</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Akatsuki Leader / Rinnegan User</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/itachi-uchiha.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/itachi-uchiha.png" alt="Itachi Uchiha — Akatsuki / Konoha Hero" title="Itachi Uchiha — Akatsuki / Konoha Hero" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Itachi Uchiha</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Akatsuki / Konoha Hero</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/kisame-hoshigaki.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/kisame-hoshigaki.png" alt="Kisame Hoshigaki — Akatsuki / Samehada Wielder" title="Kisame Hoshigaki — Akatsuki / Samehada Wielder" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Kisame Hoshigaki</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Akatsuki / Samehada Wielder</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/deidara.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/deidara.png" alt="Deidara — Akatsuki / Explosion Release" title="Deidara — Akatsuki / Explosion Release" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Deidara</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Akatsuki / Explosion Release</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/konan.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/konan.png" alt="Konan — Akatsuki / Paper Angel" title="Konan — Akatsuki / Paper Angel" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Konan</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Akatsuki / Paper Angel</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/hidan.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/hidan.png" alt="Hidan — Akatsuki / Immortal Cultist" title="Hidan — Akatsuki / Immortal Cultist" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Hidan</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Akatsuki / Immortal Cultist</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/kakuzu.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/kakuzu.png" alt="Kakuzu — Akatsuki / Thread User" title="Kakuzu — Akatsuki / Thread User" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Kakuzu</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Akatsuki / Thread User</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/sasori.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/sasori.png" alt="Sasori — Akatsuki / Puppet Master" title="Sasori — Akatsuki / Puppet Master" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Sasori</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Akatsuki / Puppet Master</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/tobi.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/tobi.png" alt="Tobi — Akatsuki / Masked Man" title="Tobi — Akatsuki / Masked Man" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Tobi</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Akatsuki / Masked Man</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/black-zetsu-white-zetsu.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/black-zetsu-white-zetsu.png" alt="Black Zetsu / White Zetsu — Akatsuki / Kaguya's Will" title="Black Zetsu / White Zetsu — Akatsuki / Kaguya's Will" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Black Zetsu / White Zetsu</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Akatsuki / Kaguya's Will</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/minato-namikaze.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/minato-namikaze.png" alt="Minato Namikaze — Fourth Hokage / Yellow Flash" title="Minato Namikaze — Fourth Hokage / Yellow Flash" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Minato Namikaze</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Fourth Hokage / Yellow Flash</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/hashirama-senju.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/hashirama-senju.png" alt="Hashirama Senju — First Hokage / God of Shinobi" title="Hashirama Senju — First Hokage / God of Shinobi" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Hashirama Senju</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">First Hokage / God of Shinobi</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/tobirama-senju.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/tobirama-senju.png" alt="Tobirama Senju — Second Hokage / Jutsu Inventor" title="Tobirama Senju — Second Hokage / Jutsu Inventor" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Tobirama Senju</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Second Hokage / Jutsu Inventor</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/hiruzen-sarutobi.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/hiruzen-sarutobi.png" alt="Hiruzen Sarutobi — Third Hokage / Professor" title="Hiruzen Sarutobi — Third Hokage / Professor" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Hiruzen Sarutobi</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Third Hokage / Professor</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/gaara.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/gaara.png" alt="Gaara — Fifth Kazekage / Jinchuriki" title="Gaara — Fifth Kazekage / Jinchuriki" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Gaara</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Fifth Kazekage / Jinchuriki</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/fourth-raikage-a.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/fourth-raikage-a.png" alt="Fourth Raikage A — Fourth Raikage" title="Fourth Raikage A — Fourth Raikage" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Fourth Raikage A</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Fourth Raikage</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/onoki.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/onoki.png" alt="Onoki — Third Tsuchikage / Particle Style" title="Onoki — Third Tsuchikage / Particle Style" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Onoki</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Third Tsuchikage / Particle Style</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/mei-terumi.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/mei-terumi.png" alt="Mei Terumi — Fifth Mizukage / Boil Release" title="Mei Terumi — Fifth Mizukage / Boil Release" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Mei Terumi</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Fifth Mizukage / Boil Release</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/madara-uchiha.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/madara-uchiha.png" alt="Madara Uchiha — Legendary Uchiha / Founder" title="Madara Uchiha — Legendary Uchiha / Founder" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Madara Uchiha</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Legendary Uchiha / Founder</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/obito-uchiha.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/obito-uchiha.png" alt="Obito Uchiha — Akatsuki Puppeteer / Jinchuriki" title="Obito Uchiha — Akatsuki Puppeteer / Jinchuriki" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Obito Uchiha</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Akatsuki Puppeteer / Jinchuriki</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/kaguya-otsutsuki.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/kaguya-otsutsuki.png" alt="Kaguya Otsutsuki — Origin of Chakra / Progenitor" title="Kaguya Otsutsuki — Origin of Chakra / Progenitor" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Kaguya Otsutsuki</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Origin of Chakra / Progenitor</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/might-guy.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/might-guy.png" alt="Might Guy — Taijutsu Master / Jonin" title="Might Guy — Taijutsu Master / Jonin" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Might Guy</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Taijutsu Master / Jonin</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/iruka-umino.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/iruka-umino.png" alt="Iruka Umino — Academy Teacher" title="Iruka Umino — Academy Teacher" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Iruka Umino</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Academy Teacher</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/yamato.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/yamato.png" alt="Yamato — Wood Release / ANBU" title="Yamato — Wood Release / ANBU" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Yamato</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Wood Release / ANBU</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/sai.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/sai.png" alt="Sai — Root / Ink Artist" title="Sai — Root / Ink Artist" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Sai</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Root / Ink Artist</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/characters/kabuto-yakushi.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/kabuto-yakushi.png" alt="Kabuto Yakushi — Spy / Snake Sage" title="Kabuto Yakushi — Spy / Snake Sage" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Kabuto Yakushi</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Spy / Snake Sage</p>
+</div>
+</a>
+</div></div></div>
+<div class="show-more-wrap"><button class="show-more-btn" style="color:#f97316;border-color:#f97316" onclick="var el=document.getElementById('moreChars'),btn=this;el.style.display=el.style.display==='none'?'block':'none';btn.textContent=el.style.display==='none'?'Show All':'Show Less'">Show All (30 more)</button></div></section>
+
+
+
+
+
 
 <footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#374151">
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
-<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">N</div>
+<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-2xl font-black text-white">N</div>
 <span class="text-xl font-bold">Naruto <span class="text-accent">Wiki</span></span>
 </div>
 <p class="text-sm text-textSecondary leading-relaxed">Expert anime character guides, power system breakdowns, and arc analyses. Part of the Anime Hub Network.</p>
@@ -677,58 +689,50 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-4">More Anime Wikis</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="https://dragonball.jycsd.com" class="hover:text-accent transition-colors">Dragon Ball</a></li>
-<li><a href="https://onepiece.jycsd.com" class="hover:text-accent transition-colors">One Piece</a></li>
-<li><a href="https://demonslayer.jycsd.com" class="hover:text-accent transition-colors">Demon Slayer</a></li>
-<li><a href="https://anime.jycsd.com" class="hover:text-accent transition-colors">All Anime Wikis</a></li>
-</ul>
+<h4 class="font-bold mb-4">Our Network</h4>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— Network —</option>
+    <option value="https://www.jycsd.com">Myers Media</option>
+    <option value="https://games.jycsd.com">Game Guides</option>
+    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+</select>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— More Sites —</option>
+    <option value="https://healthy.jycsd.com">HealthyEats</option>
+    <option value="https://pets.jycsd.com">PetCare Hub</option>
+    <option value="https://home.jycsd.com">HomeJoy</option>
+    <option value="https://finance.jycsd.com">MoneyWise</option>
+    <option value="https://tech.jycsd.com">TechNest</option>
+    <option value="https://travel.jycsd.com">TripRoute</option>
+</select>
 </div>
 <div>
 <h4 class="font-bold mb-4">About</h4>
 <ul class="space-y-2 text-sm text-textSecondary">
 <li><a href="/about.html" class="hover:text-accent transition-colors">About</a></li>
 <li><a href="/contact.html" class="hover:text-accent transition-colors">Contact</a></li>
-<li><a href="/sitemap.xml" class="hover:text-accent transition-colors">Sitemap</a></li>
+<li><a href="/sitemap.html" class="hover:text-accent transition-colors">Sitemap</a></li>
 </ul>
 </div>
 </div>
 <div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#374151">
 <p>&copy; 2026 Naruto Wiki by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All anime characters and trademarks belong to their respective owners.</p>
 </div>
-  <!-- Our Network -->
-  <div class="max-w-7xl mx-auto mt-10 pt-6 border-t" style="border-color:#374151">
-    <p class="text-center text-xs text-textSecondary mb-3 font-semibold uppercase tracking-widest">Our Network</p>
-    <div class="flex justify-center gap-x-4 gap-y-1 flex-wrap text-xs text-textSecondary">
-      <a href="https://jycsd.com" class="hover:text-accent transition-colors">Main Site</a>
-      <a href="https://games.jycsd.com" class="hover:text-accent transition-colors">Game Hub</a>
-      <a href="https://anime.jycsd.com" class="hover:text-accent transition-colors">Anime Hub</a>
-      <a href="https://minecraft.jycsd.com" class="hover:text-accent transition-colors">Minecraft</a>
-      <a href="https://fortnite.jycsd.com" class="hover:text-accent transition-colors">Fortnite</a>
-      <a href="https://eldenring.jycsd.com" class="hover:text-accent transition-colors">Elden Ring</a>
-      <a href="https://dragonball.jycsd.com" class="hover:text-accent transition-colors">Dragon Ball</a>
-      <a href="https://valorant.jycsd.com" class="hover:text-accent transition-colors">Valorant</a>
-      <a href="https://healthy.jycsd.com" class="hover:text-accent transition-colors">HealthyEats</a>
-      <a href="https://pets.jycsd.com" class="hover:text-accent transition-colors">PetCare</a>
-      <a href="https://home.jycsd.com" class="hover:text-accent transition-colors">HomeJoy</a>
-      <a href="https://finance.jycsd.com" class="hover:text-accent transition-colors">MoneyWise</a>
-      <a href="https://tech.jycsd.com" class="hover:text-accent transition-colors">TechNest</a>
-      <a href="https://travel.jycsd.com" class="hover:text-accent transition-colors">TripRoute</a>
-    </div>
-  </div>
-
 </footer>
 
 <script>
+function toggleReadMore(){var s=document.getElementById('descShort');var f=document.getElementById('descFull');var t=document.getElementById('descToggle');if(!f)return;if(f.style.display==='none'||!f.style.display){f.style.display='inline';s.style.display='none';t.textContent=' Read less';}else{f.style.display='none';s.style.display='inline';t.textContent='... Read more';}}
 (function(){
 var slides=document.querySelectorAll('.carousel-slide');
 var dots=document.querySelectorAll('.carousel-dot');
 var current=0;
 function goTo(idx){if(!slides.length)return;slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
 dots.forEach(function(dot){dot.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
+document.getElementById('carouselPrev')?.addEventListener('click',function(){goTo((current-1+slides.length)%slides.length)});
+document.getElementById('carouselNext')?.addEventListener('click',function(){goTo((current+1)%slides.length)});
 if(slides.length>1)setInterval(function(){goTo((current+1)%slides.length)},5000);
 document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
+var btt=document.getElementById('backToTop');if(btt){window.addEventListener('scroll',function(){if(window.scrollY>300){btt.classList.add('visible')}else{btt.classList.remove('visible')}});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})}
 
 var searchData=[];
 (function(){var si=document.getElementById('searchInput');var sim=document.getElementById('searchInputMobile');var dd=document.getElementById('searchDropdown');var ddm=document.getElementById('searchDropdownMobile');var focusIdx=-1;
@@ -739,12 +743,13 @@ if(!matches.length){ddEl.innerHTML='<div class="search-empty">No results found</
 for(var i=0;i<matches.length;i++){var m=matches[i];var typeColors={character:'rgba(255,107,53,.2)',category:'rgba(100,180,255,.2)',guide:'rgba(100,200,100,.2)',hot_topic:'rgba(255,180,50,.2)'};var tc=m.color||'#888';var div=document.createElement('div');div.className='search-result';div.setAttribute('data-url',m.url);div.innerHTML='<span class="sr-type" style="color:'+tc+';background:'+(typeColors[m.type]||'rgba(150,150,150,.2)')+'">'+m.type.replace('_',' ')+'</span><span style="flex:1;min-width:0"><strong style="display:block;font-size:14px">'+m.name+'</strong><small style="color:#8b949e;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(m.desc||'')+'</small></span>';div.addEventListener('click',function(){{window.location.href=this.getAttribute('data-url')}});ddEl.appendChild(div)}ddEl.classList.add('active')}
 function navigate(ddEl,dir){var items=ddEl.querySelectorAll('.search-result');if(!items.length)return;focusIdx+=dir;if(focusIdx<0)focusIdx=items.length-1;if(focusIdx>=items.length)focusIdx=0;for(var i=0;i<items.length;i++)items[i].classList.toggle('focused',i===focusIdx)}
 function selectFocused(ddEl){var items=ddEl.querySelectorAll('.search-result');if(focusIdx>=0&&focusIdx<items.length)window.location.href=items[focusIdx].getAttribute('data-url')}
-if(si){si.addEventListener('input',function(){{filter(this.value,dd)}});si.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(dd,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(dd,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(dd)}else if(e.key==='Escape'){dd.classList.remove('active')}}});si.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,dd)}});si.addEventListener('blur',function(){{setTimeout(function(){{dd.classList.remove('active')}},200)}})}
-if(sim){sim.addEventListener('input',function(){{filter(this.value,ddm)}});sim.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(ddm,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(ddm,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(ddm)}else if(e.key==='Escape'){ddm.classList.remove('active')}}});sim.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,ddm)}});sim.addEventListener('blur',function(){{setTimeout(function(){{ddm.classList.remove('active')}},200)}})}
+if(si){si.addEventListener('input',function(){{filter(this.value,dd)}});si.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(dd,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(dd,-1)}else if(e.key==='Enter'){e.preventDefault();if(focusIdx<0){focusIdx=0;var fi=dd.querySelectorAll('.search-result');if(fi.length>0)window.location.href=fi[0].getAttribute('data-url')}else{selectFocused(dd)}}else if(e.key==='Escape'){dd.classList.remove('active')}}});si.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,dd)}});si.addEventListener('blur',function(){{setTimeout(function(){{dd.classList.remove('active')}},200)}})}
+if(sim){sim.addEventListener('input',function(){{filter(this.value,ddm)}});sim.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(ddm,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(ddm,-1)}else if(e.key==='Enter'){e.preventDefault();if(focusIdx<0){focusIdx=0;var fi=ddm.querySelectorAll('.search-result');if(fi.length>0)window.location.href=fi[0].getAttribute('data-url')}else{selectFocused(ddm)}}else if(e.key==='Escape'){ddm.classList.remove('active')}}});sim.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,ddm)}});sim.addEventListener('blur',function(){{setTimeout(function(){{ddm.classList.remove('active')}},200)}})}
 loadIdx();
 })();
 
 })();
 </script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
 </body>
 </html>

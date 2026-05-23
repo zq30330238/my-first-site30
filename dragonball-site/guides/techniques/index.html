@@ -14,29 +14,29 @@
 <meta name="google-adsense-account" content="ca-pub-2595917642864488">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#ff6b35',accentDark:'#e55a2b'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
+<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#ffffff',bgSecondary:'#f3f4f6',bgCard:'#ffffff',textPrimary:'#111827',textSecondary:'#4b5563',accent:'#ff6b35',accentDark:'#e55a2b'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
 <script>function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
+body{font-family:'Inter',Arial,sans-serif;background:#ffffff;color:#111827;font-size:16px;line-height:1.6}
 .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
 .carousel-slide.active{opacity:1;pointer-events:auto}
 .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
 .carousel-dot.active{background:#ff6b35}
-.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px #ff6b3526;transition:all .3s ease}
+.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px #ff6b3540;transition:all .3s ease}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .float-anim{animation:float 3s ease-in-out infinite}
 .char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
 img[src$=".png"]{mix-blend-mode:normal}
-.search-dropdown{position:absolute;top:100%;left:0;right:0;background:#1a1f2e;border:1px solid #374151;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.search-dropdown{position:absolute;top:100%;left:0;right:0;background:#ffffff;border:1px solid #e5e7eb;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
 .search-dropdown.active{display:block}
 .search-result{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .15s;border-bottom:1px solid rgba(75,85,99,.15)}
 .search-result:hover,.search-result.focused{background:rgba(255,255,255,.05)}
 .search-result:last-child{border-bottom:none}
 .search-result .sr-type{font-size:10px;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:999px;flex-shrink:0}
-.search-empty{padding:20px;text-align:center;color:#8b949e;font-size:14px}
+.search-empty{padding:20px;text-align:center;color:#4b5563;font-size:14px}
 .masonry-grid{columns:2;column-gap:1rem}
 .masonry-grid>*{break-inside:avoid;margin-bottom:1rem}
 @media(min-width:768px){.masonry-grid{columns:3}}
@@ -58,10 +58,10 @@ img[src$=".png"]{mix-blend-mode:normal}
 </head>
 <body>
 
-<nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(13,17,23,0.95);border-color:#374151">
+<nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(255,255,255,0.95);border-color:#e5e7eb">
 <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
 <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-<img src="/images/bulma.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
+<img src="/images/goku.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold tracking-tight">Dragon <span class="text-accent">Ball Wiki</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
@@ -75,7 +75,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="hidden lg:flex items-center relative flex-1 max-w-xs ml-2" id="searchWrap">
 <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"
  class="w-full bg-bgSecondary text-textPrimary text-sm px-3 py-2 rounded-lg border focus:outline-none focus:border-accent transition-colors"
- style="border-color:#374151">
+ style="border-color:#e5e7eb">
 <div class="search-dropdown" id="searchDropdown"></div>
 </div>
 <button class="lg:hidden text-textSecondary text-2xl" id="menuBtn" aria-label="Menu">&#9776;</button>
@@ -84,7 +84,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="relative mb-2">
 <input type="text" id="searchInputMobile" placeholder="Search..." autocomplete="off"
  class="w-full bg-bgSecondary text-textPrimary text-sm px-3 py-2 rounded-lg border focus:outline-none focus:border-accent transition-colors"
- style="border-color:#374151">
+ style="border-color:#e5e7eb">
 <div class="search-dropdown" id="searchDropdownMobile"></div>
 </div>
 <a href="https://anime.jycsd.com" class="block text-textSecondary hover:text-accent transition-colors">Anime Hub</a>
@@ -109,7 +109,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 </div>
 <div class="hidden md:flex justify-center items-end">
-<img src="/images/roshi.png" alt="Techniques — category overview" title="Techniques category" class="char-img h-[380px] max-h-[380px] w-auto object-contain" loading="lazy">
+<img src="/images/roshi.png" alt="Techniques — category overview" title="Techniques category" class="char-img h-[380px] max-h-[380px] w-auto object-contain" loading="eager">
 </div>
 </div>
 </div>
@@ -126,32 +126,32 @@ img[src$=".png"]{mix-blend-mode:normal}
 <section class="max-w-7xl mx-auto px-4 py-8">
 <h2 class="text-2xl font-black mb-6">All Categories</h2>
 <div class="flex flex-wrap gap-4 justify-center items-stretch">
-<a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/goku.png" alt="Characters — 114+ guides" title="Characters category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+<a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/goku.png" alt="Characters — 114+ guides" title="Characters category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Characters</div>
 <div class="text-sm text-textSecondary mt-1">114+ guides</div>
 </div>
-</a><a href="/guides/transformations/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/broly.png" alt="Transformations — 20+ guides" title="Transformations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/transformations/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/broly.png" alt="Transformations — 20+ guides" title="Transformations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Transformations</div>
 <div class="text-sm text-textSecondary mt-1">20+ guides</div>
 </div>
-</a><a href="/guides/techniques/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Techniques — 40+ guides" title="Techniques category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Techniques — 40+ guides" title="Techniques category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Techniques</div>
 <div class="text-sm text-textSecondary mt-1">40+ guides</div>
 </div>
-</a><a href="/guides/sagas/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/frieza.png" alt="Sagas — 25+ guides" title="Sagas category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/sagas/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/frieza.png" alt="Sagas — 25+ guides" title="Sagas category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Sagas</div>
 <div class="text-sm text-textSecondary mt-1">25+ guides</div>
 </div>
-</a><a href="/guides/races/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Races & Organizations — 16+ guides" title="Races & Organizations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Races & Organizations — 16+ guides" title="Races & Organizations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Races & Organizations</div>
 <div class="text-sm text-textSecondary mt-1">16+ guides</div>
@@ -159,365 +159,365 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div></section><section class="max-w-7xl mx-auto px-4 py-12">
 <div class="mb-8"><h2 class="text-3xl font-black">All Techniques</h2><p class="text-textSecondary mt-2">52 technique guides</p></div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"><a href="/guides/techniques/kamehameha.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/roshi.png" alt="Kamehameha" title="Kamehameha" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"><a href="/guides/techniques/kamehameha.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/roshi.png" alt="Kamehameha" title="Kamehameha" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Kamehameha</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Goku's signature energy wave created by Master Roshi. Concentrated ki blast fired from cupped hands, with power scaling to the user's level.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/final-flash.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Final Flash" title="Final Flash" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/final-flash.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Final Flash" title="Final Flash" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Final Flash</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Vegeta's ultimate energy attack. Charges ki into one hand then releases a massive yellow beam. Used to nearly destroy Perfect Cell.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/destructo-disc.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/krillin.png" alt="Destructo Disc" title="Destructo Disc" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/destructo-disc.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/krillin.png" alt="Destructo Disc" title="Destructo Disc" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Destructo Disc</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Krillin's razor-sharp spinning ki disc that can cut through nearly anything. A lethal attack capable of bisecting enemies far stronger than the user.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/spirit-bomb.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Spirit Bomb" title="Spirit Bomb" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/spirit-bomb.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Spirit Bomb" title="Spirit Bomb" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Spirit Bomb</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Goku's ultimate technique gathering energy from all living things. A massive sphere of pure life energy that grows more powerful with willing donations.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/instant-transmission.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Instant Transmission" title="Instant Transmission" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/instant-transmission.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Instant Transmission" title="Instant Transmission" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Instant Transmission</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Goku's teleportation technique learned from the Yardrats. Locks onto a ki signature and instantly transports anywhere in the universe.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/solar-flare.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/tien.png" alt="Solar Flare" title="Solar Flare" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/solar-flare.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/tien.png" alt="Solar Flare" title="Solar Flare" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Solar Flare</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">A blinding flash of light that temporarily disables opponents' vision. Used by Tien, Krillin, and Goku as an escape or setup technique.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/tri-beam.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/tien.png" alt="Tri-Beam" title="Tri-Beam" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/tri-beam.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/tien.png" alt="Tri-Beam" title="Tri-Beam" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Tri-Beam</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Tien's life-force-powered energy attack. Each use shortens the user's lifespan but produces a devastating rectangular blast capable of stalling Cell.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/special-beam-cannon.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Special Beam Cannon" title="Special Beam Cannon" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/special-beam-cannon.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Special Beam Cannon" title="Special Beam Cannon" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Special Beam Cannon</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Piccolo's piercing drill-like energy beam with a spiral trajectory. Requires long charge time but penetrates nearly any defense.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/masenko.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/gohan.png" alt="Masenko" title="Masenko" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/masenko.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/gohan.png" alt="Masenko" title="Masenko" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Masenko</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Gohan's signature energy blast taught by Piccolo. Two-handed overhead ki wave faster to charge than Kamehameha but with comparable power.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/galick-gun.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Galick Gun" title="Galick Gun" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/galick-gun.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Galick Gun" title="Galick Gun" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Galick Gun</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Vegeta's trademark purple energy wave fired from a unique hand pose. The attack that clashed with Goku's Kaioken Kamehameha during the Saiyan Saga.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/big-bang-attack.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Big Bang Attack" title="Big Bang Attack" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/big-bang-attack.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Big Bang Attack" title="Big Bang Attack" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Big Bang Attack</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Vegeta's point-blank energy sphere attack fired with an open palm. A concentrated explosion designed to obliterate a single target instantly.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/death-beam.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Death Beam" title="Death Beam" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/death-beam.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Death Beam" title="Death Beam" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Death Beam</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Frieza's finger-laser attack that fires thin piercing beams at near-instant speed. Killed Vegeta on Namek with a single shot through the heart.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a></div><div id="moreAnime" style="display:none"><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"><a href="/guides/techniques/death-ball.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Death Ball" title="Death Ball" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a></div><div id="moreAnime" style="display:none"><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"><a href="/guides/techniques/death-ball.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Death Ball" title="Death Ball" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Death Ball</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Frieza's planet-destroying sphere attack. A massive condensed ball of ki that can be detonated remotely to destroy entire celestial bodies.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/kienzan.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/krillin.png" alt="Kienzan" title="Kienzan" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/kienzan.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/krillin.png" alt="Kienzan" title="Kienzan" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Kienzan</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The Japanese name for Destructo Disc. A razor-thin ki disc that spins at high speed to cut through targets regardless of power difference.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/wolf-fang-fist.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/yamcha.png" alt="Wolf Fang Fist" title="Wolf Fang Fist" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/wolf-fang-fist.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/yamcha.png" alt="Wolf Fang Fist" title="Wolf Fang Fist" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Wolf Fang Fist</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Yamcha's signature martial arts technique combining rapid claw strikes with wolf-like ferocity. A close-combat barrage used throughout the original Dragon Ball.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/evil-containment-wave.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/roshi.png" alt="Evil Containment Wave" title="Evil Containment Wave" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/evil-containment-wave.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/roshi.png" alt="Evil Containment Wave" title="Evil Containment Wave" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Evil Containment Wave</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Master Roshi's sealing technique that traps an opponent in a container. Costs the user their life if not executed perfectly. Used against Demon King Piccolo and Zamasu.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/fusion-dance.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goten.png" alt="Fusion Dance" title="Fusion Dance" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/fusion-dance.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goten.png" alt="Fusion Dance" title="Fusion Dance" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Fusion Dance</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The Metamoran technique fusing two warriors into one for 30 minutes. Requires perfect synchronization of power levels and movements.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/potara-fusion.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/kibito.png" alt="Potara Fusion" title="Potara Fusion" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/potara-fusion.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Potara Fusion" title="Potara Fusion" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Potara Fusion</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Permanent fusion using Supreme Kai earrings. Produces a warrior far stronger than the sum of its parts, with the dominant personality prevailing.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/hakai.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/beerus.png" alt="Hakai" title="Hakai" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/hakai.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/beerus.png" alt="Hakai" title="Hakai" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Hakai</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The God of Destruction technique that erases targets from existence entirely. Beerus and other destroyers use this power to maintain universal balance.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/stardust-breaker.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/gogeta.png" alt="Stardust Breaker" title="Stardust Breaker" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/stardust-breaker.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Stardust Breaker" title="Stardust Breaker" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Stardust Breaker</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Gogeta's rainbow-colored energy attack that disintegrates targets at the molecular level. Used to destroy Janemba in Fusion Reborn and Broly in DBS: Broly.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/hellzone-grenade.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Hellzone Grenade" title="Hellzone Grenade" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/hellzone-grenade.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Hellzone Grenade" title="Hellzone Grenade" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Hellzone Grenade</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Piccolo's tactical attack scattering multiple ki orbs around an opponent that converge simultaneously from all directions, leaving no escape.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/final-kamehameha.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Final Kamehameha" title="Final Kamehameha" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/final-kamehameha.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Final Kamehameha" title="Final Kamehameha" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Final Kamehameha</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Vegito's combined attack merging Final Flash and Kamehameha into a single devastating blue-gold energy wave of unparalleled destructive power.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/dragon-fist.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Dragon Fist" title="Dragon Fist" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/dragon-fist.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Dragon Fist" title="Dragon Fist" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Dragon Fist</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Goku's ultimate punching technique manifesting a golden dragon that pierces through the opponent. Defeated Super 17 and Eis Shenron with this legendary strike.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/multi-form-technique.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/tien.png" alt="Multi-Form Technique" title="Multi-Form Technique" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/multi-form-technique.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/tien.png" alt="Multi-Form Technique" title="Multi-Form Technique" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Multi-Form Technique</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Tien's technique splitting the user into multiple copies at reduced power. Used strategically for simultaneous attacks or to escape dangerous situations.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/meteor-combination.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Meteor Combination" title="Meteor Combination" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/meteor-combination.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Meteor Combination" title="Meteor Combination" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Meteor Combination</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Goku's close-combat rush attack combining rapid punches, kicks, and a final Kamehameha. Used to finish Kid Buu in the final battle of DBZ.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/kaio-ken.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Kaio-ken" title="Kaio-ken" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/kaio-ken.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Kaio-ken" title="Kaio-ken" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Kaio-ken</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">King Kai's signature technique that multiplies the user's power, speed, and senses by a chosen factor. Goku mastered this up to x20 against Frieza and later stacked it on Super Saiyan Blue, though improper control causes severe body damage and ki exhaustion.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/light-grenade.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Light Grenade" title="Light Grenade" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/light-grenade.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Light Grenade" title="Light Grenade" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Light Grenade</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Piccolo's concentrated energy sphere attack formed by gathering ki into a single palm. A dense, explosive orb that detonates on impact with massive concussive force. Used against Imperfect Cell and Android 17 with devastating area-of-effect damage.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/burning-attack.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="Burning Attack" title="Burning Attack" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/burning-attack.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="Burning Attack" title="Burning Attack" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Burning Attack</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Future Trunks' signature energy attack fired from a unique arm-crossed hand gesture. A fiery orange blast of concentrated ki that creates a massive explosion upon impact. First demonstrated when Trunks destroyed Frieza's ship and soldiers upon his arrival.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/heat-dome-attack.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="Heat Dome Attack" title="Heat Dome Attack" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/heat-dome-attack.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="Heat Dome Attack" title="Heat Dome Attack" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Heat Dome Attack</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Trunks' ultimate technique where he raises his sword skyward, charges it with blazing ki, and swings down to unleash a dome-shaped energy wave. Used to deliver the final blow to Fused Zamasu's physical body alongside the Spirit Bomb Sword.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/finish-buster.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="Finish Buster" title="Finish Buster" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/finish-buster.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="Finish Buster" title="Finish Buster" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Finish Buster</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Trunks' one-handed energy blast fired with a forward palm thrust. A rapid-deployment ki wave designed for mid-range combat that can be charged quickly. Used frequently throughout the Android and Cell sagas as Trunks' go-to ranged assault.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/big-bang-kamehameha.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/gogeta.png" alt="Big Bang Kamehameha" title="Big Bang Kamehameha" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/big-bang-kamehameha.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Big Bang Kamehameha" title="Big Bang Kamehameha" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Big Bang Kamehameha</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Gogeta's fusion technique combining Vegeta's Big Bang Attack with Goku's Kamehameha. A colossal blue sphere fired from a unique hand pose that unleashes Big Bang-level destruction with Kamehameha-range. Used against Omega Shenron and Super Saiyan Broly.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/father-son-kamehameha.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/gohan.png" alt="Father-Son Kamehameha" title="Father-Son Kamehameha" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/father-son-kamehameha.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/gohan.png" alt="Father-Son Kamehameha" title="Father-Son Kamehameha" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Father-Son Kamehameha</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The legendary Kamehameha powered by Goku's spirit energy from the Other World, channeled through Gohan during the Cell Games. Combined the power of father and son in one decisive wave, destroying Super Perfect Cell in the most emotional finish of the series.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/gamma-burst-flash.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Gamma Burst Flash" title="Gamma Burst Flash" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/gamma-burst-flash.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Gamma Burst Flash" title="Gamma Burst Flash" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Gamma Burst Flash</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Vegeta's advanced energy attack introduced in Dragon Ball Super. A rapid-fire burst of golden-green ki blasts unleashed from both hands simultaneously, saturating the battlefield with destructive energy. Developed during training with Whis on Beerus' planet.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/prominence-flash.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Prominence Flash" title="Prominence Flash" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/prominence-flash.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Prominence Flash" title="Prominence Flash" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Prominence Flash</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Vegeta's solar-flare variant that combines blinding light with explosive force. Unlike a standard Solar Flare, this technique both blinds opponents and delivers concussive damage. Used to create openings against multiple opponents simultaneously.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/gigantic-roar.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/broly.png" alt="Gigantic Roar" title="Gigantic Roar" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/gigantic-roar.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/broly.png" alt="Gigantic Roar" title="Gigantic Roar" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Gigantic Roar</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Broly's devastating mouth-fired energy blast that unleashes a massive green ki wave. Originating from his uncontrollable rage, this attack can level entire landscapes. The sheer power output exceeds most standard energy techniques due to Broly's limitless ki growth.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/omega-blaster.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/broly.png" alt="Omega Blaster" title="Omega Blaster" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/omega-blaster.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/broly.png" alt="Omega Blaster" title="Omega Blaster" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Omega Blaster</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Broly's ultimate energy sphere technique. A compressed green ki ball fired from an outstretched palm that detonates with planet-shattering force. The longer Broly charges it, the larger and more devastating the explosion becomes.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/divine-lasso.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/gogeta.png" alt="Divine Lasso" title="Divine Lasso" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/divine-lasso.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Divine Lasso" title="Divine Lasso" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Divine Lasso</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Fused Zamasu's signature technique creating blades of crimson energy that pierce targets and detonate on command. These energy spikes pin opponents in place before releasing a devastating internal explosion of divine ki.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/sphere-of-destruction.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/beerus.png" alt="Sphere of Destruction" title="Sphere of Destruction" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/sphere-of-destruction.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/beerus.png" alt="Sphere of Destruction" title="Sphere of Destruction" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Sphere of Destruction</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Beerus' Hakai concentrated into a compact purple sphere of destruction energy. Anything touched by this sphere is erased from existence entirely, bypassing all conventional durability. Beerus can adjust its size from a marble to a planet-annihilating orb.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/dodon-ray.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/tien.png" alt="Dodon Ray" title="Dodon Ray" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/dodon-ray.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/tien.png" alt="Dodon Ray" title="Dodon Ray" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Dodon Ray</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The Crane School's signature assassination technique created by Master Shen. A thin, high-speed beam fired from one finger that trades explosive power for precision and lethality. Tien and Chiaotzu both mastered this before leaving the Crane School.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/darkness-eye-beam.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Darkness Eye Beam" title="Darkness Eye Beam" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/darkness-eye-beam.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Darkness Eye Beam" title="Darkness Eye Beam" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Darkness Eye Beam</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Piccolo Daimao and Piccolo Jr.'s optic energy attack firing twin beams from their eyes. A rapid, precise technique capable of piercing through defenses at close range. Used throughout the original Dragon Ball and early DBZ as Piccolo's quick-draw weapon.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/neo-tri-beam.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/tien.png" alt="Neo Tri-Beam" title="Neo Tri-Beam" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/neo-tri-beam.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/tien.png" alt="Neo Tri-Beam" title="Neo Tri-Beam" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Neo Tri-Beam</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Tien's enhanced Tri-Beam variant that fires a sustained rectangular blast instead of a single pulse. Can be chained continuously at the cost of massive life force drain. Tien used this to stall Semi-Perfect Cell for minutes despite the enormous power gap.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/spirit-sword.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Spirit Sword" title="Spirit Sword" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/spirit-sword.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Spirit Sword" title="Spirit Sword" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Spirit Sword</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Vegeta's energy blade technique condensing ki into a razor-sharp sword extending from his hand. The length and power are fully adjustable, allowing both precision strikes and sweeping slashes. Used to cut through opponents resistant to standard ki blasts.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/body-change.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/captain-ginyu.png" alt="Body Change" title="Body Change" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/body-change.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Body Change" title="Body Change" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Body Change</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Captain Ginyu's signature technique that swaps his body with the target's. A purple energy wave fires from his mouth to initiate the transfer. Ginyu's most dangerous ability, nearly trapping Goku in a broken body during the Frieza Saga.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/time-skip.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/hit.png" alt="Time Skip" title="Time Skip" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/time-skip.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Time Skip" title="Time Skip" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Time Skip</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Hit's legendary assassination technique that skips time forward by a fraction of a second. During the skip, Hit can reposition and strike freely while opponents experience a temporal gap. Can be extended to longer durations and even create a pocket dimension of stored time.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/super-ghost-kamikaze-attack.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goten.png" alt="Super Ghost Kamikaze Attack" title="Super Ghost Kamikaze Attack" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/super-ghost-kamikaze-attack.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goten.png" alt="Super Ghost Kamikaze Attack" title="Super Ghost Kamikaze Attack" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Super Ghost Kamikaze Attack</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Gotenks' creative technique materializing ghost-like ki constructs that detonate on contact with opponents. Each ghost is semi-sentient, can taunt enemies, and generates a massive explosion. Up to ten ghosts can be deployed simultaneously for overwhelming coverage.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/galactic-donut.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goten.png" alt="Galactic Donut" title="Galactic Donut" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/galactic-donut.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goten.png" alt="Galactic Donut" title="Galactic Donut" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Galactic Donut</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Gotenks' constricting ki ring technique that forms glowing golden rings to bind opponents. Once trapped, targets are completely immobilized and vulnerable to follow-up attacks. Used against Super Buu to restrict his movements during their battle.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/healing.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Healing" title="Healing" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/healing.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Healing" title="Healing" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Healing</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Ki-based regeneration used by Namekians (Dende) and Supreme Kai apprentices. Transfers the healer's energy to restore wounds and stamina in others. Dende's version can heal near-fatal injuries in seconds, making him invaluable support for the Z-Fighters.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/magic-materialization.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Magic Materialization" title="Magic Materialization" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/magic-materialization.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Magic Materialization" title="Magic Materialization" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Magic Materialization</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The Namekian ability to conjure physical objects from nothing using magical energy. Piccolo famously created Gohan's gi, sword, and even a fully-formed hourglass. Notable for creating the Clothes Beam that produces perfectly tailored battle outfits on demand.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/absorption.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/cell.png" alt="Absorption" title="Absorption" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/absorption.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/cell.png" alt="Absorption" title="Absorption" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Absorption</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Used by Cell (tail absorption), Majin Buu (body absorption), and Androids 19/20 (palm absorption). Cell absorbs life energy and entire beings. Buu absorbs warriors to gain their power and appearance. Energy-draining variants steal ki through physical contact.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/regeneration.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Regeneration" title="Regeneration" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/regeneration.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Regeneration" title="Regeneration" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Regeneration</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The ability to recover from any physical damage instantly, used by Namekians (Piccolo), Majin Buu, and Cell. Piccolo can regrow limbs at high ki cost. Buu's version is nearly limitless — reforming from single cells or even vapor. Cell requires his core nucleus to be intact.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/chocolate-beam.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/buu.png" alt="Chocolate Beam" title="Chocolate Beam" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/chocolate-beam.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/buu.png" alt="Chocolate Beam" title="Chocolate Beam" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Chocolate Beam</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Majin Buu's transmutation technique fired from his head tendril. Transform any target into chocolate, candy, or clay. The transformed victims retain some consciousness as food. One of the most terrifying hax abilities that bypasses all conventional power scaling.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/techniques/crusher-ball.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Crusher Ball" title="Crusher Ball" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/crusher-ball.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Crusher Ball" title="Crusher Ball" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Crusher Ball</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Jeice's signature technique from the Ginyu Force. A compact crimson energy sphere thrown like a baseball pitch with devastating explosive power. Can be guided mid-flight and detonated remotely, making it effective for both direct hits and tactical ambushes.</p>
@@ -528,11 +528,11 @@ img[src$=".png"]{mix-blend-mode:normal}
 
 
 
-<footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#374151">
+<footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#e5e7eb">
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
-<img src="/images/bulma.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
+<img src="/images/goku.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold">Dragon <span class="text-accent">Ball Wiki</span></span>
 </div>
 <p class="text-sm text-textSecondary leading-relaxed">Expert anime character guides, power system breakdowns, and arc analyses. Part of the Anime Hub Network.</p>
@@ -548,13 +548,22 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-4">More Anime Wikis</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="https://onepiece.jycsd.com" class="hover:text-accent transition-colors">One Piece</a></li>
-<li><a href="https://naruto.jycsd.com" class="hover:text-accent transition-colors">Naruto</a></li>
-<li><a href="https://demonslayer.jycsd.com" class="hover:text-accent transition-colors">Demon Slayer</a></li>
-<li><a href="https://anime.jycsd.com" class="hover:text-accent transition-colors">All Anime Wikis</a></li>
-</ul>
+<h4 class="font-bold mb-4">Our Network</h4>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— Network —</option>
+    <option value="https://www.jycsd.com">Myers Media</option>
+    <option value="https://games.jycsd.com">Game Guides</option>
+    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+</select>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— More Sites —</option>
+    <option value="https://healthy.jycsd.com">HealthyEats</option>
+    <option value="https://pets.jycsd.com">PetCare Hub</option>
+    <option value="https://home.jycsd.com">HomeJoy</option>
+    <option value="https://finance.jycsd.com">MoneyWise</option>
+    <option value="https://tech.jycsd.com">TechNest</option>
+    <option value="https://travel.jycsd.com">TripRoute</option>
+</select>
 </div>
 <div>
 <h4 class="font-bold mb-4">About</h4>
@@ -565,7 +574,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 </div>
-<div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#374151">
+<div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#e5e7eb">
 <p>&copy; 2026 Dragon Ball Wiki by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All anime characters and trademarks belong to their respective owners.</p>
 </div>
 </footer>

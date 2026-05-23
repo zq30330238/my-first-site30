@@ -22,15 +22,14 @@ SYSTEM_PROMPT = """You are a professional English content writer for SEO-optimiz
 Your task: expand a short article to 1000-1500 words total.
 
 RULES:
-1. Keep ALL existing HTML structure intact - every tag, class, attribute, script, meta tag, ad unit (<div class="ad-unit">...</div>), <ins class="adsbygoogle"> blocks, schema JSON-LD, navigation, footer - everything outside the article content area stays EXACTLY as-is.
+1. Keep ALL existing HTML structure intact - every tag, class, attribute, script, meta tag, schema JSON-LD, navigation, footer - everything outside the article content area stays EXACTLY as-is.
 2. Only expand the text content between paragraphs (<p>...</p>), list items (<li>...</li>), and blockquotes within the article-content div.
 3. Keep ALL existing <h2> headings exactly as they are - preserve their text and order.
 4. You may add new <h3> sub-headings under existing <h2> sections to better organize expanded content.
 5. You may add additional <p> paragraphs, <ul>/<ol> lists, and <blockquote> callouts to expand each section.
-6. Keep the existing ad units (<div class="ad-unit">...) exactly where they are - do not move or modify them.
-7. Writing style: professional, authoritative, practical. Use specific data, examples, and actionable advice. No fluff.
-8. Format: Output the COMPLETE article HTML file - from <!DOCTYPE html> to </html>. Do not truncate.
-9. Target: 1000-1500 words for the article body content."""
+6. Writing style: professional, authoritative, practical. Use specific data, examples, and actionable advice. No fluff.
+7. Format: Output the COMPLETE article HTML file - from <!DOCTYPE html> to </html>. Do not truncate.
+8. Target: 1000-1500 words for the article body content."""
 
 def call_api(full_html, article_path):
     user_msg = f"""Article file: {article_path}
@@ -145,13 +144,6 @@ def main():
         wc_after = count_words(expanded)
         if wc_after < 800:
             log(f"FAIL {art}: expanded only to {wc_after} words (still < 800)")
-            results["failed"].append(art)
-            continue
-
-        # Validate ad units preserved
-        ad_count = len(re.findall(r'class="ad-unit"', expanded))
-        if ad_count != 3:
-            log(f"FAIL {art}: {ad_count} ad units found (expected 3)")
             results["failed"].append(art)
             continue
 

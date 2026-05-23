@@ -1,236 +1,938 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-2595917642864488">
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>GameGuide — Expert Game Guides & Walkthroughs</title>
+
 <meta name="description" content="Expert game guides, boss strategies, character builds, and walkthroughs for the world's most popular games. Minecraft, Elden Ring, LoL, GTA 6, and more.">
+
 <meta name="robots" content="index, follow">
+
 <link rel="canonical" href="https://games.jycsd.com/">
+
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#6366f1',mc:'#4ade80',elden:'#fbbf24',lol:'#3b82f6',gta6:'#f97316',fort:'#a78bfa',val:'#ef4444'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+<script>tailwind.config={theme:{extend:{colors:{bgPrimary:"#f8fafc",bgSecondary:"#f1f5f9",bgCard:"#ffffff",textPrimary:"#1e293b",textSecondary:"#64748b",accent:"#6366f1",mc:"#4ade80",elden:"#fbbf24",lol:"#3b82f6",gta6:"#f97316",fort:"#a78bfa",val:"#ef4444"},fontFamily:{sans:["Inter","Arial","sans-serif"]}}}}</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
-<script>function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
+
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-GGNWR1X1GV");</script>
+
 <style>
-  body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
-  ins.adsbygoogle{display:block}
-  .ad-label{text-align:center;color:#6b7280;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
+
+  body{font-family:"Inter",Arial,sans-serif;background:#f8fafc;color:#1e293b;font-size:16px;line-height:1.6}
+
   .game-card:hover{transform:translateY(-3px);transition:all 0.3s ease}
+
   .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity 0.8s ease-in-out;pointer-events:none}
+
   .carousel-slide.active{opacity:1;pointer-events:auto}
-  .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer;transition:background 0.3s}
-  .carousel-dot.active{background:#6366f1}
+
+  .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.35);cursor:pointer;transition:background 0.3s}
+
+  .carousel-dot.active{background:#ffffff}
+
+
+  .back-to-top{position:fixed;bottom:32px;right:32px;z-index:999;width:44px;height:44px;border-radius:50%;background:#6366f1;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;opacity:0;transition:all .3s;box-shadow:0 4px 15px rgba(99,102,241,.4);border:none}.back-to-top.visible{opacity:1}.back-to-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(99,102,241,.6)}
 </style>
+
 </head>
+
 <body>
 
-<nav class="fixed top-0 w-full z-50 bg-bgPrimary/95 backdrop-blur-md border-b border-gray-800/50">
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+
   <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+
     <a href="/" class="flex items-center gap-2.5">
-      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-purple-600 flex items-center justify-center text-lg font-black text-white">G</div>
+
+      <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-purple-600 flex items-center justify-center overflow-hidden text-lg font-black text-white">G</div>
+
       <span class="text-xl font-bold">Game<span class="text-accent">Guide</span></span>
+
     </a>
-    <div class="flex gap-4 text-sm font-medium">
+
+    <div class="flex gap-3 text-sm font-medium">
+      <a href="https://jycsd.com" class="text-[#64748b] hover:text-[#6366f1]">Main Site</a>
+      <a href="https://anime.jycsd.com" class="text-[#64748b] hover:text-[#6366f1]">Anime Hub</a>
       <a href="https://minecraft.jycsd.com" class="text-mc hover:underline">Minecraft</a>
+      <a href="https://fortnite.jycsd.com" class="text-fort hover:underline">Fortnite</a>
+      <a href="https://valorant.jycsd.com" class="text-val hover:underline">Valorant</a>
+      <!-- More dropdown -->
+      <details class="relative group">
+        <summary class="list-none text-[#64748b] hover:text-[#6366f1] transition-colors cursor-pointer flex items-center gap-1">More <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+        <div class="absolute right-0 top-full mt-2 bg-gray-900 border border-gray-700 rounded-lg shadow-xl py-2 min-w-[180px] z-50">
+          <a href="https://eldenring.jycsd.com" class="block px-4 py-2 text-[#64748b] hover:text-[#6366f1] hover:bg-white/5 transition-colors">Elden Ring</a>
+          <a href="https://lol.jycsd.com" class="block px-4 py-2 text-[#64748b] hover:text-[#6366f1] hover:bg-white/5 transition-colors">LoL</a>
+        </div>
+      </details>
+    </div>
+
+  </div>
+
+	      <a href="/play/" class="text-accent font-semibold hover:opacity-80">Play Games</a>
+
+      <!-- Hamburger (mobile) -->
+      <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+        <span class="block w-6 h-0.5 bg-slate-700 rounded transition-all"></span>
+        <span class="block w-6 h-0.5 bg-slate-700 rounded transition-all"></span>
+        <span class="block w-6 h-0.5 bg-slate-700 rounded transition-all"></span>
+      </button>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 py-4 shadow-lg">
+    <div class="flex flex-col gap-3 text-sm font-medium">
+      <a href="https://jycsd.com" class="text-[#64748b] hover:text-[#6366f1]">Main Site</a>
+      <a href="https://anime.jycsd.com" class="text-[#64748b] hover:text-[#6366f1]">Anime Hub</a>
+      <a href="https://minecraft.jycsd.com" class="text-mc hover:underline">Minecraft</a>
+      <a href="https://fortnite.jycsd.com" class="text-fort hover:underline">Fortnite</a>
+      <a href="https://valorant.jycsd.com" class="text-val hover:underline">Valorant</a>
       <a href="https://eldenring.jycsd.com" class="text-elden hover:underline">Elden Ring</a>
       <a href="https://lol.jycsd.com" class="text-lol hover:underline">LoL</a>
-      <a href="https://gta6.jycsd.com" class="text-gta6 hover:underline">GTA 6</a>
+      <a href="/play/" class="text-accent font-semibold hover:opacity-80">Play Games</a>
     </div>
   </div>
 </nav>
 
 <!-- Hero Carousel -->
+
+
 <section class="relative w-full overflow-hidden pt-16" style="height:480px">
+
+  <!-- Slide 1: Minecraft -->
+
   <div class="carousel-slide active">
-    <div class="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-gray-950"></div>
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 30% 50%, #6366f1 0%, transparent 60%)"></div>
-    <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-      <div class="max-w-2xl">
-        <span class="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full">18 Games & Growing</span>
-        <h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight">Master <span class="text-accent">Every Game</span></h1>
-        <p class="text-lg text-textSecondary mt-4 max-w-lg">Expert guides, boss strategies, character builds, and walkthroughs across the world's most popular games. 18 dedicated guide sites, 1500+ articles planned.</p>
-        <div class="flex gap-3 mt-6">
-          <a href="#games" class="bg-accent text-white px-6 py-3 rounded-lg font-bold hover:bg-indigo-500 transition-all">Browse Games</a>
-          <a href="#latest" class="border border-gray-600 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Latest Guides</a>
-        </div>
+    <a href="https://minecraft.jycsd.com" class="absolute inset-0 z-10" aria-label="Visit MineGuide"></a>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-green-500 via-lime-600 to-stone-800"></div>
+
+    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.3) 0%, transparent 60%)"></div>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 h-full flex items-center">
+
+      <div class="w-1/2">
+
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-200 bg-white/15 px-3 py-1 rounded-full">Featured Game</span>
+
+        <h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight text-white">MineGuide</h1>
+
+        <p class="text-lg text-emerald-100 mt-4 max-w-lg">120+ Minecraft guides — crafting, mobs, building, redstone, enchanting, and biomes.</p>
+
+        <a href="https://minecraft.jycsd.com" class="inline-block mt-6 bg-white relative z-30 text-emerald-700 px-6 py-3 rounded-lg font-bold hover:bg-emerald-50 transition-all">Visit MineGuide →</a>
+
       </div>
+
+      <div class="hidden md:flex items-center justify-end w-1/2 overflow-hidden" style="height:400px">
+
+        <img src="images/steve.png" alt="Steve - Minecraft" class="w-full h-full object-cover object-top drop-shadow-2xl" onerror="this.parentElement.innerHTML=''">
+
+      </div>
+
     </div>
+
   </div>
+
+  <!-- Slide 2: Fortnite -->
+
   <div class="carousel-slide">
-    <div class="absolute inset-0 bg-gradient-to-br from-emerald-950 via-gray-950 to-gray-950"></div>
-    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 70% 50%, #4ade80 0%, transparent 60%)"></div>
-    <div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-      <a href="https://minecraft.jycsd.com" class="absolute inset-0 z-10" aria-label="Visit MineGuide"></a>
-      <div class="max-w-2xl ml-auto text-right relative z-20">
-        <span class="text-xs font-bold uppercase tracking-wider text-mc bg-mc/10 px-3 py-1 rounded-full">Just Launched</span>
-        <h2 class="text-4xl md:text-6xl font-black mt-4 leading-tight"><span class="text-mc">MineGuide</span> Is Live</h2>
-        <p class="text-lg text-textSecondary mt-4">120+ Minecraft guides — crafting, mobs, building, redstone, enchanting, and biomes. All updated for version 1.21 Tricky Trials.</p>
-        <a href="https://minecraft.jycsd.com" class="inline-block mt-6 bg-mc text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-green-300 transition-all relative z-30">Visit MineGuide &#8594;</a>
+    <a href="https://fortnite.jycsd.com" class="absolute inset-0 z-10" aria-label="Visit FortGuide"></a>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-600 via-violet-700 to-purple-900"></div>
+
+    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.3) 0%, transparent 60%)"></div>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 h-full flex items-center">
+
+      <div class="w-1/2">
+
+        <span class="text-xs font-bold uppercase tracking-wider text-purple-200 bg-white/15 px-3 py-1 rounded-full">Just Launched</span>
+
+        <h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight text-white">FortGuide</h1>
+
+        <p class="text-lg text-purple-100 mt-4 max-w-lg">Fortnite battle royale guides, weapon stats, map updates, and pro building strategies.</p>
+
+        <a href="https://fortnite.jycsd.com" class="inline-block mt-6 bg-white relative z-30 text-purple-700 px-6 py-3 rounded-lg font-bold hover:bg-purple-50 transition-all">Visit FortGuide →</a>
+
       </div>
+
+      <div class="hidden md:flex items-center justify-end w-1/2">
+
+        <img src="images/fortnite-character.jpg" alt="Fortnite" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML=''">
+
+      </div>
+
     </div>
+
   </div>
+
+  <!-- Slide 3: Valorant -->
+
+  <div class="carousel-slide">
+    <a href="https://valorant.jycsd.com" class="absolute inset-0 z-10" aria-label="Visit ValGuide"></a>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-red-500 via-rose-600 to-red-800"></div>
+
+    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.3) 0%, transparent 60%)"></div>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 h-full flex items-center">
+
+      <div class="w-1/2">
+
+        <span class="text-xs font-bold uppercase tracking-wider text-red-200 bg-white/15 px-3 py-1 rounded-full">New Content</span>
+
+        <h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight text-white">ValGuide</h1>
+
+        <p class="text-lg text-red-100 mt-4 max-w-lg">Valorant agent lineups, weapon stats, and pro strategies for every map and mode.</p>
+
+        <a href="https://valorant.jycsd.com" class="inline-block mt-6 bg-white relative z-30 text-red-700 px-6 py-3 rounded-lg font-bold hover:bg-red-50 transition-all">Visit ValGuide →</a>
+
+      </div>
+
+      <div class="hidden md:flex items-center justify-end w-1/2">
+
+        <img src="images/valorant-jett.png" alt="Jett - Valorant" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML=''">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Slide 4: Elden Ring -->
+
+  <div class="carousel-slide">
+    <a href="https://eldenring.jycsd.com" class="absolute inset-0 z-10" aria-label="Visit TarnishedGuide"></a>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-amber-600 via-yellow-700 to-amber-900"></div>
+
+    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.2) 0%, transparent 60%)"></div>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 h-full flex items-center">
+
+      <div class="w-1/2">
+
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-200 bg-white/15 px-3 py-1 rounded-full">Award Winner</span>
+
+        <h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight text-white">TarnishedGuide</h1>
+
+        <p class="text-lg text-amber-100 mt-4 max-w-lg">Elden Ring boss strategies, build guides, weapon stats, and complete walkthroughs for the Lands Between.</p>
+
+        <a href="https://eldenring.jycsd.com" class="inline-block mt-6 bg-white relative z-30 text-amber-700 px-6 py-3 rounded-lg font-bold hover:bg-amber-50 transition-all">Visit TarnishedGuide →</a>
+
+      </div>
+
+      <div class="hidden md:flex items-center justify-end w-1/2 overflow-hidden">
+
+        <img src="images/eldenring-character.jpg" alt="Elden Ring" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML=''">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Slide 5: CS2 -->
+
+  <div class="carousel-slide">
+    <a href="https://cs2.jycsd.com" class="absolute inset-0 z-10" aria-label="Visit CS2Guide"></a>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-orange-500 via-amber-600 to-yellow-700"></div>
+
+    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.3) 0%, transparent 60%)"></div>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 h-full flex items-center">
+
+      <div class="w-1/2">
+
+        <span class="text-xs font-bold uppercase tracking-wider text-yellow-200 bg-white/15 px-3 py-1 rounded-full">New Release</span>
+
+        <h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight text-white">CS2Guide</h1>
+
+        <p class="text-lg text-yellow-100 mt-4 max-w-lg">Counter-Strike 2 weapon stats, map callouts, smoke lineups, and pro team strategies.</p>
+
+        <a href="https://cs2.jycsd.com" class="inline-block mt-6 bg-white relative z-30 text-orange-700 px-6 py-3 rounded-lg font-bold hover:bg-orange-50 transition-all">Visit CS2Guide →</a>
+
+      </div>
+
+      <div class="hidden md:flex items-center justify-end w-1/2 overflow-hidden">
+
+        <img src="images/cs2-character.jpg" alt="Counter-Strike 2" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML=''">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Slide 6: BG3 -->
+
+  <div class="carousel-slide">
+    <a href="https://bg3.jycsd.com" class="absolute inset-0 z-10" aria-label="Visit BG3Guide"></a>
+
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-600 via-fuchsia-700 to-pink-800"></div>
+
+    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.2) 0%, transparent 60%)"></div>
+
+    <div class="relative z-20 max-w-7xl mx-auto px-4 h-full flex items-center">
+
+      <div class="w-1/2">
+
+        <span class="text-xs font-bold uppercase tracking-wider text-purple-200 bg-white/15 px-3 py-1 rounded-full">Critically Acclaimed</span>
+
+        <h1 class="text-4xl md:text-6xl font-black mt-4 leading-tight text-white">BG3Guide</h1>
+
+        <p class="text-lg text-purple-100 mt-4 max-w-lg">Baldur&#39;s Gate 3 character builds, quest walkthroughs, companion guides, and lore deep dives.</p>
+
+        <a href="https://bg3.jycsd.com" class="inline-block mt-6 bg-white relative z-30 text-purple-700 px-6 py-3 rounded-lg font-bold hover:bg-purple-50 transition-all">Visit BG3Guide →</a>
+
+      </div>
+
+      <div class="hidden md:flex items-center justify-end w-1/2 overflow-hidden">
+
+        <img src="images/bg3-character.jpg" alt="Baldur's Gate 3" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML=''">
+
+      </div>
+
+    </div>
+
+  </div>
+
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+
     <div class="carousel-dot active" data-slide="0"></div>
+
     <div class="carousel-dot" data-slide="1"></div>
+
+    <div class="carousel-dot" data-slide="2"></div>
+
+    <div class="carousel-dot" data-slide="3"></div>
+
+    <div class="carousel-dot" data-slide="4"></div>
+
+    <div class="carousel-dot" data-slide="5"></div>
+
   </div>
+
+</section>
+
+<!-- Stats Bar -->
+
+<section class="bg-white border-y border-gray-100">
+
+  <div class="max-w-4xl mx-auto px-4 py-6 grid grid-cols-3 gap-4 text-center">
+
+    <div>
+
+      <div class="text-2xl font-black text-accent">18</div>
+
+      <div class="text-sm text-textSecondary font-medium">Game Guide Sites</div>
+
+    </div>
+
+    <div class="border-x border-gray-100">
+
+      <div class="text-2xl font-black text-accent">1500+</div>
+
+      <div class="text-sm text-textSecondary font-medium">Articles Published</div>
+
+    </div>
+
+    <div>
+
+      <div class="text-2xl font-black text-accent" id="liveCount">0</div>
+
+      <div class="text-sm text-textSecondary font-medium">Live Now</div>
+
+    </div>
+
+  </div>
+
 </section>
 
 <!-- Game Grid -->
+
 <section id="games" class="max-w-7xl mx-auto px-4 py-16">
+
   <p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Choose Your Game</p>
-  <h2 class="text-3xl font-black mb-8">18 Guide Sites</h2>
 
-  <div class="mb-10">
-    <h3 class="text-lg font-bold mb-4 text-mc">&#8226; Sandbox & Survival</h3>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <a href="https://minecraft.jycsd.com" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-mc/50 block">
-        <div class="w-12 h-12 rounded-xl bg-mc/10 flex items-center justify-center mb-3 text-2xl">&#129521;</div>
-        <h4 class="font-bold">MineGuide</h4><p class="text-sm text-textSecondary">Minecraft Guides & Wiki</p>
-        <span class="text-xs text-mc mt-2 inline-block">Live &#8594;</span>
-      </a>
-      <a href="https://terraria.jycsd.com" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-mc/50 block">
-        <div class="w-12 h-12 rounded-xl bg-mc/10 flex items-center justify-center mb-3 text-2xl">&#127794;</div>
-        <h4 class="font-bold">TerrariaGuide</h4><p class="text-sm text-textSecondary">Terraria Wiki</p>
-        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
-      </a>
-      <a href="https://palworld.jycsd.com" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-mc/50 block">
-        <div class="w-12 h-12 rounded-xl bg-mc/10 flex items-center justify-center mb-3 text-2xl">&#128293;</div>
-        <h4 class="font-bold">PalGuide</h4><p class="text-sm text-textSecondary">Palworld Database</p>
-        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
-      </a>
-      <a href="https://valheim.jycsd.com" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-mc/50 block">
-        <div class="w-12 h-12 rounded-xl bg-mc/10 flex items-center justify-center mb-3 text-2xl">&#9876;</div>
-        <h4 class="font-bold">ValheimGuide</h4><p class="text-sm text-textSecondary">Valheim Survival Guide</p>
-        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
-      </a>
+  <h2 class="text-3xl font-black mb-8">Game Guide Network</h2>
+
+  <!-- Category 1: Sandbox & Survival -->
+
+  <div class="mb-12">
+
+    <div class="flex items-center justify-between mb-5">
+
+      <div class="flex items-center gap-2">
+
+        <div class="w-1 h-6 bg-emerald-500 rounded-full"></div>
+
+        <h3 class="text-lg font-bold text-slate-800">Sandbox &amp; Survival</h3>
+
+      </div>
+
+      <a href="/guides/sandbox/" class="text-sm font-semibold text-emerald-600 hover:text-emerald-700 hover:underline">View All →</a>
+
     </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <!-- Minecraft -->
+
+      <a href="https://minecraft.jycsd.com" class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all block">
+
+        <div class="h-40 bg-gradient-to-br from-emerald-200 to-green-100 overflow-hidden">
+
+          <img src="images/steve.png" alt="Minecraft" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-2xl font-black text-white drop-shadow-md\'>MINECRAFT</span>'">
+
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+
+            <h4 class="font-bold text-slate-800">MineGuide</h4>
+
+            <span class="text-xs font-semibold px-2 py-0.5 rounded text-emerald-600 bg-emerald-50">Live</span>
+
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1">Minecraft Guides &amp; Wiki</p>
+
+        </div>
+
+      </a>
+
+      <!-- Terraria -->
+
+      <a href="https://terraria.jycsd.com" class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all block">
+
+        <div class="h-40 bg-gradient-to-br from-teal-200 to-cyan-100 overflow-hidden">
+
+          <img src="images/terraria-logo.png" alt="Terraria" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\"text-xl font-black text-white/70 drop-shadow-md\">TERRARIA</span>'">
+
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+
+            <h4 class="font-bold text-slate-800">TerrariaGuide</h4>
+
+            <span class="text-xs font-semibold px-2 py-0.5 rounded text-gray-400 bg-gray-50">Coming Soon</span>
+
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1">Terraria Wiki</p>
+
+        </div>
+
+      </a>
+
+      <!-- Palworld -->
+
+      <a href="https://palworld.jycsd.com" class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all block">
+
+        <div class="h-40 bg-gradient-to-br from-orange-200 to-amber-100 overflow-hidden">
+
+          <img src="images/palworld-logo.png" alt="Palworld" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\"text-xl font-black text-white/70 drop-shadow-md\">PALWORLD</span>'">
+
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+
+            <h4 class="font-bold text-slate-800">PalGuide</h4>
+
+            <span class="text-xs font-semibold px-2 py-0.5 rounded text-gray-400 bg-gray-50">Coming Soon</span>
+
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1">Palworld Database</p>
+
+        </div>
+
+      </a>
+
+      <!-- Valheim -->
+
+      <a href="https://valheim.jycsd.com" class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all block">
+
+        <div class="h-40 bg-gradient-to-br from-stone-200 to-amber-100 overflow-hidden">
+
+          <img src="images/valheim-logo.png" alt="Valheim" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\"text-xl font-black text-white/70 drop-shadow-md\">VALHEIM</span>'">
+
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+
+            <h4 class="font-bold text-slate-800">ValheimGuide</h4>
+
+            <span class="text-xs font-semibold px-2 py-0.5 rounded text-gray-400 bg-gray-50">Coming Soon</span>
+
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1">Valheim Survival Guide</p>
+
+        </div>
+
+      </a>
+
+    </div>
+
   </div>
 
-  <div class="mb-10">
-    <h3 class="text-lg font-bold mb-4 text-elden">&#8226; Open World RPG</h3>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <a href="https://eldenring.jycsd.com" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-elden/50 block">
-        <div class="w-12 h-12 rounded-xl bg-elden/10 flex items-center justify-center mb-3 text-2xl">&#128128;</div>
-        <h4 class="font-bold">TarnishedGuide</h4><p class="text-sm text-textSecondary">Elden Ring Bosses & Builds</p>
-        <span class="text-xs text-elden mt-2 inline-block">Coming Soon</span>
-      </a>
-      <a href="https://gta6.jycsd.com" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-gta6/50 block">
-        <div class="w-12 h-12 rounded-xl bg-gta6/10 flex items-center justify-center mb-3 text-2xl">&#127918;</div>
-        <h4 class="font-bold">GTA6Guide</h4><p class="text-sm text-textSecondary">Grand Theft Auto VI</p>
-        <span class="text-xs text-gta6 mt-2 inline-block">Pre-Launch</span>
-      </a>
-      <a href="https://bg3.jycsd.com" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-elden/50 block">
-        <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-3 text-2xl">&#129302;</div>
-        <h4 class="font-bold">BG3Guide</h4><p class="text-sm text-textSecondary">Baldur's Gate 3 Wiki</p>
-        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
-      </a>
+  <!-- Category 2: Open World RPG -->
+
+  <div class="mb-12">
+
+    <div class="flex items-center justify-between mb-5">
+
+      <div class="flex items-center gap-2">
+
+        <div class="w-1 h-6 bg-amber-500 rounded-full"></div>
+
+        <h3 class="text-lg font-bold text-slate-800">Open World RPG</h3>
+
+      </div>
+
+      <a href="/guides/rpg/" class="text-sm font-semibold text-amber-600 hover:text-amber-700 hover:underline">View All →</a>
+
     </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Elden Ring -->
+
+      <a href="https://eldenring.jycsd.com" class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all block">
+
+        <div class="h-40 bg-gradient-to-br from-amber-200 to-yellow-100 overflow-hidden">
+
+          <img src="images/eldenring-character.jpg" alt="Elden Ring" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\"text-xl font-black text-white/70 drop-shadow-md\">ELDEN RING</span>'">
+
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+
+            <h4 class="font-bold text-slate-800">TarnishedGuide</h4>
+
+            <span class="text-xs font-semibold px-2 py-0.5 rounded text-amber-600 bg-amber-50">Live</span>
+
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1">Elden Ring Bosses &amp; Builds</p>
+
+        </div>
+
+      </a>
+
+      <!-- GTA 6 -->
+
+      <a href="https://gta6.jycsd.com" class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all block">
+
+        <div class="h-40 bg-gradient-to-br from-orange-200 to-orange-100 overflow-hidden">
+
+          <img src="images/gta6-better.jpg" alt="GTA 6" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\"text-xl font-black text-white/70 drop-shadow-md\">GTA 6</span>'">
+
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+
+            <h4 class="font-bold text-slate-800">GTA6Guide</h4>
+
+            <span class="text-xs font-semibold px-2 py-0.5 rounded text-orange-600 bg-orange-50">Pre-Launch</span>
+
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1">Grand Theft Auto VI</p>
+
+        </div>
+
+      </a>
+
+      <!-- Baldur's Gate 3 -->
+
+      <a href="https://bg3.jycsd.com" class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all block">
+
+        <div class="h-40 bg-gradient-to-br from-purple-200 to-fuchsia-100 overflow-hidden">
+
+          <img src="images/bg3-character.jpg" alt="Baldur's Gate 3" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\"text-xl font-black text-white/70 drop-shadow-md\">BG3</span>'">
+
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+
+            <h4 class="font-bold text-slate-800">BG3Guide</h4>
+
+            <span class="text-xs font-semibold px-2 py-0.5 rounded text-gray-400 bg-gray-50">Coming Soon</span>
+
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1">Baldur's Gate 3 Wiki</p>
+
+        </div>
+
+      </a>
+
+    </div>
+
   </div>
 
-  <div class="mb-10">
-    <h3 class="text-lg font-bold mb-4 text-lol">&#8226; Competitive & Esports</h3>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <a href="https://lol.jycsd.com" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-lol/50 block">
-        <div class="w-12 h-12 rounded-xl bg-lol/10 flex items-center justify-center mb-3 text-2xl">&#127922;</div>
-        <h4 class="font-bold">LoLGuide</h4><p class="text-sm text-textSecondary">League of Legends</p>
-        <span class="text-xs text-lol mt-2 inline-block">Coming Soon</span>
-      </a>
-      <a href="https://fortnite.jycsd.com" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-fort/50 block">
-        <div class="w-12 h-12 rounded-xl bg-fort/10 flex items-center justify-center mb-3 text-2xl">&#127963;</div>
-        <h4 class="font-bold">FortGuide</h4><p class="text-sm text-textSecondary">Fortnite Guides</p>
-        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
-      </a>
-      <a href="https://valorant.jycsd.com" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-val/50 block">
-        <div class="w-12 h-12 rounded-xl bg-val/10 flex items-center justify-center mb-3 text-2xl">&#127919;</div>
-        <h4 class="font-bold">ValGuide</h4><p class="text-sm text-textSecondary">Valorant Agent Guides</p>
-        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
-      </a>
-      <a href="https://cs2.jycsd.com" class="game-card bg-bgCard rounded-xl p-5 border border-gray-800 hover:border-amber-400/50 block">
-        <div class="w-12 h-12 rounded-xl bg-amber-400/10 flex items-center justify-center mb-3 text-2xl">&#128299;</div>
-        <h4 class="font-bold">CS2Guide</h4><p class="text-sm text-textSecondary">Counter-Strike 2</p>
-        <span class="text-xs text-textSecondary mt-2 inline-block">Coming Soon</span>
-      </a>
+  <!-- Category 3: Competitive & Esports -->
+
+  <div class="mb-8">
+
+    <div class="flex items-center justify-between mb-5">
+
+      <div class="flex items-center gap-2">
+
+        <div class="w-1 h-6 bg-blue-500 rounded-full"></div>
+
+        <h3 class="text-lg font-bold text-slate-800">Competitive &amp; Esports</h3>
+
+      </div>
+
+      <a href="/guides/esports/" class="text-sm font-semibold text-blue-600 hover:text-blue-700 hover:underline">View All →</a>
+
     </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <!-- LoL -->
+
+      <a href="https://lol.jycsd.com" class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all block">
+
+        <div class="h-40 bg-gradient-to-br from-blue-200 to-indigo-100 overflow-hidden">
+
+          <img src="images/ahri.png" alt="Ahri - League of Legends" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-2xl font-black text-white drop-shadow-md\'>LEAGUE OF LEGENDS</span>'">
+
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+
+            <h4 class="font-bold text-slate-800">LoLGuide</h4>
+
+            <span class="text-xs font-semibold px-2 py-0.5 rounded text-blue-600 bg-blue-50">Live</span>
+
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1">League of Legends</p>
+
+        </div>
+
+      </a>
+
+      <!-- Fortnite -->
+
+      <a href="https://fortnite.jycsd.com" class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all block">
+
+        <div class="h-40 bg-gradient-to-br from-purple-200 to-violet-100 overflow-hidden">
+
+          <img src="images/fortnite-character.jpg" alt="Fortnite" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-2xl font-black text-white drop-shadow-md\'>FORTNITE</span>'">
+
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+
+            <h4 class="font-bold text-slate-800">FortGuide</h4>
+
+            <span class="text-xs font-semibold px-2 py-0.5 rounded text-purple-600 bg-purple-50">Live</span>
+
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1">Fortnite Guides</p>
+
+        </div>
+
+      </a>
+
+      <!-- Valorant -->
+
+      <a href="https://valorant.jycsd.com" class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all block">
+
+        <div class="h-40 bg-gradient-to-br from-red-200 to-rose-100 overflow-hidden">
+
+          <img src="images/valorant-jett.png" alt="Jett - Valorant" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\'text-2xl font-black text-white drop-shadow-md\'>VALORANT</span>'">
+
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+
+            <h4 class="font-bold text-slate-800">ValGuide</h4>
+
+            <span class="text-xs font-semibold px-2 py-0.5 rounded text-red-600 bg-red-50">Live</span>
+
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1">Valorant Agent Guides</p>
+
+        </div>
+
+      </a>
+
+      <!-- CS2 -->
+
+      <a href="https://cs2.jycsd.com" class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all block">
+
+        <div class="h-40 bg-gradient-to-br from-amber-200 to-yellow-100 overflow-hidden">
+
+          <img src="images/cs2-character.jpg" alt="Counter-Strike 2" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML='<span class=\"text-xl font-black text-white/70 drop-shadow-md\">CS2</span>'">
+
+        </div>
+
+        <div class="p-4">
+
+          <div class="flex items-center justify-between">
+
+            <h4 class="font-bold text-slate-800">CS2Guide</h4>
+
+            <span class="text-xs font-semibold px-2 py-0.5 rounded text-gray-400 bg-gray-50">Coming Soon</span>
+
+          </div>
+
+          <p class="text-sm text-slate-500 mt-1">Counter-Strike 2</p>
+
+        </div>
+
+      </a>
+
+    </div>
+
   </div>
+
 </section>
 
 <!-- Ad: 970x250 Billboard -->
+
 <div class="max-w-[970px] mx-auto px-4">
-  <div class="ad-label">Advertisement</div>
-  <ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="BILLBOARD_PORTAL"></ins>
-  <script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+
+  <div class="min-h-[120px]"></div>
+
 </div>
 
 <!-- Latest Guides -->
+
 <section id="latest" class="max-w-7xl mx-auto px-4 py-16">
-  <h2 class="text-3xl font-black mb-8">Latest Across the Network</h2>
+
+    <div class="flex items-center justify-between mb-8">
+
+      <h2 class="text-3xl font-black">Latest Across the Network</h2>
+
+      <a href="/guides/" class="text-sm font-semibold text-accent hover:text-purple-700 hover:underline">View All →</a>
+
+    </div>
+
   <div class="grid md:grid-cols-3 gap-5">
-    <article class="bg-bgCard rounded-xl overflow-hidden border border-gray-800">
-      <div class="h-36 bg-gradient-to-br from-emerald-900 to-green-950 flex items-center justify-center text-4xl">&#129521;</div>
+
+    <article class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+
+      <div class="h-1.5 bg-gradient-to-r from-emerald-400 to-emerald-300"></div>
+
       <div class="p-4">
+
         <span class="text-xs text-mc font-semibold bg-mc/10 px-2 py-0.5 rounded">MineGuide</span>
-        <h3 class="font-bold mt-2"><a href="https://minecraft.jycsd.com/guides/crafting/netherite-upgrade-guide.html" class="hover:text-mc">How to Get Netherite: Complete Guide &#8594;</a></h3>
+
+        <h3 class="font-bold mt-2"><a href="https://minecraft.jycsd.com/guides/crafting/netherite-upgrade-guide.html" class="hover:text-mc">How to Get Netherite: Complete Guide →</a></h3>
+
         <time class="text-xs text-textSecondary mt-2 block">May 17, 2026</time>
+
       </div>
+
     </article>
-    <article class="bg-bgCard rounded-xl overflow-hidden border border-gray-800">
-      <div class="h-36 bg-gradient-to-br from-amber-900 to-yellow-950 flex items-center justify-center text-4xl">&#128128;</div>
+
+    <article class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+
+      <div class="h-1.5 bg-gradient-to-r from-blue-400 to-blue-300"></div>
+
       <div class="p-4">
-        <span class="text-xs text-elden font-semibold bg-elden/10 px-2 py-0.5 rounded">Elden Ring</span>
-        <h3 class="font-bold mt-2">Malenia Boss Fight: No-Hit Strategy &#8594;</h3>
-        <time class="text-xs text-textSecondary mt-2 block">Coming Soon</time>
+
+        <span class="text-xs text-lol font-semibold bg-lol/10 px-2 py-0.5 rounded">LoLGuide</span>
+
+        <h3 class="font-bold mt-2"><a href="https://lol.jycsd.com/guides/champions/ahri.html" class="hover:text-lol">Ahri Guide: Mid Lane Mage Build &amp; Combos →</a></h3>
+
+        <time class="text-xs text-textSecondary mt-2 block">May 19, 2026</time>
+
       </div>
+
     </article>
-    <article class="bg-bgCard rounded-xl overflow-hidden border border-gray-800">
-      <div class="h-36 bg-gradient-to-br from-blue-900 to-indigo-950 flex items-center justify-center text-4xl">&#127922;</div>
+
+    <article class="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+
+      <div class="h-1.5 bg-gradient-to-r from-red-400 to-red-300"></div>
+
       <div class="p-4">
-        <span class="text-xs text-lol font-semibold bg-lol/10 px-2 py-0.5 rounded">LoL</span>
-        <h3 class="font-bold mt-2">Season 15 Jungle Tier List &#8594;</h3>
-        <time class="text-xs text-textSecondary mt-2 block">Coming Soon</time>
+
+        <span class="text-xs text-val font-semibold bg-val/10 px-2 py-0.5 rounded">ValGuide</span>
+
+        <h3 class="font-bold mt-2"><a href="https://valorant.jycsd.com/guides/agents/jett.html" class="hover:text-val">Jett Guide: Abilities, Lineups &amp; Pro Tips →</a></h3>
+
+        <time class="text-xs text-textSecondary mt-2 block">May 19, 2026</time>
+
       </div>
+
     </article>
+
   </div>
+
 </section>
 
-<footer class="bg-bgSecondary border-t border-gray-800 py-16 px-4 mt-8">
+<footer class="bg-bgSecondary border-t border-gray-200 py-16 px-4 mt-8">
+
   <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
     <div>
-      <div class="flex items-center gap-2.5 mb-4"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-purple-600 flex items-center justify-center text-lg font-black text-white">G</div><span class="text-xl font-bold">Game<span class="text-accent">Guide</span></span></div>
+
+      <div class="flex items-center gap-2.5 mb-4"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-purple-600 flex items-center justify-center overflow-hidden text-lg font-black text-white">G</div><span class="text-xl font-bold">Game<span class="text-accent">Guide</span></span></div>
+
       <p class="text-sm text-textSecondary">Expert guides for the world's most popular games. 18 dedicated sites, 1500+ articles, zero paywalls.</p>
+
     </div>
+
     <div>
+
       <h4 class="font-bold mb-3">Live Sites</h4>
+
       <ul class="space-y-1.5 text-sm text-textSecondary">
-        <li><a href="https://minecraft.jycsd.com" class="text-mc hover:underline">Minecraft &#8594;</a></li>
-        <li><a href="https://eldenring.jycsd.com" class="text-elden hover:underline">Elden Ring &#8594;</a></li>
-        <li><a href="https://lol.jycsd.com" class="text-lol hover:underline">League of Legends &#8594;</a></li>
-        <li><a href="https://gta6.jycsd.com" class="text-gta6 hover:underline">GTA 6 &#8594;</a></li>
+
+        <li><a href="https://minecraft.jycsd.com" class="text-mc hover:underline">Minecraft →</a></li>
+
+        <li><a href="https://fortnite.jycsd.com" class="text-fort hover:underline">Fortnite →</a></li>
+
+        <li><a href="https://valorant.jycsd.com" class="text-val hover:underline">Valorant →</a></li>
+
+        <li><a href="https://eldenring.jycsd.com" class="text-elden hover:underline">Elden Ring →</a></li>
+
+        <li><a href="https://lol.jycsd.com" class="text-lol hover:underline">League of Legends →</a></li>
+
       </ul>
+
     </div>
+
     <div>
+
       <h4 class="font-bold mb-3">Network</h4>
+
       <ul class="space-y-1.5 text-sm text-textSecondary">
-        <li><a href="https://anime.jycsd.com" class="hover:text-accent">AnimeWiki &#8594;</a></li>
-        <li><a href="https://tools.jycsd.com" class="hover:text-accent">AI Tools &#8594;</a></li>
-        <li><a href="https://www.jycsd.com" class="hover:text-accent">Myers Media &#8594;</a></li>
+
+        <li><a href="https://anime.jycsd.com" class="hover:text-accent">AnimeWiki →</a></li>
+
+        <li><a href="https://tools.jycsd.com" class="hover:text-accent">AI Tools →</a></li>
+
+        <li><a href="https://www.jycsd.com" class="hover:text-accent">Myers Media →</a></li>
+
       </ul>
+
     </div>
+
     <div>
+
       <h4 class="font-bold mb-3">About</h4>
-      <p class="text-sm text-textSecondary mb-2">Contact: <a href="mailto:zq30330238@gmail.com" class="text-accent hover:underline">zq30330238@gmail.com</a></p>
+
+      <p class="text-sm text-textSecondary mb-2">Contact: <a href="mailto:contact@jycsd.com" class="text-accent hover:underline">contact@jycsd.com</a></p>
+
       <p class="text-xs text-textSecondary">&copy; 2026 GameGuide Network by Myers Media</p>
+
+    </div>
+
+  </div>
+
+    <!-- Our Network -->
+  <div class="max-w-7xl mx-auto mt-10 pt-6 border-t" style="border-color:#374151">
+    <p class="text-center text-xs text-textSecondary mb-4 font-semibold uppercase tracking-widest">Our Network</p>
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+      <div>
+        <p class="text-textSecondary font-semibold mb-2 text-xs uppercase tracking-wider">Main</p>
+        <ul class="space-y-1.5 text-sm text-textSecondary">
+          <li><a href="https://www.jycsd.com" class="hover:text-accent transition-colors">Myers Media</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-textSecondary font-semibold mb-2 text-xs uppercase tracking-wider">Anime</p>
+        <ul class="space-y-1.5 text-sm text-textSecondary">
+          <li><a href="https://anime.jycsd.com" class="hover:text-accent transition-colors">Anime Hub</a></li>
+          <li><a href="https://dragonball.jycsd.com" class="hover:text-accent transition-colors">Dragon Ball</a></li>
+          <li><a href="https://onepiece.jycsd.com" class="hover:text-accent transition-colors">One Piece</a></li>
+          <li><a href="https://naruto.jycsd.com" class="hover:text-accent transition-colors">Naruto</a></li>
+          <li><a href="https://demonslayer.jycsd.com" class="hover:text-accent transition-colors">Demon Slayer</a></li>
+          <li><a href="https://jjk.jycsd.com" class="hover:text-accent transition-colors">Jujutsu Kaisen</a></li>
+          <li><a href="https://aot.jycsd.com" class="hover:text-accent transition-colors">Attack on Titan</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-textSecondary font-semibold mb-2 text-xs uppercase tracking-wider">Games</p>
+        <ul class="space-y-1.5 text-sm text-textSecondary">
+          <li><a href="https://games.jycsd.com" class="hover:text-accent transition-colors">Game Hub</a></li>
+          <li><a href="https://minecraft.jycsd.com" class="hover:text-accent transition-colors">Minecraft</a></li>
+          <li><a href="https://fortnite.jycsd.com" class="hover:text-accent transition-colors">Fortnite</a></li>
+          <li><a href="https://valorant.jycsd.com" class="hover:text-accent transition-colors">Valorant</a></li>
+          <li><a href="https://eldenring.jycsd.com" class="hover:text-accent transition-colors">Elden Ring</a></li>
+          <li><a href="https://lol.jycsd.com" class="hover:text-accent transition-colors">League of Legends</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="text-textSecondary font-semibold mb-2 text-xs uppercase tracking-wider">Lifestyle</p>
+        <ul class="space-y-1.5 text-sm text-textSecondary">
+          <li><a href="https://healthy.jycsd.com" class="hover:text-accent transition-colors">HealthyEats</a></li>
+          <li><a href="https://pets.jycsd.com" class="hover:text-accent transition-colors">PetCare Hub</a></li>
+          <li><a href="https://home.jycsd.com" class="hover:text-accent transition-colors">HomeJoy</a></li>
+          <li><a href="https://finance.jycsd.com" class="hover:text-accent transition-colors">MoneyWise</a></li>
+          <li><a href="https://tech.jycsd.com" class="hover:text-accent transition-colors">TechNest</a></li>
+          <li><a href="https://travel.jycsd.com" class="hover:text-accent transition-colors">TripRoute</a></li>
+        </ul>
+      </div>
     </div>
   </div>
+
 </footer>
 
 <script>
+
 (function(){
+
   var slides=document.querySelectorAll('.carousel-slide'),dots=document.querySelectorAll('.carousel-dot'),current=0;
+
   function goTo(i){slides[current].classList.remove('active');dots[current].classList.remove('active');current=i;slides[current].classList.add('active');dots[current].classList.add('active')}
+
   dots.forEach(function(d){d.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
+
   setInterval(function(){goTo((current+1)%slides.length)},5000);
+
 })();
+
 </script>
+
+<script>// Decorative live count
+document.getElementById('liveCount').textContent = '2,569';</script>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top">&#8593;</button>
+
+
+<script>(function(){var btn=document.getElementById('backToTop');if(!btn)return;window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>600)});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();</script>
+
 </body>
+
 </html>

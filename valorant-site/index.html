@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-2595917642864488">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ValGuide — Outplay. Outaim.</title>
@@ -13,6 +11,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://valorant.jycsd.com/">
+<meta name="google-adsense-account" content="ca-pub-2595917642864488">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#ef4444',accentDark:'#dc2626'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
@@ -22,7 +21,6 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
-ins.adsbygoogle{display:block}
 .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
 .carousel-slide.active{opacity:1;pointer-events:auto}
 .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
@@ -32,8 +30,6 @@ ins.adsbygoogle{display:block}
 .float-anim{animation:float 3s ease-in-out infinite}
 .char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
 img[src$=".png"]{mix-blend-mode:normal}
-.bg-transparent-img img{mix-blend-mode:normal}
-.transparent-bg{background:transparent!important}
 .search-dropdown{position:absolute;top:100%;left:0;right:0;background:#1a1f2e;border:1px solid #374151;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
 .search-dropdown.active{display:block}
 .search-result{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .15s;border-bottom:1px solid rgba(75,85,99,.15)}
@@ -41,6 +37,23 @@ img[src$=".png"]{mix-blend-mode:normal}
 .search-result:last-child{border-bottom:none}
 .search-result .sr-type{font-size:10px;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:999px;flex-shrink:0}
 .search-empty{padding:20px;text-align:center;color:#8b949e;font-size:14px}
+.masonry-grid{columns:2;column-gap:1rem}
+.masonry-grid>*{break-inside:avoid;margin-bottom:1rem}
+@media(min-width:768px){.masonry-grid{columns:3}}
+@media(min-width:1024px){.masonry-grid{columns:4}}
+@media(min-width:1280px){.masonry-grid{columns:5}}
+.scroll-snap-x{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1rem;scrollbar-width:none;padding-bottom:4px}
+.scroll-snap-x::-webkit-scrollbar{display:none}
+.scroll-snap-x>*{scroll-snap-align:start;flex-shrink:0}
+.gradient-overlay{background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.3) 50%,transparent 100%)}
+.text-shadow{text-shadow:0 2px 8px rgba(0,0,0,0.6)}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.2);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;transition:all .3s;opacity:0}
+.carousel-arrow:hover{background:rgba(255,255,255,0.3)}
+.carousel:hover .carousel-arrow{opacity:1}
+.back-to-top{position:fixed;bottom:32px;right:32px;z-index:999;width:44px;height:44px;border-radius:50%;background:#ff6b35;color:#111;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;opacity:0.35;transition:all .3s;box-shadow:0 4px 15px rgba(255,107,53,.4);border:none}.back-to-top.visible{opacity:1}.back-to-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(255,107,53,.6)}
+.show-more-wrap{text-align:center;margin-top:1.5rem}
+.show-more-btn{display:inline-block;padding:10px 32px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;transition:all .2s;border:2px solid;background:transparent}
+.show-more-btn:hover{transform:translateY(-2px)}
 </style>
 </head>
 <body>
@@ -48,7 +61,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(13,17,23,0.95);border-color:#374151">
 <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
 <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-<img src="/images/jett.png" alt="ValGuide" class="w-10 h-10 object-contain rounded-lg">
+<img src="/images/jett.png" alt="ValGuide" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold tracking-tight">Val<span class="text-accent">Guide</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
@@ -84,152 +97,90 @@ img[src$=".png"]{mix-blend-mode:normal}
 </nav>
 
 <!-- Hero Carousel -->
-<section class="relative w-full overflow-hidden pt-16" style="height:520px">
+<section class="relative w-full h-[75vh] overflow-hidden carousel">
 <div class="carousel-slide active">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 30% 50%, #7dd3fc, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Featured</span>
-<h1 class="text-4xl md:text-5xl font-black leading-tight mb-4">Agent Mastery</h1>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Master every Valorant agent, map, and weapon. Sova lineups, Jett movement tech, Viper setups.</p>
-<div class="flex gap-3">
-<a href="/guides/agents/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Agents Guides</a>
-<a href="/guides/maps/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Maps Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/agents/jett.html"><img src="/images/jett.png" alt="Jett" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h1 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Jett</h1>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Duelist</p>
+<a href="/guides/agents/jett.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/agents/jett.html" class="block"><img src="/images/jett.png" alt="Jett — Duelist" title="Jett — Duelist" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 37% 50%, #fb923c, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Trending Now</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Phoenix Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Fire-wielding duelist with self-heal. Learn Hot Hands positioning, Curveball flashes, and Run It Back entry tactics.</p>
-<div class="flex gap-3">
-<a href="/guides/maps/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Maps Guides</a>
-<a href="/guides/weapons/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Weapons Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/agents/phoenix.html"><img src="/images/phoenix.png" alt="Phoenix" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Phoenix</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Duelist</p>
+<a href="/guides/agents/phoenix.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/agents/phoenix.html" class="block"><img src="/images/phoenix.png" alt="Phoenix — Duelist" title="Phoenix — Duelist" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 44% 50%, #c084fc, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Deep Dive</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Reyna Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Soul-devouring duelist who thrives on eliminations. Chain Dismiss invulnerability, Leer placement, and Empress snowball rounds.</p>
-<div class="flex gap-3">
-<a href="/guides/weapons/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Weapons Guides</a>
-<a href="/guides/ranked/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Ranked Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/agents/reyna.html"><img src="/images/reyna.png" alt="Reyna" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Reyna</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Duelist</p>
+<a href="/guides/agents/reyna.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/agents/reyna.html" class="block"><img src="/images/reyna.png" alt="Reyna — Duelist" title="Reyna — Duelist" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 51% 50%, #3b82f6, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Essential</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Yoru Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Dimensional riftwalker who outplays enemies with decoys and teleports. Master Fakeout mind games, Blindside flashes, and Gatecrash flank routes.</p>
-<div class="flex gap-3">
-<a href="/guides/ranked/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Ranked Guides</a>
-<a href="/guides/lineups/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Lineups Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/agents/yoru.html"><img src="/images/yoru.png" alt="Yoru" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Yoru</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Duelist</p>
+<a href="/guides/agents/yoru.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/agents/yoru.html" class="block"><img src="/images/yoru.png" alt="Yoru — Duelist" title="Yoru — Duelist" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 58% 50%, #f97316, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Popular</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Raze Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Explosive demolitions expert. Learn Blast Pack satchel jumps, Paint Shells grenade lineups, and Showstopper rocket multi-kills.</p>
-<div class="flex gap-3">
-<a href="/guides/lineups/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Lineups Guides</a>
-<a href="/guides/agents/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Agents Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/agents/raze.html"><img src="/images/raze.png" alt="Raze" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Raze</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Duelist</p>
+<a href="/guides/agents/raze.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/agents/raze.html" class="block"><img src="/images/raze.png" alt="Raze — Duelist" title="Raze — Duelist" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 65% 50%, #22d3ee, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Hot Pick</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Neon Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Lightning-fast sprinter who overwhelms with pure speed. Sprint strafe mechanics, Relay Bolt stun combos, and Overdrive beam tracking.</p>
-<div class="flex gap-3">
-<a href="/guides/agents/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Agents Guides</a>
-<a href="/guides/maps/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Maps Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/agents/neon.html"><img src="/images/neon.png" alt="Neon" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Neon</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Duelist</p>
+<a href="/guides/agents/neon.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/agents/neon.html" class="block"><img src="/images/neon.png" alt="Neon — Duelist" title="Neon — Duelist" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 32% 50%, #a78bfa, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Must Read</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Iso Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Sharpshooting duelist with bulletproof shielding. Undercut vulnerability into Double Tap shield resets for aggressive aim duels.</p>
-<div class="flex gap-3">
-<a href="/guides/maps/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Maps Guides</a>
-<a href="/guides/weapons/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Weapons Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/agents/iso.html"><img src="/images/iso.png" alt="Iso" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Iso</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Duelist</p>
+<a href="/guides/agents/iso.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/agents/iso.html" class="block"><img src="/images/iso.png" alt="Iso — Duelist" title="Iso — Duelist" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
 <div class="carousel-slide">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 39% 50%, #6b21a8, transparent 60%);"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="grid md:grid-cols-2 gap-8 items-center w-full">
-<div class="pt-10">
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Top Guide</span>
-<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Omen Guide</h2>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Shadow phantom who controls vision from the darkness. Paranoia blind angles, Dark Cover one-way smokes, and Shrouded Step outplay positions.</p>
-<div class="flex gap-3">
-<a href="/guides/weapons/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Weapons Guides</a>
-<a href="/guides/ranked/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Ranked Guides</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<a href="/guides/agents/omen.html"><img src="/images/omen.png" alt="Omen" class="absolute inset-0 w-full h-full object-contain" loading="eager"></a>
+<div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-7xl mx-auto px-4">
+<h2 class="text-4xl md:text-6xl font-black text-white text-shadow mb-2">Omen</h2>
+<p class="text-lg text-gray-300 text-shadow max-w-xl">Controller</p>
+<a href="/guides/agents/omen.html" class="inline-block mt-4 bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">View Guide</a>
 </div>
 </div>
-<div class="hidden md:flex justify-center items-end">
-<a href="/guides/agents/omen.html" class="block"><img src="/images/omen.png" alt="Omen — Controller" title="Omen — Controller" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
-</div>
-</div></div></div>
-<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+<button id="carouselPrev" class="carousel-arrow left-4" aria-label="Previous slide">&#10094;</button>
+<button id="carouselNext" class="carousel-arrow right-4" aria-label="Next slide">&#10095;</button>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10">
 <div class="carousel-dot active" data-slide="0"></div>
 <div class="carousel-dot" data-slide="1"></div>
 <div class="carousel-dot" data-slide="2"></div>
@@ -240,47 +191,44 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="carousel-dot" data-slide="7"></div>
 </div>
 </section>
-<section class="max-w-7xl mx-auto px-4 py-8"><h2 class="text-2xl font-black mb-6">All Categories</h2><div class="flex flex-wrap gap-4 justify-center items-stretch">
-<a href="/guides/agents/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/jett.png" alt="Agents — 25 guides" title="Agents category" class="w-full h-full object-contain char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
+
+
+
+<section class="max-w-7xl mx-auto px-4 py-8">
+<h2 class="text-2xl font-black mb-6">All Categories</h2>
+<div class="flex flex-wrap gap-4 justify-center items-stretch">
+<a href="/guides/agents/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/jett.png" alt="Agents — 25 guides" title="Agents category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Agents</div>
+<div class="font-bold text-base md:text-lg">Agents</div>
 <div class="text-sm text-textSecondary mt-1">25 guides</div>
 </div>
-</a>
-<a href="/guides/maps/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/sage.png" alt="Maps — 10+ guides" title="Maps category" class="w-full h-full object-contain char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
+</a><a href="/guides/maps/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/sage.png" alt="Maps — 10+ guides" title="Maps category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Maps</div>
+<div class="font-bold text-base md:text-lg">Maps</div>
 <div class="text-sm text-textSecondary mt-1">10+ guides</div>
 </div>
-</a>
-<a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/reyna.png" alt="Weapons — 18 guides" title="Weapons category" class="w-full h-full object-contain char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
+</a><a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/reyna.png" alt="Weapons — 18 guides" title="Weapons category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Weapons</div>
+<div class="font-bold text-base md:text-lg">Weapons</div>
 <div class="text-sm text-textSecondary mt-1">18 guides</div>
 </div>
-</a>
-<a href="/guides/ranked/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/phoenix.png" alt="Ranked — 15+ guides" title="Ranked category" class="w-full h-full object-contain char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
+</a><a href="/guides/ranked/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/phoenix.png" alt="Ranked — 15+ guides" title="Ranked category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Ranked</div>
+<div class="font-bold text-base md:text-lg">Ranked</div>
 <div class="text-sm text-textSecondary mt-1">15+ guides</div>
 </div>
-</a>
-<a href="/guides/lineups/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/jett.png" alt="Lineups — 30+ guides" title="Lineups category" class="w-full h-full object-contain char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
+</a><a href="/guides/lineups/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/jett.png" alt="Lineups — 30+ guides" title="Lineups category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Lineups</div>
+<div class="font-bold text-base md:text-lg">Lineups</div>
 <div class="text-sm text-textSecondary mt-1">30+ guides</div>
 </div>
 </a>
 </div></section>
-
-<!-- Ad: 728x90 -->
-<div class="max-w-[728px] mx-auto px-4 mt-10"></div>
-
 <section class="max-w-7xl mx-auto px-4 py-16">
 <div class="flex items-end justify-between mb-8">
 <div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Fresh Content</p><h2 class="text-3xl font-black">Latest Guides</h2></div>
@@ -288,9 +236,9 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 <div class="grid lg:grid-cols-2 gap-5">
 <a href="/guides/agents/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-sky-900 to-blue-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ef4444, transparent);"></div>
-<img src="/images/jett.png" alt="Jett Main Guide: Movement Tech & Knife Tricks" title="Jett Main Guide: Movement Tech & Knife Tricks" class="w-full h-full object-contain char-img group-hover:scale-105 transition-transform" loading="lazy">
+<img src="/images/jett.png" alt="Jett Main Guide: Movement Tech & Knife Tricks" title="Jett Main Guide: Movement Tech & Knife Tricks" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager">
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#ef4444;background:#ef44441a">Agents</span>
@@ -298,9 +246,9 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 17, 2026</time>
 </div>
 </a><a href="/guides/lineups/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-orange-900 to-red-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #22d3ee, transparent);"></div>
-<img src="/images/phoenix.png" alt="Phoenix Flash Lineups on Every Map" title="Phoenix Flash Lineups on Every Map" class="w-full h-full object-contain char-img group-hover:scale-105 transition-transform" loading="lazy">
+<img src="/images/phoenix.png" alt="Phoenix Flash Lineups on Every Map" title="Phoenix Flash Lineups on Every Map" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager">
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#22d3ee;background:#22d3ee1a">Lineups</span>
@@ -308,9 +256,9 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 16, 2026</time>
 </div>
 </a><a href="/guides/agents/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-emerald-900 to-green-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ef4444, transparent);"></div>
-<img src="/images/sage.png" alt="Sage Wall Boosts: 50+ Off-Angle Spots" title="Sage Wall Boosts: 50+ Off-Angle Spots" class="w-full h-full object-contain char-img group-hover:scale-105 transition-transform" loading="lazy">
+<img src="/images/sage.png" alt="Sage Wall Boosts: 50+ Off-Angle Spots" title="Sage Wall Boosts: 50+ Off-Angle Spots" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager">
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#ef4444;background:#ef44441a">Agents</span>
@@ -318,9 +266,9 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 15, 2026</time>
 </div>
 </a><a href="/guides/ranked/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-purple-900 to-fuchsia-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #fbbf24, transparent);"></div>
-<img src="/images/reyna.png" alt="Ranked Climb Guide: Silver to Diamond in 30 Days" title="Ranked Climb Guide: Silver to Diamond in 30 Days" class="w-full h-full object-contain char-img group-hover:scale-105 transition-transform" loading="lazy">
+<img src="/images/reyna.png" alt="Ranked Climb Guide: Silver to Diamond in 30 Days" title="Ranked Climb Guide: Silver to Diamond in 30 Days" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager">
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#fbbf24;background:#fbbf241a">Ranked</span>
@@ -334,211 +282,240 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Trending</p><h2 class="text-2xl font-black">Hot Topics This Month</h2></div>
 <a href="/guides/agents/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
 </div>
-<div class="grid lg:grid-cols-3 gap-8">
-<div class="lg:col-span-2"><div class="space-y-3"><a href="/guides/agents/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/jett.png" alt="Best Agent Comps for Every Map (Patch 10.04)" title="Best Agent Comps for Every Map (Patch 10.04)" class="w-full h-full object-contain char-img group-hover:scale-105 transition-transform" loading="lazy"></div>
+<div class="space-y-3"><a href="/guides/agents/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/jett.png" alt="Best Agent Comps for Every Map (Patch 10.04)" title="Best Agent Comps for Every Map (Patch 10.04)" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Best Agent Comps for Every Map (Patch 10.04)</h3>
 <p class="text-base text-textSecondary mt-1.5">Which agents dominate each map in the current meta — complete breakdown with win rate data.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a><a href="/guides/ranked/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/phoenix.png" alt="Ultimate Aim Training Routine: Bronze to Radiant" title="Ultimate Aim Training Routine: Bronze to Radiant" class="w-full h-full object-contain char-img group-hover:scale-105 transition-transform" loading="lazy"></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/phoenix.png" alt="Ultimate Aim Training Routine: Bronze to Radiant" title="Ultimate Aim Training Routine: Bronze to Radiant" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Ultimate Aim Training Routine: Bronze to Radiant</h3>
 <p class="text-base text-textSecondary mt-1.5">30-minute daily aim routine that improved over 10,000 players' headshot percentage by 15%.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a><a href="/guides/maps/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/reyna.png" alt="Every Map Callout You Need to Know" title="Every Map Callout You Need to Know" class="w-full h-full object-contain char-img group-hover:scale-105 transition-transform" loading="lazy"></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/reyna.png" alt="Every Map Callout You Need to Know" title="Every Map Callout You Need to Know" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Every Map Callout You Need to Know</h3>
 <p class="text-base text-textSecondary mt-1.5">Complete callout guides for all 10 maps — communicate like a pro with your team.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
-</a></div></div>
-<div class="hidden lg:block"><div class="sticky top-24"></div></div>
-</div></section>
+</a></div></section>
 <section class="max-w-7xl mx-auto px-4 py-16">
 <div class="flex items-end justify-between mb-8">
-<div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Character Spotlight</p><h2 class="text-3xl font-black">Meet the <span class="text-accent">Characters</span></h2></div>
+<div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Characters</p><h2 class="text-3xl font-black">Meet the <span class="text-accent">Characters</span></h2></div>
 <a href="/guides/agents/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-<div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/jett.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/jett.png" alt="Jett — Duelist" title="Jett — Duelist" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Jett</h3>
-<p class="text-xs text-textSecondary mt-1">Agile wind assassin with unmatched mobility. Master dash mechanics, Cloudburst lineups, and Blade Storm ace strategies.</p>
-<a href="/guides/agents/jett.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Jett Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/phoenix.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/phoenix.png" alt="Phoenix — Duelist" title="Phoenix — Duelist" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Phoenix</h3>
-<p class="text-xs text-textSecondary mt-1">Fire-wielding duelist with self-heal. Learn Hot Hands positioning, Curveball flashes, and Run It Back entry tactics.</p>
-<a href="/guides/agents/phoenix.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Phoenix Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/reyna.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/reyna.png" alt="Reyna — Duelist" title="Reyna — Duelist" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Reyna</h3>
-<p class="text-xs text-textSecondary mt-1">Soul-devouring duelist who thrives on eliminations. Chain Dismiss invulnerability, Leer placement, and Empress snowball rounds.</p>
-<a href="/guides/agents/reyna.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Reyna Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/yoru.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/yoru.png" alt="Yoru — Duelist" title="Yoru — Duelist" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Yoru</h3>
-<p class="text-xs text-textSecondary mt-1">Dimensional riftwalker who outplays enemies with decoys and teleports. Master Fakeout mind games, Blindside flashes, and Gatecrash flank routes.</p>
-<a href="/guides/agents/yoru.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Yoru Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/raze.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/raze.png" alt="Raze — Duelist" title="Raze — Duelist" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Raze</h3>
-<p class="text-xs text-textSecondary mt-1">Explosive demolitions expert. Learn Blast Pack satchel jumps, Paint Shells grenade lineups, and Showstopper rocket multi-kills.</p>
-<a href="/guides/agents/raze.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Raze Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/neon.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/neon.png" alt="Neon — Duelist" title="Neon — Duelist" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Neon</h3>
-<p class="text-xs text-textSecondary mt-1">Lightning-fast sprinter who overwhelms with pure speed. Sprint strafe mechanics, Relay Bolt stun combos, and Overdrive beam tracking.</p>
-<a href="/guides/agents/neon.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Neon Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/iso.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/iso.png" alt="Iso — Duelist" title="Iso — Duelist" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Iso</h3>
-<p class="text-xs text-textSecondary mt-1">Sharpshooting duelist with bulletproof shielding. Undercut vulnerability into Double Tap shield resets for aggressive aim duels.</p>
-<a href="/guides/agents/iso.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Iso Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/omen.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/omen.png" alt="Omen — Controller" title="Omen — Controller" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Omen</h3>
-<p class="text-xs text-textSecondary mt-1">Shadow phantom who controls vision from the darkness. Paranoia blind angles, Dark Cover one-way smokes, and Shrouded Step outplay positions.</p>
-<a href="/guides/agents/omen.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Omen Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/brimstone.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/brimstone.png" alt="Brimstone — Controller" title="Brimstone — Controller" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Brimstone</h3>
-<p class="text-xs text-textSecondary mt-1">Orbital commander raining fire from above. Stim Beacon rush executes, Sky Smoke iPad lineups, and Orbital Strike post-plant denial.</p>
-<a href="/guides/agents/brimstone.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Brimstone Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/viper.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/viper.png" alt="Viper — Controller" title="Viper — Controller" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Viper</h3>
-<p class="text-xs text-textSecondary mt-1">Toxic chemist who controls territory with poisonous gas. Snake Bite lineups, Poison Cloud orb gameplay, and Viper's Pit ultimate setups.</p>
-<a href="/guides/agents/viper.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Viper Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/astra.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/astra.png" alt="Astra — Controller" title="Astra — Controller" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Astra</h3>
-<p class="text-xs text-textSecondary mt-1">Cosmic controller who manipulates the astral plane. Star placement on every map, Gravity Well pull combos, and Nova Pulse concuss timings.</p>
-<a href="/guides/agents/astra.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Astra Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/harbor.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/harbor.png" alt="Harbor — Controller" title="Harbor — Controller" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Harbor</h3>
-<p class="text-xs text-textSecondary mt-1">Water-bending controller with cascading wall smokes. High Tide push routes, Cove plant protection, and Reckoning ultimate site clears.</p>
-<a href="/guides/agents/harbor.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Harbor Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/clove.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/clove.png" alt="Clove — Controller" title="Clove — Controller" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Clove</h3>
-<p class="text-xs text-textSecondary mt-1">Immortal controller who smokes even after death. Post-death smoke placement, Meddle decay combos, and Pick-Me-Up overheal dueling.</p>
-<a href="/guides/agents/clove.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Clove Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/sova.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/sova.png" alt="Sova — Initiator" title="Sova — Initiator" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Sova</h3>
-<p class="text-xs text-textSecondary mt-1">Recon hunter with bow and tracking arrows. Recon Bolt lineups for every map, Owl Drone pathing, and Hunter's Fury wallbang spots.</p>
-<a href="/guides/agents/sova.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Sova Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/breach.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/breach.png" alt="Breach — Initiator" title="Breach — Initiator" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Breach</h3>
-<p class="text-xs text-textSecondary mt-1">Seismic brawler who clears corners through walls. Aftershock post-plant kills, Flashpoint through-wall blinds, and Rolling Thunder site executes.</p>
-<a href="/guides/agents/breach.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Breach Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/skye.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/skye.png" alt="Skye — Initiator" title="Skye — Initiator" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Skye</h3>
-<p class="text-xs text-textSecondary mt-1">Nature scout with animal-shaped utility. Guiding Light bird flash control, Trailblazer stun concuss timings, and Seekers healing economy.</p>
-<a href="/guides/agents/skye.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Skye Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/kay-o.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/kayo.png" alt="KAY/O — Initiator" title="KAY/O — Initiator" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">KAY/O</h3>
-<p class="text-xs text-textSecondary mt-1">Suppression robot who silences enemy abilities. ZERO/point knife lineups, FLASH/drive pop-flash timing, and NULL/cmd revive site anchors.</p>
-<a href="/guides/agents/kay-o.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">KAY/O Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/fade.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/fade.png" alt="Fade — Initiator" title="Fade — Initiator" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Fade</h3>
-<p class="text-xs text-textSecondary mt-1">Nightmare hunter who reveals and terrorizes enemies. Haunt eye recon spots, Seize root decay combos, and Nightfall ultimate site-wide info.</p>
-<a href="/guides/agents/fade.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Fade Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/gekko.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/gekko.png" alt="Gekko — Initiator" title="Gekko — Initiator" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Gekko</h3>
-<p class="text-xs text-textSecondary mt-1">Crew leader with retrievable creature abilities. Wingman plant/defuse tech, Dizzy flash heights, and Thrash ultimate detention routings.</p>
-<a href="/guides/agents/gekko.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Gekko Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/sage.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/sage.png" alt="Sage — Sentinel" title="Sage — Sentinel" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Sage</h3>
-<p class="text-xs text-textSecondary mt-1">The bastion of life who heals and controls space. Wall boost spots, Slow Orb lineups, and Resurrection timing for maximum round impact.</p>
-<a href="/guides/agents/sage.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Sage Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/cypher.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/cypher.png" alt="Cypher — Sentinel" title="Cypher — Sentinel" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Cypher</h3>
-<p class="text-xs text-textSecondary mt-1">Surveillance expert with tripwires and cameras. One-way camera spots, Trapwire flank holds, and Neural Theft site-wide recon.</p>
-<a href="/guides/agents/cypher.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Cypher Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/killjoy.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/killjoy.png" alt="Killjoy — Sentinel" title="Killjoy — Sentinel" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Killjoy</h3>
-<p class="text-xs text-textSecondary mt-1">Engineer who locks down sites with autonomous turrets. Nanoswarm post-plant lineups, Turret info angles, and Lockdown ultimate timings.</p>
-<a href="/guides/agents/killjoy.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Killjoy Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/chamber.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/chamber.png" alt="Chamber — Sentinel" title="Chamber — Sentinel" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Chamber</h3>
-<p class="text-xs text-textSecondary mt-1">Elegant weapons designer with teleport anchoring. Headhunter deagle peeks, Rendezvous teleport holds, and Tour de Force OP economy.</p>
-<a href="/guides/agents/chamber.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Chamber Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/deadlock.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/deadlock.png" alt="Deadlock — Sentinel" title="Deadlock — Sentinel" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Deadlock</h3>
-<p class="text-xs text-textSecondary mt-1">Security specialist with nanowire traps. Sonic Sensor flank detection, Barrier Mesh wall placements, and Annihilation cocoon eliminations.</p>
-<a href="/guides/agents/deadlock.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Deadlock Guides</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/agents/vyse.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/vyse.png" alt="Vyse — Sentinel" title="Vyse — Sentinel" class="w-full h-full object-contain" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Vyse</h3>
-<p class="text-xs text-textSecondary mt-1">Tactical sentinel with razor-sharp traps that punish site pushes. Master wall placement, stealth detection, and area denial setups.</p>
-<a href="/guides/agents/vyse.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Vyse Guides</a>
-</div>
-</div></section>
-
-<!-- Ad: 970x250 -->
-<div class="max-w-[970px] mx-auto px-4"></div>
-
-<section class="max-w-7xl mx-auto px-4 py-8">
-<div class="flex items-end justify-between mb-8">
-<h2 class="text-3xl font-black">Every Guide Category</h2>
-<a href="/guides/agents/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-<a href="/guides/agents/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/jett.png" alt="Agents — 25 guides" title="Agents" class="w-full h-full object-contain" loading="lazy"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Agents</h3>
-<p class="text-base text-textSecondary mt-1">Agents &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">25 guides</span>
-</div>
-</a><a href="/guides/maps/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/sage.png" alt="Maps — 10+ guides" title="Maps" class="w-full h-full object-contain" loading="lazy"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Maps</h3>
-<p class="text-base text-textSecondary mt-1">Maps &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">10+ guides</span>
-</div>
-</a><a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/reyna.png" alt="Weapons — 18 guides" title="Weapons" class="w-full h-full object-contain" loading="lazy"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Weapons</h3>
-<p class="text-base text-textSecondary mt-1">Weapons &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">18 guides</span>
-</div>
-</a><a href="/guides/ranked/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/phoenix.png" alt="Ranked — 15+ guides" title="Ranked" class="w-full h-full object-contain" loading="lazy"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Ranked</h3>
-<p class="text-base text-textSecondary mt-1">Ranked &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">15+ guides</span>
-</div>
-</a><a href="/guides/lineups/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/jett.png" alt="Lineups — 30+ guides" title="Lineups" class="w-full h-full object-contain" loading="lazy"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Lineups</h3>
-<p class="text-base text-textSecondary mt-1">Lineups &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">30+ guides</span>
+<div class="masonry-grid">
+<div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/jett.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/jett.png" alt="Jett — Duelist" title="Jett — Duelist" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Jett</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Duelist</p>
 </div>
 </a>
-</div></section>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/phoenix.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/phoenix.png" alt="Phoenix — Duelist" title="Phoenix — Duelist" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Phoenix</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Duelist</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/reyna.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/reyna.png" alt="Reyna — Duelist" title="Reyna — Duelist" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Reyna</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Duelist</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/yoru.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/yoru.png" alt="Yoru — Duelist" title="Yoru — Duelist" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Yoru</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Duelist</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/raze.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/raze.png" alt="Raze — Duelist" title="Raze — Duelist" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Raze</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Duelist</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/neon.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/neon.png" alt="Neon — Duelist" title="Neon — Duelist" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Neon</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Duelist</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/iso.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/iso.png" alt="Iso — Duelist" title="Iso — Duelist" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Iso</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Duelist</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/omen.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/omen.png" alt="Omen — Controller" title="Omen — Controller" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Omen</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Controller</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/brimstone.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/brimstone.png" alt="Brimstone — Controller" title="Brimstone — Controller" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Brimstone</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Controller</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/viper.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/viper.png" alt="Viper — Controller" title="Viper — Controller" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Viper</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Controller</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/astra.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/astra.png" alt="Astra — Controller" title="Astra — Controller" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Astra</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Controller</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/harbor.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/harbor.png" alt="Harbor — Controller" title="Harbor — Controller" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Harbor</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Controller</p>
+</div>
+</a>
+</div>
+</div><div id="moreChars" style="display:none"><div class="masonry-grid"><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/clove.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/clove.png" alt="Clove — Controller" title="Clove — Controller" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Clove</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Controller</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/sova.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/sova.png" alt="Sova — Initiator" title="Sova — Initiator" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Sova</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Initiator</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/breach.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/breach.png" alt="Breach — Initiator" title="Breach — Initiator" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Breach</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Initiator</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/skye.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/skye.png" alt="Skye — Initiator" title="Skye — Initiator" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Skye</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Initiator</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/kay-o.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/kayo.png" alt="KAY/O — Initiator" title="KAY/O — Initiator" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">KAY/O</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Initiator</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/fade.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/fade.png" alt="Fade — Initiator" title="Fade — Initiator" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Fade</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Initiator</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/gekko.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/gekko.png" alt="Gekko — Initiator" title="Gekko — Initiator" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Gekko</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Initiator</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/sage.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/sage.png" alt="Sage — Sentinel" title="Sage — Sentinel" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Sage</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Sentinel</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/cypher.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/cypher.png" alt="Cypher — Sentinel" title="Cypher — Sentinel" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Cypher</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Sentinel</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/killjoy.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/killjoy.png" alt="Killjoy — Sentinel" title="Killjoy — Sentinel" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Killjoy</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Sentinel</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/chamber.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/chamber.png" alt="Chamber — Sentinel" title="Chamber — Sentinel" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Chamber</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Sentinel</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/deadlock.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/deadlock.png" alt="Deadlock — Sentinel" title="Deadlock — Sentinel" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Deadlock</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Sentinel</p>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/agents/vyse.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/vyse.png" alt="Vyse — Sentinel" title="Vyse — Sentinel" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Vyse</h3>
+<p class="text-xs text-gray-300 mt-0.5 text-shadow">Sentinel</p>
+</div>
+</a>
+</div></div></div>
+<div class="show-more-wrap"><button class="show-more-btn" style="color:#ef4444;border-color:#ef4444" onclick="var el=document.getElementById('moreChars'),btn=this;el.style.display=el.style.display==='none'?'block':'none';btn.textContent=el.style.display==='none'?'Show All':'Show Less'">Show All (13 more)</button></div></section>
+
+
+
 
 
 
@@ -546,7 +523,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
-<img src="/images/jett.png" alt="ValGuide" class="w-10 h-10 object-contain rounded-lg">
+<img src="/images/jett.png" alt="ValGuide" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold">Val<span class="text-accent">Guide</span></span>
 </div>
 <p class="text-sm text-textSecondary leading-relaxed">Expert game guides, tier lists, and walkthroughs. Part of the Game Hub Network.</p>
@@ -562,57 +539,50 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-4">More Game Guides</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="https://fortnite.jycsd.com" class="hover:text-accent transition-colors">Fortnite</a></li>
-<li><a href="https://lol.jycsd.com" class="hover:text-accent transition-colors">League of Legends</a></li>
-<li><a href="https://cs2.jycsd.com" class="hover:text-accent transition-colors">CS2</a></li>
-<li><a href="https://games.jycsd.com" class="hover:text-accent transition-colors">All Games</a></li>
-</ul>
+<h4 class="font-bold mb-4">Our Network</h4>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— Network —</option>
+    <option value="https://www.jycsd.com">Myers Media</option>
+    <option value="https://games.jycsd.com">Game Guides</option>
+    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+</select>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— More Sites —</option>
+    <option value="https://healthy.jycsd.com">HealthyEats</option>
+    <option value="https://pets.jycsd.com">PetCare Hub</option>
+    <option value="https://home.jycsd.com">HomeJoy</option>
+    <option value="https://finance.jycsd.com">MoneyWise</option>
+    <option value="https://tech.jycsd.com">TechNest</option>
+    <option value="https://travel.jycsd.com">TripRoute</option>
+</select>
 </div>
 <div>
 <h4 class="font-bold mb-4">About</h4>
 <ul class="space-y-2 text-sm text-textSecondary">
 <li><a href="/about.html" class="hover:text-accent transition-colors">About</a></li>
 <li><a href="/contact.html" class="hover:text-accent transition-colors">Contact</a></li>
-<li><a href="/sitemap.xml" class="hover:text-accent transition-colors">Sitemap</a></li>
+<li><a href="/sitemap.html" class="hover:text-accent transition-colors">Sitemap</a></li>
 </ul>
 </div>
 </div>
 <div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#374151">
 <p>&copy; 2026 ValGuide by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All game trademarks belong to their respective owners.</p>
 </div>
-<div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-gray-700/30" style="border-color:#374151">
-  <p class="text-center text-xs text-textSecondary mb-3 font-semibold uppercase tracking-widest">Our Network</p>
-  <div class="flex justify-center gap-x-4 gap-y-1 flex-wrap text-xs text-textSecondary">
-    <a href="https://jycsd.com" class="hover:text-accent transition-colors">Main Site</a>
-    <a href="https://games.jycsd.com" class="hover:text-accent transition-colors">Game Hub</a>
-    <a href="https://anime.jycsd.com" class="hover:text-accent transition-colors">Anime Hub</a>
-    <a href="https://minecraft.jycsd.com" class="hover:text-accent transition-colors">Minecraft</a>
-    <a href="https://fortnite.jycsd.com" class="hover:text-accent transition-colors">Fortnite</a>
-    <a href="https://eldenring.jycsd.com" class="hover:text-accent transition-colors">Elden Ring</a>
-    <a href="https://dragonball.jycsd.com" class="hover:text-accent transition-colors">Dragon Ball</a>
-    <a href="https://valorant.jycsd.com" class="hover:text-accent transition-colors">Valorant</a>
-    <a href="https://lol.jycsd.com" class="hover:text-accent transition-colors">League of Legends</a>
-    <a href="https://healthy.jycsd.com" class="hover:text-accent transition-colors">HealthyEats</a>
-    <a href="https://pets.jycsd.com" class="hover:text-accent transition-colors">PetCare</a>
-    <a href="https://home.jycsd.com" class="hover:text-accent transition-colors">HomeJoy</a>
-    <a href="https://finance.jycsd.com" class="hover:text-accent transition-colors">MoneyWise</a>
-    <a href="https://tech.jycsd.com" class="hover:text-accent transition-colors">TechNest</a>
-    <a href="https://travel.jycsd.com" class="hover:text-accent transition-colors">TripRoute</a>
-  </div>
-</div>
 </footer>
 
 <script>
+function toggleReadMore(){var s=document.getElementById('descShort');var f=document.getElementById('descFull');var t=document.getElementById('descToggle');if(!f)return;if(f.style.display==='none'||!f.style.display){f.style.display='inline';s.style.display='none';t.textContent=' Read less';}else{f.style.display='none';s.style.display='inline';t.textContent='... Read more';}}
 (function(){
 var slides=document.querySelectorAll('.carousel-slide');
 var dots=document.querySelectorAll('.carousel-dot');
 var current=0;
 function goTo(idx){if(!slides.length)return;slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
 dots.forEach(function(dot){dot.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
+document.getElementById('carouselPrev')?.addEventListener('click',function(){goTo((current-1+slides.length)%slides.length)});
+document.getElementById('carouselNext')?.addEventListener('click',function(){goTo((current+1)%slides.length)});
 if(slides.length>1)setInterval(function(){goTo((current+1)%slides.length)},5000);
 document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
+var btt=document.getElementById('backToTop');if(btt){window.addEventListener('scroll',function(){if(window.scrollY>300){btt.classList.add('visible')}else{btt.classList.remove('visible')}});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})}
 
 var searchData=[];
 (function(){var si=document.getElementById('searchInput');var sim=document.getElementById('searchInputMobile');var dd=document.getElementById('searchDropdown');var ddm=document.getElementById('searchDropdownMobile');var focusIdx=-1;
@@ -623,12 +593,13 @@ if(!matches.length){ddEl.innerHTML='<div class="search-empty">No results found</
 for(var i=0;i<matches.length;i++){var m=matches[i];var typeColors={character:'rgba(255,107,53,.2)',category:'rgba(100,180,255,.2)',guide:'rgba(100,200,100,.2)',hot_topic:'rgba(255,180,50,.2)'};var tc=m.color||'#888';var div=document.createElement('div');div.className='search-result';div.setAttribute('data-url',m.url);div.innerHTML='<span class="sr-type" style="color:'+tc+';background:'+(typeColors[m.type]||'rgba(150,150,150,.2)')+'">'+m.type.replace('_',' ')+'</span><span style="flex:1;min-width:0"><strong style="display:block;font-size:14px">'+m.name+'</strong><small style="color:#8b949e;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(m.desc||'')+'</small></span>';div.addEventListener('click',function(){{window.location.href=this.getAttribute('data-url')}});ddEl.appendChild(div)}ddEl.classList.add('active')}
 function navigate(ddEl,dir){var items=ddEl.querySelectorAll('.search-result');if(!items.length)return;focusIdx+=dir;if(focusIdx<0)focusIdx=items.length-1;if(focusIdx>=items.length)focusIdx=0;for(var i=0;i<items.length;i++)items[i].classList.toggle('focused',i===focusIdx)}
 function selectFocused(ddEl){var items=ddEl.querySelectorAll('.search-result');if(focusIdx>=0&&focusIdx<items.length)window.location.href=items[focusIdx].getAttribute('data-url')}
-if(si){si.addEventListener('input',function(){{filter(this.value,dd)}});si.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(dd,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(dd,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(dd)}else if(e.key==='Escape'){dd.classList.remove('active')}}});si.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,dd)}});si.addEventListener('blur',function(){{setTimeout(function(){{dd.classList.remove('active')}},200)}})}
-if(sim){sim.addEventListener('input',function(){{filter(this.value,ddm)}});sim.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(ddm,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(ddm,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(ddm)}else if(e.key==='Escape'){ddm.classList.remove('active')}}});sim.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,ddm)}});sim.addEventListener('blur',function(){{setTimeout(function(){{ddm.classList.remove('active')}},200)}})}
+if(si){si.addEventListener('input',function(){{filter(this.value,dd)}});si.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(dd,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(dd,-1)}else if(e.key==='Enter'){e.preventDefault();if(focusIdx<0){focusIdx=0;var fi=dd.querySelectorAll('.search-result');if(fi.length>0)window.location.href=fi[0].getAttribute('data-url')}else{selectFocused(dd)}}else if(e.key==='Escape'){dd.classList.remove('active')}}});si.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,dd)}});si.addEventListener('blur',function(){{setTimeout(function(){{dd.classList.remove('active')}},200)}})}
+if(sim){sim.addEventListener('input',function(){{filter(this.value,ddm)}});sim.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(ddm,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(ddm,-1)}else if(e.key==='Enter'){e.preventDefault();if(focusIdx<0){focusIdx=0;var fi=ddm.querySelectorAll('.search-result');if(fi.length>0)window.location.href=fi[0].getAttribute('data-url')}else{selectFocused(ddm)}}else if(e.key==='Escape'){ddm.classList.remove('active')}}});sim.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,ddm)}});sim.addEventListener('blur',function(){{setTimeout(function(){{ddm.classList.remove('active')}},200)}})}
 loadIdx();
 })();
 
 })();
 </script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
 </body>
 </html>

@@ -377,9 +377,7 @@ body{{font-family:"Inter",Arial,sans-serif;background:{tc['bodyBg']};color:{tc['
 </div>
 <div>
 <h4 class="font-bold mb-4">{footer_links_title}</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
 {footer_links}
-</ul>
 </div>
 <div>
 <h4 class="font-bold mb-4">About</h4>
@@ -669,9 +667,7 @@ img[src$=".png"]{{mix-blend-mode:normal}}
 </div>
 <div>
 <h4 class="font-bold mb-4">{footer_links_title}</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
 {footer_links}
-</ul>
 </div>
 <div>
 <h4 class="font-bold mb-4">About</h4>
@@ -824,7 +820,7 @@ def render_category_hero(data, category):
 
     image_html = ""
     if cat_img:
-        image_html = f'<img src="/images/{cat_img}" alt="{cat_name} — category overview" title="{cat_name} category" class="char-img h-[380px] max-h-[380px] w-auto object-contain" loading="lazy">'
+        image_html = f'<img src="/images/{cat_img}" alt="{cat_name} — category overview" title="{cat_name} category" class="char-img h-[380px] max-h-[380px] w-auto object-contain" loading="eager">'
 
     return f'''<section class="relative w-full overflow-hidden pt-28 pb-16" style="background:linear-gradient(135deg, #111827 0%, #1a1f2e 50%, {cat_color}18 100%)">
 <div class="absolute inset-0 opacity-15" style="background:radial-gradient(ellipse at 30% 50%, {cat_color}, transparent 70%);"></div>
@@ -851,9 +847,11 @@ def render_category_cards(data):
     all_cats = get_all_categories(data)
     border_hex = theme_colors(data)["borderHex"]
     for cat in all_cats:
-        img_html = (f'<img src="/images/{cat["character_img"]}" alt="{cat["name"]} — {cat["count"]} guides" title="{cat["name"]} category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy">'
-                    if cat.get("character_img") else
-                    f'<div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:{cat.get("color", data["accent"])};background:{cat.get("color", data["accent"])}15">{cat["name"][0]}</div>')
+        if cat.get("character_img"):
+            img_html = f'<img src="/images/{cat["character_img"]}" alt="{cat["name"]} — {cat["count"]} guides" title="{cat["name"]} category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager">'
+        else:
+            sys.stderr.write(f"WARNING: {data.get('site_name','?')} category '{cat['name']}' missing character_img\n")
+            img_html = f'<span style="font-size:24px;font-weight:bold;color:{cat.get("color", data["accent"])}">{cat["name"][0]}</span>'
         cards.append(f'''<a href="/guides/{cat["slug"]}/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#{border_hex}">
 <div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden">{img_html}</div>
 <div class="flex-1 min-w-0">
@@ -875,9 +873,11 @@ def render_guide_section(data):
     cards = []
     border_hex = theme_colors(data)["borderHex"]
     for g in cards_data:
-        img_tag = (f'<img src="/images/{g["image"]}" alt="{g["title"]}" title="{g["title"]}" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="lazy">'
-                   if g.get("image") else
-                   f'<div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:{g.get("cat_color", data["accent"])};background:{g.get("cat_color", data["accent"])}15">{g["title"][0]}</div>')
+        if g.get("image"):
+            img_tag = f'<img src="/images/{g["image"]}" alt="{g["title"]}" title="{g["title"]}" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager">'
+        else:
+            sys.stderr.write(f"WARNING: {data.get('site_name','?')} guide '{g.get('title','?')}' missing image field\n")
+            img_tag = f'<span style="font-size:24px;font-weight:bold;color:{g.get("cat_color", data["accent"])}">{g["title"][0]}</span>'
         cards.append(f'''<a href="{g["link"]}" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#{border_hex}">
 <div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, {g.get("cat_color", data["accent"])}, transparent);"></div>
@@ -908,7 +908,7 @@ def render_hot_topics(data):
     items = []
     border_hex = theme_colors(data)["borderHex"]
     for t in topics:
-        img_html = (f'<img src="/images/{t["image"]}" alt="{t["title"]}" title="{t["title"]}" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="lazy">'
+        img_html = (f'<img src="/images/{t["image"]}" alt="{t["title"]}" title="{t["title"]}" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager">'
                     if t.get("image") else
                     f'<div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:{t.get("color", data["accent"])};background:{t.get("color", data["accent"])}15">{t["title"][0]}</div>')
         items.append(f'''<a href="{t["link"]}" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#{border_hex}">
@@ -935,7 +935,7 @@ def render_character_section(data):
     for c in chars:
         detail_url = resolve_char_detail_url(data, c)
         if c.get("image"):
-            img = f'<img src="/images/{c["image"]}" alt="{c["name"]} — {c.get("role", "")}" title="{c["name"]} — {c.get("role", "")}" class="w-full h-auto block" loading="lazy">'
+            img = f'<img src="/images/{c["image"]}" alt="{c["name"]} — {c.get("role", "")}" title="{c["name"]} — {c.get("role", "")}" class="w-full h-auto block" loading="eager">'
         else:
             fc = c["name"][0]
             cc = c.get("color", data["accent"])
@@ -973,7 +973,7 @@ def render_category_index(data):
     items = []
     border_hex = theme_colors(data)["borderHex"]
     for cat in cats:
-        img_html = (f'<img src="/images/{cat["character_img"]}" alt="{cat["name"]} — {cat["count"]} guides" title="{cat["name"]}" class="w-full h-full object-cover" style="object-position:center top" loading="lazy">'
+        img_html = (f'<img src="/images/{cat["character_img"]}" alt="{cat["name"]} — {cat["count"]} guides" title="{cat["name"]}" class="w-full h-full object-cover" style="object-position:center top" loading="eager">'
                     if cat.get("character_img") else
                     f'<div class="w-full h-full flex items-center justify-center text-2xl font-black" style="color:{cat.get("color", data["accent"])};background:{cat.get("color", data["accent"])}15">{cat["name"][0]}</div>')
         items.append(f'''<a href="/guides/{cat["slug"]}/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#{border_hex}">
@@ -1001,14 +1001,22 @@ def render_footer(data):
         f'<li><a href="/guides/{c["slug"]}/" class="hover:text-accent transition-colors">{c["name"]}</a></li>'
         for c in all_cats[:5]
     )
-    f_links = data.get("footer_links", [])
-    if not f_links:
-        f_links = [{"text": c["name"], "url": f'/guides/{c["slug"]}/'} for c in all_cats[:4]]
-    links = '\n'.join(
-        f'<li><a href="{l["url"]}" class="hover:text-accent transition-colors">{l["text"]}</a></li>'
-        for l in f_links
-    )
-    links_title = "More Anime Wikis" if data.get("site_type") == "anime" else "More Game Guides"
+    links = '''<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— Network —</option>
+    <option value="https://www.jycsd.com">Myers Media</option>
+    <option value="https://games.jycsd.com">Game Guides</option>
+    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+</select>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— More Sites —</option>
+    <option value="https://healthy.jycsd.com">HealthyEats</option>
+    <option value="https://pets.jycsd.com">PetCare Hub</option>
+    <option value="https://home.jycsd.com">HomeJoy</option>
+    <option value="https://finance.jycsd.com">MoneyWise</option>
+    <option value="https://tech.jycsd.com">TechNest</option>
+    <option value="https://travel.jycsd.com">TripRoute</option>
+</select>'''
+    links_title = "Our Network"
     return cats, links, links_title
 
 
@@ -1218,7 +1226,7 @@ def _render_related_characters(data, current_char):
     for c in related:
         detail_url = resolve_char_detail_url(data, c)
         if c.get("image"):
-            img = f'<img src="/images/{c["image"]}" alt="{c["name"]} — {c.get("role", "")}" title="{c["name"]}" class="w-full h-full object-cover" style="object-position:center top" loading="lazy">'
+            img = f'<img src="/images/{c["image"]}" alt="{c["name"]} — {c.get("role", "")}" title="{c["name"]}" class="w-full h-full object-cover" style="object-position:center top" loading="eager">'
         else:
             first_char = c["name"][0]
             cc = c.get("color", data["accent"])
@@ -1319,9 +1327,11 @@ def _render_filtered_guides(data, guides, cat_name):
     cards = []
     border_hex = theme_colors(data)["borderHex"]
     for g in guides:
-        img_tag = (f'<img src="/images/{g["image"]}" alt="{g["title"]}" title="{g["title"]}" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="lazy">'
-                   if g.get("image") else
-                   f'<div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:{g.get("cat_color", data["accent"])};background:{g.get("cat_color", data["accent"])}15">{g["title"][0]}</div>')
+        if g.get("image"):
+            img_tag = f'<img src="/images/{g["image"]}" alt="{g["title"]}" title="{g["title"]}" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager">'
+        else:
+            sys.stderr.write(f"WARNING: {data.get('site_name','?')} guide '{g.get('title','?')}' missing image field\n")
+            img_tag = f'<span style="font-size:24px;font-weight:bold;color:{g.get("cat_color", data["accent"])}">{g["title"][0]}</span>'
         cards.append(f'''<a href="{g["link"]}" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#{border_hex}">
 <div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, {g.get("cat_color", data["accent"])}, transparent);"></div>
@@ -1344,7 +1354,7 @@ def _render_full_characters_grid(data, chars, cat_name="Characters"):
     for c in chars:
         detail_url = resolve_char_detail_url(data, c)
         if c.get("image"):
-            img = f'<img src="/images/{c["image"]}" alt="{c["name"]}" title="{c["name"]}" class="w-full h-auto block" loading="lazy">'
+            img = f'<img src="/images/{c["image"]}" alt="{c["name"]}" title="{c["name"]}" class="w-full h-auto block" loading="eager">'
         else:
             fc = c["name"][0]
             cc = c.get("color", data["accent"])
@@ -1376,7 +1386,7 @@ def _render_filtered_hot_topics(data, topics, cat_name):
     items = []
     border_hex = theme_colors(data)["borderHex"]
     for t in topics:
-        img_html = (f'<img src="/images/{t["image"]}" alt="{t["title"]}" title="{t["title"]}" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="lazy">'
+        img_html = (f'<img src="/images/{t["image"]}" alt="{t["title"]}" title="{t["title"]}" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager">'
                     if t.get("image") else
                     f'<div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:{t.get("color", data["accent"])};background:{t.get("color", data["accent"])}15">{t["title"][0]}</div>')
         items.append(f'''<a href="{t["link"]}" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#{border_hex}">
@@ -1396,7 +1406,7 @@ def _render_other_categories(data, other_cats):
     items = []
     border_hex = theme_colors(data)["borderHex"]
     for cat in other_cats:
-        img_html = (f'<img src="/images/{cat["character_img"]}" alt="{cat["name"]} — {cat["count"]} guides" title="{cat["name"]}" class="w-full h-full object-cover" style="object-position:center top" loading="lazy">'
+        img_html = (f'<img src="/images/{cat["character_img"]}" alt="{cat["name"]} — {cat["count"]} guides" title="{cat["name"]}" class="w-full h-full object-cover" style="object-position:center top" loading="eager">'
                     if cat.get("character_img") else
                     f'<div class="w-full h-full flex items-center justify-center text-2xl font-black" style="color:{cat.get("color", data["accent"])};background:{cat.get("color", data["accent"])}15">{cat["name"][0]}</div>')
         items.append(f'''<a href="/guides/{cat["slug"]}/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#{border_hex}">
@@ -1555,7 +1565,7 @@ def render_anime_category_index(data, atype, items):
     grid_items = []
     for item in items:
         item_slug = slugify(item["name"])
-        img = (f'<img src="/images/{item["image"]}" alt="{item["name"]}" title="{item["name"]}" class="w-full h-full object-cover" style="object-position:center top" loading="lazy">'
+        img = (f'<img src="/images/{item["image"]}" alt="{item["name"]}" title="{item["name"]}" class="w-full h-full object-cover" style="object-position:center top" loading="eager">'
                if item.get("image") else
                f'<div class="w-full h-full flex items-center justify-center text-2xl font-black" style="color:{item.get("color", data["accent"])};background:{item.get("color", data["accent"])}15">{item["name"][0]}</div>')
         grid_items.append(f'''<a href="/guides/{atype["slug"]}/{item_slug}.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#{border_hex}">

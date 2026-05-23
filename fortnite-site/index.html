@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="google-adsense-account" content="ca-pub-2595917642864488">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FortGuide — Dominate the Island</title>
 <meta name="description" content="Every new weapon, POI change, and meta shift covered within 24 hours of each update. Build better, aim sharper.">
@@ -12,6 +11,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://fortnite.jycsd.com/">
+<meta name="google-adsense-account" content="ca-pub-2595917642864488">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#ffffff',bgSecondary:'#f3f4f6',bgCard:'#ffffff',textPrimary:'#111827',textSecondary:'#4b5563',accent:'#a78bfa',accentDark:'#7c3aed'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
@@ -30,8 +30,6 @@ body{font-family:'Inter',Arial,sans-serif;background:#ffffff;color:#111827;font-
 .float-anim{animation:float 3s ease-in-out infinite}
 .char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
 img[src$=".png"]{mix-blend-mode:normal}
-.bg-transparent-img img{mix-blend-mode:normal}
-.transparent-bg{background:transparent!important}
 .search-dropdown{position:absolute;top:100%;left:0;right:0;background:#ffffff;border:1px solid #e5e7eb;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
 .search-dropdown.active{display:block}
 .search-result{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .15s;border-bottom:1px solid rgba(75,85,99,.15)}
@@ -39,7 +37,23 @@ img[src$=".png"]{mix-blend-mode:normal}
 .search-result:last-child{border-bottom:none}
 .search-result .sr-type{font-size:10px;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:999px;flex-shrink:0}
 .search-empty{padding:20px;text-align:center;color:#4b5563;font-size:14px}
-.back-to-top{position:fixed;bottom:32px;right:32px;z-index:999;width:44px;height:44px;border-radius:50%;background:#a78bfa;color:#111;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;opacity:0;transition:all .3s;box-shadow:0 4px 15px rgba(167,139,250,.4);border:none}.back-to-top.visible{opacity:1}.back-to-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(167,139,250,.6)}
+.masonry-grid{columns:2;column-gap:1rem}
+.masonry-grid>*{break-inside:avoid;margin-bottom:1rem}
+@media(min-width:768px){.masonry-grid{columns:3}}
+@media(min-width:1024px){.masonry-grid{columns:4}}
+@media(min-width:1280px){.masonry-grid{columns:5}}
+.scroll-snap-x{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1rem;scrollbar-width:none;padding-bottom:4px}
+.scroll-snap-x::-webkit-scrollbar{display:none}
+.scroll-snap-x>*{scroll-snap-align:start;flex-shrink:0}
+.gradient-overlay{background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.3) 50%,transparent 100%)}
+.text-shadow{text-shadow:0 2px 8px rgba(0,0,0,0.6)}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.2);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;transition:all .3s;opacity:0}
+.carousel-arrow:hover{background:rgba(255,255,255,0.3)}
+.carousel:hover .carousel-arrow{opacity:1}
+.back-to-top{position:fixed;bottom:32px;right:32px;z-index:999;width:44px;height:44px;border-radius:50%;background:#ff6b35;color:#111;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;opacity:0.35;transition:all .3s;box-shadow:0 4px 15px rgba(255,107,53,.4);border:none}.back-to-top.visible{opacity:1}.back-to-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(255,107,53,.6)}
+.show-more-wrap{text-align:center;margin-top:1.5rem}
+.show-more-btn{display:inline-block;padding:10px 32px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;transition:all .2s;border:2px solid;background:transparent}
+.show-more-btn:hover{transform:translateY(-2px)}
 </style>
 </head>
 <body>
@@ -47,18 +61,15 @@ img[src$=".png"]{mix-blend-mode:normal}
 <nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(255,255,255,0.95);border-color:#e5e7eb">
 <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
 <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">F</div>
+<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-2xl font-black text-white">F</div>
 <span class="text-xl font-bold tracking-tight">Fort<span class="text-accent">Guide</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
-<a href="https://jycsd.com" class="text-textSecondary hover:text-accent transition-colors">Main Site</a>
-<a href="https://anime.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">Anime Hub</a>
 <a href="https://games.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">Game Hub</a>
 <a href="/guides/weapons/" class="text-textSecondary hover:text-accent transition-colors">Weapons</a>
 <a href="/guides/map/" class="text-textSecondary hover:text-accent transition-colors">Map</a>
 <a href="/guides/building/" class="text-textSecondary hover:text-accent transition-colors">Building</a>
 <a href="/guides/seasons/" class="text-textSecondary hover:text-accent transition-colors">Seasons</a>
-<a href="/play/" class="text-accent font-semibold hover:text-accentDark transition-colors">Play Games</a>
 </div>
 <div class="hidden lg:flex items-center relative flex-1 max-w-xs ml-2" id="searchWrap">
 <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"
@@ -75,68 +86,65 @@ img[src$=".png"]{mix-blend-mode:normal}
  style="border-color:#e5e7eb">
 <div class="search-dropdown" id="searchDropdownMobile"></div>
 </div>
-<a href="https://jycsd.com" class="block text-textSecondary hover:text-accent transition-colors">Main Site</a>
-<a href="https://anime.jycsd.com" class="block text-textSecondary hover:text-accent transition-colors">Anime Hub</a>
 <a href="https://games.jycsd.com" class="block text-textSecondary hover:text-accent transition-colors">Game Hub</a>
 <a href="/guides/weapons/" class="block text-textSecondary hover:text-accent transition-colors">Weapons</a>
 <a href="/guides/map/" class="block text-textSecondary hover:text-accent transition-colors">Map</a>
 <a href="/guides/building/" class="block text-textSecondary hover:text-accent transition-colors">Building</a>
 <a href="/guides/seasons/" class="block text-textSecondary hover:text-accent transition-colors">Seasons</a>
-<a href="/play/" class="block text-accent font-semibold hover:text-accentDark transition-colors">Play Games</a>
 </div>
 </nav>
 
 <!-- Hero Carousel -->
-<section class="relative w-full overflow-hidden pt-16" style="height:520px">
+<section class="relative w-full h-[75vh] overflow-hidden carousel">
 <div class="carousel-slide active">
-<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
-<div class="pt-10">
-<h1 class="text-4xl md:text-6xl font-black mb-4">Chapter 6 Meta</h1>
-<p class="text-lg text-textSecondary mb-6 max-w-lg">Every new weapon, POI change, and meta shift covered within 24 hours of each update. Build better, aim sharper.</p>
-<div class="flex gap-3">
-<a href="/guides/weapons/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Browse Weapons</a>
-<a href="/guides/map/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Explore Map</a>
+<div class="absolute inset-0 bg-gray-950"></div>
+<div class="absolute inset-0" style="background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center justify-center">
+<div class="text-center">
+<h1 class="text-4xl md:text-6xl font-black text-white text-shadow mb-4">Chapter 6 Meta</h1>
+<p class="text-lg text-gray-300 text-shadow mb-6 max-w-lg mx-auto">Every new weapon, POI change, and meta shift covered within 24 hours of each update. Build better, aim sharper.</p>
+<div class="flex gap-3 justify-center">
+<a href="/guides/weapons/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Explore Weapons</a>
 </div>
 </div></div></div>
-<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+<button id="carouselPrev" class="carousel-arrow left-4" aria-label="Previous slide">&#10094;</button>
+<button id="carouselNext" class="carousel-arrow right-4" aria-label="Next slide">&#10095;</button>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10">
 
 </div>
 </section>
-<section class="max-w-7xl mx-auto px-4 py-8"><h2 class="text-2xl font-black mb-6">All Categories</h2><div class="flex flex-wrap gap-4 justify-center items-stretch">
-<a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#e5e7eb">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/jonesy.png" alt="Weapons" class="w-full h-full object-contain p-3 rounded-xl"></div>
+
+
+
+<section class="max-w-7xl mx-auto px-4 py-8">
+<h2 class="text-2xl font-black mb-6">All Categories</h2>
+<div class="flex flex-wrap gap-4 justify-center items-stretch">
+<a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><span style="font-size:24px;font-weight:bold;color:#a78bfa">W</span></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Weapons</div>
+<div class="font-bold text-base md:text-lg">Weapons</div>
 <div class="text-sm text-textSecondary mt-1">20+ guides</div>
 </div>
-</a>
-<a href="/guides/map/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#e5e7eb">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/drift.png" alt="Map" class="w-full h-full object-contain p-3 rounded-xl"></div>
+</a><a href="/guides/map/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><span style="font-size:24px;font-weight:bold;color:#22d3ee">M</span></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Map</div>
+<div class="font-bold text-base md:text-lg">Map</div>
 <div class="text-sm text-textSecondary mt-1">15+ guides</div>
 </div>
-</a>
-<a href="/guides/building/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#e5e7eb">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/black-knight.png" alt="Building" class="w-full h-full object-contain p-3 rounded-xl"></div>
+</a><a href="/guides/building/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><span style="font-size:24px;font-weight:bold;color:#fbbf24">B</span></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Building</div>
+<div class="font-bold text-base md:text-lg">Building</div>
 <div class="text-sm text-textSecondary mt-1">12+ guides</div>
 </div>
-</a>
-<a href="/guides/seasons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#e5e7eb">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/midas.png" alt="Seasons" class="w-full h-full object-contain p-3 rounded-xl"></div>
+</a><a href="/guides/seasons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><span style="font-size:24px;font-weight:bold;color:#4ade80">S</span></div>
 <div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Seasons</div>
+<div class="font-bold text-base md:text-lg">Seasons</div>
 <div class="text-sm text-textSecondary mt-1">30+ guides</div>
 </div>
 </a>
 </div></section>
-
-<!-- Ad: 728x90 -->
-<div class="max-w-[728px] mx-auto px-4 mt-10"><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
-
 <section class="max-w-7xl mx-auto px-4 py-16">
 <div class="flex items-end justify-between mb-8">
 <div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Fresh Content</p><h2 class="text-3xl font-black">Latest Guides</h2></div>
@@ -144,9 +152,9 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 <div class="grid lg:grid-cols-2 gap-5">
 <a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#e5e7eb">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-purple-900 to-indigo-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #a78bfa, transparent);"></div>
-<img src="/images/raven.png" alt="Weapons" class="w-full h-full object-contain p-3 rounded-xl">
+<span style="font-size:24px;font-weight:bold;color:#a78bfa">A</span>
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#a78bfa;background:#a78bfa1a">Weapons</span>
@@ -154,9 +162,9 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 17, 2026</time>
 </div>
 </a><a href="/guides/seasons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#e5e7eb">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-emerald-900 to-green-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #4ade80, transparent);"></div>
-<img src="/images/peely.png" alt="Seasons" class="w-full h-full object-contain p-3 rounded-xl">
+<span style="font-size:24px;font-weight:bold;color:#4ade80">H</span>
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#4ade80;background:#4ade801a">Seasons</span>
@@ -164,9 +172,9 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 16, 2026</time>
 </div>
 </a><a href="/guides/building/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#e5e7eb">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-amber-900 to-yellow-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #fbbf24, transparent);"></div>
-<img src="/images/omega.png" alt="Building" class="w-full h-full object-contain p-3 rounded-xl">
+<span style="font-size:24px;font-weight:bold;color:#fbbf24">P</span>
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#fbbf24;background:#fbbf241a">Building</span>
@@ -174,9 +182,9 @@ img[src$=".png"]{mix-blend-mode:normal}
 <time class="text-sm text-textSecondary mt-2 block">May 15, 2026</time>
 </div>
 </a><a href="/guides/map/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#e5e7eb">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-cyan-900 to-sky-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
+<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #22d3ee, transparent);"></div>
-<img src="/images/fishstick.png" alt="Map" class="w-full h-full object-contain p-3 rounded-xl">
+<span style="font-size:24px;font-weight:bold;color:#22d3ee">E</span>
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#22d3ee;background:#22d3ee1a">Map</span>
@@ -190,77 +198,40 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Trending</p><h2 class="text-2xl font-black">Hot Topics This Month</h2></div>
 <a href="/guides/weapons/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
 </div>
-<div class="grid lg:grid-cols-3 gap-8">
-<div class="lg:col-span-2"><div class="space-y-3"><a href="/guides/seasons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#e5e7eb">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/brite-bomber.png" alt="Seasons" class="w-full h-full object-contain p-3 rounded-xl"></div>
+<div class="space-y-3"><a href="/guides/seasons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#e5e7eb">
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:#a78bfa;background:#a78bfa15">C</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Chapter 6 Season 3: Every New Weapon & POI</h3>
 <p class="text-base text-textSecondary mt-1.5">Full breakdown of the new season — weapons, map changes, battle pass skins, and gameplay mechanics.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a><a href="/guides/map/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#e5e7eb">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/skull-trooper.png" alt="Map" class="w-full h-full object-contain p-3 rounded-xl"></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:#a78bfa;background:#a78bfa15">B</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Best Landing Spots for High Kills (Chapter 6 Map)</h3>
 <p class="text-base text-textSecondary mt-1.5">Where to land for the best loot, most eliminations, and highest survival rate in Chapter 6.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
 </a><a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#e5e7eb">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/renegade-raider.png" alt="Weapons" class="w-full h-full object-contain p-3 rounded-xl"></div>
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full flex items-center justify-center text-3xl font-black" style="color:#a78bfa;background:#a78bfa15">Z</div></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Zero Build Mode: Complete Strategy Guide</h3>
 <p class="text-base text-textSecondary mt-1.5">How to win without building — positioning, rotation paths, and loadout priorities for Zero Build mode.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
-</a></div></div>
-<div class="hidden lg:block"><div class="sticky top-24"><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
-</div></section>
+</a></div></section>
 
-<!-- Ad: 970x250 -->
-<div class="max-w-[970px] mx-auto px-4"><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
-<section class="max-w-7xl mx-auto px-4 py-8">
-<div class="flex items-end justify-between mb-8">
-<h2 class="text-3xl font-black">Every Guide Category</h2>
-<a href="/guides/weapons/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-<a href="/guides/weapons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/the-reaper.png" alt="Weapons" class="w-full h-full object-contain p-3 rounded-xl"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Weapons</h3>
-<p class="text-base text-textSecondary mt-1">Weapons &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">20+ guides</span>
-</div>
-</a><a href="/guides/map/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/lynx.png" alt="Map" class="w-full h-full object-contain p-3 rounded-xl"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Map</h3>
-<p class="text-base text-textSecondary mt-1">Map &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">15+ guides</span>
-</div>
-</a><a href="/guides/building/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/rust-lord.png" alt="Building" class="w-full h-full object-contain p-3 rounded-xl"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Building</h3>
-<p class="text-base text-textSecondary mt-1">Building &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">12+ guides</span>
-</div>
-</a><a href="/guides/seasons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/skye.png" alt="Seasons" class="w-full h-full object-contain p-3 rounded-xl"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Seasons</h3>
-<p class="text-base text-textSecondary mt-1">Seasons &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">30+ guides</span>
-</div>
-</a>
-</div></section>
+
+
+
+
 
 <footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#e5e7eb">
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
-<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">F</div>
+<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-2xl font-black text-white">F</div>
 <span class="text-xl font-bold">Fort<span class="text-accent">Guide</span></span>
 </div>
 <p class="text-sm text-textSecondary leading-relaxed">Expert game guides, tier lists, and walkthroughs. Part of the Game Hub Network.</p>
@@ -275,57 +246,50 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-4">More Game Guides</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="https://minecraft.jycsd.com" class="hover:text-accent transition-colors">Minecraft</a></li>
-<li><a href="https://eldenring.jycsd.com" class="hover:text-accent transition-colors">Elden Ring</a></li>
-<li><a href="https://valorant.jycsd.com" class="hover:text-accent transition-colors">Valorant</a></li>
-<li><a href="https://games.jycsd.com" class="hover:text-accent transition-colors">All Games</a></li>
-</ul>
+<h4 class="font-bold mb-4">Our Network</h4>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— Network —</option>
+    <option value="https://www.jycsd.com">Myers Media</option>
+    <option value="https://games.jycsd.com">Game Guides</option>
+    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+</select>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— More Sites —</option>
+    <option value="https://healthy.jycsd.com">HealthyEats</option>
+    <option value="https://pets.jycsd.com">PetCare Hub</option>
+    <option value="https://home.jycsd.com">HomeJoy</option>
+    <option value="https://finance.jycsd.com">MoneyWise</option>
+    <option value="https://tech.jycsd.com">TechNest</option>
+    <option value="https://travel.jycsd.com">TripRoute</option>
+</select>
 </div>
 <div>
 <h4 class="font-bold mb-4">About</h4>
 <ul class="space-y-2 text-sm text-textSecondary">
 <li><a href="/about.html" class="hover:text-accent transition-colors">About</a></li>
 <li><a href="/contact.html" class="hover:text-accent transition-colors">Contact</a></li>
-<li><a href="/sitemap.xml" class="hover:text-accent transition-colors">Sitemap</a></li>
+<li><a href="/sitemap.html" class="hover:text-accent transition-colors">Sitemap</a></li>
 </ul>
 </div>
 </div>
 <div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#e5e7eb">
 <p>&copy; 2026 FortGuide by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All game trademarks belong to their respective owners.</p>
 </div>
-<div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-gray-700/30" style="border-color:#e5e7eb">
-  <p class="text-center text-xs text-textSecondary mb-3 font-semibold uppercase tracking-widest">Our Network</p>
-  <div class="flex justify-center gap-x-4 gap-y-1 flex-wrap text-xs text-textSecondary">
-    <a href="https://jycsd.com" class="hover:text-accent transition-colors">Main Site</a>
-    <a href="https://games.jycsd.com" class="hover:text-accent transition-colors">Game Hub</a>
-    <a href="https://anime.jycsd.com" class="hover:text-accent transition-colors">Anime Hub</a>
-    <a href="https://minecraft.jycsd.com" class="hover:text-accent transition-colors">Minecraft</a>
-    <a href="https://fortnite.jycsd.com" class="hover:text-accent transition-colors">Fortnite</a>
-    <a href="https://eldenring.jycsd.com" class="hover:text-accent transition-colors">Elden Ring</a>
-    <a href="https://dragonball.jycsd.com" class="hover:text-accent transition-colors">Dragon Ball</a>
-    <a href="https://valorant.jycsd.com" class="hover:text-accent transition-colors">Valorant</a>
-    <a href="https://lol.jycsd.com" class="hover:text-accent transition-colors">League of Legends</a>
-    <a href="https://healthy.jycsd.com" class="hover:text-accent transition-colors">HealthyEats</a>
-    <a href="https://pets.jycsd.com" class="hover:text-accent transition-colors">PetCare</a>
-    <a href="https://home.jycsd.com" class="hover:text-accent transition-colors">HomeJoy</a>
-    <a href="https://finance.jycsd.com" class="hover:text-accent transition-colors">MoneyWise</a>
-    <a href="https://tech.jycsd.com" class="hover:text-accent transition-colors">TechNest</a>
-    <a href="https://travel.jycsd.com" class="hover:text-accent transition-colors">TripRoute</a>
-  </div>
-</div>
 </footer>
 
 <script>
+function toggleReadMore(){var s=document.getElementById('descShort');var f=document.getElementById('descFull');var t=document.getElementById('descToggle');if(!f)return;if(f.style.display==='none'||!f.style.display){f.style.display='inline';s.style.display='none';t.textContent=' Read less';}else{f.style.display='none';s.style.display='inline';t.textContent='... Read more';}}
 (function(){
 var slides=document.querySelectorAll('.carousel-slide');
 var dots=document.querySelectorAll('.carousel-dot');
 var current=0;
 function goTo(idx){if(!slides.length)return;slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
 dots.forEach(function(dot){dot.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
+document.getElementById('carouselPrev')?.addEventListener('click',function(){goTo((current-1+slides.length)%slides.length)});
+document.getElementById('carouselNext')?.addEventListener('click',function(){goTo((current+1)%slides.length)});
 if(slides.length>1)setInterval(function(){goTo((current+1)%slides.length)},5000);
 document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
+var btt=document.getElementById('backToTop');if(btt){window.addEventListener('scroll',function(){if(window.scrollY>300){btt.classList.add('visible')}else{btt.classList.remove('visible')}});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})}
 
 var searchData=[];
 (function(){var si=document.getElementById('searchInput');var sim=document.getElementById('searchInputMobile');var dd=document.getElementById('searchDropdown');var ddm=document.getElementById('searchDropdownMobile');var focusIdx=-1;
@@ -336,16 +300,13 @@ if(!matches.length){ddEl.innerHTML='<div class="search-empty">No results found</
 for(var i=0;i<matches.length;i++){var m=matches[i];var typeColors={character:'rgba(255,107,53,.2)',category:'rgba(100,180,255,.2)',guide:'rgba(100,200,100,.2)',hot_topic:'rgba(255,180,50,.2)'};var tc=m.color||'#888';var div=document.createElement('div');div.className='search-result';div.setAttribute('data-url',m.url);div.innerHTML='<span class="sr-type" style="color:'+tc+';background:'+(typeColors[m.type]||'rgba(150,150,150,.2)')+'">'+m.type.replace('_',' ')+'</span><span style="flex:1;min-width:0"><strong style="display:block;font-size:14px">'+m.name+'</strong><small style="color:#8b949e;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(m.desc||'')+'</small></span>';div.addEventListener('click',function(){{window.location.href=this.getAttribute('data-url')}});ddEl.appendChild(div)}ddEl.classList.add('active')}
 function navigate(ddEl,dir){var items=ddEl.querySelectorAll('.search-result');if(!items.length)return;focusIdx+=dir;if(focusIdx<0)focusIdx=items.length-1;if(focusIdx>=items.length)focusIdx=0;for(var i=0;i<items.length;i++)items[i].classList.toggle('focused',i===focusIdx)}
 function selectFocused(ddEl){var items=ddEl.querySelectorAll('.search-result');if(focusIdx>=0&&focusIdx<items.length)window.location.href=items[focusIdx].getAttribute('data-url')}
-if(si){si.addEventListener('input',function(){{filter(this.value,dd)}});si.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(dd,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(dd,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(dd)}else if(e.key==='Escape'){dd.classList.remove('active')}}});si.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,dd)}});si.addEventListener('blur',function(){{setTimeout(function(){{dd.classList.remove('active')}},200)}})}
-if(sim){sim.addEventListener('input',function(){{filter(this.value,ddm)}});sim.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(ddm,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(ddm,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(ddm)}else if(e.key==='Escape'){ddm.classList.remove('active')}}});sim.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,ddm)}});sim.addEventListener('blur',function(){{setTimeout(function(){{ddm.classList.remove('active')}},200)}})}
+if(si){si.addEventListener('input',function(){{filter(this.value,dd)}});si.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(dd,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(dd,-1)}else if(e.key==='Enter'){e.preventDefault();if(focusIdx<0){focusIdx=0;var fi=dd.querySelectorAll('.search-result');if(fi.length>0)window.location.href=fi[0].getAttribute('data-url')}else{selectFocused(dd)}}else if(e.key==='Escape'){dd.classList.remove('active')}}});si.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,dd)}});si.addEventListener('blur',function(){{setTimeout(function(){{dd.classList.remove('active')}},200)}})}
+if(sim){sim.addEventListener('input',function(){{filter(this.value,ddm)}});sim.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(ddm,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(ddm,-1)}else if(e.key==='Enter'){e.preventDefault();if(focusIdx<0){focusIdx=0;var fi=ddm.querySelectorAll('.search-result');if(fi.length>0)window.location.href=fi[0].getAttribute('data-url')}else{selectFocused(ddm)}}else if(e.key==='Escape'){ddm.classList.remove('active')}}});sim.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,ddm)}});sim.addEventListener('blur',function(){{setTimeout(function(){{ddm.classList.remove('active')}},200)}})}
 loadIdx();
 })();
 
 })();
 </script>
-<script>
-(function(){var btn=document.getElementById('backToTop');if(!btn)return;window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>600)});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
-</script>
-<button id="backToTop" class="back-to-top" aria-label="Back to top">&#8593;</button>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
 </body>
 </html>

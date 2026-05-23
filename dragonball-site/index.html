@@ -14,29 +14,29 @@
 <meta name="google-adsense-account" content="ca-pub-2595917642864488">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#ff6b35',accentDark:'#e55a2b'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
+<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#ffffff',bgSecondary:'#f3f4f6',bgCard:'#ffffff',textPrimary:'#111827',textSecondary:'#4b5563',accent:'#ff6b35',accentDark:'#e55a2b'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
 <script>function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
+body{font-family:'Inter',Arial,sans-serif;background:#ffffff;color:#111827;font-size:16px;line-height:1.6}
 .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
 .carousel-slide.active{opacity:1;pointer-events:auto}
 .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
 .carousel-dot.active{background:#ff6b35}
-.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px #ff6b3526;transition:all .3s ease}
+.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px #ff6b3540;transition:all .3s ease}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .float-anim{animation:float 3s ease-in-out infinite}
 .char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
 img[src$=".png"]{mix-blend-mode:normal}
-.search-dropdown{position:absolute;top:100%;left:0;right:0;background:#1a1f2e;border:1px solid #374151;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.search-dropdown{position:absolute;top:100%;left:0;right:0;background:#ffffff;border:1px solid #e5e7eb;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
 .search-dropdown.active{display:block}
 .search-result{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .15s;border-bottom:1px solid rgba(75,85,99,.15)}
 .search-result:hover,.search-result.focused{background:rgba(255,255,255,.05)}
 .search-result:last-child{border-bottom:none}
 .search-result .sr-type{font-size:10px;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:999px;flex-shrink:0}
-.search-empty{padding:20px;text-align:center;color:#8b949e;font-size:14px}
+.search-empty{padding:20px;text-align:center;color:#4b5563;font-size:14px}
 .masonry-grid{columns:2;column-gap:1rem}
 .masonry-grid>*{break-inside:avoid;margin-bottom:1rem}
 @media(min-width:768px){.masonry-grid{columns:3}}
@@ -58,10 +58,10 @@ img[src$=".png"]{mix-blend-mode:normal}
 </head>
 <body>
 
-<nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(13,17,23,0.95);border-color:#374151">
+<nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(255,255,255,0.95);border-color:#e5e7eb">
 <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
 <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-<img src="/images/bulma.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
+<img src="/images/goku.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold tracking-tight">Dragon <span class="text-accent">Ball Wiki</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
@@ -75,7 +75,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="hidden lg:flex items-center relative flex-1 max-w-xs ml-2" id="searchWrap">
 <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"
  class="w-full bg-bgSecondary text-textPrimary text-sm px-3 py-2 rounded-lg border focus:outline-none focus:border-accent transition-colors"
- style="border-color:#374151">
+ style="border-color:#e5e7eb">
 <div class="search-dropdown" id="searchDropdown"></div>
 </div>
 <button class="lg:hidden text-textSecondary text-2xl" id="menuBtn" aria-label="Menu">&#9776;</button>
@@ -84,7 +84,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="relative mb-2">
 <input type="text" id="searchInputMobile" placeholder="Search..." autocomplete="off"
  class="w-full bg-bgSecondary text-textPrimary text-sm px-3 py-2 rounded-lg border focus:outline-none focus:border-accent transition-colors"
- style="border-color:#374151">
+ style="border-color:#e5e7eb">
 <div class="search-dropdown" id="searchDropdownMobile"></div>
 </div>
 <a href="https://anime.jycsd.com" class="block text-textSecondary hover:text-accent transition-colors">Anime Hub</a>
@@ -197,32 +197,32 @@ img[src$=".png"]{mix-blend-mode:normal}
 <section class="max-w-7xl mx-auto px-4 py-8">
 <h2 class="text-2xl font-black mb-6">All Categories</h2>
 <div class="flex flex-wrap gap-4 justify-center items-stretch">
-<a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/goku.png" alt="Characters — 114+ guides" title="Characters category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+<a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/goku.png" alt="Characters — 114+ guides" title="Characters category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Characters</div>
 <div class="text-sm text-textSecondary mt-1">114+ guides</div>
 </div>
-</a><a href="/guides/transformations/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/broly.png" alt="Transformations — 20+ guides" title="Transformations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/transformations/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/broly.png" alt="Transformations — 20+ guides" title="Transformations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Transformations</div>
 <div class="text-sm text-textSecondary mt-1">20+ guides</div>
 </div>
-</a><a href="/guides/techniques/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Techniques — 40+ guides" title="Techniques category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Techniques — 40+ guides" title="Techniques category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Techniques</div>
 <div class="text-sm text-textSecondary mt-1">40+ guides</div>
 </div>
-</a><a href="/guides/sagas/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/frieza.png" alt="Sagas — 25+ guides" title="Sagas category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/sagas/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/frieza.png" alt="Sagas — 25+ guides" title="Sagas category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Sagas</div>
 <div class="text-sm text-textSecondary mt-1">25+ guides</div>
 </div>
-</a><a href="/guides/races/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Races & Organizations — 16+ guides" title="Races & Organizations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Races & Organizations — 16+ guides" title="Races & Organizations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Races & Organizations</div>
 <div class="text-sm text-textSecondary mt-1">16+ guides</div>
@@ -235,40 +235,40 @@ img[src$=".png"]{mix-blend-mode:normal}
 <a href="/guides/characters/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
 </div>
 <div class="grid lg:grid-cols-2 gap-5">
-<a href="/guides/transformations/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
+<a href="/guides/transformations/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#e5e7eb">
 <div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ffd700, transparent);"></div>
-<img src="/images/goku.png" alt="Ultra Instinct Explained: Mastery, Sign, and True Ultra Instinct" title="Ultra Instinct Explained: Mastery, Sign, and True Ultra Instinct" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="lazy">
+<img src="/images/goku.png" alt="Ultra Instinct Explained: Mastery, Sign, and True Ultra Instinct" title="Ultra Instinct Explained: Mastery, Sign, and True Ultra Instinct" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager">
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#ffd700;background:#ffd7001a">Transformations</span>
 <h3 class="font-bold text-lg mt-2 mb-1 leading-snug group-hover:text-accent transition-colors">Ultra Instinct Explained: Mastery, Sign, and True Ultra Instinct</h3>
 <time class="text-sm text-textSecondary mt-2 block">May 17, 2026</time>
 </div>
-</a><a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
+</a><a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#e5e7eb">
 <div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ff6b35, transparent);"></div>
-<img src="/images/jiren.png" alt="Top 20 Strongest Dragon Ball Characters of All Time" title="Top 20 Strongest Dragon Ball Characters of All Time" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="lazy">
+<img src="/images/jiren.png" alt="Top 20 Strongest Dragon Ball Characters of All Time" title="Top 20 Strongest Dragon Ball Characters of All Time" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager">
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#ff6b35;background:#ff6b351a">Characters</span>
 <h3 class="font-bold text-lg mt-2 mb-1 leading-snug group-hover:text-accent transition-colors">Top 20 Strongest Dragon Ball Characters of All Time</h3>
 <time class="text-sm text-textSecondary mt-2 block">May 16, 2026</time>
 </div>
-</a><a href="/guides/techniques/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
+</a><a href="/guides/techniques/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#e5e7eb">
 <div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #4ea8de, transparent);"></div>
-<img src="/images/roshi.png" alt="Kamehameha: History of Goku's Signature Technique" title="Kamehameha: History of Goku's Signature Technique" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="lazy">
+<img src="/images/roshi.png" alt="Kamehameha: History of Goku's Signature Technique" title="Kamehameha: History of Goku's Signature Technique" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager">
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#4ea8de;background:#4ea8de1a">Techniques</span>
 <h3 class="font-bold text-lg mt-2 mb-1 leading-snug group-hover:text-accent transition-colors">Kamehameha: History of Goku's Signature Technique</h3>
 <time class="text-sm text-textSecondary mt-2 block">May 15, 2026</time>
 </div>
-</a><a href="/guides/sagas/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
+</a><a href="/guides/sagas/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#e5e7eb">
 <div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-bgPrimary flex items-center justify-center relative overflow-hidden p-4">
 <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #ff4081, transparent);"></div>
-<img src="/images/cell.png" alt="Cell Saga Complete Breakdown: Every Battle & Transformation" title="Cell Saga Complete Breakdown: Every Battle & Transformation" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="lazy">
+<img src="/images/cell.png" alt="Cell Saga Complete Breakdown: Every Battle & Transformation" title="Cell Saga Complete Breakdown: Every Battle & Transformation" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager">
 </div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#ff4081;background:#ff40811a">Sagas</span>
@@ -282,22 +282,22 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Trending</p><h2 class="text-2xl font-black">Hot Topics This Month</h2></div>
 <a href="/guides/characters/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
 </div>
-<div class="space-y-3"><a href="/guides/transformations/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="All Super Saiyan Forms Ranked: From SSJ1 to Ultra Instinct" title="All Super Saiyan Forms Ranked: From SSJ1 to Ultra Instinct" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="lazy"></div>
+<div class="space-y-3"><a href="/guides/transformations/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#e5e7eb">
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="All Super Saiyan Forms Ranked: From SSJ1 to Ultra Instinct" title="All Super Saiyan Forms Ranked: From SSJ1 to Ultra Instinct" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">All Super Saiyan Forms Ranked: From SSJ1 to Ultra Instinct</h3>
 <p class="text-base text-textSecondary mt-1.5">Complete power scaling breakdown of every Saiyan transformation across all Dragon Ball series.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
-</a><a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Goku vs Vegeta: Every Fight Ranked from Worst to Best" title="Goku vs Vegeta: Every Fight Ranked from Worst to Best" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#e5e7eb">
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Goku vs Vegeta: Every Fight Ranked from Worst to Best" title="Goku vs Vegeta: Every Fight Ranked from Worst to Best" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">Goku vs Vegeta: Every Fight Ranked from Worst to Best</h3>
 <p class="text-base text-textSecondary mt-1.5">Relive every battle between these legendary rivals — the moments that defined Dragon Ball.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
 </div>
-</a><a href="/guides/sagas/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="The Complete Dragon Ball Timeline: Every Arc in Order" title="The Complete Dragon Ball Timeline: Every Arc in Order" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/sagas/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#e5e7eb">
+<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="The Complete Dragon Ball Timeline: Every Arc in Order" title="The Complete Dragon Ball Timeline: Every Arc in Order" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-lg group-hover:text-accent transition-colors">The Complete Dragon Ball Timeline: Every Arc in Order</h3>
 <p class="text-base text-textSecondary mt-1.5">From Emperor Pilaf to the Granolah arc — the definitive chronological guide to the entire series.</p>
@@ -312,7 +312,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="masonry-grid">
 <div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/son-goku.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/goku.png" alt="Son Goku — Main Protagonist / Saiyan raised on Earth" title="Son Goku — Main Protagonist / Saiyan raised on Earth" class="w-full h-auto block" loading="lazy">
+<img src="/images/goku.png" alt="Son Goku — Main Protagonist / Saiyan raised on Earth" title="Son Goku — Main Protagonist / Saiyan raised on Earth" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Son Goku</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Main Protagonist / Saiyan raised on Earth</p>
@@ -320,7 +320,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/vegeta.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/vegeta.png" alt="Vegeta — Saiyan Prince / Rival Deuteragonist" title="Vegeta — Saiyan Prince / Rival Deuteragonist" class="w-full h-auto block" loading="lazy">
+<img src="/images/vegeta.png" alt="Vegeta — Saiyan Prince / Rival Deuteragonist" title="Vegeta — Saiyan Prince / Rival Deuteragonist" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Vegeta</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Saiyan Prince / Rival Deuteragonist</p>
@@ -328,7 +328,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/gohan.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/gohan.png" alt="Gohan — Hybrid Saiyan Scholar / Warrior" title="Gohan — Hybrid Saiyan Scholar / Warrior" class="w-full h-auto block" loading="lazy">
+<img src="/images/gohan.png" alt="Gohan — Hybrid Saiyan Scholar / Warrior" title="Gohan — Hybrid Saiyan Scholar / Warrior" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Gohan</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Hybrid Saiyan Scholar / Warrior</p>
@@ -336,7 +336,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/piccolo.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/piccolo.png" alt="Piccolo — Namekian Warrior / Tactical Genius" title="Piccolo — Namekian Warrior / Tactical Genius" class="w-full h-auto block" loading="lazy">
+<img src="/images/piccolo.png" alt="Piccolo — Namekian Warrior / Tactical Genius" title="Piccolo — Namekian Warrior / Tactical Genius" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Piccolo</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Namekian Warrior / Tactical Genius</p>
@@ -344,7 +344,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/frieza.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/frieza.png" alt="Frieza — Galactic Emperor / Cosmic Tyrant" title="Frieza — Galactic Emperor / Cosmic Tyrant" class="w-full h-auto block" loading="lazy">
+<img src="/images/frieza.png" alt="Frieza — Galactic Emperor / Cosmic Tyrant" title="Frieza — Galactic Emperor / Cosmic Tyrant" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Frieza</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Galactic Emperor / Cosmic Tyrant</p>
@@ -352,7 +352,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/cell.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/cell.png" alt="Cell — Bio-Android / Perfect Life Form" title="Cell — Bio-Android / Perfect Life Form" class="w-full h-auto block" loading="lazy">
+<img src="/images/cell.png" alt="Cell — Bio-Android / Perfect Life Form" title="Cell — Bio-Android / Perfect Life Form" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Cell</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Bio-Android / Perfect Life Form</p>
@@ -360,7 +360,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/majin-buu.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/buu.png" alt="Majin Buu — Primordial Evil / Ancient Djinn" title="Majin Buu — Primordial Evil / Ancient Djinn" class="w-full h-auto block" loading="lazy">
+<img src="/images/buu.png" alt="Majin Buu — Primordial Evil / Ancient Djinn" title="Majin Buu — Primordial Evil / Ancient Djinn" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Majin Buu</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Primordial Evil / Ancient Djinn</p>
@@ -368,7 +368,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/trunks.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/trunks.png" alt="Trunks — Saiyan Warrior / Time Traveler" title="Trunks — Saiyan Warrior / Time Traveler" class="w-full h-auto block" loading="lazy">
+<img src="/images/trunks.png" alt="Trunks — Saiyan Warrior / Time Traveler" title="Trunks — Saiyan Warrior / Time Traveler" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Trunks</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Saiyan Warrior / Time Traveler</p>
@@ -376,7 +376,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/bulma.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/bulma.png" alt="Bulma — Genius Scientist / Capsule Corp Heiress" title="Bulma — Genius Scientist / Capsule Corp Heiress" class="w-full h-auto block" loading="lazy">
+<img src="/images/bulma.png" alt="Bulma — Genius Scientist / Capsule Corp Heiress" title="Bulma — Genius Scientist / Capsule Corp Heiress" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Bulma</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Genius Scientist / Capsule Corp Heiress</p>
@@ -384,7 +384,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/krillin.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/krillin.png" alt="Krillin — Earthling Fighter / Tactical Genius" title="Krillin — Earthling Fighter / Tactical Genius" class="w-full h-auto block" loading="lazy">
+<img src="/images/krillin.png" alt="Krillin — Earthling Fighter / Tactical Genius" title="Krillin — Earthling Fighter / Tactical Genius" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Krillin</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Earthling Fighter / Tactical Genius</p>
@@ -392,7 +392,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/beerus.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/beerus.png" alt="Beerus — God of Destruction of Universe 7" title="Beerus — God of Destruction of Universe 7" class="w-full h-auto block" loading="lazy">
+<img src="/images/beerus.png" alt="Beerus — God of Destruction of Universe 7" title="Beerus — God of Destruction of Universe 7" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Beerus</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">God of Destruction of Universe 7</p>
@@ -400,7 +400,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/whis.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/whis.png" alt="Whis — Angel Attendant / Martial Arts Teacher" title="Whis — Angel Attendant / Martial Arts Teacher" class="w-full h-auto block" loading="lazy">
+<img src="/images/whis.png" alt="Whis — Angel Attendant / Martial Arts Teacher" title="Whis — Angel Attendant / Martial Arts Teacher" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Whis</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Angel Attendant / Martial Arts Teacher</p>
@@ -409,7 +409,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 </div><div id="moreChars" style="display:none"><div class="masonry-grid"><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/broly.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/broly.png" alt="Broly — Legendary Super Saiyan / Berserker" title="Broly — Legendary Super Saiyan / Berserker" class="w-full h-auto block" loading="lazy">
+<img src="/images/broly.png" alt="Broly — Legendary Super Saiyan / Berserker" title="Broly — Legendary Super Saiyan / Berserker" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Broly</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Legendary Super Saiyan / Berserker</p>
@@ -417,7 +417,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/jiren.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/jiren.png" alt="Jiren — Pride Trooper / Mortal Surpassing Gods" title="Jiren — Pride Trooper / Mortal Surpassing Gods" class="w-full h-auto block" loading="lazy">
+<img src="/images/jiren.png" alt="Jiren — Pride Trooper / Mortal Surpassing Gods" title="Jiren — Pride Trooper / Mortal Surpassing Gods" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Jiren</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Pride Trooper / Mortal Surpassing Gods</p>
@@ -425,7 +425,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/tien-shinhan.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/tien.png" alt="Tien Shinhan — Three-Eyed Martial Artist / Dojo Master" title="Tien Shinhan — Three-Eyed Martial Artist / Dojo Master" class="w-full h-auto block" loading="lazy">
+<img src="/images/tien.png" alt="Tien Shinhan — Three-Eyed Martial Artist / Dojo Master" title="Tien Shinhan — Three-Eyed Martial Artist / Dojo Master" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Tien Shinhan</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Three-Eyed Martial Artist / Dojo Master</p>
@@ -433,7 +433,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/yamcha.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/yamcha.png" alt="Yamcha — Desert Bandit Turned Warrior" title="Yamcha — Desert Bandit Turned Warrior" class="w-full h-auto block" loading="lazy">
+<img src="/images/yamcha.png" alt="Yamcha — Desert Bandit Turned Warrior" title="Yamcha — Desert Bandit Turned Warrior" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Yamcha</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Desert Bandit Turned Warrior</p>
@@ -441,7 +441,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/master-roshi.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/roshi.png" alt="Master Roshi — Turtle Hermit / Kamehameha Creator" title="Master Roshi — Turtle Hermit / Kamehameha Creator" class="w-full h-auto block" loading="lazy">
+<img src="/images/roshi.png" alt="Master Roshi — Turtle Hermit / Kamehameha Creator" title="Master Roshi — Turtle Hermit / Kamehameha Creator" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Master Roshi</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Turtle Hermit / Kamehameha Creator</p>
@@ -449,7 +449,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/android-18.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/android-18.png" alt="Android 18 — Cyborg Fighter / Krillin's Wife" title="Android 18 — Cyborg Fighter / Krillin's Wife" class="w-full h-auto block" loading="lazy">
+<img src="/images/android18.png" alt="Android 18 — Cyborg Fighter / Krillin's Wife" title="Android 18 — Cyborg Fighter / Krillin's Wife" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Android 18</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Cyborg Fighter / Krillin's Wife</p>
@@ -457,7 +457,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/goten.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/goten.png" alt="Goten — Young Saiyan Prodigy" title="Goten — Young Saiyan Prodigy" class="w-full h-auto block" loading="lazy">
+<img src="/images/goten.png" alt="Goten — Young Saiyan Prodigy" title="Goten — Young Saiyan Prodigy" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Goten</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Young Saiyan Prodigy</p>
@@ -465,7 +465,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/chi-chi.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/chichi.png" alt="Chi-Chi — Martial Artist / Son Family Matriarch" title="Chi-Chi — Martial Artist / Son Family Matriarch" class="w-full h-auto block" loading="lazy">
+<img src="/images/chichi.png" alt="Chi-Chi — Martial Artist / Son Family Matriarch" title="Chi-Chi — Martial Artist / Son Family Matriarch" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Chi-Chi</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Martial Artist / Son Family Matriarch</p>
@@ -473,7 +473,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/android-17.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/android-17.png" alt="Android 17 — Cyborg Ranger / Tournament of Power MVP" title="Android 17 — Cyborg Ranger / Tournament of Power MVP" class="w-full h-auto block" loading="lazy">
+<img src="/images/android-17.png" alt="Android 17 — Cyborg Ranger / Tournament of Power MVP" title="Android 17 — Cyborg Ranger / Tournament of Power MVP" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Android 17</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Cyborg Ranger / Tournament of Power MVP</p>
@@ -481,7 +481,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/kid-buu.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/kid-buu.png" alt="Kid Buu — Pure Evil Incarnate" title="Kid Buu — Pure Evil Incarnate" class="w-full h-auto block" loading="lazy">
+<img src="/images/kid-buu.png" alt="Kid Buu — Pure Evil Incarnate" title="Kid Buu — Pure Evil Incarnate" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Kid Buu</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Pure Evil Incarnate</p>
@@ -489,7 +489,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/videl.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/videl.png" alt="Videl — Martial Artist / Great Saiyaman 2" title="Videl — Martial Artist / Great Saiyaman 2" class="w-full h-auto block" loading="lazy">
+<img src="/images/videl.png" alt="Videl — Martial Artist / Great Saiyaman 2" title="Videl — Martial Artist / Great Saiyaman 2" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Videl</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Martial Artist / Great Saiyaman 2</p>
@@ -497,7 +497,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/pan.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/pan.png" alt="Pan — Quarter-Saiyan Prodigy" title="Pan — Quarter-Saiyan Prodigy" class="w-full h-auto block" loading="lazy">
+<img src="/images/pan.png" alt="Pan — Quarter-Saiyan Prodigy" title="Pan — Quarter-Saiyan Prodigy" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Pan</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Quarter-Saiyan Prodigy</p>
@@ -505,7 +505,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/uub.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/uub.png" alt="Uub — Reincarnated Warrior / Goku's Final Student" title="Uub — Reincarnated Warrior / Goku's Final Student" class="w-full h-auto block" loading="lazy">
+<img src="/images/uub.png" alt="Uub — Reincarnated Warrior / Goku's Final Student" title="Uub — Reincarnated Warrior / Goku's Final Student" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Uub</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Reincarnated Warrior / Goku's Final Student</p>
@@ -513,7 +513,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/future-trunks.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/future-trunks.png" alt="Future Trunks — Time Traveler / Last Hope of the Future" title="Future Trunks — Time Traveler / Last Hope of the Future" class="w-full h-auto block" loading="lazy">
+<img src="/images/future-trunks.png" alt="Future Trunks — Time Traveler / Last Hope of the Future" title="Future Trunks — Time Traveler / Last Hope of the Future" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Future Trunks</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Time Traveler / Last Hope of the Future</p>
@@ -521,7 +521,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/chiaotzu.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/chiaotzu.png" alt="Chiaotzu — Psychic Martial Artist" title="Chiaotzu — Psychic Martial Artist" class="w-full h-auto block" loading="lazy">
+<img src="/images/chiaotzu.png" alt="Chiaotzu — Psychic Martial Artist" title="Chiaotzu — Psychic Martial Artist" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Chiaotzu</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Psychic Martial Artist</p>
@@ -529,7 +529,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/future-gohan.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/future-gohan.png" alt="Future Gohan — One-Armed Hero of the Apocalypse" title="Future Gohan — One-Armed Hero of the Apocalypse" class="w-full h-auto block" loading="lazy">
+<img src="/images/future-gohan.png" alt="Future Gohan — One-Armed Hero of the Apocalypse" title="Future Gohan — One-Armed Hero of the Apocalypse" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Future Gohan</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">One-Armed Hero of the Apocalypse</p>
@@ -537,7 +537,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/mr-satan.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/mr-satan.png" alt="Mr. Satan — World Martial Arts Champion / False Hero" title="Mr. Satan — World Martial Arts Champion / False Hero" class="w-full h-auto block" loading="lazy">
+<img src="/images/mr-satan.png" alt="Mr. Satan — World Martial Arts Champion / False Hero" title="Mr. Satan — World Martial Arts Champion / False Hero" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Mr. Satan</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">World Martial Arts Champion / False Hero</p>
@@ -545,7 +545,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/yajirobe.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/yajirobe.png" alt="Yajirobe — Ronin Swordsman / Bean Delivery Expert" title="Yajirobe — Ronin Swordsman / Bean Delivery Expert" class="w-full h-auto block" loading="lazy">
+<img src="/images/yajirobe.png" alt="Yajirobe — Ronin Swordsman / Bean Delivery Expert" title="Yajirobe — Ronin Swordsman / Bean Delivery Expert" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Yajirobe</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Ronin Swordsman / Bean Delivery Expert</p>
@@ -553,7 +553,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/korin.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/korin.png" alt="Korin — Tower Guardian / Senzu Bean Cultivator" title="Korin — Tower Guardian / Senzu Bean Cultivator" class="w-full h-auto block" loading="lazy">
+<img src="/images/korin.png" alt="Korin — Tower Guardian / Senzu Bean Cultivator" title="Korin — Tower Guardian / Senzu Bean Cultivator" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Korin</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Tower Guardian / Senzu Bean Cultivator</p>
@@ -561,7 +561,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/shenron.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/shenron.png" alt="Shenron — Eternal Dragon of Earth" title="Shenron — Eternal Dragon of Earth" class="w-full h-auto block" loading="lazy">
+<img src="/images/shenron.png" alt="Shenron — Eternal Dragon of Earth" title="Shenron — Eternal Dragon of Earth" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Shenron</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Eternal Dragon of Earth</p>
@@ -569,7 +569,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/raditz.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/raditz.png" alt="Raditz — Saiyan Invader / Goku's Brother" title="Raditz — Saiyan Invader / Goku's Brother" class="w-full h-auto block" loading="lazy">
+<img src="/images/raditz.png" alt="Raditz — Saiyan Invader / Goku's Brother" title="Raditz — Saiyan Invader / Goku's Brother" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Raditz</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Saiyan Invader / Goku's Brother</p>
@@ -577,7 +577,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/nappa.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/nappa.png" alt="Nappa — Saiyan Elite / Planet Conqueror" title="Nappa — Saiyan Elite / Planet Conqueror" class="w-full h-auto block" loading="lazy">
+<img src="/images/nappa.png" alt="Nappa — Saiyan Elite / Planet Conqueror" title="Nappa — Saiyan Elite / Planet Conqueror" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Nappa</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Saiyan Elite / Planet Conqueror</p>
@@ -585,7 +585,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/bardock.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/bardock.png" alt="Bardock — Saiyan Scientist / Visionary Father" title="Bardock — Saiyan Scientist / Visionary Father" class="w-full h-auto block" loading="lazy">
+<img src="/images/bardock.png" alt="Bardock — Saiyan Scientist / Visionary Father" title="Bardock — Saiyan Scientist / Visionary Father" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Bardock</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Saiyan Scientist / Visionary Father</p>
@@ -593,7 +593,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/captain-ginyu.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/captain-ginyu.png" alt="Captain Ginyu — Elite Mercenary / Body Swapper" title="Captain Ginyu — Elite Mercenary / Body Swapper" class="w-full h-auto block" loading="lazy">
+<img src="/images/captain-ginyu.png" alt="Captain Ginyu — Elite Mercenary / Body Swapper" title="Captain Ginyu — Elite Mercenary / Body Swapper" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Captain Ginyu</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Elite Mercenary / Body Swapper</p>
@@ -601,7 +601,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/recoome.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/recoome.png" alt="Recoome — Ginyu Force Muscle" title="Recoome — Ginyu Force Muscle" class="w-full h-auto block" loading="lazy">
+<img src="/images/recoome.png" alt="Recoome — Ginyu Force Muscle" title="Recoome — Ginyu Force Muscle" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Recoome</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Ginyu Force Muscle</p>
@@ -609,7 +609,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/burter.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/burter.png" alt="Burter — Ginyu Force Speedster / Fastest in the Universe" title="Burter — Ginyu Force Speedster / Fastest in the Universe" class="w-full h-auto block" loading="lazy">
+<img src="/images/burter.png" alt="Burter — Ginyu Force Speedster / Fastest in the Universe" title="Burter — Ginyu Force Speedster / Fastest in the Universe" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Burter</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Ginyu Force Speedster / Fastest in the Universe</p>
@@ -617,7 +617,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/jeice.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/jeice.png" alt="Jeice — Ginyu Force Tactician" title="Jeice — Ginyu Force Tactician" class="w-full h-auto block" loading="lazy">
+<img src="/images/jeice.png" alt="Jeice — Ginyu Force Tactician" title="Jeice — Ginyu Force Tactician" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Jeice</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Ginyu Force Tactician</p>
@@ -625,7 +625,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/guldo.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/guldo.png" alt="Guldo — Ginyu Force Psychic" title="Guldo — Ginyu Force Psychic" class="w-full h-auto block" loading="lazy">
+<img src="/images/guldo.png" alt="Guldo — Ginyu Force Psychic" title="Guldo — Ginyu Force Psychic" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Guldo</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Ginyu Force Psychic</p>
@@ -633,7 +633,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/zarbon.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/zarbon.png" alt="Zarbon — Frieza's Top Advisor / Transformation Master" title="Zarbon — Frieza's Top Advisor / Transformation Master" class="w-full h-auto block" loading="lazy">
+<img src="/images/zarbon.png" alt="Zarbon — Frieza's Top Advisor / Transformation Master" title="Zarbon — Frieza's Top Advisor / Transformation Master" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Zarbon</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Frieza's Top Advisor / Transformation Master</p>
@@ -641,7 +641,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/dodoria.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/dodoria.png" alt="Dodoria — Frieza's Brutal Enforcer" title="Dodoria — Frieza's Brutal Enforcer" class="w-full h-auto block" loading="lazy">
+<img src="/images/dodoria.png" alt="Dodoria — Frieza's Brutal Enforcer" title="Dodoria — Frieza's Brutal Enforcer" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Dodoria</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Frieza's Brutal Enforcer</p>
@@ -649,7 +649,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/cui.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/cui.png" alt="Cui — Saiyan Saga Rival / Vegeta's Tormentor" title="Cui — Saiyan Saga Rival / Vegeta's Tormentor" class="w-full h-auto block" loading="lazy">
+<img src="/images/cui.png" alt="Cui — Saiyan Saga Rival / Vegeta's Tormentor" title="Cui — Saiyan Saga Rival / Vegeta's Tormentor" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Cui</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Saiyan Saga Rival / Vegeta's Tormentor</p>
@@ -657,7 +657,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/king-cold.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/king-cold.png" alt="King Cold — Former Galactic Emperor / Frieza's Father" title="King Cold — Former Galactic Emperor / Frieza's Father" class="w-full h-auto block" loading="lazy">
+<img src="/images/king-cold.png" alt="King Cold — Former Galactic Emperor / Frieza's Father" title="King Cold — Former Galactic Emperor / Frieza's Father" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">King Cold</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Former Galactic Emperor / Frieza's Father</p>
@@ -665,7 +665,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/dr-gero.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/dr-gero.png" alt="Dr. Gero — Red Ribbon Scientist / Android Creator" title="Dr. Gero — Red Ribbon Scientist / Android Creator" class="w-full h-auto block" loading="lazy">
+<img src="/images/dr-gero.png" alt="Dr. Gero — Red Ribbon Scientist / Android Creator" title="Dr. Gero — Red Ribbon Scientist / Android Creator" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Dr. Gero</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Red Ribbon Scientist / Android Creator</p>
@@ -673,7 +673,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/android-19.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/android-19.png" alt="Android 19 — Energy-Absorbing Android" title="Android 19 — Energy-Absorbing Android" class="w-full h-auto block" loading="lazy">
+<img src="/images/android-19.png" alt="Android 19 — Energy-Absorbing Android" title="Android 19 — Energy-Absorbing Android" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Android 19</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Energy-Absorbing Android</p>
@@ -681,7 +681,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/babidi.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/babidi.png" alt="Babidi — Dark Wizard / Majin Buu's Awakener" title="Babidi — Dark Wizard / Majin Buu's Awakener" class="w-full h-auto block" loading="lazy">
+<img src="/images/babidi.png" alt="Babidi — Dark Wizard / Majin Buu's Awakener" title="Babidi — Dark Wizard / Majin Buu's Awakener" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Babidi</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Dark Wizard / Majin Buu's Awakener</p>
@@ -689,7 +689,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/dabura.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/dabura.png" alt="Dabura — Demon King of the Demon Realm" title="Dabura — Demon King of the Demon Realm" class="w-full h-auto block" loading="lazy">
+<img src="/images/dabura.png" alt="Dabura — Demon King of the Demon Realm" title="Dabura — Demon King of the Demon Realm" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Dabura</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Demon King of the Demon Realm</p>
@@ -697,7 +697,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/king-kai.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/king-kai.png" alt="King Kai — North Kai / Martial Arts Trainer" title="King Kai — North Kai / Martial Arts Trainer" class="w-full h-auto block" loading="lazy">
+<img src="/images/king-kai.png" alt="King Kai — North Kai / Martial Arts Trainer" title="King Kai — North Kai / Martial Arts Trainer" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">King Kai</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">North Kai / Martial Arts Trainer</p>
@@ -705,7 +705,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/shin.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/shin.png" alt="Shin — Supreme Kai of Universe 7" title="Shin — Supreme Kai of Universe 7" class="w-full h-auto block" loading="lazy">
+<img src="/images/shin.png" alt="Shin — Supreme Kai of Universe 7" title="Shin — Supreme Kai of Universe 7" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Shin</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Supreme Kai of Universe 7</p>
@@ -713,7 +713,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/old-kai.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/old-kai.png" alt="Old Kai — Ancient Supreme Kai / Potential Unlocker" title="Old Kai — Ancient Supreme Kai / Potential Unlocker" class="w-full h-auto block" loading="lazy">
+<img src="/images/old-kai.png" alt="Old Kai — Ancient Supreme Kai / Potential Unlocker" title="Old Kai — Ancient Supreme Kai / Potential Unlocker" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Old Kai</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Ancient Supreme Kai / Potential Unlocker</p>
@@ -721,7 +721,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/kibito.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/kibito.png" alt="Kibito — Supreme Kai's Attendant / Healer" title="Kibito — Supreme Kai's Attendant / Healer" class="w-full h-auto block" loading="lazy">
+<img src="/images/kibito.png" alt="Kibito — Supreme Kai's Attendant / Healer" title="Kibito — Supreme Kai's Attendant / Healer" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Kibito</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Supreme Kai's Attendant / Healer</p>
@@ -729,7 +729,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/champa.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/champa.png" alt="Champa — God of Destruction of Universe 6" title="Champa — God of Destruction of Universe 6" class="w-full h-auto block" loading="lazy">
+<img src="/images/champa.png" alt="Champa — God of Destruction of Universe 6" title="Champa — God of Destruction of Universe 6" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Champa</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">God of Destruction of Universe 6</p>
@@ -737,7 +737,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/vados.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/vados.png" alt="Vados — Angel Attendant of Universe 6" title="Vados — Angel Attendant of Universe 6" class="w-full h-auto block" loading="lazy">
+<img src="/images/vados.png" alt="Vados — Angel Attendant of Universe 6" title="Vados — Angel Attendant of Universe 6" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Vados</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Angel Attendant of Universe 6</p>
@@ -745,7 +745,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/zeno.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/zeno.png" alt="Zeno — Omni-King / Supreme Ruler of All Universes" title="Zeno — Omni-King / Supreme Ruler of All Universes" class="w-full h-auto block" loading="lazy">
+<img src="/images/zeno.png" alt="Zeno — Omni-King / Supreme Ruler of All Universes" title="Zeno — Omni-King / Supreme Ruler of All Universes" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Zeno</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Omni-King / Supreme Ruler of All Universes</p>
@@ -753,7 +753,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/grand-priest.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/grand-priest.png" alt="Grand Priest — Supreme Angel / Father of All Angels" title="Grand Priest — Supreme Angel / Father of All Angels" class="w-full h-auto block" loading="lazy">
+<img src="/images/grand-priest.png" alt="Grand Priest — Supreme Angel / Father of All Angels" title="Grand Priest — Supreme Angel / Father of All Angels" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Grand Priest</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Supreme Angel / Father of All Angels</p>
@@ -761,7 +761,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/dende.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/dende.png" alt="Dende — Earth's Guardian" title="Dende — Earth's Guardian" class="w-full h-auto block" loading="lazy">
+<img src="/images/dende.png" alt="Dende — Earth's Guardian" title="Dende — Earth's Guardian" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Dende</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Earth's Guardian</p>
@@ -769,7 +769,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/guru.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/guru.png" alt="Guru — Grand Elder of Namek" title="Guru — Grand Elder of Namek" class="w-full h-auto block" loading="lazy">
+<img src="/images/guru.png" alt="Guru — Grand Elder of Namek" title="Guru — Grand Elder of Namek" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Guru</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Grand Elder of Namek</p>
@@ -777,7 +777,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/hit.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/hit.png" alt="Hit — Legendary Assassin / Time-Skip Master" title="Hit — Legendary Assassin / Time-Skip Master" class="w-full h-auto block" loading="lazy">
+<img src="/images/hit.png" alt="Hit — Legendary Assassin / Time-Skip Master" title="Hit — Legendary Assassin / Time-Skip Master" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Hit</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Legendary Assassin / Time-Skip Master</p>
@@ -785,7 +785,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/cabba.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/cabba.png" alt="Cabba — Universe 6 Saiyan Protector" title="Cabba — Universe 6 Saiyan Protector" class="w-full h-auto block" loading="lazy">
+<img src="/images/cabba.png" alt="Cabba — Universe 6 Saiyan Protector" title="Cabba — Universe 6 Saiyan Protector" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Cabba</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Universe 6 Saiyan Protector</p>
@@ -793,7 +793,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/caulifla.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/caulifla.png" alt="Caulifla — Universe 6 Saiyan Prodigy" title="Caulifla — Universe 6 Saiyan Prodigy" class="w-full h-auto block" loading="lazy">
+<img src="/images/caulifla.png" alt="Caulifla — Universe 6 Saiyan Prodigy" title="Caulifla — Universe 6 Saiyan Prodigy" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Caulifla</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Universe 6 Saiyan Prodigy</p>
@@ -801,7 +801,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/kale.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/kale.png" alt="Kale — Universe 6 Legendary Super Saiyan" title="Kale — Universe 6 Legendary Super Saiyan" class="w-full h-auto block" loading="lazy">
+<img src="/images/kale.png" alt="Kale — Universe 6 Legendary Super Saiyan" title="Kale — Universe 6 Legendary Super Saiyan" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Kale</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Universe 6 Legendary Super Saiyan</p>
@@ -809,7 +809,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/kefla.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/kefla.png" alt="Kefla — Potara Fusion of Caulifla and Kale" title="Kefla — Potara Fusion of Caulifla and Kale" class="w-full h-auto block" loading="lazy">
+<img src="/images/kefla.png" alt="Kefla — Potara Fusion of Caulifla and Kale" title="Kefla — Potara Fusion of Caulifla and Kale" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Kefla</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Potara Fusion of Caulifla and Kale</p>
@@ -817,7 +817,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/frost.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/frost.png" alt="Frost — Universe 6's Frieza Counterpart" title="Frost — Universe 6's Frieza Counterpart" class="w-full h-auto block" loading="lazy">
+<img src="/images/frost.png" alt="Frost — Universe 6's Frieza Counterpart" title="Frost — Universe 6's Frieza Counterpart" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Frost</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Universe 6's Frieza Counterpart</p>
@@ -825,7 +825,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/botamo.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/botamo.png" alt="Botamo — Universe 6 Indestructible Warrior" title="Botamo — Universe 6 Indestructible Warrior" class="w-full h-auto block" loading="lazy">
+<img src="/images/botamo.png" alt="Botamo — Universe 6 Indestructible Warrior" title="Botamo — Universe 6 Indestructible Warrior" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Botamo</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Universe 6 Indestructible Warrior</p>
@@ -833,7 +833,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/magetta.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/magetta.png" alt="Magetta — Universe 6 Metal Man" title="Magetta — Universe 6 Metal Man" class="w-full h-auto block" loading="lazy">
+<img src="/images/magetta.png" alt="Magetta — Universe 6 Metal Man" title="Magetta — Universe 6 Metal Man" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Magetta</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Universe 6 Metal Man</p>
@@ -841,7 +841,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/toppo.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/toppo.png" alt="Toppo — Pride Trooper Leader / God of Destruction Candidate" title="Toppo — Pride Trooper Leader / God of Destruction Candidate" class="w-full h-auto block" loading="lazy">
+<img src="/images/toppo.png" alt="Toppo — Pride Trooper Leader / God of Destruction Candidate" title="Toppo — Pride Trooper Leader / God of Destruction Candidate" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Toppo</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Pride Trooper Leader / God of Destruction Candidate</p>
@@ -849,7 +849,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/dyspo.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/dyspo.png" alt="Dyspo — Pride Trooper Speedster" title="Dyspo — Pride Trooper Speedster" class="w-full h-auto block" loading="lazy">
+<img src="/images/dyspo.png" alt="Dyspo — Pride Trooper Speedster" title="Dyspo — Pride Trooper Speedster" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Dyspo</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Pride Trooper Speedster</p>
@@ -857,7 +857,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/demon-king-piccolo.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/demon-king-piccolo.png" alt="Demon King Piccolo — Original Demon King / Piccolo's Father" title="Demon King Piccolo — Original Demon King / Piccolo's Father" class="w-full h-auto block" loading="lazy">
+<img src="/images/demon-king-piccolo.png" alt="Demon King Piccolo — Original Demon King / Piccolo's Father" title="Demon King Piccolo — Original Demon King / Piccolo's Father" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Demon King Piccolo</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Original Demon King / Piccolo's Father</p>
@@ -865,7 +865,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/mercenary-tao.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/mercenary-tao.png" alt="Mercenary Tao — World's Deadliest Assassin" title="Mercenary Tao — World's Deadliest Assassin" class="w-full h-auto block" loading="lazy">
+<img src="/images/mercenary-tao.png" alt="Mercenary Tao — World's Deadliest Assassin" title="Mercenary Tao — World's Deadliest Assassin" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Mercenary Tao</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">World's Deadliest Assassin</p>
@@ -873,7 +873,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/commander-red.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/commander-red.png" alt="Commander Red — Red Ribbon Army Supreme Commander" title="Commander Red — Red Ribbon Army Supreme Commander" class="w-full h-auto block" loading="lazy">
+<img src="/images/commander-red.png" alt="Commander Red — Red Ribbon Army Supreme Commander" title="Commander Red — Red Ribbon Army Supreme Commander" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Commander Red</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Red Ribbon Army Supreme Commander</p>
@@ -881,7 +881,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/general-blue.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/general-blue.png" alt="General Blue — Red Ribbon Army Elite General" title="General Blue — Red Ribbon Army Elite General" class="w-full h-auto block" loading="lazy">
+<img src="/images/general-blue.png" alt="General Blue — Red Ribbon Army Elite General" title="General Blue — Red Ribbon Army Elite General" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">General Blue</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Red Ribbon Army Elite General</p>
@@ -889,7 +889,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/emperor-pilaf.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/emperor-pilaf.png" alt="Emperor Pilaf — Comedic Villain / First Antagonist" title="Emperor Pilaf — Comedic Villain / First Antagonist" class="w-full h-auto block" loading="lazy">
+<img src="/images/emperor-pilaf.png" alt="Emperor Pilaf — Comedic Villain / First Antagonist" title="Emperor Pilaf — Comedic Villain / First Antagonist" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Emperor Pilaf</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Comedic Villain / First Antagonist</p>
@@ -897,7 +897,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/shu.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/shu.png" alt="Shu — Pilaf Gang Ninja" title="Shu — Pilaf Gang Ninja" class="w-full h-auto block" loading="lazy">
+<img src="/images/shu.png" alt="Shu — Pilaf Gang Ninja" title="Shu — Pilaf Gang Ninja" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Shu</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Pilaf Gang Ninja</p>
@@ -905,7 +905,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/mai.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/mai.png" alt="Mai — Pilaf Gang Agent / Future Trunks's Love" title="Mai — Pilaf Gang Agent / Future Trunks's Love" class="w-full h-auto block" loading="lazy">
+<img src="/images/mai.png" alt="Mai — Pilaf Gang Agent / Future Trunks's Love" title="Mai — Pilaf Gang Agent / Future Trunks's Love" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Mai</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Pilaf Gang Agent / Future Trunks's Love</p>
@@ -913,7 +913,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/giru.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/giru.png" alt="Giru — Robot Companion / Dragon Radar" title="Giru — Robot Companion / Dragon Radar" class="w-full h-auto block" loading="lazy">
+<img src="/images/giru.png" alt="Giru — Robot Companion / Dragon Radar" title="Giru — Robot Companion / Dragon Radar" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Giru</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Robot Companion / Dragon Radar</p>
@@ -921,7 +921,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/baby.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/baby.png" alt="Baby — Tuffle Parasite / Ultimate Revenge" title="Baby — Tuffle Parasite / Ultimate Revenge" class="w-full h-auto block" loading="lazy">
+<img src="/images/baby.png" alt="Baby — Tuffle Parasite / Ultimate Revenge" title="Baby — Tuffle Parasite / Ultimate Revenge" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Baby</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Tuffle Parasite / Ultimate Revenge</p>
@@ -929,7 +929,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/zamasu.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/zamasu.png" alt="Zamasu — Fallen Supreme Kai / Divine Genocide" title="Zamasu — Fallen Supreme Kai / Divine Genocide" class="w-full h-auto block" loading="lazy">
+<img src="/images/zamasu.png" alt="Zamasu — Fallen Supreme Kai / Divine Genocide" title="Zamasu — Fallen Supreme Kai / Divine Genocide" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Zamasu</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Fallen Supreme Kai / Divine Genocide</p>
@@ -937,7 +937,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/goku-black.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/goku-black.png" alt="Goku Black — God in Goku's Body / Zero Mortals Plan" title="Goku Black — God in Goku's Body / Zero Mortals Plan" class="w-full h-auto block" loading="lazy">
+<img src="/images/goku-black.png" alt="Goku Black — God in Goku's Body / Zero Mortals Plan" title="Goku Black — God in Goku's Body / Zero Mortals Plan" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Goku Black</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">God in Goku's Body / Zero Mortals Plan</p>
@@ -945,7 +945,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/moro.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/moro.png" alt="Moro — Planet-Eating Sorcerer" title="Moro — Planet-Eating Sorcerer" class="w-full h-auto block" loading="lazy">
+<img src="/images/moro.png" alt="Moro — Planet-Eating Sorcerer" title="Moro — Planet-Eating Sorcerer" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Moro</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Planet-Eating Sorcerer</p>
@@ -953,7 +953,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/granolah.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/granolah.png" alt="Granolah — Last Cerealian / Universe's Strongest Warrior" title="Granolah — Last Cerealian / Universe's Strongest Warrior" class="w-full h-auto block" loading="lazy">
+<img src="/images/granolah.png" alt="Granolah — Last Cerealian / Universe's Strongest Warrior" title="Granolah — Last Cerealian / Universe's Strongest Warrior" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Granolah</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Last Cerealian / Universe's Strongest Warrior</p>
@@ -961,7 +961,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/cooler.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/cooler.png" alt="Cooler — Frieza's Older Brother / Vengeful Heir" title="Cooler — Frieza's Older Brother / Vengeful Heir" class="w-full h-auto block" loading="lazy">
+<img src="/images/cooler.png" alt="Cooler — Frieza's Older Brother / Vengeful Heir" title="Cooler — Frieza's Older Brother / Vengeful Heir" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Cooler</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Frieza's Older Brother / Vengeful Heir</p>
@@ -969,7 +969,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/turles.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/turles.png" alt="Turles — Rogue Saiyan / Tree of Might" title="Turles — Rogue Saiyan / Tree of Might" class="w-full h-auto block" loading="lazy">
+<img src="/images/turles.png" alt="Turles — Rogue Saiyan / Tree of Might" title="Turles — Rogue Saiyan / Tree of Might" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Turles</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Rogue Saiyan / Tree of Might</p>
@@ -977,7 +977,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/bojack.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/bojack.png" alt="Bojack — Galactic Pirate / Sealed Demon" title="Bojack — Galactic Pirate / Sealed Demon" class="w-full h-auto block" loading="lazy">
+<img src="/images/bojack.png" alt="Bojack — Galactic Pirate / Sealed Demon" title="Bojack — Galactic Pirate / Sealed Demon" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Bojack</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Galactic Pirate / Sealed Demon</p>
@@ -985,7 +985,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/janemba.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/janemba.png" alt="Janemba — Purified Evil Incarnate" title="Janemba — Purified Evil Incarnate" class="w-full h-auto block" loading="lazy">
+<img src="/images/janemba.png" alt="Janemba — Purified Evil Incarnate" title="Janemba — Purified Evil Incarnate" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Janemba</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Purified Evil Incarnate</p>
@@ -993,7 +993,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/omega-shenron.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/omega-shenron.png" alt="Omega Shenron — Ultimate Shadow Dragon" title="Omega Shenron — Ultimate Shadow Dragon" class="w-full h-auto block" loading="lazy">
+<img src="/images/omega-shenron.png" alt="Omega Shenron — Ultimate Shadow Dragon" title="Omega Shenron — Ultimate Shadow Dragon" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Omega Shenron</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Ultimate Shadow Dragon</p>
@@ -1001,7 +1001,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/super-17.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/super-17.png" alt="Super 17 — Machine Mutant Fusion Android" title="Super 17 — Machine Mutant Fusion Android" class="w-full h-auto block" loading="lazy">
+<img src="/images/super-17.png" alt="Super 17 — Machine Mutant Fusion Android" title="Super 17 — Machine Mutant Fusion Android" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Super 17</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Machine Mutant Fusion Android</p>
@@ -1009,7 +1009,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/kami.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/kami.png" alt="Kami — Former Guardian of Earth" title="Kami — Former Guardian of Earth" class="w-full h-auto block" loading="lazy">
+<img src="/images/kami.png" alt="Kami — Former Guardian of Earth" title="Kami — Former Guardian of Earth" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Kami</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Former Guardian of Earth</p>
@@ -1017,7 +1017,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/mr-popo.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/mr-popo.png" alt="Mr. Popo — Lookout Attendant / Eternal Guardian" title="Mr. Popo — Lookout Attendant / Eternal Guardian" class="w-full h-auto block" loading="lazy">
+<img src="/images/mr-popo.png" alt="Mr. Popo — Lookout Attendant / Eternal Guardian" title="Mr. Popo — Lookout Attendant / Eternal Guardian" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Mr. Popo</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Lookout Attendant / Eternal Guardian</p>
@@ -1025,7 +1025,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/nail.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/nail.png" alt="Nail — Namekian Warrior / Piccolo's Fusion Partner" title="Nail — Namekian Warrior / Piccolo's Fusion Partner" class="w-full h-auto block" loading="lazy">
+<img src="/images/nail.png" alt="Nail — Namekian Warrior / Piccolo's Fusion Partner" title="Nail — Namekian Warrior / Piccolo's Fusion Partner" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Nail</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Namekian Warrior / Piccolo's Fusion Partner</p>
@@ -1033,7 +1033,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/android-16.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/android-16.png" alt="Android 16 — Pacifist Android / Gohan's Catalyst" title="Android 16 — Pacifist Android / Gohan's Catalyst" class="w-full h-auto block" loading="lazy">
+<img src="/images/android-16.png" alt="Android 16 — Pacifist Android / Gohan's Catalyst" title="Android 16 — Pacifist Android / Gohan's Catalyst" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Android 16</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Pacifist Android / Gohan's Catalyst</p>
@@ -1041,7 +1041,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/jaco.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/jaco.png" alt="Jaco — Galactic Patrolman" title="Jaco — Galactic Patrolman" class="w-full h-auto block" loading="lazy">
+<img src="/images/jaco.png" alt="Jaco — Galactic Patrolman" title="Jaco — Galactic Patrolman" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Jaco</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Galactic Patrolman</p>
@@ -1049,7 +1049,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/oolong.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/oolong.png" alt="Oolong — Shapeshifting Pig / Reluctant Hero" title="Oolong — Shapeshifting Pig / Reluctant Hero" class="w-full h-auto block" loading="lazy">
+<img src="/images/oolong.png" alt="Oolong — Shapeshifting Pig / Reluctant Hero" title="Oolong — Shapeshifting Pig / Reluctant Hero" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Oolong</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Shapeshifting Pig / Reluctant Hero</p>
@@ -1057,7 +1057,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/pu-ar.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/puar.png" alt="Pu'ar — Shapeshifting Cat / Yamcha's Companion" title="Pu'ar — Shapeshifting Cat / Yamcha's Companion" class="w-full h-auto block" loading="lazy">
+<img src="/images/puar.png" alt="Pu'ar — Shapeshifting Cat / Yamcha's Companion" title="Pu'ar — Shapeshifting Cat / Yamcha's Companion" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Pu'ar</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Shapeshifting Cat / Yamcha's Companion</p>
@@ -1065,7 +1065,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/launch.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/launch.png" alt="Launch — Split-Personality Fugitive" title="Launch — Split-Personality Fugitive" class="w-full h-auto block" loading="lazy">
+<img src="/images/launch.png" alt="Launch — Split-Personality Fugitive" title="Launch — Split-Personality Fugitive" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Launch</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Split-Personality Fugitive</p>
@@ -1073,7 +1073,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/ox-king.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/ox-king.png" alt="Ox-King — Fire Mountain King / Chi-Chi's Father" title="Ox-King — Fire Mountain King / Chi-Chi's Father" class="w-full h-auto block" loading="lazy">
+<img src="/images/ox-king.png" alt="Ox-King — Fire Mountain King / Chi-Chi's Father" title="Ox-King — Fire Mountain King / Chi-Chi's Father" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Ox-King</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Fire Mountain King / Chi-Chi's Father</p>
@@ -1081,7 +1081,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/grandpa-gohan.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/grandpa-gohan.png" alt="Grandpa Gohan — Goku's Adoptive Grandfather" title="Grandpa Gohan — Goku's Adoptive Grandfather" class="w-full h-auto block" loading="lazy">
+<img src="/images/grandpa-gohan.png" alt="Grandpa Gohan — Goku's Adoptive Grandfather" title="Grandpa Gohan — Goku's Adoptive Grandfather" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Grandpa Gohan</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Goku's Adoptive Grandfather</p>
@@ -1089,7 +1089,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/vegito.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/vegito.png" alt="Vegito — Potara Fusion of Goku and Vegeta" title="Vegito — Potara Fusion of Goku and Vegeta" class="w-full h-auto block" loading="lazy">
+<img src="/images/vegito.png" alt="Vegito — Potara Fusion of Goku and Vegeta" title="Vegito — Potara Fusion of Goku and Vegeta" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Vegito</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Potara Fusion of Goku and Vegeta</p>
@@ -1097,7 +1097,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/gogeta.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/gogeta.png" alt="Gogeta — Fusion Dance of Goku and Vegeta" title="Gogeta — Fusion Dance of Goku and Vegeta" class="w-full h-auto block" loading="lazy">
+<img src="/images/gogeta.png" alt="Gogeta — Fusion Dance of Goku and Vegeta" title="Gogeta — Fusion Dance of Goku and Vegeta" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Gogeta</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Fusion Dance of Goku and Vegeta</p>
@@ -1105,7 +1105,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/nuova-shenron.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/shenron.png" alt="Nuova Shenron — Four-Star Shadow Dragon / Honorable Warrior" title="Nuova Shenron — Four-Star Shadow Dragon / Honorable Warrior" class="w-full h-auto block" loading="lazy">
+<img src="/images/nuova-shenron.png" alt="Nuova Shenron — Four-Star Shadow Dragon / Honorable Warrior" title="Nuova Shenron — Four-Star Shadow Dragon / Honorable Warrior" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Nuova Shenron</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Four-Star Shadow Dragon / Honorable Warrior</p>
@@ -1113,7 +1113,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/eis-shenron.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/shenron.png" alt="Eis Shenron — Three-Star Shadow Dragon / Ice Dragon" title="Eis Shenron — Three-Star Shadow Dragon / Ice Dragon" class="w-full h-auto block" loading="lazy">
+<img src="/images/eis-shenron.png" alt="Eis Shenron — Three-Star Shadow Dragon / Ice Dragon" title="Eis Shenron — Three-Star Shadow Dragon / Ice Dragon" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Eis Shenron</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Three-Star Shadow Dragon / Ice Dragon</p>
@@ -1121,7 +1121,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/general-rilldo.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/general-rilldo.png" alt="General Rilldo — Machine Mutant General" title="General Rilldo — Machine Mutant General" class="w-full h-auto block" loading="lazy">
+<img src="/images/general-rilldo.png" alt="General Rilldo — Machine Mutant General" title="General Rilldo — Machine Mutant General" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">General Rilldo</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Machine Mutant General</p>
@@ -1129,7 +1129,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/ribrianne.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/ribrianne.png" alt="Ribrianne — Warrior of Love / Universe 2" title="Ribrianne — Warrior of Love / Universe 2" class="w-full h-auto block" loading="lazy">
+<img src="/images/ribrianne.png" alt="Ribrianne — Warrior of Love / Universe 2" title="Ribrianne — Warrior of Love / Universe 2" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Ribrianne</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Warrior of Love / Universe 2</p>
@@ -1137,7 +1137,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/anilaza.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/anilaza.png" alt="Anilaza — Ultimate Universe 3 Fusion" title="Anilaza — Ultimate Universe 3 Fusion" class="w-full h-auto block" loading="lazy">
+<img src="/images/anilaza.png" alt="Anilaza — Ultimate Universe 3 Fusion" title="Anilaza — Ultimate Universe 3 Fusion" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Anilaza</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Ultimate Universe 3 Fusion</p>
@@ -1145,7 +1145,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/bardock-dbs.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/bardock-dbs.png" alt="Bardock (DBS) — Saiyan Father / Compassionate Warrior" title="Bardock (DBS) — Saiyan Father / Compassionate Warrior" class="w-full h-auto block" loading="lazy">
+<img src="/images/bardock-dbs.png" alt="Bardock (DBS) — Saiyan Father / Compassionate Warrior" title="Bardock (DBS) — Saiyan Father / Compassionate Warrior" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Bardock (DBS)</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Saiyan Father / Compassionate Warrior</p>
@@ -1153,7 +1153,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/gine.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/gine.png" alt="Gine — Gentle Saiyan Mother" title="Gine — Gentle Saiyan Mother" class="w-full h-auto block" loading="lazy">
+<img src="/images/gine.png" alt="Gine — Gentle Saiyan Mother" title="Gine — Gentle Saiyan Mother" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Gine</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Gentle Saiyan Mother</p>
@@ -1161,7 +1161,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/tarble.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/tarble.png" alt="Tarble — Vegeta's Younger Brother" title="Tarble — Vegeta's Younger Brother" class="w-full h-auto block" loading="lazy">
+<img src="/images/tarble.png" alt="Tarble — Vegeta's Younger Brother" title="Tarble — Vegeta's Younger Brother" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Tarble</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Vegeta's Younger Brother</p>
@@ -1169,7 +1169,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/king-vegeta.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/king-vegeta.png" alt="King Vegeta — Last King of the Saiyans" title="King Vegeta — Last King of the Saiyans" class="w-full h-auto block" loading="lazy">
+<img src="/images/king-vegeta.png" alt="King Vegeta — Last King of the Saiyans" title="King Vegeta — Last King of the Saiyans" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">King Vegeta</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Last King of the Saiyans</p>
@@ -1177,7 +1177,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/paragus.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/paragus.png" alt="Paragus — Broly's Manipulative Father" title="Paragus — Broly's Manipulative Father" class="w-full h-auto block" loading="lazy">
+<img src="/images/paragus.png" alt="Paragus — Broly's Manipulative Father" title="Paragus — Broly's Manipulative Father" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Paragus</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Broly's Manipulative Father</p>
@@ -1185,7 +1185,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/cheelai.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/cheelai.png" alt="Cheelai — Frieza Force Deserter / Broly's Friend" title="Cheelai — Frieza Force Deserter / Broly's Friend" class="w-full h-auto block" loading="lazy">
+<img src="/images/cheelai.png" alt="Cheelai — Frieza Force Deserter / Broly's Friend" title="Cheelai — Frieza Force Deserter / Broly's Friend" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Cheelai</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Frieza Force Deserter / Broly's Friend</p>
@@ -1193,7 +1193,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/monaka.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/monaka.png" alt="Monaka — Beerus's Pretend Champion" title="Monaka — Beerus's Pretend Champion" class="w-full h-auto block" loading="lazy">
+<img src="/images/monaka.png" alt="Monaka — Beerus's Pretend Champion" title="Monaka — Beerus's Pretend Champion" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Monaka</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Beerus's Pretend Champion</p>
@@ -1201,7 +1201,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/fortuneteller-baba.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/fortuneteller-baba.png" alt="Fortuneteller Baba — All-Seeing Crone / Afterlife Bridge" title="Fortuneteller Baba — All-Seeing Crone / Afterlife Bridge" class="w-full h-auto block" loading="lazy">
+<img src="/images/fortuneteller-baba.png" alt="Fortuneteller Baba — All-Seeing Crone / Afterlife Bridge" title="Fortuneteller Baba — All-Seeing Crone / Afterlife Bridge" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Fortuneteller Baba</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">All-Seeing Crone / Afterlife Bridge</p>
@@ -1209,7 +1209,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/nam.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/nam.png" alt="Nam — Devout Tournament Fighter" title="Nam — Devout Tournament Fighter" class="w-full h-auto block" loading="lazy">
+<img src="/images/nam.png" alt="Nam — Devout Tournament Fighter" title="Nam — Devout Tournament Fighter" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Nam</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Devout Tournament Fighter</p>
@@ -1217,7 +1217,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/characters/king-chappa.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/king-chappa.png" alt="King Chappa — Legendary Tournament Champion" title="King Chappa — Legendary Tournament Champion" class="w-full h-auto block" loading="lazy">
+<img src="/images/king-chappa.png" alt="King Chappa — Legendary Tournament Champion" title="King Chappa — Legendary Tournament Champion" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">King Chappa</h3>
 <p class="text-xs text-gray-300 mt-0.5 text-shadow">Legendary Tournament Champion</p>
@@ -1231,11 +1231,11 @@ img[src$=".png"]{mix-blend-mode:normal}
 
 
 
-<footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#374151">
+<footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#e5e7eb">
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
-<img src="/images/bulma.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
+<img src="/images/goku.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold">Dragon <span class="text-accent">Ball Wiki</span></span>
 </div>
 <p class="text-sm text-textSecondary leading-relaxed">Expert anime character guides, power system breakdowns, and arc analyses. Part of the Anime Hub Network.</p>
@@ -1251,13 +1251,22 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-4">More Anime Wikis</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="https://onepiece.jycsd.com" class="hover:text-accent transition-colors">One Piece</a></li>
-<li><a href="https://naruto.jycsd.com" class="hover:text-accent transition-colors">Naruto</a></li>
-<li><a href="https://demonslayer.jycsd.com" class="hover:text-accent transition-colors">Demon Slayer</a></li>
-<li><a href="https://anime.jycsd.com" class="hover:text-accent transition-colors">All Anime Wikis</a></li>
-</ul>
+<h4 class="font-bold mb-4">Our Network</h4>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— Network —</option>
+    <option value="https://www.jycsd.com">Myers Media</option>
+    <option value="https://games.jycsd.com">Game Guides</option>
+    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+</select>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— More Sites —</option>
+    <option value="https://healthy.jycsd.com">HealthyEats</option>
+    <option value="https://pets.jycsd.com">PetCare Hub</option>
+    <option value="https://home.jycsd.com">HomeJoy</option>
+    <option value="https://finance.jycsd.com">MoneyWise</option>
+    <option value="https://tech.jycsd.com">TechNest</option>
+    <option value="https://travel.jycsd.com">TripRoute</option>
+</select>
 </div>
 <div>
 <h4 class="font-bold mb-4">About</h4>
@@ -1268,7 +1277,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 </div>
-<div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#374151">
+<div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#e5e7eb">
 <p>&copy; 2026 Dragon Ball Wiki by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All anime characters and trademarks belong to their respective owners.</p>
 </div>
 </footer>

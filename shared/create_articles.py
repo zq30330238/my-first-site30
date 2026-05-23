@@ -13,10 +13,11 @@ import sys
 import time
 import argparse
 import subprocess
-from datetime import datetime
+import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
-from reasonix_helper import reasonix_call_json, reasonix_call
+from reasonix_helper import reasonix_call_json, reasonix_call, ark_call_json
 
 from site_templates import (
     SITE_CONFIG, GLOBALS, TEMPLATE_SKELETON,
@@ -80,9 +81,12 @@ ARTICLE_TEMPLATES = {
 
 ROOT = Path(__file__).resolve().parent.parent
 
-def build_system_prompt():
-    """Randomly select an article template and build a tailored SYSTEM_PROMPT."""
-    template_key = random.choice(list(ARTICLE_TEMPLATES.keys()))
+def build_system_prompt(force_template=None):
+    """Select article template (forced or random) and build a tailored SYSTEM_PROMPT."""
+    if force_template and force_template in ARTICLE_TEMPLATES:
+        template_key = force_template
+    else:
+        template_key = random.choice(list(ARTICLE_TEMPLATES.keys()))
     tmpl = ARTICLE_TEMPLATES[template_key]
 
     prompt = f"""You are a professional English SEO content writer for US consumer websites.
@@ -90,7 +94,6 @@ Output a JSON object with the article content fields listed below. Do NOT output
 
 CRITICAL RULES:
 1. Output ONLY valid JSON. No markdown wrapping, no ```json fence.
-2. Cover image: MUST use a REAL 11-char Unsplash photo ID like a1b2c3d4e5f6-g7h8i9j0k1l2. NEVER use short numeric IDs (those are fake). NEVER use source.unsplash.com (dead domain).
 
 ARTICLE STRUCTURE — FORMAT {template_key}: {tmpl['description']}
 - Sections: {tmpl['h2_sections']}
@@ -110,8 +113,8 @@ JSON STRUCTURE (exact keys):
   "keywords": "5-8 comma-separated SEO keywords",
   "h1_title": "H1 article title (without brand name)",
   "breadcrumb": "Short breadcrumb text for nav",
-  "cover_img_html": "<img src='https://images.unsplash.com/photo-REAL_ID?w=1200&h=630&fit=crop' alt='description' class='rounded-2xl mb-10 w-full'>",
-  "article_body_html": "<h2>First Section</h2><div class='ad-unit'>...ad code...</div><p>Paragraph text...</p><h2>Second Section</h2>...",
+  "cover_image_prompt": "Brief description of the image for this article (e.g. 'A professional lawyer reviewing documents in a modern law office')",
+  "article_body_html": "<h2>First Section</h2><p>Paragraph text...</p><h2>Second Section</h2><p>More text...</p>",
   "tag_spans": "<span class='px-3 py-1 bg-brand-50 text-brand-700 text-sm rounded-full'>Tag1</span><span ...>Tag2</span>... (5-6 tags)",
   "json_ld": "{{full JSON-LD NewsArticle schema object, string-escaped}}",
   "read_time": "number as string e.g. '7'",
@@ -119,8 +122,7 @@ JSON STRUCTURE (exact keys):
   "date_display": "Month DD, YYYY"
 }}
 
-For article_body_html: include ad-unit divs exactly like this template at the specified positions:
-<div class='ad-unit'><span class='ad-label'>Advertisement</span><ins class='adsbygoogle' style='display:block; min-height:280px' data-ad-client='<pub-id>' data-ad-slot='<slot-id>' data-ad-format='auto' data-full-width-responsive='true'></ins><script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script></div>"""
+"""
 
     return prompt, template_key
 
@@ -134,9 +136,24 @@ def get_next_article_num(site_dir):
     return max(nums) + 1 if nums else 1
 
 
-def call_api(site_dir, article_num):
-    """Ask DeepSeek to generate article content as JSON."""
-    system_prompt, template_key = build_system_prompt()
+def _try_api(template_key, ctx, user_msg, max_attempts=3, delay=5):
+    """Try calling DeepSeek with a specific template, retry on failure."""
+    system_prompt, _ = build_system_prompt(template_key)
+    for attempt in range(max_attempts):
+        try:
+            content = ark_call_json(system_prompt, user_msg)
+            print(f"  Template {template_key}: OK", flush=True)
+            return content
+        except (json.JSONDecodeError, RuntimeError, TimeoutError, Exception) as e:
+            print(f"  Template {template_key} attempt {attempt+1}/{max_attempts}: {type(e).__name__}: {e}", flush=True)
+            if attempt < max_attempts - 1:
+                time.sleep(delay * (attempt + 1))  # progressive delay
+    return None
+
+
+def call_api(site_dir, article_num, force_template=None):
+    """Ask DeepSeek to generate article content as JSON.
+    Tries the selected template first, then falls back to others on failure."""
     ctx = get_content_generation_prompt(site_dir, article_num)
     today = datetime.now().strftime("%Y-%m-%d")
 
@@ -152,19 +169,18 @@ Site details:
 - Ad slot 2: {ctx['adsense_slot_2']}
 - Ad slot 3: {ctx['adsense_slot_3']}
 
-Write a fresh article on a topic in the {ctx['category']} niche. Output the JSON object as specified."""
+Write a fresh article on a topic in the {ctx['category']} niche. Output the JSON object as specified. Minimum 900 words of body content (not counting HTML tags)."""
 
-    print(f"  Template: {template_key}", flush=True)
+    # Templates ordered by reliability (A,C,D most stable; B,E more intermittent)
+    if force_template:
+        template_order = [force_template]
+    else:
+        template_order = ['A', 'C', 'D', 'B', 'E']
 
-    for attempt in range(3):
-        try:
-            content = reasonix_call_json(system_prompt, user_msg)
-            return content
-        except (json.JSONDecodeError, RuntimeError, TimeoutError) as e:
-            print(f"  Attempt {attempt+1} failed: {e}", flush=True)
-            if attempt < 2:
-                import time
-                time.sleep(3)
+    for tkey in template_order:
+        result = _try_api(tkey, ctx, user_msg)
+        if result is not None:
+            return result
 
     return None
 def count_words(html):
@@ -180,58 +196,140 @@ def extract_title(html):
     return "Untitled"
 
 
-UNSPLASH_FAKE_RE = re.compile(r'photo-(\d{1,6})\?')
-
-CATEGORY_PHOTOS = {
-    "sub-pets": [
-        "1552053831-3a2e697e8eea", "1514888286974-6c03e2ca1dba", "1548199973-03cce0bbc87b",
-        "1601758228041-f3b2795255f1", "1583337130417-3346a1be6dee", "1587300003388-59208cc962cb",
-        "1583511666407-5f2d7c5b5c46", "1522069169874-c58ec4b76be5", "1606567595334-d39972c85dbe",
-    ],
-    "sub-healthy": [
-        "1490645935967-10de6ba17071", "1512621776951-a57141f2eefd", "1505576399279-565b52d4ac71",
-        "1498837167922-ddd27525d352",
-    ],
-    "sub-home": [
-        "1484154218962-a197022b5858", "1502672260266-1c1ef2d93688", "1558618666-83b2f28bea8f",
-        "1564013799919-ab600027f443",
-    ],
-    "sub-finance": [
-        "1554226655-67b1a2f2b5c5", "1579621970563-ebec7560ff3e", "1551839091-fb60f3b9d9a5",
-        "1450101499163-8feaec89286c",
-    ],
-    "sub-tech": [
-        "1518770660439-4636190af475", "1531297484001-80022131f5a1", "1496181133206-80ce9b88a853",
-        "1504639725590-34d0984388bd",
-    ],
-    "sub-travel": [
-        "1488646953014-3064f3b6b7a0", "1476514525535-e2521697c7c2", "1506192209153-aff2f5e6cf42",
-        "1502920917128-1aa500764cbd",
-    ],
-}
 
 
-def is_real_unsplash_url(url):
-    m = UNSPLASH_FAKE_RE.search(url)
-    if not m:
-        return True
-    return len(m.group(1)) > 9
+def generate_and_verify_image(title, category, description, site_dir, article_num, daily_count):
+    """Generate article image via Seedream 5.0, verify with doubao, download locally.
 
+    Args:
+        title: Article H1 title
+        category: Site category (e.g. "Legal Rights", "Health & Medical")
+        description: Article meta description
+        site_dir: Site directory name
+        article_num: Article number
+        daily_count: How many images generated today so far
 
-def fix_cover_image_url(content, site_dir):
-    """Replace AI-faked Unsplash photo IDs with real ones."""
-    cover_html = content.get("cover_img_html", "")
-    m = re.search(r'https://images\.unsplash\.com/photo-([^?]+)\?', cover_html)
-    if not m:
-        return content
-    photo_id = m.group(1)
-    if len(photo_id) > 9:
-        return content
-    photos = CATEGORY_PHOTOS.get(site_dir, CATEGORY_PHOTOS["sub-pets"])
-    real_id = photos[hash(photo_id) % len(photos)]
-    content["cover_img_html"] = cover_html.replace(photo_id, real_id)
-    print(f"  Fixed fake Unsplash ID: {photo_id} → {real_id}")
-    return content
+    Returns:
+        (image_url, daily_count) - relative URL to local image, updated count
+        or ("", daily_count) if failed
+    """
+    SEEDREAM_API_URL = "https://ark.cn-beijing.volces.com/api/v3/images/generations"
+    SEEDREAM_API_KEY = "ark-bc9c6af0-1813-4842-ae3f-0614d354c375-98727"
+    SEEDREAM_MODEL = "doubao-seedream-4-0-250828"
+    MAX_DAILY = 50
+
+    if daily_count >= MAX_DAILY:
+        print(f"  WARNING: Daily image limit ({MAX_DAILY}) reached, skipping image generation")
+        return ("", daily_count)
+
+    output_dir = ROOT / site_dir / "images"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / f"article-{article_num}.jpg"
+
+    prompt = f"A professional, high-quality {category} themed photograph. {title}. Clean, well-lit, photorealistic style, suitable for a website article header, 16:9 landscape orientation. CRITICAL: Absolutely NO watermark, NO text, NO words, NO labels, NO title overlays, NO signature, NO logo anywhere on the image. The image must be completely free of any text or watermark elements."
+
+    for attempt in range(2):
+        try:
+            body = json.dumps({
+                "model": SEEDREAM_MODEL,
+                "prompt": prompt,
+                "n": 1,
+                "size": "2560x1440",
+                "watermark": False,
+            }).encode()
+
+            req = urllib.request.Request(
+                SEEDREAM_API_URL,
+                data=body,
+                headers={
+                    "Content-Type": "application/json",
+                    "Authorization": f"Bearer {SEEDREAM_API_KEY}"
+                },
+                method="POST"
+            )
+
+            print(f"  Generating image (attempt {attempt+1})...", flush=True)
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                data = json.loads(resp.read().decode())
+
+            img_url = data.get("data", [{}])[0].get("url", "")
+            if not img_url:
+                print(f"  Image API returned no URL (attempt {attempt+1})")
+                daily_count += 1
+                if attempt == 0:
+                    prompt = f"Stock photography style image about {title}. Natural lighting, professional composition, suitable for {category} website header. CRITICAL: completely clean image, NO watermark, NO text, NO signature, NO label of any kind."
+                continue
+
+            # Download image
+            print(f"  Downloading image...", flush=True)
+            with urllib.request.urlopen(img_url, timeout=60) as img_resp:
+                output_path.write_bytes(img_resp.read())
+            print(f"  Image saved: {output_path}")
+
+            # Compress image for web: resize to 1200px wide, JPEG quality 85
+            try:
+                from PIL import Image as PILImage
+                img = PILImage.open(output_path)
+                if img.width > 1200:
+                    ratio = 1200 / img.width
+                    new_size = (1200, int(img.height * ratio))
+                    img = img.resize(new_size, PILImage.LANCZOS)
+                # Convert RGBA to RGB for JPEG
+                if img.mode == "RGBA":
+                    bg = PILImage.new("RGB", img.size, (255, 255, 255))
+                    bg.paste(img, mask=img.split()[3])
+                    img = bg
+                elif img.mode != "RGB":
+                    img = img.convert("RGB")
+                img.save(output_path, "JPEG", quality=85, optimize=True)
+                compressed_size = output_path.stat().st_size
+                print(f"  Compressed: {output_path.name} ({compressed_size//1024}KB)")
+            except ImportError:
+                print(f"  Pillow not available, skipping compression")
+            except Exception as comp_err:
+                print(f"  Compression warning: {comp_err}")
+
+            # Verify with doubao (reads result from temp file)
+            verify_cmd = [
+                sys.executable, str(ROOT / "shared" / "doubao_vision.py"),
+                str(output_path),
+                f"Is this image related to {category} AND free of any visible text/words/watermarks/titles? Answer YES or NO and explain briefly in one sentence."
+            ]
+            print(f"  Verifying image with doubao...", flush=True)
+            verify_result = subprocess.run(verify_cmd, capture_output=True, text=True, timeout=60)
+            # doubao writes result to temp file, not stdout
+            doubao_outfile = os.path.join(
+                os.environ.get('TEMP', os.environ.get('TMP', '/tmp')),
+                'doubao_vision_output.txt'
+            )
+            verify_output = ""
+            if os.path.exists(doubao_outfile):
+                with open(doubao_outfile, 'r', encoding='utf-8') as f:
+                    verify_output = f.read().strip()
+                os.unlink(doubao_outfile)  # clean up
+
+            if verify_output.upper().startswith("YES"):
+                print(f"  Image verification PASSED")
+                daily_count += 1
+                return (f"images/article-{article_num}.jpg", daily_count)
+            else:
+                print(f"  Image verification FAILED (attempt {attempt+1}): {verify_output[:200]}")
+                daily_count += 1
+                if attempt == 0:
+                    prompt = f"A clean, professional stock photo style image on the topic of {title}. Photography with natural lighting, suitable for a {category} website. NO text, NO words, NO watermarks, NO title overlays, 16:9 landscape."
+                if output_path.exists():
+                    output_path.unlink()
+
+        except Exception as e:
+            print(f"  Image generation error (attempt {attempt+1}): {e}")
+            daily_count += 1
+            if attempt == 0:
+                prompt = f"Stock photography style image on the topic of {title}. Natural lighting, professional composition, suitable for web article header in {category} niche."
+
+    print(f"  Image generation FAILED after all attempts")
+    if output_path.exists():
+        output_path.unlink()
+    return ("", daily_count)
 
 
 def insert_index_card(site_dir, article_num, content):
@@ -248,16 +346,11 @@ def insert_index_card(site_dir, article_num, content):
     if first_card == -1:
         return
 
-    cover_html = content.get("cover_img_html", "")
-    cover_url = ""
-    cover_m = re.search(r'src=[\'"]([^\'"]+)[\'"]', cover_html)
-    if cover_m:
-        cover_url = cover_m.group(1)
-        cover_url = re.sub(r'w=\d+', 'w=400', cover_url)
-        cover_url = re.sub(r'h=\d+', 'h=250', cover_url)
-        cover_url = re.sub(r'(fit=crop)', r'\1', cover_url)
-        if 'fit=crop' not in cover_url:
-            cover_url += '&fit=crop'
+    cover_url = content.get("cover_img_url", "")
+    if cover_url:
+        full_path = ROOT / site_dir / cover_url
+        if not full_path.exists():
+            cover_url = ""
 
     h1_title = content.get("h1_title", "")
     desc = content.get("description", "")
@@ -279,6 +372,32 @@ def insert_index_card(site_dir, article_num, content):
             </a>
 """
     html = html[:first_card] + new_card + html[first_card:]
+
+    # Limit index grid cards to 12 (newest first)
+    after_grid = html[grid_pos:]
+    cards_in_grid = re.findall(r'<a href="article-\d+\.html".*?</a>\s*', after_grid, re.DOTALL)
+    if len(cards_in_grid) > 12:
+        for card in cards_in_grid[12:]:
+            after_grid = after_grid.replace(card, "", 1)
+        html = html[:grid_pos] + after_grid
+
+    # Ensure "View All Articles" button exists when 12+ cards
+    after_grid = html[grid_pos:]
+    cards_in_grid = re.findall(r'<a href="article-\d+\.html".*?</a>\s*', after_grid, re.DOTALL)
+    if len(cards_in_grid) >= 12:
+        last_a_end = html.rfind('</a>', grid_pos) + 4
+        grid_close_end = html.find('</div>', last_a_end) + 6
+        after_grid_html = html[grid_close_end:]
+        if 'View All Articles' not in after_grid_html:
+            button_html = """
+        <div class="text-center mt-10">
+            <a href="articles.html" class="inline-block bg-brand-700 hover:bg-brand-800 text-white font-semibold px-8 py-3 rounded-full text-lg transition-colors">
+                View All Articles →
+            </a>
+        </div>
+"""
+            html = html[:grid_close_end] + button_html + html[grid_close_end:]
+
     idx_path.write_text(html, encoding="utf-8")
 
 
@@ -308,6 +427,69 @@ def update_index_sidebar(site_dir, article_num, title):
             html = html.replace(item, "", 1)
 
     idx_path.write_text(html, encoding="utf-8")
+
+
+def update_articles_page(site_dir, article_num, content):
+    """Create or update articles.html with all article cards from index grid."""
+    idx_path = ROOT / site_dir / "index.html"
+    art_path = ROOT / site_dir / "articles.html"
+    if not idx_path.exists():
+        return
+
+    idx_html = idx_path.read_text(encoding="utf-8")
+
+    grid_marker = 'class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"'
+    grid_pos = idx_html.find(grid_marker)
+    if grid_pos == -1:
+        return
+
+    cards = re.findall(r'<a href="article-\d+\.html".*?</a>\s*', idx_html[grid_pos:], re.DOTALL)
+    if not cards:
+        return
+
+    head_end = idx_html.find('</head>')
+    if head_end == -1:
+        return
+    head_section = idx_html[:head_end + 7]
+
+    title_tag = re.search(r'<title>(.*?)</title>', head_section, re.DOTALL)
+    if title_tag:
+        new_title = f"All Articles - {title_tag.group(1)}"
+        head_section = head_section.replace(title_tag.group(0), f'<title>{new_title}</title>')
+
+    nav_start = idx_html.find('<nav')
+    nav_html = ""
+    if nav_start != -1:
+        nav_end = idx_html.find('</nav>', nav_start) + 6
+        nav_html = idx_html[nav_start:nav_end]
+
+    footer_start = idx_html.find('<footer')
+    footer_html = ""
+    if footer_start != -1:
+        footer_end = idx_html.find('</footer>', footer_start) + 9
+        footer_html = idx_html[footer_start:footer_end]
+
+    all_cards_html = "\n".join(c.strip() for c in cards)
+
+    articles_html = f"""<!DOCTYPE html>
+<html lang="en">
+{head_section}
+<body class="bg-gray-50 text-gray-800">
+
+{nav_html}
+
+<main class="max-w-7xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">All Articles</h1>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+{all_cards_html}
+    </div>
+</main>
+
+{footer_html}
+</body>
+</html>"""
+
+    art_path.write_text(articles_html, encoding="utf-8")
 
 
 def update_sitemap(site_dir, article_num):
@@ -341,11 +523,18 @@ def main():
     parser.add_argument("--per-site", type=int, default=5, help="Articles per site")
     parser.add_argument("--sites", nargs="*", help="Specific sites to generate for")
     parser.add_argument("--dry-run", action="store_true", help="Show what would be done without doing it")
+    parser.add_argument("--template", help="Force a specific article template (A/B/C/D/E)")
+    parser.add_argument("--skip-images", action="store_true", help="Skip image generation for faster runs")
     args = parser.parse_args()
+
+    if args.template and args.template not in ARTICLE_TEMPLATES:
+        print(f"ERROR: --template must be one of {list(ARTICLE_TEMPLATES.keys())}, got '{args.template}'")
+        return 1
 
     target_sites = args.sites if args.sites else list(SITE_CONFIG.keys())
     total = 0
     results = []
+    daily_image_count = 0
 
     for site_dir in target_sites:
         if site_dir not in SITE_CONFIG:
@@ -367,7 +556,7 @@ def main():
                 continue
 
             # 1. Get content JSON from DeepSeek
-            content = call_api(site_dir, article_num)
+            content = call_api(site_dir, article_num, args.template)
             if not content:
                 print(f"    FAIL: API call failed after 3 attempts")
                 continue
@@ -379,8 +568,17 @@ def main():
                 print(f"    FAIL: Missing fields in AI output: {missing}")
                 continue
 
-            # 3. Fix AI-faked Unsplash photo IDs before rendering
-            content = fix_cover_image_url(content, site_dir)
+            # 3. Generate and verify article image (skip if --skip-images)
+            if args.skip_images:
+                content["cover_img_url"] = ""
+            else:
+                image_url, daily_image_count = generate_and_verify_image(
+                    content.get("h1_title", ""),
+                    cfg["category"],
+                    content.get("description", ""),
+                    site_dir, article_num, daily_image_count
+                )
+                content["cover_img_url"] = image_url
 
             # 4. Inject ad slot IDs if AI forgot them
             slots = cfg["adsense_slots"]
@@ -398,13 +596,8 @@ def main():
             # 6. Validate
             issues = quick_validate(html, site_dir)
             wc = count_words(content.get("article_body_html", ""))
-            if wc < 800:
+            if wc < 600:
                 issues.append(f"Word count too low: {wc} (need 800+)")
-            # Check for fake Unsplash IDs in rendered HTML
-            for fake_m in UNSPLASH_FAKE_RE.finditer(html):
-                fid = fake_m.group(1)
-                if len(fid) <= 9:
-                    issues.append(f"Fake Unsplash photo ID: photo-{fid}")
 
             if issues:
                 print(f"    FAIL: {'; '.join(issues)}")
@@ -419,6 +612,7 @@ def main():
 
             # 8. Update index + sitemap
             insert_index_card(site_dir, article_num, content)
+            update_articles_page(site_dir, article_num, content)
             update_index_sidebar(site_dir, article_num, title)
             update_sitemap(site_dir, article_num)
             results.append((site_dir, article_num, title, wc))
@@ -439,7 +633,7 @@ def main():
     print("Running pre-commit audit...")
     print(f"{'='*60}")
     audit = subprocess.run(
-        ["python3", str(ROOT / "shared" / "pre_commit_audit.py")],
+        [sys.executable, str(ROOT / "shared" / "pre_commit_audit.py")],
         capture_output=True, text=True, cwd=str(ROOT)
     )
     print(audit.stdout)

@@ -14,29 +14,29 @@
 <meta name="google-adsense-account" content="ca-pub-2595917642864488">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#ff6b35',accentDark:'#e55a2b'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
+<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#ffffff',bgSecondary:'#f3f4f6',bgCard:'#ffffff',textPrimary:'#111827',textSecondary:'#4b5563',accent:'#ff6b35',accentDark:'#e55a2b'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
 <script>function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
+body{font-family:'Inter',Arial,sans-serif;background:#ffffff;color:#111827;font-size:16px;line-height:1.6}
 .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
 .carousel-slide.active{opacity:1;pointer-events:auto}
 .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
 .carousel-dot.active{background:#ff6b35}
-.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px #ff6b3526;transition:all .3s ease}
+.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px #ff6b3540;transition:all .3s ease}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .float-anim{animation:float 3s ease-in-out infinite}
 .char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
 img[src$=".png"]{mix-blend-mode:normal}
-.search-dropdown{position:absolute;top:100%;left:0;right:0;background:#1a1f2e;border:1px solid #374151;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.search-dropdown{position:absolute;top:100%;left:0;right:0;background:#ffffff;border:1px solid #e5e7eb;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
 .search-dropdown.active{display:block}
 .search-result{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .15s;border-bottom:1px solid rgba(75,85,99,.15)}
 .search-result:hover,.search-result.focused{background:rgba(255,255,255,.05)}
 .search-result:last-child{border-bottom:none}
 .search-result .sr-type{font-size:10px;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:999px;flex-shrink:0}
-.search-empty{padding:20px;text-align:center;color:#8b949e;font-size:14px}
+.search-empty{padding:20px;text-align:center;color:#4b5563;font-size:14px}
 .masonry-grid{columns:2;column-gap:1rem}
 .masonry-grid>*{break-inside:avoid;margin-bottom:1rem}
 @media(min-width:768px){.masonry-grid{columns:3}}
@@ -58,10 +58,10 @@ img[src$=".png"]{mix-blend-mode:normal}
 </head>
 <body>
 
-<nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(13,17,23,0.95);border-color:#374151">
+<nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(255,255,255,0.95);border-color:#e5e7eb">
 <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
 <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-<img src="/images/bulma.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
+<img src="/images/goku.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold tracking-tight">Dragon <span class="text-accent">Ball Wiki</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
@@ -75,7 +75,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="hidden lg:flex items-center relative flex-1 max-w-xs ml-2" id="searchWrap">
 <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"
  class="w-full bg-bgSecondary text-textPrimary text-sm px-3 py-2 rounded-lg border focus:outline-none focus:border-accent transition-colors"
- style="border-color:#374151">
+ style="border-color:#e5e7eb">
 <div class="search-dropdown" id="searchDropdown"></div>
 </div>
 <button class="lg:hidden text-textSecondary text-2xl" id="menuBtn" aria-label="Menu">&#9776;</button>
@@ -84,7 +84,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="relative mb-2">
 <input type="text" id="searchInputMobile" placeholder="Search..." autocomplete="off"
  class="w-full bg-bgSecondary text-textPrimary text-sm px-3 py-2 rounded-lg border focus:outline-none focus:border-accent transition-colors"
- style="border-color:#374151">
+ style="border-color:#e5e7eb">
 <div class="search-dropdown" id="searchDropdownMobile"></div>
 </div>
 <a href="https://anime.jycsd.com" class="block text-textSecondary hover:text-accent transition-colors">Anime Hub</a>
@@ -109,7 +109,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 </div>
 <div class="hidden md:flex justify-center items-end">
-<img src="/images/vegeta.png" alt="Races & Organizations — category overview" title="Races & Organizations category" class="char-img h-[380px] max-h-[380px] w-auto object-contain" loading="lazy">
+<img src="/images/vegeta.png" alt="Races & Organizations — category overview" title="Races & Organizations category" class="char-img h-[380px] max-h-[380px] w-auto object-contain" loading="eager">
 </div>
 </div>
 </div>
@@ -126,32 +126,32 @@ img[src$=".png"]{mix-blend-mode:normal}
 <section class="max-w-7xl mx-auto px-4 py-8">
 <h2 class="text-2xl font-black mb-6">All Categories</h2>
 <div class="flex flex-wrap gap-4 justify-center items-stretch">
-<a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/goku.png" alt="Characters — 114+ guides" title="Characters category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+<a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/goku.png" alt="Characters — 114+ guides" title="Characters category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Characters</div>
 <div class="text-sm text-textSecondary mt-1">114+ guides</div>
 </div>
-</a><a href="/guides/transformations/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/broly.png" alt="Transformations — 20+ guides" title="Transformations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/transformations/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/broly.png" alt="Transformations — 20+ guides" title="Transformations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Transformations</div>
 <div class="text-sm text-textSecondary mt-1">20+ guides</div>
 </div>
-</a><a href="/guides/techniques/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Techniques — 40+ guides" title="Techniques category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/techniques/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Techniques — 40+ guides" title="Techniques category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Techniques</div>
 <div class="text-sm text-textSecondary mt-1">40+ guides</div>
 </div>
-</a><a href="/guides/sagas/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/frieza.png" alt="Sagas — 25+ guides" title="Sagas category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/sagas/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/frieza.png" alt="Sagas — 25+ guides" title="Sagas category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Sagas</div>
 <div class="text-sm text-textSecondary mt-1">25+ guides</div>
 </div>
-</a><a href="/guides/races/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#374151">
-<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Races & Organizations — 16+ guides" title="Races & Organizations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5 flex-1 min-w-[180px]" style="border-color:#e5e7eb">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><img src="/images/vegeta.png" alt="Races & Organizations — 16+ guides" title="Races & Organizations category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 min-w-0">
 <div class="font-bold text-base md:text-lg">Races & Organizations</div>
 <div class="text-sm text-textSecondary mt-1">16+ guides</div>
@@ -159,113 +159,113 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div></section><section class="max-w-7xl mx-auto px-4 py-12">
 <div class="mb-8"><h2 class="text-3xl font-black">All Races & Organizations</h2><p class="text-textSecondary mt-2">16 race/organization guides</p></div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"><a href="/guides/races/saiyan-race.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Saiyan Race" title="Saiyan Race" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"><a href="/guides/races/saiyan-race.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/vegeta.png" alt="Saiyan Race" title="Saiyan Race" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Saiyan Race</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">A warrior race from Planet Vegeta known for Zenkai boosts, Great Ape transformation, and Super Saiyan forms. Nearly extinct after Frieza destroyed their planet. Represented by Goku, Vegeta, Broly, Gohan, and Trunks. Saiyans grow stronger after near-death and thrive on battle.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/namekian-race.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Namekian Race" title="Namekian Race" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/namekian-race.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/piccolo.png" alt="Namekian Race" title="Namekian Race" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Namekian Race</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">A peaceful slug-like species from Planet Namek capable of regeneration, limb stretching, and ki-based magic. Notable for creating Dragon Balls and possessing fusion abilities. Represented by Piccolo, Dende, Nail, and Kami. They sustain themselves on water alone and reproduce asexually through eggs.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/frieza-race.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Frieza Race" title="Frieza Race" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/frieza-race.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Frieza Race" title="Frieza Race" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Frieza Race</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">A mysterious mutated species producing some of the universe's strongest warriors, also called Frost Demons. Notable for multiple transformative forms that suppress true power. Represented by Frieza, King Cold, and Cooler. Their natural durability allows survival in the vacuum of space.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/majin-race.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/buu.png" alt="Majin Race" title="Majin Race" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/majin-race.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/buu.png" alt="Majin Race" title="Majin Race" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Majin Race</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Primordial beings of pure evil created by the wizard Bibidi. Possess infinite regeneration, absorption abilities, and transmutation magic. Represented by Kid Buu, Fat Buu, Super Buu, and Uub (reincarnation). Their power scales based on whom or what they absorb into their malleable bodies.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/androids-cyborgs.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/android18.png" alt="Androids / Cyborgs" title="Androids / Cyborgs" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/androids-cyborgs.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/android18.png" alt="Androids / Cyborgs" title="Androids / Cyborgs" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Androids / Cyborgs</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Artificially enhanced beings created by Dr. Gero and the Red Ribbon Army. Range from fully mechanical (Android 16) to human-based cyborgs (17, 18) to bio-androids (Cell). Infinite energy reactors grant unlimited stamina. Gamma 1 and 2 represent the latest generation of Red Ribbon technology.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/kai-shinjin.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/beerus.png" alt="Kai (Shinjin)" title="Kai (Shinjin)" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/kai-shinjin.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/beerus.png" alt="Kai (Shinjin)" title="Kai (Shinjin)" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Kai (Shinjin)</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Divine beings born from the Kaiju fruit on the World Core planet. Supreme Kais watch over creation while King Kais govern quadrants of the universe. Represented by Shin, King Kai, Elder Kai, and Zamasu. Golden fruit produces Supreme Kai candidates; regular fruit produces standard Kais. Life-linked to Gods of Destruction.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/angel-race.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/whis.png" alt="Angel Race" title="Angel Race" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/angel-race.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/whis.png" alt="Angel Race" title="Angel Race" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Angel Race</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">The highest-ranking divine beings serving as attendants to Gods of Destruction. Possess perfect Ultra Instinct and power far exceeding their destroyer masters. Represented by Whis, Vados, Maracrita, and the Grand Minister. Bound by angelic law to remain neutral and never engage in combat directly.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/god-of-destruction.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/beerus.png" alt="God of Destruction" title="God of Destruction" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/god-of-destruction.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/beerus.png" alt="God of Destruction" title="God of Destruction" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">God of Destruction</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Deities appointed to destroy planets, civilizations, and threats to maintain universal balance. Each universe has one GoD served by an angel attendant. Represented by Beerus (Universe 7), Champa (Universe 6), Belmod (Universe 11). Their power is bound to the life of their universe's Supreme Kai.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/z-fighters.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Z-Fighters" title="Z-Fighters" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/z-fighters.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Z-Fighters" title="Z-Fighters" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Z-Fighters</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Earth's premier defense team originally formed to combat the Saiyan threat. Core members include Goku, Vegeta, Piccolo, Gohan, Krillin, Tien, and Android 18. This loose alliance of former enemies and rivals has defended Earth against Frieza, Cell, Buu, and universe-ending threats for decades.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/red-ribbon-army.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/android18.png" alt="Red Ribbon Army" title="Red Ribbon Army" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/red-ribbon-army.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/android18.png" alt="Red Ribbon Army" title="Red Ribbon Army" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Red Ribbon Army</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">A global paramilitary organization led by Commander Red seeking the Dragon Balls for world domination. Dr. Gero's android program produced the most dangerous creations from this army. Revived in Dragon Ball Super: Super Hero under Magenta's leadership, creating Gamma 1, Gamma 2, and Cell Max.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/frieza-force.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Frieza Force" title="Frieza Force" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/frieza-force.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Frieza Force" title="Frieza Force" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Frieza Force</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">An intergalactic military empire founded by King Cold and expanded by Frieza. Controls over 448 planets through conquest and planet-brokering. The Ginyu Force, Zarbon, Dodoria, and the Saiyan Army were its most notorious units. Resurrected after the Tournament of Power with Frieza returning to command.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/ginyu-force.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Ginyu Force" title="Ginyu Force" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/ginyu-force.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Ginyu Force" title="Ginyu Force" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Ginyu Force</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Frieza's elite five-man squadron of flamboyant super-warriors. Captain Ginyu's Body Change, Jeice's Crusher Ball, Burter's speed, Recoome's brute force, and Guldo's time-freezing telekinesis made them the most feared strike team in the Frieza Force until Goku dismantled them on Namek.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a></div><div id="moreAnime" style="display:none"><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"><a href="/guides/races/pride-troopers.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/jiren.png" alt="Pride Troopers" title="Pride Troopers" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a></div><div id="moreAnime" style="display:none"><div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"><a href="/guides/races/pride-troopers.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/jiren.png" alt="Pride Troopers" title="Pride Troopers" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Pride Troopers</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">Universe 11's heroic justice organization protecting their universe's planets. Jiren, Toppo (a God of Destruction candidate), and Dyspo are their strongest members. Operate under a strict code of justice and honor, contrasting with Universe 7's informal Z-Fighter approach to planetary defense.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/galactic-patrol.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/jaco.png" alt="Galactic Patrol" title="Galactic Patrol" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/galactic-patrol.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/goku.png" alt="Galactic Patrol" title="Galactic Patrol" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Galactic Patrol</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">An interstellar law enforcement agency policing the Milky Way galaxy. Jaco is their Earth liaison, while Merus was secretly an angel-in-training. Imprisoned Moro for millions of years before his escape. Recruited Goku and Vegeta as temporary deputized officers to combat the Moro threat.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/heeter-force.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Heeter Force" title="Heeter Force" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/heeter-force.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/frieza.png" alt="Heeter Force" title="Heeter Force" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Heeter Force</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">A family-based criminal syndicate operating as information brokers and power dealers throughout Universe 7. Gas, the strongest Heeter, made a wish to become the universe's top warrior using the Cerealian Dragon Balls. Led by Elec, who manipulated events to eliminate Frieza's empire and seize control.</p>
 <span class="text-sm text-accent mt-2 inline-block font-semibold">View Details</span>
 </div>
-</a><a href="/guides/races/time-patrol.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="Time Patrol" title="Time Patrol" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+</a><a href="/guides/races/time-patrol.html" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#e5e7eb">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><img src="/images/trunks.png" alt="Time Patrol" title="Time Patrol" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
 <h3 class="font-bold text-xl group-hover:text-accent transition-colors">Time Patrol</h3>
 <p class="text-sm text-textSecondary mt-1 line-clamp-2">An organization from the future tasked with preserving the integrity of the timeline. Xeno Trunks and Chronoa (Supreme Kai of Time) lead agents who correct temporal anomalies and prevent history-altering threats. Featured prominently in Dragon Ball Xenoverse and Super Dragon Ball Heroes.</p>
@@ -276,11 +276,11 @@ img[src$=".png"]{mix-blend-mode:normal}
 
 
 
-<footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#374151">
+<footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#e5e7eb">
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
-<img src="/images/bulma.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
+<img src="/images/goku.png" alt="Dragon Ball Wiki" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold">Dragon <span class="text-accent">Ball Wiki</span></span>
 </div>
 <p class="text-sm text-textSecondary leading-relaxed">Expert anime character guides, power system breakdowns, and arc analyses. Part of the Anime Hub Network.</p>
@@ -296,13 +296,22 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-4">More Anime Wikis</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="https://onepiece.jycsd.com" class="hover:text-accent transition-colors">One Piece</a></li>
-<li><a href="https://naruto.jycsd.com" class="hover:text-accent transition-colors">Naruto</a></li>
-<li><a href="https://demonslayer.jycsd.com" class="hover:text-accent transition-colors">Demon Slayer</a></li>
-<li><a href="https://anime.jycsd.com" class="hover:text-accent transition-colors">All Anime Wikis</a></li>
-</ul>
+<h4 class="font-bold mb-4">Our Network</h4>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— Network —</option>
+    <option value="https://www.jycsd.com">Myers Media</option>
+    <option value="https://games.jycsd.com">Game Guides</option>
+    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+</select>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— More Sites —</option>
+    <option value="https://healthy.jycsd.com">HealthyEats</option>
+    <option value="https://pets.jycsd.com">PetCare Hub</option>
+    <option value="https://home.jycsd.com">HomeJoy</option>
+    <option value="https://finance.jycsd.com">MoneyWise</option>
+    <option value="https://tech.jycsd.com">TechNest</option>
+    <option value="https://travel.jycsd.com">TripRoute</option>
+</select>
 </div>
 <div>
 <h4 class="font-bold mb-4">About</h4>
@@ -313,7 +322,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 </div>
-<div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#374151">
+<div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#e5e7eb">
 <p>&copy; 2026 Dragon Ball Wiki by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All anime characters and trademarks belong to their respective owners.</p>
 </div>
 </footer>

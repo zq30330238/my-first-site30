@@ -1,0 +1,2130 @@
+[
+  {
+    "site": "dragonball-site",
+    "character": "Son Goku",
+    "slug": "son-goku",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Vegeta",
+    "slug": "vegeta",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Gohan",
+    "slug": "gohan",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Piccolo",
+    "slug": "piccolo",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Frieza",
+    "slug": "frieza",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Cell",
+    "slug": "cell",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Majin Buu",
+    "slug": "majin-buu",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Trunks",
+    "slug": "trunks",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Bulma",
+    "slug": "bulma",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Krillin",
+    "slug": "krillin",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Beerus",
+    "slug": "beerus",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Whis",
+    "slug": "whis",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Broly",
+    "slug": "broly",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Jiren",
+    "slug": "jiren",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Tien Shinhan",
+    "slug": "tien-shinhan",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Yamcha",
+    "slug": "yamcha",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Master Roshi",
+    "slug": "master-roshi",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Android 18",
+    "slug": "android-18",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Goten",
+    "slug": "goten",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Chi-Chi",
+    "slug": "chi-chi",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Android 17",
+    "slug": "android-17",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Kid Buu",
+    "slug": "kid-buu",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Videl",
+    "slug": "videl",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Pan",
+    "slug": "pan",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Uub",
+    "slug": "uub",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Future Trunks",
+    "slug": "future-trunks",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Chiaotzu",
+    "slug": "chiaotzu",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Future Gohan",
+    "slug": "future-gohan",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Mr. Satan",
+    "slug": "mr-satan",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Yajirobe",
+    "slug": "yajirobe",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Korin",
+    "slug": "korin",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Shenron",
+    "slug": "shenron",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Raditz",
+    "slug": "raditz",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Nappa",
+    "slug": "nappa",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Bardock",
+    "slug": "bardock",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Captain Ginyu",
+    "slug": "captain-ginyu",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Recoome",
+    "slug": "recoome",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Burter",
+    "slug": "burter",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Jeice",
+    "slug": "jeice",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Guldo",
+    "slug": "guldo",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Zarbon",
+    "slug": "zarbon",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Dodoria",
+    "slug": "dodoria",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Cui",
+    "slug": "cui",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "King Cold",
+    "slug": "king-cold",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Dr. Gero",
+    "slug": "dr-gero",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Android 19",
+    "slug": "android-19",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Babidi",
+    "slug": "babidi",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Dabura",
+    "slug": "dabura",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "King Kai",
+    "slug": "king-kai",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Shin",
+    "slug": "shin",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Old Kai",
+    "slug": "old-kai",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Kibito",
+    "slug": "kibito",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Champa",
+    "slug": "champa",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Vados",
+    "slug": "vados",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Zeno",
+    "slug": "zeno",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Grand Priest",
+    "slug": "grand-priest",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Dende",
+    "slug": "dende",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Guru",
+    "slug": "guru",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Hit",
+    "slug": "hit",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Cabba",
+    "slug": "cabba",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Caulifla",
+    "slug": "caulifla",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Kale",
+    "slug": "kale",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Kefla",
+    "slug": "kefla",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Frost",
+    "slug": "frost",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Botamo",
+    "slug": "botamo",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Magetta",
+    "slug": "magetta",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Toppo",
+    "slug": "toppo",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Dyspo",
+    "slug": "dyspo",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Demon King Piccolo",
+    "slug": "demon-king-piccolo",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Mercenary Tao",
+    "slug": "mercenary-tao",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Commander Red",
+    "slug": "commander-red",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "General Blue",
+    "slug": "general-blue",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Emperor Pilaf",
+    "slug": "emperor-pilaf",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Shu",
+    "slug": "shu",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Mai",
+    "slug": "mai",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Giru",
+    "slug": "giru",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Baby",
+    "slug": "baby",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Zamasu",
+    "slug": "zamasu",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Goku Black",
+    "slug": "goku-black",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Moro",
+    "slug": "moro",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Granolah",
+    "slug": "granolah",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Cooler",
+    "slug": "cooler",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Turles",
+    "slug": "turles",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Bojack",
+    "slug": "bojack",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Janemba",
+    "slug": "janemba",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Omega Shenron",
+    "slug": "omega-shenron",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Super 17",
+    "slug": "super-17",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Kami",
+    "slug": "kami",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Mr. Popo",
+    "slug": "mr-popo",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Nail",
+    "slug": "nail",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Android 16",
+    "slug": "android-16",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Jaco",
+    "slug": "jaco",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Oolong",
+    "slug": "oolong",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Pu'ar",
+    "slug": "puar",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Launch",
+    "slug": "launch",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Ox-King",
+    "slug": "ox-king",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Grandpa Gohan",
+    "slug": "grandpa-gohan",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Vegito",
+    "slug": "vegito",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Gogeta",
+    "slug": "gogeta",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Nuova Shenron",
+    "slug": "nuova-shenron",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Eis Shenron",
+    "slug": "eis-shenron",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "General Rilldo",
+    "slug": "general-rilldo",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Ribrianne",
+    "slug": "ribrianne",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Anilaza",
+    "slug": "anilaza",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Bardock (DBS)",
+    "slug": "bardock-dbs",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Gine",
+    "slug": "gine",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Tarble",
+    "slug": "tarble",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "King Vegeta",
+    "slug": "king-vegeta",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Paragus",
+    "slug": "paragus",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Cheelai",
+    "slug": "cheelai",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Monaka",
+    "slug": "monaka",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Fortuneteller Baba",
+    "slug": "fortuneteller-baba",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "Nam",
+    "slug": "nam",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "dragonball-site",
+    "character": "King Chappa",
+    "slug": "king-chappa",
+    "series": "Dragon Ball",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Monkey D. Luffy",
+    "slug": "monkey-d-luffy",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Roronoa Zoro",
+    "slug": "roronoa-zoro",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Nami",
+    "slug": "nami",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Usopp",
+    "slug": "usopp",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Sanji",
+    "slug": "sanji",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Tony Tony Chopper",
+    "slug": "tony-tony-chopper",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Nico Robin",
+    "slug": "nico-robin",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Franky",
+    "slug": "franky",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Brook",
+    "slug": "brook",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Jinbe",
+    "slug": "jinbe",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Shanks",
+    "slug": "shanks",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Blackbeard",
+    "slug": "blackbeard",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Big Mom",
+    "slug": "big-mom",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Kaido",
+    "slug": "kaido",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Whitebeard",
+    "slug": "whitebeard",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Dracule Mihawk",
+    "slug": "dracule-mihawk",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Sir Crocodile",
+    "slug": "sir-crocodile",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Donquixote Doflamingo",
+    "slug": "donquixote-doflamingo",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Boa Hancock",
+    "slug": "boa-hancock",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Bartholomew Kuma",
+    "slug": "bartholomew-kuma",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Trafalgar Law",
+    "slug": "trafalgar-law",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Portgas D. Ace",
+    "slug": "portgas-d-ace",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Sabo",
+    "slug": "sabo",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Monkey D. Garp",
+    "slug": "monkey-d-garp",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Monkey D. Dragon",
+    "slug": "monkey-d-dragon",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Silvers Rayleigh",
+    "slug": "silvers-rayleigh",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Eustass Kid",
+    "slug": "eustass-kid",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Killer",
+    "slug": "killer",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Yamato",
+    "slug": "yamato",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Carrot",
+    "slug": "carrot",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "onepiece-site",
+    "character": "Nefertari Vivi",
+    "slug": "nefertari-vivi",
+    "series": "One Piece",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Naruto Uzumaki",
+    "slug": "naruto-uzumaki",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Sasuke Uchiha",
+    "slug": "sasuke-uchiha",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Sakura Haruno",
+    "slug": "sakura-haruno",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Kakashi Hatake",
+    "slug": "kakashi-hatake",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Hinata Hyuga",
+    "slug": "hinata-hyuga",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Shikamaru Nara",
+    "slug": "shikamaru-nara",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Ino Yamanaka",
+    "slug": "ino-yamanaka",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Choji Akimichi",
+    "slug": "choji-akimichi",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Neji Hyuga",
+    "slug": "neji-hyuga",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Rock Lee",
+    "slug": "rock-lee",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Tenten",
+    "slug": "tenten",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Kiba Inuzuka",
+    "slug": "kiba-inuzuka",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Shino Aburame",
+    "slug": "shino-aburame",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Jiraiya",
+    "slug": "jiraiya",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Tsunade",
+    "slug": "tsunade",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Orochimaru",
+    "slug": "orochimaru",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Pain",
+    "slug": "pain",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Itachi Uchiha",
+    "slug": "itachi-uchiha",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Kisame Hoshigaki",
+    "slug": "kisame-hoshigaki",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Deidara",
+    "slug": "deidara",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Konan",
+    "slug": "konan",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Hidan",
+    "slug": "hidan",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Kakuzu",
+    "slug": "kakuzu",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Sasori",
+    "slug": "sasori",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Tobi",
+    "slug": "tobi",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Black Zetsu / White Zetsu",
+    "slug": "black-zetsu-/-white-zetsu",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Minato Namikaze",
+    "slug": "minato-namikaze",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Hashirama Senju",
+    "slug": "hashirama-senju",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Tobirama Senju",
+    "slug": "tobirama-senju",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Hiruzen Sarutobi",
+    "slug": "hiruzen-sarutobi",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Gaara",
+    "slug": "gaara",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Fourth Raikage A",
+    "slug": "fourth-raikage-a",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Onoki",
+    "slug": "onoki",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Mei Terumi",
+    "slug": "mei-terumi",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Madara Uchiha",
+    "slug": "madara-uchiha",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Obito Uchiha",
+    "slug": "obito-uchiha",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Kaguya Otsutsuki",
+    "slug": "kaguya-otsutsuki",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Might Guy",
+    "slug": "might-guy",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Iruka Umino",
+    "slug": "iruka-umino",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Yamato",
+    "slug": "yamato",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Sai",
+    "slug": "sai",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "naruto-site",
+    "character": "Kabuto Yakushi",
+    "slug": "kabuto-yakushi",
+    "series": "Naruto",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Aatrox",
+    "slug": "aatrox",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Ahri",
+    "slug": "ahri",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Akali",
+    "slug": "akali",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Aphelios",
+    "slug": "aphelios",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Ashe",
+    "slug": "ashe",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Bard",
+    "slug": "bard",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Blitzcrank",
+    "slug": "blitzcrank",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Caitlyn",
+    "slug": "caitlyn",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Camille",
+    "slug": "camille",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Darius",
+    "slug": "darius",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Draven",
+    "slug": "draven",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Evelynn",
+    "slug": "evelynn",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Ezreal",
+    "slug": "ezreal",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Fiora",
+    "slug": "fiora",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Fizz",
+    "slug": "fizz",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Garen",
+    "slug": "garen",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Graves",
+    "slug": "graves",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Gwen",
+    "slug": "gwen",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Hecarim",
+    "slug": "hecarim",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Irelia",
+    "slug": "irelia",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Jax",
+    "slug": "jax",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Jhin",
+    "slug": "jhin",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Jinx",
+    "slug": "jinx",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Kai'Sa",
+    "slug": "kaisa",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Katarina",
+    "slug": "katarina",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Kayn",
+    "slug": "kayn",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "KhaZix",
+    "slug": "khazix",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Kindred",
+    "slug": "kindred",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "LeBlanc",
+    "slug": "leblanc",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Lee Sin",
+    "slug": "lee-sin",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Leona",
+    "slug": "leona",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Lulu",
+    "slug": "lulu",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Lux",
+    "slug": "lux",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Morgana",
+    "slug": "morgana",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Nami",
+    "slug": "nami",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Nidalee",
+    "slug": "nidalee",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Orianna",
+    "slug": "orianna",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Ornn",
+    "slug": "ornn",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Pyke",
+    "slug": "pyke",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Rakan",
+    "slug": "rakan",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Renekton",
+    "slug": "renekton",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Rengar",
+    "slug": "rengar",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Riven",
+    "slug": "riven",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Samira",
+    "slug": "samira",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Senna",
+    "slug": "senna",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Sett",
+    "slug": "sett",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Sylas",
+    "slug": "sylas",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Thresh",
+    "slug": "thresh",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Vayne",
+    "slug": "vayne",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Vi",
+    "slug": "vi",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Viego",
+    "slug": "viego",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Viktor",
+    "slug": "viktor",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Xayah",
+    "slug": "xayah",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Yasuo",
+    "slug": "yasuo",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Yuumi",
+    "slug": "yuumi",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Zed",
+    "slug": "zed",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "lol-site",
+    "character": "Zoe",
+    "slug": "zoe",
+    "series": "League of Legends",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Astra",
+    "slug": "astra",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Breach",
+    "slug": "breach",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Brimstone",
+    "slug": "brimstone",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Chamber",
+    "slug": "chamber",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Clove",
+    "slug": "clove",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Cypher",
+    "slug": "cypher",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Deadlock",
+    "slug": "deadlock",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Fade",
+    "slug": "fade",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Gekko",
+    "slug": "gekko",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Harbor",
+    "slug": "harbor",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Iso",
+    "slug": "iso",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Jett",
+    "slug": "jett",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "KAY/O",
+    "slug": "kay/o",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Killjoy",
+    "slug": "killjoy",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Neon",
+    "slug": "neon",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Omen",
+    "slug": "omen",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Phoenix",
+    "slug": "phoenix",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Raze",
+    "slug": "raze",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Reyna",
+    "slug": "reyna",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Sage",
+    "slug": "sage",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Skye",
+    "slug": "skye",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Sova",
+    "slug": "sova",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Viper",
+    "slug": "viper",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Vyse",
+    "slug": "vyse",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "valorant-site",
+    "character": "Yoru",
+    "slug": "yoru",
+    "series": "Valorant",
+    "type": "character"
+  },
+  {
+    "site": "eldenring-site",
+    "character": "Dragonlord Placidusax",
+    "slug": "dragonlord-placidusax",
+    "series": "Elden Ring",
+    "type": "character"
+  },
+  {
+    "site": "eldenring-site",
+    "character": "Fire Giant",
+    "slug": "fire-giant",
+    "series": "Elden Ring",
+    "type": "character"
+  },
+  {
+    "site": "eldenring-site",
+    "character": "Godfrey",
+    "slug": "godfrey",
+    "series": "Elden Ring",
+    "type": "character"
+  },
+  {
+    "site": "eldenring-site",
+    "character": "Godrick the Grafted",
+    "slug": "godrick-the-grafted",
+    "series": "Elden Ring",
+    "type": "character"
+  },
+  {
+    "site": "eldenring-site",
+    "character": "Malenia",
+    "slug": "malenia",
+    "series": "Elden Ring",
+    "type": "character"
+  },
+  {
+    "site": "eldenring-site",
+    "character": "Maliketh",
+    "slug": "maliketh",
+    "series": "Elden Ring",
+    "type": "character"
+  },
+  {
+    "site": "eldenring-site",
+    "character": "Mohg",
+    "slug": "mohg",
+    "series": "Elden Ring",
+    "type": "character"
+  },
+  {
+    "site": "eldenring-site",
+    "character": "Morgott",
+    "slug": "morgott",
+    "series": "Elden Ring",
+    "type": "character"
+  },
+  {
+    "site": "eldenring-site",
+    "character": "Rennala",
+    "slug": "rennala",
+    "series": "Elden Ring",
+    "type": "character"
+  },
+  {
+    "site": "eldenring-site",
+    "character": "Starscourge Radahn",
+    "slug": "starscourge-radahn",
+    "series": "Elden Ring",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Jonesy",
+    "slug": "jonesy",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Peely",
+    "slug": "peely",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Fishstick",
+    "slug": "fishstick",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Midas",
+    "slug": "midas",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "The Reaper",
+    "slug": "the-reaper",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Black Knight",
+    "slug": "black-knight",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Raven",
+    "slug": "raven",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Drift",
+    "slug": "drift",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Cuddle Team Leader",
+    "slug": "cuddle-team-leader",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Skull Trooper",
+    "slug": "skull-trooper",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Renegade Raider",
+    "slug": "renegade-raider",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Aura",
+    "slug": "aura",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Lynx",
+    "slug": "lynx",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Omega",
+    "slug": "omega",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Rippley",
+    "slug": "rippley",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Meowscles",
+    "slug": "meowscles",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Kit",
+    "slug": "kit",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Mancake",
+    "slug": "mancake",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Bushranger",
+    "slug": "bushranger",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Dynamo",
+    "slug": "dynamo",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Wildcat",
+    "slug": "wildcat",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Lara Croft",
+    "slug": "lara-croft",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Darth Vader",
+    "slug": "darth-vader",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Master Chief",
+    "slug": "master-chief",
+    "series": "Fortnite",
+    "type": "character"
+  },
+  {
+    "site": "fortnite-site",
+    "character": "Snake",
+    "slug": "snake",
+    "series": "Fortnite",
+    "type": "character"
+  }
+]

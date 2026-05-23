@@ -5,6 +5,7 @@ Cron: 0 6 * * *
 """
 
 import json
+import random
 import subprocess
 import sys
 from pathlib import Path
@@ -55,19 +56,18 @@ def pick_sites(state):
     return picks
 
 
-def generate_article(site):
+def generate_article(site, template=None):
     """Generate 1 article for a site using create_articles.py."""
     print(f"\n--- Generating article for {site} ---")
-    result = subprocess.run(
-        [sys.executable, "shared/create_articles.py", "--sites", site, "--per-site", "1"],
-        cwd=str(ROOT),
-        capture_output=True, text=True, timeout=600
-    )
-    print(result.stdout)
-    if result.stderr:
-        print(f"STDERR: {result.stderr}")
-    if result.returncode != 0:
-        print(f"FAILED: {site} returned code {result.returncode}")
+    cmd = [sys.executable, "shared/create_articles.py", "--sites", site, "--per-site", "1", "--skip-images"]
+    if template:
+        cmd.extend(["--template", template])
+    process = subprocess.Popen(cmd, cwd=str(ROOT), stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)
+    for line in process.stdout:
+        print(line, end='', flush=True)
+    process.wait()
+    if process.returncode != 0:
+        print(f"FAILED: {site} returned code {process.returncode}")
         return False
     return True
 
@@ -94,11 +94,15 @@ def main():
     picks = pick_sites(state)
     print(f"Selected: {picks}")
 
+    # Use one template for the whole batch to maximize DeepSeek cache hits
+    force_template = random.choice(["A", "B", "C", "D", "E"])
+    print(f"Template: {force_template}")
+
     success_count = 0
     fail_count = 0
 
     for site in picks:
-        ok = generate_article(site)
+        ok = generate_article(site, force_template)
         if ok:
             # Deploy each successfully generated site
             dep_ok = deploy_site(site)

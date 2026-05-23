@@ -1,8 +1,8 @@
 {
   "version": "2.1",
   "observer": {
-    "enabled": false,
-    "run_interval_minutes": 5,
+    "enabled": true,
+    "run_interval_minutes": 10,
     "min_observations_to_analyze": 20
   }
 }

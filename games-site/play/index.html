@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-adsense-account" content="ca-pub-2595917642864488">
+  <title>Play Free Games Online | Snake, Pong, Tetris, Memory & Sudoku | GameGuide</title>
+  <meta name="description" content="Play 5 free classic games in your browser: Snake, Pong, Tetris, Memory Match & Sudoku. No downloads, no sign-ups. Fun for all ages">
+  <meta name="robots" content="index, follow">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; }
+    .glow-gold { box-shadow: 0 0 20px rgba(201, 168, 76, 0.3), 0 0 40px rgba(201, 168, 76, 0.1); }
+    iframe { width: 100%; height: 500px; border: none; }
+    .game-btn.active { border-color: #6366f1; background: rgba(201, 168, 76, 0.1); }
+  </style>
+</head>
+<body class="bg-[#f8fafc] text-[#1e293b] min-h-screen flex flex-col">
+
+  <!-- Nav -->
+  <nav class="border-b border-gray-200">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="../index.html" class="text-[#6366f1] font-semibold tracking-wide text-lg hover:opacity-80">GameGuide</a>
+      <div class="flex gap-4 text-sm">
+        <a href="../index.html" class="text-[#64748b] hover:text-[#6366f1]">Home</a>
+        <a href="../guides/" class="text-[#64748b] hover:text-[#6366f1]">Guides</a>
+        <a href="../category/reviews/" class="text-[#64748b] hover:text-[#6366f1]">Reviews</a>
+        <a href="../category/news/" class="text-[#64748b] hover:text-[#6366f1]">News</a>
+        <a href="index.html" class="text-[#6366f1] font-medium">Play Games</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-1 max-w-5xl mx-auto px-4 py-8 w-full">
+
+    <!-- Hero -->
+    <section class="text-center mb-8">
+      <h1 class="text-3xl md:text-5xl font-bold text-white mb-3 tracking-tight">Free Browser Games</h1>
+      <p class="text-[#64748b] text-sm md:text-base max-w-xl mx-auto">Take a break. Play classic arcade games right in your browser — no downloads, no sign-ups.</p>
+    </section>
+
+    <!-- Game Tabs -->
+    <div class="flex flex-wrap justify-center gap-2 mb-6">
+      <button onclick="switchGame('snake')" class="game-btn active px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:border-[#6366f1] transition-all" data-game="snake">Snake</button>
+      <button onclick="switchGame('pong')" class="game-btn px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:border-[#6366f1] transition-all" data-game="pong">Pong</button>
+      <button onclick="switchGame('tetris')" class="game-btn px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:border-[#6366f1] transition-all" data-game="tetris">Tetris</button>
+      <button onclick="switchGame('memory')" class="game-btn px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:border-[#6366f1] transition-all" data-game="memory">Memory</button>
+      <button onclick="switchGame('sudoku')" class="game-btn px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium hover:border-[#6366f1] transition-all" data-game="sudoku">Sudoku</button>
+    </div>
+
+    <!-- Game Area -->
+    <section class="flex justify-center mb-6">
+      <div id="gameContainer" class="w-full max-w-[600px] glow-gold border border-[#6366f1] rounded-lg bg-black relative" style="aspect-ratio:1/1">
+        <iframe id="gameFrame" src="snake.html" title="Play Game" class="absolute inset-0 w-full h-full" frameborder="0" allow="autoplay"></iframe>
+      </div>
+    </section>
+
+    <!-- Controls info -->
+    <section class="text-center mb-10">
+      <p id="controlsHelp" class="text-[#64748b] text-sm">Arrow keys to move &middot; Space to restart</p>
+    </section>
+
+    <!-- Explore Game Guides -->
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold text-[#1e293b] mb-4 border-b border-gray-200 pb-2">Explore GameGuide Guides</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <a href="/guides/" class="block bg-white rounded-lg p-4 text-center border border-gray-200 hover:border-[#6366f1]/60 transition-all shadow-sm">
+          <span class="text-2xl block mb-1">🎮</span>
+          <span class="text-[#6366f1] text-sm font-medium">All Guides</span>
+          <span class="text-[#64748b] text-xs block mt-1">View guides</span>
+        </a>
+        <a href="/category/reviews/" class="block bg-white rounded-lg p-4 text-center border border-gray-200 hover:border-[#6366f1]/60 transition-all shadow-sm">
+          <span class="text-2xl block mb-1">⭐</span>
+          <span class="text-[#6366f1] text-sm font-medium">Reviews</span>
+          <span class="text-[#64748b] text-xs block mt-1">View guides</span>
+        </a>
+        <a href="/category/news/" class="block bg-white rounded-lg p-4 text-center border border-gray-200 hover:border-[#6366f1]/60 transition-all shadow-sm">
+          <span class="text-2xl block mb-1">📰</span>
+          <span class="text-[#6366f1] text-sm font-medium">News</span>
+          <span class="text-[#64748b] text-xs block mt-1">View guides</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 mt-8 py-6">
+    <div class="max-w-5xl mx-auto px-4 text-center text-xs text-[#64748b]">
+      <p class="mb-2">More from our network</p>
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a href="https://jycsd.com" class="hover:text-[#6366f1]">jycsd.com</a>
+        <a href="https://eldenring.jycsd.com" class="hover:text-[#6366f1]">Elden Ring</a>
+        <a href="https://dragonball.jycsd.com" class="hover:text-[#6366f1]">Dragon Ball</a>
+        <a href="https://minecraft.jycsd.com" class="hover:text-[#6366f1]">Minecraft</a>
+        <a href="https://fortnite.jycsd.com" class="hover:text-[#6366f1]">Fortnite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const games = {
+      snake: { file: 'snake.html', help: 'Arrow keys to move &middot; Space to restart', ratio: '1/1' },
+      pong: { file: 'pong.html', help: 'W/S to move paddle &middot; AI opponent', ratio: '3/2' },
+      tetris: { file: 'tetris.html', help: 'Arrow keys move &middot; Up to rotate &middot; Space to hard drop', ratio: '410/520' },
+      memory: { file: 'memory.html', help: 'Click cards to flip &middot; Match all pairs', ratio: '2/3' },
+      sudoku: { file: 'sudoku.html', help: 'Click cell &middot; 1-9 to fill &middot; Auto-check', ratio: '2/3' }
+    };
+    function switchGame(id) {
+      const g = games[id];
+      document.getElementById('gameFrame').src = g.file;
+      document.getElementById('controlsHelp').innerHTML = g.help;
+      document.getElementById('gameContainer').style.aspectRatio = g.ratio;
+      document.querySelectorAll('.game-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector(`[data-game="${id}"]`).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

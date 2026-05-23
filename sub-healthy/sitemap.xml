@@ -31,12 +31,6 @@
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://healthy.jycsd.com/terms.html</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
     <loc>https://healthy.jycsd.com/cookie-policy.html</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -223,15 +217,27 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://healthy.jycsd.com/article-33.html</loc>
+    <loc>https://healthy.jycsd.com/article-34.html</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://healthy.jycsd.com/article-34.html</loc>
+    <loc>https://healthy.jycsd.com/category-meal-plans.html</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://healthy.jycsd.com/category-nutrition.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://healthy.jycsd.com/category-recipes.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

@@ -11,6 +11,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://lol.jycsd.com/guides/champions/">
+<meta name="google-adsense-account" content="ca-pub-2595917642864488">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#fbbf24',accentDark:'#d97706'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
@@ -20,8 +21,6 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
-ins.adsbygoogle{display:block}
-.ad-label{text-align:center;color:#9ca3af;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
 .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
 .carousel-slide.active{opacity:1;pointer-events:auto}
 .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
@@ -31,8 +30,6 @@ ins.adsbygoogle{display:block}
 .float-anim{animation:float 3s ease-in-out infinite}
 .char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
 img[src$=".png"]{mix-blend-mode:normal}
-.bg-transparent-img img{mix-blend-mode:normal}
-.transparent-bg{background:transparent!important}
 .search-dropdown{position:absolute;top:100%;left:0;right:0;background:#1a1f2e;border:1px solid #374151;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
 .search-dropdown.active{display:block}
 .search-result{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .15s;border-bottom:1px solid rgba(75,85,99,.15)}
@@ -40,6 +37,23 @@ img[src$=".png"]{mix-blend-mode:normal}
 .search-result:last-child{border-bottom:none}
 .search-result .sr-type{font-size:10px;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:999px;flex-shrink:0}
 .search-empty{padding:20px;text-align:center;color:#8b949e;font-size:14px}
+.masonry-grid{columns:2;column-gap:1rem}
+.masonry-grid>*{break-inside:avoid;margin-bottom:1rem}
+@media(min-width:768px){.masonry-grid{columns:3}}
+@media(min-width:1024px){.masonry-grid{columns:4}}
+@media(min-width:1280px){.masonry-grid{columns:5}}
+.scroll-snap-x{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1rem;scrollbar-width:none;padding-bottom:4px}
+.scroll-snap-x::-webkit-scrollbar{display:none}
+.scroll-snap-x>*{scroll-snap-align:start;flex-shrink:0}
+.gradient-overlay{background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.3) 50%,transparent 100%)}
+.text-shadow{text-shadow:0 2px 8px rgba(0,0,0,0.6)}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.15);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.2);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;transition:all .3s;opacity:0}
+.carousel-arrow:hover{background:rgba(255,255,255,0.3)}
+.carousel:hover .carousel-arrow{opacity:1}
+.back-to-top{position:fixed;bottom:32px;right:32px;z-index:999;width:44px;height:44px;border-radius:50%;background:#ff6b35;color:#111;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;opacity:0.35;transition:all .3s;box-shadow:0 4px 15px rgba(255,107,53,.4);border:none}.back-to-top.visible{opacity:1}.back-to-top:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(255,107,53,.6)}
+.show-more-wrap{text-align:center;margin-top:1.5rem}
+.show-more-btn{display:inline-block;padding:10px 32px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;transition:all .2s;border:2px solid;background:transparent}
+.show-more-btn:hover{transform:translateY(-2px)}
 </style>
 </head>
 <body>
@@ -47,7 +61,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(13,17,23,0.95);border-color:#374151">
 <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
 <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-<img src="/images/ahri.png" alt="LoLGuide" class="w-10 h-10 object-cover rounded-lg">
+<img src="/images/ahri.png" alt="LoLGuide" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold tracking-tight">LoL<span class="text-accent">Guide</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
@@ -82,422 +96,419 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 </nav>
 
-<section class="relative w-full overflow-hidden pt-28 pb-16" style="background:linear-gradient(135deg, #111827 0%, #1a1f2e 50%, #fbbf2418 100%)">
-<div class="absolute inset-0 opacity-15" style="background:radial-gradient(ellipse at 30% 50%, #fbbf24, transparent 70%);"></div>
-<div class="relative max-w-7xl mx-auto px-4">
-<div class="grid md:grid-cols-2 gap-8 items-center">
-<div>
-<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Category</span>
-<h1 class="text-4xl md:text-6xl font-black mb-4">All Champions</h1>
-<p class="text-lg text-textSecondary mb-4 max-w-lg">Browse our complete collection of champions guides — 170+ guides covering every champions in LoLGuide.</p>
-<div class="flex gap-3">
-<a href="/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Home</a>
-</div>
-</div>
-<div class="hidden md:flex justify-center items-end">
-<img src="/images/ahri.png" alt="Champions — category overview" title="Champions category" class="char-img h-[380px] max-h-[380px] w-auto object-contain" loading="lazy">
-</div>
-</div>
-</div>
-</section>
 
 
 
-<a href="/guides/champions/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/ahri.png" alt="Champions — 170+ guides" title="Champions category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
-<div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Champions</div>
-<div class="text-sm text-textSecondary mt-1">170+ guides</div>
-</div>
-</a>
-<a href="/guides/items/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/yasuo.png" alt="Items — 200+ guides" title="Items category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
-<div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Items</div>
-<div class="text-sm text-textSecondary mt-1">200+ guides</div>
-</div>
-</a>
-<a href="/guides/jungle/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/jinx.png" alt="Jungle — 15+ guides" title="Jungle category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
-<div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Jungle</div>
-<div class="text-sm text-textSecondary mt-1">15+ guides</div>
-</div>
-</a>
-<a href="/guides/laning/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/lux.png" alt="Laning — 12+ guides" title="Laning category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
-<div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Laning</div>
-<div class="text-sm text-textSecondary mt-1">12+ guides</div>
-</div>
-</a>
-<a href="/guides/teamfights/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
-<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgSecondary rounded-xl overflow-hidden transparent-bg"><img src="/images/yasuo.png" alt="Teamfights — 20+ guides" title="Teamfights category" class="w-full h-full object-cover char-img group-hover:scale-110 transition-transform" loading="lazy"></div>
-<div class="flex-1 min-w-0">
-<div class="font-bold text-lg md:text-xl">Teamfights</div>
-<div class="text-sm text-textSecondary mt-1">20+ guides</div>
-</div>
-</a>
 
-<!-- Ad: 728x90 -->
-<div class="max-w-[728px] mx-auto px-4 mt-10"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9112825459"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
+
+
 
 <section class="max-w-7xl mx-auto px-4 py-12">
-<div class="mb-8"><h2 class="text-3xl font-black">Champions Guides</h2><p class="text-textSecondary mt-2">In-depth champions coverage</p></div>
-<div class="grid lg:grid-cols-2 gap-5"><a href="/guides/champions/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-purple-900 to-pink-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
-<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #fbbf24, transparent);"></div>
-<img src="/images/ahri.png" alt="Ahri Mid Guide: Runes, Builds & Matchup Spreadsheet" title="Ahri Mid Guide: Runes, Builds & Matchup Spreadsheet" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" loading="lazy">
+<div class="mb-8"><h2 class="text-3xl font-black">All Champions</h2></div>
+<div class="masonry-grid"><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/ahri.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/ahri.png" alt="Ahri" title="Ahri" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Ahri</h3>
 </div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#fbbf24;background:#fbbf241a">Champions</span>
-<h3 class="font-bold text-lg mt-2 mb-1 leading-snug group-hover:text-accent transition-colors">Ahri Mid Guide: Runes, Builds & Matchup Spreadsheet</h3>
-<time class="text-sm text-textSecondary mt-2 block">May 17, 2026</time>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/yasuo.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/yasuo.png" alt="Yasuo" title="Yasuo" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Yasuo</h3>
 </div>
-</a><a href="/guides/champions/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[160px]" style="border-color:#374151">
-<div class="w-48 md:w-56 lg:w-64 flex-shrink-0 bg-gradient-to-br from-blue-900 to-cyan-950 flex items-center justify-center relative overflow-hidden p-4 transparent-bg">
-<div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 50% 50%, #fbbf24, transparent);"></div>
-<img src="/images/yasuo.png" alt="Yasuo Mechanics: Airblade, Keyblade & Wall Dash" title="Yasuo Mechanics: Airblade, Keyblade & Wall Dash" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" loading="lazy">
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/lux.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/lux.png" alt="Lux" title="Lux" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Lux</h3>
 </div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<span class="text-sm font-semibold px-2 py-1 rounded self-start" style="color:#fbbf24;background:#fbbf241a">Champions</span>
-<h3 class="font-bold text-lg mt-2 mb-1 leading-snug group-hover:text-accent transition-colors">Yasuo Mechanics: Airblade, Keyblade & Wall Dash</h3>
-<time class="text-sm text-textSecondary mt-2 block">May 16, 2026</time>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/jinx.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/jinx.png" alt="Jinx" title="Jinx" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Jinx</h3>
 </div>
-</a></div></section>
-<section class="max-w-7xl mx-auto px-4 py-8">
-<div class="mb-6"><h2 class="text-2xl font-black">Hot Topics &mdash; Champions</h2></div>
-<div class="space-y-3"><a href="/guides/champions/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[130px]" style="border-color:#374151">
-<div class="w-32 md:w-40 lg:w-48 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/ahri.png" alt="Best Champions to Climb in Season 2026 (Patch 14.9)" title="Best Champions to Climb in Season 2026 (Patch 14.9)" class="w-full h-full object-cover char-img group-hover:scale-105 transition-transform" loading="lazy"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-lg group-hover:text-accent transition-colors">Best Champions to Climb in Season 2026 (Patch 14.9)</h3>
-<p class="text-base text-textSecondary mt-1.5">Win rate and pick rate analysis for every role — which champions give you the best LP gains right now.</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">Read Guide</span>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/darius.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/darius.png" alt="Darius" title="Darius" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Darius</h3>
 </div>
-</a></div></section><div class="max-w-7xl mx-auto px-4"><div class="hidden lg:block"><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="4397738132"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></div>
-<section class="max-w-7xl mx-auto px-4 py-12">
-<div class="mb-8"><h2 class="text-3xl font-black">All Champions</h2><p class="text-textSecondary mt-2">Complete champions roster</p></div>
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5"><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/ahri.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/ahri.png" alt="Ahri — Mid Lane Mage" title="Ahri" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Ahri</h3>
-<p class="text-xs text-textSecondary mt-1">The nine-tailed fox. Charm combo sequences, Orb of Deception waveclear, and Spirit Rush roaming tactics for mid lane dominance.</p>
-<a href="/guides/champions/ahri.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Ahri Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/yasuo.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/yasuo.png" alt="Yasuo — Mid/Top Fighter" title="Yasuo" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Yasuo</h3>
-<p class="text-xs text-textSecondary mt-1">The Unforgiven samurai. Steel Tempest mechanics, Wind Wall timing, and Last Breath knockup combos for solo carry potential.</p>
-<a href="/guides/champions/yasuo.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Yasuo Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/lux.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/lux.png" alt="Lux — Mid/Support Mage" title="Lux" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Lux</h3>
-<p class="text-xs text-textSecondary mt-1">The Lady of Luminosity. Light binding picks, Prismatic Barrier teamfight tech, and Final Spark laser snipes from fog of war.</p>
-<a href="/guides/champions/lux.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Lux Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/jinx.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/jinx.png" alt="Jinx — ADC Marksman" title="Jinx" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Jinx</h3>
-<p class="text-xs text-textSecondary mt-1">The Loose Cannon. Fishbones rocket form kiting, Zap root prediction, and Super Mega Death Rocket cross-map snipes.</p>
-<a href="/guides/champions/jinx.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Jinx Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/darius.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/darius.png" alt="Darius — Top Lane Bruiser" title="Darius" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Darius</h3>
-<p class="text-xs text-textSecondary mt-1">The Hand of Noxus. Hemorrhage stack management, Apprehend hook range, and Noxian Guillotine reset teamfight chains.</p>
-<a href="/guides/champions/darius.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Darius Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/garen.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/garen.png" alt="Garen — Top Lane Juggernaut" title="Garen" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Garen</h3>
-<p class="text-xs text-textSecondary mt-1">The Might of Demacia. Decisive Strike silence trades, Courage damage reduction timing, and Demacian Justice execute thresholds.</p>
-<a href="/guides/champions/garen.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Garen Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/fiora.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/fiora.png" alt="Fiora — Top Lane Duelist" title="Fiora" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Fiora</h3>
-<p class="text-xs text-textSecondary mt-1">The Grand Duelist. Lunge vital procs, Riposte parry mind games, and Grand Challenge quad-vital ultimate combos.</p>
-<a href="/guides/champions/fiora.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Fiora Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/irelia.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/irelia.png" alt="Irelia — Top Lane Fighter" title="Irelia" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Irelia</h3>
-<p class="text-xs text-textSecondary mt-1">The Blade Dancer. Bladesurge Q reset mechanics, Flawless Duet stun placement, and Vanguard's Edge blade wall zoning.</p>
-<a href="/guides/champions/irelia.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Irelia Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/camille.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/camille.png" alt="Camille — Top Lane Diver" title="Camille" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Camille</h3>
-<p class="text-xs text-textSecondary mt-1">The Steel Shadow. Precision Protocol true damage trades, Tactical Sweep lane sustain, and Hextech Ultimatum lockdown kills.</p>
-<a href="/guides/champions/camille.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Camille Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/riven.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/riven.png" alt="Riven — Top Lane Fighter" title="Riven" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Riven</h3>
-<p class="text-xs text-textSecondary mt-1">The Exile. Animation canceling fast-Q combo, Broken Wings wall hops, and Blade of the Exile execute burst damage.</p>
-<a href="/guides/champions/riven.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Riven Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/sett.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/sett.png" alt="Sett — Top Lane Bruiser" title="Sett" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Sett</h3>
-<p class="text-xs text-textSecondary mt-1">The Boss. Haymaker grit damage storage, Facebreaker stun setups, and The Showstopper frontline suplex initiations.</p>
-<a href="/guides/champions/sett.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Sett Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/jax.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/jax.png" alt="Jax — Top Lane Duelist" title="Jax" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Jax</h3>
-<p class="text-xs text-textSecondary mt-1">Grandmaster at Arms. Leap Strike engage range, Counter Strike dodge timing, and Grandmaster's Might passive scaling into late game.</p>
-<a href="/guides/champions/jax.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Jax Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/aatrox.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/aatrox.png" alt="Aatrox — Top Lane Juggernaut" title="Aatrox" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Aatrox</h3>
-<p class="text-xs text-textSecondary mt-1">The Darkin Blade. Darkin Blade sweet spot combos, Infernal Chains pull angles, and World Ender draintank teamfighting.</p>
-<a href="/guides/champions/aatrox.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Aatrox Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/gwen.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/gwen.png" alt="Gwen — Top Lane AP Fighter" title="Gwen" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Gwen</h3>
-<p class="text-xs text-textSecondary mt-1">The Hallowed Seamstress. Snip Snip true damage stacking, Hallowed Mist immunity zone, and Needlework ultimate snipe chains.</p>
-<a href="/guides/champions/gwen.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Gwen Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/ornn.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/ornn.png" alt="Ornn — Top Lane Tank" title="Ornn" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Ornn</h3>
-<p class="text-xs text-textSecondary mt-1">The Fire Below the Mountain. Bellows Breath brittle procs, Searing Charge terrain knockups, and Call of the Forge God ram engage.</p>
-<a href="/guides/champions/ornn.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Ornn Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/renekton.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/renekton.png" alt="Renekton — Top Lane Bruiser" title="Renekton" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Renekton</h3>
-<p class="text-xs text-textSecondary mt-1">The Butcher of the Sands. Fury-boosted Ruthless Predator stun, Slice and Dice dash weaving, and Dominus HP steroid teamfight presence.</p>
-<a href="/guides/champions/renekton.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Renekton Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/lee-sin.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/leesin.png" alt="Lee Sin — Jungle Fighter" title="Lee Sin" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Lee Sin</h3>
-<p class="text-xs text-textSecondary mt-1">The Blind Monk. Sonic Wave into Resonating Strike insec kicks, Safeguard ward hops, and Dragon's Rage displacement picks.</p>
-<a href="/guides/champions/lee-sin.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Lee Sin Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/khazix.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/khazix.png" alt="KhaZix — Jungle Assassin" title="KhaZix" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">KhaZix</h3>
-<p class="text-xs text-textSecondary mt-1">The Voidreaver. Isolation bonus damage optimization, evolution path selection, and Void Assault stealth reposition resets.</p>
-<a href="/guides/champions/khazix.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">KhaZix Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/evelynn.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/evelynn.png" alt="Evelynn — Jungle Assassin" title="Evelynn" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Evelynn</h3>
-<p class="text-xs text-textSecondary mt-1">Agony's Embrace. Stealth detection ranges, Allure charm timing, Whiplash execute damage, and Last Caress escape-finisher combo.</p>
-<a href="/guides/champions/evelynn.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Evelynn Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/vi.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/vi.png" alt="Vi — Jungle Diver" title="Vi" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Vi</h3>
-<p class="text-xs text-textSecondary mt-1">The Piltover Enforcer. Vault Breaker charge ganks, Denting Blows armor shred stacking, and Assault and Battery unstoppable lockdown.</p>
-<a href="/guides/champions/vi.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Vi Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/kindred.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/kindred.png" alt="Kindred — Jungle Marksman" title="Kindred" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Kindred</h3>
-<p class="text-xs text-textSecondary mt-1">The Eternal Hunters. Mark management jungle pathing, Dance of Arrows kiting, and Lamb's Respite death denial zone timing.</p>
-<a href="/guides/champions/kindred.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Kindred Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/viego.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/viego.png" alt="Viego — Jungle Skirmisher" title="Viego" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Viego</h3>
-<p class="text-xs text-textSecondary mt-1">The Ruined King. Spectral Maw passive possession resets, Blade of the Ruined King mark combos, and Heartbreaker ultimate chain takedowns.</p>
-<a href="/guides/champions/viego.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Viego Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/hecarim.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/hecarim.png" alt="Hecarim — Jungle Diver" title="Hecarim" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Hecarim</h3>
-<p class="text-xs text-textSecondary mt-1">The Shadow of War. Rampage movement speed scaling, Spirit of Dread drain tank, and Onslaught of Shadows fear engage.</p>
-<a href="/guides/champions/hecarim.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Hecarim Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/nidalee.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/nidalee.png" alt="Nidalee — Jungle Assassin" title="Nidalee" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Nidalee</h3>
-<p class="text-xs text-textSecondary mt-1">The Bestial Huntress. Javelin Toss spear snipes, Pounce cougar form resets, and Bushwhack trap vision control jungle dominance.</p>
-<a href="/guides/champions/nidalee.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Nidalee Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/graves.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/graves.png" alt="Graves — Jungle Marksman" title="Graves" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Graves</h3>
-<p class="text-xs text-textSecondary mt-1">The Outlaw. Buckshot reload mechanic animation cancels, Smoke Screen vision denial, and Collateral Damage burst combo.</p>
-<a href="/guides/champions/graves.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Graves Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/kayn.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/kayn.png" alt="Kayn — Jungle Skirmisher" title="Kayn" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Kayn</h3>
-<p class="text-xs text-textSecondary mt-1">The Shadow Reaper. Form transformation pathing (Rhaast vs Shadow Assassin), Reaping Slash wall traversal, and Umbral Trespass damage.</p>
-<a href="/guides/champions/kayn.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Kayn Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/rengar.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/rengar.png" alt="Rengar — Jungle Assassin" title="Rengar" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Rengar</h3>
-<p class="text-xs text-textSecondary mt-1">The Pridestalker. Ferocity stack management, leap-from-brush mechanics, Thrill of the Hunt stealth picks, and one-shot combo sequencing.</p>
-<a href="/guides/champions/rengar.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Rengar Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/zed.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/zed.png" alt="Zed — Mid Lane Assassin" title="Zed" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Zed</h3>
-<p class="text-xs text-textSecondary mt-1">The Master of Shadows. Living Shadow positioning, Razor Shuriken double-hit combos, and Death Mark pop execute damage calculation.</p>
-<a href="/guides/champions/zed.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Zed Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/katarina.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/katarina.png" alt="Katarina — Mid Lane Assassin" title="Katarina" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Katarina</h3>
-<p class="text-xs text-textSecondary mt-1">The Sinister Blade. Shunpo dagger pickup resets, Bouncing Blade waveclear, and Death Lotus channel timing in teamfights.</p>
-<a href="/guides/champions/katarina.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Katarina Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/akali.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/akali.png" alt="Akali — Mid/Top Assassin" title="Akali" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Akali</h3>
-<p class="text-xs text-textSecondary mt-1">The Rogue Assassin. Five Point Strike spacing, Twilight Shroud stealth mind games, and Perfect Execution double-dash burst.</p>
-<a href="/guides/champions/akali.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Akali Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/leblanc.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/leblanc.png" alt="LeBlanc — Mid Lane Assassin" title="LeBlanc" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">LeBlanc</h3>
-<p class="text-xs text-textSecondary mt-1">The Deceiver. Sigil of Malice damage chain proc, Distortion double-dash juke, and Mimic clone mind plays for maximum burst.</p>
-<a href="/guides/champions/leblanc.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">LeBlanc Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/sylas.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/sylas.png" alt="Sylas — Mid Lane Skirmisher" title="Sylas" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Sylas</h3>
-<p class="text-xs text-textSecondary mt-1">The Unshackled. Hijack ultimate steal priority targets, Kingslayer heal trades, and Abscond engage chains with stolen ultimates.</p>
-<a href="/guides/champions/sylas.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Sylas Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/fizz.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/fizz.png" alt="Fizz — Mid Lane Assassin" title="Fizz" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Fizz</h3>
-<p class="text-xs text-textSecondary mt-1">The Tidal Trickster. Playful Trickster untargetable dodging, Chum the Waters shark range, and full combo burst rotation timing.</p>
-<a href="/guides/champions/fizz.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Fizz Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/zoe.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/zoe.png" alt="Zoe — Mid Lane Mage" title="Zoe" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Zoe</h3>
-<p class="text-xs text-textSecondary mt-1">The Aspect of Twilight. Paddle Star long-range snipes, Spell Thief summoner spell pickup, and Sleepy Trouble Bubble gank setups.</p>
-<a href="/guides/champions/zoe.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Zoe Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/orianna.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/orianna.png" alt="Orianna — Mid Lane Mage" title="Orianna" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Orianna</h3>
-<p class="text-xs text-textSecondary mt-1">The Lady of Clockwork. Ball positioning zone control, Command Dissonance speed boosts, and Command Shockwave multi-man ultimates.</p>
-<a href="/guides/champions/orianna.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Orianna Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/viktor.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/viktor.png" alt="Viktor — Mid Lane Mage" title="Viktor" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Viktor</h3>
-<p class="text-xs text-textSecondary mt-1">The Machine Herald. Hex Core augment upgrades, Death Ray laser sweep kiting, and Chaos Storm silence-field teamfight control.</p>
-<a href="/guides/champions/viktor.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Viktor Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/caitlyn.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/caitlyn.png" alt="Caitlyn — ADC Marksman" title="Caitlyn" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Caitlyn</h3>
-<p class="text-xs text-textSecondary mt-1">The Sheriff of Piltover. Headshot passive weaving, 90 Caliber Net animation cancel, Yordle Snap Trap chain CC, and Ace in the Hole finisher.</p>
-<a href="/guides/champions/caitlyn.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Caitlyn Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/ashe.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/ashe.png" alt="Ashe — ADC Marksman" title="Ashe" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Ashe</h3>
-<p class="text-xs text-textSecondary mt-1">The Frost Archer. Ranger's Focus Q auto-weaving, Volley poke angles, Hawkshot vision control, and Enchanted Crystal Arrow cross-map initiations.</p>
-<a href="/guides/champions/ashe.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Ashe Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/ezreal.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/ezreal.png" alt="Ezreal — ADC Marksman" title="Ezreal" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Ezreal</h3>
-<p class="text-xs text-textSecondary mt-1">The Prodigal Explorer. Mystic Shot sheen proc weaving, Essence Flux attack speed buffs, Arcane Shift blink reposition, and Trueshot Barrage snipes.</p>
-<a href="/guides/champions/ezreal.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Ezreal Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/kai-sa.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/kaisa.png" alt="Kai'Sa — ADC Marksman" title="Kai'Sa" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Kai'Sa</h3>
-<p class="text-xs text-textSecondary mt-1">Daughter of the Void. Plasma passive execute stacks, Icathian Rain isolated damage, and Killer Instinct dive onto backline targets.</p>
-<a href="/guides/champions/kai-sa.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Kai'Sa Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/vayne.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/vayne.png" alt="Vayne — ADC Marksman" title="Vayne" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Vayne</h3>
-<p class="text-xs text-textSecondary mt-1">The Night Hunter. Silver Bolts true damage proc kiting, Tumble stealth reposition, Condemn wall stuns, and Final Hour invisibility plays.</p>
-<a href="/guides/champions/vayne.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Vayne Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/jhin.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/jhin.png" alt="Jhin — ADC Marksman" title="Jhin" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Jhin</h3>
-<p class="text-xs text-textSecondary mt-1">The Virtuoso. Fourth shot execute calculation, Deadly Flourish root from allied damage, Captive Audience trap chains, and Curtain Call ult snipes.</p>
-<a href="/guides/champions/jhin.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Jhin Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/draven.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/draven.png" alt="Draven — ADC Marksman" title="Draven" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Draven</h3>
-<p class="text-xs text-textSecondary mt-1">The Glorious Executioner. Spinning Axe juggling mechanics, Blood Rush attack speed steroid, Stand Aside CC, and Whirling Death global execute.</p>
-<a href="/guides/champions/draven.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Draven Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/samira.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/samira.png" alt="Samira — ADC Marksman" title="Samira" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Samira</h3>
-<p class="text-xs text-textSecondary mt-1">The Desert Rose. Style grade S dash reset mechanics, Blade Whirl windwall, Wild Rush takedown resets, and Inferno Trigger AoE lifesteal.</p>
-<a href="/guides/champions/samira.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Samira Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/aphelios.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/aphelios.png" alt="Aphelios — ADC Marksman" title="Aphelios" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Aphelios</h3>
-<p class="text-xs text-textSecondary mt-1">The Weapon of the Faithful. Five-weapon rotation management, Calibrum Crescendum turret combos, and Moonlight Vigil AoE damage patterns.</p>
-<a href="/guides/champions/aphelios.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Aphelios Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/xayah.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/xayah.png" alt="Xayah — ADC Marksman" title="Xayah" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Xayah</h3>
-<p class="text-xs text-textSecondary mt-1">The Rebel. Deadly Plumage attack speed steroid, Bladecaller feather recall root traps, and Featherstorm untargetable outplay timing.</p>
-<a href="/guides/champions/xayah.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Xayah Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/thresh.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/thresh.png" alt="Thresh — Support Warden" title="Thresh" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Thresh</h3>
-<p class="text-xs text-textSecondary mt-1">The Chain Warden. Death Sentence hook prediction, Dark Passage lantern saves, Flay disengage, and The Box slow-zone teamfight control.</p>
-<a href="/guides/champions/thresh.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Thresh Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/blitzcrank.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/blitzcrank.png" alt="Blitzcrank — Support Tank" title="Blitzcrank" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Blitzcrank</h3>
-<p class="text-xs text-textSecondary mt-1">The Great Steam Golem. Rocket Grab hook angles, Power Fist knockup combo, Overdrive roam speed, and Static Field AoE silence teamfighting.</p>
-<a href="/guides/champions/blitzcrank.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Blitzcrank Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/nami.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/nami.png" alt="Nami — Support Enchanter" title="Nami" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Nami</h3>
-<p class="text-xs text-textSecondary mt-1">The Tidecaller. Aqua Prison bubble prediction, Ebb and Flow heal bounce, Tidecaller's Blessing on-hit slow, and Tidal Wave engage-disengage.</p>
-<a href="/guides/champions/nami.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Nami Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/lulu.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/lulu.png" alt="Lulu — Support Enchanter" title="Lulu" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Lulu</h3>
-<p class="text-xs text-textSecondary mt-1">The Fae Sorceress. Help Pix shield poke, Whimsy polymorph denial, Glitterlance slow line, and Wild Growth giant-save knockup timing.</p>
-<a href="/guides/champions/lulu.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Lulu Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/pyke.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/pyke.png" alt="Pyke — Support Assassin" title="Pyke" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Pyke</h3>
-<p class="text-xs text-textSecondary mt-1">The Bloodharbor Ripper. Bone Skewer hook-charge, Ghostwater Dive stealth roam, Phantom Undertow dash stun, and Death From Below execute resets.</p>
-<a href="/guides/champions/pyke.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Pyke Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/senna.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/senna.png" alt="Senna — Support Marksman" title="Senna" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Senna</h3>
-<p class="text-xs text-textSecondary mt-1">The Redeemer. Mist soul passive stacking, Piercing Darkness heal-damage hybrid, Last Embrace root, and Dawning Shadow global shield-beam.</p>
-<a href="/guides/champions/senna.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Senna Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/yuumi.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/yuumi.png" alt="Yuumi — Support Enchanter" title="Yuumi" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Yuumi</h3>
-<p class="text-xs text-textSecondary mt-1">The Magical Cat. You and Me untargetable attachment, Prowling Projectile controlled poke, Zoomies heal-speed, and Final Chapter wave-root engage.</p>
-<a href="/guides/champions/yuumi.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Yuumi Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/morgana.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/morgana.png" alt="Morgana — Support Mage" title="Morgana" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Morgana</h3>
-<p class="text-xs text-textSecondary mt-1">The Fallen. Dark Binding root picks, Black Shield spell immunity timing, Tormented Shadow zone control, and Soul Shackles tether teamfight stun.</p>
-<a href="/guides/champions/morgana.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Morgana Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/bard.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/bard.png" alt="Bard — Support Warden" title="Bard" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Bard</h3>
-<p class="text-xs text-textSecondary mt-1">The Wandering Caretaker. Chime collection roaming routes, Cosmic Binding double-stun angles, Caretaker's Shrine heal setup, and Tempered Fate Zhonya's zone.</p>
-<a href="/guides/champions/bard.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Bard Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/leona.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/leona.png" alt="Leona — Support Tank" title="Leona" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Leona</h3>
-<p class="text-xs text-textSecondary mt-1">The Radiant Dawn. Zenith Blade gap-close, Shield of Daybreak stun combo, Eclipse tank steroids, and Solar Flare AoE stun-slow engage.</p>
-<a href="/guides/champions/leona.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Leona Detail</a>
-</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
-<a href="/guides/champions/rakan.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgSecondary flex items-center justify-center transparent-bg"><img src="/images/rakan.png" alt="Rakan — Support Enchanter" title="Rakan" class="w-full h-full object-cover" loading="lazy"></div></a>
-<h3 class="font-bold text-lg">Rakan</h3>
-<p class="text-xs text-textSecondary mt-1">The Charmer. Grand Entrance knockup engage, Battle Dance shield dash to ally, Gleaming Quill heal poke, and The Quickness charm teamfight ultimate.</p>
-<a href="/guides/champions/rakan.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Rakan Detail</a>
-</div></div></section>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/garen.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/garen.png" alt="Garen" title="Garen" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Garen</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/fiora.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/fiora.png" alt="Fiora" title="Fiora" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Fiora</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/irelia.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/irelia.png" alt="Irelia" title="Irelia" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Irelia</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/camille.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/camille.png" alt="Camille" title="Camille" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Camille</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/riven.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/riven.png" alt="Riven" title="Riven" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Riven</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/sett.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/sett.png" alt="Sett" title="Sett" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Sett</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/jax.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/jax.png" alt="Jax" title="Jax" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Jax</h3>
+</div>
+</a>
+</div></div><div id="moreGrid" style="display:none"><div class="masonry-grid"><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/aatrox.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/aatrox.png" alt="Aatrox" title="Aatrox" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Aatrox</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/gwen.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/gwen.png" alt="Gwen" title="Gwen" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Gwen</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/ornn.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/ornn.png" alt="Ornn" title="Ornn" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Ornn</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/renekton.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/renekton.png" alt="Renekton" title="Renekton" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Renekton</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/lee-sin.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/lee_sin.png" alt="Lee Sin" title="Lee Sin" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Lee Sin</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/khazix.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/khazix.png" alt="KhaZix" title="KhaZix" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">KhaZix</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/evelynn.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/evelynn.png" alt="Evelynn" title="Evelynn" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Evelynn</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/vi.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/vi.png" alt="Vi" title="Vi" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Vi</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/kindred.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/kindred.png" alt="Kindred" title="Kindred" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Kindred</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/viego.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/viego.png" alt="Viego" title="Viego" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Viego</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/hecarim.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/hecarim.png" alt="Hecarim" title="Hecarim" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Hecarim</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/nidalee.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/nidalee.png" alt="Nidalee" title="Nidalee" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Nidalee</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/graves.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/graves.png" alt="Graves" title="Graves" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Graves</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/kayn.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/kayn.png" alt="Kayn" title="Kayn" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Kayn</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/rengar.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/rengar.png" alt="Rengar" title="Rengar" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Rengar</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/zed.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/zed.png" alt="Zed" title="Zed" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Zed</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/katarina.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/katarina.png" alt="Katarina" title="Katarina" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Katarina</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/akali.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/akali.png" alt="Akali" title="Akali" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Akali</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/leblanc.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/leblanc.png" alt="LeBlanc" title="LeBlanc" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">LeBlanc</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/sylas.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/sylas.png" alt="Sylas" title="Sylas" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Sylas</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/fizz.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/fizz.png" alt="Fizz" title="Fizz" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Fizz</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/zoe.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/zoe.png" alt="Zoe" title="Zoe" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Zoe</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/orianna.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/orianna.png" alt="Orianna" title="Orianna" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Orianna</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/viktor.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/viktor.png" alt="Viktor" title="Viktor" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Viktor</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/caitlyn.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/caitlyn.png" alt="Caitlyn" title="Caitlyn" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Caitlyn</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/ashe.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/ashe.png" alt="Ashe" title="Ashe" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Ashe</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/ezreal.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/ezreal.png" alt="Ezreal" title="Ezreal" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Ezreal</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/kai-sa.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/kaisa.png" alt="Kai'Sa" title="Kai'Sa" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Kai'Sa</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/vayne.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/vayne.png" alt="Vayne" title="Vayne" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Vayne</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/jhin.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/jhin.png" alt="Jhin" title="Jhin" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Jhin</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/draven.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/draven.png" alt="Draven" title="Draven" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Draven</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/samira.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/samira.png" alt="Samira" title="Samira" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Samira</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/aphelios.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/aphelios.png" alt="Aphelios" title="Aphelios" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Aphelios</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/xayah.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/xayah.png" alt="Xayah" title="Xayah" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Xayah</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/thresh.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/thresh.png" alt="Thresh" title="Thresh" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Thresh</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/blitzcrank.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/blitzcrank.png" alt="Blitzcrank" title="Blitzcrank" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Blitzcrank</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/nami.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/nami.png" alt="Nami" title="Nami" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Nami</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/lulu.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/lulu.png" alt="Lulu" title="Lulu" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Lulu</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/pyke.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/pyke.png" alt="Pyke" title="Pyke" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Pyke</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/senna.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/senna.png" alt="Senna" title="Senna" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Senna</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/yuumi.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/yuumi.png" alt="Yuumi" title="Yuumi" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Yuumi</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/morgana.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/morgana.png" alt="Morgana" title="Morgana" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Morgana</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/bard.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/bard.png" alt="Bard" title="Bard" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Bard</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/leona.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/leona.png" alt="Leona" title="Leona" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Leona</h3>
+</div>
+</a>
+</div><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
+<a href="/guides/champions/rakan.html" class="block relative overflow-hidden rounded-xl">
+<img src="/images/rakan.png" alt="Rakan" title="Rakan" class="w-full h-auto block" loading="eager">
+<div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
+<h3 class="font-bold text-lg text-white text-shadow">Rakan</h3>
+</div>
+</a>
+</div></div></div>
+<div class="show-more-wrap"><button class="show-more-btn" style="color:#fbbf24;border-color:#fbbf24" onclick="var el=document.getElementById('moreGrid'),btn=this;el.style.display=el.style.display==='none'?'block':'none';btn.textContent=el.style.display==='none'?'Show All':'Show Less'">Show All (45 more)</button></div></section>
 
-<!-- Ad: 970x250 -->
-<div class="max-w-[970px] mx-auto px-4"><div class="ad-label">Advertisement</div><ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-2595917642864488" data-ad-slot="9739511410"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div>
 
-<section class="max-w-7xl mx-auto px-4 py-8">
-<h2 class="text-2xl font-black mb-6">Other Categories</h2>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"><a href="/guides/items/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/yasuo.png" alt="Items — 200+ guides" title="Items" class="w-full h-full object-cover" loading="lazy"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Items</h3>
-<p class="text-base text-textSecondary mt-1">Items &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">200+ guides</span>
-</div>
-</a><a href="/guides/jungle/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/jinx.png" alt="Jungle — 15+ guides" title="Jungle" class="w-full h-full object-cover" loading="lazy"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Jungle</h3>
-<p class="text-base text-textSecondary mt-1">Jungle &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">15+ guides</span>
-</div>
-</a><a href="/guides/laning/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/lux.png" alt="Laning — 12+ guides" title="Laning" class="w-full h-full object-cover" loading="lazy"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Laning</h3>
-<p class="text-base text-textSecondary mt-1">Laning &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">12+ guides</span>
-</div>
-</a><a href="/guides/teamfights/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
-<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgSecondary flex items-center justify-center p-4 overflow-hidden transparent-bg"><img src="/images/yasuo.png" alt="Teamfights — 20+ guides" title="Teamfights" class="w-full h-full object-cover" loading="lazy"></div>
-<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
-<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Teamfights</h3>
-<p class="text-base text-textSecondary mt-1">Teamfights &mdash; Complete Guide</p>
-<span class="text-sm text-accent mt-2 inline-block font-semibold">20+ guides</span>
-</div>
-</a></div></section>
+
 
 
 
@@ -505,7 +516,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
-<img src="/images/ahri.png" alt="LoLGuide" class="w-10 h-10 object-cover rounded-lg">
+<img src="/images/ahri.png" alt="LoLGuide" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold">LoL<span class="text-accent">Guide</span></span>
 </div>
 <p class="text-sm text-textSecondary leading-relaxed">Expert game guides, tier lists, and walkthroughs. Part of the Game Hub Network.</p>
@@ -521,20 +532,29 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-4">More Game Guides</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="https://valorant.jycsd.com" class="hover:text-accent transition-colors">Valorant</a></li>
-<li><a href="https://fortnite.jycsd.com" class="hover:text-accent transition-colors">Fortnite</a></li>
-<li><a href="https://minecraft.jycsd.com" class="hover:text-accent transition-colors">Minecraft</a></li>
-<li><a href="https://games.jycsd.com" class="hover:text-accent transition-colors">All Games</a></li>
-</ul>
+<h4 class="font-bold mb-4">Our Network</h4>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— Network —</option>
+    <option value="https://www.jycsd.com">Myers Media</option>
+    <option value="https://games.jycsd.com">Game Guides</option>
+    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+</select>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— More Sites —</option>
+    <option value="https://healthy.jycsd.com">HealthyEats</option>
+    <option value="https://pets.jycsd.com">PetCare Hub</option>
+    <option value="https://home.jycsd.com">HomeJoy</option>
+    <option value="https://finance.jycsd.com">MoneyWise</option>
+    <option value="https://tech.jycsd.com">TechNest</option>
+    <option value="https://travel.jycsd.com">TripRoute</option>
+</select>
 </div>
 <div>
 <h4 class="font-bold mb-4">About</h4>
 <ul class="space-y-2 text-sm text-textSecondary">
 <li><a href="/about.html" class="hover:text-accent transition-colors">About</a></li>
 <li><a href="/contact.html" class="hover:text-accent transition-colors">Contact</a></li>
-<li><a href="/sitemap.xml" class="hover:text-accent transition-colors">Sitemap</a></li>
+<li><a href="/sitemap.html" class="hover:text-accent transition-colors">Sitemap</a></li>
 </ul>
 </div>
 </div>
@@ -544,14 +564,18 @@ img[src$=".png"]{mix-blend-mode:normal}
 </footer>
 
 <script>
+function toggleReadMore(){var s=document.getElementById('descShort');var f=document.getElementById('descFull');var t=document.getElementById('descToggle');if(!f)return;if(f.style.display==='none'||!f.style.display){f.style.display='inline';s.style.display='none';t.textContent=' Read less';}else{f.style.display='none';s.style.display='inline';t.textContent='... Read more';}}
 (function(){
 var slides=document.querySelectorAll('.carousel-slide');
 var dots=document.querySelectorAll('.carousel-dot');
 var current=0;
 function goTo(idx){if(!slides.length)return;slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
 dots.forEach(function(dot){dot.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
+document.getElementById('carouselPrev')?.addEventListener('click',function(){goTo((current-1+slides.length)%slides.length)});
+document.getElementById('carouselNext')?.addEventListener('click',function(){goTo((current+1)%slides.length)});
 if(slides.length>1)setInterval(function(){goTo((current+1)%slides.length)},5000);
 document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
+var btt=document.getElementById('backToTop');if(btt){window.addEventListener('scroll',function(){if(window.scrollY>300){btt.classList.add('visible')}else{btt.classList.remove('visible')}});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})}
 
 var searchData=[];
 (function(){var si=document.getElementById('searchInput');var sim=document.getElementById('searchInputMobile');var dd=document.getElementById('searchDropdown');var ddm=document.getElementById('searchDropdownMobile');var focusIdx=-1;
@@ -562,12 +586,13 @@ if(!matches.length){ddEl.innerHTML='<div class="search-empty">No results found</
 for(var i=0;i<matches.length;i++){var m=matches[i];var typeColors={character:'rgba(255,107,53,.2)',category:'rgba(100,180,255,.2)',guide:'rgba(100,200,100,.2)',hot_topic:'rgba(255,180,50,.2)'};var tc=m.color||'#888';var div=document.createElement('div');div.className='search-result';div.setAttribute('data-url',m.url);div.innerHTML='<span class="sr-type" style="color:'+tc+';background:'+(typeColors[m.type]||'rgba(150,150,150,.2)')+'">'+m.type.replace('_',' ')+'</span><span style="flex:1;min-width:0"><strong style="display:block;font-size:14px">'+m.name+'</strong><small style="color:#8b949e;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(m.desc||'')+'</small></span>';div.addEventListener('click',function(){{window.location.href=this.getAttribute('data-url')}});ddEl.appendChild(div)}ddEl.classList.add('active')}
 function navigate(ddEl,dir){var items=ddEl.querySelectorAll('.search-result');if(!items.length)return;focusIdx+=dir;if(focusIdx<0)focusIdx=items.length-1;if(focusIdx>=items.length)focusIdx=0;for(var i=0;i<items.length;i++)items[i].classList.toggle('focused',i===focusIdx)}
 function selectFocused(ddEl){var items=ddEl.querySelectorAll('.search-result');if(focusIdx>=0&&focusIdx<items.length)window.location.href=items[focusIdx].getAttribute('data-url')}
-if(si){si.addEventListener('input',function(){{filter(this.value,dd)}});si.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(dd,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(dd,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(dd)}else if(e.key==='Escape'){dd.classList.remove('active')}}});si.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,dd)}});si.addEventListener('blur',function(){{setTimeout(function(){{dd.classList.remove('active')}},200)}})}
-if(sim){sim.addEventListener('input',function(){{filter(this.value,ddm)}});sim.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(ddm,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(ddm,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(ddm)}else if(e.key==='Escape'){ddm.classList.remove('active')}}});sim.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,ddm)}});sim.addEventListener('blur',function(){{setTimeout(function(){{ddm.classList.remove('active')}},200)}})}
+if(si){si.addEventListener('input',function(){{filter(this.value,dd)}});si.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(dd,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(dd,-1)}else if(e.key==='Enter'){e.preventDefault();if(focusIdx<0){focusIdx=0;var fi=dd.querySelectorAll('.search-result');if(fi.length>0)window.location.href=fi[0].getAttribute('data-url')}else{selectFocused(dd)}}else if(e.key==='Escape'){dd.classList.remove('active')}}});si.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,dd)}});si.addEventListener('blur',function(){{setTimeout(function(){{dd.classList.remove('active')}},200)}})}
+if(sim){sim.addEventListener('input',function(){{filter(this.value,ddm)}});sim.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(ddm,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(ddm,-1)}else if(e.key==='Enter'){e.preventDefault();if(focusIdx<0){focusIdx=0;var fi=ddm.querySelectorAll('.search-result');if(fi.length>0)window.location.href=fi[0].getAttribute('data-url')}else{selectFocused(ddm)}}else if(e.key==='Escape'){ddm.classList.remove('active')}}});sim.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,ddm)}});sim.addEventListener('blur',function(){{setTimeout(function(){{ddm.classList.remove('active')}},200)}})}
 loadIdx();
 })();
 
 })();
 </script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
 </body>
 </html>

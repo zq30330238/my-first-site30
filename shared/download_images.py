@@ -1,5 +1,8 @@
-import requests, re, os, time, hashlib
+import requests, re, os, time, hashlib, subprocess, json
 from pathlib import Path
+from io import BytesIO
+from PIL import Image
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 SESSION = requests.Session()
 SESSION.headers.update({
@@ -12,6 +15,111 @@ SESSION.headers.update({
 PNGWING_SEARCH = 'https://www.pngwing.com/en/search?q={}'
 STATS = {}
 SEEN_HASHES = set()
+
+
+def quick_validate(img_path):
+    """Local Pillow pre-check before doubao API. Returns (passed, reason)."""
+    try:
+        img = Image.open(img_path)
+        w, h = img.size
+        if w < 100 or h < 100:
+            return False, f'too small ({w}x{h})'
+        if w / h > 3.0 or h / w > 3.0:
+            return False, f'bad aspect ratio ({w}x{h})'
+        if img.mode == 'RGBA':
+            alpha = img.getchannel('A')
+            extrema = alpha.getextrema()
+            if extrema[0] == 255 and extrema[1] == 255:
+                return False, 'no transparency'
+            if alpha.getbbox() is None:
+                return False, 'fully transparent'
+        from PIL import ImageStat
+        gray = img.convert('L')
+        stat = ImageStat.Stat(gray)
+        if stat.stddev[0] < 15:
+            return False, f'flat image (stddev={stat.stddev[0]:.1f})'
+        return True, 'passed'
+    except Exception as e:
+        return False, f'error: {e}'
+
+
+def verify_character(filepath, char_name):
+    """Use doubao vision to verify image contains the correct character.
+    Falls back to API only when local pre-check fails."""
+    # Local pre-check first — skip API for obvious good images
+    passed, reason = quick_validate(filepath)
+    if passed:
+        return True
+    print(f'  [LOCAL-VALIDATE] {Path(filepath).name}: {reason}, falling back to API')
+    script = Path(__file__).parent / 'doubao_vision.py'
+    if not script.exists():
+        return True
+    try:
+        r = subprocess.run(['py', str(script), str(filepath)], capture_output=True, text=True, timeout=45)
+        output = (r.stdout + r.stderr).lower()
+        name_parts = char_name.lower().replace('-', ' ').split()
+        found = sum(1 for p in name_parts if len(p) > 2 and p in output)
+        if found >= 1 or any(p in output for p in name_parts if len(p) > 3):
+            return True
+        negatives = ['fruit', 'raspberry', 'flower', 'logo', 'abstract', 'frame',
+                      'watercolor', 'parchment', 'phoenix', 'butterfly', 'leaf',
+                      'decoration', 'shattered glass', 'gold border']
+        if any(n in output for n in negatives):
+            print(f'  [VERIFY FAIL] {filepath.name}: decorative image')
+            return False
+        return True
+    except:
+        return True
+
+def ensure_transparent(filepath):
+    """Run rembg on image if it has no transparency."""
+    try:
+        img = Image.open(filepath)
+        if img.mode == 'RGBA':
+            bbox = img.getchannel('A').getextrema()
+            if bbox[0] < 255:
+                return True
+        from rembg import remove
+        with open(filepath, 'rb') as f:
+            data = f.read()
+        result = remove(data)
+        with open(filepath, 'wb') as f:
+            f.write(result)
+        print(f'  [REMBG] {filepath.name}')
+        return True
+    except Exception as e:
+        print(f'  [REMBG ERR] {filepath.name}: {e}')
+        return False
+
+def compress_image(filepath, max_width=640):
+    """Compress image: resize to max_width, optimize PNG or convert to JPEG."""
+    try:
+        img = Image.open(filepath)
+        if img.width > max_width:
+            ratio = max_width / img.width
+            new_h = int(img.height * ratio)
+            img = img.resize((max_width, new_h), Image.LANCZOS)
+        before = os.path.getsize(filepath)
+        if img.mode == 'RGBA':
+            try:
+                img = img.quantize(colors=256, method=Image.Quantize.MEDIANCUT)
+                img = img.convert('RGBA')
+            except:
+                pass
+            img.save(filepath, 'PNG', optimize=True)
+        else:
+            out_path = str(filepath).replace('.png', '.jpg')
+            img.save(out_path, 'JPEG', quality=80, optimize=True)
+            if out_path != str(filepath):
+                os.remove(filepath)
+                return out_path
+        saved_path = filepath if Path(filepath).suffix == '.png' else str(filepath).replace('.png', '.jpg')
+        after = os.path.getsize(saved_path)
+        print(f'  [COMPRESS] {Path(filepath).name}: {before//1024}KB -> {after//1024}KB (saved {(before-after)//1024}KB)')
+        return saved_path
+    except Exception as e:
+        print(f'  [COMPRESS ERR] {Path(filepath).name}: {e}')
+        return filepath
 
 def is_valid_png(filepath):
     if not os.path.exists(filepath):
@@ -59,6 +167,7 @@ def download_character(char_name, series, out_dir, max_images=2):
     out_dir.mkdir(parents=True, exist_ok=True)
     slug = char_name.lower().replace(' ', '-').replace('.', '').replace("'", '')
     downloaded = 0
+    pending = []
 
     # Build relevance keywords from character name
     keywords = [w.lower() for w in char_name.replace('.', '').split() if len(w) > 1]
@@ -77,7 +186,6 @@ def download_character(char_name, series, out_dir, max_images=2):
             break
         print(f'  Searching: "{query}"')
         urls = search_pngwing(query)
-        # Filter: URL must contain at least one keyword from character name
         relevant = [u for u in urls if any(k in u.lower() for k in keywords)]
         subtle = [u for u in urls if u not in relevant]
         urls = relevant + subtle
@@ -95,14 +203,31 @@ def download_character(char_name, series, out_dir, max_images=2):
                 sz = os.path.getsize(str(fpath))
                 print(f'    OK: {fname} ({sz//1024}KB)')
                 downloaded += 1
+                pending.append(fpath)
             elif result == 'exists':
-                print(f'    SKIP: {fname} (already valid)')
+                print(f'    EXISTS: {fname}')
                 downloaded += 1
+                pending.append(fpath)
             else:
                 continue
         time.sleep(1.5)
 
-    return downloaded
+    # Verify all pending images in parallel
+    verified = 0
+    with ThreadPoolExecutor(max_workers=3) as executor:
+        fut_map = {executor.submit(verify_character, fp, char_name): fp for fp in pending}
+        for fut in as_completed(fut_map):
+            fp = fut_map[fut]
+            if fut.result():
+                ensure_transparent(fp)
+                compress_image(str(fp))
+                verified += 1
+            else:
+                print(f'    [DELETE] {fp.name}: wrong image / decorative')
+                try: os.remove(fp)
+                except: pass
+
+    return verified
 
 def main():
     ROOT = Path(r'd:\AI网站文件夹')

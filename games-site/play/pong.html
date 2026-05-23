@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--
+MIT License
+Copyright (c) 2026
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-2595917642864488">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Pong</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#f0ebe3;color:#3a3a3a;
+  font-family:'Courier New',Courier,monospace;
+  display:flex;justify-content:center;align-items:center;
+  min-height:100vh;overflow:hidden;
+  user-select:none;-webkit-user-select:none
+}
+#wrap{width:100%;max-width:600px;position:relative}
+canvas{display:block;width:100%;height:auto;aspect-ratio:600/400;touch-action:none}
+#sc{
+  position:absolute;top:6px;left:0;right:0;text-align:center;
+  font-size:clamp(1rem,3.5vw,1.8rem);color:#999;
+  letter-spacing:.5em;pointer-events:none;z-index:2
+}
+#sc .on{color:#1a1a2e}
+#ol{
+  position:absolute;inset:0;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;pointer-events:none;z-index:3;
+  background:rgba(240,235,227,0.85);opacity:0;transition:opacity .15s
+}
+#ol.on{opacity:1;pointer-events:auto}
+#msg{font-size:clamp(1.8rem,5vw,3rem);font-weight:700;color:#1a1a2e;text-shadow:0 0 20px rgba(26,26,46,0.2)}
+#sub{font-size:clamp(.7rem,2vw,1rem);color:#888;margin-top:12px}
+#hlp{position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:clamp(.5rem,1.4vw,.65rem);color:#aaa;pointer-events:none;z-index:2}
+</style>
+</head>
+<body>
+<div id="wrap">
+<div id="sc"><span id="ps" class="on">0</span>&nbsp;&nbsp;&nbsp;<span id="as">0</span></div>
+<canvas id="c" width="600" height="400"></canvas>
+<div id="ol" class="on"><div id="msg">PONG</div><div id="sub">Press SPACE or tap to play</div></div>
+<div id="hlp">W/S &middot; mouse &middot; touch &middot; first to 7 wins</div>
+</div>
+<script>
+'use strict';
+const W=600,H=400,PW=10,PH=80,BR=6,WIN=7,PS=6,AI_BASE=4.5,BI=4,BMAX=12,BINC=.35;
+const c=document.getElementById('c'),cx=c.getContext('2d');
+const ol=document.getElementById('ol'),ms=document.getElementById('msg'),sb=document.getElementById('sub');
+const ps=document.getElementById('ps'),as=document.getElementById('as');
+let py,ay,bx,by,bvx,bvy,bs,pS,aS,st,up,dn,dY,tm,actx;
+
+function init(kp){
+  py=H/2-PH/2;ay=H/2-PH/2;
+  if(!kp){pS=0;aS=0}bs=BI;st='waiting';up=dn=false;dY=null;tm=null;
+  show('PONG','Press SPACE or tap to play');updS();
+}
+function show(m,s){ms.textContent=m;sb.textContent=s||'';ol.classList.add('on')}
+function hide(){ol.classList.remove('on')}
+function updS(){ps.textContent=pS;as.textContent=aS}
+
+function serve(){
+  hide();py=H/2-PH/2;ay=H/2-PH/2;bx=W/2;by=H/2;
+  const a=(Math.random()-.5)*Math.PI/3,d=Math.random()>.5?1:-1;
+  bvx=d*bs*Math.cos(a);bvy=bs*Math.sin(a);
+  if(Math.abs(bvy)<1.2)bvy=1.2*(Math.random()>.5?1:-1);st='playing';
+}
+function rstB(tw){
+  bx=W/2;by=H/2;bs=Math.min(BMAX,BI+(pS+aS)*.08);
+  const a=(Math.random()-.5)*Math.PI/3,d=tw>0?-1:1;
+  bvx=d*bs*Math.cos(a);bvy=bs*Math.sin(a);
+  if(Math.abs(bvy)<1.2)bvy=1.2*(Math.random()>.5?1:-1);st='playing';
+}
+function sc(w){
+  if(w==='p')pS++;else aS++;updS();
+  if(pS>=WIN||aS>=WIN){st='won';show(pS>=WIN?'You Win!':'AI Wins!','Press SPACE or tap to play again');snd('win')}
+  else{st='scored';show(w==='p'?'Point!':'AI Scores!');snd('score');
+    tm=setTimeout(()=>{if(st==='scored')rstB(w==='p'?1:-1)},800)}
+}
+
+function iA(){if(!actx)actx=new(window.AudioContext||window.webkitAudioContext)();if(actx.state==='suspended')actx.resume()}
+function snd(t){
+  try{iA();const o=actx.createOscillator(),g=actx.createGain();o.connect(g);g.connect(actx.destination);
+    let f,v,d;switch(t){case'paddle':f=410;v=.10;d=.05;break;case'wall':f=300;v=.07;d=.05;break;case'score':f=220;v=.16;d=.18;break;case'win':f=660;v=.20;d=.3;break;default:return}
+    o.type='square';o.frequency.value=f;
+    g.gain.setValueAtTime(v,actx.currentTime);g.gain.exponentialRampToValueAtTime(.001,actx.currentTime+d);
+    o.start();o.stop(actx.currentTime+d+.02)}catch(e){}
+}
+
+function upd(){
+  if(dY!==null)py=dY;else{if(up)py-=PS;if(dn)py+=PS}py=Math.max(0,Math.min(H-PH,py));
+  const tgt=by+BR-PH/2,di=tgt-ay;
+  if(bvx>0&&Math.abs(di)>6)ay+=Math.sign(di)*AI_BASE*(.55+Math.random()*.45);
+  else if(bvx<=0){if(ay+PH/2>H/2+40)ay-=AI_BASE*.35;else if(ay+PH/2<H/2-40)ay+=AI_BASE*.35}
+  ay=Math.max(0,Math.min(H-PH,ay));
+  bx+=bvx;by+=bvy;
+  if(by<=0||by+BR*2>=H){bvy=-bvy;by=by<=0?0:H-BR*2;snd('wall')}
+  if(bvx<0&&bx<=PW&&bx+BR*2>=0&&by+BR*2>py&&by<py+PH){
+    bvx=-bvx;const r=(by+BR-(py+PH/2))/(PH/2),a=r*Math.PI/4;
+    bs=Math.min(BMAX,bs+BINC);bvx=bs*Math.cos(a);bvy=bs*Math.sin(a);
+    if(Math.abs(bvy)<1)bvy=Math.sign(bvy||1)*1.5;bx=PW+1;snd('paddle')
+  }
+  if(bvx>0&&bx+BR*2>=W-PW&&bx<=W&&by+BR*2>ay&&by<ay+PH){
+    bvx=-bvx;const r=(by+BR-(ay+PH/2))/(PH/2),a=r*Math.PI/4;
+    bs=Math.min(BMAX,bs+BINC);bvx=-bs*Math.cos(a);bvy=bs*Math.sin(a);
+    if(Math.abs(bvy)<1)bvy=Math.sign(bvy||-1)*1.5;bx=W-PW-BR*2-1;snd('paddle')
+  }
+  if(bx+BR*2<0)sc('ai');else if(bx>W)sc('p');
+}
+
+function draw(){
+  cx.fillStyle='#e8e0d8';cx.fillRect(0,0,W,H);
+  cx.setLineDash([8,8]);cx.strokeStyle='#d0c8bc';cx.lineWidth=2;
+  cx.beginPath();cx.moveTo(W/2,0);cx.lineTo(W/2,H);cx.stroke();cx.setLineDash([]);
+  cx.fillStyle='#f0f6fc';
+  for(let p of[{x:0,y:py,w:PW,h:PH},{x:W-PW,y:ay,w:PW,h:PH}]){cx.beginPath();cx.roundRect(p.x,p.y,p.w,p.h,3);cx.fill()}
+  cx.shadowColor='#f0f6fc';cx.shadowBlur=14;
+  cx.beginPath();cx.arc(bx+BR,by+BR,BR,0,Math.PI*2);cx.fill();
+  cx.shadowBlur=0;
+}
+function loop(){if(st==='playing')upd();draw();requestAnimationFrame(loop)}
+
+document.addEventListener('keydown',e=>{
+  const k=e.key;
+  if(k==='w'||k==='W'){up=true;dY=null;e.preventDefault()}
+  if(k==='s'||k==='S'){dn=true;dY=null;e.preventDefault()}
+  if(k===' '||k==='Spacebar'||k==='Space'||k===''){e.preventDefault();if(st==='waiting'||st==='won'){init(true);serve()}}
+});
+document.addEventListener('keyup',e=>{if(e.key==='w'||e.key==='W')up=false;if(e.key==='s'||e.key==='S')dn=false});
+
+let ti=null;
+c.addEventListener('touchstart',e=>{e.preventDefault();if(st==='waiting'||st==='won'){init(true);serve();return}
+  const t=e.changedTouches[0];ti=t.identifier;const r=c.getBoundingClientRect();dY=(t.clientY-r.top)*(H/r.height)-PH/2},{passive:false});
+c.addEventListener('touchmove',e=>{e.preventDefault();for(const t of e.changedTouches)if(t.identifier===ti){const r=c.getBoundingClientRect();dY=(t.clientY-r.top)*(H/r.height)-PH/2}},{passive:false});
+c.addEventListener('touchend',e=>{e.preventDefault();for(const t of e.changedTouches)if(t.identifier===ti){dY=null;ti=null}},{passive:false});
+c.addEventListener('touchcancel',e=>{e.preventDefault();dY=null;ti=null},{passive:false});
+c.addEventListener('mousemove',e=>{if(st!=='playing')return;const r=c.getBoundingClientRect();dY=(e.clientY-r.top)*(H/r.height)-PH/2});
+c.addEventListener('mouseleave',()=>{dY=null});
+c.addEventListener('click',()=>{if(st==='waiting'||st==='won'){init(true);serve()}});
+ol.addEventListener('click',()=>{if(st==='waiting'||st==='won'){init(true);serve()}});
+
+init();loop();
+</script>
+</body>
+</html>

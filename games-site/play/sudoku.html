@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--
+MIT License
+Copyright (c) 2026
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-2595917642864488">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Sudoku</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:#f0ebe3;color:#3a3a3a;
+  font-family:'Courier New',Courier,monospace;
+  display:flex;justify-content:center;align-items:center;
+  min-height:100vh;overflow:auto;
+  user-select:none;-webkit-user-select:none
+}
+#wrap{width:100%;max-width:500px;padding:10px}
+#hdr{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:6px;margin-bottom:10px
+}
+#hdr select,#hdr button{
+  background:#e0d8cc;color:#3a3a3a;border:1px solid #c0b8ac;
+  border-radius:4px;padding:6px 12px;font-size:clamp(.6rem,1.8vw,.8rem);
+  font-family:inherit;cursor:pointer
+}
+#hdr select:focus,#hdr button:hover{background:#d5cec2;border-color:#a0a0a0}
+#hdr button:active{background:#d0c8bc}
+#tmr{font-size:clamp(.7rem,2vw,.9rem);color:#6b7280;min-width:3em;text-align:center}
+#msg{font-size:clamp(.6rem,1.8vw,.8rem);color:#2563eb;text-align:center;margin-bottom:6px;min-height:1.2em}
+#brd{
+  display:grid;grid-template-columns:repeat(9,1fr);
+  max-width:432px;margin:0 auto;border:2px solid #a0a0a0
+}
+.cell{
+  aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  font-size:clamp(1rem,4vw,1.6rem);cursor:pointer;background:#f0ebe3;
+  color:#3a3a3a;border:1px solid #d0c8bc;position:relative;
+  transition:background .08s
+}
+.cell.gvn{color:#1a1a2e;font-weight:700}
+.cell.sel{background:#1f6feb44}
+.cell.rel{background:#1f6feb1a}
+.cell.sm{background:#1f6feb66}
+.cell.cn{color:#f85149}
+.cell.err{background:#f851491a;border-color:#f85149}
+.cell.hvr{background:#c0b8ac}
+#npd{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:4px;
+  max-width:360px;margin:10px auto 0
+}
+#npd button{
+  aspect-ratio:1.5;background:#e0d8cc;color:#3a3a3a;
+  border:1px solid #c0b8ac;border-radius:4px;
+  font-size:clamp(.9rem,3vw,1.3rem);font-family:inherit;cursor:pointer
+}
+#npd button:hover{background:#d5cec2;border-color:#a0a0a0}
+#npd button:active{background:#d0c8bc}
+#npd button.er{color:#f85149}
+#hlp{
+  text-align:center;font-size:clamp(.45rem,1.3vw,.6rem);color:#c0b8ac;
+  margin-top:6px
+}
+#ol{
+  position:fixed;inset:0;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;z-index:10;
+  background:rgba(240,235,227,.85);opacity:0;pointer-events:none;
+  transition:opacity .2s
+}
+#ol.on{opacity:1;pointer-events:auto}
+#ol>div{background:#e8e0d8;border:1px solid #c0b8ac;border-radius:8px;
+  padding:clamp(1.2rem,4vw,2rem);text-align:center;max-width:320px}
+#ol h2{font-size:clamp(1.2rem,4vw,2rem);color:#1a1a2e;margin-bottom:8px}
+#ol p{font-size:clamp(.7rem,2vw,.9rem);color:#6b7280;margin-bottom:12px}
+#ol button{
+  background:#238636;color:#fff;border:none;border-radius:4px;
+  padding:8px 24px;font-size:clamp(.7rem,2vw,.9rem);font-family:inherit;cursor:pointer
+}
+#ol button:hover{background:#2ea043}
+</style>
+</head>
+<body>
+<div id="wrap">
+<div id="hdr">
+<select id="diff">
+<option value="easy">Easy</option>
+<option value="medium" selected>Medium</option>
+<option value="hard">Hard</option>
+</select>
+<button id="newBtn">New Game</button>
+<button id="chkBtn">Check</button>
+<span id="tmr">00:00</span>
+</div>
+<div id="msg"></div>
+<div id="brd"></div>
+<div id="npd">
+<button data-n="1">1</button><button data-n="2">2</button><button data-n="3">3</button><button data-n="4">4</button><button data-n="5">5</button>
+<button data-n="6">6</button><button data-n="7">7</button><button data-n="8">8</button><button data-n="9">9</button><button data-n="0" class="er">X</button>
+</div>
+<div id="hlp">Click cell &middot; Keys 1-9 to fill &middot; Delete to clear &middot; Arrows to navigate</div>
+</div>
+<div id="ol"><div>
+<h2 id="winT">Congratulations!</h2>
+<p id="winP">You solved the puzzle!</p>
+<button id="winBtn">New Game</button>
+</div></div>
+<script>
+'use strict';
+
+const S9=[1,2,3,4,5,6,7,8,9];
+const BASE=[
+  [1,2,3,4,5,6,7,8,9],[4,5,6,7,8,9,1,2,3],[7,8,9,1,2,3,4,5,6],
+  [2,3,4,5,6,7,8,9,1],[5,6,7,8,9,1,2,3,4],[8,9,1,2,3,4,5,6,7],
+  [3,4,5,6,7,8,9,1,2],[6,7,8,9,1,2,3,4,5],[9,1,2,3,4,5,6,7,8]
+];
+const REM={easy:38,medium:47,hard:55};
+
+const brd=document.getElementById('brd'),msg=document.getElementById('msg');
+const tmr=document.getElementById('tmr'),diff=document.getElementById('diff');
+const ol=document.getElementById('ol'),winT=document.getElementById('winT'),winP=document.getElementById('winP');
+let sol,dis,gvn,sr,sc,sec,tmI,ov;
+
+function sf(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+function tpose(b){for(let r=0;r<9;r++)for(let c=r+1;c<9;c++)[b[r][c],b[c][r]]=[b[c][r],b[r][c]]}
+
+function gen(){
+  const B=BASE.map(r=>[...r]);
+  const nums=sf([...S9]);
+  for(let r=0;r<9;r++)for(let c=0;c<9;c++)B[r][c]=nums.indexOf(B[r][c])+1;
+  for(let i=0;i<15;i++){
+    switch(Math.floor(Math.random()*5)){
+      case 0:{const[a,x]=[1+Math.random()*9|0,1+Math.random()*9|0];if(a!==x)for(let r=0;r<9;r++)for(let c=0;c<9;c++){if(B[r][c]===a)B[r][c]=x;else if(B[r][c]===x)B[r][c]=a}break}
+      case 1:{const k=Math.floor(Math.random()*3)*3;const[i,j]=sf([0,1,2]).slice(0,2);[B[k+i],B[k+j]]=[B[k+j],B[k+i]];break}
+      case 2:{tpose(B);const k=Math.floor(Math.random()*3)*3;const[i,j]=sf([0,1,2]).slice(0,2);[B[k+i],B[k+j]]=[B[k+j],B[k+i]];tpose(B);break}
+      case 3:{const[i,j]=sf([0,1,2]).slice(0,2);for(let r=0;r<3;r++)[B[i*3+r],B[j*3+r]]=[B[j*3+r],B[i*3+r]];break}
+      case 4:{tpose(B);const[i,j]=sf([0,1,2]).slice(0,2);for(let r=0;r<3;r++)[B[i*3+r],B[j*3+r]]=[B[j*3+r],B[i*3+r]];tpose(B);break}
+    }
+  }
+  return B;
+}
+
+function mkPuzzle(s,d){
+  const p=s.map(r=>[...r]),cells=[];
+  for(let r=0;r<9;r++)for(let c=0;c<9;c++)cells.push([r,c]);
+  sf(cells);
+  const rem=REM[d]||REM.medium;
+  for(let i=0;i<rem&&i<cells.length;i++){const[r,c]=cells[i];p[r][c]=0}
+  return p;
+}
+
+function isVld(b,r,c,n){
+  for(let i=0;i<9;i++){if(b[r][i]===n)return false;if(b[i][c]===n)return false}
+  const br=Math.floor(r/3)*3,bc=Math.floor(c/3)*3;
+  for(let dr=0;dr<3;dr++)for(let dc=0;dc<3;dc++)if(b[br+dr][bc+dc]===n)return false;
+  return true;
+}
+
+function hasCnf(){
+  for(let r=0;r<9;r++)for(let c=0;c<9;c++)
+    if(dis[r][c]!==0){const n=dis[r][c];
+      for(let i=0;i<9;i++){if(i!==c&&dis[r][i]===n)return true;if(i!==r&&dis[i][c]===n)return true}
+      const br=Math.floor(r/3)*3,bc=Math.floor(c/3)*3;
+      for(let dr=0;dr<3;dr++)for(let dc=0;dc<3;dc++)if(br+dr!==r&&bc+dc!==c&&dis[br+dr][bc+dc]===n)return true}
+  return false;
+}
+
+function isCmp(){for(let r=0;r<9;r++)for(let c=0;c<9;c++)if(dis[r][c]===0)return false;return true}
+
+function hili(r,c){
+  document.querySelectorAll('.cell').forEach(el=>el.classList.remove('sel','rel','sm','cn','err'));
+  if(r<0)return;
+  const n=dis[r][c];
+  document.querySelectorAll('.cell').forEach((el,i)=>{
+    const cr=i/9|0,cc=i%9;
+    if(cr===r&&cc===c)el.classList.add('sel');
+    else if(cr===r||cc===c||(Math.floor(cr/3)===(r/3|0)&&Math.floor(cc/3)===(c/3|0)))el.classList.add('rel');
+    if(n>0&&dis[cr][cc]===n&&!(cr===r&&cc===c))el.classList.add('sm')
+  });
+  // Conflicts
+  for(let rr=0;rr<9;rr++)for(let cc=0;cc<9;cc++)
+    if(dis[rr][cc]!==0){const nn=dis[rr][cc];dis[rr][cc]=0;
+      let ok=true;
+      for(let i=0;i<9;i++){if(dis[rr][i]===nn){ok=false;break}if(dis[i][cc]===nn){ok=false;break}}
+      if(ok){const bbr=rr/3|0*3,bcc=cc/3|0*3;for(let dr=0;dr<3;dr++)for(let dc=0;dc<3;dc++)if(dis[bbr+dr][bcc+dc]===nn){ok=false;break}}
+      if(!ok)document.querySelector(`.cell[data-r="${rr}"][data-c="${cc}"]`).classList.add('cn');
+      dis[rr][cc]=nn
+    }
+}
+
+function ren(){
+  brd.innerHTML='';
+  for(let r=0;r<9;r++)for(let c=0;c<9;c++){
+    const el=document.createElement('div');
+    el.className='cell';if(gvn[r][c])el.classList.add('gvn');
+    el.dataset.r=r;el.dataset.c=c;
+    el.textContent=dis[r][c]||'';
+    if(c%3===0)el.style.borderLeftWidth='2px';
+    if(c%3===2)el.style.borderRightWidth='2px';
+    if(r%3===0)el.style.borderTopWidth='2px';
+    if(r%3===2)el.style.borderBottomWidth='2px';
+    el.addEventListener('click',()=>sel(r,c));
+    el.addEventListener('mouseenter',()=>{if(sr!==r||sc!==c)el.classList.add('hvr')});
+    el.addEventListener('mouseleave',()=>el.classList.remove('hvr'));
+    brd.appendChild(el)
+  }
+  if(sr>=0)hili(sr,sc)
+}
+
+function sel(r,c){sr=r;sc=c;hili(r,c);msg.textContent=''}
+
+function fill(n){
+  if(sr<0||gvn[sr][sc]||ov)return;
+  dis[sr][sc]=n;
+  ren();
+  if(isCmp()&&!hasCnf()){
+    ov=true;if(tmI)clearInterval(tmI);
+    winT.textContent='Congratulations!';
+    winP.textContent=`You solved it in ${tmr.textContent}!`;
+    ol.classList.add('on')
+  }
+}
+
+function nw(){
+  ov=false;if(tmI)clearInterval(tmI);sec=0;tmr.textContent='00:00';sr=-1;sc=-1;msg.textContent='';
+  sol=gen();const p=mkPuzzle(sol,diff.value);
+  dis=p.map(r=>[...r]);gvn=p.map(r=>r.map(v=>v!==0));
+  ren();ol.classList.remove('on');
+  tmI=setInterval(()=>{sec++;const m=String(sec/60|0).padStart(2,'0'),s=String(sec%60).padStart(2,'0');tmr.textContent=m+':'+s},1000)
+}
+
+function chk(){
+  if(ov)return;
+  document.querySelectorAll('.cell').forEach(el=>el.classList.remove('err'));
+  const errs=[];
+  for(let r=0;r<9;r++)for(let c=0;c<9;c++)
+    if(!gvn[r][c]&&dis[r][c]!==0&&dis[r][c]!==sol[r][c])errs.push([r,c]);
+  if(errs.length===0&&isCmp()){fill(0);return}
+  if(errs.length===0){msg.textContent='Looking good!';return}
+  errs.forEach(([r,c])=>document.querySelector(`.cell[data-r="${r}"][data-c="${c}"]`).classList.add('err'));
+  msg.textContent=errs.length+' cell(s) incorrect'
+}
+
+// Input
+document.addEventListener('keydown',e=>{
+  const k=e.key;
+  if(k>='1'&&k<='9'){fill(parseInt(k));e.preventDefault()}
+  else if(k==='Backspace'||k==='Delete'){fill(0);e.preventDefault()}
+  else if(k==='ArrowUp'&&sr>0){sel(sr-1,sc);e.preventDefault()}
+  else if(k==='ArrowDown'&&sr<8){sel(sr+1,sc);e.preventDefault()}
+  else if(k==='ArrowLeft'&&sc>0){sel(sr,sc-1);e.preventDefault()}
+  else if(k==='ArrowRight'&&sc<8){sel(sr,sc+1);e.preventDefault()}
+});
+
+document.querySelectorAll('#npd button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const n=parseInt(btn.dataset.n);
+    if(n===0)fill(0);else fill(n)
+  })
+});
+
+document.getElementById('newBtn').addEventListener('click',nw);
+document.getElementById('chkBtn').addEventListener('click',chk);
+document.getElementById('winBtn').addEventListener('click',nw);
+diff.addEventListener('change',nw);
+
+nw();
+</script>
+</body>
+</html>

@@ -10,7 +10,7 @@ from urllib.error import URLError, HTTPError
 
 ROOT = Path(__file__).resolve().parent
 ARTICLE_DIR = ROOT / "article"
-API_URL = os.environ.get("API_URL", "http://127.0.0.1:9223/v1/messages")
+API_URL = os.environ.get("API_URL", "https://api.deepseek.com/anthropic")
 API_TOKEN = os.environ.get("DEEPSEEK_API_KEY", "")
 
 CATEGORIES = [
@@ -183,30 +183,50 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
     </div>
 </main>
 
-<footer class="bg-gray-900 text-gray-400 py-12 mt-16">
+<footer class="bg-white border-t border-gray-100 text-gray-600 py-12">
     <div class="max-w-6xl mx-auto px-4">
-        <div class="grid md:grid-cols-3 gap-8 mb-10">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
             <div>
-                <h3 class="text-white text-lg font-black mb-3">Myers Media</h3>
-                <p class="text-sm leading-relaxed">Your gateway to expert lifestyle guides across multiple domains.</p>
+                <h3 class="text-gray-900 text-lg font-black mb-3">Myers<span class="text-primary-600">Media</span></h3>
+                <p class="text-sm leading-relaxed text-gray-500">Your gateway to expert lifestyle guides.</p>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+                <h4 class="text-gray-900 font-semibold mb-3">Our Network</h4>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-white text-gray-600 text-sm rounded px-3 py-2 mb-3 border border-gray-200 focus:outline-none focus:border-primary-500 cursor-pointer">
+                    <option value="">— Network —</option>
+                    <option value="https://www.jycsd.com">Main Site</option>
+                    <option value="https://games.jycsd.com">Game Guides</option>
+                    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+                </select>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-white text-gray-600 text-sm rounded px-3 py-2 border border-gray-200 focus:outline-none focus:border-primary-500 cursor-pointer">
+                    <option value="">— More Sites —</option>
+                    <option value="https://healthy.jycsd.com">HealthyEats</option>
+                    <option value="https://pets.jycsd.com">PetCare Hub</option>
+                    <option value="https://home.jycsd.com">HomeJoy</option>
+                    <option value="https://finance.jycsd.com">MoneyWise</option>
+                    <option value="https://tech.jycsd.com">TechNest</option>
+                    <option value="https://travel.jycsd.com">TripRoute</option>
+                    <option value="https://rightsdaily.com">RightsDaily</option>
+                    <option value="https://dailymedadvice.com">DailyMedAdvice</option>
+                </select>
+            </div>
+            <div>
+                <h4 class="text-gray-900 font-semibold mb-3">Legal</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
-                    <li><a href="/#sites" class="hover:text-white transition-colors">All Sites</a></li>
-                    <li><a href="/about.html" class="hover:text-white transition-colors">About</a></li>
-                    <li><a href="/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="privacy-policy.html" class="text-gray-500 hover:text-primary-600 transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="text-gray-500 hover:text-primary-600 transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="text-gray-500 hover:text-primary-600 transition-colors">Cookie Policy</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-3">Contact</h4>
+                <h4 class="text-gray-900 font-semibold mb-3">Contact</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="mailto:contact@jycsd.com" class="hover:text-white transition-colors">contact@jycsd.com</a></li>
+                    <li><a href="contact.html" class="text-gray-500 hover:text-primary-600 transition-colors">Get in Touch</a></li>
+                    <li><a href="mailto:contact@jycsd.com" class="text-gray-500 hover:text-primary-600 transition-colors">contact@jycsd.com</a></li>
                 </ul>
             </div>
         </div>
-        <div class="border-t border-gray-800 pt-6 text-center text-sm">
+        <div class="border-t border-gray-100 pt-6 text-center text-sm text-gray-400">
             <p>&copy; {{year}} Myers Media. All rights reserved.</p>
         </div>
     </div>

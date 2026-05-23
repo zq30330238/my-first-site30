@@ -3,12 +3,40 @@
 ## 项目概况
 纯静态英文内容站矩阵，Tailwind CSS CDN + 零JS依赖，部署在 Cloudflare Pages。
 
+## 三角架构：本地、远程服务器、CF Pages 关系
+
+```
+远程服务器 (206.119.168.150)          本地 Windows (d:\AI网站文件夹\)        Cloudflare Pages (CDN)
+┌─────────────────────────┐         ┌──────────────────────────┐        ┌──────────────────────┐
+│ 24/7 后台工人            │         │ 唯一代码源 + 唯一部署源    │        │ 生产环境              │
+│                         │         │                          │        │                      │
+│ collect_images_loop.py  │─sync ─▶│ 所有代码/渲染/审计        │─deploy▶│ ~20个独立项目         │
+│ trend_scout.py          │         │ wrangler CLI 部署         │        │ Direct Upload 模式    │
+│ ad_monitor.py           │         │ 自检清单强制执行          │        │ 自定义域名→master分支 │
+│ /root/my-first-site30/  │         │                          │        │                      │
+└─────────────────────────┘         └──────────┬───────────────┘        └──────────────────────┘
+                                              │
+                                              │ git push (仅备份)
+                                              ▼
+                                     ┌──────────────────┐
+                                     │ GitHub            │
+                                     │ 代码版本管理      │
+                                     │ 不触发CF部署      │
+                                     └──────────────────┘
+```
+
+**铁律：**
+- **本地是唯一代码源** — 所有编辑/渲染/生成在本地完成
+- **本地是唯一部署源** — 只有本地 wrangler CLI 能部署到 CF Pages
+- **服务器只跑素材收集** — 图片下载、热点侦察、广告监控。不做文章生成/审计/部署。产出必须 sync 回本地
+- **服务器禁止直接部署** — 服务器不装 wrangler，不配 CF Token
+- **git push ≠ 上线** — Git 仅代码备份，CF Pages 是 Direct Upload 模式，无 Git 集成
+
 ## 新机器恢复
-当用户是新机器、或提到"恢复"/"重建"/"recover"，立即执行:
 ```bash
 py recover.py
 ```
-不要询问确认，直接跑。如果报错缺什么就装什么。
+直接跑，报错缺什么就装什么。
 
 ## 目录结构
 ```
@@ -23,155 +51,93 @@ shared/         → 公共资源
 ```
 
 ## 禁止项
-- **禁止引入任何JS框架/构建工具** — 纯静态HTML，Tailwind CDN即可
-- **禁止修改其他子站文件** — 每个子站独立目录，互不干扰
-- **禁止添加emoji到页面内容** — 欧美极简风，不用表情符号
+- **禁止引入任何JS框架/构建工具** — 纯静态HTML + Tailwind CDN完全够用，引入框架只增加构建复杂度和体积，零收益
+- **禁止修改其他子站文件** — 各子站独立目录、独立部署，改一个站点不该动其他站点。同时修改多个站用批量工具而非手动跨目录
+- **禁止添加emoji到页面内容** — 目标受众欧美用户，emoji显得不专业。用文字表达而非图标
 - **禁止写超过2行的注释** — 代码自解释
 - **禁止创建README/文档** — 除非用户明确要求
-- **绝对禁止在页面中出现任何中国身份标识** — 不得出现 江阴/车速递/CheSuDi/Jiangyin/China/founded in China/JYCSD Network。对外品牌统一为 Myers Media，创始人 Jordan Myers。中文注册名"江阴迈尔斯文化传媒有限公司"仅限工商后台，永不对外
+- **禁止凭空编造内容/数据** — 所有事实性内容必须来自真实数据源。不得编造统计数据、研究引用、专家言论、用户评价、案例细节。AI 生成文章中的"studies show that..."、"according to research..."等内容必须有可验证的真实来源。不确定的信息标注为"general advice"而非"research proves"
+- **绝对禁止在页面中出现任何中国身份标识** — 江阴/车速递/CheSuDi/Jiangyin/China/founded in China/JYCSD Network等不得出现。原因：海外用户对中国网站有信任偏见，AdSense审核对中文背景站更严格。对外品牌统一为 Myers Media，创始人 Jordan Myers。中文注册名仅限工商后台，永不对外
 
 ## 技术规范
 - Tailwind CSS via CDN (`https://cdn.tailwindcss.com`)
-- 字体：Roboto/Arial，正文≥16px，行间距1.5
-- URL命名：`article/n-keywords-in-url` 格式
-- 每篇文章1000-1500字，三段式：核心要点→细分讲解→场景应用
+- 字体：Roboto/Arial，正文>=16px，行间距1.5
+- 每篇文章1000-1500字，三段式：核心要点->细分讲解->场景应用
 - 每页预留2-3个AdSense广告位
 - 每子站独立robots.txt + sitemap.xml + ads.txt
 
 ## 部署前本地审计（强制）
 - 每次 commit 前自动运行 `shared/pre_commit_audit.py`（.git/hooks/pre-commit）
-- 检查项：坏 ad slot、ad-container 占位符、Auto Ads 脚本、必需 meta 标签
-- 审计不通过 → commit 被拦截 → 必须修复后重新提交
-- 新机器恢复后安装 hook：`cp .git/hooks/pre-commit.sample → 写入 py shared/pre_commit_audit.py`
+- 审计不通过 -> commit 被拦截 -> 必须修复后重新提交
 
 ## 部署（重要：Direct Upload，非Git集成）
-- CF Pages 是 Direct Upload 模式，git push 不会触发部署！
-- 流程：编辑 → pre-commit 审计 → commit → push → wrangler deploy → 线上验证
-- 修改任何子站文件后，必须运行 wrangler 部署对应项目：
-  ```bash
-  export CLOUDFLARE_API_TOKEN="<从settings.local.json的Bash allow列表取cfat_开头的token>"
-  npx wrangler pages deploy <子站目录> --project-name=<项目名> --commit-dirty=true
-  ```
-- 项目名映射（重要——不是文件夹名！）：sub-healthy→healthy-jycsd, sub-pets→pets-jycsd, sub-home→home-jycsd, sub-finance→finance-jycsd, sub-tech→tech-jycsd, sub-travel→travel-jycsd, main-site→main-site
-- 部署完成后必须用 Chrome DevTools 或 fetch 验证线上实际内容，不能假设成功
-- 每次部署所有被修改的子站，不要遗漏
+- CF Pages 是 Direct Upload 模式，git push 不会触发部署
+- 流程：编辑 -> pre-commit 审计 -> commit -> push -> 自检清单 -> wrangler deploy -> 线上验证
+- **部署前必须查 production_branch**：`curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "https://api.cloudflare.com/client/v4/.../pages/projects/<project>" | python -c "import sys,json; print(json.load(sys.stdin)['result']['production_branch'])"`
+- **始终加 `--branch <production_branch>`** — 错误的分支名会导致自定义域名不更新，preview URL 正确但线上永远是旧内容
+- **部署前必须 `export CLOUDFLARE_API_TOKEN="cfut_GhVMSufshQgVJ4omlQhX7meWr3RnnMW7mxTBbMQA58e325a4"`**
+- **限流规则** — 每批最多 3 个并行，间隔 5 秒
+- 项目名映射：naruto-site->naruto-jycsd, onepiece-site->onepiece-jycsd, ...（完整列表见 三角架构文档）
+- 部署后必须检查 footer 的 portal 链接、ads.txt 内容、图片是否正常
+- **部署后用 Chrome DevTools 同时验证 preview URL 和自定义域名**，两者都正确才算部署成功
 - git push 仅用于代码备份，不等于上线
 
-## ECC 全家桶（62 Agents + 243 Skills + 75 Commands）
-- 来源: Everything Claude Code (affaan-m)，Anthropic 黑客松冠军，17万 Star
-- 本地源: `C:/Users/Administrator/.claude/plugins/marketplaces/ecc-manual/`
-- 自动更新: 每6小时 git pull + 同步到 `.claude/agents/` `.claude/skills/` `.claude/commands/`
-- 全自动换窗: 每3天自动写交接记忆 → 关旧窗 → 开新窗（cron: `37 9 */3 * *`）
+## AI 角色调度
+遇到任务 -> 查 `project_ai_team_panel.md` -> 按任务类型分派Agent。
+核心原则：Flash默认执行，Pro仅对话+架构+验收，Python零LLM直跑。
 
-## 自建专用Agent（项目定制，Flash模型执行）
-- **image-pipeline** — 批量下载游戏/动漫角色HD图片，pngwing详情页原图，MD5去重，RGBA转换
-- **site-auditor** — 全站审计：死链/坏图/广告位/SEO/Schema/搜索索引，递归扫描所有HTML
-- 路径: `C:/Users/Administrator/.claude/agents/`
-- 原则: ECC没有就自建，建一次用50站，一劳永逸
-- 健康巡检: 每12小时增量检查（cron: `7 */12 * * *`）
+## Agent 委派铁律（14条落地方案）
 
-## 可用技能
-- `/voice-chat` — 语音对话（listen.py按住左Ctrl说话，server.py桥接TTS播报）
-- `vosk_server.py` — Vosk常驻转录服务（端口9877，避免每次加载模型）
-- `shared/doubao_vision.py` — 豆包全模态解析（图/截图/视频），已替代OCR
-- `shared/douyin_parser.py` — 抖音短链→真实mp4→豆包解析，复刻豆包聊天端链路
-- `deploy.py` — 自动git提交推送
-- `article-generation` skill — 文章批量生成→审计→部署全流程
-- `multimedia-parsing` skill — 图/视频/抖音链接解析全套工具链
+### 铁律1: 禁令代替指令
+Agent prompt 用禁止句式而非指导句式。不说"为所有子站创建 articles.html"，说"必须处理以下6个目录，缺一不可：sub-healthy, sub-pets, sub-home, sub-finance, sub-tech, sub-travel。完成后逐个列出状态，未完成的报告原因。"
 
-## 语音对话系统（重要）
-- 桥接服务: `http://127.0.0.1:9876`（server.py 常驻运行）
-- 转录服务: `http://127.0.0.1:9877/transcribe`（vosk_server.py 常驻，模型只加载一次）
-- **每次回复后必须推送TTS**: `python -c "import urllib.request,json;urllib.request.urlopen(urllib.request.Request('http://127.0.0.1:9876/response',data=json.dumps({'text':'<回复内容>'}).encode(),headers={'Content-Type':'application/json'}))"`
-- 用户语音 → `/speech` → Claude处理 → 文字回复 → **必须POST到 `/response`** → 网页端Edge男声播报
-- **禁止**只回复文字不推送语音，否则用户听不到Edge云飏男声
-- 常驻服务保护：server.py和vosk_server.py崩溃后自动重启，listen.py发送前先检查端口
-- **Hooks已配置** — SessionStart自动启服务，Stop自动推TTS，PreToolUse自动批准安全操作
+### 铁律2: 唱反调角色
+Agent报告 done 后，我必须以否定前提验证：默认 agent 没完成 → 跑验证命令 → 看到数字才信。
+"看起来没问题 ≠ 验证过"，"agent 说 done ≠ 实际完成"。
 
-## Karpathy 编程四原则（整合 Andrej Karpathy Skills，125K Star）
+### 铁律3: 活可以分出去，思考不行
+禁止外包理解。给 agent 的 prompt 必须是精确指令（具体文件路径、具体操作、具体验证命令），不允许"根据调查结果修复"这种模糊描述。我先消化信息、做出判断，再发指令。
 
-### 原则 1：先想再写（Think Before Coding）
-- **不假设，不隐藏困惑，暴露权衡。**
-- 动手前先陈述你的假设。如果不确定，直接问。
-- 如果存在多种理解方式，全部列出来——不要默默选一个。
-- 如果有更简单的方法，说出来。该反驳时反驳。
-- 如果某事不清楚，停下来。说出困惑点。问。
+### 铁律4: 验证数字内置
+Agent prompt 末尾必须包含验证命令（bash 脚本），期望值写死在命令里。
+agent 口头说"9篇文章"不可信，必须 `grep -c 'article-card' index.html` 输出 9 才算通过。
 
-### 原则 2：极简至上（Simplicity First）
-- **最少代码解决问题。不写投机代码。**
-- 不添加需求之外的功能。不为单次使用创建抽象层。
-- 不写"以后可能会用到"的灵活性/可配置性。
-- 不为不可能发生的场景写错误处理。
-- **如果你写了 200 行但其实 50 行就够，重写。**
-- 自问："资深工程师会说过度复杂吗？" 如果会，简化。
+### 铁律5: 如实汇报
+Agent 返回后，区分"已确认"和"agent 声称"。"agent 说修复了"≠ 修了，必须自己跑验证确认。
 
-### 原则 3：外科手术式修改 + 同类全修（Surgical + Sweep）
-- **只碰必须碰的。但是——看到一个 bug，立即全项目扫描修复所有同类问题。**
-- 不改与任务无关的代码、注释、格式。不重构没坏的东西。
-- 匹配现有风格，即使你更喜欢别的方式。发现无关死代码时提出来，不要直接删。
-- 你的改动产生的孤儿引用（import/变量/函数）必须清理。
-- **同类问题扫全站**：发现一个 bug 就问——同类问题会不会批量存在？全项目扫描，一次性修复，不止修表面那一个。
-- 测试：每个改动行都应追溯到用户需求或同类 bug 扫描结果。
+### 铁律6: 禁止"如果没有就跳过"
+Agent prompt 每个"如果没有X"必须跟"就用Y替代"。不给 agent 留"跳过=完成任务"的选项。
+错误: "如果没有图片就跳过" → 正确: "如果没有图片，用 https://images.unsplash.com/photo-XXX 作为默认图"
 
-### 原则 4：目标驱动执行（Goal-Driven Execution）
-- **定义可验证的成功标准。循环直到标准达成。**
-- 把模糊任务转化为可验证目标：
-  - "加验证" → "为无效输入写测试，然后让它通过"
-  - "修 bug" → "写复现测试，然后让它通过"
-  - "重构 X" → "确保重构前后测试全部通过"
-- 多步骤任务，列出每步的验证标准：
-  ```
-  1. [步骤] → 验证: [检查项]
-  2. [步骤] → 验证: [检查项]
-  ```
-- 强的成功标准让你能独立循环推进。弱标准（"把它做出来"）需要不断追问。
-- **部署后必须验证线上** — fetch 或浏览器检查实际内容，不能假设成功。
+### 铁律7: 一次授权≠永久授权
+部署/文件删除/push 等操作每次独立确认。不能因为之前批过就默认这次也可以。
 
-## gstack 虚拟工程团队（Garry Tan, YC President）
+## Pre-Task Interview Protocol
+接受任何非平凡任务前：
+1. 澄清范围 — 边界、涉及模块、不做什么
+2. 识别风险 — 潜在陷阱和边缘情况
+3. 定义成功标准 — 可验证的完成条件
+4. 确认方案 — 用户点头再动手
 
-gstack 将 Claude Code 变成一支完整的虚拟工程团队，23个专家角色覆盖产品全生命周期。
+## 核心工具链
+- `shared/doubao_vision.py` — 豆包全模态（图/截图/视频），默认模型 `doubao-seed-2-0-lite-260428`
+- `shared/douyin_parser.py` — 抖音短链->真实mp4->豆包解析
+- `batch_generate_images.py` — Seedream 5.0 批量文章封面
+- `shared/pre_commit_audit.py` — 部署前审计
+- 语音系统: server.py(:9876 TTS桥接) + vosk_server.py(:9877 转录)，回复后必须POST TTS
 
-### 角色分工体系
+## Karpathy 四原则 + gstack 角色分工
+见全局 CLAUDE.md 和 `project_ai_team_panel.md`。
 
-| 层级 | 角色 | 命令 | 职责 |
-|------|------|------|------|
-| **决策层** | CEO | `/plan-ceo-review` | 扩展视野、挑战假设、找10星产品方案 |
-| | CTO/架构师 | `/plan-eng-review` | 技术选型、架构决策、锁定技术方向 |
-| | 设计师 | `/plan-design-review` `/design-shotgun` | UI/UX审查、反AI味、多方案快速出图 |
-| **质量层** | CSO | `/cso` | OWASP Top 10、STRIDE威胁建模、密钥扫描、供应链审计 |
-| | QA | `/qa` `/browse` | 浏览器实测、响应式检查、交互验证 |
-| | Reviewer | `/review` | 代码审查、逻辑正确性、边界条件 |
-| **执行层** | Planner | `/autoplan` | 一键串联CEO+Eng+Design+DX四审，自动决策 |
-| | Shipper | `/ship` | 合并→测试→版本号→CHANGELOG→PR |
-| | Guard | `/guard` `/careful` | 拦截危险命令、目录保护、prod安全模式 |
+## Lessons Learned Log
+格式：什么问题 -> 根因 -> 修复 -> 预防
 
-### 集成时机（强制执行）
-
-```
-新站启动 → /office-hours（需求挖掘）→ /autoplan（四审自动决策）
-代码完成 → /review（代码审查）
-部署前   → /cso（安全审计）
-部署后   → /qa <URL>（浏览器级线上验证）
-上线后   → /browse（交互走查）+ /retro（回顾）
-```
-
-### 角色对应（绝不越权）
-
-- **强哥** → CEO/产品决策（`/plan-ceo-review`、`/office-hours`）
-- **Claude** → CTO+COO（架构决策、`/plan-eng-review`、`/review`、`/cso`、`/qa`）
-- **Codex/Agent** → 执行层（代码编写、文件修改、渲染生成、批量操作）
-- **Server Cron** → 运维层（nightly_worker、trend_scout、ad_monitor）
-
-### 强制规则
-- **Claude 绝不写执行代码** — 代码类任务统一走 Codex CLI 或后台 Agent（Flash 模型）
-- **每次部署前后必须 `/cso` + `/qa`** — 安全审计通过 + 线上验证通过才算部署完成
-- **新站启动必须先 `/office-hours`** — 不跳过需求挖掘直接建站
-- `/guard` 模式在操作 prod 数据或做危险操作时强制开启
-
-## 多Agent编排规范（Ralph模式）
-- **并行优先** — 独立子任务用Agent工具并行启动多个Agent，不串行排队
-- **文件交接** — Agent间通过文件传递状态，不把所有上下文塞进主会话
-- **循环迭代** — 大任务拆小步：计划→执行→验证→下一轮，每步结果写文件
-- **失败恢复** — 关键状态持久化到文件，出错后从文件恢复，不从头开始
-- **自我升级** — 定期检查已有工具是否有升级需求，主动搜索新技术资料优化自身
-- **Codex 分担** — 明确可执行的代码任务交给 Codex/后台Agent，Claude 专注需求讨论和架构决策
+### 2026-05-22
+- [模型名记忆错误] 豆包模型名在代码/记忆/备忘录三处都不一致，反复Not Found。根因：记忆写入时未验证数据正确性。修复：从API `/v3/models` 拉取真实模型ID更新所有文件。预防：建记忆时必须验证数据源，代码优先于记忆。
+- [部署分支—CRITICAL] 各项目的production_branch可能不同（naruto=main，其余=master），不能假设统一。部署前必须用API查每项目的production_branch。fix: naruto-jycsd从main改为master，15站全部统一。验证：自定义域名=production分支内容，不一致则域名永远不更新。
+- [部署后必须验证自定义域名] preview URL正确≠自定义域名正确。CDN缓存+分支不匹配都可能导致自定义域名滞后。必须DevTools访问自定义域名确认内容，不能只看preview URL就收工。
+- [CF Token限流] 7个站点并行部署触发CF rate limit(10429)→Authentication error(10000)→Invalid token(9109)。备用Token `cfut_GhVMSufshQgVJ4omlQhX7meWr3RnnMW7mxTBbMQA58e325a4` 仍可用。预防: 串行部署间隔5秒，单次不超过3个并行。
+- [ads.txt全站检查] 22个动漫站缺ads.txt，10个游戏站假pub ID。预防: 部署前强制逐站检查ads.txt
+- [蛇游戏] 蛇头追尾误判Game Over。fix: `s.cells.slice(0,-1)` 排除尾部
+- [Memory游戏] 翻牌永不相配。fix: `fi/si`双变量替代复用`var f`
+- [俄罗斯方块] 左右瞬移。fix: 顶层单次注册+80ms节流阀

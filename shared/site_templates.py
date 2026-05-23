@@ -121,6 +121,57 @@ SITE_CONFIG = {
             ("article-3.html", "Solo Travel Guide: Safety Tips & Best Destinations"),
         ],
     },
+    "rightsdaily": {
+        "brand": "RightsDaily",
+        "domain": "rightsdaily.com",
+        "category": "Legal Rights",
+        "brandColor": "blue-800",
+        "brandHex": "#1e40af",
+        "tailwindColors": """brand: {50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af'}""",
+        "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
+        "blockquoteColor": "#3b82f6",
+        "blockquoteBg": "#eff6ff",
+        "adsense_slots": ["9112825459", "4397738132", "9739511410"],
+        "related_articles": [
+            ("article-1.html", "Know Your Rights: A Complete Guide to Consumer Protection Laws"),
+            ("article-2.html", "Landlord-Tenant Disputes: Legal Options and Tenant Rights"),
+            ("article-3.html", "Divorce Process Simplified: What You Need to Know Before Filing"),
+        ],
+    },
+    "dailymedadvice": {
+        "brand": "DailyMedAdvice",
+        "domain": "dailymedadvice.com",
+        "category": "Health & Medical",
+        "brandColor": "green-700",
+        "brandHex": "#15803d",
+        "tailwindColors": """brand: {50: '#f0fdf4', 100: '#dcfce7', 200: '#bbf7d0', 400: '#4ade80', 500: '#22c55e', 600: '#16a34a', 700: '#15803d', 800: '#166534'}""",
+        "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
+        "blockquoteColor": "#22c55e",
+        "blockquoteBg": "#f0fdf4",
+        "adsense_slots": ["6968613870", "6470642127", "4688206363"],
+        "related_articles": [
+            ("article-1.html", "Understanding Common Cold vs Flu: Symptoms, Treatment, and When to See a Doctor"),
+            ("article-2.html", "Blood Pressure 101: What Your Numbers Mean and How to Manage Them"),
+            ("article-3.html", "Complete Guide to Vitamin D: Benefits, Sources, and Deficiency Symptoms"),
+        ],
+    },
+    "entertainment": {
+        "brand": "EntertainmentBuzz",
+        "domain": "entertainment.jycsd.com",
+        "category": "Entertainment",
+        "brandColor": "purple-600",
+        "brandHex": "#9333ea",
+        "tailwindColors": """brand: {50: '#faf5ff', 100: '#f3e8ff', 200: '#e9d5ff', 400: '#c084fc', 500: '#a855f7', 600: '#9333ea', 700: '#7e22ce', 800: '#6b21a8'}""",
+        "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
+        "blockquoteColor": "#a855f7",
+        "blockquoteBg": "#faf5ff",
+        "adsense_slots": ["8480024131", "9956757497", "1433490869"],
+        "related_articles": [
+            ("article-1.html", "Celebrity News Roundup: Biggest Stories This Week You Missed"),
+            ("article-2.html", "Top 10 Must-Watch TV Shows Premiering This Month"),
+            ("article-3.html", "Hollywood Gossip: Behind-the-Scenes Secrets From Your Favorite Movies"),
+        ],
+    },
 }
 
 # HTML template skeleton with placeholders
@@ -222,6 +273,7 @@ tailwind.config = {
                 <span>{{read_time}} min read</span>
             </div>
         </header>
+        {{cover_img_html}}
         <div class="article-content">
             {{article_body}}
         </div>
@@ -240,15 +292,51 @@ tailwind.config = {
 </main>
 <footer class="bg-gray-100 border-t border-gray-200 mt-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div class="flex flex-wrap justify-between items-center">
-            <p class="text-sm text-gray-500">&copy; {{year}} {{brand}}. All rights reserved.</p>
-            <div class="flex space-x-6 text-sm">
-                <a href="https://www.jycsd.com" target="_blank" rel="noopener" class="text-gray-500 hover:text-{{brand_color}} transition">Visit jycsd.com</a>
-                <a href="about.html" class="text-gray-500 hover:text-{{brand_color}} transition">About</a>
-                <a href="contact.html" class="text-gray-500 hover:text-{{brand_color}} transition">Contact</a>
-                <a href="privacy-policy.html" class="text-gray-500 hover:text-{{brand_color}} transition">Privacy Policy</a>
-                <a href="terms.html" class="text-gray-500 hover:text-{{brand_color}} transition">Terms</a>
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h3 class="text-lg font-bold text-{{brand_color}} mb-3">{{brand}}</h3>
+                <p class="text-sm leading-relaxed text-gray-500">{{brand}} provides practical information for everyday life.</p>
             </div>
+            <div>
+                <h4 class="font-semibold text-gray-900 mb-3">Topics</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="article-1.html" class="hover:text-{{brand_color}} transition">Topic 1</a></li>
+                    <li><a href="article-2.html" class="hover:text-{{brand_color}} transition">Topic 2</a></li>
+                    <li><a href="article-3.html" class="hover:text-{{brand_color}} transition">Topic 3</a></li>
+                    <li><a href="article-4.html" class="hover:text-{{brand_color}} transition">Topic 4</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gray-900 mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="privacy-policy.html" class="hover:text-{{brand_color}} transition">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-{{brand_color}} transition">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-{{brand_color}} transition">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="hover:text-{{brand_color}} transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-gray-900 mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm text-gray-500">
+                    <li><a href="mailto:{{email}}" class="hover:text-{{brand_color}} transition">{{email}}</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-gray-200 my-8"></div>
+
+        <!-- Our Network (placeholder - site-specific) -->
+        {{network_section}}
+
+        <!-- Visit jycsd.com -->
+        <div class="text-center py-4">
+            <a href="https://www.jycsd.com" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-{{brand_color}} transition">Visit jycsd.com for more guides</a>
+        </div>
+
+        <!-- Copyright - bottom -->
+        <div class="text-center text-sm text-gray-400 pb-6">
+            <p>&copy; {{year}} {{brand}}. All rights reserved.</p>
         </div>
     </div>
 </footer>
@@ -291,11 +379,20 @@ def render_article_html(site_dir, ai_output):
     cfg = SITE_CONFIG[site_dir]
     vars_dict = {**GLOBALS, **cfg}
 
-    # Flatten all variables for template replacement
-    vars_dict["meta_tags"] = ai_output.get("meta_tags", "")
-    vars_dict["og_tags"] = ai_output.get("og_tags", "")
+    # Generate meta tags server-side (AI never includes these — don't rely on it)
+    description = ai_output.get("description", ai_output["h1_title"])
+    desc_clean = description.replace('"', "&quot;").replace("\n", " ")
+    article_url = ai_output.get("article_url", f"https://{cfg['domain']}/article-N.html")
+    og_title = ai_output.get("og_title", ai_output["title"])
+    og_title_clean = og_title.replace('"', "&quot;")
+    vars_dict["meta_tags"] = f'<meta name="description" content="{desc_clean}">'
+    vars_dict["og_tags"] = (
+        f'<meta property="og:description" content="{desc_clean}">\n'
+        f'    <meta property="og:title" content="{og_title_clean}">\n'
+        f'    <meta property="og:url" content="{article_url}">'
+    )
     vars_dict["title"] = ai_output["title"]
-    vars_dict["article_url"] = ai_output.get("article_url", f"https://{cfg['domain']}/article-N.html")
+    vars_dict["article_url"] = article_url
     vars_dict["h1_title"] = ai_output["h1_title"]
     vars_dict["breadcrumb"] = ai_output.get("breadcrumb", ai_output["h1_title"])
     vars_dict["article_body"] = ai_output["article_body_html"]
@@ -304,11 +401,22 @@ def render_article_html(site_dir, ai_output):
     vars_dict["read_time"] = ai_output.get("read_time", "7")
     vars_dict["date_iso"] = ai_output["date_iso"]
     vars_dict["date_display"] = ai_output["date_display"]
+    # Cover image (optional, generated by Seedream pipeline)
+    image_url = ai_output.get("cover_img_url", "")
+    if image_url:
+        vars_dict["cover_img_html"] = f'<img src="{image_url}" alt="{ai_output.get("h1_title", "")}" class="w-full rounded-2xl mb-10" loading="lazy">'
+    else:
+        vars_dict["cover_img_html"] = ""
     vars_dict["brand_color"] = cfg["brandColor"]
     vars_dict["tailwind_colors"] = cfg["tailwindColors"]
     vars_dict["font_heading"] = cfg["fontHeading"]
     vars_dict["blockquote_color"] = cfg["blockquoteColor"]
     vars_dict["blockquote_bg"] = cfg["blockquoteBg"]
+
+    # Network section — single link back to hub only (no PBN cross-linking)
+    vars_dict["network_section"] = """<div class="text-center mb-6">
+                <p class="text-sm text-gray-400">Part of the <a href="https://www.jycsd.com" class="text-{{brand_color}} hover:underline transition">Myers Media</a> network.</p>
+            </div>"""
 
     # Related articles
     related = cfg["related_articles"]

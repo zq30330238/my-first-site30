@@ -5,7 +5,7 @@
       "cron": "7 */12 * * *",
       "prompt": "Site health patrol — smart incremental mode. Run `python d:/AI网站文件夹/shared/site_health.py`. If output says \"No changed pages\" → nothing to do, stop immediately. If new/changed HTML files are found: (1) verify each passes SEO spec from d:/AI网站文件夹/shared/article-spec.md, (2) check all cross-links work, (3) confirm sitemap includes new pages, (4) confirm index.html links to new articles. Report: articles added, SEO score, any issues found. Old pages (already 100% clean) do NOT need re-checking — trust the state file.",
       "createdAt": 1778893267486,
-      "lastFiredAt": 1779079021227,
+      "lastFiredAt": 1779490667628,
       "recurring": true,
       "createdBySessionId": "c818b428-f3ff-4ecf-88e6-780bb59129ff",
       "createdByPid": 6680
@@ -15,9 +15,10 @@
       "cron": "37 9 */3 * *",
       "prompt": "全自动换窗任务：先写交接记忆到 memory/session_handover.md（记录当前状态、已完成、进行中、阻塞项），然后执行 powershell -Command \"Start-Process -FilePath 'powershell' -ArgumentList '-File', 'd:\\AI网站文件夹\\.claude\\scripts\\rotate-window.ps1' -WindowStyle Hidden\" 完成关旧窗开新窗。",
       "createdAt": 1778906330138,
+      "lastFiredAt": 1779415786739,
       "recurring": true,
       "createdBySessionId": "383cc0a6-234a-4cf9-9fb9-28dc32798109",
-      "createdByPid": 8196
+      "createdByPid": 9492
     }
   ]
 }
