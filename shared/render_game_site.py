@@ -1059,7 +1059,7 @@ def render_char_detail_page(data, char):
     footer_blurb = render_footer_blurb(data)
     copyright_note = render_copyright_note(data)
 
-    title_tag = f"{char['name']} — {site_name}"
+    title_tag = f"{char['name']} Guide & Profile — {site_name}"
     meta_desc = char.get("desc", "") or f"{char['name']} — {char.get('role', '')} character guide for {site_name}."
     canonical = f"https://{domain}/guides/{cat_slug}/{char_slug}.html"
 
@@ -1117,6 +1117,24 @@ def render_char_detail_page(data, char):
         desc_html += f'<span id="descFull" style="display:none">{full_desc}</span>'
         desc_html += f' <span>... <a href="javascript:void(0)" onclick="toggleReadMore()" id="descToggle" class="text-accent font-medium">Read more</a></span>'
 
+    # Blockquote with character key info (always generate — fallback when info_items empty)
+    blockquote_html = ""
+    if info_items:
+        quick_parts = []
+        for k, v in info_items[:3]:
+            quick_parts.append(f'<strong>{k}:</strong> {v}')
+        quick_stats = " &middot; ".join(quick_parts)
+    else:
+        fallback_parts = []
+        if char.get("role"):
+            fallback_parts.append(char["role"])
+        if char.get("desc"):
+            first_sentence = char["desc"].split(".")[0].strip()
+            if first_sentence:
+                fallback_parts.append(first_sentence + ".")
+        quick_stats = " &middot; ".join(fallback_parts) if fallback_parts else f"Featured character from {site_name}"
+    blockquote_html = f'<blockquote class="border-l-4 pl-4 py-2 my-6 rounded-r-lg italic text-textSecondary" style="border-color:{accent};background:{accent}08"><p>{quick_stats}</p></blockquote>'
+
     char_detail_html = f"""<section class="max-w-7xl mx-auto px-4 py-12">
 <!-- Sidebar ads -->
 <div class="hidden xl:block fixed left-0 top-1/2 -translate-y-1/2 z-40 w-[160px] ml-4">
@@ -1155,6 +1173,7 @@ def render_char_detail_page(data, char):
 </div>
 <div class="max-w-3xl mx-auto">
 <p class="text-base text-textSecondary leading-relaxed">{desc_html}</p>
+{blockquote_html}
 </div>
 <!-- Ad slot before related -->
 <div class="max-w-3xl mx-auto my-8">
@@ -1169,7 +1188,7 @@ def render_char_detail_page(data, char):
     return HTML_TEMPLATE.format(
         title_tag=title_tag,
         meta_desc=meta_desc[:160],
-        og_title=f"{char['name']} — {site_name}",
+        og_title=f"{char['name']} Guide & Profile — {site_name}",
         canonical_url=canonical,
         schema_markup=schema,
         bgPrimary=tc["bgPrimary"],
@@ -1439,7 +1458,7 @@ def render_anime_item_detail(data, item, atype):
     footer_blurb = render_footer_blurb(data)
     copyright_note = render_copyright_note(data)
 
-    title_tag = f"{item['name']} ({atype['singular']}) — {site_name}"
+    title_tag = f"{item['name']} {atype['singular']} Guide — {site_name}"
     meta_desc = (item.get("desc", "") or f"{item['name']} {atype['singular'].lower()} guide for {site_name}.")[:160]
     canonical = f"https://{domain}/guides/{atype['slug']}/{item_slug}.html"
 
@@ -1454,6 +1473,7 @@ def render_anime_item_detail(data, item, atype):
 
     schema = schema_org_anime_item(data, item, atype["key"])
 
+    accent_bg = accent + "08"
     item_detail_html = f'''<section class="max-w-7xl mx-auto px-4 py-12">
 <!-- Sidebar ads -->
 <div class="hidden xl:block fixed left-0 top-1/2 -translate-y-1/2 z-40 w-[160px] ml-4">
@@ -1480,6 +1500,7 @@ def render_anime_item_detail(data, item, atype):
 <span class="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3" style="color:{item_color};background:{item_color}1a">{atype["singular"]}</span>
 <h1 class="text-4xl md:text-5xl font-black mb-2">{item["name"]}</h1>
 <p class="text-lg text-textSecondary mt-6 leading-relaxed max-w-3xl mx-auto">{item.get("desc", "")}</p>
+<blockquote class="border-l-4 pl-4 py-2 my-8 rounded-r-lg italic text-textSecondary max-w-3xl mx-auto" style="border-color:{accent};background:{accent_bg}"><p>Featured {atype["singular"]} from {site_name}</p></blockquote>
 <!-- Ad slot -->
 <div class="my-8 max-w-3xl mx-auto">
 <div class="bg-bgSecondary/30 rounded-xl border border-dashed px-4 py-8 text-center text-sm text-textSecondary/50" style="border-color:#{tc["borderHex"]}">
@@ -1498,7 +1519,7 @@ def render_anime_item_detail(data, item, atype):
     return HTML_TEMPLATE.format(
         title_tag=title_tag,
         meta_desc=meta_desc,
-        og_title=f"{item['name']} ({atype['singular']}) — {site_name}",
+        og_title=f"{item['name']} {atype['singular']} Guide — {site_name}",
         canonical_url=canonical,
         schema_markup=schema,
         bgPrimary=tc["bgPrimary"],

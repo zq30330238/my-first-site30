@@ -109,7 +109,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="mb-8"><h2 class="text-3xl font-black">All Building</h2></div>
 <div class="masonry-grid"><div class="break-inside-avoid mb-4 relative group rounded-xl overflow-hidden">
 <a href="/guides/building/alex.html" class="block relative overflow-hidden rounded-xl">
-<img src="/images/alex.png" alt="Alex" title="Alex" class="w-full h-auto block" loading="lazy">
+<img src="/images/alex.png" alt="Alex" title="Alex" class="w-full h-auto block" loading="eager">
 <div class="gradient-overlay absolute bottom-0 left-0 right-0 p-4 pt-12">
 <h3 class="font-bold text-lg text-white text-shadow">Alex</h3>
 </div>
@@ -141,10 +141,22 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-4">More</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="https://games.jycsd.com" class="hover:text-accent transition-colors">Game Hub</a></li>
-</ul>
+<h4 class="font-bold mb-4">Our Network</h4>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— Network —</option>
+    <option value="https://www.jycsd.com">Myers Media</option>
+    <option value="https://games.jycsd.com">Game Guides</option>
+    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+</select>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— More Sites —</option>
+    <option value="https://healthy.jycsd.com">HealthyEats</option>
+    <option value="https://pets.jycsd.com">PetCare Hub</option>
+    <option value="https://home.jycsd.com">HomeJoy</option>
+    <option value="https://finance.jycsd.com">MoneyWise</option>
+    <option value="https://tech.jycsd.com">TechNest</option>
+    <option value="https://travel.jycsd.com">TripRoute</option>
+</select>
 </div>
 <div>
 <h4 class="font-bold mb-4">About</h4>

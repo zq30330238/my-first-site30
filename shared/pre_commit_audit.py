@@ -121,7 +121,7 @@ SITE_DOMAINS = {
 }
 
 STOP_WORDS = {'the', 'a', 'an', 'in', 'on', 'to', 'for', 'of', 'and', 'or', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'shall', 'should', 'can', 'could', 'may', 'might', 'must', 'this', 'that', 'these', 'those', 'it', 'its'}
-UTILITY_PAGES = {'about', 'contact', 'cookie-policy', 'privacy-policy', 'terms', 'category-meal-plans', 'category-nutrition', 'category-recipes', 'category-cats', 'category-dogs', 'category-small-pets', 'category-gardening', 'category-interior', 'category-diy', 'category-budgeting', 'category-investing', 'category-credit', 'category-ai', 'category-guides', 'category-reviews', 'category-security', 'category-budget-travel', 'category-destinations', 'category-digital-nomad', 'category-tips', 'category-home', 'category-tech'}
+UTILITY_PAGES = {'about', 'contact', 'cookie-policy', 'privacy-policy', 'terms', 'articles', 'sitemap', 'category-meal-plans', 'category-nutrition', 'category-recipes', 'category-cats', 'category-dogs', 'category-small-pets', 'category-gardening', 'category-interior', 'category-diy', 'category-budgeting', 'category-investing', 'category-credit', 'category-ai', 'category-guides', 'category-reviews', 'category-security', 'category-budget-travel', 'category-destinations', 'category-digital-nomad', 'category-tips', 'category-home', 'category-tech'}
 SKIP_LINK_TEXTS = {'about', 'contact', 'privacy', 'policy', 'home', 'terms', 'categories', 'guides',
     'read more', 'learn more', 'view all', 'back to home', 'subscribe', 'follow us',
     'share', 'tweet', 'pin', 'email', 'print', 'previous', 'next', 'see all',
@@ -258,8 +258,12 @@ def check_article(filepath, site_dir):
         elif not target.exists() and '.' in target.name:
             errors.append(f"{name}: broken internal link: {href} → {target.relative_to(ROOT)} (file not found)")
 
-    # === SEMANTIC LINK MATCHING (article pages only, WARNING not ERROR) ===
-    a_tags = re.findall(r'<a\s[^>]*?href="([^"]+)"[^>]*?>(.*?)</a>', html, re.IGNORECASE | re.DOTALL)
+    # === SEMANTIC LINK MATCHING (content-area links only) ===
+    # Strip nav, footer, header before link extraction — those are navigation, not semantic references
+    content_html = html
+    for tag in ('nav', 'footer', 'header'):
+        content_html = re.sub(rf'<{tag}[\s\S]*?</{tag}>', '', content_html)
+    a_tags = re.findall(r'<a\s[^>]*?href="([^"]+)"[^>]*?>(.*?)</a>', content_html, re.IGNORECASE | re.DOTALL)
     for href, raw_text in a_tags:
         link_text = re.sub(r'<[^>]+>', '', raw_text).strip().lower()
         link_text = re.sub(r'[^a-z\s]', '', link_text).strip()
@@ -360,14 +364,15 @@ def check_article(filepath, site_dir):
                         warnings.append(f"{name}: very high word count: {wc}")
                 pos = next_close + 6
 
-    # Title length
-    title_m = re.search(r'<title>(.*?)</title>', html)
-    if title_m:
-        title_text = title_m.group(1)
-        if len(title_text) < 30:
-            warnings.append(f"{name}: title too short: {len(title_text)} chars")
-        elif len(title_text) > 70:
-            warnings.append(f"{name}: title too long: {len(title_text)} chars (keep under 70)")
+    # Title length (utility pages like about/contact/sitemap exempt)
+    if not utility:
+        title_m = re.search(r'<title>(.*?)</title>', html)
+        if title_m:
+            title_text = title_m.group(1)
+            if len(title_text) < 30:
+                warnings.append(f"{name}: title too short: {len(title_text)} chars")
+            elif len(title_text) > 70:
+                warnings.append(f"{name}: title too long: {len(title_text)} chars (keep under 70)")
 
     # Description length
     desc_m = re.search(r'content="([^"]+)"', html)
@@ -455,6 +460,8 @@ def main():
         for f in sorted(site_dir.glob("**/*.html")):
             if "\\play\\" in str(f) or "/play/" in str(f):
                 continue  # standalone HTML5 games don't need SEO/ad meta
+            if "\\.backup\\" in str(f) or "/.backup/" in str(f):
+                continue  # skip backup files
             if f.name == "index.html":
                 check_index(f, site_dir)
             else:

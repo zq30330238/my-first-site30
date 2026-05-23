@@ -1,0 +1,124 @@
+{
+  "sites": [
+    {
+      "dir": "anime-site",
+      "cf_project": "anime-jycsd",
+      "domain": "anime.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "dailymedadvice",
+      "cf_project": "dailymedadvice",
+      "domain": "dailymedadvice.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "dragonball-site",
+      "cf_project": "dragonball-jycsd",
+      "domain": "dragonball.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "eldenring-site",
+      "cf_project": "eldenring-jycsd",
+      "domain": "eldenring.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "entertainment",
+      "cf_project": "entertainment-jycsd",
+      "domain": "entertainment.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "fortnite-site",
+      "cf_project": "fortnite-jycsd",
+      "domain": "fortnite.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "games-site",
+      "cf_project": "games-jycsd",
+      "domain": "games.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "lol-site",
+      "cf_project": "lol-jycsd",
+      "domain": "lol.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "main-site",
+      "cf_project": "main-site",
+      "domain": "jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "minecraft-site",
+      "cf_project": "minecraft-jycsd",
+      "domain": "minecraft.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "naruto-site",
+      "cf_project": "naruto-jycsd",
+      "domain": "naruto.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "onepiece-site",
+      "cf_project": "onepiece-jycsd",
+      "domain": "onepiece.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "rightsdaily",
+      "cf_project": "rightsdaily",
+      "domain": "rightsdaily.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "sub-finance",
+      "cf_project": "finance-jycsd",
+      "domain": "finance.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "sub-healthy",
+      "cf_project": "healthy-jycsd",
+      "domain": "healthy.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "sub-home",
+      "cf_project": "home-jycsd",
+      "domain": "home.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "sub-pets",
+      "cf_project": "pets-jycsd",
+      "domain": "pets.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "sub-tech",
+      "cf_project": "tech-jycsd",
+      "domain": "tech.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "sub-travel",
+      "cf_project": "travel-jycsd",
+      "domain": "travel.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "valorant-site",
+      "cf_project": "valorant-jycsd",
+      "domain": "valorant.jycsd.com",
+      "production_branch": "master"
+    }
+  ]
+}

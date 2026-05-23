@@ -1,0 +1,105 @@
+{
+  "last_updated": "2026-05-23T12:23:38",
+  "sites": {
+    "main-site": {
+      "last_deploy": "2026-05-23T12:23:36",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "main-site"
+    },
+    "sub-healthy": {
+      "last_deploy": "2026-05-23T12:23:36",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "healthy-jycsd"
+    },
+    "sub-pets": {
+      "last_deploy": "2026-05-23T12:23:36",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "pets-jycsd"
+    },
+    "sub-home": {
+      "last_deploy": "2026-05-23T12:23:36",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "home-jycsd"
+    },
+    "sub-finance": {
+      "last_deploy": "2026-05-23T12:23:36",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "finance-jycsd"
+    },
+    "sub-tech": {
+      "last_deploy": "2026-05-23T12:23:36",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "tech-jycsd"
+    },
+    "sub-travel": {
+      "last_deploy": "2026-05-23T12:23:36",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "travel-jycsd"
+    },
+    "entertainment": {
+      "last_deploy": "2026-05-23T12:23:37",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "entertainment-jycsd"
+    },
+    "rightsdaily": {
+      "last_deploy": "2026-05-23T12:23:37",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "rightsdaily"
+    },
+    "dailymedadvice": {
+      "last_deploy": "2026-05-23T12:23:37",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "dailymedadvice"
+    },
+    "dragonball-site": {
+      "last_deploy": "2026-05-23T12:23:37",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "dragonball-jycsd"
+    },
+    "naruto-site": {
+      "last_deploy": "2026-05-23T12:23:37",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "naruto-jycsd"
+    },
+    "onepiece-site": {
+      "last_deploy": "2026-05-23T12:23:37",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "onepiece-jycsd"
+    },
+    "lol-site": {
+      "last_deploy": "2026-05-23T12:23:38",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "lol-jycsd"
+    },
+    "fortnite-site": {
+      "last_deploy": "2026-05-23T12:23:38",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "fortnite-jycsd"
+    },
+    "valorant-site": {
+      "last_deploy": "2026-05-23T12:23:38",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "valorant-jycsd"
+    },
+    "eldenring-site": {
+      "last_deploy": "2026-05-23T12:23:38",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "eldenring-jycsd"
+    },
+    "minecraft-site": {
+      "last_deploy": "2026-05-23T12:23:38",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "minecraft-jycsd"
+    },
+    "anime-site": {
+      "last_deploy": "2026-05-23T12:23:38",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "anime-jycsd"
+    },
+    "games-site": {
+      "last_deploy": "2026-05-23T12:23:38",
+      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "project": "games-jycsd"
+    }
+  }
+}

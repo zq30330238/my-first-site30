@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alex — MineGuide</title>
+<title>Alex Guide & Profile — MineGuide</title>
 <meta name="description" content="Creative mode tips, block palettes, and architectural styles from medieval castles to modern skyscrapers.">
-<meta property="og:title" content="Alex — MineGuide">
+<meta property="og:title" content="Alex Guide & Profile — MineGuide">
 <meta property="og:description" content="Creative mode tips, block palettes, and architectural styles from medieval castles to modern skyscrapers.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -162,6 +162,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 <div class="max-w-3xl mx-auto">
 <p class="text-base text-textSecondary leading-relaxed"><span id="descShort">Creative mode tips, block palettes, and architectural styles from medieval castles to modern skyscrapers.</span></p>
+<blockquote class="border-l-4 pl-4 py-2 my-6 rounded-r-lg italic text-textSecondary" style="border-color:#4ade80;background:#4ade8008"><p>Alternate Player &middot; Creative mode tips, block palettes, and architectural styles from medieval castles to modern skyscrapers.</p></blockquote>
 </div>
 <!-- Ad slot before related -->
 <div class="max-w-3xl mx-auto my-8">
@@ -175,7 +176,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="scroll-snap-x pb-2">
 <div class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex-shrink-0 w-40" style="border-color:#e5e7eb">
 <a href="/guides/mobs/creeper.html" class="block">
-<div class="w-full aspect-square bg-bgPrimary overflow-hidden flex items-center justify-center"><img src="/images/creeper.png" alt="Creeper — Hostile Mob" title="Creeper" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+<div class="w-full aspect-square bg-bgPrimary overflow-hidden flex items-center justify-center"><img src="/images/creeper.png" alt="Creeper — Hostile Mob" title="Creeper" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="p-3 text-center">
 <h4 class="font-bold text-sm">Creeper</h4>
 <p class="text-xs text-textSecondary mt-0.5">Hostile Mob</p>
@@ -183,7 +184,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex-shrink-0 w-40" style="border-color:#e5e7eb">
 <a href="/guides/mobs/enderman.html" class="block">
-<div class="w-full aspect-square bg-bgPrimary overflow-hidden flex items-center justify-center"><img src="/images/enderman.png" alt="Enderman — Neutral Mob" title="Enderman" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+<div class="w-full aspect-square bg-bgPrimary overflow-hidden flex items-center justify-center"><img src="/images/enderman.png" alt="Enderman — Neutral Mob" title="Enderman" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="p-3 text-center">
 <h4 class="font-bold text-sm">Enderman</h4>
 <p class="text-xs text-textSecondary mt-0.5">Neutral Mob</p>
@@ -191,7 +192,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </a>
 </div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex-shrink-0 w-40" style="border-color:#e5e7eb">
 <a href="/guides/crafting/steve.html" class="block">
-<div class="w-full aspect-square bg-bgPrimary overflow-hidden flex items-center justify-center"><img src="/images/steve.png" alt="Steve — Default Player" title="Steve" class="w-full h-full object-cover" style="object-position:center top" loading="lazy"></div>
+<div class="w-full aspect-square bg-bgPrimary overflow-hidden flex items-center justify-center"><img src="/images/steve.png" alt="Steve — Default Player" title="Steve" class="w-full h-full object-cover" style="object-position:center top" loading="eager"></div>
 <div class="p-3 text-center">
 <h4 class="font-bold text-sm">Steve</h4>
 <p class="text-xs text-textSecondary mt-0.5">Default Player</p>
@@ -223,10 +224,22 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 <div>
-<h4 class="font-bold mb-4">More</h4>
-<ul class="space-y-2 text-sm text-textSecondary">
-<li><a href="https://games.jycsd.com" class="hover:text-accent transition-colors">Game Hub</a></li>
-</ul>
+<h4 class="font-bold mb-4">Our Network</h4>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— Network —</option>
+    <option value="https://www.jycsd.com">Myers Media</option>
+    <option value="https://games.jycsd.com">Game Guides</option>
+    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+</select>
+<select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+    <option value="">— More Sites —</option>
+    <option value="https://healthy.jycsd.com">HealthyEats</option>
+    <option value="https://pets.jycsd.com">PetCare Hub</option>
+    <option value="https://home.jycsd.com">HomeJoy</option>
+    <option value="https://finance.jycsd.com">MoneyWise</option>
+    <option value="https://tech.jycsd.com">TechNest</option>
+    <option value="https://travel.jycsd.com">TripRoute</option>
+</select>
 </div>
 <div>
 <h4 class="font-bold mb-4">About</h4>
