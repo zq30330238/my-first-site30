@@ -631,6 +631,15 @@ def check_site_skeleton(filepath, site_dir):
         warnings.append(f"site '{site_dir.name}' has only {len(html_files)} HTML files — may be a skeleton (needs character/guide content)")
 
 
+def check_index_card_images(filepath, site_dir):
+    html = filepath.read_text(encoding="utf-8", errors="ignore")
+    name = label(filepath)
+    # Find article cards with empty background-image
+    empty_cards = re.findall(r'background-image:url\(\)', html)
+    if empty_cards:
+        errors.append(f"{name}: {len(empty_cards)} article card(s) have empty background-image — run collect_content_images.py")
+
+
 def main():
     import argparse
     parser = argparse.ArgumentParser()
@@ -672,6 +681,7 @@ def main():
 
             if f.name == "index.html":
                 check_index(f, site_dir)
+                check_index_card_images(f, site_dir)
             else:
                 check_article(f, site_dir)
                 if f.name.startswith("article-") and f.name.endswith(".html"):
