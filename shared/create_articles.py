@@ -424,10 +424,6 @@ def insert_index_card(site_dir, article_num, content):
         return
 
     cover_url = content.get("cover_img_url", "")
-    if cover_url:
-        full_path = ROOT / site_dir / cover_url
-        if not full_path.exists():
-            cover_url = ""
 
     h1_title = content.get("h1_title", "")
     desc = content.get("description", "")
