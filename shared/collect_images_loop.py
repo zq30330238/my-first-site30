@@ -481,10 +481,15 @@ def verify_with_doubao(image_bytes: bytes, character: str, series: str) -> bool:
     try:
         tmp_path.write_bytes(image_bytes)
         prompt = (
-            f"Is this a PNG render/transparent image of {character} from {series}? "
-            f"Answer YES if it's a clean character render with transparent or plain background. "
-            f"Answer NO if it's a screenshot, has text/watermarks, is fan art, "
-            f"or shows a different character. Only answer YES or NO."
+            f"Is this a high-quality character image of {character} from {series}? "
+            f"Answer YES only if ALL conditions are met: "
+            f"(1) clearly shows {character} with correct design/colors, "
+            f"(2) sharp/high-resolution, not blurry or pixelated, "
+            f"(3) clean plain or transparent background, "
+            f"(4) no text, watermarks, logos, or UI elements. "
+            f"Answer NO if any of: screenshot, fan art, wrong character, "
+            f"low resolution, murky/blurry, AI-generated look, messy background, "
+            f"character too small in frame, or any text/watermark. Only answer YES or NO."
         )
         result = doubao_vision.analyze_image(str(tmp_path), prompt)
         if result:
@@ -492,6 +497,13 @@ def verify_with_doubao(image_bytes: bytes, character: str, series: str) -> bool:
             tokens = result["tokens"]["total"]
             log.info("  Doubao: %s  (%d tokens)", answer[:10], tokens)
             return answer.startswith("YES")
+        return False
+    except RuntimeError as e:
+        err_msg = str(e)
+        if "DOUBAO_FATAL" in err_msg or "Doubao API error" in err_msg:
+            log.critical("  DOUBAO API FATAL - stopping image collection: %s", e)
+            raise
+        log.warning("  Doubao verify error: %s", e)
         return False
     except Exception as e:
         log.warning("  Doubao verify error: %s", e)

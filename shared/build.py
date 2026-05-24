@@ -23,6 +23,7 @@ def head(cfg, page_meta):
     og_desc = page_meta.get("og_description", desc)
     og_type = page_meta.get("og_type", "website")
     og_url = page_meta.get("og_url", cfg["base_url"] + "/")
+    og_image = page_meta.get("og_image", "")
     og_site = page_meta.get("og_site_name", name)
     canonical = page_meta.get("canonical", og_url)
     robots = page_meta.get("robots", "index, follow")
@@ -57,6 +58,7 @@ def head(cfg, page_meta):
     <meta property="og:type" content="{og_type}">
     <meta property="og:url" content="{og_url}">
     <meta property="og:site_name" content="{og_site}">
+    <meta property="og:image" content="{og_image or cfg['base_url'] + '/images/default-og.jpg'}">
     <title>{title}</title>
     <link rel="canonical" href="{canonical}">
     <script src="https://cdn.tailwindcss.com"></script>

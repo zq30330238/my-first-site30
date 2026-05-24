@@ -16,13 +16,19 @@
 
 <meta name="robots" content="index, follow">
 
+<meta property="og:site_name" content="GamePortal">
+<meta property="og:locale" content="en_US">
+	<meta property="og:image" content="https://games.jycsd.com/images/default-og.jpg">
+<meta property="og:title" content="GameGuide — Expert Game Guides & Walkthroughs">
+<meta property="og:description" content="Expert game guides, boss strategies, character builds, and walkthroughs for the world's most popular games. Minecraft, Elden Ring, LoL, GTA 6, and more.">
+<meta property="og:url" content="https://games.jycsd.com/">
+<meta property="og:type" content="website">
+
 <link rel="canonical" href="https://games.jycsd.com/">
 
 <script src="https://cdn.tailwindcss.com"></script>
 
 <script>tailwind.config={theme:{extend:{colors:{bgPrimary:"#f8fafc",bgSecondary:"#f1f5f9",bgCard:"#ffffff",textPrimary:"#1e293b",textSecondary:"#64748b",accent:"#6366f1",mc:"#4ade80",elden:"#fbbf24",lol:"#3b82f6",gta6:"#f97316",fort:"#a78bfa",val:"#ef4444"},fontFamily:{sans:["Inter","Arial","sans-serif"]}}}}</script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
 
@@ -47,8 +53,7 @@
 </style>
 
 </head>
-
-<body>
+<body class="flex flex-col min-h-screen">
 
 <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
 
@@ -800,113 +805,54 @@
 
 </section>
 
-<footer class="bg-bgSecondary border-t border-gray-200 py-16 px-4 mt-8">
-
-  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-    <div>
-
-      <div class="flex items-center gap-2.5 mb-4"><div class="w-9 h-9 rounded-lg bg-gradient-to-br from-accent to-purple-600 flex items-center justify-center overflow-hidden text-lg font-black text-white">G</div><span class="text-xl font-bold">Game<span class="text-accent">Guide</span></span></div>
-
-      <p class="text-sm text-textSecondary">Expert guides for the world's most popular games. 18 dedicated sites, 1500+ articles, zero paywalls.</p>
-
+<footer class="bg-gray-900 text-gray-400 py-12 mt-auto">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h3 class="text-white text-lg font-black mb-3">GameGuide</h3>
+                <p class="text-sm leading-relaxed">Expert guides for the world's most popular games. 18 dedicated sites, 1500+ articles, zero paywalls.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="max-w-xs text-white font-semibold mb-3">Our Network</h4>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+                    <option value="">-- Network --</option>
+                    <option value="https://www.jycsd.com">Main Site</option>
+                    <option value="https://games.jycsd.com">Game Guides</option>
+                    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+                </select>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
+                    <option value="">-- More Sites --</option>
+                    <option value="https://healthy.jycsd.com">HealthyEats</option>
+                    <option value="https://pets.jycsd.com">PetCare Hub</option>
+                    <option value="https://home.jycsd.com">HomeJoy</option>
+                    <option value="https://finance.jycsd.com">MoneyWise</option>
+                    <option value="https://tech.jycsd.com">TechNest</option>
+                    <option value="https://travel.jycsd.com">TripRoute</option>
+                    <option value="https://auto.jycsd.com">AutoPulse</option>
+                    <option value="https://rightsdaily.com">RightsDaily</option>
+                    <option value="https://dailymedadvice.com">DailyMedAdvice</option>
+                </select>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:contact@jycsd.com" class="hover:text-white transition-colors">contact@jycsd.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-6 text-center text-sm">
+            <p>&copy; 2026 GameGuide. All rights reserved.</p>
+        </div>
     </div>
-
-    <div>
-
-      <h4 class="font-bold mb-3">Live Sites</h4>
-
-      <ul class="space-y-1.5 text-sm text-textSecondary">
-
-        <li><a href="https://minecraft.jycsd.com" class="text-mc hover:underline">Minecraft →</a></li>
-
-        <li><a href="https://fortnite.jycsd.com" class="text-fort hover:underline">Fortnite →</a></li>
-
-        <li><a href="https://valorant.jycsd.com" class="text-val hover:underline">Valorant →</a></li>
-
-        <li><a href="https://eldenring.jycsd.com" class="text-elden hover:underline">Elden Ring →</a></li>
-
-        <li><a href="https://lol.jycsd.com" class="text-lol hover:underline">League of Legends →</a></li>
-
-      </ul>
-
-    </div>
-
-    <div>
-
-      <h4 class="font-bold mb-3">Network</h4>
-
-      <ul class="space-y-1.5 text-sm text-textSecondary">
-
-        <li><a href="https://anime.jycsd.com" class="hover:text-accent">AnimeWiki →</a></li>
-
-        <li><a href="https://tools.jycsd.com" class="hover:text-accent">AI Tools →</a></li>
-
-        <li><a href="https://www.jycsd.com" class="hover:text-accent">Myers Media →</a></li>
-
-      </ul>
-
-    </div>
-
-    <div>
-
-      <h4 class="font-bold mb-3">About</h4>
-
-      <p class="text-sm text-textSecondary mb-2">Contact: <a href="mailto:contact@jycsd.com" class="text-accent hover:underline">contact@jycsd.com</a></p>
-
-      <p class="text-xs text-textSecondary">&copy; 2026 GameGuide Network by Myers Media</p>
-
-    </div>
-
-  </div>
-
-    <!-- Our Network -->
-  <div class="max-w-7xl mx-auto mt-10 pt-6 border-t" style="border-color:#374151">
-    <p class="text-center text-xs text-textSecondary mb-4 font-semibold uppercase tracking-widest">Our Network</p>
-    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-      <div>
-        <p class="text-textSecondary font-semibold mb-2 text-xs uppercase tracking-wider">Main</p>
-        <ul class="space-y-1.5 text-sm text-textSecondary">
-          <li><a href="https://www.jycsd.com" class="hover:text-accent transition-colors">Myers Media</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-textSecondary font-semibold mb-2 text-xs uppercase tracking-wider">Anime</p>
-        <ul class="space-y-1.5 text-sm text-textSecondary">
-          <li><a href="https://anime.jycsd.com" class="hover:text-accent transition-colors">Anime Hub</a></li>
-          <li><a href="https://dragonball.jycsd.com" class="hover:text-accent transition-colors">Dragon Ball</a></li>
-          <li><a href="https://onepiece.jycsd.com" class="hover:text-accent transition-colors">One Piece</a></li>
-          <li><a href="https://naruto.jycsd.com" class="hover:text-accent transition-colors">Naruto</a></li>
-          <li><a href="https://demonslayer.jycsd.com" class="hover:text-accent transition-colors">Demon Slayer</a></li>
-          <li><a href="https://jjk.jycsd.com" class="hover:text-accent transition-colors">Jujutsu Kaisen</a></li>
-          <li><a href="https://aot.jycsd.com" class="hover:text-accent transition-colors">Attack on Titan</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-textSecondary font-semibold mb-2 text-xs uppercase tracking-wider">Games</p>
-        <ul class="space-y-1.5 text-sm text-textSecondary">
-          <li><a href="https://games.jycsd.com" class="hover:text-accent transition-colors">Game Hub</a></li>
-          <li><a href="https://minecraft.jycsd.com" class="hover:text-accent transition-colors">Minecraft</a></li>
-          <li><a href="https://fortnite.jycsd.com" class="hover:text-accent transition-colors">Fortnite</a></li>
-          <li><a href="https://valorant.jycsd.com" class="hover:text-accent transition-colors">Valorant</a></li>
-          <li><a href="https://eldenring.jycsd.com" class="hover:text-accent transition-colors">Elden Ring</a></li>
-          <li><a href="https://lol.jycsd.com" class="hover:text-accent transition-colors">League of Legends</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-textSecondary font-semibold mb-2 text-xs uppercase tracking-wider">Lifestyle</p>
-        <ul class="space-y-1.5 text-sm text-textSecondary">
-          <li><a href="https://healthy.jycsd.com" class="hover:text-accent transition-colors">HealthyEats</a></li>
-          <li><a href="https://pets.jycsd.com" class="hover:text-accent transition-colors">PetCare Hub</a></li>
-          <li><a href="https://home.jycsd.com" class="hover:text-accent transition-colors">HomeJoy</a></li>
-          <li><a href="https://finance.jycsd.com" class="hover:text-accent transition-colors">MoneyWise</a></li>
-          <li><a href="https://tech.jycsd.com" class="hover:text-accent transition-colors">TechNest</a></li>
-          <li><a href="https://travel.jycsd.com" class="hover:text-accent transition-colors">TripRoute</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
 </footer>
 
 <script>
@@ -932,6 +878,24 @@ document.getElementById('liveCount').textContent = '2,569';</script>
 
 
 <script>(function(){var btn=document.getElementById('backToTop');if(!btn)return;window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>600)});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "GamePortal",
+      "url": "https://games.jycsd.com/"
+    },
+    {
+      "@type": "WebSite",
+      "name": "GamePortal",
+      "url": "https://games.jycsd.com/"
+    }
+  ]
+}
+</script>
 
 </body>
 

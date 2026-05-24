@@ -479,7 +479,7 @@
         }
     </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <header>
@@ -1043,5 +1043,55 @@
         □ Sound effects work (click to enable audio context)
         */
     </script>
+<footer class="bg-gray-900 text-gray-400 py-12 mt-16">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h3 class="text-white text-lg font-black mb-3">Game<span class="text-purple-500">Hub</span></h3>
+                <p class="text-sm leading-relaxed">Classic browser games and game guides.</p>
+            </div>
+            <div class="max-w-xs">
+                <h4 class="text-white font-semibold mb-3">Our Network</h4>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-purple-500 cursor-pointer">
+                    <option value="">— Network —</option>
+                    <option value="https://www.jycsd.com">Myers Media</option>
+                    <option value="https://games.jycsd.com">Game Guides</option>
+                    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+                </select>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-purple-500 cursor-pointer">
+                    <option value="">— More Sites —</option>
+                    <option value="https://healthy.jycsd.com">HealthyEats</option>
+                    <option value="https://pets.jycsd.com">PetCare Hub</option>
+                    <option value="https://home.jycsd.com">HomeJoy</option>
+                    <option value="https://finance.jycsd.com">MoneyWise</option>
+                    <option value="https://tech.jycsd.com">TechNest</option>
+                    <option value="https://travel.jycsd.com">TripRoute</option>
+                    <option value="https://auto.jycsd.com">AutoPulse</option>
+                    <option value="https://rightsdaily.com">RightsDaily</option>
+                    <option value="https://dailymedadvice.com">DailyMedAdvice</option>
+                </select>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:contact@jycsd.com" class="hover:text-white transition-colors">contact@jycsd.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-6 text-center text-sm">
+            <p>&copy; 2026 GameHub. All rights reserved.</p>
+            <a href="https://jycsd.com" class="text-gray-400 hover:text-purple-400 transition-colors">Visit jycsd.com for more guides</a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

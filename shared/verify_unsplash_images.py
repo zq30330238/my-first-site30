@@ -109,12 +109,25 @@ def verify_with_doubao(image_path, expected_topic):
             capture_output=True, text=True, timeout=60,
             cwd="d:/AI网站文件夹"
         )
-        output = (result.stdout + result.stderr).strip()
-        if not output:
+        # doubao writes result to temp file, not stdout
+        outfile = os.path.join(os.environ.get('TEMP', os.environ.get('TMP', '/tmp')), 'doubao_vision_output.txt')
+        verify_output = ""
+        if os.path.exists(outfile):
+            with open(outfile, 'r', encoding='utf-8') as f:
+                verify_output = f.read().strip()
+            os.unlink(outfile)
+
+        # Fatal doubao API error → stop immediately
+        if verify_output.startswith("ERROR:FATAL_DOUBAO_ERROR:") or result.returncode != 0:
+            err_detail = verify_output.replace("ERROR:FATAL_DOUBAO_ERROR:", "").strip() if verify_output.startswith("ERROR:") else "doubao_vision.py failed"
+            raise RuntimeError(f"DOUBAO_API_FATAL: {err_detail}")
+
+        if not verify_output:
             return False, "doubao returned empty"
-        # Check if response indicates relevance
-        is_relevant = output.strip().upper().startswith("YES") or "yes" in output[:20].lower()
-        return is_relevant, output[:200]
+        is_relevant = verify_output.strip().upper().startswith("YES")
+        return is_relevant, verify_output[:200]
+    except RuntimeError:
+        raise
     except subprocess.TimeoutExpired:
         return False, "Timeout"
     except Exception as e:

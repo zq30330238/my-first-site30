@@ -15,16 +15,68 @@
 body{{font-family:'Inter',Arial,sans-serif;background:#fff;color:#111827;font-size:16px;line-height:1.6}}
 </style>
 </head>
-<body class="bg-white text-gray-900 font-sans">
+<body class="bg-white text-gray-900 font-sans flex flex-col min-h-screen">
 <nav class="border-b border-gray-200 py-4 px-6"><a href="/" class="text-xl font-bold">One <span style="color:#ffd700">Piece</span></a></nav>
-<main class="max-w-3xl mx-auto px-6 py-16">
+<main class="max-w-3xl mx-auto px-6 py-16 flex-1">
 <title>Contact — One Piece Wiki</title>
 <meta name="description" content="Contact One Piece Wiki for inquiries, corrections, or feedback.">
-<link rel="canonical" href="https://onepiece.jycsd.com/contact.html">
+
+	<meta property="og:type" content="website">
+	<meta property="og:image" content="https://onepiece.jycsd.com/images/default-og.jpg">
+	<link rel="canonical" href="https://onepiece.jycsd.com/contact.html">
 <h1 class="text-4xl font-bold mb-6">Contact Us</h1>
 <p class="text-lg text-gray-600 mb-4">Have a suggestion, correction, or just want to say hi? We'd love to hear from you.</p>
 <p class="text-lg text-gray-600 mb-4">Email: <a href="mailto:zq30330238@gmail.com" class="text-blue-600 hover:underline">zq30330238@gmail.com</a></p>
 </main>
-<footer class="border-t border-gray-200 py-8 px-6 text-center text-sm text-gray-400"><p>&copy; 2026 One Piece Wiki. Part of Myers Media.</p></footer>
+<footer class="bg-gray-900 text-gray-400 py-12 mt-16">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h3 class="text-white text-lg font-black mb-3">One Piece<span class="text-blue-500">Wiki</span></h3>
+                <p class="text-sm leading-relaxed">One Piece character guides, devil fruit encyclopedia, and arc breakdowns.</p>
+            </div>
+            <div class="max-w-xs">
+                <h4 class="text-white font-semibold mb-3">Our Network</h4>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-blue-500 cursor-pointer">
+                    <option value="">— Network —</option>
+                    <option value="https://www.jycsd.com">Myers Media</option>
+                    <option value="https://games.jycsd.com">Game Guides</option>
+                    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+                </select>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-blue-500 cursor-pointer">
+                    <option value="">— More Sites —</option>
+                    <option value="https://healthy.jycsd.com">HealthyEats</option>
+                    <option value="https://pets.jycsd.com">PetCare Hub</option>
+                    <option value="https://home.jycsd.com">HomeJoy</option>
+                    <option value="https://finance.jycsd.com">MoneyWise</option>
+                    <option value="https://tech.jycsd.com">TechNest</option>
+                    <option value="https://travel.jycsd.com">TripRoute</option>
+                    <option value="https://auto.jycsd.com">AutoPulse</option>
+                    <option value="https://rightsdaily.com">RightsDaily</option>
+                    <option value="https://dailymedadvice.com">DailyMedAdvice</option>
+                </select>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:contact@jycsd.com" class="hover:text-white transition-colors">contact@jycsd.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-6 text-center text-sm">
+            <p>&copy; 2026 One Piece Wiki Hub. All rights reserved.</p>
+            <a href="https://jycsd.com" class="text-gray-400 hover:text-blue-400 transition-colors">Visit jycsd.com for more guides</a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

@@ -11,6 +11,7 @@
     <meta property="og:title" content="DailyMedAdvice — Science-Backed Health Information for Everyday Life">
     <meta property="og:description" content="Science-backed health and medical information on blood pressure, diabetes, nutrition, mental health, and natural remedies — written for everyday people.">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://dailymedadvice.com/">
     <meta property="og:site_name" content="DailyMedAdvice">
     <title>DailyMedAdvice — Science-Backed Health Information for Everyday Life</title>
@@ -61,7 +62,7 @@
   gtag('config', 'G-GGNWR1X1GV');
 </script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
 
 <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -203,21 +204,33 @@
         </div>
     </section>
 
-<footer class="bg-gray-900 text-gray-400 py-12">
+<footer class="bg-gray-900 text-gray-400 py-12 mt-auto">
     <div class="max-w-6xl mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-8 mb-10">
             <div>
                 <h3 class="text-white text-lg font-black mb-3"><span class="text-green-400">Daily</span>MedAdvice</h3>
                 <p class="text-sm leading-relaxed">Science-backed health information for everyday life.</p>
             </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3">Topics</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="article-1.html" class="hover:text-white transition-colors">Blood Pressure</a></li>
-                    <li><a href="article-2.html" class="hover:text-white transition-colors">Diabetes</a></li>
-                    <li><a href="article-3.html" class="hover:text-white transition-colors">Mental Health</a></li>
-                    <li><a href="article-4.html" class="hover:text-white transition-colors">Nutrition</a></li>
-                </ul>
+            <div class="max-w-xs">
+                <h4 class="text-white font-semibold mb-3">Our Network</h4>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-green-500 cursor-pointer">
+                <option value="">— Network —</option>
+                <option value="https://www.jycsd.com">Myers Media</option>
+                <option value="https://games.jycsd.com">Game Guides</option>
+                <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+            </select>
+            <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-green-500 cursor-pointer">
+                <option value="">— More Sites —</option>
+                <option value="https://healthy.jycsd.com">HealthyEats</option>
+                <option value="https://pets.jycsd.com">PetCare Hub</option>
+                <option value="https://home.jycsd.com">HomeJoy</option>
+                <option value="https://finance.jycsd.com">MoneyWise</option>
+                <option value="https://tech.jycsd.com">TechNest</option>
+                <option value="https://travel.jycsd.com">TripRoute</option>
+                <option value="https://auto.jycsd.com">AutoPulse</option>
+                <option value="https://rightsdaily.com">RightsDaily</option>
+                <option value="https://dailymedadvice.com">DailyMedAdvice</option>
+            </select>
             </div>
             <div>
                 <h4 class="text-white font-semibold mb-3">Legal</h4>
@@ -235,42 +248,9 @@
                 </ul>
             </div>
         </div>
-
-        <!-- Divider -->
-        <div class="border-t border-gray-800 my-8"></div>
-
-        <div>
-            <h4 class="text-white font-semibold mb-3">Our Network</h4>
-            <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-indigo-500 cursor-pointer">
-                <option value="">— Network —</option>
-                <option value="https://www.jycsd.com">Myers Media</option>
-                <option value="https://games.jycsd.com">Game Guides</option>
-                <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
-            </select>
-            <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-indigo-500 cursor-pointer">
-                <option value="">— More Sites —</option>
-                <option value="https://healthy.jycsd.com">HealthyEats</option>
-                <option value="https://pets.jycsd.com">PetCare Hub</option>
-                <option value="https://home.jycsd.com">HomeJoy</option>
-                <option value="https://finance.jycsd.com">MoneyWise</option>
-                <option value="https://tech.jycsd.com">TechNest</option>
-                <option value="https://travel.jycsd.com">TripRoute</option>
-                <option value="https://rightsdaily.com">RightsDaily</option>
-                <option value="https://dailymedadvice.com">DailyMedAdvice</option>
-            </select>
-        </div>
-
-        <!-- Divider -->
-        <div class="border-t border-gray-800 my-6"></div>
-
-        <!-- Visit jycsd.com -->
-        <div class="text-center mb-4">
-            <a href="https://jycsd.com" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Visit jycsd.com for more guides</a>
-        </div>
-
-        <!-- Copyright - bottom -->
-        <div class="text-center text-sm text-gray-400 border-t border-gray-800 pt-6">
+        <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-400">
             <p>&copy; 2026 DailyMedAdvice. All rights reserved.</p>
+                        <a href="https://jycsd.com" class="text-sm text-gray-400 hover:text-green-400 transition-colors">Visit jycsd.com for more guides</a>
         </div>
     </div>
 </footer>

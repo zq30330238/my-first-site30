@@ -36,7 +36,7 @@ ARTICLE_TEMPLATES = {
         "description": "List-style with deep analysis of each item. Each list item has its own mini-section with detailed explanation.",
         "h2_sections": "4-5 h2 sections (each covering one list item in depth)",
         "paragraphs_per_section": "2-4 paragraphs per section",
-        "word_count": "800-1200 words total",
+        "word_count": "1000-1400 words total",
         "ad_positions": "One ad unit after h2 #1 only",
         "title_style": "How-to / List",
         "tone": "Direct, instructional, bullet-point friendly",
@@ -72,7 +72,7 @@ ARTICLE_TEMPLATES = {
         "description": "Step-by-step tutorial/guide format. Each h2 is a sequential step. Practical tips, common mistakes, pro advice inline.",
         "h2_sections": "4-6 h2 sections (each is a numbered step in sequence)",
         "paragraphs_per_section": "3-5 paragraphs per step (detailed instructions)",
-        "word_count": "900-1400 words total",
+        "word_count": "1000-1400 words total",
         "ad_positions": "Ad units after h2 #1, #3, and #5 (if they exist)",
         "title_style": "Step-by-step / Guide",
         "tone": "Patient, thorough, beginner-friendly",
@@ -81,7 +81,7 @@ ARTICLE_TEMPLATES = {
 
 ROOT = Path(__file__).resolve().parent.parent
 
-def build_system_prompt(force_template=None):
+def build_system_prompt(force_template=None, topic=None):
     """Select article template (forced or random) and build a tailored SYSTEM_PROMPT."""
     if force_template and force_template in ARTICLE_TEMPLATES:
         template_key = force_template
@@ -89,22 +89,31 @@ def build_system_prompt(force_template=None):
         template_key = random.choice(list(ARTICLE_TEMPLATES.keys()))
     tmpl = ARTICLE_TEMPLATES[template_key]
 
+    # Rule #2 + template selection changes based on whether a specific topic is assigned
+    if topic:
+        topic_rule = "2. YOU HAVE BEEN ASSIGNED A SPECIFIC TOPIC. Your h1_title MUST equal the TOPIC from the user message exactly. Do NOT invent a different title, different car brand, or different subject. Write ONLY about the assigned topic."
+        # Force review/narrative templates for topic mode — never use listicle (A/C/E) which encourages topic drift
+        if force_template is None:
+            template_key = random.choice(['B', 'D'])
+            tmpl = ARTICLE_TEMPLATES[template_key]
+    else:
+        topic_rule = "2. The user message lists topics ALREADY covered on this site. You MUST pick a COMPLETELY DIFFERENT topic — different sub-category, different angle, different keywords. Never rehash the same subject with slightly different wording."
+
     prompt = f"""You are a professional English SEO content writer for US consumer websites.
 Output a JSON object with the article content fields listed below. Do NOT output HTML wrapper, header, footer, or sidebars — the Python pipeline handles template injection.
 
 CRITICAL RULES:
 1. Output ONLY valid JSON. No markdown wrapping, no ```json fence.
-
-ARTICLE STRUCTURE — FORMAT {template_key}: {tmpl['description']}
-- Sections: {tmpl['h2_sections']}
-- Paragraphs: {tmpl['paragraphs_per_section']}
-- Word count: {tmpl['word_count']}
-- Ad positions: {tmpl['ad_positions']}
-- Tone: {tmpl['tone']}
-
+{topic_rule}
 3. Always include one <blockquote> with a key stat or expert tip.
-4. Writing: authoritative, data-backed, actionable. US consumer audience. Specific numbers and research. No emoji, no fluff, no AI cliche phrases.
-5. Title should be compelling and natural — {tmpl['title_style']} style preferred. Avoid formulaic patterns.
+4. article_body_html MUST NOT contain any <script>, <ins>, <div class="ad-">, or adsbygoogle elements.
+5. Writing: authoritative, data-backed, actionable. US consumer audience. Specific numbers. No emoji, no fluff, no AI cliche phrases.
+
+ARTICLE FORMAT: {tmpl['description']}
+- {tmpl['h2_sections']}
+- {tmpl['paragraphs_per_section']}
+- {tmpl['word_count']}
+- Tone: {tmpl['tone']}
 
 JSON STRUCTURE (exact keys):
 {{
@@ -136,12 +145,15 @@ def get_next_article_num(site_dir):
     return max(nums) + 1 if nums else 1
 
 
-def _try_api(template_key, ctx, user_msg, max_attempts=3, delay=5):
-    """Try calling DeepSeek with a specific template, retry on failure."""
-    system_prompt, _ = build_system_prompt(template_key)
+def _try_api(template_key, ctx, user_msg, topic=None, max_attempts=3, delay=5):
+    """Try calling DeepSeek with a specific template, retry on failure.
+    Topic mode → deepseek-chat (Pro, strong instruction following).
+    Free mode → deepseek-v4-flash (fast/cheap)."""
+    system_prompt, _ = build_system_prompt(template_key, topic=topic)
+    model = "deepseek-chat" if topic else "deepseek-v4-flash"
     for attempt in range(max_attempts):
         try:
-            content = ark_call_json(system_prompt, user_msg)
+            content = reasonix_call_json(system_prompt, user_msg, model=model)
             print(f"  Template {template_key}: OK", flush=True)
             return content
         except (json.JSONDecodeError, RuntimeError, TimeoutError, Exception) as e:
@@ -151,25 +163,55 @@ def _try_api(template_key, ctx, user_msg, max_attempts=3, delay=5):
     return None
 
 
-def call_api(site_dir, article_num, force_template=None):
+def call_api(site_dir, article_num, force_template=None, topic=None):
     """Ask DeepSeek to generate article content as JSON.
     Tries the selected template first, then falls back to others on failure."""
-    ctx = get_content_generation_prompt(site_dir, article_num)
+    ctx = get_content_generation_prompt(site_dir, article_num, topic=topic)
     today = datetime.now().strftime("%Y-%m-%d")
 
-    user_msg = f"""Generate a new SEO article for {ctx['brand']} ({ctx['category']}).
+    if topic:
+        extra = ""
+        if topic.get('angle'):
+            extra = "\nANGLE: " + topic['angle'] + "\nKEY POINTS TO COVER:\n- " + "\n- ".join(topic.get('key_points', []))
+        user_msg = f"""CRITICAL INSTRUCTION — You MUST write about this EXACT topic:
+
+TOPIC: {topic['title']}
+CATEGORY: {topic['category']}{extra}
+
+Your H1 title MUST be a natural variation of the topic above. Do NOT change the subject to a different car brand, different model, or generic listicle. If the topic is about BYD Seal, write about BYD Seal specifically — not "electric sedans in general." If the topic is about Huawei AITO M9, write about AITO M9 specifically.
 
 Site details:
 - Brand: {ctx['brand']}
 - Domain: {ctx['domain']}
 - Article URL: {ctx['article_url']}
 - Date: {today}
-- AdSense pub ID: {GLOBALS['adsense_pub']}
-- Ad slot 1: {ctx['adsense_slot_1']}
-- Ad slot 2: {ctx['adsense_slot_2']}
-- Ad slot 3: {ctx['adsense_slot_3']}
 
-Write a fresh article on a topic in the {ctx['category']} niche. Output the JSON object as specified. Minimum 900 words of body content (not counting HTML tags)."""
+Output the JSON object as specified. Minimum 1000 words of body content (not counting HTML tags)."""
+    else:
+        user_msg = f"""Generate a new SEO article for {ctx['brand']} ({ctx['category']}).
+
+Site details:
+- Brand: {ctx['brand']}
+- Domain: {ctx['domain']}
+- Article URL: {ctx['article_url']}
+- Date: {today}
+Write a fresh article on a topic in the {ctx['category']} niche. Output the JSON object as specified. Minimum 1000 words of body content (not counting HTML tags)."""
+
+    # Scan existing articles for topic dedup
+    existing_h1s = []
+    site_path = ROOT / site_dir
+    if site_path.exists():
+        for f in sorted(site_path.glob("article-*.html")):
+            html = f.read_text(encoding="utf-8", errors="ignore")
+            m = re.search(r'<h1[^>]*class="[^"]*"[^>]*>([^<]+)</h1>', html)
+            if m:
+                existing_h1s.append(m.group(1).strip())
+    if existing_h1s:
+        dedup_msg = "\n\nALREADY COVERED TOPICS — DO NOT repeat, reword, or write about ANY of these:\n"
+        for i, h1 in enumerate(existing_h1s, 1):
+            dedup_msg += f"  {i}. {h1}\n"
+        dedup_msg += "\nPick a COMPLETELY DIFFERENT topic. Diversify across sub-categories: reviews, comparisons, buying guides, industry news, technology trends, DIY, safety, regulations, etc."
+        user_msg += dedup_msg
 
     # Templates ordered by reliability (A,C,D most stable; B,E more intermittent)
     if force_template:
@@ -178,7 +220,7 @@ Write a fresh article on a topic in the {ctx['category']} niche. Output the JSON
         template_order = ['A', 'C', 'D', 'B', 'E']
 
     for tkey in template_order:
-        result = _try_api(tkey, ctx, user_msg)
+        result = _try_api(tkey, ctx, user_msg, topic=topic)
         if result is not None:
             return result
 
@@ -308,6 +350,17 @@ def generate_and_verify_image(title, category, description, site_dir, article_nu
                     verify_output = f.read().strip()
                 os.unlink(doubao_outfile)  # clean up
 
+            # Check for fatal doubao API errors (account overdue, auth failed, etc.)
+            if verify_output.startswith("ERROR:FATAL_DOUBAO_ERROR:") or verify_result.returncode != 0:
+                err_detail = verify_output.replace("ERROR:FATAL_DOUBAO_ERROR:", "").strip() if verify_output.startswith("ERROR:") else (verify_result.stderr or "doubao_vision.py exited with code " + str(verify_result.returncode))
+                raise RuntimeError(
+                    f"\n{'='*60}\n"
+                    f"  DOUBAO API FATAL ERROR - Pipeline stopped\n"
+                    f"  Error: {err_detail}\n"
+                    f"  Action: Check doubao account balance or API key, then re-run.\n"
+                    f"{'='*60}"
+                )
+
             if verify_output.upper().startswith("YES"):
                 print(f"  Image verification PASSED")
                 daily_count += 1
@@ -330,6 +383,30 @@ def generate_and_verify_image(title, category, description, site_dir, article_nu
     if output_path.exists():
         output_path.unlink()
     return ("", daily_count)
+
+
+def update_category_page_images(site_dir, article_num, content):
+    """Replace gradient placeholder in category pages with real background image."""
+    cover_url = content.get("cover_img_url", "")
+    if not cover_url:
+        return
+    full_path = ROOT / site_dir / cover_url
+    if not full_path.exists():
+        return
+
+    site_path = ROOT / site_dir
+    for cat_file in site_path.glob("category-*.html"):
+        html = cat_file.read_text(encoding="utf-8")
+        pattern = re.compile(
+            r'<div class="h-48 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">\s*'
+            r'<span class="text-white/20 text-6xl font-black">' + str(article_num) + r'</span>\s*'
+            r'</div>'
+        )
+        if pattern.search(html):
+            replacement = f'<div class="h-48 bg-cover bg-center" style="background-image:url({cover_url})"></div>'
+            html = pattern.sub(replacement, html)
+            cat_file.write_text(html, encoding="utf-8")
+            print(f"    Updated category image: {cat_file.name} article-{article_num}")
 
 
 def insert_index_card(site_dir, article_num, content):
@@ -381,22 +458,26 @@ def insert_index_card(site_dir, article_num, content):
             after_grid = after_grid.replace(card, "", 1)
         html = html[:grid_pos] + after_grid
 
-    # Ensure "View All Articles" button exists when 12+ cards
-    after_grid = html[grid_pos:]
-    cards_in_grid = re.findall(r'<a href="article-\d+\.html".*?</a>\s*', after_grid, re.DOTALL)
-    if len(cards_in_grid) >= 12:
-        last_a_end = html.rfind('</a>', grid_pos) + 4
-        grid_close_end = html.find('</div>', last_a_end) + 6
-        after_grid_html = html[grid_close_end:]
-        if 'View All Articles' not in after_grid_html:
-            button_html = """
+    # Ensure "View All Articles" button exists when 12+ cards (only add once)
+    if 'View All Articles' not in html:
+        after_grid = html[grid_pos:]
+        cards_in_grid = re.findall(r'<a href="article-\d+\.html".*?</a>\s*', after_grid, re.DOTALL)
+        if len(cards_in_grid) >= 12:
+            # Find the closing </div> of the article grid (the div with grid class)
+            grid_section_end = html.find('</section>', grid_pos)
+            if grid_section_end == -1:
+                grid_section_end = html.find('<section', grid_pos)
+            if grid_section_end == -1:
+                grid_section_end = html.find('<footer', grid_pos)
+            if grid_section_end != -1:
+                button_html = """
         <div class="text-center mt-10">
             <a href="articles.html" class="inline-block bg-brand-700 hover:bg-brand-800 text-white font-semibold px-8 py-3 rounded-full text-lg transition-colors">
                 View All Articles →
             </a>
         </div>
 """
-            html = html[:grid_close_end] + button_html + html[grid_close_end:]
+                html = html[:grid_section_end] + button_html + "\n" + html[grid_section_end:]
 
     idx_path.write_text(html, encoding="utf-8")
 
@@ -430,23 +511,15 @@ def update_index_sidebar(site_dir, article_num, title):
 
 
 def update_articles_page(site_dir, article_num, content):
-    """Create or update articles.html with all article cards from index grid."""
-    idx_path = ROOT / site_dir / "index.html"
-    art_path = ROOT / site_dir / "articles.html"
+    """Create or update articles.html as a paginated list view (25 items/page)."""
+    art_dir = ROOT / site_dir
+    idx_path = art_dir / "index.html"
     if not idx_path.exists():
         return
 
     idx_html = idx_path.read_text(encoding="utf-8")
 
-    grid_marker = 'class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"'
-    grid_pos = idx_html.find(grid_marker)
-    if grid_pos == -1:
-        return
-
-    cards = re.findall(r'<a href="article-\d+\.html".*?</a>\s*', idx_html[grid_pos:], re.DOTALL)
-    if not cards:
-        return
-
+    # Extract head section
     head_end = idx_html.find('</head>')
     if head_end == -1:
         return
@@ -457,39 +530,144 @@ def update_articles_page(site_dir, article_num, content):
         new_title = f"All Articles - {title_tag.group(1)}"
         head_section = head_section.replace(title_tag.group(0), f'<title>{new_title}</title>')
 
+    # Extract nav
     nav_start = idx_html.find('<nav')
     nav_html = ""
     if nav_start != -1:
         nav_end = idx_html.find('</nav>', nav_start) + 6
         nav_html = idx_html[nav_start:nav_end]
 
+    # Extract footer
     footer_start = idx_html.find('<footer')
     footer_html = ""
     if footer_start != -1:
         footer_end = idx_html.find('</footer>', footer_start) + 9
         footer_html = idx_html[footer_start:footer_end]
 
-    all_cards_html = "\n".join(c.strip() for c in cards)
+    # Scan all article files for metadata
+    articles = []
+    for f in sorted(art_dir.glob("article-*.html")):
+        m = re.search(r'article-(\d+)', f.name)
+        if not m:
+            continue
+        art_num = int(m.group(1))
+        art_html = f.read_text(encoding="utf-8")
 
-    articles_html = f"""<!DOCTYPE html>
+        # H1 title
+        title = "Untitled"
+        h1_m = re.search(r'<h1[^>]*>(.*?)</h1>', art_html, re.DOTALL)
+        if h1_m:
+            title = re.sub(r'<[^>]+>', '', h1_m.group(1)).strip()
+
+        # Date from <time datetime="YYYY-MM-DD">
+        date_display = ""
+        time_m = re.search(r'<time datetime="(\d{4}-\d{2}-\d{2})"', art_html)
+        if time_m:
+            try:
+                dt = datetime.strptime(time_m.group(1), "%Y-%m-%d")
+                date_display = dt.strftime("%B %d, %Y")
+            except ValueError:
+                date_display = time_m.group(1)
+
+        # Read time from "X min read"
+        read_time = ""
+        read_m = re.search(r'(\d+)\s*min\s*read', art_html, re.IGNORECASE)
+        if not read_m:
+            read_m = re.search(r'(\d+)\s*min', art_html)
+        if read_m:
+            read_time = read_m.group(1) + " min"
+
+        articles.append((art_num, title, date_display, read_time))
+
+    # Handle empty case
+    if not articles:
+        (art_dir / "articles.html").write_text(f"""<!DOCTYPE html>
 <html lang="en">
 {head_section}
 <body class="bg-gray-50 text-gray-800">
 
 {nav_html}
 
-<main class="max-w-7xl mx-auto px-4 py-12">
+<main class="max-w-4xl mx-auto px-4 py-12">
     <h1 class="text-3xl font-bold text-gray-900 mb-8">All Articles</h1>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-{all_cards_html}
-    </div>
+    <p class="text-gray-500 text-center py-12">No articles yet.</p>
 </main>
 
 {footer_html}
 </body>
-</html>"""
+</html>""", encoding="utf-8")
+        return
 
-    art_path.write_text(articles_html, encoding="utf-8")
+    # Sort newest first, paginate 25/page
+    articles.sort(key=lambda x: x[0], reverse=True)
+    PER_PAGE = 25
+    total_pages = (len(articles) + PER_PAGE - 1) // PER_PAGE
+
+    for page in range(1, total_pages + 1):
+        start = (page - 1) * PER_PAGE
+        end = start + PER_PAGE
+        page_articles = articles[start:end]
+
+        filename = "articles.html" if page == 1 else f"articles-{page}.html"
+        filepath = art_dir / filename
+
+        # Build list rows
+        rows = []
+        for art_num, title, date_display, read_time in page_articles:
+            rows.append(f"""            <a href="article-{art_num}.html" class="flex items-center justify-between py-3 px-4 hover:bg-gray-50 border-b border-gray-100 transition">
+              <span class="text-gray-900 font-medium truncate pr-4">{title}</span>
+              <div class="flex items-center gap-6 text-sm text-gray-400 shrink-0">
+                <span>{date_display}</span>
+                <span class="w-16 text-right">{read_time}</span>
+              </div>
+            </a>""")
+        all_rows = "\n".join(rows)
+
+        # Build pagination nav
+        nav_items = []
+        # Previous
+        if page == 1:
+            nav_items.append('          <span class="px-3 py-2 text-gray-300">← Previous</span>')
+        else:
+            prev_href = "articles.html" if page == 2 else f"articles-{page - 1}.html"
+            nav_items.append(f'          <a href="{prev_href}" class="px-3 py-2 text-brand-600 hover:text-brand-700 font-medium">← Previous</a>')
+
+        # Page numbers
+        for p in range(1, total_pages + 1):
+            href = "articles.html" if p == 1 else f"articles-{p}.html"
+            if p == page:
+                nav_items.append(f'          <span class="px-3 py-2 bg-brand-600 text-white rounded">{p}</span>')
+            else:
+                nav_items.append(f'          <a href="{href}" class="px-3 py-2 text-gray-600 hover:text-brand-600 rounded">{p}</a>')
+
+        # Next
+        if page == total_pages:
+            nav_items.append('          <span class="px-3 py-2 text-gray-300">Next →</span>')
+        else:
+            nav_items.append(f'          <a href="articles-{page + 1}.html" class="px-3 py-2 text-brand-600 hover:text-brand-700 font-medium">Next →</a>')
+
+        pagination = "\n".join(nav_items)
+
+        filepath.write_text(f"""<!DOCTYPE html>
+<html lang="en">
+{head_section}
+<body class="bg-gray-50 text-gray-800">
+
+{nav_html}
+
+<main class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">All Articles</h1>
+    <div class="bg-white rounded-lg shadow-sm border border-gray-100">
+{all_rows}
+    </div>
+    <nav class="flex items-center justify-center gap-3 mt-10 text-sm">
+{pagination}
+    </nav>
+</main>
+
+{footer_html}
+</body>
+</html>""", encoding="utf-8")
 
 
 def update_sitemap(site_dir, article_num):
@@ -546,6 +724,12 @@ def main():
         print(f"Site: {site_dir} ({cfg['domain']}) - {cfg['category']}")
         print(f"{'='*60}")
 
+        # Collect predefined topics (used first before AI free-generation)
+        predefined_topics = cfg.get("predefined_topics", [])
+        topics_queue = list(predefined_topics)
+        if predefined_topics:
+            print(f"  Predefined topics available: {len(predefined_topics)} (will use before free-generation)")
+
         for i in range(args.per_site):
             article_num = get_next_article_num(site_dir)
             print(f"  Generating article-{article_num}.html...", flush=True)
@@ -555,8 +739,11 @@ def main():
                 results.append((site_dir, article_num, "[dry run]", 0))
                 continue
 
+            # Pop next predefined topic, or None for AI to choose freely
+            topic = topics_queue.pop(0) if topics_queue else None
+
             # 1. Get content JSON from DeepSeek
-            content = call_api(site_dir, article_num, args.template)
+            content = call_api(site_dir, article_num, args.template, topic=topic)
             if not content:
                 print(f"    FAIL: API call failed after 3 attempts")
                 continue
@@ -580,38 +767,30 @@ def main():
                 )
                 content["cover_img_url"] = image_url
 
-            # 4. Inject ad slot IDs if AI forgot them
-            slots = cfg["adsense_slots"]
-            for j, slot in enumerate(slots):
-                placeholder = f"<slot-{j+1}>"
-                if placeholder in content.get("article_body_html", ""):
-                    content["article_body_html"] = content["article_body_html"].replace(
-                        placeholder, slot
-                    )
-
-            # 5. Render full HTML via template
+            # 4. Render full HTML via template
             content["article_url"] = f"https://{cfg['domain']}/article-{article_num}.html"
             html, _ = render_article_html(site_dir, content)
 
-            # 6. Validate
+            # 5. Validate
             issues = quick_validate(html, site_dir)
             wc = count_words(content.get("article_body_html", ""))
-            if wc < 600:
-                issues.append(f"Word count too low: {wc} (need 800+)")
+            if wc < 900:
+                issues.append(f"Word count too low: {wc} (need 1000+)")
 
             if issues:
                 print(f"    FAIL: {'; '.join(issues)}")
                 continue
 
-            # 7. Save article
+            # 6. Save article
             out_path = ROOT / site_dir / f"article-{article_num}.html"
             out_path.write_text(html, encoding="utf-8")
 
             title = content.get("h1_title", extract_title(html))
             print(f"    OK: article-{article_num}.html — {wc} words — \"{title[:60]}\"")
 
-            # 8. Update index + sitemap
+            # 7. Update index + category pages + sitemap
             insert_index_card(site_dir, article_num, content)
+            update_category_page_images(site_dir, article_num, content)
             update_articles_page(site_dir, article_num, content)
             update_index_sidebar(site_dir, article_num, title)
             update_sitemap(site_dir, article_num)

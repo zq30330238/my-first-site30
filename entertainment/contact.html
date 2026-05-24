@@ -60,7 +60,7 @@
   gtag('config', 'G-GGNWR1X1GV');
 </script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
 
 <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -98,7 +98,7 @@
         </div>
     </div>
 
-    <main class="max-w-4xl mx-auto px-4 py-12">
+    <main class="max-w-4xl mx-auto px-4 py-12 flex-1">
         <div class="grid md:grid-cols-5 gap-8">
             <div class="md:col-span-3">
                 <div class="bg-white rounded-xl p-6 md:p-10 shadow-sm border border-gray-100">
@@ -163,16 +163,26 @@
         <div class="grid md:grid-cols-4 gap-8 mb-10">
             <div>
                 <h3 class="text-white text-lg font-black mb-3">EntertainmentBuzz</h3>
-                <p class="text-sm leading-relaxed">Your daily source for entertainment buzz. Practical entertainment news and celebrity updates for everyday people.</p>
+                <p class="text-sm leading-relaxed">Your daily source for celebrity news, movie reviews, and pop culture buzz.</p>
             </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3">Topics</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="article-1.html" class="hover:text-white transition-colors">Movie Reviews</a></li>
-                    <li><a href="article-2.html" class="hover:text-white transition-colors">TV & Streaming</a></li>
-                    <li><a href="article-3.html" class="hover:text-white transition-colors">Celebrity News</a></li>
-                    <li><a href="article-4.html" class="hover:text-white transition-colors">Music & Pop Culture</a></li>
-                </ul>
+            <div class="max-w-xs">
+                <h4 class="text-white font-semibold mb-3">Our Network</h4>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-purple-500 cursor-pointer">
+                <option value="">— Network —</option>
+                <option value="https://www.jycsd.com">Myers Media</option>
+                <option value="https://games.jycsd.com">Game Guides</option>
+                <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+            </select>
+            <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-purple-500 cursor-pointer">
+                <option value="">— More Sites —</option>
+                <option value="https://healthy.jycsd.com">HealthyEats</option>
+                <option value="https://pets.jycsd.com">PetCare Hub</option>
+                <option value="https://home.jycsd.com">HomeJoy</option>
+                <option value="https://finance.jycsd.com">MoneyWise</option>
+                <option value="https://tech.jycsd.com">TechNest</option>
+                <option value="https://travel.jycsd.com">TripRoute</option>
+                <option value="https://auto.jycsd.com">AutoPulse</option>
+            </select>
             </div>
             <div>
                 <h4 class="text-white font-semibold mb-3">Legal</h4>
@@ -190,59 +200,11 @@
                 </ul>
             </div>
         </div>
-        <div class="border-t border-gray-800 pt-6 text-center text-sm">
+        <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-400">
             <p>&copy; 2026 EntertainmentBuzz. All rights reserved.</p>
+                        <a href="https://jycsd.com" class="text-sm text-gray-400 hover:text-white transition-colors">Visit jycsd.com for more guides</a>
         </div>
     </div>
-    <div class="text-center text-sm mt-4"><a href="https://jycsd.com" class="hover:text-purple-400 transition-colors">Visit jycsd.com for more guides</a></div>
-
-      <!-- Our Network -->
-  <div class="max-w-7xl mx-auto mt-10 pt-6 border-t" style="border-color:#374151">
-    <p class="text-center text-xs text-gray-400 mb-4 font-semibold uppercase tracking-widest">Our Network</p>
-    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-      <div>
-        <p class="text-gray-500 font-semibold mb-2 text-xs uppercase tracking-wider">Main</p>
-        <ul class="space-y-1.5 text-sm text-gray-400">
-          <li><a href="https://www.jycsd.com" class="hover:text-white transition-colors">Myers Media</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-gray-500 font-semibold mb-2 text-xs uppercase tracking-wider">Anime</p>
-        <ul class="space-y-1.5 text-sm text-gray-400">
-          <li><a href="https://anime.jycsd.com" class="hover:text-white transition-colors">Anime Hub</a></li>
-          <li><a href="https://dragonball.jycsd.com" class="hover:text-white transition-colors">Dragon Ball</a></li>
-          <li><a href="https://onepiece.jycsd.com" class="hover:text-white transition-colors">One Piece</a></li>
-          <li><a href="https://naruto.jycsd.com" class="hover:text-white transition-colors">Naruto</a></li>
-          <li><a href="https://demonslayer.jycsd.com" class="hover:text-white transition-colors">Demon Slayer</a></li>
-          <li><a href="https://jjk.jycsd.com" class="hover:text-white transition-colors">Jujutsu Kaisen</a></li>
-          <li><a href="https://aot.jycsd.com" class="hover:text-white transition-colors">Attack on Titan</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-gray-500 font-semibold mb-2 text-xs uppercase tracking-wider">Games</p>
-        <ul class="space-y-1.5 text-sm text-gray-400">
-          <li><a href="https://games.jycsd.com" class="hover:text-white transition-colors">Game Hub</a></li>
-          <li><a href="https://minecraft.jycsd.com" class="hover:text-white transition-colors">Minecraft</a></li>
-          <li><a href="https://fortnite.jycsd.com" class="hover:text-white transition-colors">Fortnite</a></li>
-          <li><a href="https://valorant.jycsd.com" class="hover:text-white transition-colors">Valorant</a></li>
-          <li><a href="https://eldenring.jycsd.com" class="hover:text-white transition-colors">Elden Ring</a></li>
-          <li><a href="https://lol.jycsd.com" class="hover:text-white transition-colors">League of Legends</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="text-gray-500 font-semibold mb-2 text-xs uppercase tracking-wider">Lifestyle</p>
-        <ul class="space-y-1.5 text-sm text-gray-400">
-          <li><a href="https://healthy.jycsd.com" class="hover:text-white transition-colors">HealthyEats</a></li>
-          <li><a href="https://pets.jycsd.com" class="hover:text-white transition-colors">PetCare Hub</a></li>
-          <li><a href="https://home.jycsd.com" class="hover:text-white transition-colors">HomeJoy</a></li>
-          <li><a href="https://finance.jycsd.com" class="hover:text-white transition-colors">MoneyWise</a></li>
-          <li><a href="https://tech.jycsd.com" class="hover:text-white transition-colors">TechNest</a></li>
-          <li><a href="https://travel.jycsd.com" class="hover:text-white transition-colors">TripRoute</a></li>
-          <li><a href="https://entertainment.jycsd.com" class="hover:text-white transition-colors">EntertainmentBuzz</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </footer>
 </body>
 </html>

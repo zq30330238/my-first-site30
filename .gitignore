@@ -32,3 +32,5 @@ shared/add_subdomain.py
 *.png
 *.jpg
 *.webp
+demos/node_modules/
+demos/output/

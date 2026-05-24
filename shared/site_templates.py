@@ -29,7 +29,6 @@ SITE_CONFIG = {
         "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
         "blockquoteColor": "#f97316",
         "blockquoteBg": "#fff7ed",
-        "adsense_slots": ["9112825459", "4397738132", "9739511410"],
         "related_articles": [
             ("article-11.html", "Pet Emergencies: What Every Owner Must Know Before Disaster Strikes"),
             ("article-27.html", "Pet First Aid Kit: Essential Supplies Every Owner Needs"),
@@ -46,7 +45,6 @@ SITE_CONFIG = {
         "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
         "blockquoteColor": "#22c55e",
         "blockquoteBg": "#f0fdf4",
-        "adsense_slots": ["6968613870", "6470642127", "4688206363"],
         "related_articles": [
             ("article-1.html", "10 Superfoods You Should Eat Every Day for Optimal Health"),
             ("article-2.html", "Beginner's Guide to Weekly Meal Prepping: Save Time and Eat Better"),
@@ -63,7 +61,6 @@ SITE_CONFIG = {
         "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
         "blockquoteColor": "#10b981",
         "blockquoteBg": "#ecfdf5",
-        "adsense_slots": ["1349134522", "2825867721", "4302601082"],
         "related_articles": [
             ("article-1.html", "15 DIY Home Improvement Projects Under $100"),
             ("article-2.html", "Beginner's Guide to Indoor Plant Care"),
@@ -80,7 +77,6 @@ SITE_CONFIG = {
         "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
         "blockquoteColor": "#3b82f6",
         "blockquoteBg": "#eff6ff",
-        "adsense_slots": ["3024072332", "4500805691", "5977539078"],
         "related_articles": [
             ("article-1.html", "How to Start Investing with $100: A Complete Beginner's Guide"),
             ("article-2.html", "Best High-Yield Savings Accounts: 2026 Comparison Guide"),
@@ -97,7 +93,6 @@ SITE_CONFIG = {
         "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
         "blockquoteColor": "#64748b",
         "blockquoteBg": "#f8fafc",
-        "adsense_slots": ["8480024131", "9956757497", "1433490869"],
         "related_articles": [
             ("article-1.html", "Best Budget Smartphones Under $300 (2026)"),
             ("article-2.html", "How to Build a Home Office Setup for Productivity"),
@@ -114,11 +109,31 @@ SITE_CONFIG = {
         "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
         "blockquoteColor": "#06b6d4",
         "blockquoteBg": "#ecfeff",
-        "adsense_slots": ["4107333609", "5584066966", "7060800328"],
         "related_articles": [
             ("article-1.html", "10 Budget Travel Destinations for 2026"),
             ("article-2.html", "How to Find Cheap Flights: Expert Hacks"),
             ("article-3.html", "Solo Travel Guide: Safety Tips & Best Destinations"),
+        ],
+    },
+    "sub-auto": {
+        "brand": "AutoPulse",
+        "domain": "auto.jycsd.com",
+        "category": "Automotive",
+        "brandColor": "red-600",
+        "brandHex": "#dc2626",
+        "tailwindColors": """brand: {50: '#fef2f2', 100: '#fee2e2', 200: '#fecaca', 400: '#f87171', 500: '#ef4444', 600: '#dc2626', 700: '#b91c1c', 800: '#991b1b'}""",
+        "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
+        "blockquoteColor": "#ef4444",
+        "blockquoteBg": "#fef2f2",
+        "related_articles": [
+            ("article-1.html", "Best Sports Cars Under $50,000 in 2026"),
+            ("article-2.html", "EV vs Hybrid vs Plug-in Hybrid: Which Is Right for You?"),
+            ("article-3.html", "How to Negotiate a Car Price: 7 Dealer Tactics Exposed"),
+        ],
+        "predefined_topics": [
+            {"title": "BYD Dolphin: The Affordable Electric Hatchback Reshaping Urban Mobility", "category": "ev", "angle": "urban EV review", "key_points": ["Compact design optimized for city driving and parking", "Affordable price point under $25,000 in most markets", "Interior space utilization and tech features", "Real-world range and charging convenience for daily commuters"]},
+            {"title": "Huawei AITO M9 Review: The Tech Giant's Flagship EV SUV with HarmonyOS Smart Cockpit", "category": "ev", "angle": "technology showcase review", "key_points": ["HarmonyOS smart cockpit experience and voice control", "Huawei ADS 2.0 autonomous driving capabilities", "Premium interior materials and zero-gravity seats", "Range, performance, and charging specs"]},
+            {"title": "Avatr 12: Huawei and Changan's Premium Electric Sedan with 700km Range", "category": "ev", "angle": "premium EV review", "key_points": ["Striking design by Nader Faghihzadeh (ex-BMW)", "Huawei-powered interior and driver assistance tech", "CATL battery and 700km+ range performance", "Positioning against NIO ET7 and Mercedes EQE"]},
         ],
     },
     "rightsdaily": {
@@ -131,7 +146,6 @@ SITE_CONFIG = {
         "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
         "blockquoteColor": "#3b82f6",
         "blockquoteBg": "#eff6ff",
-        "adsense_slots": ["9112825459", "4397738132", "9739511410"],
         "related_articles": [
             ("article-1.html", "Know Your Rights: A Complete Guide to Consumer Protection Laws"),
             ("article-2.html", "Landlord-Tenant Disputes: Legal Options and Tenant Rights"),
@@ -148,7 +162,6 @@ SITE_CONFIG = {
         "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
         "blockquoteColor": "#22c55e",
         "blockquoteBg": "#f0fdf4",
-        "adsense_slots": ["6968613870", "6470642127", "4688206363"],
         "related_articles": [
             ("article-1.html", "Understanding Common Cold vs Flu: Symptoms, Treatment, and When to See a Doctor"),
             ("article-2.html", "Blood Pressure 101: What Your Numbers Mean and How to Manage Them"),
@@ -165,7 +178,6 @@ SITE_CONFIG = {
         "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
         "blockquoteColor": "#a855f7",
         "blockquoteBg": "#faf5ff",
-        "adsense_slots": ["8480024131", "9956757497", "1433490869"],
         "related_articles": [
             ("article-1.html", "Celebrity News Roundup: Biggest Stories This Week You Missed"),
             ("article-2.html", "Top 10 Must-Watch TV Shows Premiering This Month"),
@@ -194,7 +206,7 @@ gtag('config', '{{ga4_id}}');
 <meta property="og:site_name" content="{{brand}}">
 <meta property="og:locale" content="en_US">
 {{og_tags}}
-<title>{{title}} - {{brand}}</title>
+<title>{{title}}</title>
 <link rel="canonical" href="{{article_url}}">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -246,20 +258,25 @@ tailwind.config = {
 }
 </style>
 </head>
-<body class="bg-white font-sans antialiased">
+<body class="bg-white font-sans antialiased flex flex-col min-h-screen">
 <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
             <a href="index.html" class="text-2xl font-bold text-{{brand_color}} font-heading">{{brand}}</a>
             <nav class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="index.html" class="text-gray-700 hover:text-{{brand_color}} transition">Home</a>
+                <a href="category-reviews.html" class="text-gray-700 hover:text-{{brand_color}} transition">Reviews</a>
+                <a href="category-ev.html" class="text-gray-700 hover:text-{{brand_color}} transition">EV &amp; Hybrid</a>
+                <a href="category-buying.html" class="text-gray-700 hover:text-{{brand_color}} transition">Buying</a>
+                <a href="category-performance.html" class="text-gray-700 hover:text-{{brand_color}} transition">Performance</a>
+                <a href="category-chinese-brands.html" class="text-gray-700 hover:text-{{brand_color}} transition">Chinese Brands</a>
                 <a href="about.html" class="text-gray-700 hover:text-{{brand_color}} transition">About</a>
                 <a href="contact.html" class="text-gray-700 hover:text-{{brand_color}} transition">Contact</a>
             </nav>
         </div>
     </div>
 </header>
-<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1">
     <nav class="text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
         <a href="index.html" class="hover:text-{{brand_color}} transition">Home</a>
         <span class="mx-2">/</span>
@@ -290,52 +307,51 @@ tailwind.config = {
         </div>
     </aside>
 </main>
-<footer class="bg-gray-100 border-t border-gray-200 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-6xl mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-8 mb-10">
             <div>
-                <h3 class="text-lg font-bold text-{{brand_color}} mb-3">{{brand}}</h3>
-                <p class="text-sm leading-relaxed text-gray-500">{{brand}} provides practical information for everyday life.</p>
+                <h3 class="text-white text-lg font-black mb-3">{{brand}}</h3>
+                <p class="text-sm leading-relaxed">{{brand_description}}</p>
             </div>
             <div>
-                <h4 class="font-semibold text-gray-900 mb-3">Topics</h4>
-                <ul class="space-y-2 text-sm text-gray-500">
-                    <li><a href="article-1.html" class="hover:text-{{brand_color}} transition">Topic 1</a></li>
-                    <li><a href="article-2.html" class="hover:text-{{brand_color}} transition">Topic 2</a></li>
-                    <li><a href="article-3.html" class="hover:text-{{brand_color}} transition">Topic 3</a></li>
-                    <li><a href="article-4.html" class="hover:text-{{brand_color}} transition">Topic 4</a></li>
+                <h4 class="text-white font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-semibold text-gray-900 mb-3">Legal</h4>
-                <ul class="space-y-2 text-sm text-gray-500">
-                    <li><a href="privacy-policy.html" class="hover:text-{{brand_color}} transition">Privacy Policy</a></li>
-                    <li><a href="terms.html" class="hover:text-{{brand_color}} transition">Terms of Service</a></li>
-                    <li><a href="cookie-policy.html" class="hover:text-{{brand_color}} transition">Cookie Policy</a></li>
-                    <li><a href="contact.html" class="hover:text-{{brand_color}} transition">Contact</a></li>
-                </ul>
+                <h4 class="text-white font-semibold mb-3">Our Network</h4>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-{{brand_color}} cursor-pointer">
+                    <option value="">-- Network --</option>
+                    <option value="https://www.jycsd.com">Main Site</option>
+                    <option value="https://games.jycsd.com">Game Guides</option>
+                    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+                </select>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-{{brand_color}} cursor-pointer">
+                    <option value="">-- More Sites --</option>
+                    <option value="https://healthy.jycsd.com">HealthyEats</option>
+                    <option value="https://pets.jycsd.com">PetCare Hub</option>
+                    <option value="https://home.jycsd.com">HomeJoy</option>
+                    <option value="https://finance.jycsd.com">MoneyWise</option>
+                    <option value="https://tech.jycsd.com">TechNest</option>
+                    <option value="https://travel.jycsd.com">TripRoute</option>
+                    <option value="https://auto.jycsd.com">AutoPulse</option>
+                    <option value="https://rightsdaily.com">RightsDaily</option>
+                    <option value="https://dailymedadvice.com">DailyMedAdvice</option>
+                </select>
             </div>
             <div>
-                <h4 class="font-semibold text-gray-900 mb-3">Contact</h4>
-                <ul class="space-y-2 text-sm text-gray-500">
-                    <li><a href="mailto:{{email}}" class="hover:text-{{brand_color}} transition">{{email}}</a></li>
+                <h4 class="text-white font-semibold mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:{{email}}" class="hover:text-white transition-colors">{{email}}</a></li>
                 </ul>
             </div>
         </div>
-
-        <!-- Divider -->
-        <div class="border-t border-gray-200 my-8"></div>
-
-        <!-- Our Network (placeholder - site-specific) -->
-        {{network_section}}
-
-        <!-- Visit jycsd.com -->
-        <div class="text-center py-4">
-            <a href="https://www.jycsd.com" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-{{brand_color}} transition">Visit jycsd.com for more guides</a>
-        </div>
-
-        <!-- Copyright - bottom -->
-        <div class="text-center text-sm text-gray-400 pb-6">
+        <div class="border-t border-gray-800 pt-6 text-center text-sm">
             <p>&copy; {{year}} {{brand}}. All rights reserved.</p>
         </div>
     </div>
@@ -347,15 +363,13 @@ tailwind.config = {
 </html>"""
 
 
-def get_content_generation_prompt(site_dir, article_num):
+def get_content_generation_prompt(site_dir, article_num, topic=None):
     """Returns just the content-relevant info for DeepSeek to generate the article body."""
     cfg = SITE_CONFIG[site_dir]
     domain = cfg["domain"]
     url = f"https://{domain}/article-{article_num}.html"
     today = datetime.now().strftime("%Y-%m-%d")
-    slots = cfg["adsense_slots"]
-
-    return {
+    result = {
         "brand": cfg["brand"],
         "category": cfg["category"],
         "domain": domain,
@@ -364,10 +378,13 @@ def get_content_generation_prompt(site_dir, article_num):
         "date": today,
         "brand_color": cfg["brandColor"],
         "brand_hex": cfg["brandHex"],
-        "adsense_slot_1": slots[0],
-        "adsense_slot_2": slots[1],
-        "adsense_slot_3": slots[2],
     }
+
+    if topic:
+        result["topic_title"] = topic["title"]
+        result["topic_category"] = topic["category"]
+
+    return result
 
 
 def render_article_html(site_dir, ai_output):
@@ -389,9 +406,15 @@ def render_article_html(site_dir, ai_output):
     vars_dict["og_tags"] = (
         f'<meta property="og:description" content="{desc_clean}">\n'
         f'    <meta property="og:title" content="{og_title_clean}">\n'
-        f'    <meta property="og:url" content="{article_url}">'
+        f'    <meta property="og:url" content="{article_url}">\n'
+        f'    <meta property="og:type" content="article">'
     )
-    vars_dict["title"] = ai_output["title"]
+    # Avoid brand duplication: if AI title already includes brand name, don't append it
+    title = ai_output["title"]
+    brand_name = cfg.get("brand", "")
+    if brand_name and brand_name not in title:
+        title = f"{title} - {brand_name}"
+    vars_dict["title"] = title
     vars_dict["article_url"] = article_url
     vars_dict["h1_title"] = ai_output["h1_title"]
     vars_dict["breadcrumb"] = ai_output.get("breadcrumb", ai_output["h1_title"])
@@ -405,13 +428,18 @@ def render_article_html(site_dir, ai_output):
     image_url = ai_output.get("cover_img_url", "")
     if image_url:
         vars_dict["cover_img_html"] = f'<img src="{image_url}" alt="{ai_output.get("h1_title", "")}" class="w-full rounded-2xl mb-10" loading="lazy">'
+        og_image_url = f"https://{cfg['domain']}/{image_url}"
     else:
         vars_dict["cover_img_html"] = ""
+        # Default OG image fallback
+        og_image_url = f"https://{cfg['domain']}/images/default-og.jpg"
+    vars_dict["og_tags"] += f'\n    <meta property="og:image" content="{og_image_url}">'
     vars_dict["brand_color"] = cfg["brandColor"]
     vars_dict["tailwind_colors"] = cfg["tailwindColors"]
     vars_dict["font_heading"] = cfg["fontHeading"]
     vars_dict["blockquote_color"] = cfg["blockquoteColor"]
     vars_dict["blockquote_bg"] = cfg["blockquoteBg"]
+    vars_dict["brand_description"] = cfg.get("brand_description", f"{cfg['brand']} provides practical information for everyday life.")
 
     # Network section — single link back to hub only (no PBN cross-linking)
     vars_dict["network_section"] = """<div class="text-center mb-6">

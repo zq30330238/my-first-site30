@@ -11,6 +11,7 @@
     <meta property="og:title" content="Myers Media - Your Guide to Better Living">
     <meta property="og:description" content="Expert guides across health, pets, home, finance, tech, and travel.">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://www.jycsd.com/">
     <meta property="og:site_name" content="Myers Media">
     <title>Myers Media | Your Guide to Better Living</title>
@@ -69,7 +70,7 @@
   gtag('config', 'G-GGNWR1X1GV');
 </script>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-white text-gray-800 font-sans flex flex-col min-h-screen">
 
 <nav class="bg-white/95 backdrop-blur border-b border-gray-100">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -685,15 +686,15 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-white border-t border-gray-100 text-gray-600 py-12">
+<footer class="bg-white border-t border-gray-100 text-gray-600 py-12 mt-auto">
     <div class="max-w-6xl mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-8 mb-10">
             <div>
                 <h3 class="text-gray-900 text-lg font-black mb-3">Myers<span class="text-primary-600">Media</span></h3>
                 <p class="text-sm leading-relaxed text-gray-500">Your gateway to expert lifestyle guides.</p>
             </div>
-            <div>
-                <h4 class="text-gray-900 font-semibold mb-3">Our Network</h4>
+            <div class="max-w-xs">
+            <h4 class="text-gray-900 font-semibold mb-3">Our Network</h4>
                 <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-white text-gray-600 text-sm rounded px-3 py-2 mb-3 border border-gray-200 focus:outline-none focus:border-primary-500 cursor-pointer">
                     <option value="">— Network —</option>
                     <option value="https://www.jycsd.com">Main Site</option>
@@ -708,6 +709,7 @@
                     <option value="https://finance.jycsd.com">MoneyWise</option>
                     <option value="https://tech.jycsd.com">TechNest</option>
                     <option value="https://travel.jycsd.com">TripRoute</option>
+                    <option value="https://auto.jycsd.com">AutoPulse</option>
                     <option value="https://rightsdaily.com">RightsDaily</option>
                     <option value="https://dailymedadvice.com">DailyMedAdvice</option>
                 </select>

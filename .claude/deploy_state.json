@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-23T12:23:38",
+  "last_updated": "2026-05-23T13:03:53",
   "sites": {
     "main-site": {
       "last_deploy": "2026-05-23T12:23:36",
@@ -52,23 +52,23 @@
       "project": "dailymedadvice"
     },
     "dragonball-site": {
-      "last_deploy": "2026-05-23T12:23:37",
-      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "last_deploy": "2026-05-23T13:03:52",
+      "last_commit": "c2dc27aafe63dcbc2cfa31a4b5f97e33272186b8",
       "project": "dragonball-jycsd"
     },
     "naruto-site": {
-      "last_deploy": "2026-05-23T12:23:37",
-      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "last_deploy": "2026-05-23T13:03:53",
+      "last_commit": "c2dc27aafe63dcbc2cfa31a4b5f97e33272186b8",
       "project": "naruto-jycsd"
     },
     "onepiece-site": {
-      "last_deploy": "2026-05-23T12:23:37",
-      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "last_deploy": "2026-05-23T13:03:53",
+      "last_commit": "c2dc27aafe63dcbc2cfa31a4b5f97e33272186b8",
       "project": "onepiece-jycsd"
     },
     "lol-site": {
-      "last_deploy": "2026-05-23T12:23:38",
-      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "last_deploy": "2026-05-23T13:03:53",
+      "last_commit": "c2dc27aafe63dcbc2cfa31a4b5f97e33272186b8",
       "project": "lol-jycsd"
     },
     "fortnite-site": {
@@ -77,18 +77,18 @@
       "project": "fortnite-jycsd"
     },
     "valorant-site": {
-      "last_deploy": "2026-05-23T12:23:38",
-      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "last_deploy": "2026-05-23T13:03:53",
+      "last_commit": "c2dc27aafe63dcbc2cfa31a4b5f97e33272186b8",
       "project": "valorant-jycsd"
     },
     "eldenring-site": {
-      "last_deploy": "2026-05-23T12:23:38",
-      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "last_deploy": "2026-05-23T13:03:53",
+      "last_commit": "c2dc27aafe63dcbc2cfa31a4b5f97e33272186b8",
       "project": "eldenring-jycsd"
     },
     "minecraft-site": {
-      "last_deploy": "2026-05-23T12:23:38",
-      "last_commit": "0c46f4f633153e17e9e4966f546273ad0540f65a",
+      "last_deploy": "2026-05-23T13:03:53",
+      "last_commit": "c2dc27aafe63dcbc2cfa31a4b5f97e33272186b8",
       "project": "minecraft-jycsd"
     },
     "anime-site": {

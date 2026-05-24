@@ -61,7 +61,7 @@
   gtag('config', 'G-GGNWR1X1GV');
 </script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
 
 <nav class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -93,7 +93,7 @@
         </div>
     </div>
 
-    <main class="max-w-4xl mx-auto px-4 py-12">
+    <main class="max-w-4xl mx-auto px-4 py-12 flex-1">
         <div class="grid md:grid-cols-5 gap-8">
             <div class="md:col-span-3">
                 <div class="bg-white rounded-xl p-6 md:p-10 shadow-sm border border-gray-100">
@@ -154,14 +154,26 @@
                 <h3 class="text-white text-lg font-black mb-3"><span class="text-blue-400">Right</span>sDaily</h3>
                 <p class="text-sm leading-relaxed">Know your rights. Protect your future. Practical legal information for everyday people.</p>
             </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3">Topics</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="article-1.html" class="hover:text-white transition-colors">Consumer Rights</a></li>
-                    <li><a href="article-2.html" class="hover:text-white transition-colors">Tenant Rights</a></li>
-                    <li><a href="article-3.html" class="hover:text-white transition-colors">Family Law</a></li>
-                    <li><a href="article-4.html" class="hover:text-white transition-colors">Employment Law</a></li>
-                </ul>
+            <div class="max-w-xs">
+                <h4 class="text-white font-semibold mb-3">Our Network</h4>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-blue-500 cursor-pointer">
+                <option value="">— Network —</option>
+                <option value="https://www.jycsd.com">Myers Media</option>
+                <option value="https://games.jycsd.com">Game Guides</option>
+                <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+            </select>
+            <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-blue-500 cursor-pointer">
+                <option value="">— More Sites —</option>
+                <option value="https://healthy.jycsd.com">HealthyEats</option>
+                <option value="https://pets.jycsd.com">PetCare Hub</option>
+                <option value="https://home.jycsd.com">HomeJoy</option>
+                <option value="https://finance.jycsd.com">MoneyWise</option>
+                <option value="https://tech.jycsd.com">TechNest</option>
+                <option value="https://travel.jycsd.com">TripRoute</option>
+                <option value="https://auto.jycsd.com">AutoPulse</option>
+                <option value="https://rightsdaily.com">RightsDaily</option>
+                <option value="https://dailymedadvice.com">DailyMedAdvice</option>
+            </select>
             </div>
             <div>
                 <h4 class="text-white font-semibold mb-3">Legal</h4>
@@ -179,32 +191,11 @@
                 </ul>
             </div>
         </div>
-        <div class="border-t border-gray-800 pt-6 text-center text-sm">
+        <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-400">
             <p>&copy; 2026 RightsDaily. All rights reserved.</p>
+                        <a href="https://jycsd.com" class="text-sm text-gray-400 hover:text-blue-400 transition-colors">Visit jycsd.com for more guides</a>
         </div>
     </div>
-    <div class="text-center text-sm mt-4"><a href="https://jycsd.com" class="hover:text-blue-400 transition-colors">Visit jycsd.com for more guides</a></div>
-
-              <div>
-            <h4 class="text-white font-semibold mb-3">Our Network</h4>
-            <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-indigo-500 cursor-pointer">
-                <option value="">— Network —</option>
-                <option value="https://www.jycsd.com">Myers Media</option>
-                <option value="https://games.jycsd.com">Game Guides</option>
-                <option value="https://anime.jycsd.com">Anime & Manga</option>
-            </select>
-            <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-indigo-500 cursor-pointer">
-                <option value="">— More Sites —</option>
-                <option value="https://healthy.jycsd.com">HealthyEats</option>
-                <option value="https://pets.jycsd.com">PetCare Hub</option>
-                <option value="https://home.jycsd.com">HomeJoy</option>
-                <option value="https://finance.jycsd.com">MoneyWise</option>
-                <option value="https://tech.jycsd.com">TechNest</option>
-                <option value="https://travel.jycsd.com">TripRoute</option>
-                <option value="https://rightsdaily.com">RightsDaily</option>
-                <option value="https://dailymedadvice.com">DailyMedAdvice</option>
-            </select>
-        </div>
 </footer>
 </body>
 </html>

@@ -210,9 +210,9 @@ def generate_about_contact(data, site_dir):
 body{{{{font-family:'Inter',Arial,sans-serif;background:#fff;color:#111827;font-size:16px;line-height:1.6}}}}
 </style>
 </head>
-<body class="bg-white text-gray-900 font-sans">
+<body class="bg-white text-gray-900 font-sans flex flex-col min-h-screen">
 <nav class="border-b border-gray-200 py-4 px-6"><a href="/" class="text-xl font-bold">{site_name.split(' ')[0]} <span style="color:{accent}">{site_name.split(' ')[1] if ' ' in site_name else 'Wiki'}</span></a></nav>
-<main class="max-w-3xl mx-auto px-6 py-16">
+<main class="max-w-3xl mx-auto px-6 py-16 flex-1">
 """
 
     about = base + f"""<title>About — {site_name}</title>
@@ -338,7 +338,7 @@ def generate_sitemap_html(data, site_dir, site_key):
 body{{font-family:"Inter",Arial,sans-serif;background:{tc['bodyBg']};color:{tc['textPrimary']};font-size:16px;line-height:1.6}}
 </style>
 </head>
-<body class="bg-bgPrimary text-textPrimary font-sans">
+<body class="bg-bgPrimary text-textPrimary font-sans flex flex-col min-h-screen">
 
 <nav class="fixed top-0 w-full z-50 border-b" style="background:{tc['navBg']};border-color:#{tc['navBorder']}">
 <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
@@ -354,7 +354,7 @@ body{{font-family:"Inter",Arial,sans-serif;background:{tc['bodyBg']};color:{tc['
 </div>
 </nav>
 
-<main class="max-w-7xl mx-auto px-4 py-24">
+<main class="max-w-7xl mx-auto px-4 py-24 flex-1">
 <h1 class="text-4xl font-black mb-2">Sitemap</h1>
 <p class="text-textSecondary mb-8">Browse all pages on {site_name}.</p>
 {content_body}
@@ -375,7 +375,7 @@ body{{font-family:"Inter",Arial,sans-serif;background:{tc['bodyBg']};color:{tc['
 {footer_cats}
 </ul>
 </div>
-<div>
+<div class="max-w-xs">
 <h4 class="font-bold mb-4">{footer_links_title}</h4>
 {footer_links}
 </div>
@@ -497,6 +497,26 @@ def schema_org_anime_item(data, item, item_type):
 </script>'''
 
 
+def schema_org_website(site_name, domain):
+    return f'''<script type="application/ld+json">
+{json.dumps({
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "name": site_name,
+            "url": f"https://{domain}/"
+        },
+        {
+            "@type": "WebSite",
+            "name": site_name,
+            "url": f"https://{domain}/"
+        }
+    ]
+})}
+</script>'''
+
+
 def theme_colors(data):
     t = data.get("theme", "dark")
     if t == "light":
@@ -555,7 +575,11 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
 <meta name="description" content="{meta_desc}">
 <meta property="og:title" content="{og_title}">
 <meta property="og:description" content="{meta_desc}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{og_type}">
+<meta property="og:image" content="{og_image}">
+<meta property="og:url" content="{canonical_url}">
+<meta property="og:site_name" content="{site_name}">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{canonical_url}">
@@ -604,7 +628,7 @@ img[src$=".png"]{{mix-blend-mode:normal}}
 .show-more-btn:hover{{transform:translateY(-2px)}}
 </style>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
 
 <nav class="fixed top-0 w-full z-50 border-b" style="background:{navBg};border-color:#{navBorder}">
 <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
@@ -650,7 +674,7 @@ img[src$=".png"]{{mix-blend-mode:normal}}
 
 {char_detail_section}
 
-<footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#{footerBorderHex}">
+<footer class="bg-bgSecondary border-t py-16 px-4 mt-auto" style="border-color:#{footerBorderHex}">
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
@@ -1015,6 +1039,7 @@ def render_footer(data):
     <option value="https://finance.jycsd.com">MoneyWise</option>
     <option value="https://tech.jycsd.com">TechNest</option>
     <option value="https://travel.jycsd.com">TripRoute</option>
+    <option value="https://auto.jycsd.com">AutoPulse</option>
 </select>'''
     links_title = "Our Network"
     return cats, links, links_title
@@ -1189,6 +1214,8 @@ def render_char_detail_page(data, char):
         title_tag=title_tag,
         meta_desc=meta_desc[:160],
         og_title=f"{char['name']} Guide & Profile — {site_name}",
+        og_type="article",
+        og_image=f"https://{domain}/images/{char['image']}" if char.get("image") else f"https://{domain}/images/default-og.jpg",
         canonical_url=canonical,
         schema_markup=schema,
         bgPrimary=tc["bgPrimary"],
@@ -1300,8 +1327,10 @@ def render_category_page(data, category):
         title_tag=title_tag,
         meta_desc=meta_desc,
         og_title=f"{cat_name} Guides — {site_name}",
+        og_type="website",
+        og_image=f"https://{domain}/images/default-og.jpg",
         canonical_url=canonical,
-        schema_markup="",
+        schema_markup=schema_org_website(site_name, domain),
         bgPrimary=tc["bgPrimary"],
         bgSecondary=tc["bgSecondary"],
         bgCard=tc["bgCard"],
@@ -1520,6 +1549,8 @@ def render_anime_item_detail(data, item, atype):
         title_tag=title_tag,
         meta_desc=meta_desc,
         og_title=f"{item['name']} {atype['singular']} Guide — {site_name}",
+        og_type="article",
+        og_image=f"https://{domain}/images/{item['image']}" if item.get("image") else f"https://{domain}/images/default-og.jpg",
         canonical_url=canonical,
         schema_markup=schema,
         bgPrimary=tc["bgPrimary"],
@@ -1618,8 +1649,10 @@ def render_anime_category_index(data, atype, items):
         title_tag=title_tag,
         meta_desc=meta_desc,
         og_title=f"{atype['name']} — {site_name}",
+        og_type="website",
+        og_image=f"https://{domain}/images/default-og.jpg",
         canonical_url=canonical,
-        schema_markup="",
+        schema_markup=schema_org_website(site_name, domain),
         bgPrimary=tc["bgPrimary"],
         bgSecondary=tc["bgSecondary"],
         bgCard=tc["bgCard"],
@@ -1696,8 +1729,10 @@ def render_home_page(data):
         title_tag=f'{site_name} — {data.get("tagline", "Game Guides & Wiki")}',
         meta_desc=hero_subtitle,
         og_title=f'{site_name} — Game Guides & Wiki',
+        og_type="website",
+        og_image=f"https://{domain}/images/default-og.jpg",
         canonical_url=f"https://{domain}/",
-        schema_markup="",
+        schema_markup=schema_org_website(site_name, domain),
         bgPrimary=tc["bgPrimary"],
         bgSecondary=tc["bgSecondary"],
         bgCard=tc["bgCard"],

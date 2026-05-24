@@ -72,7 +72,7 @@ tailwind.config = {
 }
 </style>
 </head>
-<body class="bg-white font-sans antialiased">
+<body class="bg-white font-sans antialiased flex flex-col min-h-screen">
 <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
@@ -85,7 +85,7 @@ tailwind.config = {
         </div>
     </div>
 </header>
-<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1">
     <nav class="text-sm text-gray-400 mb-8" aria-label="Breadcrumb">
         <a href="index.html" class="hover:text-blue-800 transition">Home</a>
         <span class="mx-2">/</span>
@@ -124,42 +124,55 @@ tailwind.config = {
         </div>
     </aside>
 </main>
-<footer class="bg-gray-100 border-t border-gray-200 mt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div class="flex flex-wrap justify-between items-center">
-            <p class="text-sm text-gray-500">&copy; 2026 RightsDaily. All rights reserved.</p>
-            <div class="flex space-x-6 text-sm">
-                <a href="https://www.jycsd.com" target="_blank" rel="noopener" class="text-gray-500 hover:text-blue-800 transition">Visit jycsd.com for more guides</a>
-                <a href="about.html" class="text-gray-500 hover:text-blue-800 transition">About</a>
-                <a href="contact.html" class="text-gray-500 hover:text-blue-800 transition">Contact</a>
-                <a href="privacy-policy.html" class="text-gray-500 hover:text-blue-800 transition">Privacy Policy</a>
-                <a href="terms.html" class="text-gray-500 hover:text-blue-800 transition">Terms</a>
-            </div>
-        </div>
-    
-        <div class="mt-8 pt-6 border-t border-gray-200">
+<footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
             <div>
-                <h4 class="text-gray-700 font-semibold mb-3">Our Network</h4>
-                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-200 text-gray-600 text-sm rounded px-3 py-2 mb-3 border border-gray-300 focus:outline-none focus:border-blue-500 cursor-pointer">
-                    <option value="">— Network —</option>
-                    <option value="https://www.jycsd.com">Myers Media</option>
-                    <option value="https://games.jycsd.com">Game Guides</option>
-                    <option value="https://anime.jycsd.com">Anime & Manga</option>
-                </select>
-                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-200 text-gray-600 text-sm rounded px-3 py-2 border border-gray-300 focus:outline-none focus:border-blue-500 cursor-pointer">
-                    <option value="">— More Sites —</option>
-                    <option value="https://healthy.jycsd.com">HealthyEats</option>
-                    <option value="https://pets.jycsd.com">PetCare Hub</option>
-                    <option value="https://home.jycsd.com">HomeJoy</option>
-                    <option value="https://finance.jycsd.com">MoneyWise</option>
-                    <option value="https://tech.jycsd.com">TechNest</option>
-                    <option value="https://travel.jycsd.com">TripRoute</option>
-                    <option value="https://rightsdaily.com">RightsDaily</option>
-                    <option value="https://dailymedadvice.com">DailyMedAdvice</option>
-                </select>
+                <h3 class="text-white text-lg font-black mb-3"><span class="text-blue-400">Right</span>sDaily</h3>
+                <p class="text-sm leading-relaxed">Know your rights. Protect your future. Practical legal information for everyday people.</p>
+            </div>
+            <div class="max-w-xs">
+                <h4 class="text-white font-semibold mb-3">Our Network</h4>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-blue-500 cursor-pointer">
+                <option value="">— Network —</option>
+                <option value="https://www.jycsd.com">Myers Media</option>
+                <option value="https://games.jycsd.com">Game Guides</option>
+                <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+            </select>
+            <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-blue-500 cursor-pointer">
+                <option value="">— More Sites —</option>
+                <option value="https://healthy.jycsd.com">HealthyEats</option>
+                <option value="https://pets.jycsd.com">PetCare Hub</option>
+                <option value="https://home.jycsd.com">HomeJoy</option>
+                <option value="https://finance.jycsd.com">MoneyWise</option>
+                <option value="https://tech.jycsd.com">TechNest</option>
+                <option value="https://travel.jycsd.com">TripRoute</option>
+                <option value="https://auto.jycsd.com">AutoPulse</option>
+                <option value="https://rightsdaily.com">RightsDaily</option>
+                <option value="https://dailymedadvice.com">DailyMedAdvice</option>
+            </select>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:contact@jycsd.com" class="hover:text-white transition-colors">contact@jycsd.com</a></li>
+                </ul>
             </div>
         </div>
+        <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-400">
+            <p>&copy; 2026 RightsDaily. All rights reserved.</p>
+                        <a href="https://jycsd.com" class="text-sm text-gray-400 hover:text-blue-400 transition-colors">Visit jycsd.com for more guides</a>
         </div>
+    </div>
 </footer>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NewsArticle","headline":"5 Crucial Legal Rights After a Car Accident","description":"Learn the 5 essential legal rights you have after a car accident. From medical care to fair compensation, protect yourself with this guide from RightsDaily.","datePublished":"2026-05-21","dateModified":"2026-05-21","author":[{"@type":"Organization","name":"RightsDaily","url":"https://rightsdaily.com"}],"publisher":{"@type":"Organization","name":"RightsDaily","url":"https://rightsdaily.com","logo":{"@type":"ImageObject","url":"https://rightsdaily.com/images/logo.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://rightsdaily.com/article-33.html"},"image":{"@type":"ImageObject","url":"https://rightsdaily.com/images/default-article.jpg"},"articleBody":"After a car accident, your health is the top priority. You have the legal right to seek medical attention without delay, even if you don't feel injured immediately. Adrenaline can mask pain. Documenting injuries soon after the crash strengthens your personal injury claim. Nearly 40% of car accident victims delay medical care, which can jeopardize both their health and legal claim for compensation. Medical records serve as crucial evidence. Doctors can assess hidden injuries like whiplash or concussions. Failing to seek care might let insurance companies argue your injuries aren't serious. Always keep copies of all medical reports and bills. This right also includes access to emergency services. You can call 911, be transported to a hospital, and receive necessary treatment. The other driver's insurance may be liable for these costs under property damage and personal injury coverage.\n\nYou have the right to request that law enforcement respond to the scene and file an official police report. This independent account includes witness statements, officer observations, and any traffic citations issued. The report is a cornerstone for insurance claims and legal proceedings.\n\nYou are not required to deal with insurance companies alone. You have the right to hire an attorney to represent you in all communications and settlement discussions. Personal injury lawyers understand the tactics insurers use to minimize payouts.\n\nYou are entitled to compensation for both economic and non-economic damages. Economic damages include medical bills, lost wages, property damage, and out-of-pocket expenses. Non-economic damages cover pain, suffering, emotional distress, and loss of enjoyment of life.\n\nEvery state imposes a time limit for filing a personal injury lawsuit after a car accident--the statute of limitations. This period typically ranges from one to six years, with most states allowing two to three years."}
