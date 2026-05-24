@@ -29,6 +29,24 @@ except ImportError:
     Image = None
 
 
+def verify_image_content(img_path, article_title):
+    """Check if downloaded image matches article topic using doubao vision."""
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from doubao_vision import analyze_image
+        result = analyze_image(img_path,
+            f"Is this image about '{article_title}'? "
+            "Does the image subject match this topic? Answer YES or NO.")
+        if result and 'yes' in result.strip().lower()[:10]:
+            return True
+        if result:
+            print(f"      -> image mismatch: {result[:120]}")
+        return False
+    except Exception as e:
+        print(f"      -> verify skipped ({e})")
+        return True  # Don't block on verification failure
+
+
 CONTENT_SITES = [
     'sub-healthy', 'sub-pets', 'sub-home', 'sub-finance',
     'sub-tech', 'sub-travel', 'entertainment',
@@ -416,6 +434,12 @@ def process_site(site_name: str, limit: int = 0, force: bool = False):
                 continue
 
         if downloaded:
+            # Verify image matches article topic
+            if not verify_image_content(str(img_path), title):
+                print("      -> deleting mismatched image, retrying...")
+                img_path.unlink(missing_ok=True)
+                continue
+
             # Update article HTML
             relative_img = f'images/article-{num}.jpg'
             new_html = update_article_html(html, relative_img, title)

@@ -14,7 +14,8 @@ import time
 import argparse
 import subprocess
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
+import random
 from pathlib import Path
 
 from reasonix_helper import reasonix_call_json, reasonix_call, ark_call_json
@@ -744,7 +745,19 @@ def main():
                 print(f"    FAIL: API call failed after 3 attempts")
                 continue
 
-            # 2. Check required fields
+            # 2. Check for duplicate title
+            h1 = content.get("h1_title", "").strip().lower()
+            if h1:
+                existing_h1s = set()
+                for f in (ROOT / site_dir).glob("article-*.html"):
+                    h = re.search(r'<h1[^>]*>([^<]+)</h1>', f.read_text(encoding="utf-8", errors="ignore"))
+                    if h:
+                        existing_h1s.add(h.group(1).strip().lower())
+                if h1 in existing_h1s:
+                    print(f"    SKIP: duplicate title '{h1[:60]}' — already exists in {site_dir}")
+                    continue
+
+            # 3. Check required fields
             required = ["title", "h1_title", "article_body_html"]
             missing = [k for k in required if k not in content]
             if missing:
@@ -766,6 +779,16 @@ def main():
             # 4. Render full HTML via template
             content["article_url"] = f"https://{cfg['domain']}/article-{article_num}.html"
             html, _ = render_article_html(site_dir, content)
+
+            # 4.5 Randomize date to avoid all articles showing same date
+            days_ago = random.randint(7, 90)
+            rand_date = datetime.now() - timedelta(days=days_ago)
+            date_iso = rand_date.strftime("%Y-%m-%d")
+            date_display = rand_date.strftime("%B %d, %Y")
+            html = re.sub(r'<time datetime="[^"]*"', f'<time datetime="{date_iso}"', html)
+            html = re.sub(r'"datePublished":\s*"[^"]*"', f'"datePublished": "{date_iso}"', html)
+            html = re.sub(r'"dateModified":\s*"[^"]*"', f'"dateModified": "{date_iso}"', html)
+            content["date_display"] = date_display
 
             # 5. Validate
             issues = quick_validate(html, site_dir)

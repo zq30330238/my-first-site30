@@ -131,9 +131,26 @@ SITE_CONFIG = {
             ("article-3.html", "How to Negotiate a Car Price: 7 Dealer Tactics Exposed"),
         ],
         "predefined_topics": [
-            {"title": "BYD Dolphin: The Affordable Electric Hatchback Reshaping Urban Mobility", "category": "ev", "angle": "urban EV review", "key_points": ["Compact design optimized for city driving and parking", "Affordable price point under $25,000 in most markets", "Interior space utilization and tech features", "Real-world range and charging convenience for daily commuters"]},
-            {"title": "Huawei AITO M9 Review: The Tech Giant's Flagship EV SUV with HarmonyOS Smart Cockpit", "category": "ev", "angle": "technology showcase review", "key_points": ["HarmonyOS smart cockpit experience and voice control", "Huawei ADS 2.0 autonomous driving capabilities", "Premium interior materials and zero-gravity seats", "Range, performance, and charging specs"]},
-            {"title": "Avatr 12: Huawei and Changan's Premium Electric Sedan with 700km Range", "category": "ev", "angle": "premium EV review", "key_points": ["Striking design by Nader Faghihzadeh (ex-BMW)", "Huawei-powered interior and driver assistance tech", "CATL battery and 700km+ range performance", "Positioning against NIO ET7 and Mercedes EQE"]},
+            # === Buying (5 topics) ===
+            {"title": "Car Loan vs Lease: Which Financing Option Saves More Money in 2026", "category": "buying", "angle": "financial comparison guide", "key_points": ["Monthly payment breakdown for loan vs lease with real numbers", "Hidden fees: acquisition fee, disposition fee, mileage penalties", "When leasing makes financial sense and when it doesn't", "Tax implications and business write-off considerations"]},
+            {"title": "2026 First-Time Car Buyer Guide: Everything You Need to Know Before Visiting a Dealership", "category": "buying", "angle": "beginner buyer walkthrough", "key_points": ["Budget setting: the 20/4/10 rule explained", "Pre-approval vs dealer financing — which saves more", "Test drive checklist most first-time buyers skip", "Red flags in the finance office and how to push back"]},
+            {"title": "Certified Pre-Owned vs Used Car: Is the CPO Premium Worth It in 2026", "category": "buying", "angle": "value analysis comparison", "key_points": ["What CPO certification actually covers vs marketing claims", "Price comparison: CPO vs non-CPO for popular 2023-2024 models", "Extended warranty value: manufacturer-backed vs third-party", "Best CPO programs ranked: Lexus, BMW, Toyota, Honda"]},
+            {"title": "The Hidden Costs of Car Ownership Americans Underestimate Every Year", "category": "buying", "angle": "total cost of ownership exposé", "key_points": ["Depreciation as the single biggest cost most buyers ignore", "Insurance, registration, and taxes by state — real annual numbers", "Maintenance and repair costs averaged across 10 popular models", "Fuel/electricity costs: gas vs hybrid vs EV 5-year comparison"]},
+            {"title": "How to Read a Used Car History Report and Spot Dealbreakers Before You Buy", "category": "buying", "angle": "inspection skill guide", "key_points": ["CarFax vs AutoCheck: what each report actually covers", "Accident history tiers: minor fender bender vs structural damage", "Title brands explained: salvage, rebuilt, flood, lemon — and why they matter", "Odometer rollback signs and service history gaps that signal trouble"]},
+            # === Performance (5 topics) ===
+            {"title": "0-60 Under 3 Seconds: The 10 Fastest Accelerating Production Cars of 2026", "category": "performance", "angle": "ranking with technical breakdown", "key_points": ["Ranked list with verified 0-60 times from instrumented testing", "Powertrain breakdown: EV dual/tri-motor vs ICE hybrid vs pure combustion", "Launch control technology comparison across brands", "Tire and traction technology enabling sub-3-second acceleration"]},
+            {"title": "Turbocharger vs Supercharger vs Naturally Aspirated: Which Engine Is Right for Your Driving Style", "category": "performance", "angle": "technical buyer's guide", "key_points": ["How each system works with simple diagrams explained in text", "Throttle response, lag, and power delivery differences in real driving", "Reliability and maintenance costs for each type over 100,000 miles", "Best cars for each engine type at $30K, $50K, and $80K price points"]},
+            {"title": "The Best Track Day Cars for Beginners: Affordable Performance Machines That Won't Kill You", "category": "performance", "angle": "entry-level motorsport guide", "key_points": ["Selection criteria: forgiving handling, affordable consumables, safety", "Top 5 picks: Mazda MX-5 Miata to Toyota GR86 to Hyundai Elantra N", "Track day costs breakdown: tires, brakes, fluids, insurance, entry fees", "Essential upgrades before your first track day and what to skip"]},
+            {"title": "AWD vs RWD vs FWD: Which Drivetrain Actually Delivers the Best Performance on Road and Track", "category": "performance", "angle": "engineering comparison with real test data", "key_points": ["Weight distribution, polar moment, and how drivetrain affects handling balance", "Lap time comparisons: same car platform with different drivetrains", "Wet and dry performance differences supported by instrumented testing", "Tire wear patterns and long-term ownership costs by drivetrain type"]},
+            {"title": "How Launch Control Works and Which 2026 Cars Have the Best Systems", "category": "performance", "angle": "technology deep dive", "key_points": ["Engineering behind launch control: ECU mapping, clutch engagement, traction management", "Step-by-step activation for Porsche, BMW M, Tesla, and Nissan GT-R systems", "Does launch control damage your car? Transmission wear data and warranty implications", "Aftermarket launch control options for cars without factory systems"]},
+            # === Reviews (3 topics) ===
+            {"title": "2026 Honda Civic Hybrid Review: The Perfect Daily Driver for $30,000", "category": "reviews", "angle": "comprehensive owner-perspective review", "key_points": ["Real-world fuel economy: city, highway, and combined MPG from extended testing", "Interior quality, infotainment, and cargo space compared to Corolla and Elantra hybrids", "Driving dynamics: steering feel, ride quality, and NVH at highway speeds", "Total cost of ownership projection over 5 years vs non-hybrid Civic"]},
+            {"title": "Tesla Cybertruck 6-Month Long-Term Review: What Owners Aren't Telling You", "category": "reviews", "angle": "long-term ownership report", "key_points": ["Daily livability: parking, maneuverability, and real-world range with payload", "Build quality after 10,000 miles: panel gaps, interior wear, software bugs", "Charging reality: Supercharger speed, home charging costs, cold weather range loss", "Six-month total cost: insurance, electricity, maintenance, and unexpected expenses"]},
+            {"title": "2026 Toyota Camry vs Honda Accord: The Midsize Sedan Battle No One Expected to Still Be This Good", "category": "reviews", "angle": "head-to-head comparison", "key_points": ["Powertrain comparison: Camry's hybrid-only lineup vs Accord's hybrid and turbo options", "Interior tech, material quality, and rear-seat comfort measured and compared", "Real-world fuel economy and annual fuel cost projection for 15,000 miles", "Resale value analysis: 3-year and 5-year depreciation projections for both models"]},
+            # === Chinese Brands (3 topics) ===
+            {"title": "Zeekr 001 Review: Geely's Premium Electric Shooting Brake That Rivals Porsche Taycan Cross Turismo", "category": "chinese-brands", "angle": "premium EV comparison review", "key_points": ["Design and engineering by Geely's global team with former Audi and Bentley talent", "Dual-motor performance specs: 0-60, range, and charging curve data", "Interior quality and tech: materials, screen UX, and driver assistance comparison", "European market pricing and how it undercuts German premium EVs by 30-40%"]},
+            {"title": "XPeng G6 Review: The Model Y Competitor with 800V Charging That Actually Works", "category": "chinese-brands", "angle": "technology-focused EV review", "key_points": ["800V SEPA 2.0 platform: real-world charging speed from 10-80% with timer data", "XNGP autonomous driving vs Tesla FSD: capability comparison in urban and highway scenarios", "Build quality, interior space, and ride comfort compared to Model Y and Ioniq 5", "European expansion timeline, pricing, and warranty coverage details"]},
+            {"title": "Li Auto L9 Review: China's Best-Selling Large SUV That Americans Can't Buy Yet", "category": "chinese-brands", "angle": "what America is missing spotlight", "key_points": ["Range-extender powertrain explained: why this hybrid approach works for large SUVs", "Interior luxury: 6-seat configuration, rear entertainment, fridge, and massaging seats", "AD Max autonomous driving system: LiDAR + camera fusion real-world performance", "Why Li Auto dominates China's premium SUV market and whether global expansion is planned"]},
         ],
     },
     "rightsdaily": {
@@ -331,8 +348,8 @@ tailwind.config = {
                     <option value="https://games.jycsd.com">Game Guides</option>
                     <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
                 </select>
-                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-{{brand_color}} cursor-pointer">
-                    <option value="">-- More Sites --</option>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-{{brand_color}} cursor-pointer">
+                    <option value="">-- Content Sites --</option>
                     <option value="https://healthy.jycsd.com">HealthyEats</option>
                     <option value="https://pets.jycsd.com">PetCare Hub</option>
                     <option value="https://home.jycsd.com">HomeJoy</option>
@@ -342,6 +359,18 @@ tailwind.config = {
                     <option value="https://auto.jycsd.com">AutoPulse</option>
                     <option value="https://rightsdaily.com">RightsDaily</option>
                     <option value="https://dailymedadvice.com">DailyMedAdvice</option>
+                    <option value="https://entertainment.jycsd.com">PopCulture HQ</option>
+                </select>
+                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-{{brand_color}} cursor-pointer">
+                    <option value="">-- Game & Anime Wikis --</option>
+                    <option value="https://dragonball.jycsd.com">Dragon Ball Wiki</option>
+                    <option value="https://naruto.jycsd.com">Naruto Wiki</option>
+                    <option value="https://onepiece.jycsd.com">One Piece Wiki</option>
+                    <option value="https://valorant.jycsd.com">Valorant Wiki</option>
+                    <option value="https://fortnite.jycsd.com">Fortnite Wiki</option>
+                    <option value="https://lol.jycsd.com">LoL Wiki</option>
+                    <option value="https://eldenring.jycsd.com">Elden Ring Wiki</option>
+                    <option value="https://minecraft.jycsd.com">Minecraft Wiki</option>
                 </select>
             </div>
             <div>

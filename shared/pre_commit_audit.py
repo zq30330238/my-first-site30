@@ -623,6 +623,18 @@ def check_article_image_exists(filepath, site_dir):
         errors.append(f"{name}: og:image too small ({img_path.stat().st_size} bytes): {url}")
 
 
+def check_local_img_srcs(filepath, site_dir):
+    html = filepath.read_text(encoding="utf-8", errors="ignore")
+    name = label(filepath)
+    for m in re.finditer(r'<img[^>]*src="([^"]+)"[^>]*>', html):
+        src = m.group(1)
+        if src.startswith('http') or src.startswith('data:'):
+            continue
+        img_path = site_dir / src.lstrip('/')
+        if not img_path.exists():
+            errors.append(f"{name}: <img> file missing: {src}")
+
+
 def check_site_skeleton(filepath, site_dir):
     if site_dir.name not in GAME_SITES:
         return
@@ -674,6 +686,8 @@ def main():
 
             if f.name == 'index.html' or 'guides/' in str(f):
                 check_letter_placeholders(f, site_dir)
+
+            check_local_img_srcs(f, site_dir)
 
             if site_dir.name in GAME_SITES and site_dir.name not in _skeleton_checked:
                 check_site_skeleton(f, site_dir)
