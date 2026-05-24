@@ -257,7 +257,7 @@ def generate_and_verify_image(title, category, description, site_dir, article_nu
     """
     SEEDREAM_API_URL = "https://ark.cn-beijing.volces.com/api/v3/images/generations"
     SEEDREAM_API_KEY = "ark-bc9c6af0-1813-4842-ae3f-0614d354c375-98727"
-    SEEDREAM_MODEL = "doubao-seedream-4-0-250828"
+    SEEDREAM_MODEL = "doubao-seedream-5-0-260128"
     MAX_DAILY = 50
 
     if daily_count >= MAX_DAILY:
@@ -702,7 +702,7 @@ def main():
     parser.add_argument("--sites", nargs="*", help="Specific sites to generate for")
     parser.add_argument("--dry-run", action="store_true", help="Show what would be done without doing it")
     parser.add_argument("--template", help="Force a specific article template (A/B/C/D/E)")
-    parser.add_argument("--skip-images", action="store_true", help="Skip image generation for faster runs")
+    parser.add_argument("--with-images", action="store_true", help="Generate images via Seedream (costs money; default uses free DuckDuckGo+Unsplash via collect_content_images.py)")
     args = parser.parse_args()
 
     if args.template and args.template not in ARTICLE_TEMPLATES:
@@ -755,10 +755,8 @@ def main():
                 print(f"    FAIL: Missing fields in AI output: {missing}")
                 continue
 
-            # 3. Generate and verify article image (skip if --skip-images)
-            if args.skip_images:
-                content["cover_img_url"] = ""
-            else:
+            # 3. Generate article image (only if --with-images; default: free images via collect_content_images.py)
+            if args.with_images:
                 image_url, daily_image_count = generate_and_verify_image(
                     content.get("h1_title", ""),
                     cfg["category"],
@@ -766,6 +764,8 @@ def main():
                     site_dir, article_num, daily_image_count
                 )
                 content["cover_img_url"] = image_url
+            else:
+                content["cover_img_url"] = f"images/article-{article_num}.jpg"
 
             # 4. Render full HTML via template
             content["article_url"] = f"https://{cfg['domain']}/article-{article_num}.html"

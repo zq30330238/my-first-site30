@@ -16,6 +16,7 @@ Usage: py shared/pre_commit_audit.py [--full] [--site X]
   --site X  Scan only one site directory
 """
 
+import html as html_mod
 import re
 import sys
 import json
@@ -526,6 +527,110 @@ def self_check():
             print(f"  {i}")
         sys.exit(1)
 
+
+def check_footer_dropdowns(filepath, site_dir):
+    html = filepath.read_text(encoding="utf-8", errors="ignore")
+    name = label(filepath)
+    footer_m = re.search(r'<footer[\s\S]*?</footer>', html)
+    if not footer_m:
+        return
+    footer_html = footer_m.group(0)
+    selects = re.findall(r'<select[\s\S]*?</select>', footer_html, re.DOTALL)
+    if not selects:
+        return
+
+    DROPDOWN_EXPECTED = {
+        "Network": {"any": [["Myers Media", "Main Site"], ["Game Guides"], ["Anime & Manga"]]},
+        "Content Sites": {"all": ["HealthyEats", "PetCare Hub", "HomeJoy", "MoneyWise", "TechNest", "TripRoute", "AutoPulse", "RightsDaily", "DailyMedAdvice", "PopCulture HQ"]},
+        "Game & Anime Wikis": {"all": ["Dragon Ball Wiki", "Naruto Wiki", "One Piece Wiki", "Valorant Wiki", "Fortnite Wiki", "LoL Wiki", "Elden Ring Wiki", "Minecraft Wiki"]},
+    }
+
+    for sel in selects:
+        options = re.findall(r'<option[^>]*>(.*?)</option>', sel, re.DOTALL)
+        opt_texts = [html_mod.unescape(re.sub(r'<[^>]+>', '', o).strip()) for o in options]
+        for key, rule in DROPDOWN_EXPECTED.items():
+            if not any(key in t for t in opt_texts):
+                continue
+            if "all" in rule:
+                existing = {t for t in opt_texts if t in rule["all"]}
+                missing = [e for e in rule["all"] if e not in existing]
+                if missing:
+                    errors.append(f"{name}: '{key}' dropdown missing: {', '.join(missing)}")
+            elif "any" in rule:
+                is_game_anime = site_dir and any(
+                    d in str(site_dir).lower()
+                    for d in ['naruto', 'onepiece', 'dragonball', 'valorant', 'eldenring',
+                              'lol-site', 'fortnite', 'anime-site', 'minecraft']
+                )
+                for group in rule["any"]:
+                    if not any(g in opt_texts for g in group):
+                        if group == ["Game Guides"] or group == ["Anime & Manga"]:
+                            if not is_game_anime:
+                                continue
+                        errors.append(f"{name}: '{key}' dropdown missing: {', '.join(group)}")
+            break
+
+
+def check_guide_page_content(filepath, site_dir):
+    if 'anime-site/guides/' not in str(filepath) or filepath.name != 'index.html':
+        return
+    html = filepath.read_text(encoding="utf-8", errors="ignore")
+    name = label(filepath)
+
+    # Count content cards: <a> blocks with both <img> and heading
+    cards = 0
+    for m in re.finditer(r'<a[^>]*>[\s\S]*?</a>', html, re.IGNORECASE):
+        a_block = m.group(0)
+        if re.search(r'<img', a_block, re.IGNORECASE) and re.search(r'<h\d', a_block, re.IGNORECASE):
+            cards += 1
+    if cards < 4:
+        errors.append(f"{name}: guide page has only {cards} content cards (need at least 4)")
+
+    # Word count in main content area
+    main_m = re.search(r'<main[\s\S]*?</main>', html)
+    if main_m:
+        text = re.sub(r'<[^>]+>', ' ', main_m.group(0))
+        text = re.sub(r'\s+', ' ', text).strip()
+        wc = len(text.split())
+        if wc < 100:
+            errors.append(f"{name}: guide page appears to be a blank shell ({wc} words)")
+
+
+def check_letter_placeholders(filepath, site_dir):
+    html = filepath.read_text(encoding="utf-8", errors="ignore")
+    name = label(filepath)
+    # Only flag styled spans with bg- or rounded classes inside links — indicates thumbnail placeholder
+    for m in re.finditer(r'<a[^>]*>[\s\S]*?</a>', html, re.IGNORECASE):
+        a_block = m.group(0)
+        span_m = re.search(r'<span[^>]*class="[^"]*(?:bg-|rounded)[^"]*"[^>]*>([A-Z])</span>', a_block)
+        if span_m:
+            errors.append(f"{name}: letter placeholder found: '{span_m.group(1)}' used instead of image in series/character card")
+
+
+def check_article_image_exists(filepath, site_dir):
+    html = filepath.read_text(encoding="utf-8", errors="ignore")
+    name = label(filepath)
+    m = re.search(r'<meta[^>]+property="og:image"[^>]+content="([^"]+)"', html)
+    if not m:
+        return
+    url = m.group(1)
+    if not url.startswith('/') and not url.startswith('images/'):
+        return
+    img_path = site_dir / url.lstrip('/')
+    if not img_path.exists():
+        errors.append(f"{name}: og:image file missing: {url}")
+    elif img_path.stat().st_size < 5000:
+        errors.append(f"{name}: og:image too small ({img_path.stat().st_size} bytes): {url}")
+
+
+def check_site_skeleton(filepath, site_dir):
+    if site_dir.name not in GAME_SITES:
+        return
+    html_files = [f for f in site_dir.glob("**/*.html") if 'play' not in f.parts]
+    if len(html_files) <= 15:
+        warnings.append(f"site '{site_dir.name}' has only {len(html_files)} HTML files — may be a skeleton (needs character/guide content)")
+
+
 def main():
     import argparse
     parser = argparse.ArgumentParser()
@@ -537,6 +642,7 @@ def main():
 
     target_sites = [args.site] if args.site else SITES_WITH_ARTICLES
     files_checked = 0
+    _skeleton_checked = set()
 
     for site in target_sites:
         site_dir = ROOT / site
@@ -552,10 +658,24 @@ def main():
                 continue  # standalone HTML5 games don't need SEO/ad meta
             if "\\.backup\\" in str(f) or "/.backup/" in str(f):
                 continue  # skip backup files
+            check_footer_dropdowns(f, site_dir)
+
+            if 'anime-site/guides/' in str(f) and f.name == 'index.html':
+                check_guide_page_content(f, site_dir)
+
+            if f.name == 'index.html' or 'guides/' in str(f):
+                check_letter_placeholders(f, site_dir)
+
+            if site_dir.name in GAME_SITES and site_dir.name not in _skeleton_checked:
+                check_site_skeleton(f, site_dir)
+                _skeleton_checked.add(site_dir.name)
+
             if f.name == "index.html":
                 check_index(f, site_dir)
             else:
                 check_article(f, site_dir)
+                if f.name.startswith("article-") and f.name.endswith(".html"):
+                    check_article_image_exists(f, site_dir)
             files_checked += 1
 
     if files_checked == 0:
