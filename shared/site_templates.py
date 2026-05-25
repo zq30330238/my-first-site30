@@ -613,7 +613,6 @@ tailwind.config = {
 </body>
 </html>"""
 
-
 def get_content_generation_prompt(site_dir, article_num, topic=None):
     """Returns just the content-relevant info for DeepSeek to generate the article body."""
     cfg = SITE_CONFIG[site_dir]
@@ -636,7 +635,6 @@ def get_content_generation_prompt(site_dir, article_num, topic=None):
         result["topic_category"] = topic.get("category", topic.get("category_slug", ""))
 
     return result
-
 
 FOOD_TEMPLATE_SKELETON = """<!DOCTYPE html>
 <html lang="en">
@@ -766,8 +764,8 @@ blockquote {
     </div>
 
     <!-- Article Content -->
-    <article class="max-w-4xl mx-auto px-4 py-10">
-        <div class="flex flex-col lg:flex-row gap-10">
+    <article class="max-w-6xl mx-auto px-4 py-10">
+        <div class="flex flex-col lg:flex-row gap-8">
             <!-- Main Content -->
             <div class="flex-1 min-w-0">
                 <div class="bg-white rounded-2xl shadow-sm p-6 md:p-10">
@@ -781,26 +779,13 @@ blockquote {
                     </div>
                 </div>
 
-                <!-- Ad Unit 1 -->
-                <div class="ad-unit">
-                    <span class="ad-label">Advertisement</span>
-                    <ins class="adsbygoogle" style="display:block;height:280px" data-ad-client="{{adsense_pub}}" data-ad-slot="5927453648" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                </div>
-
                 <!-- Tags -->
                 <div class="flex flex-wrap gap-2 mt-6">{{tag_spans}}</div>
             </div>
 
             <!-- Sidebar -->
-            <aside class="lg:w-80 flex-shrink-0">
+            <aside class="lg:w-72 flex-shrink-0">
                 <div class="sticky top-24 space-y-6">
-                    <!-- Ad Unit 2 -->
-                    <div class="ad-unit">
-                        <span class="ad-label">Advertisement</span>
-                        <ins class="adsbygoogle" style="display:block;height:600px" data-ad-client="{{adsense_pub}}" data-ad-slot="1843172648" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                    </div>
 
                     <!-- Related Recipes -->
                     <div class="bg-white rounded-2xl shadow-sm p-6">
@@ -885,7 +870,6 @@ blockquote {
 </body>
 </html>"""
 
-
 def render_article_html(site_dir, ai_output):
     """Inject AI-generated content into the site template. ai_output is a dict with keys:
     title, description, keywords, og_title, og_description,
@@ -966,7 +950,6 @@ def render_article_html(site_dir, ai_output):
         html = html.replace("{{" + key + "}}", str(value))
 
     return html, vars_dict
-
 
 def quick_validate(html, site_dir):
     """Fast validation of rendered HTML."""
