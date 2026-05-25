@@ -17,7 +17,7 @@ from urllib.error import HTTPError
 
 API_KEY = os.environ.get("ARK_API_KEY") or "ark-bc9c6af0-1813-4842-ae3f-0614d354c375-98727"
 API_BASE = "https://ark.cn-beijing.volces.com/api/v3"
-MODEL = "doubao-seed-2-0-pro-260215"
+MODEL = "doubao-seed-2-0-mini-260428"
 MODEL_MAP = {
     "2.0": "doubao-seed-2-0-lite-260428",
     "2.0-mini": "doubao-seed-2-0-mini-260428",
