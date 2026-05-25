@@ -23,7 +23,8 @@
 - [x] 游戏/动漫站(8个) 全局footer更新+部署
 - [x] anime/games门户 footer更新+部署
 - [x] rightsdaily/entertainment 已部署
-- [ ] 内容子站(sub-healthy/sub-pets/sub-home/sub-finance/sub-tech/sub-travel) 6站部署
-- [ ] dailymedadvice 部署
-- [ ] Commit 1059个文件
-- [ ] 部署后线上验证
+- [x] 内容子站(sub-healthy/sub-pets/sub-home/sub-finance/sub-tech/sub-travel) 6站部署 → 线上已验证
+- [x] dailymedadvice 部署 → 线上已验证
+- [x] sub-food 53张category图片修复+部署 → 线上已验证
+- [ ] Commit + push 最新改动
+- [x] 部署后线上验证（8站全部200 OK，footer一致性通过）
