@@ -1,0 +1,11 @@
+=== valorant-site 图片修复报告 ===
+
+KAY/O | kayo.png | https://media.valorant-api.com/agents/601dbbe7-43ce-be57-2a40-4abd24953621/fullportrait.png | 858.5 KB (838.4 KB on disk) | PASS: Doubao vision confirms "Valorant的战斗特工KAY/O" — heavy armored combat robot, no human facial features, blue/purple energy glow, holding pulse shotgun
+Clove | clove.png | https://media.valorant-api.com/agents/1dbf2edd-4729-0984-3115-daa5eed44993/fullportrait.png | 591.0 KB (577.1 KB on disk) | PASS: Doubao vision confirms "Valorant的第24位特工Clove暮蝶" — purple/pink color scheme, floating/levitating pose, pink jacket, purple butterfly energy effects, gold boots
+
+=== 验证详情 ===
+- 来源: Riot Games official Valorant API (media.valorant-api.com)
+- 两张图片均为 2048x1860 RGBA PNG，含透明背景
+- 格式验证: PNG magic bytes (\x89PNG) 确认
+- 内容验证: Doubao vision 确认角色正确
+- 旧文件已被覆盖

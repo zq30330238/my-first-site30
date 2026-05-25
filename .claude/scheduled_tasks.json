@@ -1,14 +1,3 @@
 {
-  "tasks": [
-    {
-      "id": "7aa81d62",
-      "cron": "37 9 */3 * *",
-      "prompt": "全自动换窗任务：先写交接记忆到 memory/session_handover.md（记录当前状态、已完成、进行中、阻塞项），然后执行 powershell -Command \"Start-Process -FilePath 'powershell' -ArgumentList '-File', 'd:\\AI网站文件夹\\.claude\\scripts\\rotate-window.ps1' -WindowStyle Hidden\" 完成关旧窗开新窗。",
-      "createdAt": 1778906330138,
-      "lastFiredAt": 1779415786739,
-      "recurring": true,
-      "createdBySessionId": "383cc0a6-234a-4cf9-9fb9-28dc32798109",
-      "createdByPid": 10024
-    }
-  ]
+  "tasks": []
 }

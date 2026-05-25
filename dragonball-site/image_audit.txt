@@ -1,0 +1,80 @@
+=== dragonball-site 图片审计报告 ===
+生成日期: 2026-05-25
+检查方式: 豆包视觉AI (doubao-seed-2-0-lite-260428)
+
+========================================
+一、基础统计
+========================================
+总角色页:                   114
+有schema图片引用:           114 (正确指向角色专属图片)
+无schema图片引用:           0
+og:image使用default-og.jpg: 114 (文件不存在!)
+缺失图片:                   114次default-og.jpg引用
+
+========================================
+二、抽样视觉验证 (30/114 = 26.3%)
+========================================
+正确匹配: 27
+匹配错误: 3
+无法判断: 0
+正确率:   90.0%
+
+--- 匹配错误的图片 ---
+角色名          | 图片文件名        | 问题描述
+General Blue    | general-blue.png  | 图片实际是Sonic the Hedgehog同人图,不是龙珠角色
+Monaka          | monaka.png        | 图片是无关的精灵/地精卡通角色,不是Monaka
+Shu             | shu.png           | 图片是Yu-Gi-Oh!卡牌怪兽,不是龙珠角色Shu
+
+========================================
+三、抽样验证详情 (30页)
+========================================
+Babidi          | babidi.png        | YES - 正确识别为Babidi
+Bardock         | bardock.png       | YES - 正确识别为Bardock
+Bojack          | bojack.png        | YES - 正确识别为Bojack
+Chiaotzu        | chiaotzu.png      | YES - 正确识别为Chiaotzu
+Dabura          | dabura.png        | YES - 正确识别为Dabura
+Eis Shenron     | eis-shenron.png   | YES - 正确识别为Eis Shenron
+General Blue    | general-blue.png  | NO  - 实际是Sonic同人图
+Giru            | giru.png          | YES - 正确识别为Giru
+Gohan           | gohan.png         | YES - 正确识别为Gohan
+Goku Black      | goku-black.png    | YES - 正确识别为Goku Black
+Goten           | goten.png         | YES - 正确识别为Goten
+Guldo           | guldo.png         | YES - 正确识别为Guldo
+Guru            | guru.png          | YES - 正确识别为Guru
+Janemba         | janemba.png       | YES - 正确识别为Janemba
+Kibito          | kibito.png        | YES - 正确识别为Kibito
+Launch          | launch.png        | YES - 正确识别为Launch
+Mercenary Tao   | mercenary-tao.png | YES - 正确识别为Mercenary Tao
+Monaka          | monaka.png        | NO  - 实际是无关精灵角色
+Mr. Satan       | mr-satan.png      | YES - 正确识别为Mr. Satan
+Nam             | nam.png           | YES - 正确识别为Nam
+Omega Shenron   | omega-shenron.png | YES - 正确识别为Omega Shenron
+Oolong          | oolong.png        | YES - 正确识别为Oolong
+Shu             | shu.png           | NO  - 实际是Yu-Gi-Oh!怪兽
+Tien Shinhan    | tien.png          | YES - 正确识别为Tien Shinhan
+Toppo           | toppo.png         | YES - 正确识别为Toppo
+Trunks          | trunks.png        | YES - 正确识别为Trunks
+Vegeta          | vegeta.png        | YES - 正确识别为Vegeta
+Zamasu          | zamasu.png        | YES - 正确识别为Zamasu
+Zarbon          | zarbon.png        | YES - 正确识别为Zarbon
+Zeno            | zeno.png          | YES - 正确识别为Zeno
+
+========================================
+四、关键问题汇总
+========================================
+1. CRITICAL: 3张图片内容与文件名不符 (general-blue.png, monaka.png, shu.png)
+   需要在 images/ 目录中替换为正确的龙珠角色图片
+
+2. HIGH: default-og.jpg 文件不存在但被所有114页引用为 og:image
+   所有页面分享到社交媒体时显示损坏的图片
+   需要创建或下载 default-og.jpg 文件
+
+3. INFO: 所有114页的schema.org JSON-LD图片引用正确
+   角色页主卡片图片引用正确 (如 android-16.png, vegeta.png 等)
+
+========================================
+五、建议
+========================================
+1. 立即替换3张错误图片 (general-blue.png, monaka.png, shu.png)
+2. 创建 default-og.jpg 作为通用 fallback 图片
+3. 考虑将 og:image 改为每页使用角色专属图片

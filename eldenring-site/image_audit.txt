@@ -1,0 +1,36 @@
+=== EldenRing-Site 图片审计 ===
+审计时间: 2026-05-25
+验证工具: doubao_vision.py (Doubao Seed 2.0 Lite)
+验证方法: 全部12个页面全量验证
+
+总内容页: 12
+有图片引用: 12
+全量验证: 12
+正确匹配: 3
+匹配错误: 9
+
+【严重问题】75%的页面主图完全错误，显示的是无关内容而非对应Boss/NPC。
+
+--- 匹配错误 ---
+角色名           | 图片文件名                   | 实际内容
+Fire Giant       | fire-giant.png               | 半实体火焰精灵，非火焰巨人
+Godfrey          | godfrey-first-elden-lord.png | 一堆红树莓（raspberries）！
+Malenia          | malenia-blade-of-miquella.png| 装满咖啡豆的麻袋（coffee beans）！
+Maliketh         | maliketh-the-black-blade.png | Holi彩色粉末爆炸效果
+Mohg             | mohg-lord-of-blood.png       | 日本艺伎水墨画（geisha）！
+Morgott          | morgott-the-omen-king.png    | 破碎玻璃效果
+Rennala          | rennala-queen-of-the-full-moon.png| 带红心的3D渐变气泡
+Blaidd           | blaidd.png                   | 水彩花卉边框装饰
+Ranni            | ranni-the-witch.png          | 复古棕色皮革公文包（briefcase）！
+
+--- 正确匹配 ---
+Dragonlord Placidusax, Godrick the Grafted, Starscourge Radahn
+
+--- 模板问题 ---
+所有12页的hero图片（第1张图）全部使用 /images/malenia-blade-of-miquella.png
+应该使用对应角色的图片，而非全站统一的malenia图
+
+--- 建议 ---
+1. 9张错误图片需要立即替换为正确的Elden Ring Boss/NPC图片
+2. 图片来自不可靠的素材源，下载内容与实际文件名完全不符
+3. 建议用Unsplash/官方素材重新下载，或AI生成正确的角色图

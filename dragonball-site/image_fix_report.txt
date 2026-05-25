@@ -1,0 +1,11 @@
+=== dragonball-site 图片修复报告 ===
+General Blue | general-blue.png | pngwing.com - General Blue Dragon Ball Z | 920x1600 | 112KB | verified as General Blue (Red Ribbon Army officer)
+Monaka | monaka.png | pngwing.com - Monaka Dragon Ball Super | 920x1356 | 184KB | verified as Monaka (Dragon Ball Super alien)
+Shu | shu.png | Fandom wiki (dragonball.fandom.com) + rembg bg removal | 500x375 | 123KB | verified as Shu (Pilaf Gang ninja/dog character)
+default-og.jpg | default-og.jpg | pngwing.com - Dragon Ball Z logo | 920x284 | 77KB | verified as Dragon Ball Z franchise logo
+
+=== Details ===
+General Blue: Redownloaded from pngwing (was Sonic fan art, now correct DBZ character)
+Monaka: Redownloaded from pngwing (was random elf cartoon, now correct DBS character)
+Shu: Downloaded from Fandom Wiki API, background removed with rembg (was Yu-Gi-Oh card, now correct DB character)
+default-og.jpg: Created from Dragon Ball Z logo PNG (was missing file, now available for all 114 character pages)

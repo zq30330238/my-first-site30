@@ -1,0 +1,7 @@
+=== naruto-site 图片修复报告 ===
+修复日期: 2026-05-25
+
+Black Zetsu/White Zetsu | black-zetsu-white-zetsu.png | pngwing.com (via server download_images.py) | 41KB | 已确认: doubao视觉验证为《火影忍者》角色"绝"（黑白绝合体形态）
+Yamato | yamato.png | pngwing.com (via server download_images.py) | 34KB | 已确认: doubao视觉验证为木叶上忍"大和（天藏）"
+
+状态: 两张图片均已修复并通过内容验证。之前显示为漩涡鸣人（错误的角色），现在已替换为正确的角色。

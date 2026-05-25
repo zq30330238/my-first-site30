@@ -1,0 +1,24 @@
+=== Valorant-Site 图片审计 ===
+审计时间: 2026-05-25
+验证工具: doubao_vision.py (Doubao Seed 2.0 Lite)
+验证方法: 对角色专用图片（每页第2张图）用定向提问验证
+
+总内容页: 25
+有图片引用: 25
+全量验证: 25 (所有agent主图)
+正确匹配: 23
+匹配错误: 2
+
+--- 匹配错误 ---
+角色名 | 图片文件名 | 实际内容
+KAY/O | kayo.png | 金色凤凰（mythological phoenix），非KAY/O机器人形象
+Clove  | clove.png  | Fortnite的Moxie皮肤，非Valorant的Clove
+
+--- 模板问题 ---
+所有25页的hero图片（第1张图）全部使用 /images/jett.png
+应该使用对应agent的图片，而非全站统一的jett.png
+
+--- 验证通过的角色 ---
+Astra, Breach, Brimstone, Chamber, Cypher, Deadlock, Fade,
+Gekko, Harbor, Iso, Jett, Killjoy, Neon, Omen, Phoenix,
+Raze, Reyna, Sage, Skye, Sova, Viper, Vyse, Yoru

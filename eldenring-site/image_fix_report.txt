@@ -1,0 +1,17 @@
+=== eldenring-site 图片修复报告 ===
+修复时间: 2026-05-25 08:52
+修复张数: 9/9
+
+--- 每张图片修复详情 ---
+Godfrey | godfrey-first-elden-lord.png | PASS | 754x1060 | Copied from local godfrey.png (correct version)
+Fire Giant | fire-giant.png | PASS | 1596x1905 | fextralife: fire_giant.jpg
+Malenia | malenia-blade-of-miquella.png | PASS | 3840x2160 | fextralife: malenia,-blade-of-miquella.jpg
+Maliketh | maliketh-the-black-blade.png | PASS | 3840x2160 | fextralife: maliketh-the-black-blade-4k.jpg
+Mohg | mohg-lord-of-blood.png | PASS | 2114x1819 | fextralife: mohg.jpg
+Morgott | morgott-the-omen-king.png | PASS | 2521x2159 | fextralife: morgott-the-omen-king.jpg
+Rennala | rennala-queen-of-the-full-moon.png | PASS | 1600x900 | IGN wiki: Rennala boss fight screenshot
+Blaidd | blaidd.png | PASS | 3840x2160 | IGN wiki: Elden_ELimgraveBlaidd.jpg
+Ranni | ranni-the-witch.png | PASS | 1199x675 | fextralife: ranni fan art render
+
+说明: pngwing.com 没有 Elden Ring 相关角色内容，所有图片从 Fextralife wiki 和 IGN wiki 下载。
+9张图片全部通过豆包视觉API验证，确认是正确角色。

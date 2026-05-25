@@ -1,0 +1,51 @@
+=== onepiece-site 图片审计 ===
+审计时间: 2026-05-25
+
+=== 基本信息 ===
+总角色页: 31
+有图片引用: 31
+无图片引用: 0
+抽样验证: 15
+正确匹配: 12
+匹配错误: 2
+图片文件不存在: 1 (big-mom.png 不存在; 但页面引用的是 big-mom-charlotte-linlin.png, 该文件存在)
+
+=== 基本文件检查 ===
+图片文件总数: 60 (含重复/多角度图片)
+角色页引用的所有图片文件均存在磁盘上
+注意: 磁盘上存在一些未被任何页面引用的图片:
+  - buggy.png, buggy_2.png (可能是未完成的人物页)
+  - crocodile.png, crocodile_2.png (与 sir-crocodile.png 重复/别名)
+  - marco-the-phoenix.png, marco-the-phoenix_2.png (可能是未完成的人物页)
+  - marshall-d-teach.png, marshall-d-teach_2.png (与 blackbeard.png 重复/别名)
+
+=== 豆包验证结果 ===
+
+--- 正确匹配 (12) ---
+角色名 | 图片文件 | AI识别结果
+Roronoa Zoro | roronoa-zoro.png | Roronoa Zoro - 绿色短发，三刀流，黑色头巾 ✓
+Boa Hancock | boa-hancock.png | Boa Hancock - 九蛇海贼团，女帝 ✓
+Bartholomew Kuma | bartholomew-kuma.png | Bartholomew Kuma - 肉球果实能力者 ✓
+Shanks | shanks.png | Shanks - 红色短发，左眼伤疤 ✓
+Eustass Kid | eustass-kid.png | Eustass Kid - 红色刺猬头，机械手臂 ✓
+Dracule Mihawk | dracule-mihawk.png | Dracule Mihawk - 鹰眼，天下第一剑豪 ✓
+Sir Crocodile | sir-crocodile.png | Sir Crocodile - 沙鳄鱼，金色钩子 ✓
+Brook | brook.png | Brook - 爆炸头，骷髅音乐家 ✓
+Sabo | sabo.png | Sabo - 高筒礼帽，革命军 ✓
+Nefertari Vivi | nefertari-vivi.png | Nefertari Vivi - 水蓝色长发，阿拉巴斯坦公主 ✓
+Blackbeard | blackbeard.png | Marshall D. Teach / Blackbeard - 黑暗果实能力者 ✓
+Nico Robin | nico-robin.png | Nico Robin - 黑色长发，花花果实能力者 ✓
+
+--- 匹配错误 (2) ---
+角色名 | 图片文件 | AI识别实际内容
+Whitebeard | whitebeard.png | 识别为"Jin Kariya(狩矢神)"——亮紫色高束长发，深小麦色皮肤，来自《死神》巴温特一族。完全错误，不是白胡子(One Piece)。
+Monkey D. Dragon | monkey-d-dragon.png | 识别为"Alexiel(亚蕾克西儿)"——深棕飘逸长卷发，冰蓝色眼眸，来自《天使禁猎区》。完全错误，不是蒙奇·D·龙(One Piece)。
+
+--- 未抽样页面（额外注意） ---
+剩余16个页面未抽样验证，图像匹配状态未知。
+
+=== 总结 ===
+- 抽样15个角色中，12个图片匹配正确 (80.0%)
+- 2个图片严重匹配错误：whitebeard.png 和 monkey-d-dragon.png 与正确角色完全无关
+- big-mom.png 文件不存在（但页面引用 big-mom-charlotte-linlin.png，该文件存在，抽样脚本使用了错误文件名）
+- 建议用AI生图（Seedream）重新生成白胡子和蒙奇·D·龙的正确图片

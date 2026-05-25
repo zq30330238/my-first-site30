@@ -1,0 +1,22 @@
+=== LoL-Site 图片审计 ===
+审计时间: 2026-05-25
+验证工具: doubao_vision.py (Doubao Seed 2.0 Lite)
+验证方法: 随机抽15个champion的主图用定向提问验证
+
+总内容页: 57
+有图片引用: 57
+抽样验证: 15
+正确匹配: 15
+匹配错误: 0
+
+--- 匹配错误 ---
+（无）
+
+--- 模板问题 ---
+所有57页的hero图片（第1张图）全部使用 /images/ahri.png
+应该使用对应champion的图片，而非全站统一的ahri.png
+
+--- 验证通过的champion ---
+Aatrox, Ahri, Darius, Ezreal, Garen, Jhin, Kai'Sa,
+Lee Sin, Lux, Nami, Riven, Sett, Thresh, Yasuo, Zed
+（其余42个未抽样，推测同样正确）

@@ -1,0 +1,25 @@
+=== Minecraft-Site 图片审计 ===
+审计时间: 2026-05-25
+验证工具: doubao_vision.py (Doubao Seed 2.0 Lite)
+验证方法: 全部5个页面全量验证
+
+总内容页: 5
+有图片引用: 4
+无图片引用: 1
+全量验证: 4
+正确匹配: 4
+匹配错误: 0
+
+--- 无图片引用 ---
+页面路径 | 说明
+guides/crafting/netherite-upgrade-guide.html | 没有任何图片引用（纯文字教程）
+
+--- 匹配错误 ---
+（无）
+
+--- 模板问题 ---
+alex.html和steve.html之外的其他3页，hero图片使用 /images/alex.png
+应使用对应mob/物品的图片，而非统一的Alex图
+
+--- 验证通过的角色 ---
+Alex, Steve, Creeper, Enderman

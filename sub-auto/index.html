@@ -80,15 +80,75 @@
         <button class="md:hidden text-gray-300 text-2xl">&#9776;</button>
     </div>
 </nav>
-    <section class="bg-gradient-to-br from-gray-900 via-red-800 to-red-700 text-white py-24 md:py-32">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-6xl font-black mb-4">Welcome to <span class="text-red-300">AutoPulse</span></h1>
-            <p class="text-xl text-white/80 max-w-2xl mx-auto mb-8">Expert car reviews, EV insights, and buying guides powered by data and passion.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="category-reviews.html" class="inline-block bg-white text-brand-700 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">Browse Reviews</a>
-                <a href="category-ev.html" class="inline-block border-2 border-white text-white font-semibold px-8 py-3 rounded-lg hover:bg-white hover:text-gray-900 transition-colors">Latest EVs →</a>
-            </div>
-        </div>
+    <style>
+    .carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
+    .carousel-slide.active{opacity:1;pointer-events:auto}
+    .carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
+    .carousel-dot.active{background:#dc2626}
+    .carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,0.4);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.2);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;transition:all .3s;opacity:0}
+    .carousel-arrow:hover{background:rgba(0,0,0,0.7)}
+    .carousel:hover .carousel-arrow{opacity:1}
+    </style>
+    <section class="relative w-full h-[50vh] overflow-hidden carousel">
+    <div class="carousel-slide active">
+    <div class="absolute inset-0 bg-gray-950"></div>
+    <img src="images/banner/banner-1.jpg" alt="Lynk &amp; Co 03 TCR Racing" class="absolute inset-0 w-full h-full object-cover" loading="eager">
+    <div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+    <div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-2" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">Track-Tested Reviews</h2>
+    <p class="text-lg text-gray-300 max-w-xl" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">Real performance data, not marketing hype</p>
+    <a href="category-reviews.html" class="inline-block mt-4 bg-brand-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-all">Browse Reviews</a>
+    </div>
+    </div>
+    <div class="carousel-slide">
+    <div class="absolute inset-0 bg-gray-950"></div>
+    <img src="images/banner/banner-2.jpg" alt="Lynk &amp; Co 03 TCR Racing" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+    <div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+    <div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-2" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">The EV Revolution</h2>
+    <p class="text-lg text-gray-300 max-w-xl" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">Honest electric vehicle coverage for real drivers</p>
+    <a href="category-ev.html" class="inline-block mt-4 bg-brand-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-all">Explore EVs &amp; Hybrids</a>
+    </div>
+    </div>
+    <div class="carousel-slide">
+    <div class="absolute inset-0 bg-gray-950"></div>
+    <img src="images/banner/banner-3.jpg" alt="Lynk &amp; Co 03 TCR Racing" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+    <div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+    <div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-2" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">Buy Smarter</h2>
+    <p class="text-lg text-gray-300 max-w-xl" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">Expert buying guides to save you thousands</p>
+    <a href="category-buying.html" class="inline-block mt-4 bg-brand-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-all">View Buying Guides</a>
+    </div>
+    </div>
+    <div class="carousel-slide">
+    <div class="absolute inset-0 bg-gray-950"></div>
+    <img src="images/banner/banner-4.jpg" alt="Lynk &amp; Co 03 TCR Racing" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+    <div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+    <div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-2" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">Performance Unleashed</h2>
+    <p class="text-lg text-gray-300 max-w-xl" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">From hot hatches to hypercars — pure driving passion</p>
+    <a href="category-performance.html" class="inline-block mt-4 bg-brand-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-all">Performance Hub</a>
+    </div>
+    </div>
+    <div class="carousel-slide">
+    <div class="absolute inset-0 bg-gray-950"></div>
+    <img src="images/banner/banner-5.jpg" alt="Lynk &amp; Co 03 TCR Racing" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+    <div class="absolute inset-0" style="pointer-events:none;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,.3) 50%,transparent 80%)"></div>
+    <div class="absolute bottom-16 md:bottom-20 left-0 right-0 z-10 max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-2" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">Chinese Brands Rising</h2>
+    <p class="text-lg text-gray-300 max-w-xl" style="text-shadow:0 2px 8px rgba(0,0,0,0.6)">The new players reshaping the global auto industry</p>
+    <a href="category-chinese-brands.html" class="inline-block mt-4 bg-brand-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-700 transition-all">Discover Chinese Brands</a>
+    </div>
+    </div>
+    <button id="carouselPrev" class="carousel-arrow left-4" aria-label="Previous slide">&#10094;</button>
+    <button id="carouselNext" class="carousel-arrow right-4" aria-label="Next slide">&#10095;</button>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10">
+    <div class="carousel-dot active" data-slide="0"></div>
+    <div class="carousel-dot" data-slide="1"></div>
+    <div class="carousel-dot" data-slide="2"></div>
+    <div class="carousel-dot" data-slide="3"></div>
+    <div class="carousel-dot" data-slide="4"></div>
+    </div>
     </section>
 
     <section class="max-w-6xl mx-auto px-4 py-8">
@@ -139,163 +199,142 @@
 
     <section class="max-w-6xl mx-auto px-4 py-12">
         <h2 class="text-2xl font-black text-gray-900 mb-8">Latest Reviews &amp; Guides</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            <a href="article-49.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-49.jpg)"></div>
+            <a href="article-50.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-50.jpg)"></div>
                 <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">XPeng G6 Review: The Model Y Competitor with 800V Charging That Actually Works</h3>
-                    <p class="text-gray-500 text-sm">In-depth review of the XPeng G6: real-world 800V charging speeds, XNGP autonomous driving vs Tesl...</p>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Rolls-Royce Cullinan Review: The Ultimate $400,000 Luxury SUV Experience</h3>
+                    <p class="text-gray-500 text-sm">In-depth review of the Rolls-Royce Cullinan: design, V12 performance, interior craftsmanship, off-road ability, and ownership costs. Is this the ultimate luxury SUV?</p>
                     <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
-                        <span>May 15, 2026</span><span>&middot;</span><span>8 min read</span>
+                        <span>February 26, 2026</span><span>&middot;</span><span>7 min read</span>
                     </div>
                 </div>
             </a>
-<a href="article-48.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+
+            <a href="article-56.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-56.jpg)"></div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">BYD Yangwang U8 Review: The $150,000 Electric SUV That Can Tank Turn and Float on Water</h3>
+                    <p class="text-gray-500 text-sm">In-depth review of the BYD Yangwang U8, the $150,000 electric SUV with tank turns, floating mode, Blade Battery safety, and luxury interior challenging the Mercedes G-Class.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>April 25, 2026</span><span>&middot;</span><span>8 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="article-51.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-51.jpg)"></div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Bugatti Chiron Super Sport Review: Engineering the World&#x27;s Fastest Production Car</h3>
+                    <p class="text-gray-500 text-sm">In-depth engineering analysis of the Bugatti Chiron Super Sport: quad-turbo W16 engine, active aero for 300+ mph, carbon monocoque, and the end of the W16 era.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>March 07, 2026</span><span>&middot;</span><span>8 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="article-32.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-32.jpg)"></div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Huawei AITO M9 Review: Tech Giant&#x27;s Flagship EV SUV with HarmonyOS</h3>
+                    <p class="text-gray-500 text-sm">In-depth review of the Huawei AITO M9 flagship EV SUV. Explore the HarmonyOS smart cockpit, ADS 2.0 autonomous driving, zero-gravity seats, range, and performance specs.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>June 9, 2023</span><span>&middot;</span><span>8 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="article-52.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-52.jpg)"></div>
+                <div class="p-5">
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">2026 Range Rover SV Autobiography Review: Where British Luxury Meets Off-Road Mastery</h3>
+                    <p class="text-gray-500 text-sm">Our in-depth 2026 Range Rover SV Autobiography review covers SV Bespoke personalization, Terrain Response 2 off-road capability, executive-class interior comfort, and a head-to-head comparison with Bentley Bentayga and Mercedes-Maybach GLS.</p>
+                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
+                        <span>February 28, 2026</span><span>&middot;</span><span>7 min read</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="article-48.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
                 <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-48.jpg)"></div>
                 <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Zeekr 001 Review: Geely's Premium Electric Shooting Brake That Rivals Porsche Taycan Cross Turismo</h3>
-                    <p class="text-gray-500 text-sm">In-depth review of the Zeekr 001, Geely's premium electric shooting brake. Dual-motor specs, rang...</p>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Zeekr 001 Review: Geely&#x27;s Premium Electric Shooting Brake That Rivals Porsche Taycan Cross Turismo</h3>
+                    <p class="text-gray-500 text-sm">In-depth review of the Zeekr 001, Geely&#x27;s premium electric shooting brake. Dual-motor specs, range, interior quality, European pricing, and how it undercuts the Porsche Taycan Cross Turismo by 30-40%.</p>
                     <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
-                        <span>April 05, 2026</span><span>&middot;</span><span>8 min read</span>
+                        <span>November 27, 2025</span><span>&middot;</span><span>8 min read</span>
                     </div>
                 </div>
             </a>
-<a href="article-47.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-47.jpg)"></div>
+
+            <a href="article-53.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-53.jpg)"></div>
                 <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">2026 Toyota Camry vs Honda Accord: The Midsize Sedan Battle No One Expected to Still Be This Good</h3>
-                    <p class="text-gray-500 text-sm">We compare the 2026 Toyota Camry and Honda Accord head-to-head: hybrid-only powertrain vs turbo/h...</p>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">2026 Lincoln Navigator Review: American Presidential Luxury Reimagined</h3>
+                    <p class="text-gray-500 text-sm">Our comprehensive 2026 Lincoln Navigator review covers the Quiet Flight design, 48-inch display, Perfect Position seats, twin-turbo V6 performance, and how it compares to the Cadillac Escalade.</p>
                     <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
-                        <span>April 19, 2026</span><span>&middot;</span><span>8 min read</span>
+                        <span>February 26, 2026</span><span>&middot;</span><span>8 min read</span>
                     </div>
                 </div>
             </a>
-<a href="article-46.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-46.jpg)"></div>
+
+            <a href="article-57.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-57.jpg)"></div>
                 <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Tesla Cybertruck 6-Month Long-Term Review: What Owners Aren't Telling You</h3>
-                    <p class="text-gray-500 text-sm">After 10,000 miles, Tesla Cybertruck owners reveal daily livability, build quality, charging cost...</p>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">GWM Tank 700 Review: China&#x27;s Full-Size Luxury Off-Road SUV Challenges Mercedes G-Class</h3>
+                    <p class="text-gray-500 text-sm">In-depth review of the GWM Tank 700: 3.0T V6 hybrid powertrain, locking diffs, low-range transfer case, interior luxury vs G-Class, and global export strategy to Middle East, Australia, and Russia.</p>
                     <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
-                        <span>April 13, 2026</span><span>&middot;</span><span>8 min read</span>
+                        <span>March 12, 2026</span><span>&middot;</span><span>8 min read</span>
                     </div>
                 </div>
             </a>
-<a href="article-45.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-45.jpg)"></div>
+
+            <a href="article-54.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-54.jpg)"></div>
                 <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">2026 Honda Civic Hybrid Review: The Perfect Daily Driver for $30,000</h3>
-                    <p class="text-gray-500 text-sm">Comprehensive owner-perspective review of the 2026 Honda Civic Hybrid. Real-world MPG, interior q...</p>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">2026 Mercedes-Benz S-Class Review: The Benchmark of Luxury Sedans</h3>
+                    <p class="text-gray-500 text-sm">Comprehensive review of the 2026 Mercedes-Benz S-Class. Covers MBUX Superscreen, E-Active Body Control, Drive Pilot Level 3 autonomy, and why it remains the flagship luxury sedan.</p>
                     <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
-                        <span>May 05, 2026</span><span>&middot;</span><span>8 min read</span>
+                        <span>April 17, 2026</span><span>&middot;</span><span>7 min read</span>
                     </div>
                 </div>
             </a>
-<a href="article-44.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-44.jpg)"></div>
+
+            <a href="article-58.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-58.jpg)"></div>
                 <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">How Launch Control Works and Which 2026 Cars Have the Best Systems</h3>
-                    <p class="text-gray-500 text-sm">Discover the engineering behind launch control systems, step-by-step activation for top 2026 mode...</p>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">BYD Yangwang U9 Review: China&#x27;s First Electric Supercar with 1,300 HP Active Suspension</h3>
+                    <p class="text-gray-500 text-sm">Deep dive into the BYD Yangwang U9, China&#x27;s first electric supercar. We analyze the Disus X active suspension, quad-motor torque vectoring, design, and how it competes with Rimac and Pininfarina.</p>
                     <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
-                        <span>May 12, 2026</span><span>&middot;</span><span>8 min read</span>
+                        <span>May 11, 2026</span><span>&middot;</span><span>8 min read</span>
                     </div>
                 </div>
             </a>
-<a href="article-43.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-43.jpg)"></div>
+
+            <a href="article-55.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-55.jpg)"></div>
                 <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">AWD vs RWD vs FWD: Which Drivetrain Actually Delivers the Best Performance on Road and Track</h3>
-                    <p class="text-gray-500 text-sm">We compare AWD, RWD, and FWD using lap times, weight distribution, tire wear, and wet/dry test da...</p>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">BMW 7 Series 2026 vs Mercedes-Benz S-Class: Flagship Luxury Sedan Showdown</h3>
+                    <p class="text-gray-500 text-sm">We compare the 2026 BMW 7 Series and Mercedes-Benz S-Class head-to-head on design, interior tech, driving dynamics, and resale value to help you choose the better flagship luxury sedan.</p>
                     <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
-                        <span>April 27, 2026</span><span>&middot;</span><span>8 min read</span>
+                        <span>March 19, 2026</span><span>&middot;</span><span>8 min read</span>
                     </div>
                 </div>
             </a>
-<a href="article-42.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-42.jpg)"></div>
+
+            <a href="article-24.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-24.jpg)"></div>
                 <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">The Best Track Day Cars for Beginners: Affordable Performance Machines That Won't Kill You</h3>
-                    <p class="text-gray-500 text-sm">Discover the top 5 beginner-friendly track day cars that balance performance, safety, and low run...</p>
+                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Xiaomi SU7: Smartphone Giant&#x27;s EV Game-Changer</h3>
+                    <p class="text-gray-500 text-sm">Can a smartphone maker build a better electric car than Tesla? Our deep dive into the Xiaomi SU7 examines specs, range, pricing, and whether it truly disrupts the EV market in 2026.</p>
                     <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
-                        <span>May 17, 2026</span><span>&middot;</span><span>10 min read</span>
+                        <span>May 10, 2024</span><span>&middot;</span><span>7 min read</span>
                     </div>
                 </div>
-            </a>
-<a href="article-41.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-41.jpg)"></div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">Turbocharger vs Supercharger vs Naturally Aspirated: Which Engine Is Right for Your Driving Style</h3>
-                    <p class="text-gray-500 text-sm">Compare turbocharger, supercharger, and naturally aspirated engines. Learn about throttle respons...</p>
-                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
-                        <span>May 06, 2026</span><span>&middot;</span><span>8 min read</span>
-                    </div>
-                </div>
-            </a>
-<a href="article-40.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-40.jpg)"></div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">0-60 Under 3 Seconds: The 10 Fastest Accelerating Production Cars of 2026</h3>
-                    <p class="text-gray-500 text-sm">Discover the 10 fastest accelerating production cars of 2026 with verified 0-60 mph times. Detail...</p>
-                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
-                        <span>May 04, 2026</span><span>&middot;</span><span>8 min read</span>
-                    </div>
-                </div>
-            </a>
-<a href="article-39.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-39.jpg)"></div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">How to Read a Used Car History Report and Spot Dealbreakers Before You Buy</h3>
-                    <p class="text-gray-500 text-sm">Learn to decode CarFax and AutoCheck reports, identify accident severity tiers, spot title brands...</p>
-                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
-                        <span>May 13, 2026</span><span>&middot;</span><span>8 min read</span>
-                    </div>
-                </div>
-            </a>
-<a href="article-38.html" class="article-card block bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
-                <div class="h-48 bg-cover bg-center" style="background-image:url(images/article-38.jpg)"></div>
-                <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 mt-1 mb-2">The Hidden Costs of Car Ownership Americans Underestimate Every Year</h3>
-                    <p class="text-gray-500 text-sm">Depreciation, insurance, maintenance, and fuel costs add thousands to your annual car expenses. W...</p>
-                    <div class="flex items-center gap-2 mt-4 text-xs text-gray-400">
-                        <span>April 15, 2026</span><span>&middot;</span><span>8 min read</span>
-                    </div>
-                </div>
-            </a>
-</div>
-        <div class="text-center mt-10">
-            <a href="articles.html" class="inline-block bg-brand-700 hover:bg-brand-800 text-white font-semibold px-8 py-3 rounded-full text-lg transition-colors">
-                View All Articles →
-            </a>
-        </div>
+            </a></div>
     </section>
 
-    <section class="bg-white py-16 border-t border-gray-100">
-        <div class="max-w-2xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-black text-gray-900 mb-3">Stay in the driver's seat.</h2>
-            <p class="text-lg text-gray-500 mb-8">Get our latest reviews and guides delivered to your inbox.</p>
-            <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500">
-                <button type="button" class="bg-brand-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-700 transition-colors">Subscribe</button>
-            </div>
-            <p class="text-xs text-gray-400 mt-4">No spam, ever. Unsubscribe anytime.</p>
-        </div>
-    </section>
+    
 
 <footer class="bg-gray-900 text-gray-400 py-12 mt-auto">
     <div class="max-w-6xl mx-auto px-4">
@@ -330,6 +369,8 @@
                     <option value="https://tech.jycsd.com">TechNest</option>
                     <option value="https://travel.jycsd.com">TripRoute</option>
                     <option value="https://auto.jycsd.com">AutoPulse</option>
+                    <option value="https://moto.jycsd.com">MotoPulse</option>
+                    <option value="https://food.jycsd.com">FlavorFusion</option>
                     <option value="https://rightsdaily.com">RightsDaily</option>
                     <option value="https://dailymedadvice.com">DailyMedAdvice</option>
                     <option value="https://entertainment.jycsd.com">PopCulture HQ</option>
@@ -354,9 +395,22 @@
             </div>
         </div>
         <div class="border-t border-gray-800 pt-6 text-center text-sm">
-            <p>&copy; 2026 AutoPulse. All rights reserved.</p>
+            <p>&copy; 2020-2026 AutoPulse. All rights reserved.</p>
             <a href="https://jycsd.com" class="hover:text-slate-600 transition-colors">Visit jycsd.com for more guides</a>
         </div>
     </div>
-        </footer></body>
+        </footer>
+<script>
+(function(){
+var slides=document.querySelectorAll('.carousel-slide');
+var dots=document.querySelectorAll('.carousel-dot');
+var current=0;
+function goTo(idx){if(!slides.length)return;slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
+dots.forEach(function(dot){dot.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
+document.getElementById('carouselPrev')?.addEventListener('click',function(){goTo((current-1+slides.length)%slides.length)});
+document.getElementById('carouselNext')?.addEventListener('click',function(){goTo((current+1)%slides.length)});
+if(slides.length>1)setInterval(function(){goTo((current+1)%slides.length)},5000);
+})();
+</script>
+</body>
 </html>

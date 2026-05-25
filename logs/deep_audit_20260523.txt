@@ -1,0 +1,813 @@
+======================================================================
+DEEP AUDIT — 2026-05-23 16:24:09
+======================================================================
+
+======================================================================
+=== SITE: anime-site (anime.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[WARN] /privacy-policy — HTTP 200 but no local file
+[WARN] /terms — HTTP 200 but no local file
+[WARN] /cookie-policy — HTTP 200 but no local file
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[OK] / — article-card: local=0, live=0
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "Anime Wiki Hub — Your Gateway to Every Anime Universe"
+[WARN] guides\aot\index.html — H1 mismatch
+       local: ""
+       live:  "Explore Every Anime World"
+[INFO] guides\aot\index.html — no imgs (local=0, live=0)
+[INFO] guides\aot\index.html — Schema: local=False, live=False
+[WARN] guides\aot\index.html — word count diff: local=277, live=494
+[WARN] guides\jjk\index.html — H1 mismatch
+       local: ""
+       live:  "Explore Every Anime World"
+[INFO] guides\jjk\index.html — no imgs (local=0, live=0)
+[INFO] guides\jjk\index.html — Schema: local=False, live=False
+[WARN] guides\jjk\index.html — word count diff: local=276, live=494
+[WARN] guides\onepiece\index.html — H1 mismatch
+       local: ""
+       live:  "Explore Every Anime World"
+[INFO] guides\onepiece\index.html — no imgs (local=0, live=0)
+[INFO] guides\onepiece\index.html — Schema: local=False, live=False
+[WARN] guides\onepiece\index.html — word count diff: local=276, live=494
+[OK] images/ace_candidate_555898.png — 297455B, live HTTP 200
+[OK] images/ace_candidate_611165.png — 266354B, live HTTP 200
+[OK] images/ace_candidate_72220.png — 75046B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for anime-site: 18 OK, 10 WARN, 0 FAIL (28 checks)
+
+======================================================================
+=== SITE: dailymedadvice (dailymedadvice.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[OK] /privacy-policy — HTTP 200
+[OK] /terms — HTTP 200
+[OK] /cookie-policy — HTTP 200
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[FAIL] /articles — links: local=29, live=0
+[OK] /articles-2 — HTTP 200
+[OK] / — article-card: local=9, live=9
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "DailyMedAdvice — Science-Backed Health Information for Everyday Life"
+[OK] article-1 — H1 match: "Understanding High Blood Pressure: Causes, Symptom"
+[OK] article-1 — imgs: local=1, live=1
+[OK] article-1 — Schema present
+[OK] article-1 — word count: local=1563, live=1563
+[OK] article-17 — H1 match: "The Science Behind Intermittent Fasting and Weight"
+[OK] article-17 — imgs: local=1, live=1
+[OK] article-17 — Schema present
+[OK] article-17 — word count: local=1738, live=1738
+[OK] article-33 — H1 match: "5 Evidence-Based Home Remedies for Chronic Back Pa"
+[OK] article-33 — imgs: local=1, live=1
+[OK] article-33 — Schema present
+[OK] article-33 — word count: local=1353, live=1353
+[OK] images/article-1.jpg — 139348B, live HTTP 200
+[OK] images/article-10.jpg — 133684B, live HTTP 200
+[OK] images/article-11.jpg — 142245B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for dailymedadvice: 31 OK, 1 WARN, 1 FAIL (33 checks)
+
+======================================================================
+=== SITE: dragonball-site (dragonball.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[WARN] /privacy-policy — HTTP 200 but no local file
+[WARN] /terms — HTTP 200 but no local file
+[WARN] /cookie-policy — HTTP 200 but no local file
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[OK] / — article-card: local=0, live=0
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "Dragon Ball Wiki — Character Database, Transformations & Saga Guides"
+[WARN] guides\characters\android-16.html — H1 mismatch
+       local: "Android 16"
+       live:  "Son Goku"
+[OK] guides\characters\android-16.html — imgs: local=11, live=136
+[FAIL] guides\characters\android-16.html — Schema: local=YES, live=NO
+[OK] guides\characters\android-16.html — word count: local=1169, live=1213
+[WARN] guides\races\namekian-race.html — H1 mismatch
+       local: "Namekian Race"
+       live:  "Son Goku"
+[OK] guides\races\namekian-race.html — imgs: local=3, live=136
+[FAIL] guides\races\namekian-race.html — Schema: local=YES, live=NO
+[WARN] guides\races\namekian-race.html — word count diff: local=387, live=1213
+[WARN] guides\transformations\wrathful-state.html — H1 mismatch
+       local: "Wrathful State"
+       live:  "Son Goku"
+[OK] guides\transformations\wrathful-state.html — imgs: local=3, live=136
+[FAIL] guides\transformations\wrathful-state.html — Schema: local=YES, live=NO
+[WARN] guides\transformations\wrathful-state.html — word count diff: local=357, live=1213
+[OK] images/23rd-world-tournament-saga.png — 113466B, live HTTP 200
+[OK] images/_nappa_check.jpg — 91358B, live HTTP 200
+[OK] images/absorption.png — 96446B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for dragonball-site: 19 OK, 9 WARN, 3 FAIL (31 checks)
+
+======================================================================
+=== SITE: eldenring-site (eldenring.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[WARN] /privacy-policy — HTTP 200 but no local file
+[WARN] /terms — HTTP 200 but no local file
+[WARN] /cookie-policy — HTTP 200 but no local file
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[OK] / — article-card: local=0, live=0
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "TarnishedGuide — Rise, Tarnished"
+[WARN] guides\bosses\dragonlord-placidusax.html — H1 mismatch
+       local: "Dragonlord Placidusax"
+       live:  "Conquer the Lands Between"
+[FAIL] guides\bosses\dragonlord-placidusax.html — local=11 imgs, live=0
+[FAIL] guides\bosses\dragonlord-placidusax.html — Schema: local=YES, live=NO
+[WARN] guides\bosses\dragonlord-placidusax.html — word count diff: local=371, live=434
+[WARN] guides\bosses\morgott.html — H1 mismatch
+       local: "Morgott"
+       live:  "Conquer the Lands Between"
+[FAIL] guides\bosses\morgott.html — local=11 imgs, live=0
+[FAIL] guides\bosses\morgott.html — Schema: local=YES, live=NO
+[OK] guides\bosses\morgott.html — word count: local=395, live=434
+[WARN] guides\weapons\index.html — H1 mismatch
+       local: ""
+       live:  "Conquer the Lands Between"
+[INFO] guides\weapons\index.html — no imgs (local=0, live=0)
+[INFO] guides\weapons\index.html — Schema: local=False, live=False
+[WARN] guides\weapons\index.html — word count diff: local=246, live=434
+[OK] images/alexander-iron-fist.png — 1124831B, live HTTP 200
+[OK] images/astel-naturalborn-of-the-void.png — 720916B, live HTTP 200
+[OK] images/blaidd.png — 444964B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for eldenring-site: 17 OK, 9 WARN, 4 FAIL (30 checks)
+
+======================================================================
+=== SITE: entertainment (entertainment.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[OK] /privacy-policy — HTTP 200
+[OK] /terms — HTTP 200
+[OK] /cookie-policy — HTTP 200
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[FAIL] /articles — links: local=33, live=0
+[OK] /articles-2 — HTTP 200
+[OK] / — article-card: local=11, live=11
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "EntertainmentBuzz — Your Daily Dose of Entertainment Buzz."
+[OK] article-1 — H1 match: "Top 10 Movies to Watch This Month: Critics' Picks"
+[OK] article-1 — imgs: local=1, live=1
+[OK] article-1 — Schema present
+[OK] article-1 — word count: local=1467, live=1467
+[OK] article-17 — H1 match: "Indie Films You Need to Add to Your Watchlist"
+[OK] article-17 — imgs: local=1, live=1
+[OK] article-17 — Schema present
+[OK] article-17 — word count: local=1803, live=1803
+[OK] article-33 — H1 match: "5 Underrated Streaming Gems to Binge This Weekend"
+[OK] article-33 — imgs: local=1, live=1
+[OK] article-33 — Schema present
+[OK] article-33 — word count: local=1191, live=1191
+[OK] images/article-1.jpg — 100503B, live HTTP 200
+[OK] images/article-10.jpg — 78646B, live HTTP 200
+[OK] images/article-11.jpg — 117005B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for entertainment: 31 OK, 1 WARN, 1 FAIL (33 checks)
+
+======================================================================
+=== SITE: fortnite-site (fortnite.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[WARN] /privacy-policy — HTTP 200 but no local file
+[WARN] /terms — HTTP 200 but no local file
+[WARN] /cookie-policy — HTTP 200 but no local file
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[OK] / — article-card: local=0, live=0
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "FortGuide — Dominate the Island"
+[WARN] guides\building\index.html — H1 mismatch
+       local: ""
+       live:  "Chapter 6 Meta"
+[INFO] guides\building\index.html — no imgs (local=0, live=0)
+[INFO] guides\building\index.html — Schema: local=False, live=False
+[WARN] guides\building\index.html — word count diff: local=243, live=437
+[WARN] guides\seasons\index.html — H1 mismatch
+       local: ""
+       live:  "Chapter 6 Meta"
+[INFO] guides\seasons\index.html — no imgs (local=0, live=0)
+[INFO] guides\seasons\index.html — Schema: local=False, live=False
+[WARN] guides\seasons\index.html — word count diff: local=243, live=437
+[WARN] guides\weapons\index.html — H1 mismatch
+       local: ""
+       live:  "Chapter 6 Meta"
+[INFO] guides\weapons\index.html — no imgs (local=0, live=0)
+[INFO] guides\weapons\index.html — Schema: local=False, live=False
+[WARN] guides\weapons\index.html — word count diff: local=243, live=437
+[OK] images/black-knight.png — 121642B, live HTTP 200
+[OK] images/brite-bomber.png — 569283B, live HTTP 200
+[OK] images/cuddle-team-leader.png — 1142856B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for fortnite-site: 18 OK, 10 WARN, 0 FAIL (28 checks)
+
+======================================================================
+=== SITE: games-site (games.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[WARN] /about — HTTP 200 but no local file
+[WARN] /contact — HTTP 200 but no local file
+[WARN] /privacy-policy — HTTP 200 but no local file
+[WARN] /terms — HTTP 200 but no local file
+[WARN] /cookie-policy — HTTP 200 but no local file
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[OK] / — article-card: local=0, live=0
+[OK] / — footer selects: local=0, live=0
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "GameGuide — Expert Game Guides & Walkthroughs"
+[OK] images/7-days-to-die.png — 865329B, live HTTP 200
+[OK] images/ahri.png — 31964B, live HTTP 200
+[OK] images/apex-legends.png — 1442484B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for games-site: 13 OK, 6 WARN, 0 FAIL (19 checks)
+
+======================================================================
+=== SITE: lol-site (lol.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[WARN] /privacy-policy — HTTP 200 but no local file
+[WARN] /terms — HTTP 200 but no local file
+[WARN] /cookie-policy — HTTP 200 but no local file
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[OK] / — article-card: local=0, live=0
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "LoLGuide — Dominate the Rift"
+[WARN] guides\champions\aatrox.html — H1 mismatch
+       local: "Aatrox"
+       live:  "Ahri"
+[OK] guides\champions\aatrox.html — imgs: local=11, live=79
+[FAIL] guides\champions\aatrox.html — Schema: local=YES, live=NO
+[WARN] guides\champions\aatrox.html — word count diff: local=355, live=656
+[WARN] guides\champions\lulu.html — H1 mismatch
+       local: "Lulu"
+       live:  "Ahri"
+[OK] guides\champions\lulu.html — imgs: local=11, live=79
+[FAIL] guides\champions\lulu.html — Schema: local=YES, live=NO
+[WARN] guides\champions\lulu.html — word count diff: local=358, live=656
+[WARN] guides\teamfights\index.html — H1 mismatch
+       local: ""
+       live:  "Ahri"
+[OK] guides\teamfights\index.html — imgs: local=2, live=79
+[INFO] guides\teamfights\index.html — Schema: local=False, live=False
+[WARN] guides\teamfights\index.html — word count diff: local=244, live=656
+[OK] images/aatrox.png — 307233B, live HTTP 200
+[OK] images/aatrox_1.png — 591758B, live HTTP 200
+[OK] images/aatrox_2.png — 696656B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for lol-site: 18 OK, 10 WARN, 2 FAIL (30 checks)
+
+======================================================================
+=== SITE: main-site (jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[OK] /privacy-policy — HTTP 200
+[OK] /terms — HTTP 200
+[OK] /cookie-policy — HTTP 200
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[OK] /articles — 0 article links, matches local
+[OK] / — article-card: local=10, live=10
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "Myers Media | Your Guide to Better Living"
+[FAIL] article-budget-travel — local file missing
+[FAIL] article-pet-adoption-guide — local file missing
+[FAIL] article-traveling-with-pets — local file missing
+[OK] images/article-budget-travel-image.jpg — 167575B, live HTTP 200
+[OK] images/article-cloud-storage-image.jpg — 135181B, live HTTP 200
+[OK] images/article-credit-score-image.jpg — 138202B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for main-site: 19 OK, 1 WARN, 3 FAIL (23 checks)
+
+======================================================================
+=== SITE: minecraft-site (minecraft.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[WARN] /privacy-policy — HTTP 200 but no local file
+[WARN] /terms — HTTP 200 but no local file
+[WARN] /cookie-policy — HTTP 200 but no local file
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[OK] / — article-card: local=0, live=0
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "MineGuide — Master Minecraft with expert guides"
+[WARN] guides\biomes\index.html — H1 mismatch
+       local: ""
+       live:  "Steve"
+[OK] guides\biomes\index.html — imgs: local=2, live=23
+[INFO] guides\biomes\index.html — Schema: local=False, live=False
+[WARN] guides\biomes\index.html — word count diff: local=246, live=432
+[OK] guides\crafting\steve.html — H1 match: "Steve"
+[OK] guides\crafting\steve.html — imgs: local=6, live=23
+[FAIL] guides\crafting\steve.html — Schema: local=YES, live=NO
+[WARN] guides\crafting\steve.html — word count diff: local=338, live=432
+[WARN] guides\redstone\index.html — H1 mismatch
+       local: ""
+       live:  "Steve"
+[OK] guides\redstone\index.html — imgs: local=2, live=23
+[INFO] guides\redstone\index.html — Schema: local=False, live=False
+[WARN] guides\redstone\index.html — word count diff: local=246, live=432
+[OK] images/alex.png — 20777B, live HTTP 200
+[OK] images/crafting_table.png — 44841B, live HTTP 200
+[OK] images/creeper.png — 24153B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for minecraft-site: 19 OK, 9 WARN, 1 FAIL (29 checks)
+
+======================================================================
+=== SITE: naruto-site (naruto.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[WARN] /privacy-policy — HTTP 200 but no local file
+[WARN] /terms — HTTP 200 but no local file
+[WARN] /cookie-policy — HTTP 200 but no local file
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[OK] / — article-card: local=0, live=0
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "Naruto Wiki — Jutsu, Characters & Ninja Clan Database"
+[WARN] guides\arcs\index.html — H1 mismatch
+       local: ""
+       live:  "Naruto Uzumaki"
+[INFO] guides\arcs\index.html — no imgs (local=0, live=50)
+[INFO] guides\arcs\index.html — Schema: local=False, live=False
+[WARN] guides\arcs\index.html — word count diff: local=253, live=804
+[WARN] guides\characters\mei-terumi.html — H1 mismatch
+       local: "Mei Terumi"
+       live:  "Naruto Uzumaki"
+[OK] guides\characters\mei-terumi.html — imgs: local=9, live=50
+[FAIL] guides\characters\mei-terumi.html — Schema: local=YES, live=NO
+[WARN] guides\characters\mei-terumi.html — word count diff: local=404, live=804
+[WARN] guides\villages\index.html — H1 mismatch
+       local: ""
+       live:  "Naruto Uzumaki"
+[INFO] guides\villages\index.html — no imgs (local=0, live=50)
+[INFO] guides\villages\index.html — Schema: local=False, live=False
+[WARN] guides\villages\index.html — word count diff: local=253, live=804
+[OK] images/black-zetsu-white-zetsu.png — 596341B, live HTTP 200
+[OK] images/choji-akimichi.png — 182458B, live HTTP 200
+[OK] images/deidara.png — 246471B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for naruto-site: 18 OK, 10 WARN, 1 FAIL (29 checks)
+
+======================================================================
+=== SITE: onepiece-site (onepiece.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[WARN] /privacy-policy — HTTP 200 but no local file
+[WARN] /terms — HTTP 200 but no local file
+[WARN] /cookie-policy — HTTP 200 but no local file
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[OK] / — article-card: local=0, live=0
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "One Piece Wiki — Devil Fruits, Characters & Crew Database"
+[WARN] guides\arcs\index.html — H1 mismatch
+       local: ""
+       live:  "Monkey D. Luffy"
+[INFO] guides\arcs\index.html — no imgs (local=0, live=39)
+[INFO] guides\arcs\index.html — Schema: local=False, live=False
+[WARN] guides\arcs\index.html — word count diff: local=260, live=684
+[WARN] guides\characters\nami.html — H1 mismatch
+       local: "Nami"
+       live:  "Monkey D. Luffy"
+[OK] guides\characters\nami.html — imgs: local=9, live=39
+[FAIL] guides\characters\nami.html — Schema: local=YES, live=NO
+[WARN] guides\characters\nami.html — word count diff: local=379, live=684
+[WARN] guides\haki\index.html — H1 mismatch
+       local: ""
+       live:  "Monkey D. Luffy"
+[INFO] guides\haki\index.html — no imgs (local=0, live=39)
+[INFO] guides\haki\index.html — Schema: local=False, live=False
+[WARN] guides\haki\index.html — word count diff: local=260, live=684
+[OK] images/bartholomew-kuma.png — 925054B, live HTTP 200
+[OK] images/big-mom-charlotte-linlin.png — 334371B, live HTTP 200
+[OK] images/big-mom-charlotte-linlin_2.png — 201773B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for onepiece-site: 18 OK, 10 WARN, 1 FAIL (29 checks)
+
+======================================================================
+=== SITE: rightsdaily (rightsdaily.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[OK] /privacy-policy — HTTP 200
+[OK] /terms — HTTP 200
+[OK] /cookie-policy — HTTP 200
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[FAIL] /articles — links: local=33, live=0
+[OK] /articles-2 — HTTP 200
+[OK] / — article-card: local=11, live=11
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "RightsDaily — Know Your Rights. Protect Your Future."
+[OK] article-1 — H1 match: "How to Break a Lease Without Penalty"
+[OK] article-1 — imgs: local=1, live=1
+[OK] article-1 — Schema present
+[OK] article-1 — word count: local=1687, live=1687
+[OK] article-19 — H1 match: "Copyright Basics Every Content Creator Must Know"
+[OK] article-19 — imgs: local=1, live=1
+[OK] article-19 — Schema present
+[OK] article-19 — word count: local=1739, live=1739
+[OK] article-36 — H1 match: "5 Key Legal Rights You Didn't Know You Have When D"
+[OK] article-36 — imgs: local=1, live=1
+[OK] article-36 — Schema present
+[OK] article-36 — word count: local=1268, live=1268
+[OK] images/article-1.jpg — 112287B, live HTTP 200
+[OK] images/article-10.jpg — 126475B, live HTTP 200
+[OK] images/article-11.jpg — 124665B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for rightsdaily: 31 OK, 1 WARN, 1 FAIL (33 checks)
+
+======================================================================
+=== SITE: sub-finance (finance.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[OK] /privacy-policy — HTTP 200
+[OK] /terms — HTTP 200
+[OK] /cookie-policy — HTTP 200
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[FAIL] /articles — links: local=29, live=0
+[OK] /articles-2 — HTTP 200
+[OK] / — article-card: local=11, live=11
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "MoneyWise - Smart Personal Finance for Everyday People"
+[OK] article-1 — H1 match: "How to Start Investing with $100: A Complete Begin"
+[OK] article-1 — imgs: local=1, live=1
+[OK] article-1 — Schema present
+[OK] article-1 — word count: local=1881, live=1881
+[OK] article-17 — H1 match: "Roth IRA vs Traditional IRA: Making the Right Choi"
+[OK] article-17 — imgs: local=1, live=1
+[OK] article-17 — Schema present
+[OK] article-17 — word count: local=1901, live=1901
+[OK] article-33 — H1 match: "5 Smart Ways to Maximize Your High-Yield Savings A"
+[OK] article-33 — imgs: local=1, live=1
+[OK] article-33 — Schema present
+[OK] article-33 — word count: local=1453, live=1453
+[OK] images/article-1.jpg — 86248B, live HTTP 200
+[OK] images/article-10.jpg — 91885B, live HTTP 200
+[OK] images/article-11.jpg — 65935B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for sub-finance: 31 OK, 1 WARN, 1 FAIL (33 checks)
+
+======================================================================
+=== SITE: sub-healthy (healthy.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[OK] /privacy-policy — HTTP 200
+[OK] /terms — HTTP 200
+[OK] /cookie-policy — HTTP 200
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[FAIL] /articles — links: local=25, live=0
+[OK] /articles-2 — HTTP 200
+[OK] / — article-card: local=9, live=9
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "Healthy Eating Guide - Your Path to Better Nutrition"
+[OK] article-1 — H1 match: "10 Superfoods You Should Eat Every Day for Optimal"
+[OK] article-1 — imgs: local=1, live=1
+[OK] article-1 — Schema present
+[OK] article-1 — word count: local=1365, live=1365
+[OK] article-16 — H1 match: "Best Anti-Inflammatory Foods to Add to Your Diet"
+[OK] article-16 — imgs: local=1, live=1
+[OK] article-16 — Schema present
+[OK] article-16 — word count: local=1151, live=1151
+[OK] article-34 — H1 match: "5 Superfoods to Eat Every Day for Better Health"
+[OK] article-34 — imgs: local=1, live=1
+[OK] article-34 — Schema present
+[OK] article-34 — word count: local=1285, live=1285
+[OK] images/article-1.jpg — 155486B, live HTTP 200
+[OK] images/article-10.jpg — 132499B, live HTTP 200
+[OK] images/article-11.jpg — 151250B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for sub-healthy: 31 OK, 1 WARN, 1 FAIL (33 checks)
+
+======================================================================
+=== SITE: sub-home (home.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[OK] /privacy-policy — HTTP 200
+[OK] /terms — HTTP 200
+[OK] /cookie-policy — HTTP 200
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[FAIL] /articles — links: local=28, live=0
+[OK] /articles-2 — HTTP 200
+[OK] / — article-card: local=13, live=13
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "HomeJoy — Fresh Home &amp; Garden Ideas for Everyday Living"
+[OK] article-1 — H1 match: "15 DIY Home Improvement Projects Under $100"
+[OK] article-1 — imgs: local=1, live=1
+[OK] article-1 — Schema present
+[OK] article-1 — word count: local=1479, live=1479
+[OK] article-17 — H1 match: "DIY Raised Garden Beds: Build One in a Weekend"
+[OK] article-17 — imgs: local=1, live=1
+[OK] article-17 — Schema present
+[OK] article-17 — word count: local=1403, live=1403
+[OK] article-32 — H1 match: "5 Low-Cost Backyard Updates That Add $10k+ to Your"
+[OK] article-32 — imgs: local=1, live=1
+[OK] article-32 — Schema present
+[OK] article-32 — word count: local=1520, live=1520
+[OK] images/article-1.jpg — 160558B, live HTTP 200
+[OK] images/article-10.jpg — 82686B, live HTTP 200
+[OK] images/article-11.jpg — 136718B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for sub-home: 31 OK, 1 WARN, 1 FAIL (33 checks)
+
+======================================================================
+=== SITE: sub-pets (pets.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[OK] /privacy-policy — HTTP 200
+[OK] /terms — HTTP 200
+[OK] /cookie-policy — HTTP 200
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[FAIL] /articles — links: local=25, live=0
+[OK] /articles-2 — HTTP 200
+[OK] / — article-card: local=11, live=11
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "PetCare Hub — Expert Pet Care Advice for Dog & Cat Owners"
+[OK] article-1 — H1 match: "Complete Guide to Dog Nutrition: What to Feed Your"
+[OK] article-1 — imgs: local=1, live=1
+[OK] article-1 — Schema present
+[OK] article-1 — word count: local=1170, live=1170
+[OK] article-13 — H1 match: "Dog Grooming at Home: DIY Tips to Save Money"
+[OK] article-13 — imgs: local=1, live=1
+[OK] article-13 — Schema present
+[OK] article-13 — word count: local=1938, live=1938
+[OK] article-27 — H1 match: "Pet First Aid Kit: Essentials Every Owner Needs"
+[OK] article-27 — imgs: local=1, live=1
+[OK] article-27 — Schema present
+[OK] article-27 — word count: local=1329, live=1329
+[OK] article-40 — H1 match: "Guinea Pig Nutrition: What Fruits and Vegetables A"
+[OK] article-40 — imgs: local=1, live=1
+[OK] article-40 — Schema present
+[OK] article-40 — word count: local=1226, live=1226
+[OK] article-52 — H1 match: "Hermit Crab Habitat: Humidity, Shell Selection, an"
+[OK] article-52 — imgs: local=1, live=1
+[OK] article-52 — Schema present
+[OK] article-52 — word count: local=1035, live=1035
+[OK] images/article-1.jpg — 109861B, live HTTP 200
+[OK] images/article-10.jpg — 140220B, live HTTP 200
+[OK] images/article-11.jpg — 172296B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for sub-pets: 39 OK, 1 WARN, 1 FAIL (41 checks)
+
+======================================================================
+=== SITE: sub-tech (tech.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[OK] /privacy-policy — HTTP 200
+[OK] /terms — HTTP 200
+[OK] /cookie-policy — HTTP 200
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[FAIL] /articles — links: local=25, live=0
+[OK] /articles-2 — HTTP 200
+[OK] / — article-card: local=11, live=11
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "TechNest - Honest Tech Reviews, Guides & Practical Advice"
+[OK] article-1 — H1 match: "Best Budget Smartphones Under $300 (2026)"
+[OK] article-1 — imgs: local=1, live=1
+[OK] article-1 — Schema present
+[OK] article-1 — word count: local=1487, live=1487
+[OK] article-10 — H1 match: "Best Wireless Earbuds Under $100 (2026)"
+[OK] article-10 — imgs: local=1, live=1
+[OK] article-10 — Schema present
+[OK] article-10 — word count: local=1640, live=1640
+[OK] article-20 — H1 match: "Best Password Managers Compared: Find the Right On"
+[OK] article-20 — imgs: local=1, live=1
+[OK] article-20 — Schema present
+[OK] article-20 — word count: local=1553, live=1553
+[OK] article-30 — H1 match: "Best Desktop Monitors for Work and Gaming Under $4"
+[OK] article-30 — imgs: local=1, live=1
+[OK] article-30 — Schema present
+[OK] article-30 — word count: local=1408, live=1408
+[OK] article-41 — H1 match: "5 Proven Ways to Boost Your Smartphone's Performan"
+[OK] article-41 — imgs: local=1, live=1
+[OK] article-41 — Schema present
+[OK] article-41 — word count: local=1336, live=1336
+[OK] images/article-1.jpg — 174265B, live HTTP 200
+[OK] images/article-10.jpg — 54777B, live HTTP 200
+[OK] images/article-11.jpg — 72956B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for sub-tech: 39 OK, 1 WARN, 1 FAIL (41 checks)
+
+======================================================================
+=== SITE: sub-travel (travel.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[OK] /privacy-policy — HTTP 200
+[OK] /terms — HTTP 200
+[OK] /cookie-policy — HTTP 200
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[FAIL] /articles — links: local=25, live=0
+[OK] /articles-2 — HTTP 200
+[OK] / — article-card: local=9, live=9
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "TripRoute — Smart Budget Travel Guides, Tips & Resources"
+[OK] article-1 — H1 match: "10 Budget Travel Destinations for 2026"
+[OK] article-1 — imgs: local=1, live=1
+[OK] article-1 — Schema present
+[OK] article-1 — word count: local=1651, live=1651
+[OK] article-21 — H1 match: "Best Travel Backpacks for Every Type of Trip in 20"
+[OK] article-21 — imgs: local=1, live=1
+[OK] article-21 — Schema present
+[OK] article-21 — word count: local=1228, live=1228
+[OK] article-39 — H1 match: "5 Budget-Friendly US Road Trips That Don't Skimp o"
+[OK] article-39 — imgs: local=1, live=1
+[OK] article-39 — Schema present
+[OK] article-39 — word count: local=1322, live=1322
+[OK] images/article-1.jpg — 200473B, live HTTP 200
+[OK] images/article-10.jpg — 196024B, live HTTP 200
+[OK] images/article-11.jpg — 261503B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for sub-travel: 31 OK, 1 WARN, 1 FAIL (33 checks)
+
+======================================================================
+=== SITE: valorant-site (valorant.jycsd.com) ===
+======================================================================
+[WARN] / — HTTP 200 but no local file
+[OK] /about — HTTP 200
+[OK] /contact — HTTP 200
+[WARN] /privacy-policy — HTTP 200 but no local file
+[WARN] /terms — HTTP 200 but no local file
+[WARN] /cookie-policy — HTTP 200 but no local file
+[OK] /ads.txt — HTTP 200
+[OK] /robots.txt — HTTP 200
+[OK] /sitemap.xml — HTTP 200
+[OK] / — article-card: local=0, live=0
+[OK] / — footer selects: local=2, live=2
+[OK] / — AdSense script present
+[OK] / — google-adsense-account meta present
+[OK] / — title: "ValGuide — Outplay. Outaim."
+[WARN] guides\agents\astra.html — H1 mismatch
+       local: "Astra"
+       live:  "Jett"
+[OK] guides\agents\astra.html — imgs: local=11, live=47
+[FAIL] guides\agents\astra.html — Schema: local=YES, live=NO
+[WARN] guides\agents\astra.html — word count diff: local=351, live=487
+[WARN] guides\agents\neon.html — H1 mismatch
+       local: "Neon"
+       live:  "Jett"
+[OK] guides\agents\neon.html — imgs: local=11, live=47
+[FAIL] guides\agents\neon.html — Schema: local=YES, live=NO
+[WARN] guides\agents\neon.html — word count diff: local=345, live=487
+[WARN] guides\weapons\index.html — H1 mismatch
+       local: ""
+       live:  "Jett"
+[OK] guides\weapons\index.html — imgs: local=2, live=47
+[INFO] guides\weapons\index.html — Schema: local=False, live=False
+[WARN] guides\weapons\index.html — word count diff: local=244, live=487
+[OK] images/astra.png — 2025815B, live HTTP 200
+[OK] images/breach.png — 394069B, live HTTP 200
+[OK] images/brimstone.png — 471750B, live HTTP 200
+[OK] ads.txt — content matches
+[OK] ads.txt — pub ID present
+
+Summary for valorant-site: 18 OK, 10 WARN, 2 FAIL (30 checks)
+
+======================================================================
+GRAND TOTAL: 490 OK, 103 WARN, 26 FAIL (619 checks)
+======================================================================

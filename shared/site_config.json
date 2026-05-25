@@ -121,6 +121,18 @@
       "production_branch": "master"
     },
     {
+      "dir": "sub-moto",
+      "cf_project": "moto-jycsd",
+      "domain": "moto.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "sub-food",
+      "cf_project": "food-jycsd",
+      "domain": "food.jycsd.com",
+      "production_branch": "master"
+    },
+    {
       "dir": "valorant-site",
       "cf_project": "valorant-jycsd",
       "domain": "valorant.jycsd.com",

@@ -110,53 +110,12 @@
   </div>
 </div>
 
-<main class="flex-grow max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-1">
-  <h1 class="text-3xl lg:text-4xl font-black text-stone-900 mb-6">Contact HomeJoy</h1>
-
-  <p class="text-stone-600 leading-relaxed mb-10">HomeJoy is a home and garden resource. We publish practical DIY guides, indoor gardening tips, home decor inspiration, and seasonal maintenance advice to help you create a happier, healthier home.</p>
-
-  <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-sm border border-stone-100 mb-10">
-    <h2 class="text-xl font-bold text-stone-900 mb-6">Send Us a Message</h2>
-    <form class="space-y-5" action="https://formsubmit.co/contact@jycsd.com" method="POST">
-      <div>
-        <label class="block text-sm font-medium text-stone-700 mb-1">Your Name</label>
-        <input type="text" class="w-full px-4 py-3 border border-stone-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-transparent" name="name" placeholder="Enter your name">
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-stone-700 mb-1">Email Address</label>
-        <input type="email" class="w-full px-4 py-3 border border-stone-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-transparent" name="email" placeholder="you@example.com">
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-stone-700 mb-1">Subject</label>
-        <input type="text" class="w-full px-4 py-3 border border-stone-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-transparent" name="subject" placeholder="What is this about?">
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-stone-700 mb-1">Message</label>
-        <textarea rows="5" class="w-full px-4 py-3 border border-stone-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-lime-400 focus:border-transparent" name="message" placeholder="Tell us how we can help..."></textarea>
-      </div>
-      <button type="submit" class="px-6 py-3 bg-lime-500 text-white font-semibold rounded-full hover:bg-lime-600 transition text-sm">Send Message</button>
-    <input type="hidden" name="_next" value="https://home.jycsd.com/contact.html?success=1">
-                    <input type="hidden" name="_captcha" value="false">
-                </form>
-  </div>
-
-  <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-sm border border-stone-100">
-    <h2 class="text-xl font-bold text-stone-900 mb-4">Other Ways to Reach Us</h2>
-    <div class="space-y-4 text-stone-600 text-sm leading-relaxed">
-      <div class="flex items-start gap-3">
-        <span class="text-lime-500 font-bold shrink-0 mt-0.5">Email:</span>
-        <a href="mailto:contact@jycsd.com" class="text-lime-600 hover:text-lime-700 underline">contact@jycsd.com</a>
-      </div>
-      <div class="flex items-start gap-3">
-        <span class="text-lime-500 font-bold shrink-0 mt-0.5">Network:</span>
-        <span>HomeJoy is part of the </span>
-      </div>
-      <div class="flex items-start gap-3">
-        <span class="text-lime-500 font-bold shrink-0 mt-0.5">Response:</span>
-        <span>We typically respond within 1 to 2 business days.</span>
-      </div>
-    </div>
-  </div>
+<main class="flex-grow max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-1">        <div class="max-w-2xl mx-auto">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">Have a question, suggestion, or just want to say hello? We'd love to hear from you.</p>
+                <a href="mailto:contact@jycsd.com" class="inline-block bg-lime-600 hover:bg-lime-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">contact@jycsd.com</a>
+                <p class="text-sm text-gray-500 mt-6">We typically respond within 24-48 hours.</p>
+            </div>
 </main>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
@@ -177,8 +136,8 @@
                 <option value="https://games.jycsd.com">Game Guides</option>
                 <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
             </select>
-            <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-indigo-500 cursor-pointer">
-                <option value="">— More Sites —</option>
+            <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-indigo-500 cursor-pointer">
+                <option value="">-- Content Sites --</option>
                 <option value="https://healthy.jycsd.com">HealthyEats</option>
                 <option value="https://pets.jycsd.com">PetCare Hub</option>
                 <option value="https://home.jycsd.com">HomeJoy</option>
@@ -186,8 +145,22 @@
                 <option value="https://tech.jycsd.com">TechNest</option>
                 <option value="https://travel.jycsd.com">TripRoute</option>
                 <option value="https://auto.jycsd.com">AutoPulse</option>
+                    <option value="https://moto.jycsd.com">MotoPulse</option>
+                    <option value="https://food.jycsd.com">FlavorFusion</option>
                 <option value="https://rightsdaily.com">RightsDaily</option>
                 <option value="https://dailymedadvice.com">DailyMedAdvice</option>
+                <option value="https://entertainment.jycsd.com">PopCulture HQ</option>
+            </select>
+            <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-indigo-500 cursor-pointer">
+                <option value="">-- Game & Anime Wikis --</option>
+                <option value="https://dragonball.jycsd.com">Dragon Ball Wiki</option>
+                <option value="https://naruto.jycsd.com">Naruto Wiki</option>
+                <option value="https://onepiece.jycsd.com">One Piece Wiki</option>
+                <option value="https://valorant.jycsd.com">Valorant Wiki</option>
+                <option value="https://fortnite.jycsd.com">Fortnite Wiki</option>
+                <option value="https://lol.jycsd.com">LoL Wiki</option>
+                <option value="https://eldenring.jycsd.com">Elden Ring Wiki</option>
+                <option value="https://minecraft.jycsd.com">Minecraft Wiki</option>
             </select>
             </div>
             <div>
@@ -207,7 +180,7 @@
             </div>
         </div>
         <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-400">
-            <p>&copy; 2026 HomeJoy. All rights reserved.</p>
+            <p>&copy; 2020-2026 HomeJoy. All rights reserved.</p>
                         <a href="https://jycsd.com" class="text-sm text-gray-400 hover:text-white transition-colors">Visit jycsd.com for more guides</a>
         </div>
     </div>

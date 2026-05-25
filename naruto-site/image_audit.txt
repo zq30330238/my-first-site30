@@ -1,0 +1,47 @@
+=== naruto-site 图片审计 ===
+审计时间: 2026-05-25
+
+=== 基本信息 ===
+总角色页: 42
+有图片引用: 42
+无图片引用: 0
+抽样验证: 15
+正确匹配: 13
+匹配错误: 2
+图片文件不存在: 0
+
+=== 基本文件检查 ===
+图片文件总数: 68 (含重复/多角度图片)
+角色页引用的所有图片文件均存在磁盘上
+
+=== 豆包验证结果 ===
+
+--- 正确匹配 (13) ---
+角色名 | 图片文件 | AI识别结果
+Tsunade | tsunade.png | Tsunade - 浅棕色长发，额头有阴封印标记 ✓
+Hinata Hyuga | hinata-hyuga.png | Hinata Hyuga - 深蓝色长发，白眼 ✓
+Choji Akimichi | choji-akimichi.png | Choji Akimichi - 红色云纹衣服 ✓
+Kiba Inuzuka | kiba-inuzuka.png | Kiba Inuzuka - 红色斜披风 ✓
+Kakashi Hatake | kakashi-hatake.png | Kakashi Hatake - 银色刺猬头，面罩 ✓
+Kaguya Otsutsuki | kaguya-otsutsuki.png | Kaguya Otsutsuki - 浅蓝白长发，额角有角 ✓
+Hiruzen Sarutobi | hiruzen-sarutobi.png | Hiruzen Sarutobi - 三代目火影 ✓
+Hidan | hidan.png | Hidan - 邪神教成员 ✓
+Hashirama Senju | hashirama-senju.png | Hashirama Senju - 千手柱间，仙人模式 ✓
+Onoki | onoki.png | Onoki - 大野木，土影 ✓
+Deidara | deidara.png | Deidara - 金色马尾辫 ✓
+Sai | sai.png | Sai - 根组织成员 ✓
+Sasuke Uchiha | sasuke-uchiha.png | Sasuke Uchiha - 黑色炸毛短发，轮回眼 ✓
+
+--- 匹配错误 (2) ---
+角色名 | 图片文件 | AI识别实际内容
+Black Zetsu / White Zetsu | black-zetsu-white-zetsu.png | 识别为"漩涡鸣人(Naruto Uzumaki)"——金色尖刺短发，脸颊有三道须状纹理，木叶护额。完全错误，不是黑绝/白绝。
+Yamato | yamato.png | 识别为"漩涡鸣人(Naruto Uzumaki)"——金色尖刺短发，蓝色眼眸，胡须纹理。完全错误，不是大和。
+
+--- 未抽样页面（额外注意） ---
+剩余27个页面未抽样验证，图像匹配状态未知。
+
+=== 总结 ===
+- 抽样15个角色中，13个图片匹配正确 (86.7%)
+- 2个图片严重匹配错误：black-zetsu-white-zetsu.png 和 yamato.png 都使用了鸣人的图片
+- 黑绝/白绝和大和这两个角色共享了鸣人的图片，需要替换
+- 建议用AI生图（Seedream）重新生成黑绝/白绝和大和的正确图片

@@ -22,11 +22,15 @@ import sys
 import json
 from pathlib import Path
 
+# Force UTF-8 on stdout to prevent GBK crashes on non-ASCII chars
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
 ROOT = Path(__file__).resolve().parent.parent
-ALL_SITES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-tech", "sub-travel", "sub-auto", "main-site",
+ALL_SITES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-food", "sub-tech", "sub-travel", "sub-auto", "sub-moto", "main-site",
     "minecraft-site", "eldenring-site", "lol-site", "fortnite-site", "valorant-site",
     "games-site", "anime-site", "dragonball-site", "onepiece-site", "naruto-site"]
-SITES_WITH_ARTICLES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-tech", "sub-travel", "sub-auto",
+SITES_WITH_ARTICLES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-food", "sub-tech", "sub-travel", "sub-auto", "sub-moto", "main-site",
     "minecraft-site", "eldenring-site", "lol-site", "fortnite-site", "valorant-site",
     "dragonball-site", "onepiece-site", "naruto-site"]
 GAME_SITES = {"minecraft-site", "eldenring-site", "lol-site", "fortnite-site", "valorant-site",
@@ -94,7 +98,7 @@ AI_CLICHES = [
 # === Emoji ===
 EMOJI_RE = re.compile(
     r'[\U0001F600-\U0001F64F\U0001F300-\U0001F5FF\U0001F680-\U0001F6FF'
-    r'\U0001F1E0-\U0001F1FF\U00002702-\U000027B0\U000024C2-\U0001F251'
+    r'\U0001F1E0-\U0001F1FF\U00002702-\U000027B0\U000024C2-\U000025FF'
     r'\U0001F900-\U0001F9FF\U0001FA00-\U0001FA6F\U0001FA70-\U0001FAFF'
     r'\U00002600-\U000026FF\U0000FE00-\U0000FE0F]'
 )
@@ -114,9 +118,11 @@ SITE_DOMAINS = {
     "sub-healthy": "healthy.jycsd.com",
     "sub-home": "home.jycsd.com",
     "sub-finance": "finance.jycsd.com",
+    "sub-food": "food.jycsd.com",
     "sub-tech": "tech.jycsd.com",
     "sub-travel": "travel.jycsd.com",
     "sub-auto": "auto.jycsd.com",
+    "sub-moto": "moto.jycsd.com",
     "main-site": "jycsd.com",
     "minecraft-site": "minecraft.jycsd.com",
     "eldenring-site": "eldenring.jycsd.com",
@@ -262,6 +268,9 @@ def check_article(filepath, site_dir):
             target = site_dir / href.lstrip('/')
         else:
             target = file_dir / href
+        # Strip fragment identifiers before file existence check
+        if '#' in str(target):
+            target = Path(str(target).split('#')[0])
         if href.endswith('/'):
             index_target = target / 'index.html'
             if not index_target.exists():
@@ -288,6 +297,9 @@ def check_article(filepath, site_dir):
             target = site_dir / href.lstrip('/')
         else:
             target = file_dir / href
+        # Strip fragment identifiers before file existence check
+        if '#' in str(target):
+            target = Path(str(target).split('#')[0])
         if href.endswith('/'):
             target = target / 'index.html'
         if not target.exists() or not target.suffix == '.html':
@@ -537,11 +549,14 @@ def check_footer_dropdowns(filepath, site_dir):
     footer_html = footer_m.group(0)
     selects = re.findall(r'<select[\s\S]*?</select>', footer_html, re.DOTALL)
     if not selects:
+        # Old footer format (ul + details/summary) — must upgrade to select dropdowns
+        if re.search(r'<details|<summary|>More Sites<|>Our Sites<', footer_html):
+            errors.append(f"{name}: footer uses old ul+details format — replace with select dropdowns")
         return
 
     DROPDOWN_EXPECTED = {
         "Network": {"any": [["Myers Media", "Main Site"], ["Game Guides"], ["Anime & Manga"]]},
-        "Content Sites": {"all": ["HealthyEats", "PetCare Hub", "HomeJoy", "MoneyWise", "TechNest", "TripRoute", "AutoPulse", "RightsDaily", "DailyMedAdvice", "PopCulture HQ"]},
+        "Content Sites": {"all": ["HealthyEats", "PetCare Hub", "HomeJoy", "MoneyWise", "TechNest", "TripRoute", "AutoPulse", "MotoPulse", "FlavorFusion", "RightsDaily", "DailyMedAdvice", "PopCulture HQ"]},
         "Game & Anime Wikis": {"all": ["Dragon Ball Wiki", "Naruto Wiki", "One Piece Wiki", "Valorant Wiki", "Fortnite Wiki", "LoL Wiki", "Elden Ring Wiki", "Minecraft Wiki"]},
     }
 

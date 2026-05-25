@@ -27,6 +27,10 @@ from site_templates import (
 
 import random
 
+# Force UTF-8 on stdout to prevent GBK crashes on non-ASCII chars (e.g. Döner)
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
 TITLE_STARTERS = [
     "How to", "The Complete Guide to", "Why", "What",
     "Top", "Best", "Essential", "Simple",
@@ -177,7 +181,7 @@ def call_api(site_dir, article_num, force_template=None, topic=None):
         user_msg = f"""CRITICAL INSTRUCTION — You MUST write about this EXACT topic:
 
 TOPIC: {topic['title']}
-CATEGORY: {topic['category']}{extra}
+CATEGORY: {topic.get('category', topic.get('category_slug', 'unknown'))}{extra}
 
 Your H1 title MUST be a natural variation of the topic above. Do NOT change the subject to a different car brand, different model, or generic listicle. If the topic is about BYD Seal, write about BYD Seal specifically — not "electric sedans in general." If the topic is about Huawei AITO M9, write about AITO M9 specifically.
 
@@ -727,6 +731,14 @@ def main():
         if predefined_topics:
             print(f"  Predefined topics available: {len(predefined_topics)} (will use before free-generation)")
 
+
+        # Build existing H1s once to avoid wasteful duplicate API calls
+        existing_h1s = set()
+        for f in (ROOT / site_dir).glob("article-*.html"):
+            h = re.search(r'<h1[^>]*>([^<]+)</h1>', f.read_text(encoding="utf-8", errors="ignore"))
+            if h:
+                existing_h1s.add(h.group(1).strip().lower())
+
         for i in range(args.per_site):
             article_num = get_next_article_num(site_dir)
             print(f"  Generating article-{article_num}.html...", flush=True)
@@ -739,23 +751,22 @@ def main():
             # Pop next predefined topic, or None for AI to choose freely
             topic = topics_queue.pop(0) if topics_queue else None
 
+            # Pre-check: skip predefined topics whose titles already exist (avoids wasteful API calls)
+            if topic and topic["title"].strip().lower() in existing_h1s:
+                print(f"    SKIP: predefined topic matches existing article — \"{topic['title'][:60]}\"")
+                continue
+
             # 1. Get content JSON from DeepSeek
             content = call_api(site_dir, article_num, args.template, topic=topic)
             if not content:
                 print(f"    FAIL: API call failed after 3 attempts")
                 continue
 
-            # 2. Check for duplicate title
+            # 2. Check for duplicate title (post-API safety net)
             h1 = content.get("h1_title", "").strip().lower()
-            if h1:
-                existing_h1s = set()
-                for f in (ROOT / site_dir).glob("article-*.html"):
-                    h = re.search(r'<h1[^>]*>([^<]+)</h1>', f.read_text(encoding="utf-8", errors="ignore"))
-                    if h:
-                        existing_h1s.add(h.group(1).strip().lower())
-                if h1 in existing_h1s:
-                    print(f"    SKIP: duplicate title '{h1[:60]}' — already exists in {site_dir}")
-                    continue
+            if h1 and h1 in existing_h1s:
+                print(f"    SKIP: duplicate title '{h1[:60]}' — already exists in {site_dir}")
+                continue
 
             # 3. Check required fields
             required = ["title", "h1_title", "article_body_html"]
@@ -832,7 +843,7 @@ def main():
     print(f"{'='*60}")
     audit = subprocess.run(
         [sys.executable, str(ROOT / "shared" / "pre_commit_audit.py")],
-        capture_output=True, text=True, cwd=str(ROOT)
+        capture_output=True, text=True, encoding='utf-8', cwd=str(ROOT)
     )
     print(audit.stdout)
     if audit.stderr:

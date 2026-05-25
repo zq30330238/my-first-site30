@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorFusion | Authentic Western &amp; Chinese Recipes for Home Cooks</title>
+    <meta name="description" content="FlavorFusion — authentic recipes from Western and Chinese cuisines. Step-by-step cooking guides with ingredients lists, cultural background, and simple instructions for home cooks.">
+    <meta name="keywords" content="recipes, Western cuisine, Chinese cuisine, street food, cooking guides, home cooking">
+    <link rel="canonical" href="https://food.jycsd.com/index.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="FlavorFusion — Where East Meets West on Your Plate">
+    <meta property="og:description" content="FlavorFusion — authentic recipes from Western and Chinese cuisines. Step-by-step cooking guides with ingredients lists, cultural background, and simple instructions for home cooks.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlavorFusion">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://food.jycsd.com/">
+    <meta property="og:image" content="https://food.jycsd.com/images/default-og.jpg">
+
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-2595917642864488">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: { 'brand': { 50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309', 800: '#92400e' } },
+                fontFamily: {
+                    sans: ['Inter','system-ui','-apple-system','sans-serif'],
+                    heading: ['Playfair Display','Georgia','serif']
+                }
+            }
+        }
+    }
+</script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "FlavorFusion",
+        "url": "https://food.jycsd.com/",
+        "logo": "https://food.jycsd.com/images/default-og.jpg"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "FlavorFusion",
+        "url": "https://food.jycsd.com/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://food.jycsd.com/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <style>
+        .recipe-card { transition: all 0.3s ease; }
+        .recipe-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .carousel::-webkit-scrollbar { height: 6px; }
+        .carousel::-webkit-scrollbar-track { background: #f5f5f4; border-radius: 3px; }
+        .carousel::-webkit-scrollbar-thumb { background: #d97706; border-radius: 3px; }
+        .carousel::-webkit-scrollbar-thumb:hover { background: #b45309; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-inter bg-stone-50 text-gray-900 antialiased">
+
+    <!-- Nav -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-amber-100">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-1">
+                <span class="font-playfair text-2xl font-black text-gray-900">Flavor</span>
+                <span class="font-playfair text-2xl font-black text-amber-600">Fusion</span>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="index.html" class="text-amber-600 font-semibold">Home</a>
+                <a href="category-western.html" class="text-gray-600 hover:text-amber-600 transition-colors">Western Cuisine</a>
+                <a href="category-chinese.html" class="text-gray-600 hover:text-amber-600 transition-colors">Chinese Cuisine</a>
+                <a href="category-street-food.html" class="text-gray-600 hover:text-amber-600 transition-colors">Street Food</a>
+                <a href="about.html" class="text-gray-600 hover:text-amber-600 transition-colors">About</a>
+                <a href="contact.html" class="text-gray-600 hover:text-amber-600 transition-colors">Contact</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button class="md:hidden p-2 text-gray-600" aria-label="Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-amber-500 via-amber-600 to-orange-700 py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="font-playfair text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+                Where East Meets West<br>on Your Plate
+            </h1>
+            <p class="text-amber-100 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+                Authentic recipes from both sides of the world — from Sichuan street food to French bistro classics
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="category-western.html" class="inline-block bg-white text-amber-700 hover:bg-amber-50 rounded-full px-8 py-3 font-semibold transition-colors">Explore Western Cuisine</a>
+                <a href="category-chinese.html" class="inline-block border-2 border-white text-white hover:bg-white/10 rounded-full px-8 py-3 font-semibold transition-colors">Discover Chinese Cuisine</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Carousel -->
+    <section class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="font-playfair text-3xl font-black text-gray-900 mb-8">Featured Recipes</h2>
+        <div class="flex gap-6 overflow-x-auto pb-4 snap-x scrollbar-hide carousel">
+            <!-- Card 1: Big Mac -->
+            <a href="article-1.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80');">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Fast Food</span>
+                    <h3 class="text-white font-bold text-xl">Big Mac</h3>
+                    <span class="text-white/80 text-sm"> United States</span>
+                </div>
+            </a>
+
+            <!-- Card 2: Mapo Tofu -->
+            <a href="article-22.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('https://images.unsplash.com/photo-1582452919404-f0e62da0acd8?w=600&q=80');">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Sichuan</span>
+                    <h3 class="text-white font-bold text-xl">Mapo Tofu</h3>
+                    <span class="text-white/80 text-sm"> China</span>
+                </div>
+            </a>
+
+            <!-- Card 3: Coq au Vin -->
+            <a href="article-8.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('https://images.unsplash.com/photo-1534939561126-855b8675edd7?w=600&q=80');">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">French</span>
+                    <h3 class="text-white font-bold text-xl">Coq au Vin</h3>
+                    <span class="text-white/80 text-sm"> France</span>
+                </div>
+            </a>
+
+            <!-- Card 4: Kung Pao Chicken -->
+            <a href="article-23.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('https://images.unsplash.com/photo-1525755662778-989d0524087e?w=600&q=80');">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Sichuan</span>
+                    <h3 class="text-white font-bold text-xl">Kung Pao Chicken</h3>
+                    <span class="text-white/80 text-sm"> China</span>
+                </div>
+            </a>
+
+            <!-- Card 5: Texas BBQ Brisket -->
+            <a href="article-13.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600&q=80');">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">American</span>
+                    <h3 class="text-white font-bold text-xl">Texas BBQ Brisket</h3>
+                    <span class="text-white/80 text-sm"> United States</span>
+                </div>
+            </a>
+
+            <!-- Card 6: Char Siu -->
+            <a href="article-26.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&q=80');">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Cantonese</span>
+                    <h3 class="text-white font-bold text-xl">Char Siu</h3>
+                    <span class="text-white/80 text-sm"> China</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Two Cuisine Columns -->
+    <section class="max-w-6xl mx-auto px-4 py-16">
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- Western Cuisine Column -->
+            <div class="bg-amber-50 rounded-3xl p-8 border border-amber-100">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="font-playfair text-2xl font-black text-gray-900">Western Cuisine</h2>
+                    <a href="category-western.html" class="text-amber-600 text-sm font-semibold hover:text-amber-700 transition-colors">View All &rarr;</a>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- French Onion Soup -->
+                    <a href="article-7.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] bg-amber-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=200&q=80');"></div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-gray-900 truncate">French Onion Soup</h3>
+                            <span class="text-xs text-gray-500"> France</span>
+                        </div>
+                    </a>
+
+                    <!-- Spaghetti Carbonara -->
+                    <a href="article-10.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] bg-amber-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1612874742237-6526221588e3?w=200&q=80');"></div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-gray-900 truncate">Spaghetti Carbonara</h3>
+                            <span class="text-xs text-gray-500"> Italy</span>
+                        </div>
+                    </a>
+
+                    <!-- Margherita Pizza -->
+                    <a href="article-11.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] bg-amber-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&q=80');"></div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-gray-900 truncate">Margherita Pizza</h3>
+                            <span class="text-xs text-gray-500"> Italy</span>
+                        </div>
+                    </a>
+
+                    <!-- Croissant -->
+                    <a href="article-9.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] bg-amber-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1555507036-ab1f4038028a?w=200&q=80');"></div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-gray-900 truncate">Croissant</h3>
+                            <span class="text-xs text-gray-500"> France</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Chinese Cuisine Column -->
+            <div class="bg-red-50 rounded-3xl p-8 border border-red-100">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="font-playfair text-2xl font-black text-gray-900">Chinese Cuisine</h2>
+                    <a href="category-chinese.html" class="text-amber-600 text-sm font-semibold hover:text-amber-700 transition-colors">View All &rarr;</a>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Dongpo Pork -->
+                    <a href="article-34.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] bg-red-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1603073163308-9654c3fb70b5?w=200&q=80');"></div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-gray-900 truncate">Dongpo Pork</h3>
+                            <span class="text-xs text-gray-500">Zhejiang</span>
+                        </div>
+                    </a>
+
+                    <!-- Red Braised Pork Belly -->
+                    <a href="article-31.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] bg-red-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1623689046284-f7c00c63ee34?w=200&q=80');"></div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-gray-900 truncate">Red Braised Pork Belly</h3>
+                            <span class="text-xs text-gray-500">Jiangsu</span>
+                        </div>
+                    </a>
+
+                    <!-- White Cut Chicken -->
+                    <a href="article-25.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] bg-red-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=200&q=80');"></div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-gray-900 truncate">White Cut Chicken</h3>
+                            <span class="text-xs text-gray-500">Cantonese</span>
+                        </div>
+                    </a>
+
+                    <!-- Buddha Jumps Over the Wall -->
+                    <a href="article-37.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] bg-red-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1563245372-f21724e3856d?w=200&q=80');"></div>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-semibold text-gray-900 truncate">Buddha Jumps Over the Wall</h3>
+                            <span class="text-xs text-gray-500">Fujian</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Latest Recipes Grid -->
+    <section class="max-w-6xl mx-auto px-4 py-16">
+        <h2 class="font-playfair text-3xl font-black text-gray-900 mb-8">Latest Recipes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Recipe 1: Xiaochao Rou -->
+            <a href="article-41.html" class="recipe-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 block">
+                <div class="h-52 bg-gray-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1583223667854-e0e05b2ad4c1?w=600&q=80');"></div>
+                <div class="p-5">
+                    <span class="inline-block text-xs font-medium px-2 py-1 rounded-full bg-red-100 text-red-700">Chinese</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-2 mb-1">Xiaochao Rou</h3>
+                    <p class="text-sm text-gray-500 line-clamp-2">A traditional Hunanese small-stir-fry pork dish with bold flavors and tender texture.</p>
+                    <div class="flex items-center gap-3 text-xs text-gray-400 mt-3">
+                        <span class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            15 min
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Easy
+                        </span>
+                        <span> Hunan</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Recipe 2: Tonkatsu -->
+            <a href="article-18.html" class="recipe-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 block">
+                <div class="h-52 bg-gray-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=600&q=80');"></div>
+                <div class="p-5">
+                    <span class="inline-block text-xs font-medium px-2 py-1 rounded-full bg-amber-100 text-amber-700">Japanese-Western</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-2 mb-1">Tonkatsu</h3>
+                    <p class="text-sm text-gray-500 line-clamp-2">Crispy panko-breaded pork cutlet, a beloved Japanese adaptation of Western-style fried cutlets.</p>
+                    <div class="flex items-center gap-3 text-xs text-gray-400 mt-3">
+                        <span class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            40 min
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Medium
+                        </span>
+                        <span> Japan</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Recipe 3: Jianbing -->
+            <a href="article-46.html" class="recipe-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 block">
+                <div class="h-52 bg-gray-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1562059390-a761a084768e?w=600&q=80');"></div>
+                <div class="p-5">
+                    <span class="inline-block text-xs font-medium px-2 py-1 rounded-full bg-orange-100 text-orange-700">Street Food</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-2 mb-1">Jianbing</h3>
+                    <p class="text-sm text-gray-500 line-clamp-2">Classic Chinese street breakfast crepe, crisp and savory with egg and hoisin sauce.</p>
+                    <div class="flex items-center gap-3 text-xs text-gray-400 mt-3">
+                        <span class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            20 min
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Easy
+                        </span>
+                        <span> Street Food</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Recipe 4: Greek Moussaka -->
+            <a href="article-19.html" class="recipe-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 block">
+                <div class="h-52 bg-gray-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1574484284002-952d92456975?w=600&q=80');"></div>
+                <div class="p-5">
+                    <span class="inline-block text-xs font-medium px-2 py-1 rounded-full bg-amber-100 text-amber-700">Mediterranean</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-2 mb-1">Greek Moussaka</h3>
+                    <p class="text-sm text-gray-500 line-clamp-2">Layered eggplant and potato casserole with spiced meat sauce and creamy béchamel topping.</p>
+                    <div class="flex items-center gap-3 text-xs text-gray-400 mt-3">
+                        <span class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            90 min
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Hard
+                        </span>
+                        <span> Greece</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Recipe 5: Takoyaki -->
+            <a href="article-52.html" class="recipe-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 block">
+                <div class="h-52 bg-gray-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80');"></div>
+                <div class="p-5">
+                    <span class="inline-block text-xs font-medium px-2 py-1 rounded-full bg-orange-100 text-orange-700">Street Food</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-2 mb-1">Takoyaki</h3>
+                    <p class="text-sm text-gray-500 line-clamp-2">Hot golden octopus balls from Osaka street stalls, crispy outside and molten inside.</p>
+                    <div class="flex items-center gap-3 text-xs text-gray-400 mt-3">
+                        <span class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            30 min
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Medium
+                        </span>
+                        <span> Street Food</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Recipe 6: New York Hot Dog -->
+            <a href="article-48.html" class="recipe-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 block">
+                <div class="h-52 bg-gray-200 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1619534888374-9d6be45daf6e?w=600&q=80');"></div>
+                <div class="p-5">
+                    <span class="inline-block text-xs font-medium px-2 py-1 rounded-full bg-orange-100 text-orange-700">Street Food</span>
+                    <h3 class="text-lg font-bold text-gray-900 mt-2 mb-1">New York Hot Dog</h3>
+                    <p class="text-sm text-gray-500 line-clamp-2">The iconic New York street cart classic with sauerkraut and spicy brown mustard.</p>
+                    <div class="flex items-center gap-3 text-xs text-gray-400 mt-3">
+                        <span class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            10 min
+                        </span>
+                        <span class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Easy
+                        </span>
+                        <span> Street Food</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Street Food Banner -->
+    <section class="max-w-6xl mx-auto px-4 pb-16">
+        <div class="bg-gradient-to-r from-amber-500 to-orange-600 rounded-3xl p-8 md:p-12 text-center md:text-left">
+            <h2 class="font-playfair text-2xl md:text-3xl font-black text-white">Street Food From Around the World</h2>
+            <p class="text-amber-100 mt-2 max-w-2xl">From Beijing jianbing to New York hot dogs — the best sidewalk eats</p>
+            <a href="category-street-food.html" class="inline-block bg-white text-amber-700 rounded-full px-6 py-3 font-semibold mt-4 hover:bg-amber-50 transition-colors">Explore Street Food</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+
+                <!-- Column 1: Brand -->
+                <div>
+                    <h3 class="font-playfair text-xl font-black text-white mb-3">FlavorFusion</h3>
+                    <p class="text-sm leading-relaxed">Where East meets West — authentic recipes from both sides of the world.</p>
+                </div>
+
+                <!-- Column 2: Legal Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-sm uppercase tracking-wide">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Network Dropdowns -->
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-sm uppercase tracking-wide">Our Network</h4>
+                    <select onchange="if(this.value)window.open(this.value,'_blank')" class="block w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700">
+                        <option value="">-- Network --</option>
+                        <option value="https://www.jycsd.com">Main Site</option>
+                        <option value="https://games.jycsd.com">Game Guides</option>
+                        <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
+                    </select>
+                    <select onchange="if(this.value)window.open(this.value,'_blank')" class="block w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700">
+                        <option value="">-- Content Sites --</option>
+                        <option value="https://healthy.jycsd.com">HealthyEats</option>
+                        <option value="https://pets.jycsd.com">PetCare Hub</option>
+                        <option value="https://home.jycsd.com">HomeJoy</option>
+                        <option value="https://finance.jycsd.com">MoneyWise</option>
+                        <option value="https://tech.jycsd.com">TechNest</option>
+                        <option value="https://travel.jycsd.com">TripRoute</option>
+                        <option value="https://auto.jycsd.com">AutoPulse</option>
+                        <option value="https://moto.jycsd.com">MotoPulse</option>
+                    <option value="https://food.jycsd.com">FlavorFusion</option>
+                        <option value="https://rightsdaily.com">RightsDaily</option>
+                        <option value="https://dailymedadvice.com">DailyMedAdvice</option>
+                        <option value="https://entertainment.jycsd.com">PopCulture HQ</option>
+                        <option value="https://food.jycsd.com">FlavorFusion</option>
+                    </select>
+                    <select onchange="if(this.value)window.open(this.value,'_blank')" class="block w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700">
+                        <option value="">-- Game &amp; Anime Wikis --</option>
+                        <option value="https://games.jycsd.com/dragonball/">Dragon Ball Wiki</option>
+                        <option value="https://games.jycsd.com/naruto/">Naruto Wiki</option>
+                        <option value="https://games.jycsd.com/onepiece/">One Piece Wiki</option>
+                        <option value="https://games.jycsd.com/valorant/">Valorant Wiki</option>
+                        <option value="https://games.jycsd.com/fortnite/">Fortnite Wiki</option>
+                        <option value="https://games.jycsd.com/lol/">LoL Wiki</option>
+                        <option value="https://games.jycsd.com/eldenring/">Elden Ring Wiki</option>
+                        <option value="https://games.jycsd.com/minecraft/">Minecraft Wiki</option>
+                    </select>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-sm uppercase tracking-wide">Contact</h4>
+                    <p class="text-sm">Email: <a href="mailto:contact@jycsd.com" class="hover:text-white transition-colors">contact@jycsd.com</a></p>
+                </div>
+
+            </div>
+
+            <div class="border-t border-gray-800 pt-6 mt-8 text-center text-sm">
+                <p>&copy; 2020-2026 FlavorFusion. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <div class="text-center text-sm mt-4 pb-6">
+        <a href="https://jycsd.com" class="text-gray-500 hover:text-slate-600 transition-colors">Visit jycsd.com for more guides</a>
+    </div>
+
+</body>
+</html>

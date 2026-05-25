@@ -15,6 +15,7 @@ import io
 import os
 import re
 import sys
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 import time
 from pathlib import Path
 
@@ -141,7 +142,10 @@ def compress_image(data: bytes, max_width: int = 1200, quality: int = 85, max_si
         # No Pillow, return original (limited fallback)
         return data
 
-    img = Image.open(io.BytesIO(data))
+    try:
+        img = Image.open(io.BytesIO(data))
+    except Exception:
+        return None
     # Convert to RGB if needed
     if img.mode in ('RGBA', 'P'):
         img = img.convert('RGB')
@@ -409,6 +413,9 @@ def process_site(site_name: str, limit: int = 0, force: bool = False):
             data = download_image(url)
             if data:
                 compressed = compress_image(data)
+                if compressed is None:
+                    print(" SKIP (bad image)", flush=True)
+                    continue
                 img_path.write_bytes(compressed)
                 size_kb = len(compressed) // 1024
                 print(f" OK ({size_kb}KB)")
@@ -423,6 +430,10 @@ def process_site(site_name: str, limit: int = 0, force: bool = False):
             data = download_image(fallback_url)
             if data:
                 compressed = compress_image(data)
+                if compressed is None:
+                    print(" FALLBACK FAIL (bad image)", flush=True)
+                    fallback_idx += 1
+                    continue
                 img_path.write_bytes(compressed)
                 size_kb = len(compressed) // 1024
                 print(f" FALLBACK (Unsplash, {size_kb}KB)")
