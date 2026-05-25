@@ -102,17 +102,6 @@ EMOJI_RE = re.compile(
     r'\U0001F900-\U0001F9FF\U0001FA00-\U0001FA6F\U0001FA70-\U0001FAFF'
     r'\U00002600-\U000026FF\U0000FE00-\U0000FE0F]'
 )
-
-VALID_SLOTS = {
-    "9112825459", "4397738132", "9739511410",
-    "6968613870", "6470642127", "4688206363",
-    "1349134522", "2825867721", "4302601082",
-    "3024072332", "4500805691", "5977539078",
-    "8480024131", "9956757497", "1433490869",
-    "4107333609", "5584066966", "7060800328",
-}
-BAD_SLOTS = {"6452093175", "7928829977", "9405566373"}
-
 SITE_DOMAINS = {
     "sub-pets": "pets.jycsd.com",
     "sub-healthy": "healthy.jycsd.com",
@@ -318,30 +307,12 @@ def check_article(filepath, site_dir):
         if not (link_kw & target_kw):
             warnings.append(f"{name}: semantic mismatch — \"{link_text[:60]}\" links to {href} (title: \"{title_h1.strip()[:80]}\")")
 
-    # === AD SLOTS ===
+    # === AD SLOTS (P0: no fixed ads, Auto Ads only) ===
     slots = re.findall(r'data-ad-slot="(\d+)"', html)
-    bad = [s for s in slots if s in BAD_SLOTS]
-    if bad:
-        errors.append(f"{name}: BAD ad slots: {bad}")
-    # Game/anime sites use render_game_site.py with Auto Ads only, no manual ad slots
-    # Content sites with Auto Ads script also skip manual ad slot requirement
-    is_game_site = site_dir.name in GAME_SITES
-    has_auto_ads = 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' in html
+    if slots:
+        errors.append(f"{name}: FORBIDDEN fixed ad slots found: {slots}")
 
-    if not is_game_site and not has_auto_ads:
-        if not utility and len(slots) not in (3, 4):
-            errors.append(f"{name}: expected 3-4 ad slots, found {len(slots)}")
-    for s in slots:
-        if s not in VALID_SLOTS and s not in BAD_SLOTS:
-            warnings.append(f"{name}: unknown ad slot: {s}")
-
-    # Ad block integrity
-    if not is_game_site and not has_auto_ads:
-        ad_push = len(re.findall(r'\(adsbygoogle = window\.adsbygoogle \|\| \[\]\)\.push\(\{\}\)', html))
-        if not utility and ad_push != len(slots):
-            errors.append(f"{name}: {len(slots)} ad units but {ad_push} push scripts (mismatch)")
-
-    # Auto Ads script — check for ALL sites including game sites
+    # Auto Ads script — required for ALL sites
     if not utility and 'pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' not in html:
         errors.append(f"{name}: missing Auto Ads script")
 
