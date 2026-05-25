@@ -188,8 +188,264 @@
       "Game Genre": "Battle Royale",
       "Latest Season": "Chapter 6 Season 3"
     },
-    "characters": [],
+    "characters": [
+      {
+        "name": "Aura",
+        "role": "Epic Outfit",
+        "desc": "Street-style warrior with neon green accents and a no-nonsense attitude. A fan-favorite skin that blends urban flair with battle-readiness.",
+        "image": "aura.png",
+        "link": "/guides/characters/",
+        "color": "#22c55e"
+      },
+      {
+        "name": "Black Knight",
+        "role": "Legendary Outfit",
+        "desc": "The original dark lord of the island. Wielding a menacing black armor set and a fiery sword, this Season 2 icon remains one of the most coveted skins in Fortnite history.",
+        "image": "black-knight.png",
+        "link": "/guides/characters/",
+        "color": "#374151"
+      },
+      {
+        "name": "Brite Bomber",
+        "role": "Epic Outfit",
+        "desc": "Colorful and explosive, Brite Bomber brings rainbows and destruction. Her signature pink bomber jacket and bubbly personality made her an instant classic.",
+        "image": "brite-bomber.png",
+        "link": "/guides/characters/",
+        "color": "#ec4899"
+      },
+      {
+        "name": "Bushranger",
+        "role": "Epic Outfit",
+        "desc": "A living bush with a cheerful personality. Bushranger blends perfectly into foliage, making him the ultimate stealth survivalist on the island.",
+        "image": "bushranger.png",
+        "link": "/guides/characters/",
+        "color": "#22c55e"
+      },
+      {
+        "name": "Cuddle Team Leader",
+        "role": "Epic Outfit",
+        "desc": "Deadly cute with a pink bear head and heart motifs. Cuddle Team Leader proves that even the most adorable skins can dominate the battlefield.",
+        "image": "cuddle-team-leader.png",
+        "link": "/guides/characters/",
+        "color": "#ec4899"
+      },
+      {
+        "name": "Dark Voyager",
+        "role": "Legendary Outfit",
+        "desc": "An astronaut from beyond the stars, glowing with purple and blue neon. Dark Voyager brings an otherworldly presence to every match.",
+        "image": "dark-voyager.png",
+        "link": "/guides/characters/",
+        "color": "#8b5cf6"
+      },
+      {
+        "name": "Darth Vader",
+        "role": "Crossover Skin",
+        "desc": "The Dark Lord of the Sith descends onto the island. Wielding a red lightsaber and the Force, Darth Vader is a formidable crossover addition.",
+        "image": "darth-vader.png",
+        "link": "/guides/characters/",
+        "color": "#374151"
+      },
+      {
+        "name": "Drift",
+        "role": "Legendary Outfit",
+        "desc": "A wandering samurai whose mask and gear evolve throughout the match. Drift's progressive style system set a new standard for Fortnite skins.",
+        "image": "drift.png",
+        "link": "/guides/characters/",
+        "color": "#06b6d4"
+      },
+      {
+        "name": "Dynamo",
+        "role": "Tactical Outfit",
+        "desc": "A street dancer turned combat specialist. Dynamo's vibrant tracksuit and high-energy style make her stand out in any lobby.",
+        "image": "dynamo.png",
+        "link": "/guides/characters/",
+        "color": "#ef4444"
+      },
+      {
+        "name": "Fishstick",
+        "role": "Epic Outfit",
+        "desc": "The funniest skin on the island. Fishstick is a walking, shooting fish in a sailor outfit with multiple variant styles including a frozen and a pirate version.",
+        "image": "fishstick.png",
+        "link": "/guides/characters/",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Jonesy",
+        "role": "Tactical Outfit",
+        "desc": "The face of Fortnite. Jonesy appears in countless variants across seasons and is the default hero of the game's story mode, Save the World.",
+        "image": "jonesy.png",
+        "link": "/guides/characters/",
+        "color": "#d97706"
+      },
+      {
+        "name": "Kit",
+        "role": "Crossover Skin",
+        "desc": "The mech-riding cat from Ch2 Season 3. Kit brings his giant mech suit and adorable feline charm to every fight on the island.",
+        "image": "kit.png",
+        "link": "/guides/characters/",
+        "color": "#f97316"
+      },
+      {
+        "name": "Lara Croft",
+        "role": "Crossover Skin",
+        "desc": "The legendary tomb raider joins Fortnite. Lara brings her signature dual pistols, braided ponytail, and survival expertise to the island.",
+        "image": "lara-croft.png",
+        "link": "/guides/characters/",
+        "color": "#92400e"
+      },
+      {
+        "name": "Lynx",
+        "role": "Legendary Outfit",
+        "desc": "A high-tech feline assassin with an evolving armor set. Lynx starts in a sleek catsuit and upgrades to full tactical gear as the match progresses.",
+        "image": "lynx.png",
+        "link": "/guides/characters/",
+        "color": "#8b5cf6"
+      },
+      {
+        "name": "Mancake",
+        "role": "Epic Outfit",
+        "desc": "A pancake gunslinger with butter pats as ammo. Mancake serves up breakfast-themed justice in the wild west style of Fortnite's alternate dimensions.",
+        "image": "mancake.png",
+        "link": "/guides/characters/",
+        "color": "#92400e"
+      },
+      {
+        "name": "Master Chief",
+        "role": "Crossover Skin",
+        "desc": "The iconic Spartan-117 from Halo enters the battle. Master Chief's green MJOLNIR armor and combat prowess make him a legendary crossover addition.",
+        "image": "master-chief.png",
+        "link": "/guides/characters/",
+        "color": "#22c55e"
+      },
+      {
+        "name": "Mecha Team Leader",
+        "role": "Legendary Outfit",
+        "desc": "A giant mech version of the Cuddle Team Leader. This towering pink robot stomps across the island in the ultimate final battle of Season 9.",
+        "image": "mecha-team-leader.png",
+        "link": "/guides/characters/",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "Meowscles",
+        "role": "Epic Outfit",
+        "desc": "A swole cat in a tactical harness. Meowscles brings absurd muscle-bound feline energy, complete with a catty attitude and powerful pecks.",
+        "image": "meowscles.png",
+        "link": "/guides/characters/",
+        "color": "#06b6d4"
+      },
+      {
+        "name": "Midas",
+        "role": "Legendary Outfit",
+        "desc": "The golden touch himself. Midas turns everything he touches to gold, including weapons and vehicles, making him the most stylish threat on the island.",
+        "image": "midas.png",
+        "link": "/guides/characters/",
+        "color": "#d97706"
+      },
+      {
+        "name": "Omega",
+        "role": "Legendary Outfit",
+        "desc": "A cybernetic warrior from Season 4 with customizable lights. Omega's fully upgraded armor glows with intense red LEDs, marking him as an endgame threat.",
+        "image": "omega.png",
+        "link": "/guides/characters/",
+        "color": "#ef4444"
+      },
+      {
+        "name": "Peely",
+        "role": "Epic Outfit",
+        "desc": "A sentient banana in a tuxedo. Peely is Fortnite's most beloved meme skin, appearing in multiple variants from agent to frozen to golden.",
+        "image": "peely.png",
+        "link": "/guides/characters/",
+        "color": "#eab308"
+      },
+      {
+        "name": "Raven",
+        "role": "Legendary Outfit",
+        "desc": "A dark feathered reaper with glowing red eyes. Raven's gothic aesthetic and menacing presence made him one of the most requested skins in early Fortnite.",
+        "image": "raven.png",
+        "link": "/guides/characters/",
+        "color": "#8b5cf6"
+      },
+      {
+        "name": "Renegade Raider",
+        "role": "Tactical Outfit",
+        "desc": "The ultimate OG skin from Season 1. Renegade Raider sports desert tactical gear and is one of the rarest skins in Fortnite history.",
+        "image": "renegade-raider.png",
+        "link": "/guides/characters/",
+        "color": "#92400e"
+      },
+      {
+        "name": "Rex",
+        "role": "Epic Outfit",
+        "desc": "A full dinosaur costume complete with tail and claws. Rex stomps through the island as one of Fortnite's most recognizable and playful skins.",
+        "image": "rex.png",
+        "link": "/guides/characters/",
+        "color": "#22c55e"
+      },
+      {
+        "name": "Rippley",
+        "role": "Epic Outfit",
+        "desc": "A slime monster with liquid animations. Rippley oozes across the map leaving a trail of goo, with a facial expression that changes as he takes damage.",
+        "image": "rippley.png",
+        "link": "/guides/characters/",
+        "color": "#06b6d4"
+      },
+      {
+        "name": "Rust Lord",
+        "role": "Tactical Outfit",
+        "desc": "A post-apocalyptic biker with a red ponytail and weathered jacket. Rust Lord was one of the earliest skins to showcase Fortnite's punk-inspired style.",
+        "image": "rust-lord.png",
+        "link": "/guides/characters/",
+        "color": "#f97316"
+      },
+      {
+        "name": "Skull Trooper",
+        "role": "Legendary Outfit",
+        "desc": "The original Halloween sensation. Skull Trooper's skeleton design and hooded cloak made it the most sought-after seasonal skin in Fortnite history.",
+        "image": "skull-trooper.png",
+        "link": "/guides/characters/",
+        "color": "#6b7280"
+      },
+      {
+        "name": "Skye",
+        "role": "Legendary Outfit",
+        "desc": "An adventurous explorer with a grappling hook and a loyal wolf companion. Skye leads her own crew in the spy-themed Chapter 2 Season 2.",
+        "image": "skye.png",
+        "link": "/guides/characters/",
+        "color": "#3b82f6"
+      },
+      {
+        "name": "The Reaper",
+        "role": "Legendary Outfit",
+        "desc": "Fortnite's take on the John Wick archetype. The Reaper is a sharp-suited assassin who brought high-fashion killing to the island in Season 3.",
+        "image": "the-reaper.png",
+        "link": "/guides/characters/",
+        "color": "#ef4444"
+      },
+      {
+        "name": "Tricera Ops",
+        "role": "Epic Outfit",
+        "desc": "A triceratops-inspired commando with dinosaur helmet and tactical gear. Tricera Ops brings prehistoric power to modern battle royale combat.",
+        "image": "tricera-ops.png",
+        "link": "/guides/characters/",
+        "color": "#22c55e"
+      },
+      {
+        "name": "Wildcat",
+        "role": "Tactical Outfit",
+        "desc": "A fierce feline fighter in tactical gear. Wildcat's bold red-and-blue color scheme and confident stance make her a standout brawler on the island.",
+        "image": "wildcat.png",
+        "link": "/guides/characters/",
+        "color": "#ef4444"
+      }
+    ],
     "categories": [
+      {
+        "name": "Characters",
+        "slug": "characters",
+        "color": "#a78bfa",
+        "character_img": "midas.png",
+        "count": "31"
+      },
       {
         "name": "Weapons",
         "slug": "weapons",

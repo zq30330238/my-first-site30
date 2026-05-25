@@ -1,8 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://fortnite.jycsd.com/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://fortnite.jycsd.com/guides/weapons/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://fortnite.jycsd.com/guides/map/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://fortnite.jycsd.com/guides/building/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://fortnite.jycsd.com/guides/seasons/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/aura.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/black-knight.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/brite-bomber.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/bushranger.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/cuddle-team-leader.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/dark-voyager.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/darth-vader.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/drift.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/dynamo.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/fishstick.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/jonesy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/kit.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/lara-croft.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/lynx.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/mancake.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/master-chief.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/mecha-team-leader.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/meowscles.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/midas.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/omega.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/peely.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/raven.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/renegade-raider.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/rex.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/rippley.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/rust-lord.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/skull-trooper.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/skye.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/the-reaper.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/tricera-ops.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fortnite.jycsd.com/guides/characters/wildcat.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

@@ -8,10 +8,10 @@
 <meta property="og:title" content="Seasons Guides — FortGuide">
 <meta property="og:description" content="Complete seasons guide collection for FortGuide. 30+ in-depth guides covering every seasons.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://fortnite.jycsd.com/images/drift.png">
 <meta property="og:url" content="https://fortnite.jycsd.com/guides/seasons/">
 <meta property="og:site_name" content="FortGuide">
 <meta property="og:locale" content="en_US">
-	<meta property="og:image" content="https://fortnite.jycsd.com/images/default-og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://fortnite.jycsd.com/guides/seasons/">
@@ -67,11 +67,12 @@ img[src$=".png"]{mix-blend-mode:normal}
 <nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(255,255,255,0.95);border-color:#e5e7eb">
 <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
 <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
-<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-2xl font-black text-white">F</div>
+<img src="/images/midas.png" alt="FortGuide" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold tracking-tight">Fort<span class="text-accent">Guide</span></span>
 </a>
 <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
 <a href="https://games.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">Game Hub</a>
+<a href="/guides/characters/" class="text-textSecondary hover:text-accent transition-colors">Characters</a>
 <a href="/guides/weapons/" class="text-textSecondary hover:text-accent transition-colors">Weapons</a>
 <a href="/guides/map/" class="text-textSecondary hover:text-accent transition-colors">Map</a>
 <a href="/guides/building/" class="text-textSecondary hover:text-accent transition-colors">Building</a>
@@ -93,6 +94,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="search-dropdown" id="searchDropdownMobile"></div>
 </div>
 <a href="https://games.jycsd.com" class="block text-textSecondary hover:text-accent transition-colors">Game Hub</a>
+<a href="/guides/characters/" class="block text-textSecondary hover:text-accent transition-colors">Characters</a>
 <a href="/guides/weapons/" class="block text-textSecondary hover:text-accent transition-colors">Weapons</a>
 <a href="/guides/map/" class="block text-textSecondary hover:text-accent transition-colors">Map</a>
 <a href="/guides/building/" class="block text-textSecondary hover:text-accent transition-colors">Building</a>
@@ -100,6 +102,13 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 </nav>
 
+<section class="relative h-[25vh] md:h-[30vh] bg-cover bg-center flex items-center" style="background-image: url('../../images/drift.png');">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+        <h1 class="text-3xl md:text-4xl font-heading font-bold text-white">Seasons Guides</h1>
+        <p class="text-gray-200 mt-2 text-lg">Browse our complete guide to Seasons</p>
+    </div>
+</section>
 
 
 
@@ -118,7 +127,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
-<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-2xl font-black text-white">F</div>
+<img src="/images/midas.png" alt="FortGuide" class="w-12 h-12 object-contain rounded-lg">
 <span class="text-xl font-bold">Fort<span class="text-accent">Guide</span></span>
 </div>
 <p class="text-sm text-textSecondary leading-relaxed">Expert game guides, tier lists, and walkthroughs. Part of the Game Hub Network.</p>
@@ -126,6 +135,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 <div>
 <h4 class="font-bold mb-4">Categories</h4>
 <ul class="space-y-2 text-sm text-textSecondary">
+<li><a href="/guides/characters/" class="hover:text-accent transition-colors">Characters</a></li>
 <li><a href="/guides/weapons/" class="hover:text-accent transition-colors">Weapons</a></li>
 <li><a href="/guides/map/" class="hover:text-accent transition-colors">Map</a></li>
 <li><a href="/guides/building/" class="hover:text-accent transition-colors">Building</a></li>
@@ -133,7 +143,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </ul>
 </div>
 <div>
-<h4 class="max-w-xs font-bold mb-4">Our Network</h4>
+<h4 class="font-bold mb-4">Our Network</h4>
 <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
     <option value="">— Network —</option>
     <option value="https://www.jycsd.com">Myers Media</option>
@@ -141,30 +151,15 @@ img[src$=".png"]{mix-blend-mode:normal}
     <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
 </select>
 <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
-    <option value="">-- Content Sites --</option>
-                    <option value="https://healthy.jycsd.com">HealthyEats</option>
-                    <option value="https://pets.jycsd.com">PetCare Hub</option>
-                    <option value="https://home.jycsd.com">HomeJoy</option>
-                    <option value="https://finance.jycsd.com">MoneyWise</option>
-                    <option value="https://tech.jycsd.com">TechNest</option>
-                    <option value="https://travel.jycsd.com">TripRoute</option>
-                    <option value="https://auto.jycsd.com">AutoPulse</option>
-                    <option value="https://moto.jycsd.com">MotoPulse</option>
-                    <option value="https://food.jycsd.com">FlavorFusion</option>
-                    <option value="https://rightsdaily.com">RightsDaily</option>
-                    <option value="https://dailymedadvice.com">DailyMedAdvice</option>
-                    <option value="https://entertainment.jycsd.com">PopCulture HQ</option>
-                </select>
-                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-accent cursor-pointer">
-                    <option value="">-- Game & Anime Wikis --</option>
-                    <option value="https://dragonball.jycsd.com">Dragon Ball Wiki</option>
-                    <option value="https://naruto.jycsd.com">Naruto Wiki</option>
-                    <option value="https://onepiece.jycsd.com">One Piece Wiki</option>
-                    <option value="https://valorant.jycsd.com">Valorant Wiki</option>
-                    <option value="https://fortnite.jycsd.com">Fortnite Wiki</option>
-                    <option value="https://lol.jycsd.com">LoL Wiki</option>
-                    <option value="https://eldenring.jycsd.com">Elden Ring Wiki</option>
-                    <option value="https://minecraft.jycsd.com">Minecraft Wiki</option>
+    <option value="">— More Sites —</option>
+    <option value="https://healthy.jycsd.com">HealthyEats</option>
+    <option value="https://pets.jycsd.com">PetCare Hub</option>
+    <option value="https://home.jycsd.com">HomeJoy</option>
+    <option value="https://finance.jycsd.com">MoneyWise</option>
+    <option value="https://tech.jycsd.com">TechNest</option>
+    <option value="https://travel.jycsd.com">TripRoute</option>
+    <option value="https://auto.jycsd.com">AutoPulse</option>
+</select>
 </div>
 <div>
 <h4 class="font-bold mb-4">About</h4>
@@ -176,7 +171,7 @@ img[src$=".png"]{mix-blend-mode:normal}
 </div>
 </div>
 <div class="max-w-7xl mx-auto mt-12 pt-6 border-t text-center text-sm text-textSecondary" style="border-color:#e5e7eb">
-<p>&copy; 2020-2026 FortGuide by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All game trademarks belong to their respective owners.</p>
+<p>&copy; 2026 FortGuide by <a href="https://www.jycsd.com" class="text-accent hover:underline">Myers Media</a>. All game trademarks belong to their respective owners.</p>
 </div>
 </footer>
 
