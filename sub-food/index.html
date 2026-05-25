@@ -76,12 +76,9 @@
     <style>
         .recipe-card { transition: all 0.3s ease; }
         .recipe-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .carousel::-webkit-scrollbar { height: 6px; }
-        .carousel::-webkit-scrollbar-track { background: #f5f5f4; border-radius: 3px; }
-        .carousel::-webkit-scrollbar-thumb { background: #d97706; border-radius: 3px; }
-        .carousel::-webkit-scrollbar-thumb:hover { background: #b45309; }
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .carousel-track { animation: scroll 30s linear infinite; display: flex; gap: 1.5rem; }
+        .carousel-wrapper:hover .carousel-track { animation-play-state: paused; }
     </style>
 </head>
 <body class="font-inter bg-stone-50 text-gray-900 antialiased">
@@ -112,8 +109,19 @@
     </nav>
 
     <!-- Hero -->
-    <section class="bg-gradient-to-br from-amber-500 via-amber-600 to-orange-700 py-20 md:py-28">
-        <div class="max-w-6xl mx-auto px-4 text-center">
+    <section class="relative bg-gradient-to-br from-amber-500 via-amber-600 to-orange-700 py-20 md:py-28 overflow-hidden">
+        <!-- Decorative image collage -->
+        <div class="absolute inset-0 z-0 opacity-25">
+            <div class="absolute top-4 left-8 w-28 h-28 md:w-36 md:h-36 rounded-full bg-cover bg-center border-4 border-white/30 shadow-lg" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80');"></div>
+            <div class="absolute bottom-8 right-12 w-24 h-24 md:w-32 md:h-32 rounded-full bg-cover bg-center border-4 border-white/30 shadow-lg hidden sm:block" style="background-image: url('https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&q=80');"></div>
+            <div class="absolute top-12 right-20 w-20 h-20 md:w-28 md:h-28 rounded-2xl bg-cover bg-center border-4 border-white/30 shadow-lg hidden md:block" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80');"></div>
+            <div class="absolute bottom-12 left-16 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-cover bg-center border-4 border-white/30 shadow-lg hidden sm:block" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80');"></div>
+            <div class="absolute top-1/2 left-1/3 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 rounded-full bg-cover bg-center border-4 border-white/30 shadow-lg hidden lg:block" style="background-image: url('https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?w=400&q=80');"></div>
+        </div>
+        <!-- Dark overlay -->
+        <div class="absolute inset-0 z-[1] bg-black/30"></div>
+        <!-- Content -->
+        <div class="relative z-10 max-w-6xl mx-auto px-4 text-center">
             <h1 class="font-playfair text-4xl md:text-6xl font-black text-white leading-tight mb-6">
                 Where East Meets West<br>on Your Plate
             </h1>
@@ -130,66 +138,249 @@
     <!-- Featured Carousel -->
     <section class="max-w-6xl mx-auto px-4 py-16">
         <h2 class="font-playfair text-3xl font-black text-gray-900 mb-8">Featured Recipes</h2>
-        <div class="flex gap-6 overflow-x-auto pb-4 snap-x scrollbar-hide carousel">
-            <!-- Card 1: Big Mac -->
-            <a href="article-1.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-1.jpg');">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-5">
-                    <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Fast Food</span>
-                    <h3 class="text-white font-bold text-xl">Big Mac</h3>
-                    <span class="text-white/80 text-sm"> United States</span>
-                </div>
-            </a>
+        <div class="carousel-wrapper overflow-hidden">
+            <div class="carousel-track">
+                <!-- Card 1: Big Mac -->
+                <a href="article-1.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-1.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Fast Food</span>
+                        <h3 class="text-white font-bold text-xl">Big Mac</h3>
+                        <span class="text-white/80 text-sm"> United States</span>
+                    </div>
+                </a>
 
-            <!-- Card 2: Mapo Tofu -->
-            <a href="article-22.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-22.jpg');">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-5">
-                    <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Sichuan</span>
-                    <h3 class="text-white font-bold text-xl">Mapo Tofu</h3>
-                    <span class="text-white/80 text-sm"> China</span>
-                </div>
-            </a>
+                <!-- Card 2: Mapo Tofu -->
+                <a href="article-22.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-22.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Sichuan</span>
+                        <h3 class="text-white font-bold text-xl">Mapo Tofu</h3>
+                        <span class="text-white/80 text-sm"> China</span>
+                    </div>
+                </a>
 
-            <!-- Card 3: Coq au Vin -->
-            <a href="article-8.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-8.jpg');">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-5">
-                    <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">French</span>
-                    <h3 class="text-white font-bold text-xl">Coq au Vin</h3>
-                    <span class="text-white/80 text-sm"> France</span>
-                </div>
-            </a>
+                <!-- Card 3: Coq au Vin -->
+                <a href="article-8.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-8.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">French</span>
+                        <h3 class="text-white font-bold text-xl">Coq au Vin</h3>
+                        <span class="text-white/80 text-sm"> France</span>
+                    </div>
+                </a>
 
-            <!-- Card 4: Kung Pao Chicken -->
-            <a href="article-23.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-23.jpg');">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-5">
-                    <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Sichuan</span>
-                    <h3 class="text-white font-bold text-xl">Kung Pao Chicken</h3>
-                    <span class="text-white/80 text-sm"> China</span>
-                </div>
-            </a>
+                <!-- Card 4: Kung Pao Chicken -->
+                <a href="article-23.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-23.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Sichuan</span>
+                        <h3 class="text-white font-bold text-xl">Kung Pao Chicken</h3>
+                        <span class="text-white/80 text-sm"> China</span>
+                    </div>
+                </a>
 
-            <!-- Card 5: Texas BBQ Brisket -->
-            <a href="article-13.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-13.jpg');">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-5">
-                    <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">American</span>
-                    <h3 class="text-white font-bold text-xl">Texas BBQ Brisket</h3>
-                    <span class="text-white/80 text-sm"> United States</span>
-                </div>
-            </a>
+                <!-- Card 5: Texas BBQ Brisket -->
+                <a href="article-13.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-13.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">American</span>
+                        <h3 class="text-white font-bold text-xl">Texas BBQ Brisket</h3>
+                        <span class="text-white/80 text-sm"> United States</span>
+                    </div>
+                </a>
 
-            <!-- Card 6: Char Siu -->
-            <a href="article-26.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-26.jpg');">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 right-0 p-5">
-                    <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Cantonese</span>
-                    <h3 class="text-white font-bold text-xl">Char Siu</h3>
-                    <span class="text-white/80 text-sm"> China</span>
-                </div>
-            </a>
+                <!-- Card 6: Char Siu -->
+                <a href="article-26.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-26.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Cantonese</span>
+                        <h3 class="text-white font-bold text-xl">Char Siu</h3>
+                        <span class="text-white/80 text-sm"> China</span>
+                    </div>
+                </a>
+
+                <!-- Card 7: Jianbing -->
+                <a href="article-46.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-46.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Street Food</span>
+                        <h3 class="text-white font-bold text-xl">Jianbing</h3>
+                        <span class="text-white/80 text-sm"> China</span>
+                    </div>
+                </a>
+
+                <!-- Card 8: Takoyaki -->
+                <a href="article-52.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-52.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Street Food</span>
+                        <h3 class="text-white font-bold text-xl">Takoyaki</h3>
+                        <span class="text-white/80 text-sm"> Japan</span>
+                    </div>
+                </a>
+
+                <!-- Card 9: French Onion Soup -->
+                <a href="article-7.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-7.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">French</span>
+                        <h3 class="text-white font-bold text-xl">French Onion Soup</h3>
+                        <span class="text-white/80 text-sm"> France</span>
+                    </div>
+                </a>
+
+                <!-- Card 10: Red Braised Pork Belly -->
+                <a href="article-31.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-31.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Jiangsu</span>
+                        <h3 class="text-white font-bold text-xl">Red Braised Pork Belly</h3>
+                        <span class="text-white/80 text-sm"> China</span>
+                    </div>
+                </a>
+
+                <!-- Card 11: Dongpo Pork -->
+                <a href="article-34.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-34.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Zhejiang</span>
+                        <h3 class="text-white font-bold text-xl">Dongpo Pork</h3>
+                        <span class="text-white/80 text-sm"> China</span>
+                    </div>
+                </a>
+
+                <!-- Card 12: Omurice -->
+                <a href="article-16.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-16.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Japanese-Western</span>
+                        <h3 class="text-white font-bold text-xl">Omurice</h3>
+                        <span class="text-white/80 text-sm"> Japan</span>
+                    </div>
+                </a>
+
+                <!-- === Duplicate set for seamless loop === -->
+                <!-- Card 1: Big Mac -->
+                <a href="article-1.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-1.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Fast Food</span>
+                        <h3 class="text-white font-bold text-xl">Big Mac</h3>
+                        <span class="text-white/80 text-sm"> United States</span>
+                    </div>
+                </a>
+
+                <!-- Card 2: Mapo Tofu -->
+                <a href="article-22.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-22.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Sichuan</span>
+                        <h3 class="text-white font-bold text-xl">Mapo Tofu</h3>
+                        <span class="text-white/80 text-sm"> China</span>
+                    </div>
+                </a>
+
+                <!-- Card 3: Coq au Vin -->
+                <a href="article-8.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-8.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">French</span>
+                        <h3 class="text-white font-bold text-xl">Coq au Vin</h3>
+                        <span class="text-white/80 text-sm"> France</span>
+                    </div>
+                </a>
+
+                <!-- Card 4: Kung Pao Chicken -->
+                <a href="article-23.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-23.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Sichuan</span>
+                        <h3 class="text-white font-bold text-xl">Kung Pao Chicken</h3>
+                        <span class="text-white/80 text-sm"> China</span>
+                    </div>
+                </a>
+
+                <!-- Card 5: Texas BBQ Brisket -->
+                <a href="article-13.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-13.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">American</span>
+                        <h3 class="text-white font-bold text-xl">Texas BBQ Brisket</h3>
+                        <span class="text-white/80 text-sm"> United States</span>
+                    </div>
+                </a>
+
+                <!-- Card 6: Char Siu -->
+                <a href="article-26.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-26.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Cantonese</span>
+                        <h3 class="text-white font-bold text-xl">Char Siu</h3>
+                        <span class="text-white/80 text-sm"> China</span>
+                    </div>
+                </a>
+
+                <!-- Card 7: Jianbing -->
+                <a href="article-46.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-46.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Street Food</span>
+                        <h3 class="text-white font-bold text-xl">Jianbing</h3>
+                        <span class="text-white/80 text-sm"> China</span>
+                    </div>
+                </a>
+
+                <!-- Card 8: Takoyaki -->
+                <a href="article-52.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-52.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Street Food</span>
+                        <h3 class="text-white font-bold text-xl">Takoyaki</h3>
+                        <span class="text-white/80 text-sm"> Japan</span>
+                    </div>
+                </a>
+
+                <!-- Card 9: French Onion Soup -->
+                <a href="article-7.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-7.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">French</span>
+                        <h3 class="text-white font-bold text-xl">French Onion Soup</h3>
+                        <span class="text-white/80 text-sm"> France</span>
+                    </div>
+                </a>
+
+                <!-- Card 10: Red Braised Pork Belly -->
+                <a href="article-31.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-31.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Jiangsu</span>
+                        <h3 class="text-white font-bold text-xl">Red Braised Pork Belly</h3>
+                        <span class="text-white/80 text-sm"> China</span>
+                    </div>
+                </a>
+
+                <!-- Card 11: Dongpo Pork -->
+                <a href="article-34.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-34.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Zhejiang</span>
+                        <h3 class="text-white font-bold text-xl">Dongpo Pork</h3>
+                        <span class="text-white/80 text-sm"> China</span>
+                    </div>
+                </a>
+
+                <!-- Card 12: Omurice -->
+                <a href="article-16.html" class="flex-shrink-0 min-w-[300px] md:min-w-[350px] h-80 rounded-2xl overflow-hidden relative bg-cover bg-center bg-gray-300 group" style="background-image: url('images/article-16.jpg');">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="inline-block bg-amber-500 text-white text-xs px-2 py-1 rounded-full mb-2">Japanese-Western</span>
+                        <h3 class="text-white font-bold text-xl">Omurice</h3>
+                        <span class="text-white/80 text-sm"> Japan</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -206,38 +397,42 @@
 
                 <div class="space-y-4">
                     <!-- French Onion Soup -->
-                    <a href="article-7.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-[100px] h-[100px] bg-amber-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-7.jpg');"></div>
+                    <a href="article-7.html" class="flex gap-5 bg-white rounded-xl p-4 pr-5 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] md:w-[140px] md:h-[130px] bg-amber-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-7.jpg');"></div>
                         <div class="flex-1 min-w-0">
                             <h3 class="font-semibold text-gray-900 truncate">French Onion Soup</h3>
                             <span class="text-xs text-gray-500"> France</span>
+                            <p class="text-sm text-gray-600 mt-1 line-clamp-2">Classic French bistro soup with caramelized onions and melted Gruyere cheese</p>
                         </div>
                     </a>
 
                     <!-- Spaghetti Carbonara -->
-                    <a href="article-10.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-[100px] h-[100px] bg-amber-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-10.jpg');"></div>
+                    <a href="article-10.html" class="flex gap-5 bg-white rounded-xl p-4 pr-5 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] md:w-[140px] md:h-[130px] bg-amber-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-10.jpg');"></div>
                         <div class="flex-1 min-w-0">
                             <h3 class="font-semibold text-gray-900 truncate">Spaghetti Carbonara</h3>
                             <span class="text-xs text-gray-500"> Italy</span>
+                            <p class="text-sm text-gray-600 mt-1 line-clamp-2">Rome's perfect 5-ingredient pasta with eggs, pecorino, guanciale, and black pepper</p>
                         </div>
                     </a>
 
                     <!-- Margherita Pizza -->
-                    <a href="article-11.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-[100px] h-[100px] bg-amber-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-11.jpg');"></div>
+                    <a href="article-11.html" class="flex gap-5 bg-white rounded-xl p-4 pr-5 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] md:w-[140px] md:h-[130px] bg-amber-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-11.jpg');"></div>
                         <div class="flex-1 min-w-0">
                             <h3 class="font-semibold text-gray-900 truncate">Margherita Pizza</h3>
                             <span class="text-xs text-gray-500"> Italy</span>
+                            <p class="text-sm text-gray-600 mt-1 line-clamp-2">Naples' iconic pizza with San Marzano tomatoes, fresh mozzarella, and basil</p>
                         </div>
                     </a>
 
                     <!-- Croissant -->
-                    <a href="article-9.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-[100px] h-[100px] bg-amber-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-9.jpg');"></div>
+                    <a href="article-9.html" class="flex gap-5 bg-white rounded-xl p-4 pr-5 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] md:w-[140px] md:h-[130px] bg-amber-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-9.jpg');"></div>
                         <div class="flex-1 min-w-0">
                             <h3 class="font-semibold text-gray-900 truncate">Croissant</h3>
                             <span class="text-xs text-gray-500"> France</span>
+                            <p class="text-sm text-gray-600 mt-1 line-clamp-2">Buttery, flaky French viennoiserie with dozens of delicate layers</p>
                         </div>
                     </a>
                 </div>
@@ -252,38 +447,42 @@
 
                 <div class="space-y-4">
                     <!-- Dongpo Pork -->
-                    <a href="article-34.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-[100px] h-[100px] bg-red-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-34.jpg');"></div>
+                    <a href="article-34.html" class="flex gap-5 bg-white rounded-xl p-4 pr-5 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] md:w-[140px] md:h-[130px] bg-red-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-34.jpg');"></div>
                         <div class="flex-1 min-w-0">
                             <h3 class="font-semibold text-gray-900 truncate">Dongpo Pork</h3>
                             <span class="text-xs text-gray-500">Zhejiang</span>
+                            <p class="text-sm text-gray-600 mt-1 line-clamp-2">Legendary Zhejiang wine-braised pork belly named after poet Su Dongpo</p>
                         </div>
                     </a>
 
                     <!-- Red Braised Pork Belly -->
-                    <a href="article-31.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-[100px] h-[100px] bg-red-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-31.jpg');"></div>
+                    <a href="article-31.html" class="flex gap-5 bg-white rounded-xl p-4 pr-5 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] md:w-[140px] md:h-[130px] bg-red-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-31.jpg');"></div>
                         <div class="flex-1 min-w-0">
                             <h3 class="font-semibold text-gray-900 truncate">Red Braised Pork Belly</h3>
                             <span class="text-xs text-gray-500">Jiangsu</span>
+                            <p class="text-sm text-gray-600 mt-1 line-clamp-2">Chairman Mao's favorite Jiangsu comfort dish with caramelized soy glaze</p>
                         </div>
                     </a>
 
                     <!-- White Cut Chicken -->
-                    <a href="article-25.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-[100px] h-[100px] bg-red-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-25.jpg');"></div>
+                    <a href="article-25.html" class="flex gap-5 bg-white rounded-xl p-4 pr-5 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] md:w-[140px] md:h-[130px] bg-red-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-25.jpg');"></div>
                         <div class="flex-1 min-w-0">
                             <h3 class="font-semibold text-gray-900 truncate">White Cut Chicken</h3>
                             <span class="text-xs text-gray-500">Cantonese</span>
+                            <p class="text-sm text-gray-600 mt-1 line-clamp-2">Silky Cantonese poached chicken served with ginger-scallion dipping sauce</p>
                         </div>
                     </a>
 
                     <!-- Buddha Jumps Over the Wall -->
-                    <a href="article-37.html" class="flex gap-4 bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="w-[100px] h-[100px] bg-red-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-37.jpg');"></div>
+                    <a href="article-37.html" class="flex gap-5 bg-white rounded-xl p-4 pr-5 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-[100px] h-[100px] md:w-[140px] md:h-[130px] bg-red-100 rounded-lg flex-shrink-0 bg-cover bg-center" style="background-image: url('images/article-37.jpg');"></div>
                         <div class="flex-1 min-w-0">
                             <h3 class="font-semibold text-gray-900 truncate">Buddha Jumps Over the Wall</h3>
                             <span class="text-xs text-gray-500">Fujian</span>
+                            <p class="text-sm text-gray-600 mt-1 line-clamp-2">Fujian's luxurious broth with abalone, sea cucumber, and premium ingredients</p>
                         </div>
                     </a>
                 </div>
