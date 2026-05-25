@@ -104,7 +104,7 @@ def inject_img_tag(html_content, article_num, title):
     img_tag = (
         f'<img src="images/article-{article_num}.jpg" '
         f'alt="{title}" '
-        f'class="w-full rounded-2xl mb-10" loading="lazy">'
+        f'class="w-full h-full object-cover" loading="lazy">'
     )
 
     # Match the article-header </header> followed by <div class="article-content">

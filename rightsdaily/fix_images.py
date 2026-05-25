@@ -104,7 +104,7 @@ def inject_img_tag(html, img_path, alt_text):
     """Inject <img> tag after article </header>, before article-content div."""
     img_tag = (
         f'<img src="{img_path}" alt="{alt_text}" '
-        f'class="w-full rounded-2xl mb-10" loading="lazy">'
+        f'class="w-full h-full object-cover" loading="lazy">'
     )
     # Match </header> followed by <div class="article-content">
     # This uniquely identifies the article header (not the page header)
