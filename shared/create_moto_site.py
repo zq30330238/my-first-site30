@@ -194,8 +194,8 @@ if old_carousel_match:
         if ch == '>':
             pass
     # Simpler approach: just find the first </section> after the slides
-    # The carousel section starts with <section class="relative w-full h-[70vh]...
-    carousel_start = index_html.find('<section class="relative w-full h-[70vh]')
+    # The carousel section starts with <section class="relative w-full h-[50vh]...
+    carousel_start = index_html.find('<section class="relative w-full h-[50vh]')
     # Find which </section> closes this
     section_count = 1
     pos = carousel_start
@@ -216,7 +216,7 @@ if old_carousel_match:
     # Replace everything from carousel start to carousel end
     old_carousel = index_html[carousel_start:carousel_end]
 
-    new_carousel = '''<section class="relative w-full h-[70vh] overflow-hidden carousel">
+    new_carousel = '''<section class="relative w-full h-[50vh] overflow-hidden carousel">
 ''' + new_slides + '''
     <button id="carouselPrev" class="carousel-arrow left-4" aria-label="Previous slide">&#10094;</button>
     <button id="carouselNext" class="carousel-arrow right-4" aria-label="Next slide">&#10095;</button>
