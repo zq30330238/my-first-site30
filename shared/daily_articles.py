@@ -17,8 +17,9 @@ ROOT = Path(__file__).resolve().parent.parent
 STATE_FILE = ROOT / "daily_articles_state.json"
 CF_TOKEN_ENV = "CLOUDFLARE_API_TOKEN"
 
-# ── 12 content sites (article-based, use create_articles.py) ──
+# ── 13 content sites (article-based, use create_articles.py) ──
 SITES = [
+    "main-site",
     "sub-healthy", "sub-pets", "sub-home", "sub-finance",
     "sub-tech", "sub-travel", "sub-auto", "sub-moto",
     "sub-food", "rightsdaily", "dailymedadvice", "entertainment",
@@ -31,12 +32,13 @@ GAME_SITES = [
     "eldenring-site", "minecraft-site", "anime-site", "games-site",
 ]
 
-# ── 3 priority sites submitted to Google — must pass every run ──
-PRIORITY_SITES = ["rightsdaily", "dailymedadvice", "fortnite-site"]
+# ── 4 priority sites submitted to Google — must pass every run ──
+PRIORITY_SITES = ["rightsdaily", "dailymedadvice", "fortnite-site", "main-site"]
 
 # CF Pages project name mappings
 CF_PROJECTS = {
     # Content sites
+    "main-site": "main-site",
     "sub-healthy": "healthy-jycsd",
     "sub-pets": "pets-jycsd",
     "sub-home": "home-jycsd",
@@ -162,7 +164,7 @@ def main():
 
     # ── Phase 1: Priority sites (must pass, run first) ──
     print(f"\n{'='*60}")
-    print("PHASE 1 [PRIORITY]: rightsdaily / dailymedadvice / fortnite")
+    print(f"PHASE 1 [PRIORITY]: {' / '.join(PRIORITY_SITES)}")
     print(f"{'='*60}")
     for site in PRIORITY_SITES:
         print(f"\n[PRIORITY] {site}")
