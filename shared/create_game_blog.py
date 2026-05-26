@@ -110,6 +110,7 @@ def extract_from_index(site_dir, section):
             content = re.sub(r'<meta property="og:title"[^>]*>', '', content)
             content = re.sub(r'<meta property="og:description"[^>]*>', '', content)
             content = re.sub(r'<link rel="canonical"[^>]*>', '', content)
+            content = re.sub(r'<script\s+async\s+src="https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js\?client=ca-pub-\d+"\s+crossorigin="anonymous"></script>', '', content)
             return content.strip()
     elif section == "nav":
         m = re.search(r'(<nav.*?</nav>)', html, re.DOTALL)
@@ -199,7 +200,6 @@ def generate_blog_html(site_dir, content, image_file):
 </head>"""
     else:
         full_head = f"""<head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-2595917642864488">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -219,7 +219,7 @@ def generate_blog_html(site_dir, content, image_file):
 
     img_tag = ""
     if image_file:
-        img_tag = f'<img src="../images/{image_file}" alt="{h1}" class="w-full h-64 object-cover rounded-xl mb-8">'
+        img_tag = f'<img src="/images/{image_file}" alt="{h1}" class="w-full h-64 object-cover rounded-xl mb-8">'
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
