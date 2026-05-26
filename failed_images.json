@@ -1,0 +1,184 @@
+{
+  "Kite": {
+    "series": "Hunter x Hunter",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\hxh-site\\images",
+    "max_images": 2,
+    "downloaded": 1,
+    "attempts": 9
+  },
+  "Chamber": {
+    "series": "Valorant",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\valorant-site\\images",
+    "max_images": 2,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "Knuckle Bine": {
+    "series": "Hunter x Hunter",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\hxh-site\\images",
+    "max_images": 2,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "Machi": {
+    "series": "Hunter x Hunter",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\hxh-site\\images",
+    "max_images": 2,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "Dyspo": {
+    "series": "Dragon Ball",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\dragonball-site\\images",
+    "max_images": 3,
+    "downloaded": 1,
+    "attempts": 9
+  },
+  "Shaiapouf": {
+    "series": "Hunter x Hunter",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\hxh-site\\images",
+    "max_images": 2,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "Dark Repulser": {
+    "series": "Sword Art Online",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\sao-site\\images",
+    "max_images": 2,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "Elucidator": {
+    "series": "Sword Art Online",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\sao-site\\images",
+    "max_images": 2,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "Vayne": {
+    "series": "League of Legends",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\lol-site\\images",
+    "max_images": 4,
+    "downloaded": 2,
+    "attempts": 9
+  },
+  "fade": {
+    "series": "fade",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\valorant-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "agil": {
+    "series": "agil",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\sao-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "chamber": {
+    "series": "chamber",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\valorant-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "quinella": {
+    "series": "quinella",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\sao-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "iso": {
+    "series": "iso",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\valorant-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "kikuoka": {
+    "series": "kikuoka",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\sao-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "mecha-team-leader": {
+    "series": "mecha-team-leader",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\fortnite-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "elucidator": {
+    "series": "elucidator",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\sao-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "tarnished": {
+    "series": "tarnished",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\eldenring-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "dark-repulser": {
+    "series": "dark-repulser",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\sao-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "enchanting_table": {
+    "series": "enchanting_table",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\minecraft-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "shaiapouf": {
+    "series": "shaiapouf",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\hxh-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "machi-komachine": {
+    "series": "machi-komachine",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\hxh-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "feitan-portor": {
+    "series": "feitan-portor",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\hxh-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "koutarou-amon": {
+    "series": "koutarou-amon",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\tokyoghoul-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "juuzou-suzuya": {
+    "series": "juuzou-suzuya",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\tokyoghoul-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  },
+  "seidou-takizawa": {
+    "series": "seidou-takizawa",
+    "site_dir": "d:\\AI\u7f51\u7ad9\u6587\u4ef6\u5939\\tokyoghoul-site\\images",
+    "max_images": 1,
+    "downloaded": 0,
+    "attempts": 9
+  }
+}

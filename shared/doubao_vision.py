@@ -17,13 +17,14 @@ from urllib.error import HTTPError
 
 API_KEY = os.environ.get("ARK_API_KEY") or "ark-bc9c6af0-1813-4842-ae3f-0614d354c375-98727"
 API_BASE = "https://ark.cn-beijing.volces.com/api/v3"
-MODEL = "doubao-seed-1-6-250715"
+MODEL = "doubao-seed-1-6-flash-250715"
 MODEL_MAP = {
     "2.0": "doubao-seed-2-0-lite-260428",
     "2.0-mini": "doubao-seed-2-0-mini-260428",
     "2.0-pro": "doubao-seed-2-0-pro-260215",
-    "1.6": "doubao-seed-1-6-250715",
+    "1.6": "doubao-seed-1-6-250615",
     "1.6-vision": "doubao-seed-1-6-vision-250815",
+    "1.6-flash": "doubao-seed-1-6-flash-250715",
     "1.5": "doubao-1-5-vision-pro-32k-250115",
     "1.5-new": "doubao-1.5-vision-pro-250328",
 }
@@ -268,6 +269,7 @@ if __name__ == "__main__":
 
         if result:
             print(f"[Tokens: {result['tokens']['total']} (in:{result['tokens']['prompt']} out:{result['tokens']['completion']})]")
+            print(result["text"].strip())
             tempdir = os.environ.get('TEMP', os.environ.get('TMP', '/tmp'))
             outfile = os.path.join(tempdir, 'doubao_vision_output.txt')
             with open(outfile, 'w', encoding='utf-8') as f:

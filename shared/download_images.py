@@ -1,8 +1,9 @@
-import requests, re, os, time, hashlib, subprocess, json
+import requests, re, os, time, hashlib, subprocess, json, argparse
 from pathlib import Path
 from io import BytesIO
 from PIL import Image
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from duckduckgo_search import DDGS
 
 SESSION = requests.Session()
 SESSION.headers.update({
@@ -46,9 +47,6 @@ def quick_validate(img_path):
             return False, f'bad aspect ratio ({w}x{h})'
         if img.mode == 'RGBA':
             alpha = img.getchannel('A')
-            extrema = alpha.getextrema()
-            if extrema[0] == 255 and extrema[1] == 255:
-                return False, 'no transparency'
             if alpha.getbbox() is None:
                 return False, 'fully transparent'
         from PIL import ImageStat
@@ -67,11 +65,11 @@ def verify_character(filepath, char_name, series=""):
     # Always quick_validate first — reject bad formats/sizes early
     passed, reason = quick_validate(filepath)
     if not passed:
-        print(f'  [LOCAL REJECT] {Path(filepath).name}: {reason}')
+        print(f'  [LOCAL REJECT] {os.path.basename(str(filepath))}: {reason}')
         return False
 
     # Now ALWAYS verify content with doubao
-    print(f'  [DOUBAO VERIFY] {Path(filepath).name}: checking if this is {char_name}...')
+    print(f'  [DOUBAO VERIFY] {os.path.basename(str(filepath))}: checking if this is {char_name}...')
     script = Path(__file__).parent / 'doubao_vision.py'
     if not script.exists():
         print(f'  [WARN] doubao_vision.py not found, allowing image through')
@@ -88,17 +86,17 @@ def verify_character(filepath, char_name, series=""):
 
         # Check for explicit YES
         if output.upper().strip() == 'YES' or 'YES' in output.upper().split():
-            print(f'  [DOUBAO PASS] {Path(filepath).name}: confirmed as {char_name}')
+            print(f'  [DOUBAO PASS] {os.path.basename(str(filepath))}: confirmed as {char_name}')
             return True
 
         # Any other response = reject
-        print(f'  [DOUBAO REJECT] {Path(filepath).name}: not recognized as {char_name}')
+        print(f'  [DOUBAO REJECT] {os.path.basename(str(filepath))}: not recognized as {char_name}')
         return False
     except subprocess.TimeoutExpired:
-        print(f'  [DOUBAO TIMEOUT] {Path(filepath).name}')
+        print(f'  [DOUBAO TIMEOUT] {os.path.basename(str(filepath))}')
         return False
     except Exception as e:
-        print(f'  [DOUBAO ERROR] {Path(filepath).name}: {e}')
+        print(f'  [DOUBAO ERROR] {os.path.basename(str(filepath))}: {e}')
         return False
 
 def ensure_transparent(filepath):
@@ -115,10 +113,10 @@ def ensure_transparent(filepath):
         result = remove(data)
         with open(filepath, 'wb') as f:
             f.write(result)
-        print(f'  [REMBG] {filepath.name}')
+        print(f'  [REMBG] {os.path.basename(str(filepath))}')
         return True
     except Exception as e:
-        print(f'  [REMBG ERR] {filepath.name}: {e}')
+        print(f'  [REMBG ERR] {os.path.basename(str(filepath))}: {e}')
         return False
 
 def compress_image(filepath, max_width=640):
@@ -143,12 +141,12 @@ def compress_image(filepath, max_width=640):
             if out_path != str(filepath):
                 os.remove(filepath)
                 return out_path
-        saved_path = filepath if Path(filepath).suffix == '.png' else str(filepath).replace('.png', '.jpg')
+        saved_path = filepath if os.path.splitext(str(filepath))[1] == '.png' else str(filepath).replace('.png', '.jpg')
         after = os.path.getsize(saved_path)
-        print(f'  [COMPRESS] {Path(filepath).name}: {before//1024}KB -> {after//1024}KB (saved {(before-after)//1024}KB)')
+        print(f'  [COMPRESS] {os.path.basename(str(filepath))}: {before//1024}KB -> {after//1024}KB (saved {(before-after)//1024}KB)')
         return saved_path
     except Exception as e:
-        print(f'  [COMPRESS ERR] {Path(filepath).name}: {e}')
+        print(f'  [COMPRESS ERR] {os.path.basename(str(filepath))}: {e}')
         return filepath
 
 def is_valid_png(filepath):
@@ -160,6 +158,7 @@ def is_valid_png(filepath):
         return f.read(4) == b'\x89PNG'
 
 def search_pngwing(query):
+    """Search pngwing.com — fallback source, often returns irrelevant results."""
     url = PNGWING_SEARCH.format(requests.utils.quote(query))
     try:
         r = SESSION.get(url, timeout=20)
@@ -172,6 +171,17 @@ def search_pngwing(query):
         print(f'  Search error [{query}]: {e}')
         return []
 
+def search_duckduckgo(query):
+    """Search DuckDuckGo images — primary source for character images."""
+    try:
+        with DDGS() as ddgs:
+            results = list(ddgs.images(query, max_results=20))
+        urls = [r['image'] for r in results if r.get('image')]
+        return urls
+    except Exception as e:
+        print(f'  DDG search error [{query}]: {e}')
+        return []
+
 def download_image(url, filepath):
     if os.path.exists(filepath):
         if is_valid_png(filepath):
@@ -179,15 +189,29 @@ def download_image(url, filepath):
     try:
         r = SESSION.get(url, timeout=30)
         if r.status_code == 200 and len(r.content) > 10240:
-            if r.content[:4] == b'\x89PNG':
-                h = hashlib.md5(r.content).hexdigest()
-                if h in SEEN_HASHES:
-                    return 'dup'
-                SEEN_HASHES.add(h)
+            content_type = r.headers.get('Content-Type', '')
+            is_png = r.content[:4] == b'\x89PNG'
+            is_jpeg = r.content[:3] in (b'\xff\xd8\xff',)
+            is_webp = r.content[:4] == b'RIFF' and r.content[8:12] == b'WEBP'
+
+            if not (is_png or is_jpeg or is_webp):
+                return 'bad'
+
+            h = hashlib.md5(r.content).hexdigest()
+            if h in SEEN_HASHES:
+                return 'dup'
+            SEEN_HASHES.add(h)
+
+            if is_png:
                 with open(filepath, 'wb') as f:
                     f.write(r.content)
-                if is_valid_png(filepath):
-                    return 'ok'
+            else:
+                # Convert JPEG/WebP to PNG
+                img = Image.open(BytesIO(r.content)).convert('RGBA')
+                img.save(filepath, 'PNG')
+
+            if is_valid_png(filepath):
+                return 'ok'
         return 'bad'
     except Exception as e:
         return f'err:{e}'
@@ -227,7 +251,10 @@ def download_character(char_name, series, out_dir, max_images=2):
             break
 
         print(f'  Searching: "{query}"')
-        urls = search_pngwing(query)
+        # DuckDuckGo primary, pngwing fallback
+        urls = search_duckduckgo(query)
+        if not urls:
+            urls = search_pngwing(query)
         relevant = [u for u in urls if any(k in u.lower() for k in keywords)]
         subtle = [u for u in urls if u not in relevant]
         ordered_urls = relevant + subtle
@@ -298,6 +325,25 @@ def download_character(char_name, series, out_dir, max_images=2):
     return downloaded
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description='Download and verify character images')
+    parser.add_argument('--character', help='Character name to download')
+    parser.add_argument('--site', help='Site directory name (e.g., naruto-site)')
+    parser.add_argument('--series', help='Series name (e.g., Naruto)')
+    parser.add_argument('--max-images', type=int, default=2, help='Max images per character')
+
+    args = parser.parse_args()
+
+    # If CLI args provided, download single character
+    if args.character and args.site:
+        ROOT = Path(r'd:\AI网站文件夹')
+        from pathlib import Path as P
+        site_dir = ROOT / args.site
+        series = args.series or args.character
+        n = download_character(args.character, series, site_dir / 'images', max_images=args.max_images)
+        print(f'\nDownloaded {n} images for {args.character}')
+        return
+
     ROOT = Path(r'd:\AI网站文件夹')
 
     # === PRIORITY 1: One Piece ===
