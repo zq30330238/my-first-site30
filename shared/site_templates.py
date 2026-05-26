@@ -502,11 +502,6 @@ tailwind.config = {
             <a href="index.html" class="text-2xl font-bold text-{{brand_color}} font-heading">{{brand}}</a>
             <nav class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="index.html" class="text-gray-700 hover:text-{{brand_color}} transition">Home</a>
-                <a href="category-reviews.html" class="text-gray-700 hover:text-{{brand_color}} transition">Reviews</a>
-                <a href="category-ev.html" class="text-gray-700 hover:text-{{brand_color}} transition">EV &amp; Hybrid</a>
-                <a href="category-buying.html" class="text-gray-700 hover:text-{{brand_color}} transition">Buying</a>
-                <a href="category-performance.html" class="text-gray-700 hover:text-{{brand_color}} transition">Performance</a>
-                <a href="category-chinese-brands.html" class="text-gray-700 hover:text-{{brand_color}} transition">Chinese Brands</a>
                 <a href="about.html" class="text-gray-700 hover:text-{{brand_color}} transition">About</a>
                 <a href="contact.html" class="text-gray-700 hover:text-{{brand_color}} transition">Contact</a>
             </nav>

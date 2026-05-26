@@ -609,6 +609,20 @@ def check_article_image_exists(filepath, site_dir):
         errors.append(f"{name}: og:image too small ({img_path.stat().st_size} bytes): {url}")
 
 
+def resolve_img_path(src, filepath, site_dir):
+    """Resolve img src to absolute path.
+
+    Patterns handled:
+    - ../../images/x.png → relative to HTML file's directory (two levels up)
+    - ../images/x.png → relative to HTML file's directory (one level up)
+    - /images/x.png → relative to site_dir
+    - images/x.png → relative to site_dir
+    """
+    if src.startswith('..'):
+        return (filepath.parent / src).resolve()
+    return site_dir / src.lstrip('/')
+
+
 def check_local_img_srcs(filepath, site_dir):
     html = filepath.read_text(encoding="utf-8", errors="ignore")
     name = label(filepath)
@@ -616,7 +630,7 @@ def check_local_img_srcs(filepath, site_dir):
         src = m.group(1)
         if src.startswith('http') or src.startswith('data:'):
             continue
-        img_path = site_dir / src.lstrip('/')
+        img_path = resolve_img_path(src, filepath, site_dir)
         if not img_path.exists():
             errors.append(f"{name}: <img> file missing: {src}")
 

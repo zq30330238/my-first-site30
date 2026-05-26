@@ -117,15 +117,18 @@ def deploy_site(site):
     if not project:
         print(f"  No CF project mapping for {site}, skipping deploy")
         return False
-    print(f"\n--- Deploying {site} → {project} ---")
+    print(f"\n--- Deploying {site} -> {project} ---")
     result = subprocess.run(
-        f'npx wrangler pages deploy {site} --project-name {project} --commit-dirty=true',
-        cwd=str(ROOT), capture_output=True, text=True, timeout=120,
-        encoding='utf-8', errors='replace', shell=True,
+        f'npx.cmd wrangler pages deploy {site} --project-name {project} --commit-dirty=true',
+        cwd=str(ROOT), capture_output=True, timeout=120, shell=True,
     )
-    print(result.stdout)
-    if result.stderr:
-        print(f"STDERR: {result.stderr}")
+    stdout = result.stdout.decode('utf-8', errors='replace') if result.stdout else ''
+    stderr = result.stderr.decode('utf-8', errors='replace') if result.stderr else ''
+    # Strip non-ASCII for Windows GBK console
+    ascii_out = stdout.encode('ascii', errors='replace').decode('ascii')
+    print(ascii_out)
+    if stderr:
+        print(f"STDERR: {stderr.encode('ascii', errors='replace').decode('ascii')}")
     return result.returncode == 0
 
 
@@ -211,7 +214,7 @@ def main():
     for s in PRIORITY_SITES:
         status = f"{s}={'OK' if results.get(s) else 'FAIL'}"
         if not results.get(s):
-            status += " ❌"
+            status += " [X]"
         priority_marks.append(status)
     priority_str = ", ".join(priority_marks)
 
