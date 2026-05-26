@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>语音对话</title>
+<title></title>
 <style>
 :root {
   --bg: #1e1e1e;
@@ -85,18 +85,18 @@ body{
 <body>
 
 <div class="header">
-  <span class="dot" id="dot"></span> 语音对话 · DeepSeek
+  <span class="dot" id="dot"></span>  · DeepSeek
 </div>
 
 <div id="messages">
-  <div class="msg system">点击 🎤 开始说话，说完自动发送</div>
+  <div class="msg system">  </div>
 </div>
 
 <div class="controls">
-  <button id="micBtn" onclick="toggleMic()" title="说话">🎤</button>
-  <span id="status">就绪</span>
-  <input id="inputBox" placeholder="也可以打字..." onkeydown="if(event.key==='Enter')sendText()">
-  <button id="sendBtn" onclick="sendText()">发送</button>
+  <button id="micBtn" onclick="toggleMic()" title=""></button>
+  <span id="status"></span>
+  <input id="inputBox" placeholder="..." onkeydown="if(event.key==='Enter')sendText()">
+  <button id="sendBtn" onclick="sendText()"></button>
 </div>
 
 <audio id="audioPlayer" style="display:none"></audio>
@@ -120,7 +120,7 @@ let audioPlayed = false;
 function initRecognition() {
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SpeechRecognition) {
-    status.textContent = '浏览器不支持语音识别';
+    status.textContent = '';
     micBtn.disabled = true;
     return;
   }
@@ -141,13 +141,13 @@ function initRecognition() {
   recognition.onerror = (e) => {
     console.log('Speech error:', e.error);
     if (e.error === 'not-allowed') {
-      status.textContent = '麦克风被拒绝！请在浏览器设置中允许麦克风权限';
+      status.textContent = '';
     } else if (e.error === 'no-speech') {
-      status.textContent = '没听到声音，请再试一次';
+      status.textContent = '';
     } else if (e.error === 'network') {
-      status.textContent = '网络错误，语音识别需要联网';
+      status.textContent = '';
     } else {
-      status.textContent = '错误: ' + e.error;
+      status.textContent = ': ' + e.error;
     }
     stopListening();
   };
@@ -155,7 +155,7 @@ function initRecognition() {
   recognition.onend = () => {
     console.log('Speech onend, listening=', listening);
     if (listening) {
-      // 识别结束，处理文本
+      // 
       const text = inputBox.value.trim();
       if (text) {
         navigator.clipboard.writeText(text).catch(() => {});
@@ -166,7 +166,7 @@ function initRecognition() {
         }).catch(() => {});
         addMessage(text, 'user');
         inputBox.value = '';
-        status.textContent = '已复制！Ctrl+V 粘贴到聊天框发送';
+        status.textContent = 'Ctrl+V ';
         dot.classList.add('waiting');
         startPolling();
       }
@@ -184,8 +184,8 @@ function toggleMic() {
 function startListening() {
   listening = true;
   micBtn.classList.add('listening');
-  micBtn.textContent = '⏹';
-  status.textContent = '正在听...';
+  micBtn.textContent = '';
+  status.textContent = '...';
   inputBox.value = '';
   lastResponse = '';
   audioPlayed = false;
@@ -194,18 +194,18 @@ function startListening() {
     console.log('Recognition started OK');
   } catch(ex) {
     console.log('Recognition start error:', ex);
-    status.textContent = '启动失败: ' + (ex.message || ex);
+    status.textContent = ': ' + (ex.message || ex);
     listening = false;
     micBtn.classList.remove('listening');
-    micBtn.textContent = '🎤';
+    micBtn.textContent = '';
   }
 }
 
 function stopListening() {
   listening = false;
   micBtn.classList.remove('listening');
-  micBtn.textContent = '🎤';
-  status.textContent = '就绪';
+  micBtn.textContent = '';
+  status.textContent = '';
   dot.classList.remove('waiting');
   try { recognition.stop(); } catch(e) {}
 }
@@ -234,13 +234,13 @@ async function sendText() {
     });
   } catch(e) {}
 
-  status.textContent = 'Claude 正在思考...';
+  status.textContent = 'Claude ...';
   dot.classList.add('waiting');
   audioPlayed = false;
   startPolling();
 }
 
-// 第一步：快速获取文字回复 + 浏览器TTS秒播
+//  + TTS
 async function pollResponse() {
   try {
     const res = await fetch(BRIDGE + '/poll');
@@ -249,14 +249,14 @@ async function pollResponse() {
       if (data.text && data.text !== lastResponse) {
         lastResponse = data.text;
         addMessage(data.text, 'claude');
-        status.textContent = '就绪';
+        status.textContent = '';
         dot.classList.remove('waiting');
         stopPolling();
 
-        // 立即用浏览器TTS秒播（快速响应）
+        // TTS
         speakFast(data.text);
 
-        // 同时等待Edge男声（更高音质）
+        // Edge
         if (!audioPlayed) {
           startAudioPolling();
         }
@@ -265,7 +265,7 @@ async function pollResponse() {
   } catch(e) {}
 }
 
-// 浏览器自带TTS —— 秒播
+// TTS —— 
 function speakFast(text) {
   if (!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
@@ -274,14 +274,14 @@ function speakFast(text) {
   u.rate = 1.1;
   u.pitch = 1.1;
   u.volume = 0.9;
-  // 优先找男声
+  // 
   const voices = window.speechSynthesis.getVoices();
   const male = voices.find(v => v.lang.startsWith('zh') && (v.name.includes('Male') || v.name.includes('Kangkang')));
   if (male) u.voice = male;
   window.speechSynthesis.speak(u);
 }
 
-// 第二步：获取Edge男声MP3，替换播放
+// EdgeMP3
 function startAudioPolling() {
   stopAudioPolling();
   audioPollTimer = setInterval(async () => {
@@ -290,9 +290,9 @@ function startAudioPolling() {
       if (res.status === 200) {
         stopAudioPolling();
         audioPlayed = true;
-        // 停止浏览器TTS
+        // TTS
         window.speechSynthesis.cancel();
-        // 播放Edge云飏男声
+        // Edge
         audioPlayer.src = BRIDGE + '/audio.mp3?t=' + Date.now();
         audioPlayer.play().catch(() => {});
       }

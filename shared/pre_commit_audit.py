@@ -27,14 +27,35 @@ import io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 ROOT = Path(__file__).resolve().parent.parent
-ALL_SITES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-food", "sub-tech", "sub-travel", "sub-auto", "sub-moto", "main-site",
-    "minecraft-site", "eldenring-site", "lol-site", "fortnite-site", "valorant-site",
-    "games-site", "anime-site", "dragonball-site", "onepiece-site", "naruto-site"]
-SITES_WITH_ARTICLES = ["sub-healthy", "sub-pets", "sub-home", "sub-finance", "sub-food", "sub-tech", "sub-travel", "sub-auto", "sub-moto", "main-site",
-    "minecraft-site", "eldenring-site", "lol-site", "fortnite-site", "valorant-site",
-    "dragonball-site", "onepiece-site", "naruto-site"]
-GAME_SITES = {"minecraft-site", "eldenring-site", "lol-site", "fortnite-site", "valorant-site",
-    "games-site", "anime-site", "dragonball-site", "onepiece-site", "naruto-site"}
+
+
+def _load_sites_from_config():
+    """Discover all site directories from site_config.json (single source of truth)."""
+    import json
+    config_path = Path(__file__).parent / "site_config.json"
+    if config_path.exists():
+        data = json.loads(config_path.read_text(encoding="utf-8"))
+        return [s["dir"] for s in data.get("sites", [])
+                if Path(ROOT / s["dir"]).exists()]
+    # Fallback: scan root for directories that contain index.html
+    return sorted(d.name for d in ROOT.iterdir()
+                  if d.is_dir() and (d / "index.html").exists())
+
+
+def _load_game_sites():
+    """Game/anime wiki sites (have guides/, blog/, etc.)."""
+    import json
+    config_path = Path(__file__).parent / "site_config.json"
+    if config_path.exists():
+        data = json.loads(config_path.read_text(encoding="utf-8"))
+        return {s["dir"] for s in data.get("sites", [])
+                if "-site" in s["dir"] and s["dir"] != "main-site"}
+    return set()
+
+
+ALL_SITES = _load_sites_from_config()
+SITES_WITH_ARTICLES = _load_sites_from_config()
+GAME_SITES = _load_game_sites()
 
 # === Image checks ===
 UNSPLASH_FAKE_RE = re.compile(r'images\.unsplash\.com/photo-(\d{1,9})\?')
@@ -102,29 +123,88 @@ EMOJI_RE = re.compile(
     r'\U0001F900-\U0001F9FF\U0001FA00-\U0001FA6F\U0001FA70-\U0001FAFF'
     r'\U00002600-\U000026FF\U0000FE00-\U0000FE0F]'
 )
-SITE_DOMAINS = {
-    "sub-pets": "pets.jycsd.com",
-    "sub-healthy": "healthy.jycsd.com",
-    "sub-home": "home.jycsd.com",
-    "sub-finance": "finance.jycsd.com",
-    "sub-food": "food.jycsd.com",
-    "sub-tech": "tech.jycsd.com",
-    "sub-travel": "travel.jycsd.com",
-    "sub-auto": "auto.jycsd.com",
-    "sub-moto": "moto.jycsd.com",
-    "main-site": "jycsd.com",
-    "minecraft-site": "minecraft.jycsd.com",
-    "eldenring-site": "eldenring.jycsd.com",
-    "lol-site": "lol.jycsd.com",
-    "fortnite-site": "fortnite.jycsd.com",
-    "valorant-site": "valorant.jycsd.com",
-    "games-site": "games.jycsd.com",
-    "anime-site": "anime.jycsd.com",
-    "dragonball-site": "dragonball.jycsd.com",
-    "onepiece-site": "onepiece.jycsd.com",
-    "naruto-site": "naruto.jycsd.com",
-    "anime-site": "anime.jycsd.com",
-}
+def _generate_cf_project(dir_name):
+    """Generate cf_project name from directory name."""
+    if dir_name == "main-site":
+        return "main-site"
+    if dir_name in ("dailymedadvice", "rightsdaily", "entertainment"):
+        return dir_name
+    if dir_name.startswith("sub-"):
+        return dir_name[4:] + "-jycsd"
+    if dir_name.endswith("-site"):
+        # replace "-site" with "-jycsd"
+        return dir_name[:-5] + "-jycsd"
+    return dir_name + "-jycsd"
+
+
+def _generate_domain(dir_name, cf_project):
+    """Generate domain from directory name and cf_project."""
+    if dir_name == "main-site":
+        return "www.jycsd.com"
+    if dir_name in ("dailymedadvice", "rightsdaily", "entertainment"):
+        return dir_name + ".com"
+    if dir_name.startswith("sub-") or dir_name.endswith("-site"):
+        bare = dir_name.replace("sub-", "").replace("-site", "")
+        return bare + ".jycsd.com"
+    return cf_project + ".com"
+
+
+def sync_site_config():
+    """Auto-detect and add missing site entries to site_config.json.
+
+    Scans ROOT for all dirs with index.html, compares against existing config,
+    and auto-generates entries for any missing directories.
+    Returns the updated list of site directory names.
+    """
+    config_path = Path(__file__).parent / "site_config.json"
+
+    if config_path.exists():
+        data = json.loads(config_path.read_text(encoding="utf-8"))
+    else:
+        data = {"sites": []}
+
+    existing_dirs = {s["dir"] for s in data["sites"]}
+
+    all_dirs = sorted(
+        d.name for d in ROOT.iterdir()
+        if d.is_dir() and (d / "index.html").exists()
+    )
+
+    added = []
+    for dir_name in all_dirs:
+        if dir_name in existing_dirs:
+            continue
+        cf_project = _generate_cf_project(dir_name)
+        domain = _generate_domain(dir_name, cf_project)
+        data["sites"].append({
+            "dir": dir_name,
+            "cf_project": cf_project,
+            "domain": domain,
+            "production_branch": "master",
+        })
+        added.append(dir_name)
+        print(f"AUTO-ADDED to site_config.json: {dir_name}")
+
+    if added:
+        config_path.write_text(
+            json.dumps(data, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        print(f"Auto-added {len(added)} missing site(s) to site_config.json")
+
+    return [s["dir"] for s in data["sites"]]
+
+
+def _load_site_domains():
+    """Load site domain mapping from site_config.json (single source of truth)."""
+    import json
+    config_path = Path(__file__).parent / "site_config.json"
+    if config_path.exists():
+        data = json.loads(config_path.read_text(encoding="utf-8"))
+        return {s["dir"]: s["domain"] for s in data.get("sites", [])}
+    return {}
+
+SITE_DOMAINS = _load_site_domains()
 
 STOP_WORDS = {'the', 'a', 'an', 'in', 'on', 'to', 'for', 'of', 'and', 'or', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'shall', 'should', 'can', 'could', 'may', 'might', 'must', 'this', 'that', 'these', 'those', 'it', 'its'}
 UTILITY_PAGES = {'about', 'contact', 'cookie-policy', 'privacy-policy', 'terms', 'articles', 'sitemap', 'category-meal-plans', 'category-nutrition', 'category-recipes', 'category-cats', 'category-dogs', 'category-small-pets', 'category-gardening', 'category-interior', 'category-diy', 'category-budgeting', 'category-investing', 'category-credit', 'category-ai', 'category-guides', 'category-reviews', 'category-security', 'category-budget-travel', 'category-destinations', 'category-digital-nomad', 'category-tips', 'category-home', 'category-tech'}
@@ -176,8 +256,14 @@ def check_article(filepath, site_dir):
             errors.append(f"{name}: dead image domain: {domain}")
 
     # 1c. Local image references (won't work on CDN)
+    # Only flag if the number of ../ doesn't match the file's depth from site root
+    depth = len(filepath.relative_to(site_dir).parts) - 1  # 0=root, 1=blog/, 2=guides/characters/
     for m in LOCAL_IMAGE_RE.finditer(html):
-        errors.append(f"{name}: local image reference: {m.group(0)[:80]}")
+        src = m.group(0)
+        up_levels = src.count('../')
+        if up_levels == depth:
+            continue  # correct relative path for this depth
+        errors.append(f"{name}: local image reference: {src[:80]}")
 
     # 1d. Images missing alt text
     missing_alts = len(MISSING_ALT_RE.findall(html))
@@ -661,7 +747,10 @@ def main():
 
     self_check()
 
-    target_sites = [args.site] if args.site else SITES_WITH_ARTICLES
+    # Auto-detect and add missing site entries before scanning
+    all_site_dirs = sync_site_config()
+
+    target_sites = [args.site] if args.site else all_site_dirs
     files_checked = 0
     _skeleton_checked = set()
 

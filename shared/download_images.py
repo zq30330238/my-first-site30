@@ -16,6 +16,24 @@ PNGWING_SEARCH = 'https://www.pngwing.com/en/search?q={}'
 STATS = {}
 SEEN_HASHES = set()
 
+VERIFY_PROMPT = """Look at this image carefully.
+Character/Subject expected: {character_name}
+Context: {series_or_topic}
+
+Answer YES if ALL of these are true:
+1. This image CLEARLY shows {character_name}
+2. The character/subject is recognizable and matches common depictions
+3. This is a proper character image or scene image (not a logo, text, or abstract pattern)
+
+Answer NO if ANY of these is true:
+1. This is a different character/person/subject entirely
+2. This is a logo, text, chart, abstract pattern, or decorative frame
+3. This is a group/crowd shot where the specific character can't be identified
+4. The image is too blurry/dark to identify the subject
+5. This is a real-life cosplay photo (not the actual animated/game character)
+
+Reply ONLY with YES or NO."""
+
 
 def quick_validate(img_path):
     """Local Pillow pre-check before doubao API. Returns (passed, reason)."""
@@ -43,33 +61,45 @@ def quick_validate(img_path):
         return False, f'error: {e}'
 
 
-def verify_character(filepath, char_name):
+def verify_character(filepath, char_name, series=""):
     """Use doubao vision to verify image contains the correct character.
-    Falls back to API only when local pre-check fails."""
-    # Local pre-check first — skip API for obvious good images
+    ALWAYS calls doubao after local pre-check — NO MORE SKIPPING."""
+    # Always quick_validate first — reject bad formats/sizes early
     passed, reason = quick_validate(filepath)
-    if passed:
-        return True
-    print(f'  [LOCAL-VALIDATE] {Path(filepath).name}: {reason}, falling back to API')
+    if not passed:
+        print(f'  [LOCAL REJECT] {Path(filepath).name}: {reason}')
+        return False
+
+    # Now ALWAYS verify content with doubao
+    print(f'  [DOUBAO VERIFY] {Path(filepath).name}: checking if this is {char_name}...')
     script = Path(__file__).parent / 'doubao_vision.py'
     if not script.exists():
+        print(f'  [WARN] doubao_vision.py not found, allowing image through')
         return True
+
     try:
-        r = subprocess.run(['py', str(script), str(filepath)], capture_output=True, text=True, timeout=45)
-        output = (r.stdout + r.stderr).lower()
-        name_parts = char_name.lower().replace('-', ' ').split()
-        found = sum(1 for p in name_parts if len(p) > 2 and p in output)
-        if found >= 1 or any(p in output for p in name_parts if len(p) > 3):
+        prompt = VERIFY_PROMPT.format(character_name=char_name, series_or_topic=series)
+        r = subprocess.run(
+            ['py', str(script), str(filepath), prompt],
+            capture_output=True, text=True, timeout=45
+        )
+        output = (r.stdout + r.stderr).strip()
+        print(f'  [DOUBAO RESPONSE] {output[:200]}')
+
+        # Check for explicit YES
+        if output.upper().strip() == 'YES' or 'YES' in output.upper().split():
+            print(f'  [DOUBAO PASS] {Path(filepath).name}: confirmed as {char_name}')
             return True
-        negatives = ['fruit', 'raspberry', 'flower', 'logo', 'abstract', 'frame',
-                      'watercolor', 'parchment', 'phoenix', 'butterfly', 'leaf',
-                      'decoration', 'shattered glass', 'gold border']
-        if any(n in output for n in negatives):
-            print(f'  [VERIFY FAIL] {filepath.name}: decorative image')
-            return False
-        return True
-    except:
-        return True
+
+        # Any other response = reject
+        print(f'  [DOUBAO REJECT] {Path(filepath).name}: not recognized as {char_name}')
+        return False
+    except subprocess.TimeoutExpired:
+        print(f'  [DOUBAO TIMEOUT] {Path(filepath).name}')
+        return False
+    except Exception as e:
+        print(f'  [DOUBAO ERROR] {Path(filepath).name}: {e}')
+        return False
 
 def ensure_transparent(filepath):
     """Run rembg on image if it has no transparency."""
@@ -167,67 +197,105 @@ def download_character(char_name, series, out_dir, max_images=2):
     out_dir.mkdir(parents=True, exist_ok=True)
     slug = char_name.lower().replace(' ', '-').replace('.', '').replace("'", '')
     downloaded = 0
-    pending = []
 
     # Build relevance keywords from character name
     keywords = [w.lower() for w in char_name.replace('.', '').split() if len(w) > 1]
     if len(keywords) > 1:
         keywords.append(char_name.lower().replace('.', '').replace(' ', '-'))
 
+    # Main queries + fallback queries for retry
     queries = [
         f'{char_name} {series}',
         f'{char_name} {series} character',
         f'{char_name} {series} transparent',
     ]
+    fallback_queries = [
+        f'{char_name} {series} render PNG',
+        f'{char_name} {series} official art',
+        f'{char_name} anime character transparent',
+    ]
 
     seen_urls = set()
-    for query in queries:
-        if downloaded >= max_images:
+    attempts = 0
+    max_attempts = 9  # 3 queries x 3 URLs max per query
+
+    # Try main queries first, then fallbacks
+    all_queries = queries + fallback_queries
+
+    for query_idx, query in enumerate(all_queries):
+        if downloaded >= max_images or attempts >= max_attempts:
             break
+
         print(f'  Searching: "{query}"')
         urls = search_pngwing(query)
         relevant = [u for u in urls if any(k in u.lower() for k in keywords)]
         subtle = [u for u in urls if u not in relevant]
-        urls = relevant + subtle
-        for url in urls:
+        ordered_urls = relevant + subtle
+
+        for url in ordered_urls:
             if downloaded >= max_images:
                 break
             if url in seen_urls:
                 continue
             seen_urls.add(url)
+
             suffix = f'_{downloaded+1}' if downloaded > 0 else ''
             fname = f'{slug}{suffix}.png'
             fpath = out_dir / fname
+
             result = download_image(url, str(fpath))
-            if result == 'ok':
-                sz = os.path.getsize(str(fpath))
-                print(f'    OK: {fname} ({sz//1024}KB)')
-                downloaded += 1
-                pending.append(fpath)
-            elif result == 'exists':
-                print(f'    EXISTS: {fname}')
-                downloaded += 1
-                pending.append(fpath)
-            else:
+            if result not in ('ok', 'exists'):
+                attempts += 1
+                if attempts >= max_attempts:
+                    break
                 continue
-        time.sleep(1.5)
 
-    # Verify all pending images in parallel
-    verified = 0
-    with ThreadPoolExecutor(max_workers=3) as executor:
-        fut_map = {executor.submit(verify_character, fp, char_name): fp for fp in pending}
-        for fut in as_completed(fut_map):
-            fp = fut_map[fut]
-            if fut.result():
-                ensure_transparent(fp)
-                compress_image(str(fp))
-                verified += 1
-            else:
-                print(f'    [DELETE] {fp.name}: wrong image / decorative')
-                try: os.remove(fp)
+            # Quick validate (format/size check)
+            passed, reason = quick_validate(str(fpath))
+            if not passed:
+                print(f'    [LOCAL REJECT] {fname}: {reason}')
+                try: os.remove(str(fpath))
                 except: pass
+                attempts += 1
+                if attempts >= max_attempts:
+                    break
+                continue
 
-    return verified
+            # Doubao verify — THE CRITICAL STEP
+            if verify_character(str(fpath), char_name, series):
+                sz = os.path.getsize(str(fpath))
+                print(f'    [PASS] {fname} ({sz//1024}KB) — content confirmed')
+                ensure_transparent(str(fpath))
+                compress_image(str(fpath))
+                downloaded += 1
+            else:
+                print(f'    [REJECT] {fname}: wrong content, trying next...')
+                try: os.remove(str(fpath))
+                except: pass
+                attempts += 1
+                if attempts >= max_attempts:
+                    break
+
+            time.sleep(1.0)  # Polite delay between attempts
+
+    # Log failures
+    if downloaded < max_images and attempts >= max_attempts:
+        failed_file = Path(__file__).parent.parent / 'failed_images.json'
+        failed = {}
+        if failed_file.exists():
+            try: failed = json.loads(failed_file.read_text())
+            except: pass
+        failed[char_name] = {
+            'series': series,
+            'site_dir': str(out_dir),
+            'max_images': max_images,
+            'downloaded': downloaded,
+            'attempts': attempts
+        }
+        failed_file.write_text(json.dumps(failed, indent=2))
+        print(f'    [FAILED] {char_name}: only got {downloaded}/{max_images} after {attempts} attempts')
+
+    return downloaded
 
 def main():
     ROOT = Path(r'd:\AI网站文件夹')
