@@ -28,7 +28,8 @@ git push origin master
 
 ### 3. Wrangler 部署所有站点
 ```bash
-export CLOUDFLARE_API_TOKEN="<from-backup-config>"
+# CLOUDFLARE_API_TOKEN must be set in environment
+export CLOUDFLARE_API_TOKEN="$CLOUDFLARE_API_TOKEN"
 
 npx wrangler pages deploy main-site --project-name=main-site --branch=master
 

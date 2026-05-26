@@ -28,7 +28,8 @@ source: git-history-analysis
 ## 部署命令
 
 ```bash
-export CLOUDFLARE_API_TOKEN="<cfat_ token>"
+# Ensure CLOUDFLARE_API_TOKEN is set in environment (read from env var, NOT hardcoded)
+export CLOUDFLARE_API_TOKEN="$CLOUDFLARE_API_TOKEN"
 npx wrangler pages deploy <目录> --project-name=<项目名> --commit-dirty=true
 ```
 

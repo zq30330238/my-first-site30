@@ -1,5 +1,7 @@
 # CLAUDE.md — AdSense矩阵站点
 
+**每次新对话开始时，必须先读取交接文件：** `C:\Users\Administrator\.claude\projects\d--AI-----\memory\session_handover.md`
+
 ## 项目概况
 纯静态英文内容站矩阵，Tailwind CSS CDN + 零JS依赖，部署在 Cloudflare Pages。
 
