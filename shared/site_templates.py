@@ -4,6 +4,7 @@ Global values centralized here. Change once, apply everywhere.
 """
 
 import re
+import random
 from datetime import datetime
 from pathlib import Path
 
@@ -930,14 +931,31 @@ def render_article_html(site_dir, ai_output):
                 <p class="text-sm text-gray-400">Part of the <a href="https://www.jycsd.com" class="text-{{brand_color}} hover:underline transition">Myers Media</a> network.</p>
             </div>"""
 
-    # Related articles
-    related = cfg["related_articles"]
-    vars_dict["related_1_url"] = related[0][0]
-    vars_dict["related_1_title"] = related[0][1]
-    vars_dict["related_2_url"] = related[1][0]
-    vars_dict["related_2_title"] = related[1][1]
-    vars_dict["related_3_url"] = related[2][0]
-    vars_dict["related_3_title"] = related[2][1]
+    # Dynamic related articles — scan site for actual article files
+    site_path = ROOT / site_dir
+    article_files = sorted(site_path.glob("article-*.html"))
+    related_data = []
+    for af in article_files:
+        try:
+            content = af.read_text(encoding="utf-8", errors="ignore")
+            m = re.search(r"<title>(.*?)</title>", content)
+            title = m.group(1) if m else af.stem.replace("-", " ").title()
+            # Remove brand suffix (e.g., " - BrandName")
+            title = re.sub(r"\s*[-–|]\s*\S.*$", "", title).strip()
+            related_data.append((af.name, title))
+        except Exception:
+            pass
+    random.shuffle(related_data)
+    selected = related_data[:3]
+    # Fill missing slots with link to articles listing
+    while len(selected) < 3:
+        selected.append(("articles.html", "Browse More Articles"))
+    vars_dict["related_1_url"] = selected[0][0]
+    vars_dict["related_1_title"] = selected[0][1]
+    vars_dict["related_2_url"] = selected[1][0]
+    vars_dict["related_2_title"] = selected[1][1]
+    vars_dict["related_3_url"] = selected[2][0]
+    vars_dict["related_3_title"] = selected[2][1]
 
     template = FOOD_TEMPLATE_SKELETON if cfg.get("custom_template") else TEMPLATE_SKELETON
     html = template
