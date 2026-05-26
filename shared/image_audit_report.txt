@@ -1,0 +1,148 @@
+================================================================================
+COMPREHENSIVE IMAGE AUDIT REPORT
+Date: 2026-05-26
+Sites audited: 17
+Total images: 961
+Unique MD5s: 958
+Duplicate copies: 3
+================================================================================
+
+1. DUPLICATE IMAGE GROUPS
+================================================================================
+
+All 3 duplicate groups identified by MD5 scan:
+
+GROUP 1 -- WRONG (not remotely related)
+  Files: fortnite-site/dark-voyager.png  =  onepiece-site/marshall-d-teach.png
+  Size: 294KB
+  Verified: Colorful butterflies (decorative illustration)
+  Issue: Neither Dark Voyager (Fortnite) nor Marshall D. Teach/Blackbeard (One Piece)
+
+GROUP 2 -- WRONG (not remotely related)
+  Files: fortnite-site/rust-lord.png  =  onepiece-site/marshall-d-teach_2.png
+  Size: 592KB
+  Verified: Phoenix (mythical bird)
+  Issue: Neither Rust Lord (Fortnite) nor Marshall D. Teach/Blackbeard (One Piece)
+
+GROUP 3 -- CORRECT (legitimate cross-site usage)
+  Files: minecraft-site/steve.png  =  games-site/steve.png
+  Size: 114KB
+  Verified: Steve from Minecraft
+  Note: games-site is a general gaming site, Steve belongs there
+
+================================================================================
+
+2. WRONG IMAGES (content does not match filename)
+================================================================================
+
+These images were verified with doubao_vision and the content does not match
+the expected character:
+
+  SITE           | FILENAME              | ACTUAL CONTENT        | EXPECTED
+  ---------------+-----------------------+-----------------------+---------------------
+  fortnite-site  | dark-voyager.png      | Colorful butterflies  | Dark Voyager
+  fortnite-site  | rust-lord.png         | Phoenix               | Rust Lord
+  fortnite-site  | peely.png             | Tropical floral arr.  | Peely
+  onepiece-site  | marshall-d-teach.png  | Colorful butterflies  | Blackbeard
+  onepiece-site  | marshall-d-teach_2.png| Phoenix               | Blackbeard
+  hxh-site       | gon-freecss.png       | Plants vs Zombies zom.| Gon Freecss
+  tokyoghoul-site| ken-kaneki.png        | Eren Yeager (AOT)     | Kaneki
+  lol-site       | jinx.png              | K/DA Akali            | Jinx
+  valorant-site  | phoenix.png           | Cypher                | Phoenix
+  sao-site       | kirito.png            | "MEET STAR KING"      | Kirito
+  games-site     | ahri.png              | Evelynn               | Ahri
+
+Total wrong images: 11 (across 8 sites)
+
+================================================================================
+
+3. CORRECT IMAGES (spot-check samples)
+================================================================================
+
+All of these spot-check images were verified as correct:
+
+  dragonball-site:  goku.png (Ultra Instinct Goku) -- OK
+  dragonball-site:  vegeta.png (Super Saiyan Blue Vegeta) -- OK
+  naruto-site:      naruto-uzumaki.png (Naruto Uzumaki) -- OK
+  naruto-site:      sasuke-uchiha.png (Sasuke Uchiha) -- OK
+  onepiece-site:    monkey-d-luffy.png (Monkey D. Luffy) -- OK
+  onepiece-site:    roronoa-zoro.png (Roronoa Zoro) -- OK
+  bleach-site:      ichigo-kurosaki.png (Ichigo Kurosaki) -- OK
+  aot-site:         eren-yeager.png (Eren Yeager) -- OK
+  jjk-site:         satoru-gojo.png (Satoru Gojo) -- OK
+  jjk-site:         yuji-itadori.png (Yuji Itadori) -- OK
+  hxh-site:         killua-zoldyck.png (Killua Zoldyck) -- OK
+  jojo-site:        jotaro-kujo.png (Jotaro Kujo) -- OK
+  lol-site:         ahri.png (Ahri) -- OK
+  valorant-site:    jett.png (Jett) -- OK
+  eldenring-site:   malenia.png (Malenia, Blade of Miquella) -- OK
+  eldenring-site:   starscourge-radahn.png (Starscourge Radahn) -- OK
+  fortnite-site:    jonesy.png (Jonesy) -- OK
+  minecraft-site:   steve.png (Steve) -- OK
+  minecraft-site:   creeper.png (Creeper) -- OK
+  minecraft-site:   alex.png (Default female skin) -- OK
+  games-site:       bg3.png (Baldur's Gate logo) -- OK (it's a logo, acceptable)
+  anime-site:       aot_levi.png (Levi Ackerman) -- OK
+
+================================================================================
+
+4. SMALL IMAGES (<200px in any dimension)
+================================================================================
+
+  10 images found under 200px in width or height:
+
+  games-site/ahri.png                128x128  31KB
+  games-site/jinx.png                128x128  31KB
+  games-site/lux.png                 128x128  32KB
+  games-site/yasuo.png               128x128  31KB
+  games-site/eldenring.png            168x168 23KB
+  games-site/terraria.png             486x142 4KB (banner)
+  games-site/valheim.png              500x197 48KB (banner)
+  games-site/crafting_table.png       136x200 43KB
+  dragonball-site/frieza-force.png     641x173 62KB (banner)
+  dragonball-site/commander-red.png    184x256 22KB
+
+  Most are likely game icons/banners by design. The 4 champion icons on
+  games-site (128x128) are probably fine for thumbnail use.
+  `commander-red.png` (184px wide) is slightly undersized.
+
+================================================================================
+
+5. NON-RGBA PNGs
+================================================================================
+
+  None found. All PNGs have alpha channels. Good.
+
+================================================================================
+
+6. MISSING FILE (anime-site)
+================================================================================
+
+  dragonball_goku.png -- not found on anime-site (file named "goku.png" instead).
+  anime-site/goku.png was not checked by doubao but likely correct.
+
+================================================================================
+
+SUMMARY
+================================================================================
+
+  Category                              | Count
+  --------------------------------------+-------
+  Total images                          | 961
+  Sites                                 | 17
+  Cross-site duplicate groups           | 3 (2 wrong, 1 correct)
+  Wrong images (content mismatch)       | 11
+  Small images (<200px)                 | 10 (mostly icons/banners)
+  Non-RGBA PNGs                         | 0
+  Correct spot-check samples            | 22/22
+
+Sites with confirmed image problems:
+  fortnite-site -- 3 wrong images (dark-voyager, rust-lord, peely)
+  onepiece-site -- 2 wrong images (marshall-d-teach x2)
+  hxh-site       -- 1 wrong image (gon-freecss)
+  tokyoghoul-site -- 1 wrong image (ken-kaneki)
+  lol-site       -- 1 wrong image (jinx)
+  valorant-site  -- 1 wrong image (phoenix)
+  sao-site       -- 1 wrong image (kirito)
+  games-site     -- 1 wrong image (ahri)
+================================================================================

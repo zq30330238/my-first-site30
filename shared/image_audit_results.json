@@ -1,0 +1,68 @@
+{
+  "site_counts": {
+    "anime-site": 60,
+    "dragonball-site": 294,
+    "eldenring-site": 21,
+    "fortnite-site": 31,
+    "lol-site": 174,
+    "minecraft-site": 9,
+    "naruto-site": 68,
+    "onepiece-site": 60,
+    "valorant-site": 25,
+    "bleach-site": 20,
+    "hxh-site": 20,
+    "jjk-site": 40,
+    "jojo-site": 20,
+    "sao-site": 14,
+    "tokyoghoul-site": 15,
+    "aot-site": 36,
+    "games-site": 54
+  },
+  "total_images": 961,
+  "unique_md5": 958,
+  "duplicate_copies": 3,
+  "groups": [
+    {
+      "md5": "9a5306af05733158fb31bfd5c3777c0d",
+      "size_kb": 294,
+      "files": [
+        {
+          "site": "fortnite-site",
+          "filename": "dark-voyager.png"
+        },
+        {
+          "site": "onepiece-site",
+          "filename": "marshall-d-teach.png"
+        }
+      ]
+    },
+    {
+      "md5": "7800277cdcfe571c8b27b0f615062904",
+      "size_kb": 592,
+      "files": [
+        {
+          "site": "fortnite-site",
+          "filename": "rust-lord.png"
+        },
+        {
+          "site": "onepiece-site",
+          "filename": "marshall-d-teach_2.png"
+        }
+      ]
+    },
+    {
+      "md5": "fef8af63534376a052f0d89f641cb15b",
+      "size_kb": 114,
+      "files": [
+        {
+          "site": "minecraft-site",
+          "filename": "steve.png"
+        },
+        {
+          "site": "games-site",
+          "filename": "steve.png"
+        }
+      ]
+    }
+  ]
+}

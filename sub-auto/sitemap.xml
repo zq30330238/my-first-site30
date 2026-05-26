@@ -1,324 +1,333 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://auto.jycsd.com/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+    <loc>https://auto.jycsd.com/article-1/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-1.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-10/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-10.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-11/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-11.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-12/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-12.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-13/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-13.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-14/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-14.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-15/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-15.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-16/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-16.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-17/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-17.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-18/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-18.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-19/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-19.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-2/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-2.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-20/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-20.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-21/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-21.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-22/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-22.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-23/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-23.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-24/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-24.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-25/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-25.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-26/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-26.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-27/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-27.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-28/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-28.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-29/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-29.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-3/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-3.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-30/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-30.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-31/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-31.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-32/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-32.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-33/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-33.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-34/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-4.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-35/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-6.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-36/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-7.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-37/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/article-8.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://auto.jycsd.com/article-38/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/articles-2.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+    <loc>https://auto.jycsd.com/article-39/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/articles.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+    <loc>https://auto.jycsd.com/article-4/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/category-buying.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
+    <loc>https://auto.jycsd.com/article-40/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/category-chinese-brands.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
+    <loc>https://auto.jycsd.com/article-41/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/category-ev.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
+    <loc>https://auto.jycsd.com/article-42/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/category-maintenance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
+    <loc>https://auto.jycsd.com/article-43/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/category-performance.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
+    <loc>https://auto.jycsd.com/article-44/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/category-reviews.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.70</priority>
+    <loc>https://auto.jycsd.com/article-45/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/contact.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+    <loc>https://auto.jycsd.com/article-46/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://auto.jycsd.com/cookie-policy.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
+    <loc>https://auto.jycsd.com/article-47/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-48/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-49/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-50/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-51/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-52/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-53/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-54/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-55/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-56/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-57/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-58/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-59/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-6/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-7/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/article-8/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/articles-2/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/articles/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/category-buying/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/category-chinese-brands/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/category-ev/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/category-maintenance/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/category-performance/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://auto.jycsd.com/category-reviews/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://auto.jycsd.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/privacy-policy.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/terms.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-34.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-35.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-36.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-37.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-38.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-39.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-40.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-41.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-42.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-43.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-44.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-45.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-46.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-47.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-48.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://auto.jycsd.com/article-49.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
   </url>
 </urlset>

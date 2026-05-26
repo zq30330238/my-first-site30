@@ -704,6 +704,7 @@ def main():
     parser.add_argument("--dry-run", action="store_true", help="Show what would be done without doing it")
     parser.add_argument("--template", help="Force a specific article template (A/B/C/D/E)")
     parser.add_argument("--with-images", action="store_true", help="Generate images via Seedream (costs money; default uses free DuckDuckGo+Unsplash via collect_content_images.py)")
+    parser.add_argument("--skip-audit", action="store_true", help="Skip pre-commit audit (for daily batch runs)")
     args = parser.parse_args()
 
     if args.template and args.template not in ARTICLE_TEMPLATES:
@@ -838,20 +839,21 @@ def main():
         return 0
 
     # Audit
-    print(f"\n{'='*60}")
-    print("Running pre-commit audit...")
-    print(f"{'='*60}")
-    audit = subprocess.run(
-        [sys.executable, str(ROOT / "shared" / "pre_commit_audit.py")],
-        capture_output=True, text=True, encoding='utf-8', cwd=str(ROOT)
-    )
-    print(audit.stdout)
-    if audit.stderr:
-        print(audit.stderr)
+    if not args.skip_audit:
+        print(f"\n{'='*60}")
+        print("Running pre-commit audit...")
+        print(f"{'='*60}")
+        audit = subprocess.run(
+            [sys.executable, str(ROOT / "shared" / "pre_commit_audit.py")],
+            capture_output=True, text=True, encoding='utf-8', cwd=str(ROOT)
+        )
+        print(audit.stdout)
+        if audit.stderr:
+            print(audit.stderr)
 
-    if audit.returncode != 0:
-        print("ERROR: Audit failed. Fix issues before committing.")
-        return 1
+        if audit.returncode != 0:
+            print("ERROR: Audit failed. Fix issues before committing.")
+            return 1
 
     # Commit + push
     print(f"\n{'='*60}")

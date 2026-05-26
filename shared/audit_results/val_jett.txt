@@ -1,0 +1,2 @@
+This is a video - game character. The character is named Jett, and she is from the video game "Valorant" developed by Riot Games. Jett is a duelist agent known for her swift and agile playstyle, with abilities that allow her to quickly reposition and engage in combat. Her signature abilities include Tailwind, which gives her a burst of speed, and Updraft, which allows her to leap into the air.
+--- STDERR ---

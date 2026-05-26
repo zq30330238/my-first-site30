@@ -544,7 +544,7 @@ tailwind.config = {
         </div>
     </aside>
 </main>
-<footer class="bg-gray-900 text-gray-400 py-12">
+<footer class="bg-gray-900 text-gray-400 py-12 mt-auto">
     <div class="max-w-6xl mx-auto px-4">
         <div class="grid md:grid-cols-4 gap-8 mb-10">
             <div>
@@ -954,6 +954,8 @@ def render_article_html(site_dir, ai_output):
 def quick_validate(html, site_dir):
     """Fast validation of rendered HTML."""
     issues = []
+    cfg = SITE_CONFIG[site_dir]
+    domain = cfg["domain"]
     if not html.startswith("<!DOCTYPE html>"):
         issues.append("Missing DOCTYPE")
     if "source.unsplash.com" in html:
@@ -964,6 +966,19 @@ def quick_validate(html, site_dir):
         issues.append("Missing GA4 tag")
     if GLOBALS["adsense_pub"] not in html:
         issues.append("Missing AdSense pub ID")
-    if SITE_CONFIG[site_dir]["domain"] not in html:
+    if domain not in html:
         issues.append("Wrong domain")
+    # og:image must use the site's own domain, never external
+    import re
+    ogm = re.search(r'<meta\s+property="og:image"\s+content="([^"]*)"', html)
+    if ogm:
+        og_url = ogm.group(1)
+        if "unsplash" in og_url or "images.unsplash" in og_url:
+            issues.append(f"og:image uses unsplash external URL: {og_url}")
+        elif "pexels" in og_url or "pixabay" in og_url:
+            issues.append(f"og:image uses external stock photo: {og_url}")
+        elif f"https://{domain}/" not in og_url:
+            issues.append(f"og:image domain mismatch: {og_url} (expected https://{domain}/...)")
+    else:
+        issues.append("Missing og:image")
     return issues

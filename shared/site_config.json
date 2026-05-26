@@ -51,7 +51,7 @@
     {
       "dir": "main-site",
       "cf_project": "main-site",
-      "domain": "jycsd.com",
+      "domain": "www.jycsd.com",
       "production_branch": "master"
     },
     {
@@ -136,6 +136,48 @@
       "dir": "valorant-site",
       "cf_project": "valorant-jycsd",
       "domain": "valorant.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "bleach-site",
+      "cf_project": "bleach-jycsd",
+      "domain": "bleach.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "hxh-site",
+      "cf_project": "hxh-jycsd",
+      "domain": "hxh.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "jjk-site",
+      "cf_project": "jjk-jycsd",
+      "domain": "jjk.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "jojo-site",
+      "cf_project": "jojo-jycsd",
+      "domain": "jojo.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "sao-site",
+      "cf_project": "sao-jycsd",
+      "domain": "sao.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "tokyoghoul-site",
+      "cf_project": "tokyoghoul-jycsd",
+      "domain": "tokyoghoul.jycsd.com",
+      "production_branch": "master"
+    },
+    {
+      "dir": "aot-site",
+      "cf_project": "aot-jycsd",
+      "domain": "aot.jycsd.com",
       "production_branch": "master"
     }
   ]

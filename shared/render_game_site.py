@@ -360,7 +360,7 @@ body{{font-family:"Inter",Arial,sans-serif;background:{tc['bodyBg']};color:{tc['
 {content_body}
 </main>
 
-<footer class="bg-bgSecondary border-t py-16 px-4" style="border-color:#{tc['borderHex']}">
+<footer class="bg-bgSecondary border-t py-16 px-4 mt-auto" style="border-color:#{tc['borderHex']}">
 <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
 <div>
 <div class="flex items-center gap-2.5 mb-4">
@@ -1160,7 +1160,7 @@ def render_char_detail_page(data, char):
         quick_stats = " &middot; ".join(fallback_parts) if fallback_parts else f"Featured character from {site_name}"
     blockquote_html = f'<blockquote class="border-l-4 pl-4 py-2 my-6 rounded-r-lg italic text-textSecondary" style="border-color:{accent};background:{accent}08"><p>{quick_stats}</p></blockquote>'
 
-    char_detail_html = f"""<section class="max-w-7xl mx-auto px-4 py-12">
+    char_detail_html = f"""<section class="w-full max-w-7xl mx-auto px-4 py-12">
 <!-- Sidebar ads -->
 <div class="hidden xl:block fixed left-0 top-1/2 -translate-y-1/2 z-40 w-[160px] ml-4">
 <div class="bg-bgSecondary/30 rounded-xl border border-dashed px-3 py-6 text-center text-sm text-textSecondary/50 h-[600px] flex flex-col items-center justify-center" style="border-color:#{tc["borderHex"]}">
@@ -1392,7 +1392,7 @@ def _render_filtered_guides(data, guides, cat_name):
 </div>
 </a>''')
     cols = min(len(guides), 2)
-    return f'''<section class="max-w-7xl mx-auto px-4 py-12">
+    return f'''<section class="w-full max-w-7xl mx-auto px-4 py-12">
 <div class="mb-8"><h2 class="text-3xl font-black">{cat_name} Guides</h2><p class="text-textSecondary mt-2">In-depth {cat_name.lower()} coverage</p></div>
 <div class="grid lg:grid-cols-{cols} gap-5">{"".join(cards)}</div></section>'''
 
@@ -1425,7 +1425,7 @@ def _render_full_characters_grid(data, chars, cat_name="Characters"):
         extra = f'''<div id="moreGrid" style="display:none"><div class="masonry-grid">{hidden_items}</div></div>
 <div class="show-more-wrap"><button class="show-more-btn" style="color:{data["accent"]};border-color:{data["accent"]}" onclick="var el=document.getElementById('moreGrid'),btn=this;el.style.display=el.style.display==='none'?'block':'none';btn.textContent=el.style.display==='none'?'Show All':'Show Less'">Show All ({len(hidden)} more)</button></div>'''
     
-    return f'''<section class="max-w-7xl mx-auto px-4 py-12">
+    return f'''<section class="w-full max-w-7xl mx-auto px-4 py-12">
 <div class="mb-8"><h2 class="text-3xl font-black">All {cat_name}</h2></div>
 <div class="masonry-grid">{"".join(visible)}</div>{extra}</section>'''
 
@@ -1503,7 +1503,7 @@ def render_anime_item_detail(data, item, atype):
     schema = schema_org_anime_item(data, item, atype["key"])
 
     accent_bg = accent + "08"
-    item_detail_html = f'''<section class="max-w-7xl mx-auto px-4 py-12">
+    item_detail_html = f'''<section class="w-full max-w-7xl mx-auto px-4 py-12">
 <!-- Sidebar ads -->
 <div class="hidden xl:block fixed left-0 top-1/2 -translate-y-1/2 z-40 w-[160px] ml-4">
 <div class="bg-bgSecondary/30 rounded-xl border border-dashed px-3 py-6 text-center text-sm text-textSecondary/50 h-[600px] flex flex-col items-center justify-center" style="border-color:#{tc["borderHex"]}">
@@ -1639,7 +1639,7 @@ def render_anime_category_index(data, atype, items):
         extra = f'''<div id="moreAnime" style="display:none"><div class="grid md:grid-cols-2 lg:grid-cols-{cols} gap-5">{hidden_joined}</div></div>
 <div class="show-more-wrap"><button class="show-more-btn" style="color:{accent};border-color:{accent}" onclick="var el=document.getElementById('moreAnime'),btn=this;el.style.display=el.style.display==='none'?'block':'none';btn.textContent=el.style.display==='none'?'Show All':'Show Less'">Show All ({len(hidden_items)} more)</button></div>'''
 
-    all_items_grid = f'''<section class="max-w-7xl mx-auto px-4 py-12">
+    all_items_grid = f'''<section class="w-full max-w-7xl mx-auto px-4 py-12">
 <div class="mb-8"><h2 class="text-3xl font-black">All {atype["name"]}</h2><p class="text-textSecondary mt-2">{len(items)} {atype["singular"].lower()} guides</p></div>
 <div class="grid md:grid-cols-2 lg:grid-cols-{cols} gap-5">{"".join(visible_items)}</div>{extra}</section>'''
 

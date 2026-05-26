@@ -10,7 +10,7 @@ IMAGE_DIR = BASE_DIR / "images"
 CACHE_FILE = BASE_DIR / "articles_cache.json"
 
 DEEPSEEK_API = "https://api.deepseek.com/chat/completions"
-DEEPSEEK_KEY = "sk-e69d05bf4a264f9ebb2d751dad68e080"
+DEEPSEEK_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 SEEDREAM_URL = "https://ark.cn-beijing.volces.com/api/v3/images/generations"
 SEEDREAM_KEY = "ark-bc9c6af0-1813-4842-ae3f-0614d354c375-98727"
 

@@ -1,0 +1,2 @@
+This is a video - game character. The character is Evelynn, a champion from the popular multiplayer online battle arena game "League of Legends" developed by Riot Games. Evelynn is an assassin - type champion known for her ability to stealth and surprise enemies.
+--- STDERR ---

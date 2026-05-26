@@ -1,0 +1,499 @@
+[
+  {
+    "name": "Characters",
+    "desc": "Category \u2014 36+ guides",
+    "type": "category",
+    "url": "/guides/characters/",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Titans",
+    "desc": "Category \u2014 9+ guides",
+    "type": "category",
+    "url": "/guides/titans/",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Arcs",
+    "desc": "Category \u2014 9+ guides",
+    "type": "category",
+    "url": "/guides/arcs/",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Corps",
+    "desc": "Category \u2014 6+ guides",
+    "type": "category",
+    "url": "/guides/corps/",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Gear",
+    "desc": "Category \u2014 6+ guides",
+    "type": "category",
+    "url": "/guides/gear/",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Eren Yeager",
+    "desc": "Attack Titan / Founding Titan",
+    "type": "character",
+    "url": "/guides/characters/eren-yeager.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Mikasa Ackerman",
+    "desc": "Humanity's Strongest Soldier",
+    "type": "character",
+    "url": "/guides/characters/mikasa-ackerman.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Armin Arlert",
+    "desc": "Colossal Titan / Strategic Genius",
+    "type": "character",
+    "url": "/guides/characters/armin-arlert.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Levi Ackerman",
+    "desc": "Captain / Humanity's Strongest",
+    "type": "character",
+    "url": "/guides/characters/levi-ackerman.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Erwin Smith",
+    "desc": "13th Commander of the Survey Corps",
+    "type": "character",
+    "url": "/guides/characters/erwin-smith.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Hange Zoe",
+    "desc": "14th Commander of the Survey Corps",
+    "type": "character",
+    "url": "/guides/characters/hange-zoe.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Jean Kirstein",
+    "desc": "Survey Corps Commander / Horse Face",
+    "type": "character",
+    "url": "/guides/characters/jean-kirstein.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Connie Springer",
+    "desc": "Survey Corps Soldier",
+    "type": "character",
+    "url": "/guides/characters/connie-springer.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Sasha Blouse",
+    "desc": "Survey Corps Sharp Shooter",
+    "type": "character",
+    "url": "/guides/characters/sasha-blouse.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Historia Reiss",
+    "desc": "Queen of the Walls / Krista Lenz",
+    "type": "character",
+    "url": "/guides/characters/historia-reiss.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Ymir",
+    "desc": "Jaw Titan Holder",
+    "type": "character",
+    "url": "/guides/characters/ymir-freckled.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Reiner Braun",
+    "desc": "Armored Titan / Warrior",
+    "type": "character",
+    "url": "/guides/characters/reiner-braun.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Bertholdt Hoover",
+    "desc": "Colossal Titan / Warrior",
+    "type": "character",
+    "url": "/guides/characters/bertholdt-hoover.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Annie Leonhart",
+    "desc": "Female Titan / Warrior",
+    "type": "character",
+    "url": "/guides/characters/annie-leonhart.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Zeke Yeager",
+    "desc": "Beast Titan / War Chief",
+    "type": "character",
+    "url": "/guides/characters/zeke-yeager.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Pieck Finger",
+    "desc": "Cart Titan / Warrior",
+    "type": "character",
+    "url": "/guides/characters/pieck-finger.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Porco Galliard",
+    "desc": "Jaw Titan / Warrior",
+    "type": "character",
+    "url": "/guides/characters/porco-galliard.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Falco Grice",
+    "desc": "Jaw Titan / Warrior Candidate",
+    "type": "character",
+    "url": "/guides/characters/falco-grice.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Gabi Braun",
+    "desc": "Warrior Candidate / Elite Soldier",
+    "type": "character",
+    "url": "/guides/characters/gabi-braun.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Marco Bodt",
+    "desc": "104th Trainee Corps Member",
+    "type": "character",
+    "url": "/guides/characters/marco-bodt.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Kenny Ackerman",
+    "desc": "Kenny the Ripper / Anti-Personnel Squad Leader",
+    "type": "character",
+    "url": "/guides/characters/kenny-ackerman.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Rod Reiss",
+    "desc": "True King of the Walls",
+    "type": "character",
+    "url": "/guides/characters/rod-reiss.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Dina Fritz",
+    "desc": "Smiling Titan / Founding Titan Heir",
+    "type": "character",
+    "url": "/guides/characters/dina-fritz.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Grisha Yeager",
+    "desc": "Attack Titan Holder / Eldian Restorationist",
+    "type": "character",
+    "url": "/guides/characters/grisha-yeager.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Keith Shadis",
+    "desc": "Training Corps Commander",
+    "type": "character",
+    "url": "/guides/characters/keith-shadis.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Dot Pixis",
+    "desc": "Garrison Commander / Senior Officer",
+    "type": "character",
+    "url": "/guides/characters/dot-pixis.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Theo Magath",
+    "desc": "Marleyan General / Warrior Program Head",
+    "type": "character",
+    "url": "/guides/characters/theo-magath.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Willy Tybur",
+    "desc": "War Hammer Titan / Tybur Family Head",
+    "type": "character",
+    "url": "/guides/characters/willy-tybur.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Ymir Fritz",
+    "desc": "Founder of All Titans",
+    "type": "character",
+    "url": "/guides/characters/ymir-fritz.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Eren Kruger",
+    "desc": "Attack Titan / Eldian Spy",
+    "type": "character",
+    "url": "/guides/characters/eren-kruger.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Kitz Weilman",
+    "desc": "Garrison Officer / Trost Commander",
+    "type": "character",
+    "url": "/guides/characters/kitz-weilman.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Hannes",
+    "desc": "Garrison Soldier",
+    "type": "character",
+    "url": "/guides/characters/hannes.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Frieda Reiss",
+    "desc": "Founding Titan / Reiss Heir",
+    "type": "character",
+    "url": "/guides/characters/frieda-reiss.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Colt Grice",
+    "desc": "Warrior Candidate",
+    "type": "character",
+    "url": "/guides/characters/colt-grice.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Floch Forster",
+    "desc": "Jaegerist Leader / Survey Corps Member",
+    "type": "character",
+    "url": "/guides/characters/floch-forster.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Daz",
+    "desc": "Survey Corps Soldier",
+    "type": "character",
+    "url": "/guides/characters/daz.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Founding Titan",
+    "desc": "Control of all Titans and Subjects of Ymir",
+    "type": "titan",
+    "url": "/guides/titans/founding-titan.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Attack Titan",
+    "desc": "Seeing future memories / Always fights for freedom",
+    "type": "titan",
+    "url": "/guides/titans/attack-titan.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Armored Titan",
+    "desc": "Armored plating / Charging attacks",
+    "type": "titan",
+    "url": "/guides/titans/armored-titan.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Colossal Titan",
+    "desc": "Mass of 60m / Steam explosion",
+    "type": "titan",
+    "url": "/guides/titans/colossal-titan.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Female Titan",
+    "desc": "Selective hardening / Titan attraction",
+    "type": "titan",
+    "url": "/guides/titans/female-titan.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Beast Titan",
+    "desc": "Vertebrate-based form / Pure Titan control",
+    "type": "titan",
+    "url": "/guides/titans/beast-titan.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Jaw Titan",
+    "desc": "Razor teeth / Claws / Extreme speed",
+    "type": "titan",
+    "url": "/guides/titans/jaw-titan.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Cart Titan",
+    "desc": "Endurance / Quadrupedal mobility",
+    "type": "titan",
+    "url": "/guides/titans/cart-titan.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "War Hammer Titan",
+    "desc": "Weapon construction from Titan flesh",
+    "type": "titan",
+    "url": "/guides/titans/war-hammer-titan.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Fall of Wall Maria",
+    "desc": "The Colossal and Armored Titans breach Wall Maria, and Eren watches his mother get devoured. Humanit",
+    "type": "arc",
+    "url": "/guides/arcs/fall-of-wall-maria.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Battle of Trost",
+    "desc": "The Colossal Titan reappears and breaches Wall Rose. Eren transforms into a Titan for the first time",
+    "type": "arc",
+    "url": "/guides/arcs/battle-of-trost.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "57th Expedition",
+    "desc": "The Female Titan decimates the Survey Corps during an expedition outside the Walls. Levi's squad is ",
+    "type": "arc",
+    "url": "/guides/arcs/57th-expedition.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Clash of the Titans",
+    "desc": "Reiner and Bertholdt reveal their identities as the Armored and Colossal Titans. The Survey Corps ca",
+    "type": "arc",
+    "url": "/guides/arcs/clash-of-the-titans.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Uprising Arc",
+    "desc": "Political intrigue within the Walls. The true history of the Reiss family and the Founding Titan is ",
+    "type": "arc",
+    "url": "/guides/arcs/uprising-arc.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Return to Shiganshina",
+    "desc": "The Survey Corps retakes Shiganshina, defeats the Colossal and Armored Titans, and reaches the basem",
+    "type": "arc",
+    "url": "/guides/arcs/return-to-shiganshina.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Marley Arc",
+    "desc": "The story shifts to Marley. Eren infiltrates the mainland, witnesses the other side of the war, and ",
+    "type": "arc",
+    "url": "/guides/arcs/marley-arc.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "War for Paradis",
+    "desc": "The global alliance attacks Paradis. Eren activates the Rumbling. The Jaegerist faction seizes contr",
+    "type": "arc",
+    "url": "/guides/arcs/war-for-paradis.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "The Rumbling",
+    "desc": "Eren transforms into the Founding Titan and unleashes the Wall Titans. The alliance races to stop hi",
+    "type": "arc",
+    "url": "/guides/arcs/the-rumbling.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Survey Corps",
+    "desc": "Scouting Legion",
+    "type": "corps",
+    "url": "/guides/corps/survey-corps.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Military Police",
+    "desc": "MP Brigade",
+    "type": "corps",
+    "url": "/guides/corps/military-police.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Garrison Regiment",
+    "desc": "Stationary Guard",
+    "type": "corps",
+    "url": "/guides/corps/garrison-regiment.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Training Corps",
+    "desc": "Cadet Corps",
+    "type": "corps",
+    "url": "/guides/corps/training-corps.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Jaegerists",
+    "desc": "Yeagerist Faction",
+    "type": "corps",
+    "url": "/guides/corps/jaegerists.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Marley Warriors",
+    "desc": "Warrior Unit",
+    "type": "corps",
+    "url": "/guides/corps/marley-warriors.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "ODM Gear",
+    "desc": "The Omni-Directional Mobility Gear (ODM Gear) is the signature technology of Paradis's military. Dev",
+    "type": "gear",
+    "url": "/guides/gear/odm-gear.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Ultrahard Steel Blades",
+    "desc": "Ultrahard Steel Blades are the primary weapons used with ODM Gear. Made from a rare metal alloy mine",
+    "type": "gear",
+    "url": "/guides/gear/ultrahard-steel-blades.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Thunder Spears",
+    "desc": "Thunder Spears are anti-Titan explosive weapons developed by the Survey Corps during the timeskip. T",
+    "type": "gear",
+    "url": "/guides/gear/thunder-spears.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Vertical Maneuvering Equipment",
+    "desc": "The Vertical Maneuvering Equipment (VME) is a variant of standard ODM Gear designed for use in fores",
+    "type": "gear",
+    "url": "/guides/gear/vertical-maneuvering-equipment.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Anti-Titan Artillery",
+    "desc": "Anti-Titan artillery includes the various cannon and gun emplacements mounted on the Walls and devel",
+    "type": "gear",
+    "url": "/guides/gear/anti-titan-artillery.html",
+    "color": "#8b0000"
+  },
+  {
+    "name": "Anti-Personnel ODM Gear",
+    "desc": "The Anti-Personnel ODM Gear was a specialized variant developed by the Interior Military Police unde",
+    "type": "gear",
+    "url": "/guides/gear/anti-personnel-odm-gear.html",
+    "color": "#8b0000"
+  }
+]

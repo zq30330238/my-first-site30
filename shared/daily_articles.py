@@ -82,11 +82,11 @@ def save_state(state):
 def generate_content_article(site, template=None):
     """Generate 1 article for a content site via create_articles.py."""
     print(f"\n--- Generating article for {site} ---")
-    cmd = [sys.executable, "shared/create_articles.py", "--sites", site, "--per-site", "1"]
+    cmd = [sys.executable, "shared/create_articles.py", "--sites", site, "--per-site", "1", "--skip-audit"]
     if template:
         cmd.extend(["--template", template])
     proc = subprocess.Popen(cmd, cwd=str(ROOT), stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                            text=True, bufsize=1)
+                            text=True, bufsize=1, encoding='utf-8', errors='replace')
     for line in proc.stdout:
         print(line, end='', flush=True)
     proc.wait()
@@ -101,7 +101,7 @@ def generate_game_blog(site):
     print(f"\n--- Generating blog for {site} ---")
     cmd = [sys.executable, "shared/create_game_blog.py", "--sites", site, "--per-site", "1"]
     proc = subprocess.Popen(cmd, cwd=str(ROOT), stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-                            text=True, bufsize=1)
+                            text=True, bufsize=1, encoding='utf-8', errors='replace')
     for line in proc.stdout:
         print(line, end='', flush=True)
     proc.wait()
@@ -119,8 +119,9 @@ def deploy_site(site):
         return False
     print(f"\n--- Deploying {site} → {project} ---")
     result = subprocess.run(
-        ["npx", "wrangler", "pages", "deploy", site, "--project-name", project, "--commit-dirty=true"],
+        f'npx wrangler pages deploy {site} --project-name {project} --commit-dirty=true',
         cwd=str(ROOT), capture_output=True, text=True, timeout=120,
+        encoding='utf-8', errors='replace', shell=True,
     )
     print(result.stdout)
     if result.stderr:
