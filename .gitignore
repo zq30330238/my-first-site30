@@ -34,3 +34,8 @@ shared/add_subdomain.py
 *.webp
 demos/node_modules/
 demos/output/
+
+# Secrets — never commit
+Gmail MCP/
+gmail_oauth.py
+shared/gsc_auth.py
