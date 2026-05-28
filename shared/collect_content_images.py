@@ -51,7 +51,7 @@ def verify_image_content(img_path, article_title):
 CONTENT_SITES = [
     'sub-healthy', 'sub-pets', 'sub-home', 'sub-finance',
     'sub-tech', 'sub-travel', 'entertainment',
-    'rightsdaily', 'dailymedadvice', 'sub-auto',
+    'rightsdaily', 'dailymedadvice', 'sub-auto', 'sub-career', 'sub-beauty',
 ]
 
 # Unsplash fallback photo IDs (safe, generic stock photos)
