@@ -1,0 +1,557 @@
+[
+  {
+    "keywords": "Chinese luxury villa traditional courtyard modern mansion wide exterior architecture",
+    "filename": "single-family-villa_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese luxury villa traditional courtyard modern mansion architectural detail close-up",
+    "filename": "single-family-villa_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese luxury villa traditional courtyard modern mansion interior beautiful view",
+    "filename": "single-family-villa_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese townhouse modern row house residential wide exterior architecture",
+    "filename": "townhouse_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese townhouse modern row house residential architectural detail close-up",
+    "filename": "townhouse_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese townhouse modern row house residential interior beautiful view",
+    "filename": "townhouse_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese duplex house modern split-level home wide exterior architecture",
+    "filename": "duplex_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese duplex house modern split-level home architectural detail close-up",
+    "filename": "duplex_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese duplex house modern split-level home interior beautiful view",
+    "filename": "duplex_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "stacked villa Chinese residential architecture modern wide exterior architecture",
+    "filename": "stacked-villa_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "stacked villa Chinese residential architecture modern architectural detail close-up",
+    "filename": "stacked-villa_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "stacked villa Chinese residential architecture modern interior beautiful view",
+    "filename": "stacked-villa_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese courtyard estate traditional siheyuan mansion wide exterior architecture",
+    "filename": "courtyard-estate_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese courtyard estate traditional siheyuan mansion architectural detail close-up",
+    "filename": "courtyard-estate_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese courtyard estate traditional siheyuan mansion interior beautiful view",
+    "filename": "courtyard-estate_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese high-rise residential tower modern apartment building wide exterior architecture",
+    "filename": "high-rise_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese high-rise residential tower modern apartment building architectural detail close-up",
+    "filename": "high-rise_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese high-rise residential tower modern apartment building interior beautiful view",
+    "filename": "high-rise_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese mid-rise residential building modern apartments wide exterior architecture",
+    "filename": "mid-rise_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese mid-rise residential building modern apartments architectural detail close-up",
+    "filename": "mid-rise_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese mid-rise residential building modern apartments interior beautiful view",
+    "filename": "mid-rise_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Hui style architecture white walls grey tiles horse-head wall Anhui wide exterior architecture",
+    "filename": "hui-style_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Hui style architecture white walls grey tiles horse-head wall Anhui architectural detail close-up",
+    "filename": "hui-style_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Hui style architecture white walls grey tiles horse-head wall Anhui interior beautiful view",
+    "filename": "hui-style_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Suzhou classical garden architecture Chinese landscape design wide exterior architecture",
+    "filename": "su-style_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Suzhou classical garden architecture Chinese landscape design architectural detail close-up",
+    "filename": "su-style_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Suzhou classical garden architecture Chinese landscape design interior beautiful view",
+    "filename": "su-style_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Beijing siheyuan courtyard house traditional Chinese architecture wide exterior architecture",
+    "filename": "beijing-courtyard_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Beijing siheyuan courtyard house traditional Chinese architecture architectural detail close-up",
+    "filename": "beijing-courtyard_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Beijing siheyuan courtyard house traditional Chinese architecture interior beautiful view",
+    "filename": "beijing-courtyard_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Lingnan architecture wok-handle roof Guangdong traditional building wide exterior architecture",
+    "filename": "lingnan-style_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Lingnan architecture wok-handle roof Guangdong traditional building architectural detail close-up",
+    "filename": "lingnan-style_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Lingnan architecture wok-handle roof Guangdong traditional building interior beautiful view",
+    "filename": "lingnan-style_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Western Sichuan residential architecture traditional Chinese farmhouse wide exterior architecture",
+    "filename": "chuanxi-style_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Western Sichuan residential architecture traditional Chinese farmhouse architectural detail close-up",
+    "filename": "chuanxi-style_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Western Sichuan residential architecture traditional Chinese farmhouse interior beautiful view",
+    "filename": "chuanxi-style_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Fujian tulou round earthen building Hakka architecture wide exterior architecture",
+    "filename": "minnan-style_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Fujian tulou round earthen building Hakka architecture architectural detail close-up",
+    "filename": "minnan-style_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Fujian tulou round earthen building Hakka architecture interior beautiful view",
+    "filename": "minnan-style_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Tibetan traditional architecture stone building Lhasa Potala style wide exterior architecture",
+    "filename": "tibetan-style_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Tibetan traditional architecture stone building Lhasa Potala style architectural detail close-up",
+    "filename": "tibetan-style_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Tibetan traditional architecture stone building Lhasa Potala style interior beautiful view",
+    "filename": "tibetan-style_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Mongolian yurt ger traditional nomadic tent grassland wide exterior architecture",
+    "filename": "mongolian-yurt_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Mongolian yurt ger traditional nomadic tent grassland architectural detail close-up",
+    "filename": "mongolian-yurt_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Mongolian yurt ger traditional nomadic tent grassland interior beautiful view",
+    "filename": "mongolian-yurt_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese dougong bracket system wooden architecture detail wide exterior architecture",
+    "filename": "dougong_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese dougong bracket system wooden architecture detail architectural detail close-up",
+    "filename": "dougong_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese dougong bracket system wooden architecture detail interior beautiful view",
+    "filename": "dougong_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese traditional roof types upturned eaves glazed tiles wide exterior architecture",
+    "filename": "roof-types_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese traditional roof types upturned eaves glazed tiles architectural detail close-up",
+    "filename": "roof-types_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese traditional roof types upturned eaves glazed tiles interior beautiful view",
+    "filename": "roof-types_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese courtyard garden landscape rockery pond pavilion wide exterior architecture",
+    "filename": "courtyard-garden_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese courtyard garden landscape rockery pond pavilion architectural detail close-up",
+    "filename": "courtyard-garden_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese courtyard garden landscape rockery pond pavilion interior beautiful view",
+    "filename": "courtyard-garden_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese screen wall spirit wall shadow wall decorative brick wide exterior architecture",
+    "filename": "screen-wall_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese screen wall spirit wall shadow wall decorative brick architectural detail close-up",
+    "filename": "screen-wall_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese screen wall spirit wall shadow wall decorative brick interior beautiful view",
+    "filename": "screen-wall_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese window lattice pattern carved wood decorative window wide exterior architecture",
+    "filename": "window-lattice_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese window lattice pattern carved wood decorative window architectural detail close-up",
+    "filename": "window-lattice_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese window lattice pattern carved wood decorative window interior beautiful view",
+    "filename": "window-lattice_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese wood carving stone carving brick carving architectural detail wide exterior architecture",
+    "filename": "wood-carving_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese wood carving stone carving brick carving architectural detail architectural detail close-up",
+    "filename": "wood-carving_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese wood carving stone carving brick carving architectural detail interior beautiful view",
+    "filename": "wood-carving_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "feng shui Chinese architecture harmony layout garden design wide exterior architecture",
+    "filename": "fengshui-basics_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "feng shui Chinese architecture harmony layout garden design architectural detail close-up",
+    "filename": "fengshui-basics_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "feng shui Chinese architecture harmony layout garden design interior beautiful view",
+    "filename": "fengshui-basics_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "new Chinese style interior design modern oriental luxury home wide exterior architecture",
+    "filename": "new-chinese-style_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "new Chinese style interior design modern oriental luxury home architectural detail close-up",
+    "filename": "new-chinese-style_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "new Chinese style interior design modern oriental luxury home interior beautiful view",
+    "filename": "new-chinese-style_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "classical Chinese interior redwood furniture screen partition antique wide exterior architecture",
+    "filename": "classical-chinese_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "classical Chinese interior redwood furniture screen partition antique architectural detail close-up",
+    "filename": "classical-chinese_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "classical Chinese interior redwood furniture screen partition antique interior beautiful view",
+    "filename": "classical-chinese_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Ming Qing dynasty furniture rosewood chair table Chinese antique wide exterior architecture",
+    "filename": "ming-qing-furniture_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Ming Qing dynasty furniture rosewood chair table Chinese antique architectural detail close-up",
+    "filename": "ming-qing-furniture_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Ming Qing dynasty furniture rosewood chair table Chinese antique interior beautiful view",
+    "filename": "ming-qing-furniture_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese tea room design zen interior bamboo wooden decor wide exterior architecture",
+    "filename": "tea-room-design_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese tea room design zen interior bamboo wooden decor architectural detail close-up",
+    "filename": "tea-room-design_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese tea room design zen interior bamboo wooden decor interior beautiful view",
+    "filename": "tea-room-design_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese red gold blue porcelain interior color palette decor wide exterior architecture",
+    "filename": "chinese-color-palette_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese red gold blue porcelain interior color palette decor architectural detail close-up",
+    "filename": "chinese-color-palette_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese red gold blue porcelain interior color palette decor interior beautiful view",
+    "filename": "chinese-color-palette_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese silk brocade textile decor embroidery interior design wide exterior architecture",
+    "filename": "silk-brocade-decor_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese silk brocade textile decor embroidery interior design architectural detail close-up",
+    "filename": "silk-brocade-decor_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese silk brocade textile decor embroidery interior design interior beautiful view",
+    "filename": "silk-brocade-decor_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Forbidden City Beijing palace imperial Chinese architecture wide exterior architecture",
+    "filename": "forbidden-city_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Forbidden City Beijing palace imperial Chinese architecture architectural detail close-up",
+    "filename": "forbidden-city_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Forbidden City Beijing palace imperial Chinese architecture interior beautiful view",
+    "filename": "forbidden-city_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Summer Palace Beijing imperial garden Chinese landscape architecture wide exterior architecture",
+    "filename": "summer-palace_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Summer Palace Beijing imperial garden Chinese landscape architecture architectural detail close-up",
+    "filename": "summer-palace_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Summer Palace Beijing imperial garden Chinese landscape architecture interior beautiful view",
+    "filename": "summer-palace_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Temple of Heaven Beijing circular wooden altar Chinese architecture wide exterior architecture",
+    "filename": "temple-of-heaven_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Temple of Heaven Beijing circular wooden altar Chinese architecture architectural detail close-up",
+    "filename": "temple-of-heaven_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Temple of Heaven Beijing circular wooden altar Chinese architecture interior beautiful view",
+    "filename": "temple-of-heaven_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Humble Administrator Garden Suzhou classical garden UNESCO wide exterior architecture",
+    "filename": "humble-administrator_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Humble Administrator Garden Suzhou classical garden UNESCO architectural detail close-up",
+    "filename": "humble-administrator_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Humble Administrator Garden Suzhou classical garden UNESCO interior beautiful view",
+    "filename": "humble-administrator_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Fujian tulou Hakka round earthen building UNESCO world heritage wide exterior architecture",
+    "filename": "fujian-tulou_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Fujian tulou Hakka round earthen building UNESCO world heritage architectural detail close-up",
+    "filename": "fujian-tulou_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Fujian tulou Hakka round earthen building UNESCO world heritage interior beautiful view",
+    "filename": "fujian-tulou_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Potala Palace Lhasa Tibet traditional architecture mountain fortress wide exterior architecture",
+    "filename": "potala-palace_hero.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Potala Palace Lhasa Tibet traditional architecture mountain fortress architectural detail close-up",
+    "filename": "potala-palace_detail.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Potala Palace Lhasa Tibet traditional architecture mountain fortress interior beautiful view",
+    "filename": "potala-palace_more.jpg",
+    "check": "Is this an architecture, interior, or building photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese traditional architecture beautiful hero",
+    "filename": "index_hero.jpg",
+    "check": "Is this a Chinese architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese traditional architecture beautiful detail",
+    "filename": "index_detail.jpg",
+    "check": "Is this a Chinese architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese traditional architecture beautiful more",
+    "filename": "index_more.jpg",
+    "check": "Is this a Chinese architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese traditional architecture beautiful hero",
+    "filename": "about_hero.jpg",
+    "check": "Is this a Chinese architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese traditional architecture beautiful detail",
+    "filename": "about_detail.jpg",
+    "check": "Is this a Chinese architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese traditional architecture beautiful more",
+    "filename": "about_more.jpg",
+    "check": "Is this a Chinese architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese traditional architecture beautiful hero",
+    "filename": "contact_hero.jpg",
+    "check": "Is this a Chinese architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese traditional architecture beautiful detail",
+    "filename": "contact_detail.jpg",
+    "check": "Is this a Chinese architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese traditional architecture beautiful more",
+    "filename": "contact_more.jpg",
+    "check": "Is this a Chinese architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  }
+]

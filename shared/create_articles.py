@@ -261,7 +261,7 @@ def generate_and_verify_image(title, category, description, site_dir, article_nu
         or ("", daily_count) if failed
     """
     SEEDREAM_API_URL = "https://ark.cn-beijing.volces.com/api/v3/images/generations"
-    SEEDREAM_API_KEY = "ark-bc9c6af0-1813-4842-ae3f-0614d354c375-98727"
+    SEEDREAM_API_KEY = "ark-71e489d9-8720-4ce9-ac4b-30c178333e33-02a59"
     SEEDREAM_MODEL = "doubao-seedream-5-0-260128"
     MAX_DAILY = 50
 
@@ -419,7 +419,7 @@ def insert_index_card(site_dir, article_num, content):
     if not idx_path.exists():
         return
     html = idx_path.read_text(encoding="utf-8")
-    grid_marker = 'class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"'
+    grid_marker = 'grid-cols-2 lg:grid-cols-3 gap-8'
     grid_pos = html.find(grid_marker)
     if grid_pos == -1:
         return
@@ -677,7 +677,7 @@ def update_sitemap(site_dir, article_num):
         return
 
     domain = SITE_CONFIG[site_dir]["domain"]
-    url = f"https://{domain}/article-{article_num}.html"
+    url = f"https://{domain}/article-{article_num}"
     today = datetime.now().strftime("%Y-%m-%d")
 
     new_entry = f"""  <url>

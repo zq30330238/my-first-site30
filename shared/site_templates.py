@@ -866,6 +866,14 @@ blockquote {
 </body>
 </html>"""
 
+def sanitize_html_content(text):
+    """Remove dangerous substrings from AI-generated content that could break HTML structure."""
+    dangerous = ['</head>', '<body>', '<body ', '</body>', '</html>']
+    for d in dangerous:
+        text = text.replace(d, '')
+    return text
+
+
 def render_article_html(site_dir, ai_output):
     """Inject AI-generated content into the site template. ai_output is a dict with keys:
     title, description, keywords, og_title, og_description,
@@ -957,6 +965,11 @@ def render_article_html(site_dir, ai_output):
     vars_dict["related_3_url"] = selected[2][0]
     vars_dict["related_3_title"] = selected[2][1]
 
+    # Sanitize AI-generated content to prevent HTML structure breakage
+    for field in ["title", "h1_title", "article_body", "article_body_html"]:
+        if field in vars_dict and vars_dict[field]:
+            vars_dict[field] = sanitize_html_content(str(vars_dict[field]))
+
     template = FOOD_TEMPLATE_SKELETON if cfg.get("custom_template") else TEMPLATE_SKELETON
     html = template
     for key, value in vars_dict.items():
@@ -981,6 +994,16 @@ def quick_validate(html, site_dir):
         issues.append("Missing AdSense pub ID")
     if domain not in html:
         issues.append("Wrong domain")
+    # HTML structural integrity checks
+    html_lower = html.lower()
+    if "</head>" not in html_lower:
+        return ["Missing </head>"]
+    if "<body" not in html_lower and "<body>" not in html_lower:
+        return ["Missing <body>"]
+    if "</body>" not in html_lower:
+        return ["Missing </body>"]
+    if "</html>" not in html_lower:
+        return ["Missing </html>"]
     # og:image must use the site's own domain, never external
     import re
     ogm = re.search(r'<meta\s+property="og:image"\s+content="([^"]*)"', html)

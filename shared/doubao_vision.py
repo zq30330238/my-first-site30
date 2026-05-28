@@ -15,9 +15,9 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
 
-API_KEY = os.environ.get("ARK_API_KEY") or "ark-bc9c6af0-1813-4842-ae3f-0614d354c375-98727"
+API_KEY = os.environ.get("ARK_API_KEY") or "ark-71e489d9-8720-4ce9-ac4b-30c178333e33-02a59"
 API_BASE = "https://ark.cn-beijing.volces.com/api/v3"
-MODEL = "doubao-seed-1-6-flash-250715"
+MODEL = "doubao-1-5-vision-pro-32k-250115"
 MODEL_MAP = {
     "2.0": "doubao-seed-2-0-lite-260428",
     "2.0-mini": "doubao-seed-2-0-mini-260428",
@@ -136,8 +136,8 @@ def analyze_video(video_url, prompt="详细描述这个视频的内容，包括�
     models_to_try = [MODEL]
     if MODEL != "doubao-seed-1-8-251228":
         models_to_try.append("doubao-seed-1-8-251228")
-    if MODEL != "doubao-seed-1-6-vision-250815":
-        models_to_try.append("doubao-seed-1-6-vision-250815")
+    if MODEL != "doubao-1.5-vision-pro-250328":
+        models_to_try.append("doubao-1.5-vision-pro-250328")
     last_err = None
 
     for m in models_to_try:

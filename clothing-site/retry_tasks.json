@@ -1,0 +1,152 @@
+[
+  {
+    "keywords": "Blang ethnic group Xishuangbanna traditional costume indigo jacket silver ornaments beaded necklace full body outfit",
+    "filename": "blang_hero.jpg",
+    "check": "Is this image related to Blang (布朗族) traditional clothing? If it shows a person, is the full body (head to feet) visible with the complete outfit clearly shown? Is the clothing traditional or clearly fashion-related (not casual/modern street wear)? Answer YES or NO first."
+  },
+  {
+    "keywords": "Buyei ethnic group Guizhou batik pleated skirt indigo traditional costume silver embroidery festival ceremony celebration",
+    "filename": "buyei_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to Buyei (布依族) traditional clothing? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "cashmere sweater knitwear wool fashion festival ceremony celebration",
+    "filename": "cashmere-sweater_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to cashmere sweater knitwear? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "Dai ethnic group Xishuangbanna traditional costume tubular skirt silver waist belt peacock design embroidery textile detail close-up",
+    "filename": "dai_detail.jpg",
+    "check": "Does this image show clothing or textile details, embroidery, fabric patterns, weaving, or close-up craftsmanship related to Dai (傣族) traditional clothing? Answer YES or NO first."
+  },
+  {
+    "keywords": "Dai ethnic group Xishuangbanna traditional costume tubular skirt silver waist belt peacock design festival ceremony celebration",
+    "filename": "dai_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to Dai (傣族) traditional clothing? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "Dongxiang ethnic group Gansu traditional costume embroidered skullcap headscarf long robe festival ceremony celebration",
+    "filename": "dongxiang_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to Dongxiang (东乡族) traditional clothing? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "Gelao ethnic group Guizhou traditional costume indigo jacket collarless geometric embroidery silver earrings festival ceremony celebration",
+    "filename": "gelao_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to Gelao (仡佬族) traditional clothing? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "Jing ethnic group Guangxi traditional costume ao dai style",
+    "filename": "gin_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to Jing (京族) traditional clothing? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "Hani ethnic group Yunnan Honghe traditional costume indigo silver studs multi-layered collar pleated skirt embroidery textile detail close-up",
+    "filename": "hani_detail.jpg",
+    "check": "Does this image show clothing or textile details, embroidery, fabric patterns, weaving, or close-up craftsmanship related to Hani (哈尼族) traditional clothing? Answer YES or NO first."
+  },
+  {
+    "keywords": "Hani ethnic group Yunnan Honghe traditional costume indigo silver studs multi-layered collar pleated skirt festival ceremony celebration",
+    "filename": "hani_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to Hani (哈尼族) traditional clothing? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "Hezhen ethnic group Heilongjiang fish skin clothing detail",
+    "filename": "hezhen_detail.jpg",
+    "check": "Does this image show clothing or textile details, embroidery, fabric patterns, weaving, or close-up craftsmanship related to hezhen? Answer YES or NO first."
+  },
+  {
+    "keywords": "denim jeans vintage classic fashion festival ceremony celebration",
+    "filename": "jeans_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to denim jeans classic? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "Jino ethnic group Xishuangbanna traditional costume white conical cap geometric embroidery indigo festival ceremony celebration",
+    "filename": "jino_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to Jino (基诺族) traditional clothing? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "Jino ethnic group Xishuangbanna traditional costume white conical cap geometric embroidery indigo full body outfit",
+    "filename": "jino_hero.jpg",
+    "check": "Is this image related to Jino (基诺族) traditional clothing? If it shows a person, is the full body (head to feet) visible with the complete outfit clearly shown? Is the clothing traditional or clearly fashion-related (not casual/modern street wear)? Answer YES or NO first."
+  },
+  {
+    "keywords": "Korean hanbok traditional dress embroidery detail",
+    "filename": "korean_detail.jpg",
+    "check": "Does this image show clothing or textile details, embroidery, fabric patterns, weaving, or close-up craftsmanship related to korean? Answer YES or NO first."
+  },
+  {
+    "keywords": "Lisu ethnic group Yunnan traditional costume striped woven skirt beaded necklace Nujiang embroidery textile detail close-up",
+    "filename": "lisu_detail.jpg",
+    "check": "Does this image show clothing or textile details, embroidery, fabric patterns, weaving, or close-up craftsmanship related to Lisu (傈僳族) traditional clothing? Answer YES or NO first."
+  },
+  {
+    "keywords": "little black dress Chanel classic fashion",
+    "filename": "little-black-dress_festival.jpg",
+    "check": "Does this image show a little black dress, Chanel style classic fashion? Full body preferred. Answer YES or NO first."
+  },
+  {
+    "keywords": "Maonan ethnic group Guangxi Huanjiang traditional costume indigo jacket bamboo hat silver hairpin festival ceremony celebration",
+    "filename": "maonan_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to Maonan (毛南族) traditional clothing? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "Milan Fashion Week runway collection detail close-up",
+    "filename": "milan-fw2026_detail.jpg",
+    "check": "Does this image show clothing or textile details, embroidery, fabric patterns, weaving, or close-up craftsmanship related to milan fw2026? Answer YES or NO first."
+  },
+  {
+    "keywords": "Milan Fashion Week runway show event",
+    "filename": "milan-fw2026_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to milan fw2026? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "Nu ethnic group Yunnan Nujiang traditional costume hemp skirt striped hem beaded necklace woven bag embroidery textile detail close-up",
+    "filename": "nu_detail.jpg",
+    "check": "Does this image show clothing or textile details, embroidery, fabric patterns, weaving, or close-up craftsmanship related to Nu (怒族) traditional clothing? Answer YES or NO first."
+  },
+  {
+    "keywords": "Nu ethnic group Yunnan Nujiang traditional costume hemp skirt striped hem beaded necklace woven bag festival ceremony celebration",
+    "filename": "nu_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to Nu (怒族) traditional clothing? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "Paris Fashion Week spring summer runway collection",
+    "filename": "paris-ss2026_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to paris ss2026? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "Qiang ethnic group Sichuan traditional costume cross stitch embroidery white headscarf sheepskin vest yunyun shoes full body outfit",
+    "filename": "qiang_hero.jpg",
+    "check": "Is this image related to Qiang (羌族) traditional clothing? If it shows a person, is the full body (head to feet) visible with the complete outfit clearly shown? Is the clothing traditional or clearly fashion-related (not casual/modern street wear)? Answer YES or NO first."
+  },
+  {
+    "keywords": "She ethnic group Fujian Zhejiang traditional costume phoenix coronet silver headdress embroidered jacket red tassels festival ceremony celebration",
+    "filename": "she_festival.jpg",
+    "check": "Does this image show people in festive, ceremonial, or celebration attire related to She (畲族) traditional clothing? Full body preferred, traditional costume context. Answer YES or NO first."
+  },
+  {
+    "keywords": "She ethnic group Fujian Zhejiang traditional costume phoenix coronet silver headdress embroidered jacket red tassels full body outfit",
+    "filename": "she_hero.jpg",
+    "check": "Is this image related to She (畲族) traditional clothing? If it shows a person, is the full body (head to feet) visible with the complete outfit clearly shown? Is the clothing traditional or clearly fashion-related (not casual/modern street wear)? Answer YES or NO first."
+  },
+  {
+    "keywords": "Song dynasty Chinese traditional clothing embroidery textile detail close-up",
+    "filename": "song-dynasty_detail.jpg",
+    "check": "Does this image show clothing or textile details, embroidery, fabric patterns, weaving, or close-up craftsmanship related to Song dynasty clothing? Answer YES or NO first."
+  },
+  {
+    "keywords": "Tujia ethnic group Hunan traditional costume xilan kapu brocade eight bao cap pleated skirt silver neck rings embroidery textile detail close-up",
+    "filename": "tujia_detail.jpg",
+    "check": "Does this image show clothing or textile details, embroidery, fabric patterns, weaving, or close-up craftsmanship related to Tujia (土家族) traditional clothing? Answer YES or NO first."
+  },
+  {
+    "keywords": "Xibe ethnic group Xinjiang Liaoning traditional costume long gown embroidered collar riding jacket Qapqal full body outfit",
+    "filename": "xibe_hero.jpg",
+    "check": "Is this image related to Xibe (锡伯族) traditional clothing? If it shows a person, is the full body (head to feet) visible with the complete outfit clearly shown? Is the clothing traditional or clearly fashion-related (not casual/modern street wear)? Answer YES or NO first."
+  },
+  {
+    "keywords": "Zhongshan suit Mao suit Chinese tunic full body outfit",
+    "filename": "zhongshan-suit_hero.jpg",
+    "check": "Is this image related to Zhongshan suit? If it shows a person, is the full body (head to feet) visible with the complete outfit clearly shown? Is the clothing traditional or clearly fashion-related (not casual/modern street wear)? Answer YES or NO first."
+  }
+]

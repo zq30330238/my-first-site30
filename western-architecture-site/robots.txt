@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://western-architecture.jycsd.com/sitemap.xml

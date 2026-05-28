@@ -1,184 +1,246 @@
 {
+  "_categories": {
+    "portal": "门户主站 — 品牌导航，链接到所有子站",
+    "content": "通用内容站 — 健康/宠物/家居/理财/科技/旅行/汽车/摩托/美食/娱乐",
+    "external": "独立域名站 — 法律/医疗等独立品牌",
+    "game_hub": "游戏聚合站 — games.jycsd.com，汇总所有游戏子站",
+    "anime_hub": "动漫聚合站 — anime.jycsd.com，汇总所有动漫子站",
+    "game": "游戏子站 — 单个游戏攻略/角色/资讯",
+    "anime": "动漫子站 — 单个动漫角色/篇章/攻略"
+  },
   "sites": [
-    {
-      "dir": "anime-site",
-      "cf_project": "anime-jycsd",
-      "domain": "anime.jycsd.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "dailymedadvice",
-      "cf_project": "dailymedadvice",
-      "domain": "dailymedadvice.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "dragonball-site",
-      "cf_project": "dragonball-jycsd",
-      "domain": "dragonball.jycsd.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "eldenring-site",
-      "cf_project": "eldenring-jycsd",
-      "domain": "eldenring.jycsd.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "entertainment",
-      "cf_project": "entertainment-jycsd",
-      "domain": "entertainment.jycsd.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "fortnite-site",
-      "cf_project": "fortnite-jycsd",
-      "domain": "fortnite.jycsd.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "games-site",
-      "cf_project": "games-jycsd",
-      "domain": "games.jycsd.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "lol-site",
-      "cf_project": "lol-jycsd",
-      "domain": "lol.jycsd.com",
-      "production_branch": "master"
-    },
     {
       "dir": "main-site",
       "cf_project": "main-site",
       "domain": "www.jycsd.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "minecraft-site",
-      "cf_project": "minecraft-jycsd",
-      "domain": "minecraft.jycsd.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "naruto-site",
-      "cf_project": "naruto-jycsd",
-      "domain": "naruto.jycsd.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "onepiece-site",
-      "cf_project": "onepiece-jycsd",
-      "domain": "onepiece.jycsd.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "rightsdaily",
-      "cf_project": "rightsdaily",
-      "domain": "rightsdaily.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "sub-finance",
-      "cf_project": "finance-jycsd",
-      "domain": "finance.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "portal"
     },
     {
       "dir": "sub-healthy",
       "cf_project": "healthy-jycsd",
       "domain": "healthy.jycsd.com",
-      "production_branch": "master"
-    },
-    {
-      "dir": "sub-home",
-      "cf_project": "home-jycsd",
-      "domain": "home.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "content"
     },
     {
       "dir": "sub-pets",
       "cf_project": "pets-jycsd",
       "domain": "pets.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "content"
+    },
+    {
+      "dir": "sub-home",
+      "cf_project": "home-jycsd",
+      "domain": "home.jycsd.com",
+      "production_branch": "master",
+      "category": "content"
+    },
+    {
+      "dir": "sub-finance",
+      "cf_project": "finance-jycsd",
+      "domain": "finance.jycsd.com",
+      "production_branch": "master",
+      "category": "content"
     },
     {
       "dir": "sub-tech",
       "cf_project": "tech-jycsd",
       "domain": "tech.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "content"
     },
     {
       "dir": "sub-travel",
       "cf_project": "travel-jycsd",
       "domain": "travel.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "content"
     },
     {
       "dir": "sub-auto",
       "cf_project": "auto-jycsd",
       "domain": "auto.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "content"
     },
     {
       "dir": "sub-moto",
       "cf_project": "moto-jycsd",
       "domain": "moto.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "content"
     },
     {
       "dir": "sub-food",
       "cf_project": "food-jycsd",
       "domain": "food.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "content"
+    },
+    {
+      "dir": "entertainment",
+      "cf_project": "entertainment-jycsd",
+      "domain": "entertainment.jycsd.com",
+      "production_branch": "master",
+      "category": "content"
+    },
+    {
+      "dir": "clothing-site",
+      "cf_project": "clothing-jycsd",
+      "domain": "clothing.jycsd.com",
+      "production_branch": "master",
+      "category": "content"
+    },
+    {
+      "dir": "chinese-architecture-site",
+      "cf_project": "chinese-architecture-jycsd",
+      "domain": "chinese-architecture.jycsd.com",
+      "production_branch": "master",
+      "category": "content"
+    },
+    {
+      "dir": "western-architecture-site",
+      "cf_project": "western-architecture-jycsd",
+      "domain": "western-architecture.jycsd.com",
+      "production_branch": "master",
+      "category": "content"
+    },
+    {
+      "dir": "dailymedadvice",
+      "cf_project": "dailymedadvice",
+      "domain": "dailymedadvice.com",
+      "production_branch": "master",
+      "category": "external"
+    },
+    {
+      "dir": "rightsdaily",
+      "cf_project": "rightsdaily",
+      "domain": "rightsdaily.com",
+      "production_branch": "master",
+      "category": "external"
+    },
+    {
+      "dir": "games-site",
+      "cf_project": "games-jycsd",
+      "domain": "games.jycsd.com",
+      "production_branch": "master",
+      "category": "game_hub"
+    },
+    {
+      "dir": "anime-site",
+      "cf_project": "anime-jycsd",
+      "domain": "anime.jycsd.com",
+      "production_branch": "master",
+      "category": "anime_hub"
+    },
+
+    {
+      "dir": "dragonball-site",
+      "cf_project": "dragonball-jycsd",
+      "domain": "dragonball.jycsd.com",
+      "production_branch": "master",
+      "category": "game"
+    },
+    {
+      "dir": "eldenring-site",
+      "cf_project": "eldenring-jycsd",
+      "domain": "eldenring.jycsd.com",
+      "production_branch": "master",
+      "category": "game"
+    },
+    {
+      "dir": "fortnite-site",
+      "cf_project": "fortnite-jycsd",
+      "domain": "fortnite.jycsd.com",
+      "production_branch": "master",
+      "category": "game"
+    },
+    {
+      "dir": "lol-site",
+      "cf_project": "lol-jycsd",
+      "domain": "lol.jycsd.com",
+      "production_branch": "master",
+      "category": "game"
+    },
+    {
+      "dir": "minecraft-site",
+      "cf_project": "minecraft-jycsd",
+      "domain": "minecraft.jycsd.com",
+      "production_branch": "master",
+      "category": "game"
+    },
+    {
+      "dir": "naruto-site",
+      "cf_project": "naruto-jycsd",
+      "domain": "naruto.jycsd.com",
+      "production_branch": "master",
+      "category": "game"
+    },
+    {
+      "dir": "onepiece-site",
+      "cf_project": "onepiece-jycsd",
+      "domain": "onepiece.jycsd.com",
+      "production_branch": "master",
+      "category": "game"
     },
     {
       "dir": "valorant-site",
       "cf_project": "valorant-jycsd",
       "domain": "valorant.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "game"
     },
+
     {
       "dir": "bleach-site",
       "cf_project": "bleach-jycsd",
       "domain": "bleach.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "anime"
     },
     {
       "dir": "hxh-site",
       "cf_project": "hxh-jycsd",
       "domain": "hxh.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "anime"
     },
     {
       "dir": "jjk-site",
       "cf_project": "jjk-jycsd",
       "domain": "jjk.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "anime"
     },
     {
       "dir": "jojo-site",
       "cf_project": "jojo-jycsd",
       "domain": "jojo.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "anime"
     },
     {
       "dir": "sao-site",
       "cf_project": "sao-jycsd",
       "domain": "sao.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "anime"
     },
     {
       "dir": "tokyoghoul-site",
       "cf_project": "tokyoghoul-jycsd",
       "domain": "tokyoghoul.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "anime"
     },
     {
       "dir": "aot-site",
       "cf_project": "aot-jycsd",
       "domain": "aot.jycsd.com",
-      "production_branch": "master"
+      "production_branch": "master",
+      "category": "anime"
     }
   ]
 }

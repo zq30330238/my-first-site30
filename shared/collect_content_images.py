@@ -185,7 +185,7 @@ def get_fallback_url(fallback_idx: int) -> str:
 def update_article_html(html: str, img_path: str, h1_text: str) -> str:
     """Update article HTML: replace or insert hero image after header."""
     # First, try to find an existing hero <img> tag near the article header
-    # (within the first 1000 chars of the article body after </nav>)
+    # (within the first 2000 chars of the article body after </nav>)
     body_start = html.find('</nav>')
     if body_start == -1:
         body_start = html.find('<body')
@@ -196,6 +196,13 @@ def update_article_html(html: str, img_path: str, h1_text: str) -> str:
         img_tag_match = re.search(r'<img[^>]+src="images/article-[^"]*"[^>]*>', search_region)
     if not img_tag_match:
         img_tag_match = re.search(r'<img[^>]+src="[^"]*unsplash[^"]*"[^>]*>', search_region)
+    # If nothing found in first 2000 chars, search the entire body area
+    if not img_tag_match and body_start >= 0:
+        body_end = html.find('</body>', body_start)
+        if body_end == -1:
+            body_end = len(html)
+        search_region = html[body_start:body_end]
+        img_tag_match = re.search(r'<img[^>]+src="[^"]*"[^>]*>', search_region)
 
     if img_tag_match:
         # Replace existing hero image src
@@ -216,12 +223,7 @@ def update_article_html(html: str, img_path: str, h1_text: str) -> str:
             header_close = html.find('</header>', h1_end)
             if header_close != -1 and header_close - h1_end < 500:
                 # Insert before </header>
-                img_html = (
-                    f'\n            <img\n        src="{img_path}"\n        '
-                    f'alt="{h1_text} - article hero image"\n        '
-                    f'class="w-full h-64 md:h-80 object-cover rounded-xl mb-8"\n        '
-                    f'loading="lazy"\n        width="800"\n        height="400">'
-                )
+                img_html = f'<img src="{img_path}" alt="{h1_text} - article hero image" class="w-full h-64 md:h-80 object-cover rounded-xl mb-8" loading="lazy" width="800" height="400">'
                 html = html[:header_close] + img_html + '\n            ' + html[header_close:]
             else:
                 # Find the author/byline closing div
@@ -240,45 +242,25 @@ def update_article_html(html: str, img_path: str, h1_text: str) -> str:
                         depth += 1
 
                 if insert_pos > 0:
-                    img_html = (
-                        f'\n\n                <img\n        src="{img_path}"\n        '
-                        f'alt="{h1_text} - article hero image"\n        '
-                        f'class="w-full h-64 md:h-80 object-cover rounded-xl mb-8"\n        '
-                        f'loading="lazy"\n        width="800"\n        height="400">\n'
-                    )
+                    img_html = f'<img src="{img_path}" alt="{h1_text} - article hero image" class="w-full h-64 md:h-80 object-cover rounded-xl mb-8" loading="lazy" width="800" height="400">'
                     html = html[:insert_pos] + img_html + html[insert_pos:]
                 else:
                     # Last resort: insert after </header> if exists, otherwise after <h1> block
                     header_close = html.find('</header>', body_start)
                     if header_close != -1:
-                        img_html = (
-                            f'\n            <img\n        src="{img_path}"\n        '
-                            f'alt="{h1_text} - article hero image"\n        '
-                            f'class="w-full h-64 md:h-80 object-cover rounded-xl mb-8"\n        '
-                            f'loading="lazy"\n        width="800"\n        height="400">'
-                        )
+                        img_html = f'<img src="{img_path}" alt="{h1_text} - article hero image" class="w-full h-64 md:h-80 object-cover rounded-xl mb-8" loading="lazy" width="800" height="400">'
                         html = html[:header_close] + img_html + '\n            ' + html[header_close:]
                     else:
                         # Insert after the h1 closing tag
                         insert_pos = h1_end
-                        img_html = (
-                            f'\n\n                <img\n        src="{img_path}"\n        '
-                            f'alt="{h1_text} - article hero image"\n        '
-                            f'class="w-full h-64 md:h-80 object-cover rounded-xl mb-8"\n        '
-                            f'loading="lazy"\n        width="800"\n        height="400">\n'
-                        )
+                        img_html = f'<img src="{img_path}" alt="{h1_text} - article hero image" class="w-full h-64 md:h-80 object-cover rounded-xl mb-8" loading="lazy" width="800" height="400">'
                         html = html[:insert_pos] + img_html + html[insert_pos:]
         else:
             # No H1 found, insert after <main
             main_match = re.search(r'<main[^>]*>', html)
             if main_match:
                 insert_pos = main_match.end()
-                img_html = (
-                    f'\n            <img\n        src="{img_path}"\n        '
-                    f'alt="{h1_text} - article hero image"\n        '
-                    f'class="w-full h-64 md:h-80 object-cover rounded-xl mb-8"\n        '
-                    f'loading="lazy"\n        width="800"\n        height="400">\n'
-                )
+                img_html = f'<img src="{img_path}" alt="{h1_text} - article hero image" class="w-full h-64 md:h-80 object-cover rounded-xl mb-8" loading="lazy" width="800" height="400">'
                 html = html[:insert_pos] + img_html + html[insert_pos:]
 
     return html

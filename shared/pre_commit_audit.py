@@ -335,6 +335,8 @@ def check_article(filepath, site_dir):
                         if not target.exists():
                             if rel_path.endswith('/') and (target / 'index.html').exists():
                                 pass
+                            elif not target.suffix and Path(str(target) + '.html').exists():
+                                pass
                             else:
                                 errors.append(f"{name}: cross-site broken link: {href} (file missing: {target.relative_to(ROOT)})")
                     break
@@ -350,8 +352,11 @@ def check_article(filepath, site_dir):
             index_target = target / 'index.html'
             if not index_target.exists():
                 errors.append(f"{name}: directory link broken: {href} → {index_target.relative_to(ROOT)} (index.html not found)")
-        elif not target.exists() and '.' in target.name:
-            errors.append(f"{name}: broken internal link: {href} → {target.relative_to(ROOT)} (file not found)")
+        elif not target.exists():
+            if not target.suffix and Path(str(target) + '.html').exists():
+                pass
+            elif '.' in target.name:
+                errors.append(f"{name}: broken internal link: {href} → {target.relative_to(ROOT)} (file not found)")
 
     # === SEMANTIC LINK MATCHING (content-area links only) ===
     # Strip nav, footer, header before link extraction — those are navigation, not semantic references

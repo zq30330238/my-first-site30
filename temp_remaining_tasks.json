@@ -1,0 +1,97 @@
+[
+  {
+    "filename": "dongxiang_female.jpg",
+    "keywords": "dongxiang Chinese ethnic minority traditional female clothing costume",
+    "check": "YES if this image shows traditional female clothing/costume of the dongxiang ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "tujia_male.jpg",
+    "keywords": "tujia Chinese ethnic minority traditional male clothing costume",
+    "check": "YES if this image shows traditional male clothing/costume of the tujia ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "tujia_female.jpg",
+    "keywords": "tujia Chinese ethnic minority traditional female clothing costume",
+    "check": "YES if this image shows traditional female clothing/costume of the tujia ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "uyghur_male.jpg",
+    "keywords": "uyghur Chinese ethnic minority traditional male clothing costume",
+    "check": "YES if this image shows traditional male clothing/costume of the uyghur ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "uyghur_female.jpg",
+    "keywords": "uyghur Chinese ethnic minority traditional female clothing costume",
+    "check": "YES if this image shows traditional female clothing/costume of the uyghur ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "uzbek_male.jpg",
+    "keywords": "uzbek Chinese ethnic minority traditional male clothing costume",
+    "check": "YES if this image shows traditional male clothing/costume of the uzbek ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "uzbek_female.jpg",
+    "keywords": "uzbek Chinese ethnic minority traditional female clothing costume",
+    "check": "YES if this image shows traditional female clothing/costume of the uzbek ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "va_male.jpg",
+    "keywords": "va Chinese ethnic minority traditional male clothing costume",
+    "check": "YES if this image shows traditional male clothing/costume of the va ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "va_female.jpg",
+    "keywords": "va Chinese ethnic minority traditional female clothing costume",
+    "check": "YES if this image shows traditional female clothing/costume of the va ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "xibe_male.jpg",
+    "keywords": "xibe Chinese ethnic minority traditional male clothing costume",
+    "check": "YES if this image shows traditional male clothing/costume of the xibe ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "xibe_female.jpg",
+    "keywords": "xibe Chinese ethnic minority traditional female clothing costume",
+    "check": "YES if this image shows traditional female clothing/costume of the xibe ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "yao_male.jpg",
+    "keywords": "yao Chinese ethnic minority traditional male clothing costume",
+    "check": "YES if this image shows traditional male clothing/costume of the yao ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "yao_female.jpg",
+    "keywords": "yao Chinese ethnic minority traditional female clothing costume",
+    "check": "YES if this image shows traditional female clothing/costume of the yao ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "yi_male.jpg",
+    "keywords": "yi Chinese ethnic minority traditional male clothing costume",
+    "check": "YES if this image shows traditional male clothing/costume of the yi ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "yi_female.jpg",
+    "keywords": "yi Chinese ethnic minority traditional female clothing costume",
+    "check": "YES if this image shows traditional female clothing/costume of the yi ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "yugur_male.jpg",
+    "keywords": "yugur Chinese ethnic minority traditional male clothing costume",
+    "check": "YES if this image shows traditional male clothing/costume of the yugur ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "yugur_female.jpg",
+    "keywords": "yugur Chinese ethnic minority traditional female clothing costume",
+    "check": "YES if this image shows traditional female clothing/costume of the yugur ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "zhuang_male.jpg",
+    "keywords": "zhuang Chinese ethnic minority traditional male clothing costume",
+    "check": "YES if this image shows traditional male clothing/costume of the zhuang ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  },
+  {
+    "filename": "zhuang_female.jpg",
+    "keywords": "zhuang Chinese ethnic minority traditional female clothing costume",
+    "check": "YES if this image shows traditional female clothing/costume of the zhuang ethnic group. NO if wrong ethnic group, wrong gender, or not traditional clothing."
+  }
+]

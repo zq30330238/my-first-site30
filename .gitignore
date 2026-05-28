@@ -38,4 +38,4 @@ demos/output/
 # Secrets — never commit
 Gmail MCP/
 gmail_oauth.py
-shared/gsc_auth.py
+

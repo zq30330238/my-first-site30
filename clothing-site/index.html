@@ -33,6 +33,8 @@
         .accent-bg { background-color: var(--accent); }
         .accent-border { border-color: var(--accent); }
         .hover-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; }
+        .carousel-slide.active { opacity: 1; }
     </style>
 </head>
 <body class="bg-white text-gray-900 min-h-screen">
@@ -50,16 +52,84 @@
     </div>
 </header>
 
-<!-- Hero -->
-<section class="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 py-20 md:py-28">
-        <div class="max-w-2xl">
-            <p class="text-sm uppercase tracking-widest text-red-300 mb-3">Myers Fashion</p>
-            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Traditional Chinese Clothing &amp; Global Fashion</h1>
-            <p class="text-lg text-gray-300 mb-8 leading-relaxed">From the intricate embroidery of 56 ethnic minorities to the evolution of dynastic dress codes — discover the art, symbolism, and beauty woven into every thread of Chinese textile heritage.</p>
-            <div class="flex gap-3">
-                <a href="/chinese/56-ethnic-groups/" class="inline-block accent-bg text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">Explore 56 Ethnic Groups</a>
-                <a href="/chinese/dynasty-evolution/" class="inline-block border border-white/30 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">Dynasty Fashion</a>
+<!-- Hero Carousel -->
+<section>
+    <div class="relative overflow-hidden h-[500px] md:h-[650px] bg-gray-900">
+        <div class="relative w-full h-full">
+            <div class="carousel-slide active">
+                <img src="/images/banner_miao.jpg" alt="Miao" class="w-full h-full object-cover object-top">
+                <div class="absolute inset-0 flex items-center justify-center" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
+                    <div class="text-center text-white px-4">
+                        <p class="text-sm uppercase tracking-widest text-red-300 mb-2">Ethnic Group</p>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-2">Miao (Hmong)</h2>
+                        <p class="text-lg text-gray-200">Intricate silver headdresses and vibrant pleated skirts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="/images/banner_tibetan.jpg" alt="Tibetan" class="w-full h-full object-cover object-top">
+                <div class="absolute inset-0 flex items-center justify-center" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
+                    <div class="text-center text-white px-4">
+                        <p class="text-sm uppercase tracking-widest text-red-300 mb-2">Ethnic Group</p>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-2">Tibetan (Zang)</h2>
+                        <p class="text-lg text-gray-200">Fur-trimmed chuba robes and coral-turquoise ornaments</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="/images/banner_han.jpg" alt="Han" class="w-full h-full object-cover object-top">
+                <div class="absolute inset-0 flex items-center justify-center" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
+                    <div class="text-center text-white px-4">
+                        <p class="text-sm uppercase tracking-widest text-red-300 mb-2">Ethnic Group</p>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-2">Han — Ming Dynasty</h2>
+                        <p class="text-lg text-gray-200">The definitive expression of Han textile artistry</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="/images/banner_zhuang.jpg" alt="Zhuang" class="w-full h-full object-cover object-top">
+                <div class="absolute inset-0 flex items-center justify-center" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
+                    <div class="text-center text-white px-4">
+                        <p class="text-sm uppercase tracking-widest text-red-300 mb-2">Ethnic Group</p>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-2">Zhuang</h2>
+                        <p class="text-lg text-gray-200">Colorful woven brocades and intricate embroidery</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="/images/paris-ss2026_hero.jpg" alt="Fashion Week" class="w-full h-full object-cover object-top">
+                <div class="absolute inset-0 flex items-center justify-center" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
+                    <div class="text-center text-white px-4">
+                        <p class="text-sm uppercase tracking-widest text-red-300 mb-2">Trends</p>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-2">Fashion Week Trends</h2>
+                        <p class="text-lg text-gray-200">Seasonal analysis from Paris, Milan, London, New York</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="/images/banner_qipao.jpg" alt="Qipao" class="w-full h-full object-cover object-top">
+                <div class="absolute inset-0 flex items-center justify-center" style="text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
+                    <div class="text-center text-white px-4">
+                        <p class="text-sm uppercase tracking-widest text-red-300 mb-2">History</p>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-2">Qipao Evolution</h2>
+                        <p class="text-lg text-gray-200">The iconic Chinese dress that shaped global fashion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/40 transition-colors text-xl font-bold z-10">&lsaquo;</button>
+        <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/40 transition-colors text-xl font-bold z-10">&rsaquo;</button>
+    </div>
+    <div class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-8 md:py-10">
+            <div class="max-w-2xl">
+                <p class="text-sm uppercase tracking-widest text-red-300 mb-2">Myers Fashion</p>
+                <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4">Traditional Chinese Clothing &amp; Global Fashion</h1>
+                <p class="text-gray-300 mb-6 leading-relaxed">From the intricate embroidery of 56 ethnic minorities to the evolution of dynastic dress codes — discover the art, symbolism, and beauty woven into every thread of Chinese textile heritage.</p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="/chinese/56-ethnic-groups/" class="inline-block accent-bg text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">Explore 56 Ethnic Groups</a>
+                    <a href="/chinese/dynasty-evolution/" class="inline-block border border-white/30 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">Dynasty Fashion</a>
+                </div>
             </div>
         </div>
     </div>
@@ -70,22 +140,22 @@
     <h2 class="text-2xl font-bold mb-10 text-center">Explore Fashion Categories</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <a href="/chinese/56-ethnic-groups/" class="hover-card bg-white border border-gray-200 rounded-xl p-6 transition-all duration-200 block">
-            <div class="w-12 h-12 accent-bg rounded-lg flex items-center justify-center text-white text-xl font-bold mb-4">56</div>
+            <img src="/images/cat_ethnic_groups.jpg" alt="Ethnic Groups" loading="lazy" class="w-full h-32 object-cover rounded-lg mb-4">
             <h3 class="font-bold text-lg mb-2">Ethnic Groups</h3>
             <p class="text-gray-600 text-sm leading-relaxed">Complete guide to the traditional clothing of all 56 Chinese ethnic groups — from Miao silver headdresses to Tibetan chuba robes.</p>
         </a>
         <a href="/chinese/dynasty-evolution/" class="hover-card bg-white border border-gray-200 rounded-xl p-6 transition-all duration-200 block">
-            <div class="w-12 h-12 accent-bg rounded-lg flex items-center justify-center text-white text-xl font-bold mb-4">H</div>
+            <img src="/images/cat_dynasty_evolution.jpg" alt="Dynasty Evolution" loading="lazy" class="w-full h-32 object-cover rounded-lg mb-4">
             <h3 class="font-bold text-lg mb-2">Dynasty Evolution</h3>
             <p class="text-gray-600 text-sm leading-relaxed">Trace the evolution of Chinese fashion across 2,000 years — Han to Qing — and how each dynasty shaped clothing culture.</p>
         </a>
         <a href="/western/fashion-week-trends/" class="hover-card bg-white border border-gray-200 rounded-xl p-6 transition-all duration-200 block">
-            <div class="w-12 h-12 accent-bg rounded-lg flex items-center justify-center text-white text-xl font-bold mb-4">FW</div>
+            <img src="/images/cat_fashion_week.jpg" alt="Fashion Week Trends" loading="lazy" class="w-full h-32 object-cover rounded-lg mb-4">
             <h3 class="font-bold text-lg mb-2">Fashion Week Trends</h3>
             <p class="text-gray-600 text-sm leading-relaxed">Seasonal trend analysis from Paris, Milan, London, and New York — the key styles shaping global fashion.</p>
         </a>
         <a href="/western/classic-pieces/" class="hover-card bg-white border border-gray-200 rounded-xl p-6 transition-all duration-200 block">
-            <div class="w-12 h-12 accent-bg rounded-lg flex items-center justify-center text-white text-xl font-bold mb-4">CP</div>
+            <img src="/images/cat_classic_pieces.jpg" alt="Classic Pieces" loading="lazy" class="w-full h-32 object-cover rounded-lg mb-4">
             <h3 class="font-bold text-lg mb-2">Classic Pieces</h3>
             <p class="text-gray-600 text-sm leading-relaxed">The untold stories behind iconic garments — jeans, little black dress, white shirt, trench coat, and more.</p>
         </a>
@@ -97,14 +167,14 @@
     <div class="max-w-7xl mx-auto px-4">
         <div class="flex items-center justify-between mb-10">
             <h2 class="text-2xl font-bold">Featured Ethnic Groups</h2>
-            <a href="/chinese/56-ethnic-groups/" class="accent-text font-semibold text-sm hover:underline">View All 56 &rarr;</a>
+            <a href="/chinese/56-ethnic-groups/" class="accent-text font-semibold text-lg hover:underline">View All 56 &rarr;</a>
         </div>
 
         <!-- Han Featured Card -->
         <a href="/chinese/56-ethnic-groups/han.html" class="group block bg-white rounded-xl overflow-hidden border-2 border-[#c41e3a] hover-card transition-all duration-200 mb-6">
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-48 lg:w-56 shrink-0 bg-gray-100 overflow-hidden">
-                    <img src="/images/achang_hero.jpg" alt="Ming Dynasty Han Clothing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    <img src="/images/han_hero.jpg" alt="Ming Dynasty Han Clothing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="p-5 md:p-6 flex-1">
                     <span class="inline-block bg-[#c41e3a] text-white text-xs font-bold px-3 py-0.5 rounded-full mb-2">FEATURED</span>
@@ -118,23 +188,23 @@
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             <a href="/chinese/56-ethnic-groups/miao.html" class="group bg-white rounded-xl overflow-hidden border border-gray-200 hover-card transition-all duration-200 block">
-                <div class="aspect-square bg-gray-100 overflow-hidden"><img src="/images/achang_hero.jpg" alt="Miao Ethnic Clothing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
+                <div class="aspect-square bg-gray-100 overflow-hidden"><img src="/images/miao_hero.jpg" alt="Miao Ethnic Clothing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
                 <div class="p-3 text-center font-semibold text-sm">Miao (Hmong)</div>
             </a>
             <a href="/chinese/56-ethnic-groups/tibetan.html" class="group bg-white rounded-xl overflow-hidden border border-gray-200 hover-card transition-all duration-200 block">
-                <div class="aspect-square bg-gray-100 overflow-hidden"><img src="/images/achang_hero.jpg" alt="Tibetan Clothing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
+                <div class="aspect-square bg-gray-100 overflow-hidden"><img src="/images/tibetan_hero.jpg" alt="Tibetan Clothing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
                 <div class="p-3 text-center font-semibold text-sm">Tibetan (Zang)</div>
             </a>
             <a href="/chinese/56-ethnic-groups/zhuang.html" class="group bg-white rounded-xl overflow-hidden border border-gray-200 hover-card transition-all duration-200 block">
-                <div class="aspect-square bg-gray-100 overflow-hidden"><img src="/images/achang_hero.jpg" alt="Zhuang Ethnic Clothing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
+                <div class="aspect-square bg-gray-100 overflow-hidden"><img src="/images/zhuang_hero.jpg" alt="Zhuang Ethnic Clothing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
                 <div class="p-3 text-center font-semibold text-sm">Zhuang</div>
             </a>
             <a href="/chinese/56-ethnic-groups/yi.html" class="group bg-white rounded-xl overflow-hidden border border-gray-200 hover-card transition-all duration-200 block">
-                <div class="aspect-square bg-gray-100 overflow-hidden"><img src="/images/achang_hero.jpg" alt="Yi Ethnic Clothing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
+                <div class="aspect-square bg-gray-100 overflow-hidden"><img src="/images/yi_hero.jpg" alt="Yi Ethnic Clothing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
                 <div class="p-3 text-center font-semibold text-sm">Yi</div>
             </a>
             <a href="/chinese/56-ethnic-groups/mongolian.html" class="group bg-white rounded-xl overflow-hidden border border-gray-200 hover-card transition-all duration-200 block">
-                <div class="aspect-square bg-gray-100 overflow-hidden"><img src="/images/achang_hero.jpg" alt="Mongolian Ethnic Clothing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
+                <div class="aspect-square bg-gray-100 overflow-hidden"><img src="/images/mongolian_hero.jpg" alt="Mongolian Ethnic Clothing" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>
                 <div class="p-3 text-center font-semibold text-sm">Mongolian</div>
             </a>
         </div>
@@ -188,7 +258,7 @@
             <div>
                 <h3 class="text-white font-semibold mb-3">Our Sites</h3>
                 <select onchange="if(this.value) window.location.href=this.value" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-gray-500">
-                    <option value="">— Myers Media Network —</option>
+                    <option value="">&mdash; Myers Media Network &mdash;</option>
                     <option value="https://www.jycsd.com">Main Site</option>
                     <option value="https://healthy.jycsd.com">Healthy Living</option>
                     <option value="https://pets.jycsd.com">Pet Care</option>
@@ -196,13 +266,35 @@
                     <option value="https://finance.jycsd.com">Personal Finance</option>
                     <option value="https://tech.jycsd.com">Tech & Digital</option>
                     <option value="https://travel.jycsd.com">Travel Guide</option>
-                    <option value="https://entertainment.jycsd.com">Entertainment</option>
                     <option value="https://auto.jycsd.com">Auto World</option>
                     <option value="https://moto.jycsd.com">Moto Sports</option>
                     <option value="https://food.jycsd.com">Food & Recipes</option>
+                    <option value="https://entertainment.jycsd.com">Entertainment</option>
+                    <option value="https://clothing.jycsd.com">Myers Fashion</option>
+                    <option value="https://chinese-architecture.jycsd.com">Myers Architecture</option>
+                    <option value="https://western-architecture.jycsd.com">Global Architecture</option>
+                    <option value="https://dailymedadvice.com">Daily Med Advice</option>
+                    <option value="https://rightsdaily.com">Rights Daily</option>
                     <option value="https://games.jycsd.com">Games Hub</option>
                     <option value="https://anime.jycsd.com">Anime Hub</option>
+                    <option value="https://dragonball.jycsd.com">Dragon Ball Z</option>
+                    <option value="https://eldenring.jycsd.com">Elden Ring</option>
+                    <option value="https://fortnite.jycsd.com">Fortnite</option>
+                    <option value="https://lol.jycsd.com">League of Legends</option>
+                    <option value="https://minecraft.jycsd.com">Minecraft</option>
+                    <option value="https://naruto.jycsd.com">Naruto</option>
+                    <option value="https://onepiece.jycsd.com">One Piece</option>
+                    <option value="https://valorant.jycsd.com">Valorant</option>
+                    <option value="https://bleach.jycsd.com">Bleach</option>
+                    <option value="https://hxh.jycsd.com">Hunter x Hunter</option>
+                    <option value="https://jjk.jycsd.com">Jujutsu Kaisen</option>
+                    <option value="https://jojo.jycsd.com">JoJo</option>
+                    <option value="https://sao.jycsd.com">Sword Art Online</option>
+                    <option value="https://tokyoghoul.jycsd.com">Tokyo Ghoul</option>
+                    <option value="https://aot.jycsd.com">Attack on Titan</option>
                 </select>
+
+                
             </div>
         </div>
         <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between text-sm">
@@ -217,7 +309,18 @@
         </div>
     </div>
 </footer>
-
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+function showSlide(n) {
+    slides.forEach(s => s.classList.remove('active'));
+    currentSlide = ((n % slides.length) + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+}
+function nextSlide() { showSlide(currentSlide + 1); }
+function prevSlide() { showSlide(currentSlide - 1); }
+setInterval(nextSlide, 5000);
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

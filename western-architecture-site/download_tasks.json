@@ -1,0 +1,722 @@
+[
+  {
+    "keywords": "Gothic castle medieval architecture stone cathedral europe wide exterior architecture",
+    "filename": "gothic-castle_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Gothic castle medieval architecture stone cathedral europe architectural detail close-up",
+    "filename": "gothic-castle_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Gothic castle medieval architecture stone cathedral europe interior beautiful view",
+    "filename": "gothic-castle_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Renaissance castle French chateau Loire Valley architecture wide exterior architecture",
+    "filename": "renaissance-castle_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Renaissance castle French chateau Loire Valley architecture architectural detail close-up",
+    "filename": "renaissance-castle_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Renaissance castle French chateau Loire Valley architecture interior beautiful view",
+    "filename": "renaissance-castle_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Baroque palace Versailles ornate royal architecture gold interior wide exterior architecture",
+    "filename": "baroque-palace_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Baroque palace Versailles ornate royal architecture gold interior architectural detail close-up",
+    "filename": "baroque-palace_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Baroque palace Versailles ornate royal architecture gold interior interior beautiful view",
+    "filename": "baroque-palace_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "medieval fortress castle stone walls tower Europe ancient wide exterior architecture",
+    "filename": "medieval-fortress_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "medieval fortress castle stone walls tower Europe ancient architectural detail close-up",
+    "filename": "medieval-fortress_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "medieval fortress castle stone walls tower Europe ancient interior beautiful view",
+    "filename": "medieval-fortress_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Neuschwanstein Castle Bavaria fairy tale Germany romantic architecture wide exterior architecture",
+    "filename": "neuschwanstein_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Neuschwanstein Castle Bavaria fairy tale Germany romantic architecture architectural detail close-up",
+    "filename": "neuschwanstein_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Neuschwanstein Castle Bavaria fairy tale Germany romantic architecture interior beautiful view",
+    "filename": "neuschwanstein_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Windsor Castle England royal residence British architecture wide exterior architecture",
+    "filename": "windsor-castle_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Windsor Castle England royal residence British architecture architectural detail close-up",
+    "filename": "windsor-castle_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Windsor Castle England royal residence British architecture interior beautiful view",
+    "filename": "windsor-castle_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Edinburgh Castle Scotland hilltop fortress historic architecture wide exterior architecture",
+    "filename": "edinburgh-castle_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Edinburgh Castle Scotland hilltop fortress historic architecture architectural detail close-up",
+    "filename": "edinburgh-castle_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Edinburgh Castle Scotland hilltop fortress historic architecture interior beautiful view",
+    "filename": "edinburgh-castle_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "American suburban house Colonial Craftsman Ranch style home wide exterior architecture",
+    "filename": "american-suburban_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "American suburban house Colonial Craftsman Ranch style home architectural detail close-up",
+    "filename": "american-suburban_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "American suburban house Colonial Craftsman Ranch style home interior beautiful view",
+    "filename": "american-suburban_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Victorian house San Francisco painted lady ornate woodwork architecture wide exterior architecture",
+    "filename": "victorian-house_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Victorian house San Francisco painted lady ornate woodwork architecture architectural detail close-up",
+    "filename": "victorian-house_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Victorian house San Francisco painted lady ornate woodwork architecture interior beautiful view",
+    "filename": "victorian-house_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Mediterranean villa Spain Italy white stucco terracotta courtyard wide exterior architecture",
+    "filename": "mediterranean-villa_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Mediterranean villa Spain Italy white stucco terracotta courtyard architectural detail close-up",
+    "filename": "mediterranean-villa_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Mediterranean villa Spain Italy white stucco terracotta courtyard interior beautiful view",
+    "filename": "mediterranean-villa_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "English country cottage thatched roof garden stone house wide exterior architecture",
+    "filename": "english-cottage_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "English country cottage thatched roof garden stone house architectural detail close-up",
+    "filename": "english-cottage_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "English country cottage thatched roof garden stone house interior beautiful view",
+    "filename": "english-cottage_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "French chateau countryside manor stone architecture vineyard wide exterior architecture",
+    "filename": "french-chateau_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "French chateau countryside manor stone architecture vineyard architectural detail close-up",
+    "filename": "french-chateau_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "French chateau countryside manor stone architecture vineyard interior beautiful view",
+    "filename": "french-chateau_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Japanese single family house modern minimalist residential ikkodate wide exterior architecture",
+    "filename": "japanese-ikkodate_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Japanese single family house modern minimalist residential ikkodate architectural detail close-up",
+    "filename": "japanese-ikkodate_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Japanese single family house modern minimalist residential ikkodate interior beautiful view",
+    "filename": "japanese-ikkodate_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Scandinavian wooden cabin forest lake Nordic architecture wide exterior architecture",
+    "filename": "scandinavian-cabin_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Scandinavian wooden cabin forest lake Nordic architecture architectural detail close-up",
+    "filename": "scandinavian-cabin_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Scandinavian wooden cabin forest lake Nordic architecture interior beautiful view",
+    "filename": "scandinavian-cabin_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "modern luxury mansion glass steel concrete contemporary architecture wide exterior architecture",
+    "filename": "modern-mansion_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "modern luxury mansion glass steel concrete contemporary architecture architectural detail close-up",
+    "filename": "modern-mansion_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "modern luxury mansion glass steel concrete contemporary architecture interior beautiful view",
+    "filename": "modern-mansion_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "European townhouse Amsterdam London row house brick facade wide exterior architecture",
+    "filename": "townhouse-europe_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "European townhouse Amsterdam London row house brick facade architectural detail close-up",
+    "filename": "townhouse-europe_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "European townhouse Amsterdam London row house brick facade interior beautiful view",
+    "filename": "townhouse-europe_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "loft studio penthouse apartment interior modern urban living wide exterior architecture",
+    "filename": "apartment-types_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "loft studio penthouse apartment interior modern urban living architectural detail close-up",
+    "filename": "apartment-types_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "loft studio penthouse apartment interior modern urban living interior beautiful view",
+    "filename": "apartment-types_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Greek Roman classical architecture columns Parthenon temple ancient wide exterior architecture",
+    "filename": "classical-greek-roman_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Greek Roman classical architecture columns Parthenon temple ancient architectural detail close-up",
+    "filename": "classical-greek-roman_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Greek Roman classical architecture columns Parthenon temple ancient interior beautiful view",
+    "filename": "classical-greek-roman_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Gothic cathedral Notre Dame flying buttress stained glass medieval wide exterior architecture",
+    "filename": "gothic-architecture_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Gothic cathedral Notre Dame flying buttress stained glass medieval architectural detail close-up",
+    "filename": "gothic-architecture_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Gothic cathedral Notre Dame flying buttress stained glass medieval interior beautiful view",
+    "filename": "gothic-architecture_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Renaissance architecture Florence dome symmetry classical revival wide exterior architecture",
+    "filename": "renaissance-architecture_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Renaissance architecture Florence dome symmetry classical revival architectural detail close-up",
+    "filename": "renaissance-architecture_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Renaissance architecture Florence dome symmetry classical revival interior beautiful view",
+    "filename": "renaissance-architecture_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Baroque rococo ornate interior gold stucco palace church decoration wide exterior architecture",
+    "filename": "baroque-rococo_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Baroque rococo ornate interior gold stucco palace church decoration architectural detail close-up",
+    "filename": "baroque-rococo_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Baroque rococo ornate interior gold stucco palace church decoration interior beautiful view",
+    "filename": "baroque-rococo_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Neoclassical architecture white columns Capitol museum grand building wide exterior architecture",
+    "filename": "neoclassical_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Neoclassical architecture white columns Capitol museum grand building architectural detail close-up",
+    "filename": "neoclassical_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Neoclassical architecture white columns Capitol museum grand building interior beautiful view",
+    "filename": "neoclassical_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Art Deco architecture Chrysler Building geometric chrome Miami style wide exterior architecture",
+    "filename": "art-deco_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Art Deco architecture Chrysler Building geometric chrome Miami style architectural detail close-up",
+    "filename": "art-deco_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Art Deco architecture Chrysler Building geometric chrome Miami style interior beautiful view",
+    "filename": "art-deco_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Art Nouveau architecture Gaudi organic curves iron glass Paris wide exterior architecture",
+    "filename": "art-nouveau_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Art Nouveau architecture Gaudi organic curves iron glass Paris architectural detail close-up",
+    "filename": "art-nouveau_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Art Nouveau architecture Gaudi organic curves iron glass Paris interior beautiful view",
+    "filename": "art-nouveau_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Bauhaus modernist architecture Mies van der Rohe glass box minimalist wide exterior architecture",
+    "filename": "bauhaus-modernism_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Bauhaus modernist architecture Mies van der Rohe glass box minimalist architectural detail close-up",
+    "filename": "bauhaus-modernism_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Bauhaus modernist architecture Mies van der Rohe glass box minimalist interior beautiful view",
+    "filename": "bauhaus-modernism_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Brutalist architecture concrete monolithic geometric raw texture building wide exterior architecture",
+    "filename": "brutalist_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Brutalist architecture concrete monolithic geometric raw texture building architectural detail close-up",
+    "filename": "brutalist_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Brutalist architecture concrete monolithic geometric raw texture building interior beautiful view",
+    "filename": "brutalist_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "postmodern architecture playful colorful eclectic Venturi AT&T building wide exterior architecture",
+    "filename": "postmodern_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "postmodern architecture playful colorful eclectic Venturi AT&T building architectural detail close-up",
+    "filename": "postmodern_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "postmodern architecture playful colorful eclectic Venturi AT&T building interior beautiful view",
+    "filename": "postmodern_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "deconstructivist architecture Gehry Hadid titanium curves dynamic form wide exterior architecture",
+    "filename": "deconstructivism_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "deconstructivist architecture Gehry Hadid titanium curves dynamic form architectural detail close-up",
+    "filename": "deconstructivism_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "deconstructivist architecture Gehry Hadid titanium curves dynamic form interior beautiful view",
+    "filename": "deconstructivism_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "modern minimalist interior design clean lines white space simple wide exterior architecture",
+    "filename": "modern-minimalist_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "modern minimalist interior design clean lines white space simple architectural detail close-up",
+    "filename": "modern-minimalist_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "modern minimalist interior design clean lines white space simple interior beautiful view",
+    "filename": "modern-minimalist_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Scandinavian interior design hygge cozy wood neutral warm minimal wide exterior architecture",
+    "filename": "scandinavian_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Scandinavian interior design hygge cozy wood neutral warm minimal architectural detail close-up",
+    "filename": "scandinavian_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Scandinavian interior design hygge cozy wood neutral warm minimal interior beautiful view",
+    "filename": "scandinavian_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "industrial loft interior exposed brick steel pipe concrete open space wide exterior architecture",
+    "filename": "industrial-loft_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "industrial loft interior exposed brick steel pipe concrete open space architectural detail close-up",
+    "filename": "industrial-loft_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "industrial loft interior exposed brick steel pipe concrete open space interior beautiful view",
+    "filename": "industrial-loft_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "mid-century modern interior Eames Danish teak retro furniture wide exterior architecture",
+    "filename": "mid-century-modern_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "mid-century modern interior Eames Danish teak retro furniture architectural detail close-up",
+    "filename": "mid-century-modern_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "mid-century modern interior Eames Danish teak retro furniture interior beautiful view",
+    "filename": "mid-century-modern_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "bohemian interior design colorful textiles plants eclectic decor boho wide exterior architecture",
+    "filename": "bohemian_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "bohemian interior design colorful textiles plants eclectic decor boho architectural detail close-up",
+    "filename": "bohemian_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "bohemian interior design colorful textiles plants eclectic decor boho interior beautiful view",
+    "filename": "bohemian_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "modern farmhouse interior rustic wood shiplap white cozy country wide exterior architecture",
+    "filename": "farmhouse_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "modern farmhouse interior rustic wood shiplap white cozy country architectural detail close-up",
+    "filename": "farmhouse_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "modern farmhouse interior rustic wood shiplap white cozy country interior beautiful view",
+    "filename": "farmhouse_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "coastal interior design beach house blue white natural light ocean wide exterior architecture",
+    "filename": "coastal_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "coastal interior design beach house blue white natural light ocean architectural detail close-up",
+    "filename": "coastal_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "coastal interior design beach house blue white natural light ocean interior beautiful view",
+    "filename": "coastal_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Japandi interior design Japanese Scandinavian fusion zen minimal warm wide exterior architecture",
+    "filename": "japandi_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Japandi interior design Japanese Scandinavian fusion zen minimal warm architectural detail close-up",
+    "filename": "japandi_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Japandi interior design Japanese Scandinavian fusion zen minimal warm interior beautiful view",
+    "filename": "japandi_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "maximalist interior design bold colors patterns layered eclectic decor wide exterior architecture",
+    "filename": "maximalist_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "maximalist interior design bold colors patterns layered eclectic decor architectural detail close-up",
+    "filename": "maximalist_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "maximalist interior design bold colors patterns layered eclectic decor interior beautiful view",
+    "filename": "maximalist_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "transitional interior design traditional modern blend classic contemporary mix wide exterior architecture",
+    "filename": "transitional_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "transitional interior design traditional modern blend classic contemporary mix architectural detail close-up",
+    "filename": "transitional_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "transitional interior design traditional modern blend classic contemporary mix interior beautiful view",
+    "filename": "transitional_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Eiffel Tower Paris France landmark iron lattice architecture wide exterior architecture",
+    "filename": "eiffel-tower_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Eiffel Tower Paris France landmark iron lattice architecture architectural detail close-up",
+    "filename": "eiffel-tower_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Eiffel Tower Paris France landmark iron lattice architecture interior beautiful view",
+    "filename": "eiffel-tower_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Roman Colosseum Rome Italy ancient amphitheater architecture ruins wide exterior architecture",
+    "filename": "colosseum_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Roman Colosseum Rome Italy ancient amphitheater architecture ruins architectural detail close-up",
+    "filename": "colosseum_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Roman Colosseum Rome Italy ancient amphitheater architecture ruins interior beautiful view",
+    "filename": "colosseum_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Sagrada Familia Barcelona Gaudi cathedral towers facade detail wide exterior architecture",
+    "filename": "sagrada-familia_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Sagrada Familia Barcelona Gaudi cathedral towers facade detail architectural detail close-up",
+    "filename": "sagrada-familia_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Sagrada Familia Barcelona Gaudi cathedral towers facade detail interior beautiful view",
+    "filename": "sagrada-familia_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Fallingwater Frank Lloyd Wright waterfall house organic architecture Pennsylvania wide exterior architecture",
+    "filename": "fallingwater_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Fallingwater Frank Lloyd Wright waterfall house organic architecture Pennsylvania architectural detail close-up",
+    "filename": "fallingwater_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Fallingwater Frank Lloyd Wright waterfall house organic architecture Pennsylvania interior beautiful view",
+    "filename": "fallingwater_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Villa Savoye Le Corbusier modernist villa pilotis white architecture wide exterior architecture",
+    "filename": "villa-savoye_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Villa Savoye Le Corbusier modernist villa pilotis white architecture architectural detail close-up",
+    "filename": "villa-savoye_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Villa Savoye Le Corbusier modernist villa pilotis white architecture interior beautiful view",
+    "filename": "villa-savoye_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Sydney Opera House Australia Jorn Utzon shells harbor architecture wide exterior architecture",
+    "filename": "sydney-opera-house_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Sydney Opera House Australia Jorn Utzon shells harbor architecture architectural detail close-up",
+    "filename": "sydney-opera-house_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Sydney Opera House Australia Jorn Utzon shells harbor architecture interior beautiful view",
+    "filename": "sydney-opera-house_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Burj Khalifa Dubai tallest skyscraper modern glass tower architecture wide exterior architecture",
+    "filename": "burj-khalifa_hero.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Burj Khalifa Dubai tallest skyscraper modern glass tower architecture architectural detail close-up",
+    "filename": "burj-khalifa_detail.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "Burj Khalifa Dubai tallest skyscraper modern glass tower architecture interior beautiful view",
+    "filename": "burj-khalifa_more.jpg",
+    "check": "Is this an architecture, building, or interior photo? No people portraits, text graphics, or AI illustrations. Answer YES or NO first."
+  },
+  {
+    "keywords": "beautiful architecture landmark hero",
+    "filename": "index_hero.jpg",
+    "check": "Is this an architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "beautiful architecture landmark detail",
+    "filename": "index_detail.jpg",
+    "check": "Is this an architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "beautiful architecture landmark more",
+    "filename": "index_more.jpg",
+    "check": "Is this an architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "beautiful architecture landmark hero",
+    "filename": "about_hero.jpg",
+    "check": "Is this an architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "beautiful architecture landmark detail",
+    "filename": "about_detail.jpg",
+    "check": "Is this an architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "beautiful architecture landmark more",
+    "filename": "about_more.jpg",
+    "check": "Is this an architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "beautiful architecture landmark hero",
+    "filename": "contact_hero.jpg",
+    "check": "Is this an architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "beautiful architecture landmark detail",
+    "filename": "contact_detail.jpg",
+    "check": "Is this an architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  },
+  {
+    "keywords": "beautiful architecture landmark more",
+    "filename": "contact_more.jpg",
+    "check": "Is this an architecture or building photo? No portraits or AI art. Answer YES or NO first."
+  }
+]

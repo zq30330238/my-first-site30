@@ -43,7 +43,7 @@ def replace_article_img(html, article_num, image_url):
     local_src = f"images/article-{article_num}.jpg"
 
     # Case 1: Has <img> with external URL - replace src
-    img_pattern = re.compile(r'(<img\s[^>]*src\s*=\s*")[^"]*("[^>]*>)')
+    img_pattern = re.compile(r'(<img\s[\s\S]*?src\s*=\s*")[^"]*("[\s\S]*?>)')
     new_html, count = img_pattern.subn(r'\1' + local_src + r'\2', html, count=1)
 
     if count > 0:

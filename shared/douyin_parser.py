@@ -13,7 +13,7 @@ from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
 ROOT = Path(__file__).resolve().parent.parent
-API_KEY = os.environ.get("ARK_API_KEY") or "ark-bc9c6af0-1813-4842-ae3f-0614d354c375-98727"
+API_KEY = os.environ.get("ARK_API_KEY") or "ark-71e489d9-8720-4ce9-ac4b-30c178333e33-02a59"
 API_BASE = "https://ark.cn-beijing.volces.com/api/v3"
 MODEL = "doubao-seed-2.0-lite"
 

@@ -149,7 +149,7 @@ def reasonix_call_json(system_prompt: str, user_message: str, model: str = MODEL
     raise json.JSONDecodeError("No JSON object found in output", output, 0)
 
 
-ARK_API_KEY = os.environ.get("ARK_API_KEY", "ark-bc9c6af0-1813-4842-ae3f-0614d354c375-98727")
+ARK_API_KEY = os.environ.get("ARK_API_KEY", "ark-71e489d9-8720-4ce9-ac4b-30c178333e33-02a59")
 ARK_API_URL = "https://ark.cn-beijing.volces.com/api/v3/chat/completions"
 
 

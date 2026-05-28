@@ -1,0 +1,497 @@
+[
+  {
+    "keywords": "Achang ethnic group Yunnan traditional costume full body outfit",
+    "filename": "achang_hero.jpg",
+    "check": "Does this image show achang full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Achang ethnic group Yunnan traditional costume textile detail",
+    "filename": "achang_detail.jpg",
+    "check": "Does this image show achang textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Achang ethnic group Yunnan traditional costume festival ceremony",
+    "filename": "achang_festival.jpg",
+    "check": "Does this image show achang festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Bai ethnic group Dali traditional costume full body outfit",
+    "filename": "bai_hero.jpg",
+    "check": "Does this image show bai full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Bai ethnic group Dali traditional costume textile detail",
+    "filename": "bai_detail.jpg",
+    "check": "Does this image show bai textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Bai ethnic group Dali traditional costume festival ceremony",
+    "filename": "bai_festival.jpg",
+    "check": "Does this image show bai festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Blang ethnic group Xishuangbanna traditional costume indigo textile detail",
+    "filename": "blang_detail.jpg",
+    "check": "Does this image show blang textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Blang ethnic group Xishuangbanna traditional costume indigo festival ceremony",
+    "filename": "blang_festival.jpg",
+    "check": "Does this image show blang festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Bonan ethnic group Gansu traditional costume full body outfit",
+    "filename": "bonan_hero.jpg",
+    "check": "Does this image show bonan full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Bonan ethnic group Gansu traditional costume festival ceremony",
+    "filename": "bonan_festival.jpg",
+    "check": "Does this image show bonan festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Buyei ethnic group Guizhou batik traditional costume full body outfit",
+    "filename": "buyei_hero.jpg",
+    "check": "Does this image show buyei full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Dai ethnic group Xishuangbanna traditional costume tubular skirt full body outfit",
+    "filename": "dai_hero.jpg",
+    "check": "Does this image show dai full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Daur ethnic group Inner Mongolia traditional costume full body outfit",
+    "filename": "daur_hero.jpg",
+    "check": "Does this image show daur full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Daur ethnic group Inner Mongolia traditional costume textile detail",
+    "filename": "daur_detail.jpg",
+    "check": "Does this image show daur textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Derung ethnic group Yunnan traditional costume festival ceremony",
+    "filename": "derung_festival.jpg",
+    "check": "Does this image show derung festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Dong ethnic group Guizhou traditional costume festival ceremony",
+    "filename": "dong_festival.jpg",
+    "check": "Does this image show dong festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Dongxiang ethnic group Gansu traditional costume full body outfit",
+    "filename": "dongxiang_hero.jpg",
+    "check": "Does this image show dongxiang full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Gaoshan ethnic group Taiwan traditional costume textile detail",
+    "filename": "gaoshan_detail.jpg",
+    "check": "Does this image show gaoshan textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Jing ethnic group Guangxi traditional costume ao dai style full body outfit",
+    "filename": "gin_hero.jpg",
+    "check": "Does this image show gin full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Han Chinese Ming dynasty traditional hanfu clothing full body outfit",
+    "filename": "han_hero.jpg",
+    "check": "Does this image show han full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Han Chinese Ming dynasty traditional hanfu clothing textile detail",
+    "filename": "han_detail.jpg",
+    "check": "Does this image show han textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Hani ethnic group Yunnan Honghe traditional costume full body outfit",
+    "filename": "hani_hero.jpg",
+    "check": "Does this image show hani full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Hezhen ethnic group Heilongjiang fish skin clothing full body outfit",
+    "filename": "hezhen_hero.jpg",
+    "check": "Does this image show hezhen full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Hezhen ethnic group Heilongjiang fish skin clothing festival ceremony",
+    "filename": "hezhen_festival.jpg",
+    "check": "Does this image show hezhen festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Hui ethnic group traditional Chinese Muslim clothing full body outfit",
+    "filename": "hui_hero.jpg",
+    "check": "Does this image show hui full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Hui ethnic group traditional Chinese Muslim clothing festival ceremony",
+    "filename": "hui_festival.jpg",
+    "check": "Does this image show hui festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Jingpo ethnic group Yunnan traditional costume full body outfit",
+    "filename": "jingpo_hero.jpg",
+    "check": "Does this image show jingpo full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Jingpo ethnic group Yunnan traditional costume festival ceremony",
+    "filename": "jingpo_festival.jpg",
+    "check": "Does this image show jingpo festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Jino ethnic group Xishuangbanna traditional costume textile detail",
+    "filename": "jino_detail.jpg",
+    "check": "Does this image show jino textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Kazakh ethnic group Xinjiang traditional costume full body outfit",
+    "filename": "kazakh_hero.jpg",
+    "check": "Does this image show kazakh full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Korean hanbok traditional dress full body outfit",
+    "filename": "korean_hero.jpg",
+    "check": "Does this image show korean full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Kyrgyz ethnic group Xinjiang traditional costume full body outfit",
+    "filename": "kyrgyz_hero.jpg",
+    "check": "Does this image show kyrgyz full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Lahu ethnic group Yunnan traditional costume full body outfit",
+    "filename": "lahu_hero.jpg",
+    "check": "Does this image show lahu full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Lhoba ethnic group Tibet traditional costume full body outfit",
+    "filename": "lhoba_hero.jpg",
+    "check": "Does this image show lhoba full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Lhoba ethnic group Tibet traditional costume textile detail",
+    "filename": "lhoba_detail.jpg",
+    "check": "Does this image show lhoba textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Li ethnic group Hainan traditional costume full body outfit",
+    "filename": "li_hero.jpg",
+    "check": "Does this image show li full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Li ethnic group Hainan traditional costume festival ceremony",
+    "filename": "li_festival.jpg",
+    "check": "Does this image show li festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Lisu ethnic group Yunnan Nujiang traditional costume full body outfit",
+    "filename": "lisu_hero.jpg",
+    "check": "Does this image show lisu full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Manchu ethnic group qipao cheongsam traditional costume full body outfit",
+    "filename": "manchu_hero.jpg",
+    "check": "Does this image show manchu full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Miao Hmong ethnic group traditional silver headdress costume full body outfit",
+    "filename": "miao_hero.jpg",
+    "check": "Does this image show miao full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Monba ethnic group Tibet traditional costume festival ceremony",
+    "filename": "monba_festival.jpg",
+    "check": "Does this image show monba festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Mongolian ethnic group traditional deel robe costume full body outfit",
+    "filename": "mongolian_hero.jpg",
+    "check": "Does this image show mongolian full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Mulao ethnic group Guangxi traditional costume festival ceremony",
+    "filename": "mulao_festival.jpg",
+    "check": "Does this image show mulao festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Naxi ethnic group Yunnan Lijiang traditional costume full body outfit",
+    "filename": "naxi_hero.jpg",
+    "check": "Does this image show naxi full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Nu ethnic group Yunnan Nujiang traditional costume full body outfit",
+    "filename": "nu_hero.jpg",
+    "check": "Does this image show nu full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Oroqen ethnic group Heilongjiang traditional hunting costume full body outfit",
+    "filename": "orogen_hero.jpg",
+    "check": "Does this image show orogen full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Oroqen ethnic group Heilongjiang traditional hunting costume textile detail",
+    "filename": "orogen_detail.jpg",
+    "check": "Does this image show orogen textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Pumi ethnic group Yunnan traditional costume festival ceremony",
+    "filename": "pumi_festival.jpg",
+    "check": "Does this image show pumi festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Qiang ethnic group Sichuan traditional costume textile detail",
+    "filename": "qiang_detail.jpg",
+    "check": "Does this image show qiang textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Qiang ethnic group Sichuan traditional costume festival ceremony",
+    "filename": "qiang_festival.jpg",
+    "check": "Does this image show qiang festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Russian ethnic group traditional costume full body outfit",
+    "filename": "russian_hero.jpg",
+    "check": "Does this image show russian full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Salar ethnic group Qinghai traditional costume full body outfit",
+    "filename": "salar_hero.jpg",
+    "check": "Does this image show salar full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Salar ethnic group Qinghai traditional costume textile detail",
+    "filename": "salar_detail.jpg",
+    "check": "Does this image show salar textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Salar ethnic group Qinghai traditional costume festival ceremony",
+    "filename": "salar_festival.jpg",
+    "check": "Does this image show salar festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Shui ethnic group Guizhou traditional costume full body outfit",
+    "filename": "shui_hero.jpg",
+    "check": "Does this image show shui full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Tajik ethnic group Xinjiang traditional costume full body outfit",
+    "filename": "tajik_hero.jpg",
+    "check": "Does this image show tajik full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Tajik ethnic group Xinjiang traditional costume festival ceremony",
+    "filename": "tajik_festival.jpg",
+    "check": "Does this image show tajik festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Tatar ethnic group Xinjiang traditional costume full body outfit",
+    "filename": "tatar_hero.jpg",
+    "check": "Does this image show tatar full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Tibetan ethnic group traditional chuba robe costume full body outfit",
+    "filename": "tibetan_hero.jpg",
+    "check": "Does this image show tibetan full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Tu ethnic group Qinghai traditional costume full body outfit",
+    "filename": "tu_hero.jpg",
+    "check": "Does this image show tu full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Tujia ethnic group Hunan traditional costume full body outfit",
+    "filename": "tujia_hero.jpg",
+    "check": "Does this image show tujia full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Uyghur ethnic group Xinjiang traditional costume full body outfit",
+    "filename": "uyghur_hero.jpg",
+    "check": "Does this image show uyghur full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Uyghur ethnic group Xinjiang traditional costume festival ceremony",
+    "filename": "uyghur_festival.jpg",
+    "check": "Does this image show uyghur festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Uzbek ethnic group Xinjiang traditional costume full body outfit",
+    "filename": "uzbek_hero.jpg",
+    "check": "Does this image show uzbek full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Va ethnic group Yunnan traditional costume full body outfit",
+    "filename": "va_hero.jpg",
+    "check": "Does this image show va full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Va ethnic group Yunnan traditional costume textile detail",
+    "filename": "va_detail.jpg",
+    "check": "Does this image show va textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Va ethnic group Yunnan traditional costume festival ceremony",
+    "filename": "va_festival.jpg",
+    "check": "Does this image show va festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Yao ethnic group Guangxi traditional costume full body outfit",
+    "filename": "yao_hero.jpg",
+    "check": "Does this image show yao full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Yao ethnic group Guangxi traditional costume textile detail",
+    "filename": "yao_detail.jpg",
+    "check": "Does this image show yao textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Yao ethnic group Guangxi traditional costume festival ceremony",
+    "filename": "yao_festival.jpg",
+    "check": "Does this image show yao festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Yi ethnic group Yunnan Sichuan traditional costume full body outfit",
+    "filename": "yi_hero.jpg",
+    "check": "Does this image show yi full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Yi ethnic group Yunnan Sichuan traditional costume textile detail",
+    "filename": "yi_detail.jpg",
+    "check": "Does this image show yi textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Yi ethnic group Yunnan Sichuan traditional costume festival ceremony",
+    "filename": "yi_festival.jpg",
+    "check": "Does this image show yi festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Yugur ethnic group Gansu traditional costume full body outfit",
+    "filename": "yugur_hero.jpg",
+    "check": "Does this image show yugur full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Yugur ethnic group Gansu traditional costume textile detail",
+    "filename": "yugur_detail.jpg",
+    "check": "Does this image show yugur textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Yugur ethnic group Gansu traditional costume festival ceremony",
+    "filename": "yugur_festival.jpg",
+    "check": "Does this image show yugur festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Zhuang ethnic group Guangxi traditional costume full body outfit",
+    "filename": "zhuang_hero.jpg",
+    "check": "Does this image show zhuang full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Zhuang ethnic group Guangxi traditional costume textile detail",
+    "filename": "zhuang_detail.jpg",
+    "check": "Does this image show zhuang textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Zhuang ethnic group Guangxi traditional costume festival ceremony",
+    "filename": "zhuang_festival.jpg",
+    "check": "Does this image show zhuang festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "ballet flats classic fashion shoes full body outfit",
+    "filename": "ballet-flats_hero.jpg",
+    "check": "Does this image show ballet flats full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "denim jeans classic vintage fashion full body outfit",
+    "filename": "jeans_hero.jpg",
+    "check": "Does this image show jeans full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "trench coat Burberry classic fashion full body outfit",
+    "filename": "trench-coat_hero.jpg",
+    "check": "Does this image show trench coat full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "eastern western wedding dress comparison full body outfit",
+    "filename": "eastern-western-wedding_hero.jpg",
+    "check": "Does this image show eastern western wedding full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Ming dynasty Chinese clothing fashion festival ceremony",
+    "filename": "ming-dynasty_festival.jpg",
+    "check": "Does this image show ming dynasty festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Qing dynasty Chinese traditional clothing full body outfit",
+    "filename": "qing-dynasty_hero.jpg",
+    "check": "Does this image show qing dynasty full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese dragon and phoenix embroidery pattern traditional full body outfit",
+    "filename": "dragon-phoenix_hero.jpg",
+    "check": "Does this image show dragon phoenix full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Chinese dragon and phoenix embroidery pattern traditional textile detail",
+    "filename": "dragon-phoenix_detail.jpg",
+    "check": "Does this image show dragon phoenix textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "London Fashion Week runway show full body outfit",
+    "filename": "london-fashion-week_hero.jpg",
+    "check": "Does this image show london fashion week full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "London Fashion Week runway show textile detail",
+    "filename": "london-fashion-week_detail.jpg",
+    "check": "Does this image show london fashion week textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "London Fashion Week runway show festival ceremony",
+    "filename": "london-fashion-week_festival.jpg",
+    "check": "Does this image show london fashion week festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Milan Fashion Week runway collection full body outfit",
+    "filename": "milan-fashion-week_hero.jpg",
+    "check": "Does this image show milan fashion week full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Milan Fashion Week runway collection textile detail",
+    "filename": "milan-fashion-week_detail.jpg",
+    "check": "Does this image show milan fashion week textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Milan Fashion Week runway collection festival ceremony",
+    "filename": "milan-fashion-week_festival.jpg",
+    "check": "Does this image show milan fashion week festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "New York Fashion Week runway show full body outfit",
+    "filename": "newyork-fashion-week_hero.jpg",
+    "check": "Does this image show newyork fashion week full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "New York Fashion Week runway show textile detail",
+    "filename": "newyork-fashion-week_detail.jpg",
+    "check": "Does this image show newyork fashion week textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "New York Fashion Week runway show festival ceremony",
+    "filename": "newyork-fashion-week_festival.jpg",
+    "check": "Does this image show newyork fashion week festival ceremony? Answer YES or NO first."
+  },
+  {
+    "keywords": "Paris Fashion Week runway collection full body outfit",
+    "filename": "paris-fashion-week_hero.jpg",
+    "check": "Does this image show paris fashion week full body outfit? Answer YES or NO first."
+  },
+  {
+    "keywords": "Paris Fashion Week runway collection textile detail",
+    "filename": "paris-fashion-week_detail.jpg",
+    "check": "Does this image show paris fashion week textile detail? Answer YES or NO first."
+  },
+  {
+    "keywords": "Paris Fashion Week runway collection festival ceremony",
+    "filename": "paris-fashion-week_festival.jpg",
+    "check": "Does this image show paris fashion week festival ceremony? Answer YES or NO first."
+  }
+]
