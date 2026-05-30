@@ -107,7 +107,7 @@
                 <a href="/elements/" class="text-gray-700 hover:text-accent transition font-medium">Elements</a>
                 <a href="/interior/" class="text-gray-700 hover:text-accent transition font-medium">Interior</a>
                 <a href="/landmarks/" class="text-gray-700 hover:text-accent transition font-medium">Landmarks</a>
-                <a href="/about.html" class="text-gray-700 hover:text-accent transition font-medium">About</a>
+                <a href="/about" class="text-gray-700 hover:text-accent transition font-medium">About</a>
 
             </nav>
             <!-- Mobile menu button -->
@@ -125,7 +125,7 @@
             <a href="/elements/" class="block py-2 text-gray-700 hover:text-accent">Elements</a>
             <a href="/interior/" class="block py-2 text-gray-700 hover:text-accent">Interior</a>
             <a href="/landmarks/" class="block py-2 text-gray-700 hover:text-accent">Landmarks</a>
-            <a href="/about.html" class="block py-2 text-gray-700 hover:text-accent">About</a>
+            <a href="/about" class="block py-2 text-gray-700 hover:text-accent">About</a>
 
         </div>
     </div>
@@ -152,7 +152,7 @@
     </div>
 </section>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
         <blockquote class="border-l-4 border-accent bg-accent-light p-4 rounded-r-lg italic text-gray-600">
             Chinese architecture embodies 5,000 years of cultural heritage — where every roof curve, timber bracket, and courtyard layout tells a story of harmony between heaven, earth, and humanity.
         </blockquote>
@@ -484,69 +484,85 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-300 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+
+
+
+
+
+<footer class="bg-white border-t border-gray-100 py-12 mt-auto">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
             <div>
-                <h3 class="text-white text-lg font-semibold mb-3">Myers Architecture</h3>
-                <p class="text-sm leading-relaxed">Exploring the rich traditions and modern innovations of Chinese architecture across regions, dynasties, and design philosophies.</p>
+                <h3 class="text-gray-900 text-lg font-black mb-3">Chinese Architecture</h3>
+                <p class="text-sm leading-relaxed text-gray-500">Exploring the rich traditions and innovations of Chinese architecture across dynasties.</p>
             </div>
             <div>
-                <h3 class="text-white text-lg font-semibold mb-3">Quick Links</h3>
+                <h4 class="text-gray-900 font-semibold mb-3">Legal</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="/about.html" class="hover:text-white transition">About Us</a></li>
-                    <li><a href="/contact.html" class="hover:text-white transition">Contact</a></li>
-                    <li><a href="/privacy-policy.html" class="hover:text-white transition">Privacy Policy</a></li>
-                    <li><a href="/cookie-policy.html" class="hover:text-white transition">Cookie Policy</a></li>
-                    <li><a href="/terms.html" class="hover:text-white transition">Terms of Service</a></li>
+                    <li><a href="privacy-policy" class="hover:text-red-600 transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms" class="hover:text-red-600 transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy" class="hover:text-red-600 transition-colors">Cookie Policy</a></li>
+                    <li><a href="contact" class="hover:text-red-600 transition-colors">Contact</a></li>
                 </ul>
             </div>
             <div>
-                <h3 class="text-white font-semibold mb-3">Our Sites</h3>
-                <select onchange="if(this.value) window.location.href=this.value" class="w-full bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-gray-300 focus:outline-none focus:border-gray-500">
-                    <option value="">&mdash; Myers Media Network &mdash;</option>
+                <h4 class="text-gray-900 font-semibold mb-3">Our Network</h4>
+                    <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-white text-gray-600 text-sm rounded px-3 py-2 mb-3 border border-gray-200 focus:outline-none focus:border-red-600 cursor-pointer">
+                    <option value="">-- Network --</option>
                     <option value="https://www.jycsd.com">Main Site</option>
-                    <option value="https://healthy.jycsd.com">Healthy Living</option>
-                    <option value="https://pets.jycsd.com">Pet Care</option>
-                    <option value="https://home.jycsd.com">Home &amp; Garden</option>
-                    <option value="https://finance.jycsd.com">Personal Finance</option>
-                    <option value="https://tech.jycsd.com">Tech &amp; Digital</option>
-                    <option value="https://travel.jycsd.com">Travel Guide</option>
-                    <option value="https://auto.jycsd.com">Auto World</option>
-                    <option value="https://moto.jycsd.com">Moto Sports</option>
-                    <option value="https://food.jycsd.com">Food &amp; Recipes</option>
-                    <option value="https://entertainment.jycsd.com">Entertainment</option>
+                    <option value="https://games.jycsd.com">Game Guides</option>
+                    <option value="https://anime.jycsd.com">Anime & Manga</option>
+                    </select>
+                    <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-white text-gray-600 text-sm rounded px-3 py-2 mb-3 border border-gray-200 focus:outline-none focus:border-red-600 cursor-pointer">
+                    <option value="">-- Content Sites --</option>
+                    <option value="https://healthy.jycsd.com">HealthyEats</option>
+                    <option value="https://pets.jycsd.com">PetCare Hub</option>
+                    <option value="https://home.jycsd.com">HomeJoy</option>
+                    <option value="https://finance.jycsd.com">MoneyWise</option>
+                    <option value="https://tech.jycsd.com">TechNest</option>
+                    <option value="https://travel.jycsd.com">TripRoute</option>
+                    <option value="https://career.jycsd.com">Career Compass</option>
+                    <option value="https://auto.jycsd.com">AutoPulse</option>
+                    <option value="https://moto.jycsd.com">MotoPulse</option>
+                    <option value="https://food.jycsd.com">FlavorFusion</option>
+                    <option value="https://entertainment.jycsd.com">PopCulture HQ</option>
                     <option value="https://clothing.jycsd.com">Myers Fashion</option>
-                    <option value="https://chinese-architecture.jycsd.com">Myers Architecture</option>
-                    <option value="https://western-architecture.jycsd.com">Global Architecture</option>
-                    <option value="https://western-architecture.jycsd.com">Global Architecture</option>
-                    <option value="https://dailymedadvice.com">Daily Med Advice</option>
-                    <option value="https://rightsdaily.com">Rights Daily</option>
-                    <option value="https://games.jycsd.com">Games Hub</option>
-                    <option value="https://anime.jycsd.com">Anime Hub</option>
-                    <option value="https://dragonball.jycsd.com">Dragon Ball Z</option>
-                    <option value="https://eldenring.jycsd.com">Elden Ring</option>
-                    <option value="https://fortnite.jycsd.com">Fortnite</option>
-                    <option value="https://lol.jycsd.com">League of Legends</option>
-                    <option value="https://minecraft.jycsd.com">Minecraft</option>
-                    <option value="https://naruto.jycsd.com">Naruto</option>
-                    <option value="https://onepiece.jycsd.com">One Piece</option>
-                    <option value="https://valorant.jycsd.com">Valorant</option>
-                    <option value="https://bleach.jycsd.com">Bleach</option>
-                    <option value="https://hxh.jycsd.com">Hunter x Hunter</option>
-                    <option value="https://jjk.jycsd.com">Jujutsu Kaisen</option>
-                    <option value="https://jojo.jycsd.com">JoJo</option>
-                    <option value="https://sao.jycsd.com">Sword Art Online</option>
-                    <option value="https://tokyoghoul.jycsd.com">Tokyo Ghoul</option>
-                    <option value="https://aot.jycsd.com">Attack on Titan</option>
-                </select>
+                    <option value="https://chinese-architecture.jycsd.com">Chinese Architecture</option>
+                    <option value="https://western-architecture.jycsd.com">Western Architecture</option>
+                    <option value="https://dailymedadvice.com">DailyMedAdvice</option>
+                    <option value="https://rightsdaily.com">RightsDaily</option>
+                    <option value="https://beauty.jycsd.com">Glow Guide</option>
+                    </select>
+                    <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-white text-gray-600 text-sm rounded px-3 py-2 border border-gray-200 focus:outline-none focus:border-red-600 cursor-pointer">
+                    <option value="">-- Game & Anime Wikis --</option>
+                    <option value="https://dragonball.jycsd.com">Dragon Ball Wiki</option>
+                    <option value="https://eldenring.jycsd.com">Elden Ring Wiki</option>
+                    <option value="https://fortnite.jycsd.com">Fortnite Wiki</option>
+                    <option value="https://lol.jycsd.com">LoL Wiki</option>
+                    <option value="https://minecraft.jycsd.com">Minecraft Wiki</option>
+                    <option value="https://naruto.jycsd.com">Naruto Wiki</option>
+                    <option value="https://onepiece.jycsd.com">One Piece Wiki</option>
+                    <option value="https://valorant.jycsd.com">Valorant Wiki</option>
+                    <option value="https://bleach.jycsd.com">Bleach Wiki</option>
+                    <option value="https://hxh.jycsd.com">Hunter x Hunter Wiki</option>
+                    <option value="https://jjk.jycsd.com">Jujutsu Kaisen Wiki</option>
+                    <option value="https://jojo.jycsd.com">JoJo Wiki</option>
+                    <option value="https://sao.jycsd.com">Sword Art Online Wiki</option>
+                    <option value="https://tokyoghoul.jycsd.com">Tokyo Ghoul Wiki</option>
+                    <option value="https://aot.jycsd.com">Attack on Titan Wiki</option>
+                    </select>
+            </div>
+            <div>
+                <h4 class="text-gray-900 font-semibold mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:contact@jycsd.com" class="hover:text-red-600 transition-colors">contact@jycsd.com</a></li>
+                </ul>
             </div>
         </div>
-        <div class="border-t border-gray-700 pt-6 text-center text-sm">
-            <p>&copy; 2026 Myers Architecture. All rights reserved.</p>
+        <div class="border-t border-gray-100 pt-6 text-center text-sm">
+            <p>&copy; 2026 Chinese Architecture. All rights reserved.</p>
         </div>
     </div>
 </footer>
-
 </body>
 </html>

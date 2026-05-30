@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demonslayer Wiki — Character Database & Episode Guides</title>
+<meta name="description" content="Complete Character Database">
+<meta property="og:title" content="Demonslayer Wiki — Game Guides & Wiki">
+<meta property="og:description" content="Complete Character Database">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://demonslayer.jycsd.com/demonslayer-site\cookie-policy.html">
+<meta property="og:site_name" content="Demon Slayer Wiki">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://demonslayer.jycsd.com/images/tanjiro-kamado.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://demonslayer.jycsd.com/images/tanjiro-kamado.png">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://demonslayer.jycsd.com/">
+<meta name="google-adsense-account" content="ca-pub-2595917642864488">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{bgPrimary:'#0d1117',bgSecondary:'#161b22',bgCard:'#1a1f2e',textPrimary:'#e6edf3',textSecondary:'#8b949e',accent:'#ff6b35',accentDark:'#e55a2b'},fontFamily:{sans:['Inter','Arial','sans-serif']}}}}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2595917642864488" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GGNWR1X1GV"></script>
+<script>function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-GGNWR1X1GV');</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',Arial,sans-serif;background:#0d1117;color:#e6edf3;font-size:16px;line-height:1.6}
+ins.adsbygoogle{display:block}
+.ad-label{text-align:center;color:#9ca3af;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:4px 0}
+.carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease-in-out;pointer-events:none}
+.carousel-slide.active{opacity:1;pointer-events:auto}
+.carousel-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
+.carousel-dot.active{background:#ff6b35}
+.card-hover:hover{transform:translateY(-2px);box-shadow:0 8px 30px #ff6b3526;transition:all .3s ease}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.float-anim{animation:float 3s ease-in-out infinite}
+.char-img{filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
+img[src$=".png"]{mix-blend-mode:normal}
+.search-dropdown{position:absolute;top:100%;left:0;right:0;background:#1a1f2e;border:1px solid #374151;border-radius:0 0 8px 8px;max-height:320px;overflow-y:auto;display:none;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.search-dropdown.active{display:block}
+.search-result{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .15s;border-bottom:1px solid rgba(75,85,99,.15)}
+.search-result:hover,.search-result.focused{background:rgba(255,255,255,.05)}
+.search-result:last-child{border-bottom:none}
+.search-result .sr-type{font-size:10px;text-transform:uppercase;letter-spacing:.8px;padding:2px 7px;border-radius:999px;flex-shrink:0}
+.search-empty{padding:20px;text-align:center;color:#8b949e;font-size:14px}
+</style>
+
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Demon Slayer Wiki", "url": "https://demonslayer.jycsd.com/cookie-policy.html"}
+</script>
+</head>
+<body>
+
+<nav class="fixed top-0 w-full z-50 border-b" style="background:rgba(13,17,23,0.95);border-color:#374151">
+<div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-3">
+<a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-accentDark flex items-center justify-center text-lg font-black text-white">D</div>
+<span class="text-xl font-bold tracking-tight">Demonslayer <span class="text-accent">Wiki</span></span>
+</a>
+<div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+<a href="https://anime.jycsd.com" class="text-textSecondary hover:text-accent transition-colors">Anime Hub</a>
+<a href="/guides/characters/" class="text-textSecondary hover:text-accent transition-colors">Characters</a>
+<a href="/guides/breathing-styles/" class="text-textSecondary hover:text-accent transition-colors">Breathing Styles</a>
+<a href="/guides/blood-demon-arts/" class="text-textSecondary hover:text-accent transition-colors">Blood Demon Arts</a>
+<a href="/guides/upper-moons/" class="text-textSecondary hover:text-accent transition-colors">Upper Moons</a>
+</div>
+<div class="hidden lg:flex items-center relative flex-1 max-w-xs ml-2" id="searchWrap">
+<input type="text" id="searchInput" placeholder="Search..." autocomplete="off"
+ class="w-full bg-bgSecondary text-textPrimary text-sm px-3 py-2 rounded-lg border focus:outline-none focus:border-accent transition-colors"
+ style="border-color:#374151">
+<div class="search-dropdown" id="searchDropdown"></div>
+</div>
+<button class="lg:hidden text-textSecondary text-2xl" id="menuBtn" aria-label="Menu">&#9776;</button>
+</div>
+<div id="mobileMenu" class="hidden lg:hidden bg-bgPrimary border-t border-gray-800 px-4 py-4 space-y-3 text-sm font-medium">
+<div class="relative mb-2">
+<input type="text" id="searchInputMobile" placeholder="Search..." autocomplete="off"
+ class="w-full bg-bgSecondary text-textPrimary text-sm px-3 py-2 rounded-lg border focus:outline-none focus:border-accent transition-colors"
+ style="border-color:#374151">
+<div class="search-dropdown" id="searchDropdownMobile"></div>
+</div>
+<a href="https://anime.jycsd.com" class="block text-textSecondary hover:text-accent transition-colors">Anime Hub</a>
+<a href="/guides/characters/" class="block text-textSecondary hover:text-accent transition-colors">Characters</a>
+<a href="/guides/breathing-styles/" class="block text-textSecondary hover:text-accent transition-colors">Breathing Styles</a>
+<a href="/guides/blood-demon-arts/" class="block text-textSecondary hover:text-accent transition-colors">Blood Demon Arts</a>
+<a href="/guides/upper-moons/" class="block text-textSecondary hover:text-accent transition-colors">Upper Moons</a>
+</div>
+</nav>
+
+<!-- Hero Carousel -->
+<section class="relative w-full overflow-hidden pt-16" style="height:520px">
+<div class="carousel-slide active">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 30% 50%, #f97316, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Featured</span>
+<h1 class="text-4xl md:text-5xl font-black leading-tight mb-4">Demonslayer Wiki</h1>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">Complete Character Database</p>
+<div class="flex gap-3">
+<a href="/guides/characters/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Characters Guides</a>
+<a href="/guides/breathing-styles/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Breathing Styles Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<a href="/guides/characters/akaza.html" class="block"><img src="/images/akaza.png" alt="Akaza — Character" title="Akaza — Character" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" loading="eager"></a>
+</div>
+</div></div></div>
+<div class="carousel-slide">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 37% 50%, #a855f7, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Trending Now</span>
+<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Daki Guide</h2>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">Learn about Daki — backstory, abilities, and key moments.</p>
+<div class="flex gap-3">
+<a href="/guides/breathing-styles/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Breathing Styles Guides</a>
+<a href="/guides/blood-demon-arts/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Blood Demon Arts Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<a href="/guides/characters/daki.html" class="block"><img src="/images/daki.png" alt="Daki — Character" title="Daki — Character" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
+</div>
+</div></div></div>
+<div class="carousel-slide">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 44% 50%, #3b82f6, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Deep Dive</span>
+<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Doma Guide</h2>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">Learn about Doma — backstory, abilities, and key moments.</p>
+<div class="flex gap-3">
+<a href="/guides/blood-demon-arts/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Blood Demon Arts Guides</a>
+<a href="/guides/upper-moons/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Upper Moons Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<a href="/guides/characters/doma.html" class="block"><img src="/images/doma.png" alt="Doma — Character" title="Doma — Character" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
+</div>
+</div></div></div>
+<div class="carousel-slide">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 51% 50%, #ef4444, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Essential</span>
+<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Enmu Guide</h2>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">Learn about Enmu — backstory, abilities, and key moments.</p>
+<div class="flex gap-3">
+<a href="/guides/upper-moons/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Upper Moons Guides</a>
+<a href="/guides/characters/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Characters Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<a href="/guides/characters/enmu.html" class="block"><img src="/images/enmu.png" alt="Enmu — Character" title="Enmu — Character" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
+</div>
+</div></div></div>
+<div class="carousel-slide">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 58% 50%, #4ade80, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Popular</span>
+<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Genya Shinazugawa Guide</h2>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">Learn about Genya Shinazugawa — backstory, abilities, and key moments.</p>
+<div class="flex gap-3">
+<a href="/guides/characters/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Characters Guides</a>
+<a href="/guides/breathing-styles/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Breathing Styles Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<a href="/guides/characters/genya-shinazugawa.html" class="block"><img src="/images/genya-shinazugawa.png" alt="Genya Shinazugawa — Character" title="Genya Shinazugawa — Character" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
+</div>
+</div></div></div>
+<div class="carousel-slide">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 65% 50%, #fbbf24, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Hot Pick</span>
+<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Giyu Tomioka Guide</h2>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">Learn about Giyu Tomioka — backstory, abilities, and key moments.</p>
+<div class="flex gap-3">
+<a href="/guides/breathing-styles/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Breathing Styles Guides</a>
+<a href="/guides/blood-demon-arts/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Blood Demon Arts Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<a href="/guides/characters/giyu-tomioka.html" class="block"><img src="/images/giyu-tomioka.png" alt="Giyu Tomioka — Character" title="Giyu Tomioka — Character" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
+</div>
+</div></div></div>
+<div class="carousel-slide">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 32% 50%, #c084fc, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Must Read</span>
+<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Gyomei Himejima Guide</h2>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">Learn about Gyomei Himejima — backstory, abilities, and key moments.</p>
+<div class="flex gap-3">
+<a href="/guides/blood-demon-arts/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Blood Demon Arts Guides</a>
+<a href="/guides/upper-moons/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Upper Moons Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<a href="/guides/characters/gyomei-himejima.html" class="block"><img src="/images/gyomei-himejima.png" alt="Gyomei Himejima — Character" title="Gyomei Himejima — Character" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
+</div>
+</div></div></div>
+<div class="carousel-slide">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
+<div class="absolute inset-0 opacity-25" style="background:radial-gradient(ellipse at 39% 50%, #6b7280, transparent 60%);"></div>
+<div class="relative max-w-7xl mx-auto px-4 h-full flex items-center">
+<div class="grid md:grid-cols-2 gap-8 items-center w-full">
+<div class="pt-10">
+<span class="inline-block text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full mb-4">Top Guide</span>
+<h2 class="text-3xl md:text-4xl font-black leading-tight mb-4">Gyutaro Guide</h2>
+<p class="text-lg text-textSecondary mb-6 max-w-lg">Learn about Gyutaro — backstory, abilities, and key moments.</p>
+<div class="flex gap-3">
+<a href="/guides/upper-moons/" class="bg-accent text-gray-900 px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-all">Upper Moons Guides</a>
+<a href="/guides/characters/" class="border border-textSecondary/30 px-6 py-3 rounded-lg font-medium hover:border-accent transition-all">Characters Guides</a>
+</div>
+</div>
+<div class="hidden md:flex justify-center items-end">
+<a href="/guides/characters/gyutaro.html" class="block"><img src="/images/gyutaro.png" alt="Gyutaro — Character" title="Gyutaro — Character" class="char-img float-anim h-[450px] max-h-[450px] w-auto object-contain cursor-pointer hover:scale-105 transition-transform" style="animation-delay:0.5s" loading="eager"></a>
+</div>
+</div></div></div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+<div class="carousel-dot active" data-slide="0"></div>
+<div class="carousel-dot" data-slide="1"></div>
+<div class="carousel-dot" data-slide="2"></div>
+<div class="carousel-dot" data-slide="3"></div>
+<div class="carousel-dot" data-slide="4"></div>
+<div class="carousel-dot" data-slide="5"></div>
+<div class="carousel-dot" data-slide="6"></div>
+<div class="carousel-dot" data-slide="7"></div>
+</div>
+</section>
+
+
+
+<a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#ff6b35">DS</div></div>
+<div class="flex-1 min-w-0">
+<div class="font-bold text-lg md:text-xl">Characters</div>
+<div class="text-sm text-textSecondary mt-1">10+ guides</div>
+</div>
+</a>
+<a href="/guides/breathing-styles/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#ff6b35">DS</div></div>
+<div class="flex-1 min-w-0">
+<div class="font-bold text-lg md:text-xl">Breathing Styles</div>
+<div class="text-sm text-textSecondary mt-1">10+ guides</div>
+</div>
+</a>
+<a href="/guides/blood-demon-arts/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#ff6b35">DS</div></div>
+<div class="flex-1 min-w-0">
+<div class="font-bold text-lg md:text-xl">Blood Demon Arts</div>
+<div class="text-sm text-textSecondary mt-1">10+ guides</div>
+</div>
+</a>
+<a href="/guides/upper-moons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex items-center p-5 gap-5" style="border-color:#374151">
+<div class="w-24 h-24 md:w-28 md:h-28 flex-shrink-0 flex items-center justify-center bg-bgPrimary rounded-xl overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-3xl" style="color:#ff6b35">DS</div></div>
+<div class="flex-1 min-w-0">
+<div class="font-bold text-lg md:text-xl">Upper Moons</div>
+<div class="text-sm text-textSecondary mt-1">10+ guides</div>
+</div>
+</a>
+
+
+
+
+
+<section class="max-w-7xl mx-auto px-4 py-16">
+<div class="flex items-end justify-between mb-8">
+<div><p class="text-accent text-sm font-semibold uppercase tracking-wider mb-1">Character Spotlight</p><h2 class="text-3xl font-black">Meet the <span class="text-accent">Characters</span></h2></div>
+<a href="/guides/characters/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+<div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/akaza.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/akaza.png" alt="Akaza — Character" title="Akaza — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Akaza</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Akaza — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/akaza.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Akaza Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/daki.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/daki.png" alt="Daki — Character" title="Daki — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Daki</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Daki — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/daki.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Daki Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/doma.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/doma.png" alt="Doma — Character" title="Doma — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Doma</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Doma — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/doma.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Doma Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/enmu.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/enmu.png" alt="Enmu — Character" title="Enmu — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Enmu</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Enmu — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/enmu.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Enmu Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/genya-shinazugawa.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/genya-shinazugawa.png" alt="Genya Shinazugawa — Character" title="Genya Shinazugawa — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Genya Shinazugawa</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Genya Shinazugawa — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/genya-shinazugawa.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Genya Shinazugawa Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/giyu-tomioka.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/giyu-tomioka.png" alt="Giyu Tomioka — Character" title="Giyu Tomioka — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Giyu Tomioka</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Giyu Tomioka — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/giyu-tomioka.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Giyu Tomioka Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/gyomei-himejima.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/gyomei-himejima.png" alt="Gyomei Himejima — Character" title="Gyomei Himejima — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Gyomei Himejima</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Gyomei Himejima — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/gyomei-himejima.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Gyomei Himejima Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/gyutaro.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/gyutaro.png" alt="Gyutaro — Character" title="Gyutaro — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Gyutaro</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Gyutaro — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/gyutaro.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Gyutaro Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/inosuke-hashibira.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/inosuke-hashibira.png" alt="Inosuke Hashibira — Character" title="Inosuke Hashibira — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Inosuke Hashibira</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Inosuke Hashibira — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/inosuke-hashibira.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Inosuke Hashibira Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/kanao-tsuyuri.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/kanao-tsuyuri.png" alt="Kanao Tsuyuri — Character" title="Kanao Tsuyuri — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Kanao Tsuyuri</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Kanao Tsuyuri — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/kanao-tsuyuri.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Kanao Tsuyuri Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/kokushibo.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/kokushibo.png" alt="Kokushibo — Character" title="Kokushibo — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Kokushibo</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Kokushibo — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/kokushibo.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Kokushibo Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/kyojuro-rengoku.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/kyojuro-rengoku.png" alt="Kyojuro Rengoku — Character" title="Kyojuro Rengoku — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Kyojuro Rengoku</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Kyojuro Rengoku — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/kyojuro-rengoku.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Kyojuro Rengoku Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/makomo.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/makomo.png" alt="Makomo — Character" title="Makomo — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Makomo</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Makomo — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/makomo.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Makomo Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/mitsuri-kanroji.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/mitsuri-kanroji.png" alt="Mitsuri Kanroji — Character" title="Mitsuri Kanroji — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Mitsuri Kanroji</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Mitsuri Kanroji — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/mitsuri-kanroji.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Mitsuri Kanroji Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/muichiro-tokito.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/muichiro-tokito.png" alt="Muichiro Tokito — Character" title="Muichiro Tokito — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Muichiro Tokito</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Muichiro Tokito — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/muichiro-tokito.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Muichiro Tokito Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/muzan-kibutsuji.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/muzan-kibutsuji.png" alt="Muzan Kibutsuji — Character" title="Muzan Kibutsuji — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Muzan Kibutsuji</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Muzan Kibutsuji — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/muzan-kibutsuji.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Muzan Kibutsuji Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/nezuko-kamado.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/nezuko-kamado.png" alt="Nezuko Kamado — Character" title="Nezuko Kamado — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Nezuko Kamado</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Nezuko Kamado — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/nezuko-kamado.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Nezuko Kamado Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/obanai-iguro.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/obanai-iguro.png" alt="Obanai Iguro — Character" title="Obanai Iguro — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Obanai Iguro</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Obanai Iguro — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/obanai-iguro.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Obanai Iguro Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/rui.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/rui.png" alt="Rui — Character" title="Rui — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Rui</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Rui — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/rui.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Rui Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/sabito.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/sabito.png" alt="sabito — Character" title="sabito — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">sabito</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about sabito — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/sabito.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">sabito Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/sakonji-urokodaki.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/sakonji-urokodaki.png" alt="sakonji Urokodaki — Character" title="sakonji Urokodaki — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">sakonji Urokodaki</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about sakonji Urokodaki — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/sakonji-urokodaki.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">sakonji Urokodaki Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/sanemi-shinazugawa.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/sanemi-shinazugawa.png" alt="sanemi shinazugawa — Character" title="sanemi shinazugawa — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">sanemi shinazugawa</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about sanemi shinazugawa — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/sanemi-shinazugawa.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">sanemi shinazugawa Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/shinobu-kocho.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/shinobu-kocho.png" alt="shinobu Kocho — Character" title="shinobu Kocho — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">shinobu Kocho</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about shinobu Kocho — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/shinobu-kocho.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">shinobu Kocho Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/tamayo.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/tamayo.png" alt="Tamayo — Character" title="Tamayo — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Tamayo</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Tamayo — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/tamayo.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Tamayo Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/tanjiro-kamado.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/tanjiro-kamado.png" alt="Tanjiro Kamado — Character" title="Tanjiro Kamado — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Tanjiro Kamado</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Tanjiro Kamado — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/tanjiro-kamado.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Tanjiro Kamado Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/tengen-uzui.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/tengen-uzui.png" alt="Tengen Uzui — Character" title="Tengen Uzui — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Tengen Uzui</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Tengen Uzui — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/tengen-uzui.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Tengen Uzui Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/yushiro.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/yushiro.png" alt="Yushiro — Character" title="Yushiro — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Yushiro</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Yushiro — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/yushiro.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Yushiro Guides</a>
+</div><div class="card-hover bg-bgCard rounded-xl overflow-hidden border text-center p-6" style="border-color:#374151">
+<a href="/guides/characters/zenitsu-agatsuma.html" class="block mb-3"><div class="w-36 h-36 mx-auto rounded-xl overflow-hidden bg-bgPrimary flex items-center justify-center"><img src="/images/zenitsu-agatsuma.png" alt="Zenitsu Agatsuma — Character" title="Zenitsu Agatsuma — Character" class="w-full h-full object-cover" loading="lazy"></div></a>
+<h3 class="font-bold text-lg">Zenitsu Agatsuma</h3>
+<p class="text-xs text-textSecondary mt-1">Learn about Zenitsu Agatsuma — backstory, abilities, and key moments.</p>
+<a href="/guides/characters/zenitsu-agatsuma.html" class="text-accent text-xs font-semibold mt-3 inline-block hover:underline">Zenitsu Agatsuma Guides</a>
+</div>
+</div></section>
+
+
+
+<section class="max-w-7xl mx-auto px-4 py-8">
+<div class="flex items-end justify-between mb-8">
+<h2 class="text-3xl font-black">Every Guide Category</h2>
+<a href="/guides/characters/" class="text-accent text-sm font-medium hover:underline hidden sm:block">View All &rarr;</a>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<a href="/guides/characters/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ff6b35">DS</div></div>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Characters</h3>
+<p class="text-base text-textSecondary mt-1">Characters &mdash; Complete Guide</p>
+<span class="text-sm text-accent mt-2 inline-block font-semibold">10+ guides</span>
+</div>
+</a><a href="/guides/breathing-styles/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ff6b35">DS</div></div>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Breathing Styles</h3>
+<p class="text-base text-textSecondary mt-1">Breathing Styles &mdash; Complete Guide</p>
+<span class="text-sm text-accent mt-2 inline-block font-semibold">10+ guides</span>
+</div>
+</a><a href="/guides/blood-demon-arts/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ff6b35">DS</div></div>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Blood Demon Arts</h3>
+<p class="text-base text-textSecondary mt-1">Blood Demon Arts &mdash; Complete Guide</p>
+<span class="text-sm text-accent mt-2 inline-block font-semibold">10+ guides</span>
+</div>
+</a><a href="/guides/upper-moons/" class="card-hover bg-bgCard rounded-xl overflow-hidden border group flex min-h-[120px]" style="border-color:#374151">
+<div class="w-36 md:w-44 lg:w-52 flex-shrink-0 bg-bgPrimary flex items-center justify-center p-4 overflow-hidden"><div class="w-full h-full rounded-xl bg-accent/10 flex items-center justify-center text-2xl" style="color:#ff6b35">DS</div></div>
+<div class="flex-1 p-5 min-w-0 flex flex-col justify-center">
+<h3 class="font-bold text-xl group-hover:text-accent transition-colors">Upper Moons</h3>
+<p class="text-base text-textSecondary mt-1">Upper Moons &mdash; Complete Guide</p>
+<span class="text-sm text-accent mt-2 inline-block font-semibold">10+ guides</span>
+</div>
+</a>
+</div></section>
+
+
+
+<footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h3 class="text-white text-lg font-black mb-3">Demonslayer <span class="text-accent">Wiki</span></h3>
+                <p class="text-sm leading-relaxed">Complete Character Database</p>
+            </div>
+            <div>
+                <h4 class=text-white font-semibold mb-3>More</h4>
+                <ul class=space-y-2 text-sm>
+                    <li><a href=https://anime.jycsd.com class=hover:text-white transition-colors>Anime Hub</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-3">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/cdn-cgi/l/email-protection#781b17160c191b0c3812011b0b1c561b1715" class="hover:text-white transition-colors"><span class="__cf_email__" data-cfemail="91f2feffe5f0f2e5d1fbe8f2e2f5bff2fefc">[email&#160;protected]</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-400">
+            <p>&copy; 2026 Demonslayer. All rights reserved. <a href="https://jycsd.com" class="text-blue-400 hover:text-blue-300 transition-colors">Visit jycsd.com for more guides</a></p>
+        </div>
+    </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+var slides=document.querySelectorAll('.carousel-slide');
+var dots=document.querySelectorAll('.carousel-dot');
+var current=0;
+function goTo(idx){if(!slides.length)return;slides[current].classList.remove('active');dots[current].classList.remove('active');current=idx;slides[current].classList.add('active');dots[current].classList.add('active')}
+dots.forEach(function(dot){dot.addEventListener('click',function(){goTo(parseInt(this.dataset.slide))})});
+if(slides.length>1)setInterval(function(){goTo((current+1)%slides.length)},5000);
+document.getElementById('menuBtn').addEventListener('click',function(){document.getElementById('mobileMenu').classList.toggle('hidden')});
+
+var searchData=[];
+(function(){var si=document.getElementById('searchInput');var sim=document.getElementById('searchInputMobile');var dd=document.getElementById('searchDropdown');var ddm=document.getElementById('searchDropdownMobile');var focusIdx=-1;
+function loadIdx(){var xhr=new XMLHttpRequest();xhr.open('GET','/search-index.json',true);xhr.onload=function(){if(xhr.status===200){try{searchData=JSON.parse(xhr.responseText)}catch(e){}}};xhr.send()}
+function filter(q,ddEl){focusIdx=-1;ddEl.innerHTML='';if(!q||q.length<2){ddEl.classList.remove('active');return}
+q=q.toLowerCase();var matches=[];for(var i=0;i<searchData.length;i++){var s=searchData[i];if(s.name.toLowerCase().indexOf(q)!==-1||s.desc.toLowerCase().indexOf(q)!==-1){matches.push(s);if(matches.length>=8)break}}
+if(!matches.length){ddEl.innerHTML='<div class="search-empty">No results found</div>';ddEl.classList.add('active');return}
+for(var i=0;i<matches.length;i++){var m=matches[i];var typeColors={character:'rgba(255,107,53,.2)',category:'rgba(100,180,255,.2)',guide:'rgba(100,200,100,.2)',hot_topic:'rgba(255,180,50,.2)'};var tc=m.color||'#888';var div=document.createElement('div');div.className='search-result';div.setAttribute('data-url',m.url);div.innerHTML='<span class="sr-type" style="color:'+tc+';background:'+(typeColors[m.type]||'rgba(150,150,150,.2)')+'">'+m.type.replace('_',' ')+'</span><span style="flex:1;min-width:0"><strong style="display:block;font-size:14px">'+m.name+'</strong><small style="color:#8b949e;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+(m.desc||'')+'</small></span>';div.addEventListener('click',function(){{window.location.href=this.getAttribute('data-url')}});ddEl.appendChild(div)}ddEl.classList.add('active')}
+function navigate(ddEl,dir){var items=ddEl.querySelectorAll('.search-result');if(!items.length)return;focusIdx+=dir;if(focusIdx<0)focusIdx=items.length-1;if(focusIdx>=items.length)focusIdx=0;for(var i=0;i<items.length;i++)items[i].classList.toggle('focused',i===focusIdx)}
+function selectFocused(ddEl){var items=ddEl.querySelectorAll('.search-result');if(focusIdx>=0&&focusIdx<items.length)window.location.href=items[focusIdx].getAttribute('data-url')}
+if(si){si.addEventListener('input',function(){{filter(this.value,dd)}});si.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(dd,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(dd,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(dd)}else if(e.key==='Escape'){dd.classList.remove('active')}}});si.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,dd)}});si.addEventListener('blur',function(){{setTimeout(function(){{dd.classList.remove('active')}},200)}})}
+if(sim){sim.addEventListener('input',function(){{filter(this.value,ddm)}});sim.addEventListener('keydown',function(e){{if(e.key==='ArrowDown'){e.preventDefault();navigate(ddm,1)}else if(e.key==='ArrowUp'){e.preventDefault();navigate(ddm,-1)}else if(e.key==='Enter'){e.preventDefault();selectFocused(ddm)}else if(e.key==='Escape'){ddm.classList.remove('active')}}});sim.addEventListener('focus',function(){{if(this.value.length>=2)filter(this.value,ddm)}});sim.addEventListener('blur',function(){{setTimeout(function(){{ddm.classList.remove('active')}},200)}})}
+loadIdx();
+})();
+
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"d0aceb0a83384453b82b5fa5cf548e2c","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
