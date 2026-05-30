@@ -412,6 +412,9 @@
 - [ ] **逐篇检查内部链接** — 锚文本必须与目标页面标题语义匹配，禁止"guide to X"链到讲Y的页面
 - [ ] **所有banner/hero图片逐张豆包验证** — 检查面部裁切+内容匹配度，每张都过
 - [ ] **所有封面图逐张豆包验证** — 30张封面逐张用doubao_vision.py验证图片内容与文章标题匹配
+- [ ] **全量视觉审计（不可抽样）** — 新站建成后、已有站定期审计，逐页用纳米模型(Nemotron)验证图片与页面标题是否匹配。用 `shared/visual_audit_all.py` 自动扫描。先全检通过后，日常维护才允许抽检。
+- [ ] **禁止data: URI占位符图片** — `<img src="data:image/svg+xml,...">` 等占位符=假图，视觉验证自动拦截。每个img必须有本地文件或真实URL。
+- [ ] **禁止Hero/Card图片重复** — 首页Hero轮播和下方卡片网格不得共用同一角色图片(每个角色只在首页出现一次)。`visual_audit_all.py` 自动检测碰撞。
 - [ ] 分类索引页逐页检查卡片完整性 — 全部条目卡片网格，不是3张Related Articles
 - [ ] 图片MD5去重+视觉去重: 同一站内无视觉重复图片
 - [ ] **验证脚本**: 用bash循环跑所有img URL的HTTP状态码，不凭肉眼"看起来没问题"
@@ -557,6 +560,10 @@
 | 34 | 分类目录页(index.html)缺失导致审计死链告警 | 每个 `/guides/<category>/` 目录必须有 `index.html`。缺了就是链接指向目录而非文件=死链 |
 | 35 | HTML中使用 `&#9670;` / `◆` 等符号占位符代替真实内容 | 占位符=内容未完成。最终HTML中不得出现任何纯符号占位图/文本。用真实文字或图标替代 |
 | 36 | OG标签/Schema/结构化数据缺失 | 每页必须有完整的OG(title/description/image/url/site_name/locale)+JSON-LD Schema。缺了SEO和社交分享失效 |
+| 37 | `<img src="data:image/svg+xml,...">` 等data URI占位符代替真实图片 | data: URI=假图片=页面看起来有图但内容为空。必须用下载的真实图片文件替代。视觉验证自动拦截data URI |
+| 38 | 视觉验证第一遍就抽检 | 新站首检/已有站定期审计必须全量视觉验证，不可抽样。Nemotron免费模型逐页验。全检通过后才允许抽检 |
+| 39 | 共享模板中硬编码站点专属值（站名/颜色/链接） | 模板生成函数必须参数化站名/品牌色/文案。禁止从第一个站复制模板时保留原站的文字和颜色。典型事故: `rotate_related.py` onerror占位符写死"Bleach"→658处错误跨6站 |
+| 40 | 给img标签加onerror data URI作为"安全网" | onerror data URI=隐藏的假图片。图片不存在就应该显示空，不应用占位符伪装。`<img>`标签禁止含onerror data URI属性 |
 
 ---
 
@@ -599,6 +606,16 @@
 - [ ] lazy loading (`loading="lazy"`)
 - [ ] 描述性alt文本
 - [ ] 无阴影遮罩
+- [ ] **每张图下载后必须豆包视觉验证** — 确认图片内容与页面主题匹配(shard/visual_audit_all.py)
+- [ ] **角色页hero图必须存在** — 禁止空hero div，禁止依赖Related Characters网格的第一张图
+- [ ] **图片路径必须用/imaages/绝对路径** — 禁止../../images/相对路径（导致OG图片404）
+
+### 视觉审计层 (VISUAL AUDIT — 代码检测不到的问题)
+- [ ] 建站完成后必须运行 `python shared/visual_audit_all.py` 全量视觉审计
+- [ ] 使用豆包1.6-vision模型（2.0-mini精度不足且易限流）
+- [ ] 提示词: "Does this image show {角色名}?" — 非 "relevant to a page about"
+- [ ] 错配页面逐个人工复核后再修复，不批量替换（模型有限制，小众角色识别率低）
+- [ ] 审计报告保存到 `visual_audit_report.json`
 
 ### 广告层
 - [ ] 纯自动广告模式
