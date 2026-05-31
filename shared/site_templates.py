@@ -128,6 +128,18 @@ SITE_CONFIG = {
         "blockquoteBg": "#eff6ff",
         "related_articles": [],
     },
+    "sub-fitness": {
+        "brand": "Fit Forge",
+        "domain": "fitness.jycsd.com",
+        "category": "Fitness",
+        "brandColor": "red-500",
+        "brandHex": "#EF4444",
+        "tailwindColors": """brand: {50: '#fef2f2', 100: '#fee2e2', 200: '#fecaca', 400: '#f87171', 500: '#ef4444', 600: '#dc2626', 700: '#b91c1c', 800: '#991b1b'}""",
+        "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
+        "blockquoteColor": "#EF4444",
+        "blockquoteBg": "#fef2f2",
+        "related_articles": [],
+    },
     "sub-beauty": {
         "brand": "Glow Guide",
         "domain": "beauty.jycsd.com",
@@ -485,6 +497,150 @@ SITE_CONFIG = {
     },
 }
 
+def build_footer_links():
+    """Return three lists of (url, label) tuples from site_config.json."""
+    import json
+    config_path = ROOT / "shared" / "site_config.json"
+    with open(config_path, encoding="utf-8") as f:
+        config = json.load(f)
+
+    NAME_MAP = {
+        "www.jycsd.com": "Main Site",
+        "games.jycsd.com": "Game Guides",
+        "anime.jycsd.com": "Anime & Manga",
+        "beauty.jycsd.com": "Glow Guide",
+        "career.jycsd.com": "Career Compass",
+        "fitness.jycsd.com": "Fit Forge",
+        "healthy.jycsd.com": "HealthyEats",
+        "pets.jycsd.com": "PetCare Hub",
+        "home.jycsd.com": "HomeJoy",
+        "finance.jycsd.com": "MoneyWise",
+        "tech.jycsd.com": "TechNest",
+        "travel.jycsd.com": "TripRoute",
+        "auto.jycsd.com": "AutoPulse",
+        "moto.jycsd.com": "MotoPulse",
+        "food.jycsd.com": "FlavorFusion",
+        "rightsdaily.com": "RightsDaily",
+        "dailymedadvice.com": "DailyMedAdvice",
+        "entertainment.jycsd.com": "PopCulture HQ",
+        "clothing.jycsd.com": "Myers Fashion",
+        "chinese-architecture.jycsd.com": "Chinese Architecture",
+        "western-architecture.jycsd.com": "Western Architecture",
+        "dragonball.jycsd.com": "Dragon Ball Wiki",
+        "naruto.jycsd.com": "Naruto Wiki",
+        "onepiece.jycsd.com": "One Piece Wiki",
+        "valorant.jycsd.com": "Valorant Wiki",
+        "fortnite.jycsd.com": "Fortnite Wiki",
+        "lol.jycsd.com": "LoL Wiki",
+        "eldenring.jycsd.com": "Elden Ring Wiki",
+        "minecraft.jycsd.com": "Minecraft Wiki",
+        "bleach.jycsd.com": "Bleach Wiki",
+        "hxh.jycsd.com": "Hunter x Hunter Wiki",
+        "jjk.jycsd.com": "Jujutsu Kaisen Wiki",
+        "jojo.jycsd.com": "JoJo Wiki",
+        "sao.jycsd.com": "Sword Art Online Wiki",
+        "tokyoghoul.jycsd.com": "Tokyo Ghoul Wiki",
+        "aot.jycsd.com": "Attack on Titan Wiki",
+        "demonslayer.jycsd.com": "Demon Slayer Wiki",
+    }
+
+    network = []
+    content_sites = []
+    game_anime = []
+
+    for site in config["sites"]:
+        domain = site["domain"]
+        url = f"https://{domain}"
+        name = NAME_MAP.get(domain, domain)
+        cat = site.get("category", "content")
+
+        if cat in ("portal", "game_hub", "anime_hub"):
+            network.append((url, name))
+        elif cat in ("content", "external"):
+            content_sites.append((url, name))
+        elif cat in ("game", "anime"):
+            game_anime.append((url, name))
+
+    return network, content_sites, game_anime
+
+
+def render_footer_html(dark=False, brand_color="indigo-500", brand="Myers Media",
+                       brand_description="Your gateway to expert lifestyle guides. Founded by Jordan Myers.",
+                       email="contact@jycsd.com", year="2026"):
+    """Render a unified footer with all site link dropdowns.
+
+    dark=True  -> bg-gray-900 (for content/anime/game sites)
+    dark=False -> bg-white     (for future light-themed sites)
+    """
+    network, content_sites, game_anime = build_footer_links()
+    if dark:
+        f_cls = "bg-gray-900 text-gray-400 py-12 mt-auto"
+        h_cls = "text-white font-semibold mb-3"
+        bh_cls = "text-white text-lg font-black mb-3"
+        sel_cls = f"w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-{brand_color} cursor-pointer"
+        sel_last = f"w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-{brand_color} cursor-pointer"
+        a_cls = "hover:text-white transition-colors"
+        cp_cls = "border-gray-800"
+        bp_cls = "text-sm leading-relaxed"
+    else:
+        f_cls = "bg-white border-t border-gray-100 py-12 mt-auto"
+        h_cls = "text-gray-900 font-semibold mb-3"
+        bh_cls = "text-gray-900 text-lg font-black mb-3"
+        sel_cls = f"w-full bg-white text-gray-600 text-sm rounded px-3 py-2 mb-3 border border-gray-200 focus:outline-none focus:border-{brand_color} cursor-pointer"
+        sel_last = f"w-full bg-white text-gray-600 text-sm rounded px-3 py-2 border border-gray-200 focus:outline-none focus:border-{brand_color} cursor-pointer"
+        a_cls = f"hover:text-{brand_color} transition-colors"
+        cp_cls = "border-gray-100"
+        bp_cls = "text-sm leading-relaxed text-gray-500"
+
+    def _opt(items, label, last=False):
+        cls = sel_last if last else sel_cls
+        buf = [f'<select onchange="if(this.value)window.location.href=this.value" class="{cls}">',
+               f'<option value="">-- {label} --</option>']
+        for url, name in items:
+            buf.append(f'<option value="{url}">{name}</option>')
+        buf.append('</select>')
+        return '\n                    '.join(buf)
+
+    net_html = _opt(network, "Network")
+    cont_html = _opt(content_sites, "Content Sites")
+    game_html = _opt(game_anime, "Game & Anime Wikis", last=True)
+
+    return f'''<footer class="{f_cls}">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-10">
+            <div>
+                <h3 class="{bh_cls}">{brand}</h3>
+                <p class="{bp_cls}">{brand_description}</p>
+            </div>
+            <div>
+                <h4 class="{h_cls}">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="{a_cls}">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="{a_cls}">Terms of Service</a></li>
+                    <li><a href="cookie-policy.html" class="{a_cls}">Cookie Policy</a></li>
+                    <li><a href="contact.html" class="{a_cls}">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="{h_cls}">Our Network</h4>
+                    {net_html}
+                    {cont_html}
+                    {game_html}
+            </div>
+            <div>
+                <h4 class="{h_cls}">Contact</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:{email}" class="{a_cls}">{email}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t {cp_cls} pt-6 text-center text-sm">
+            <p>&copy; {year} {brand}. All rights reserved.</p>
+        </div>
+    </div>
+</footer>'''
+
+
 # HTML template skeleton with placeholders
 TEMPLATE_SKELETON = """<!DOCTYPE html>
 <html lang="en">
@@ -601,69 +757,7 @@ tailwind.config = {
         </div>
     </aside>
 </main>
-<footer class="bg-gray-900 text-gray-400 py-12 mt-auto">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="grid md:grid-cols-4 gap-8 mb-10">
-            <div>
-                <h3 class="text-white text-lg font-black mb-3">{{brand}}</h3>
-                <p class="text-sm leading-relaxed">{{brand_description}}</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3">Legal</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
-                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
-                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3">Our Network</h4>
-                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-{{brand_color}} cursor-pointer">
-                    <option value="">-- Network --</option>
-                    <option value="https://www.jycsd.com">Main Site</option>
-                    <option value="https://games.jycsd.com">Game Guides</option>
-                    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
-                </select>
-                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-{{brand_color}} cursor-pointer">
-                    <option value="">-- Content Sites --</option>
-                    <option value="https://healthy.jycsd.com">HealthyEats</option>
-                    <option value="https://pets.jycsd.com">PetCare Hub</option>
-                    <option value="https://home.jycsd.com">HomeJoy</option>
-                    <option value="https://finance.jycsd.com">MoneyWise</option>
-                    <option value="https://tech.jycsd.com">TechNest</option>
-                    <option value="https://travel.jycsd.com">TripRoute</option>
-                    <option value="https://auto.jycsd.com">AutoPulse</option>
-                    <option value="https://moto.jycsd.com">MotoPulse</option>
-                    <option value="https://food.jycsd.com">FlavorFusion</option>
-                    <option value="https://rightsdaily.com">RightsDaily</option>
-                    <option value="https://dailymedadvice.com">DailyMedAdvice</option>
-                    <option value="https://entertainment.jycsd.com">PopCulture HQ</option>
-                </select>
-                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-{{brand_color}} cursor-pointer">
-                    <option value="">-- Game & Anime Wikis --</option>
-                    <option value="https://dragonball.jycsd.com">Dragon Ball Wiki</option>
-                    <option value="https://naruto.jycsd.com">Naruto Wiki</option>
-                    <option value="https://onepiece.jycsd.com">One Piece Wiki</option>
-                    <option value="https://valorant.jycsd.com">Valorant Wiki</option>
-                    <option value="https://fortnite.jycsd.com">Fortnite Wiki</option>
-                    <option value="https://lol.jycsd.com">LoL Wiki</option>
-                    <option value="https://eldenring.jycsd.com">Elden Ring Wiki</option>
-                    <option value="https://minecraft.jycsd.com">Minecraft Wiki</option>
-                </select>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3">Contact</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="mailto:{{email}}" class="hover:text-white transition-colors">{{email}}</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="border-t border-gray-800 pt-6 text-center text-sm">
-            <p>&copy; {{year}} {{brand}}. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+{{footer_html}}
 <script type="application/ld+json">
 {{json_ld}}
 </script>
@@ -859,71 +953,7 @@ blockquote {
     </article>
 </main>
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-gray-400 py-12 mt-auto">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="grid md:grid-cols-4 gap-8 mb-10">
-            <div>
-                <h3 class="text-white text-lg font-black mb-3 font-heading">Flavor<span class="text-brand-500">Fusion</span></h3>
-                <p class="text-sm leading-relaxed">Where East meets West — authentic recipes from both sides of the world.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3">Legal</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                    <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
-                    <li><a href="cookie-policy.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
-                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3">Our Network</h4>
-                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-indigo-500 cursor-pointer">
-                    <option value="">— Network —</option>
-                    <option value="https://www.jycsd.com">Main Site</option>
-                    <option value="https://games.jycsd.com">Game Guides</option>
-                    <option value="https://anime.jycsd.com">Anime &amp; Manga</option>
-                </select>
-                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 mb-3 border border-gray-700 focus:outline-none focus:border-indigo-500 cursor-pointer">
-                    <option value="">-- Content Sites --</option>
-                    <option value="https://healthy.jycsd.com">HealthyEats</option>
-                    <option value="https://pets.jycsd.com">PetCare Hub</option>
-                    <option value="https://home.jycsd.com">HomeJoy</option>
-                    <option value="https://finance.jycsd.com">MoneyWise</option>
-                    <option value="https://tech.jycsd.com">TechNest</option>
-                    <option value="https://travel.jycsd.com">TripRoute</option>
-                    <option value="https://auto.jycsd.com">AutoPulse</option>
-                    <option value="https://moto.jycsd.com">MotoPulse</option>
-                    <option value="https://rightsdaily.com">RightsDaily</option>
-                    <option value="https://dailymedadvice.com">DailyMedAdvice</option>
-                    <option value="https://entertainment.jycsd.com">PopCulture HQ</option>
-                    <option value="https://food.jycsd.com">FlavorFusion</option>
-                </select>
-                <select onchange="if(this.value)window.location.href=this.value" class="w-full bg-gray-800 text-gray-300 text-sm rounded px-3 py-2 border border-gray-700 focus:outline-none focus:border-indigo-500 cursor-pointer">
-                    <option value="">-- Game & Anime Wikis --</option>
-                    <option value="https://dragonball.jycsd.com">Dragon Ball Wiki</option>
-                    <option value="https://naruto.jycsd.com">Naruto Wiki</option>
-                    <option value="https://onepiece.jycsd.com">One Piece Wiki</option>
-                    <option value="https://valorant.jycsd.com">Valorant Wiki</option>
-                    <option value="https://fortnite.jycsd.com">Fortnite Wiki</option>
-                    <option value="https://lol.jycsd.com">LoL Wiki</option>
-                    <option value="https://eldenring.jycsd.com">Elden Ring Wiki</option>
-                    <option value="https://minecraft.jycsd.com">Minecraft Wiki</option>
-                </select>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-3">Contact</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="mailto:contact@jycsd.com" class="hover:text-white transition-colors">contact@jycsd.com</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="border-t border-gray-800 pt-6 text-center text-sm">
-            <p>&copy; 2020-2026 FlavorFusion. All rights reserved.</p>
-        </div>
-    </div>
-    <div class="text-center text-sm mt-4"><a href="https://jycsd.com" class="hover:text-slate-600 transition-colors">Visit jycsd.com for more guides</a></div>
-</footer>
+{{footer_html}}
 </body>
 </html>"""
 
@@ -1030,6 +1060,16 @@ def render_article_html(site_dir, ai_output):
     for field in ["title", "h1_title", "article_body", "article_body_html"]:
         if field in vars_dict and vars_dict[field]:
             vars_dict[field] = sanitize_html_content(str(vars_dict[field]))
+
+    # Render unified footer
+    vars_dict["footer_html"] = render_footer_html(
+        dark=True,
+        brand_color=cfg.get("brandColor", "indigo-500"),
+        brand=cfg.get("brand", "Myers Media"),
+        brand_description=vars_dict.get("brand_description", ""),
+        email=GLOBALS.get("email", "contact@jycsd.com"),
+        year=GLOBALS.get("year", "2026"),
+    )
 
     template = FOOD_TEMPLATE_SKELETON if cfg.get("custom_template") else TEMPLATE_SKELETON
     html = template

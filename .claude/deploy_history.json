@@ -5,5 +5,62 @@
     "local_commit": "5f0b6c566fd1ebf9bfd2a59d8a476ced4e4548a5",
     "timestamp": "2026-05-28T12:23:46",
     "status": "confirmed"
-  }
+  },
+  "western-architecture-site": {
+    "last_good": "df069759-5bc9-432b-bee6-d96775834f3b",
+    "cf_commit": "5f0b6c5",
+    "local_commit": "e1bc8c90ca1a277bd0443be13e61840d97bf1eb5",
+    "timestamp": "2026-05-28T12:47:42",
+    "status": "confirmed"
+  },
+  "sub-career": {
+    "deployments": [
+      {
+        "deploy_id": "16857105-389f-4cb4-a44a-cf50dc42b078",
+        "project": "career-jycsd",
+        "preview_url": "https://16857105.career-jycsd.pages.dev",
+        "domain": "career.jycsd.com",
+        "date": "2026-05-28T17:29:00Z",
+        "branch": "master",
+        "files": 75
+      }
+    ],
+    "preflight_checks": [
+      {
+        "date": "2026-05-28T17:29:00Z",
+        "d501_spec_pass": true,
+        "d501_fixes": "FAQs subheadings (5), MD5 duplicates (3 pairs), /articles.html dead link",
+        "d502_mandatory_pass": true,
+        "d502_fixes": "Auto Ads script + google-adsense-account + og:locale (37 files), ads.txt pub ID, GA4 on index",
+        "d503_visual": "3/3 doubao vision passed, 0 AI cliches, 31 unique images",
+        "errors_blocking": 0,
+        "warns_remaining": "semantic mismatch warnings from pre_commit_audit"
+      }
+    ]
+  },
+  "preflight_checks": [
+    {
+      "site": "sub-beauty",
+      "timestamp": "2026-05-28T20:32:33.996348",
+      "d5.0.1_spec_check": "27/27 passed",
+      "d5.0.2_mandatory_rules": "P0-PASS T1-PASS I2-PASS C3-PASS A4-PASS D5-PASS",
+      "d5.0.3_visual": "Banner: 5/6 replaced(404->local) + 1 Unsplash. Content: 3 articles spot-checked OK. Cover: article-1 doubao-verified OK.",
+      "d5.0.4_fixes": "email(zq30338->contact@jycsd.com), HTML tag integrity(11 files), banner 404(5files), title lengths fixed",
+      "pre_commit_audit": "0 ERROR, 75 WARN(semantic mismatch+title length)",
+      "deploy_preview_url": "https://62533f49.beauty-jycsd.pages.dev",
+      "custom_domain": "beauty.jycsd.com - pending manual CF Dashboard setup"
+    }
+  ],
+  "beauty-jycsd": [
+    {
+      "time": "2026-05-29 08:18:34.032058",
+      "deploy_id": "757ca5b3",
+      "branch": "master",
+      "pre_commit_audit": "0 ERROR 0 WARN",
+      "portal_consistency": "OK",
+      "custom_domain_verified": true,
+      "article_cards": 8,
+      "files_uploaded": 110
+    }
+  ]
 }

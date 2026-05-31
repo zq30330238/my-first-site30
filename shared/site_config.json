@@ -59,6 +59,20 @@
       "category": "content"
     },
     {
+      "dir": "sub-career",
+      "cf_project": "career-jycsd",
+      "domain": "career.jycsd.com",
+      "production_branch": "master",
+      "category": "content"
+    },
+    {
+      "dir": "sub-fitness",
+      "cf_project": "fitness-jycsd",
+      "domain": "fitness.jycsd.com",
+      "production_branch": "master",
+      "category": "content"
+    },
+    {
       "dir": "sub-auto",
       "cf_project": "auto-jycsd",
       "domain": "auto.jycsd.com",
@@ -135,7 +149,6 @@
       "production_branch": "master",
       "category": "anime_hub"
     },
-
     {
       "dir": "dragonball-site",
       "cf_project": "dragonball-jycsd",
@@ -192,7 +205,6 @@
       "production_branch": "master",
       "category": "game"
     },
-
     {
       "dir": "bleach-site",
       "cf_project": "bleach-jycsd",
@@ -241,6 +253,19 @@
       "domain": "aot.jycsd.com",
       "production_branch": "master",
       "category": "anime"
+    },
+    {
+      "dir": "sub-beauty",
+      "cf_project": "beauty-jycsd",
+      "domain": "beauty.jycsd.com",
+      "production_branch": "master",
+      "category": "content"
+    },
+    {
+      "dir": "demonslayer-site",
+      "cf_project": "demonslayer-jycsd",
+      "domain": "demonslayer.jycsd.com",
+      "production_branch": "master"
     }
   ]
 }
