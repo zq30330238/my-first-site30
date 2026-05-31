@@ -140,6 +140,30 @@ SITE_CONFIG = {
         "blockquoteBg": "#fef2f2",
         "related_articles": [],
     },
+    "sub-outdoor": {
+        "brand": "Trail & Summit",
+        "domain": "outdoor.jycsd.com",
+        "category": "Outdoor & Camping",
+        "brandColor": "emerald-600",
+        "brandHex": "#059669",
+        "tailwindColors": """brand: {50: '#ecfdf5', 100: '#d1fae5', 200: '#a7f3d0', 400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857', 800: '#065f46'}""",
+        "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
+        "blockquoteColor": "#059669",
+        "blockquoteBg": "#ecfdf5",
+        "related_articles": [],
+    },
+    "sub-parenting": {
+        "brand": "Raising Roots",
+        "domain": "parenting.jycsd.com",
+        "category": "Parenting & Family",
+        "brandColor": "amber-500",
+        "brandHex": "#F59E0B",
+        "tailwindColors": """brand: {50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309', 800: '#92400e'}""",
+        "fontHeading": "'Georgia', 'Times New Roman', 'serif'",
+        "blockquoteColor": "#F59E0B",
+        "blockquoteBg": "#FFFBEB",
+        "related_articles": [],
+    },
     "sub-beauty": {
         "brand": "Glow Guide",
         "domain": "beauty.jycsd.com",
@@ -542,6 +566,8 @@ def build_footer_links():
         "tokyoghoul.jycsd.com": "Tokyo Ghoul Wiki",
         "aot.jycsd.com": "Attack on Titan Wiki",
         "demonslayer.jycsd.com": "Demon Slayer Wiki",
+        "outdoor.jycsd.com": "Trail & Summit",
+        "parenting.jycsd.com": "Raising Roots",
     }
 
     network = []

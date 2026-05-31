@@ -73,6 +73,13 @@
       "category": "content"
     },
     {
+      "dir": "sub-outdoor",
+      "cf_project": "outdoor-jycsd",
+      "domain": "outdoor.jycsd.com",
+      "production_branch": "master",
+      "category": "content"
+    },
+    {
       "dir": "sub-auto",
       "cf_project": "auto-jycsd",
       "domain": "auto.jycsd.com",
@@ -266,6 +273,13 @@
       "cf_project": "demonslayer-jycsd",
       "domain": "demonslayer.jycsd.com",
       "production_branch": "master"
+    },
+    {
+      "dir": "sub-parenting",
+      "cf_project": "parenting-jycsd",
+      "domain": "parenting.jycsd.com",
+      "production_branch": "master",
+      "category": "content"
     }
   ]
 }
