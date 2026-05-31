@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Mountain -->
+  <path d="M10 85 L30 30 L50 55 L70 15 L90 85 Z" fill="#059669" stroke="#047857" stroke-width="2"/>
+  <!-- Snow cap -->
+  <path d="M70 15 L63 28 L77 28 Z" fill="#ecfdf5"/>
+  <!-- Tree -->
+  <rect x="28" y="62" width="4" height="12" rx="1" fill="#78350f"/>
+  <path d="M20 68 L30 44 L40 68 Z" fill="#047857"/>
+  <!-- Ground -->
+  <rect x="0" y="85" width="100" height="15" rx="4" fill="#065f46"/>
+</svg>

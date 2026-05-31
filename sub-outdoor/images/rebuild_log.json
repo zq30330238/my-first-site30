@@ -1,0 +1,596 @@
+[
+  {
+    "article": 1,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 2,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 3,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 4,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 5,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 6,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 7,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 8,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 9,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 10,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 11,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 12,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 13,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 14,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 15,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 16,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 17,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 18,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 19,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 20,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 21,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 22,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 23,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 24,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 25,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 26,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 27,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 28,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 29,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 30,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 31,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 32,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 33,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 34,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 35,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 36,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 37,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 38,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 39,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 40,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 41,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 42,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 43,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 44,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 45,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 46,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 47,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 48,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 49,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 50,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 51,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 52,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 53,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 54,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 55,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 56,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 57,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 58,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 59,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 60,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 61,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 62,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 63,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 64,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 65,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 66,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 67,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 68,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 69,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 70,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 71,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 72,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 73,
+    "title": "Yellowstone Guide: Best Hikes, Geysers and Wildlife Viewing Tips",
+    "category": "nationalparks",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 74,
+    "title": "Yosemite National Park: Iconic Hikes, Camping and Photography",
+    "category": "nationalparks",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 75,
+    "title": "How to Reserve National Park Campsites: Booking Tips and Alternatives",
+    "category": "nationalparks",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 76,
+    "title": "Best Seasons to Visit National Parks: Month-by-Month Guide by Region",
+    "category": "nationalparks",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 77,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 78,
+    "success": true,
+    "detail": "skipped (exists)"
+  },
+  {
+    "article": 79,
+    "title": "Camp Stove Comparison Guide: Canister vs Liquid Fuel vs Wood",
+    "category": "outdoorcook",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 80,
+    "title": "Dutch Oven Camping Recipes: 15 Hearty Meals You Can Make Over Coals",
+    "category": "outdoorcook",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 81,
+    "title": "DIY Dehydrated Backpacking Meals That Beat Store-Bought",
+    "category": "outdoorcook",
+    "success": false,
+    "model": "",
+    "detail": ""
+  },
+  {
+    "article": 82,
+    "title": "Foraging Basics for Campers: Safe Wild Edibles and Plants to Avoid",
+    "category": "outdoorcook",
+    "success": false,
+    "model": "",
+    "detail": ""
+  },
+  {
+    "article": 83,
+    "title": "Campfire Cooking Techniques: From Foil Packets to Dutch Oven Baking",
+    "category": "outdoorcook",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 84,
+    "title": "Bear-Safe Food Storage: Canisters Bags and Camp Setup",
+    "category": "outdoorcook",
+    "success": false,
+    "model": "",
+    "detail": ""
+  },
+  {
+    "article": 85,
+    "title": "Wilderness First Aid: Handling Injuries When Help Is Away",
+    "category": "firstaid",
+    "success": false,
+    "model": "",
+    "detail": ""
+  },
+  {
+    "article": 86,
+    "title": "Emergency Signaling Techniques: How to Get Rescued in the Wilderness",
+    "category": "firstaid",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 87,
+    "title": "Reading Mountain Weather: Clouds Wind and Storm Signs",
+    "category": "firstaid",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 88,
+    "title": "Wildlife Encounter Safety: Bears Mountain Lions Snakes and What to Do",
+    "category": "firstaid",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 89,
+    "title": "Navigation Emergency: What to Do When Lost Without GPS",
+    "category": "firstaid",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 90,
+    "title": "The Survival Rule of Threes: Prioritizing Shelter and Water",
+    "category": "firstaid",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 91,
+    "title": "Beginner Telescope Guide: Refractor vs Reflector vs Dobsonian",
+    "category": "stargazing",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 92,
+    "title": "How to Find Major Constellations Stars and Night Patterns",
+    "category": "stargazing",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 93,
+    "title": "Astrophotography Guide: Camera Settings for Night Sky Images",
+    "category": "stargazing",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 94,
+    "title": "Best Dark Sky Parks: See the Milky Way in America",
+    "category": "stargazing",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 95,
+    "title": "2026 Meteor Shower Calendar: Peak Dates and Viewing Tips",
+    "category": "stargazing",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 96,
+    "title": "Moon Phases and Stargazing: Lunar Cycle Visibility Guide",
+    "category": "stargazing",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 97,
+    "title": "Fire Starting Methods: Bow Drill vs Flint and Steel vs Modern",
+    "category": "bushcraft",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 98,
+    "title": "Wilderness Shelter Building: Debris Huts and Lean-Tos",
+    "category": "bushcraft",
+    "success": false,
+    "model": "",
+    "detail": ""
+  },
+  {
+    "article": 99,
+    "title": "Water Purification: Boiling Filtration UV and Natural Sources",
+    "category": "bushcraft",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 100,
+    "title": "Bushcraft Knife Skills: Cuts Carving and Tool Techniques",
+    "category": "bushcraft",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  },
+  {
+    "article": 101,
+    "title": "10 Essential Knots Every Outdoor Enthusiast Should Master",
+    "category": "bushcraft",
+    "success": false,
+    "model": "",
+    "detail": ""
+  },
+  {
+    "article": 102,
+    "title": "Edible Plant Guide: Safe Wild Plants Medicinal Herbs and More",
+    "category": "bushcraft",
+    "success": true,
+    "model": "Pollinations Flux",
+    "detail": "Generated by Pollinations.ai Flux"
+  }
+]
